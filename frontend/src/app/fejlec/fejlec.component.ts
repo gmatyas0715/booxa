@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-fejlec',
@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./fejlec.component.css']
 })
 export class FejlecComponent {
-
 }

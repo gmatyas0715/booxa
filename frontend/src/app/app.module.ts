@@ -7,7 +7,6 @@ import { FejlecComponent } from './fejlec/fejlec.component';
 import { LablecComponent } from './lablec/lablec.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { BalMenusavComponent } from './bal-menusav/bal-menusav.component';
-import { CimsorComponent } from './cimsor/cimsor.component';
 import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +21,6 @@ import { RegisztracioComponent } from './regisztracio/regisztracio.component';
     LablecComponent,
     KosarComponent,
     BalMenusavComponent,
-    CimsorComponent,
     EloadasHelyszinComponent,
     KezdooldalComponent,
     KeresesComponent,

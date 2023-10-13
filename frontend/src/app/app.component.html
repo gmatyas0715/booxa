@@ -1,13 +1,14 @@
-<div class="container" id="check">
-    <app-bal-menusav></app-bal-menusav>
-    <div class="row">
-        <app-cimsor></app-cimsor>
+<div>
+    <app-fejlec></app-fejlec>
+    <div class="main container">
+        <div class="row">
+            <div class="bal-menu col-md-3">
+                <app-bal-menusav></app-bal-menusav>
+            </div>
+            <div id="content" class="col-md-9">
+                <app-kezdooldal></app-kezdooldal>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col"></div>
-    </div>
-    <div class="row">
-        <div class="col"><app-lablec></app-lablec></div>
-    </div>
+    <app-lablec></app-lablec>
 </div>

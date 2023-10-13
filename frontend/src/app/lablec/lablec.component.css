@@ -1,0 +1,7 @@
+#lablec{
+  height: 100px;
+  position: sticky;
+  border: 2px solid black;
+  background-color: white;
+  z-index: 100;
+}

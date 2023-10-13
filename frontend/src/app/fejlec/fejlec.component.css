@@ -1,0 +1,19 @@
+#fejlec{
+    height: 100px;
+    position: sticky;
+    top: 0;
+    border: 2px solid black;
+    background-color: white;
+    z-index: 100;
+}
+
+img{
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+#bejelentkezes{
+    border: 1px solid black;
+    border-radius: 5px;
+}
