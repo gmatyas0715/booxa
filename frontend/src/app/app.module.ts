@@ -8,9 +8,12 @@ import { LablecComponent } from './lablec/lablec.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { BalMenusavComponent } from './bal-menusav/bal-menusav.component';
 import { CimsorComponent } from './cimsor/cimsor.component';
-import { KoncerthelyMegjelenitoComponent } from './koncerthely-megjelenito/koncerthely-megjelenito.component';
+import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule } from '@angular/forms';
+import { KeresesComponent } from './kereses/kereses.component';
+import { BejelentkezesComponent } from './bejelentkezes/bejelentkezes.component';
+import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,11 @@ import { FormsModule } from '@angular/forms';
     KosarComponent,
     BalMenusavComponent,
     CimsorComponent,
-    KoncerthelyMegjelenitoComponent,
-    KezdooldalComponent
+    EloadasHelyszinComponent,
+    KezdooldalComponent,
+    KeresesComponent,
+    BejelentkezesComponent,
+    RegisztracioComponent
   ],
   imports: [
     BrowserModule,
