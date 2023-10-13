@@ -10,6 +10,7 @@ import { BalMenusavComponent } from './bal-menusav/bal-menusav.component';
 import { CimsorComponent } from './cimsor/cimsor.component';
 import { KoncerthelyMegjelenitoComponent } from './koncerthely-megjelenito/koncerthely-megjelenito.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
