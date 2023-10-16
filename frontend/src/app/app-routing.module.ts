@@ -4,6 +4,7 @@ import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.co
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
+import { KeresesComponent } from './kereses/kereses.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,11 @@ const routes: Routes = [
       title:'Kezdőoldal',
       path:'kezdooldal',
       component:KezdooldalComponent  
+    },
+    {
+      title:'Esemény kereső',
+      path:'kereses',
+      component:KeresesComponent  
     }
   ]
 

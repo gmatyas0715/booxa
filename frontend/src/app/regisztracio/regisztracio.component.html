@@ -1,71 +1,74 @@
-<div id="regisztracio container">
+<div class="container" id="regisztracio">
     <form id=regisztracio-form action="">
         <div class="row"><h2>Regisztráció</h2></div>
+        <hr>
         <div class="row">
-            <div class="col">
+            <div class="col-sm-12 col-lg-6">
                 <div class="row">
-                    <label for="vezeteknev">Vezetéknév</label>
+                    <label for="vezeteknev">Vezetéknév:</label>
                 </div>
                 <div class="row">
-                    <input id="vezeteknev" type="text" name="" placeholder="Vezetéknév">
+                    <input class="felhasznalo-input" id="vezeteknev" type="text" name="" placeholder="Vezetéknév">
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm-12 col-lg-6">
                 <div class="row">
-                    <label for="keresztnev">Keresztnév</label>
+                    <label for="keresztnev">Keresztnév:</label>
                 </div>
                 <div class="row">
-                    <input id="keresztnev" type="text" name="" placeholder="Keresztnév">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <label for="">E-mail cím</label>
-                </div>
-                <div class="row">
-                    <input id="email-cim" type="text" name="" placeholder="E-mail cím">
+                    <input class="felhasznalo-input"  id="keresztnev" type="text" name="" placeholder="Keresztnév">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <label for="szuletesi-datum">Születési dátum</label>
+                    <label for="email-cim">E-mail cím:</label>
                 </div>
                 <div class="row">
-                    <input id="szuletesi-ev" type="text" name="">
-                    <input id="szuletesi-honap" type="text" name="">
-                    <input id="szuletesi-nap" type="text" name="">
+                    <input class="felhasznalo-input"  id="email-cim" type="email" name="" placeholder="E-mail cím">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
+                <div class="row">
+                    <label for="">Születési dátum:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input datum" id="szuletesi-ev" type="" name="" placeholder="ÉÉÉÉ">
+                    <input class="felhasznalo-input datum" id="szuletesi-honap" type="text" name="" placeholder="HH">
+                    <input class="felhasznalo-input datum" id="szuletesi-nap" type="text" name="" placeholder="NN">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
                 <div class="row">
                     <label for="jelszo">Jelszó</label>
                 </div>
                 <div class="row">
-                    <input id="jelszo" type="text" name="">
+                    <input class="felhasznalo-input"  id="jelszo" type="text" name="" placeholder="Jelszó">
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm-12 col-lg-6">
                 <div class="row">
                     <label for="jelszo-ujra">Jelszó újra</label>
                 </div>
                 <div class="row">
-                    <input id="jelszo-ujra" type="text" name="">
+                    <input class="felhasznalo-input"  id="jelszo-ujra" type="text" name="" placeholder="Jelszó újra">
                 </div>
             </div>
         </div>
-        <div class="row">
+        <br>
+        <div class="row pipa">
             <input id="hirlevel" type="checkbox">
-            <label for="hirlevel">Feliratkozas hírlevelünkre*</label>
+            <label for="hirlevel">Feliratkozás hírlevelünkre*</label>
         </div>
-        <div class="row">
+        <div class="row pipa">
             <input id="adatvedelmi" type="checkbox">
-            <label for="hirlevel">Elolvastam és elfogadom az adatvédelmi nyilatkozatot*</label>
+            <label for="adatvedelmi">Elolvastam és elfogadom az adatvédelmi nyilatkozatot*</label>
         </div>
+        <button type="button" id="gomb-reg">Regisztrálok</button>
     </form>
 </div>
