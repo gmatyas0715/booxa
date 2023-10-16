@@ -32,4 +32,9 @@
     display: block;
     margin: auto;
 }
+
+#gomb-reg:hover{
+    background-color: rgb(152, 152, 181);
+    transition: 0.3s;
+}
     

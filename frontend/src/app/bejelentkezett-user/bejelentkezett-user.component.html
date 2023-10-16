@@ -1,22 +1,19 @@
-<div class="" id="bejelentkezes">
-    <router-outlet name="login-reszletek"></router-outlet>
+<div class="" id="felhasznalo-adatok">
     <div class="container">
-        <div class="row">
-            <div class="col"><label>Felhasználónév: </label></div>
-            <div class="col"><input id="felhasznalonev" type="text" name="" id="bej-felhasznalo"></div>
-        </div>
-        <div class="row">
-            <div class="col"><label for="jelszo">Jelszó: </label></div>
-            <div class="col"><input id="jelszo" type="password" name="" id="bej-jelszo"></div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="button">Bejelentkezés</button>
+        <div class="col">
+            <div id="szeparator">
+                <div id=felhasznalo-nev class="row">
+                    <div class="col"><!--<p>{{felhasznalo}}</p>-->bejelentkezve</div>
+                </div>
+                <div id="ikonok"  class="row">
+                    <a href=""><img src="../../assets/kepek/beallitasok_ikon.png" alt="Beállítások"></a>
+                    <a href=""><img src="../../assets/kepek/jegyeim_ikon.png" alt="Jegyeim"></a>
+                    <a href=""><img src="../../assets/kepek/baratok_ikon.png" alt="Ismerősök"></a>
+                </div>
             </div>
-            <div class="col">
-                <p>Nincs még fiókja?</p>
-                <a routerLink="/regisztracio">Regisztráljon itt!</a>
-            </div>
+        </div>
+        <div class="col">
+            <!--<img src="" alt={{felhasznalo}}>-->
         </div>
     </div>
 </div>

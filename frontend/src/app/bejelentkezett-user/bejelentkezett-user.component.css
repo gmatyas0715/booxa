@@ -1,5 +1,5 @@
 
-#bejelentkezes{
+#felhasznalo-adatok{
     position: fixed;
     width: 300px;
     height: 110px;
@@ -10,14 +10,45 @@
     font-size: 13px;
 }
 
-#bejelentkezes p{
+#felasznalo-adatok p{
     margin-bottom: 0;
 }
 
-#bej-felhasznalo,#bej-jelszo{
+#felhasznalo,#jelszo{
     width: 120px;
 }
 
 .container{
     padding: 10px;
 }
+
+img{
+    height: 30px;
+    margin: 5px;
+    transition: 1s;
+}
+
+img:hover{
+    scale: 1.5;
+}
+
+#szeparator{
+    position: absolute;
+    height: 84px;
+    width: 150px;
+    border-right: 1px solid black;
+}
+
+#ikonok{
+    position: relative;
+    top: 25px;
+    left: 20px;
+}
+
+#felhasznalo-nev{
+    position: relative;
+    top: 15px;
+    left: 20px;
+}
+
+
