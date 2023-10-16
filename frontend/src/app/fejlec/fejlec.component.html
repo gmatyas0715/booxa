@@ -3,19 +3,7 @@
         <div id="cim" class="col">
             <a routerLink="/kezdooldal"><img src="../../assets/kepek/jegy.jpg" alt=""></a>
         </div>
-        <div id="bejelentkezes" class="col">
-            <div class="row">
-                <label for="felhasznalonev">Felhasználónév: </label>
-                <input id="felhasznalonev" type="text" name="" id="">
-            </div>
-            <div class="row">
-                <label for="jelszo">Jelszó: </label>
-                <input id="jelszo" type="password" name="" id="">
-            </div>
-            <div class="row">
-                <button>Bejelentkezés</button>
-                <p>Nincs még fiókja? <a routerLink="/regisztracio">Regisztráljon itt!</a></p>
-            </div>
-        </div>
+        <app-bejelentkezes-user></app-bejelentkezes-user>
+        <app-bejelentkezett-user></app-bejelentkezett-user>
     </div>
 </div>

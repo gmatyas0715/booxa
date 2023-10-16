@@ -1,0 +1,22 @@
+<div class="" id="bejelentkezes">
+    <router-outlet name="login-reszletek"></router-outlet>
+    <div class="container">
+        <div class="row">
+            <div class="col"><label>Felhasználónév: </label></div>
+            <div class="col"><input id="felhasznalonev" type="text" name="" id="bej-felhasznalo"></div>
+        </div>
+        <div class="row">
+            <div class="col"><label for="jelszo">Jelszó: </label></div>
+            <div class="col"><input id="jelszo" type="password" name="" id="bej-jelszo"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button">Bejelentkezés</button>
+            </div>
+            <div class="col">
+                <p>Nincs még fiókja?</p>
+                <a routerLink="/regisztracio">Regisztráljon itt!</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+#bejelentkezes{
+    position: fixed;
+    width: 300px;
+    height: 110px;
+    top: 10px;
+    right: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+#bejelentkezes p{
+    margin-bottom: 0;
+}
+
+#bej-felhasznalo,#bej-jelszo{
+    width: 120px;
+}
+
+.container{
+    padding: 10px;
+}

@@ -1,5 +1,5 @@
 #fejlec{
-    height: 100px;
+    height: 130px;
     position: sticky;
     top: 0;
     border: 2px solid black;
@@ -11,10 +11,4 @@ img{
     height: 80px;
     justify-content: center;
     align-items: center;
-}
-
-#bejelentkezes{
-    position: sticky;
-    border: 1px solid black;
-    border-radius: 5px;
 }

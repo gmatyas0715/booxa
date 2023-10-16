@@ -12,6 +12,8 @@ import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule } from '@angular/forms';
 import { KeresesComponent } from './kereses/kereses.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
+import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
+import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RegisztracioComponent } from './regisztracio/regisztracio.component';
     EloadasHelyszinComponent,
     KezdooldalComponent,
     KeresesComponent,
-    RegisztracioComponent
+    RegisztracioComponent,
+    BejelentkezettUserComponent,
+    BejelentkezesUserComponent
   ],
   imports: [
     BrowserModule,

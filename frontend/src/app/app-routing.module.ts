@@ -7,10 +7,11 @@ import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { KeresesComponent } from './kereses/kereses.component';
 
 const routes: Routes = [
+  
     {
       title:'Előadas helyszín',
       path:'eloadasHelyszin',
-      component:EloadasHelyszinComponent 
+      component:EloadasHelyszinComponent
     },
     {
       title:'Regisztráció',
@@ -32,9 +33,7 @@ const routes: Routes = [
       path:'kereses',
       component:KeresesComponent  
     }
-  ]
-
-  ;
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
