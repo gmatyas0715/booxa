@@ -1,3 +1,29 @@
 li{
     list-style-type: none;
   }
+
+  #bal-menu {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 100px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    box-shadow: 5px 5px black;
+    color: rgb(0, 94, 255);
+    border-right: 2px solid black;
+  }
+  
+#bal-menu a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+  
+#bal-menu a:hover {
+  color: #f1f1f1;
+}

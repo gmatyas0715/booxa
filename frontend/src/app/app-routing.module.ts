@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BejelentkezesComponent } from './bejelentkezes/bejelentkezes.component';
 import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { KosarComponent } from './kosar/kosar.component';
@@ -11,11 +10,6 @@ const routes: Routes = [
       title:'Előadas helyszín',
       path:'eloadasHelyszin',
       component:EloadasHelyszinComponent 
-    },
-    {
-      title:'Bejelentkezés',
-      path:'bejelentkezes',
-      component:BejelentkezesComponent  
     },
     {
       title:'Regisztráció',

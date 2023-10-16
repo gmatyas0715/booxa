@@ -2,13 +2,13 @@
     <app-fejlec></app-fejlec>
     <div class="main container">
         <div class="row">
-            <div class="bal-menu col-md-3">
+            <div id="bal-menu" class="col-md-3">
                 <app-bal-menusav></app-bal-menusav>
             </div>
             <div id="content" class="col-md-9">
-                <app-kezdooldal></app-kezdooldal>
+                <router-outlet></router-outlet>
             </div>
         </div>
+        <app-lablec></app-lablec>
     </div>
-    <app-lablec></app-lablec>
 </div>

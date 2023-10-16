@@ -11,7 +11,6 @@ import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.co
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule } from '@angular/forms';
 import { KeresesComponent } from './kereses/kereses.component';
-import { BejelentkezesComponent } from './bejelentkezes/bejelentkezes.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { RegisztracioComponent } from './regisztracio/regisztracio.component';
     EloadasHelyszinComponent,
     KezdooldalComponent,
     KeresesComponent,
-    BejelentkezesComponent,
     RegisztracioComponent
   ],
   imports: [
