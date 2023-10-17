@@ -25,7 +25,6 @@
 img{
     height: 30px;
     margin: 5px;
-    transition: 1s;
 }
 
 #ikonok img:hover,#kijelentkezes img:hover{

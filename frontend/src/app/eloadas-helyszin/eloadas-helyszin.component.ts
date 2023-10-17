@@ -1,12 +1,12 @@
-import { Component, ElementRef, ViewChild, numberAttribute } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-koncerthely-megjelenito',
+  selector: 'app-eloadas-helyszin',
   templateUrl: './eloadas-helyszin.component.html',
   styleUrls: ['./eloadas-helyszin.component.css']
 })
 export class EloadasHelyszinComponent {
-  @ViewChild('canvas') canvasRef: ElementRef | null = null;
+  /*@ViewChild('canvas') canvasRef: ElementRef | null = null;
   
   ngAfterViewInit(): void {
     const canvas: HTMLCanvasElement = this.canvasRef?.nativeElement;
@@ -22,11 +22,6 @@ export class EloadasHelyszinComponent {
       x: number,
       y: number,
     } = {x:0,y:0}
-    canvas.addEventListener('click',function(event){
-      mouse.x = event.x;
-      mouse.y = event.y;
-      drawCircle();
-    });
 
     canvas.addEventListener('mousemove',function(event){
       mouse.x = event.x;
@@ -42,5 +37,5 @@ export class EloadasHelyszinComponent {
         ctx.fill();
       }
     }
-  }
+  }*/
 }
