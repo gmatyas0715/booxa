@@ -14,6 +14,7 @@ import { KeresesComponent } from './kereses/kereses.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
+import { KosarKicsiComponent } from './kosar-kicsi/kosar-kicsi.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-u
     KeresesComponent,
     RegisztracioComponent,
     BejelentkezettUserComponent,
-    BejelentkezesUserComponent
+    BejelentkezesUserComponent,
+    KosarKicsiComponent
   ],
   imports: [
     BrowserModule,
