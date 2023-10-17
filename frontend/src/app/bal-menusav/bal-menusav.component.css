@@ -32,7 +32,14 @@ li{
 .menu-ikon{
   position: absolute;
   left: 140px;
+  top: -5px;
   height: 30px;
   margin: 5px;
+}
 
+#nyil-menu{
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
