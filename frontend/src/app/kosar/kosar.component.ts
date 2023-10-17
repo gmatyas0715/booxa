@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JegyAdatok } from '../jegy-adatok';
 
 @Component({
   selector: 'app-kosar',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./kosar.component.css']
 })
 export class KosarComponent {
-  let kosarElemek: string[] 
+  /*let kosarElemek: JegyAdatok[] = []; */
+
+
 }
