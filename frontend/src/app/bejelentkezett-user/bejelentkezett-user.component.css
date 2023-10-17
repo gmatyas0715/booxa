@@ -25,10 +25,9 @@
 img{
     height: 30px;
     margin: 5px;
-    transition: 1s;
 }
 
-img:hover{
+#ikonok img:hover,#kijelentkezes img:hover{
     scale: 1.5;
 }
 
@@ -41,7 +40,7 @@ img:hover{
 
 #ikonok{
     position: relative;
-    top: 25px;
+    top: 30px;
     left: 20px;
 }
 
@@ -51,4 +50,27 @@ img:hover{
     left: 20px;
 }
 
+#kijelentkezes{
+    position: absolute;
+    right: 40px;
+    top: -10px;
+}
 
+#profilkep-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    height: 90px;
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 30%;
+    position: absolute;
+    top: 9px;
+    right: 15px; 
+}
+
+#profilkep{
+    height: 70px;
+}
