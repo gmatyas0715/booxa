@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { JegyAdatok } from '../jegy-adatok';
 
 @Component({
   selector: 'app-kosar',
