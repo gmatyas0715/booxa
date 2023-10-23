@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./kosar.component.css']
 })
 export class KosarComponent {
-  let kosarElemek: string[] 
+  /*let kosarElemek: JegyAdatok[] = []; */
+
+
 }

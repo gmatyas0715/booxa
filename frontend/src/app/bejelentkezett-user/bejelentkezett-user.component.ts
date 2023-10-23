@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../_szervizek/user.service';
 
 @Component({
   selector: 'app-bejelentkezett-user',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./bejelentkezett-user.component.css']
 })
 export class BejelentkezettUserComponent {
+  constructor(public szerviz:UserService) {
 
+  }
+  LogoutGomb(){
+    this.szerviz.Logout()
+  }
 }
