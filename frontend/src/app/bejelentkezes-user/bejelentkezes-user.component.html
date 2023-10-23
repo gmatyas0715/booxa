@@ -1,16 +1,16 @@
 <div class="" id="bejelentkezes">
     <div class="container">
         <div class="row">
-            <div class="col"><label>Felhasználónév: </label></div>
-            <div class="col"><input type="text" [(ngModel)]="user.felhasznalonev" name="" id="bej-felhasznalo"></div>
+            <div class="col"><label for="felhasznalonev">Felhasználónév: </label></div>
+            <div class="col"><input type="text" [(ngModel)]="user.felhasznalonev" name="felhasznalonev"></div>
         </div>
         <div class="row">
             <div class="col"><label for="jelszo">Jelszó: </label></div>
-            <div class="col"><input type="password" [(ngModel)]="user.jelszo" name="" id="bej-jelszo"></div>
+            <div class="col"><input type="password" [(ngModel)]="user.jelszo" name="jelszo"></div>
         </div>
         <div class="row">   
             <div class="col">
-                <button type="button" (click)="LoginGomb()">Bejelentkezés</button>
+                <input type="button" value="Bejelentkezés" (click)="LoginGomb()"/>
             </div>
             <div class="col">
                 <p>Nincs még fiókja?</p>

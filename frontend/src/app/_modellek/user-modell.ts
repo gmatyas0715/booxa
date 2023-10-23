@@ -7,4 +7,5 @@ export class UserModell {
     public szuletesiDatum = new Date();
     public felhasznalonev:string = "";
     public jelszo:string = "";
+    public profilKep: string = "";
 }
