@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { UserService } from '../_szervizek/user.service';
 
 @Component({
   selector: 'app-fejlec',
@@ -6,4 +7,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./fejlec.component.css']
 })
 export class FejlecComponent {
+  constructor(public szerviz:UserService) {
+    
+  }
 }

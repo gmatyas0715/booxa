@@ -4,7 +4,7 @@
             <a routerLink="/kezdooldal"><img src="../../assets/kepek/jegy.jpg" alt=""></a>
         </div>
         <app-kosar-kicsi class="col"></app-kosar-kicsi>
-        <!--<app-bejelentkezes-user></app-bejelentkezes-user>-->
-        <app-bejelentkezett-user class="col"></app-bejelentkezett-user>
+        <app-bejelentkezes-user *ngIf=!szerviz.bejelentkezettStatusz></app-bejelentkezes-user>
+        <app-bejelentkezett-user *ngIf=szerviz.bejelentkezettStatusz class="col"></app-bejelentkezett-user>
     </div>
 </div>
