@@ -16,7 +16,7 @@
 }
 
 .datum{
-    width: 80px;
+    width: 150px;
     margin:  0 8px 20px 0;
 }
 
@@ -37,4 +37,7 @@
     background-color: rgb(152, 152, 181);
     transition: 0.3s;
 }
-    
+
+.hibaüzenet{
+    color: red;
+}
