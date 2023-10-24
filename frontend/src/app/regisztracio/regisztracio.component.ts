@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl } from '@angular/forms';
+import { UserService } from '../_szervizek/user.service';
 
 @Component({
   selector: 'app-regisztracio',
@@ -17,7 +18,8 @@ export class RegisztracioComponent {
   regisztracioForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    public szerviz:UserService) {
         this.regisztracioForm = this.formBuilder.group({
         vezeteknev: ['',[Validators.required]],
         keresztnev: ['',[Validators.required]],
@@ -27,8 +29,8 @@ export class RegisztracioComponent {
         felhasznalonev: ['',[Validators.required,Validators.minLength(3)]],
         jelszo: ['',[Validators.required,this.jelszoValidator]],
         jelszoUjra:['',[Validators.required]],
-        hirlevelPipa: false,
-        adatvedelmiPipa: ['',[Validators.required]],
+        hirlevel: false,
+        adatvedelmi: ['',[Validators.required]],
       },{validators: this.jelszoEgyezesValidator});
     }
 
