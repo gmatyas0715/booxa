@@ -19,6 +19,10 @@
                     <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev" placeholder="Keresztnév">
                 </div>
             </div>
+            <div *ngIf="regisztracioForm.get('vezeteknev')?.hasError('required') && regisztracioForm.get('vezeteknev')?.touched || 
+            regisztracioForm.get('keresztnev')?.hasError('required') && regisztracioForm.get('keresztnev')?.touched">
+                <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
+            </div>
         </div>
         <div class="row">
             <div class="col">
@@ -27,6 +31,12 @@
                 </div>
                 <div class="row">
                     <input class="felhasznalo-input" id="email" type="email" formControlName="email" placeholder="E-mail cím">
+                </div>
+                <div *ngIf="regisztracioForm.get('email')?.hasError('required') && regisztracioForm.get('email')?.touched">
+                    <span class="hibauzenet">Az e-mail mező nem maradhat üresen!</span>
+                </div>
+                <div *ngIf="regisztracioForm.get('email')?.hasError('nemMegfeleloEmail')">
+                    <span class="hibauzenet">A megadott adat nem érvényes e-mail cím!</span>
                 </div>
             </div>
             <div class="col">
@@ -42,6 +52,9 @@
                     <input id="no" type="radio" formControlName="nem" [value]="'nő'">
                     <label for="no">Nő</label>
                 </div>
+                <div *ngIf="regisztracioForm.get('nem')?.hasError('required')">
+                    <span class="hibauzenet">Kérjük válassza ki a nemét!</span>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -51,6 +64,9 @@
                 </div>
                 <div class="row">
                     <input class="felhasznalo-input datum" id="szulDatum" type="date" formControlName="szulDatum" placeholder="ÉÉÉÉ" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                </div>
+                <div *ngIf="regisztracioForm.get('szulDatum')?.hasError('required') && regisztracioForm.get('szulDatum')?.touched">
+                    <span class="hibauzenet">Az születési dátum mező nem maradhat üresen!</span>
                 </div>
             </div>
         </div>
@@ -62,6 +78,12 @@
                 <div class="row">
                     <input class="felhasznalo-input" id="felhasznalonev" type="text" formControlName="felhasznalonev" placeholder="Felhasználónév">
                 </div>
+                <div *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('required') && regisztracioForm.get('felhasznalonev')?.touched">
+                    <span class="hibauzenet">Az felhasználónév mező nem maradhat üresen!</span>
+                </div>
+                <div *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('minlength')">
+                    <span class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -70,10 +92,13 @@
                     <label for="jelszo">Jelszó</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input"  id="jelszo" type="text" formControlName="jelszo" placeholder="Jelszó">
+                    <input class="felhasznalo-input"  id="jelszo" type="password" formControlName="jelszo" placeholder="Jelszó">
                 </div>
-                <div class="row" *ngIf="regisztracioForm.get('jelszo')?.hasError('invalidPassword') && regisztracioForm.get('jelszo')?.touched">
-                    <span class="error-message">A megadott jelszó nem megfelelő</span>
+                <div *ngIf="regisztracioForm.get('jelszo')?.hasError('required') && regisztracioForm.get('jelszo')?.touched">
+                    <span class="hibauzenet">Az jelszó mező nem maradhat üresen!</span>
+                </div>
+                <div *ngIf="regisztracioForm.get('jelszo')?.hasError('nemMegfeleloJelszo')">
+                    <span class="hibauzenet">A megadott jelszó nem megfelelő</span>
                 </div>
             </div>
             <div class="col-sm-12 col-lg-6">
@@ -81,12 +106,12 @@
                     <label for="jelszoUjra">Jelszó újra</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input"  id="jelszoUjra" type="text" formControlName="jelszoUjra" placeholder="Jelszó újra">
+                    <input class="felhasznalo-input"  id="jelszoUjra" type="password" formControlName="jelszoUjra" placeholder="Jelszó újra">
                 </div>
             </div>
         </div>
         <div class="row" *ngIf="regisztracioForm.hasError('jelszoKulonbozes') && regisztracioForm.get('jelszoUjra')?.touched">
-            <span class="error-message">A két jelszónak meg kell egyeznie!</span>
+            <span class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
         </div>
         <br>
         <div class="row pipa">
@@ -97,6 +122,6 @@
             <input id="adatvedelmi" type="checkbox" formControlName="adatvedelmiPipa">
             <label for="adatvedelmi">Elolvastam és elfogadom az adatvédelmi nyilatkozatot*</label>
         </div>
-        <input type="submit" id="gomb-reg" value="Regisztrálok">
+        <input type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg" value="Regisztrálok">
     </form>
 </div>

@@ -19,17 +19,17 @@ export class RegisztracioComponent {
   constructor(
     private formBuilder: FormBuilder) {
         this.regisztracioForm = this.formBuilder.group({
-        vezeteknev: '',
-        keresztnev: '',
-        email: '',
-        nem: '',
-        szulDatum: '',
-        felhasznalonev: '',
+        vezeteknev: ['',[Validators.required]],
+        keresztnev: ['',[Validators.required]],
+        email: ['',[Validators.required,this.emailValidator]],
+        nem: ['',[Validators.required]],
+        szulDatum: ['',[Validators.required]],
+        felhasznalonev: ['',[Validators.required,Validators.minLength(3)]],
         jelszo: ['',[Validators.required,this.jelszoValidator]],
-        jelszoUjra:['',Validators.required],
+        jelszoUjra:['',[Validators.required]],
         hirlevelPipa: false,
-        adatvedelmiPipa: false
-      },{validatorok: this.jelszoKulonbozesValidator});
+        adatvedelmiPipa: ['',[Validators.required]],
+      },{validators: this.jelszoEgyezesValidator});
     }
 
   regisztracioGomb():void{
@@ -39,20 +39,30 @@ export class RegisztracioComponent {
   
   jelszoValidator(control: AbstractControl):ValidationErrors|null {
     const regexMinta = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-    console.log(regexMinta)
     if (control.value && !regexMinta.test(control.value)) {
-      return { invalidPassword: true };
+      return { nemMegfeleloJelszo: true };
     }
     return null;
   }
 
-  jelszoKulonbozesValidator(control: AbstractControl):ValidationErrors|null {
+  jelszoEgyezesValidator(control: AbstractControl):ValidationErrors|null {
     const jelszo = control.get('jelszo')?.value;
     const jelszoUjra = control.get('jelszoUjra')?.value;
-    console.log(jelszo)
-    if (jelszo !== jelszoUjra (jelszo && jelszoUjra)) {
+    if (jelszo !== jelszoUjra) {
       return { jelszoKulonbozes: true };
     }
     return null;
+  }
+
+  emailValidator(control: AbstractControl):ValidationErrors|null {
+    const regexMinta = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (control.value && !regexMinta.test(control.value)) {
+      return { nemMegfeleloEmail: true };
+    }
+    return null;
+  }
+
+  validFormEllenorzes():boolean{
+    return this.regisztracioForm.invalid;
   }
 }
