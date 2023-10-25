@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
-import { KeresesComponent } from './esemeny-kereso/esemenyKereso.component';
+import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
 
@@ -32,7 +32,7 @@ const routes: Routes = [
     {
       title:'Esemény kereső',
       path:'esemenyKereso',
-      component:KeresesComponent  
+      component:EsemenyKeresoComponent 
     },
     {
       title:'Kedvelt helyszínek/előadók',

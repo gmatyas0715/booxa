@@ -8,7 +8,7 @@ import { KosarComponent } from './kosar/kosar.component';
 import { BalMenusavComponent } from './bal-menusav/bal-menusav.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule } from '@angular/forms';
-import { KeresesComponent } from './esemeny-kereso/esemenyKereso.component';
+import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
@@ -24,7 +24,7 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
     KosarComponent,
     BalMenusavComponent,
     KezdooldalComponent,
-    KeresesComponent,
+    EsemenyKeresoComponent,
     RegisztracioComponent,
     BejelentkezettUserComponent,
     BejelentkezesUserComponent,

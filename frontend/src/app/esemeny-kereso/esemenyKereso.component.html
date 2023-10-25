@@ -1,11 +1,25 @@
 <div class="container">
-    <div>Helyszín keresés:</div>
-    <input type="text">
-    <div>Előadó keresés:</div>
-    <input type="text">
-
     <div class="row">
-        Keresés szűrők
+        <div class="col">
+            Keresés helyszín és előadó alapján
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">Előadó:
+            <input type="text" placeholder="bármilyen előadó">
+        </div>
+        <div class="col">Helyszín:
+            <input type="text" placeholder="bárhol">
+        </div>
+        <div class="col">
+            <input type="button" value="Keresés">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            Keresés szűrők
+        </div>
         <div class="col">
             Rendezés
             <select name="" id="">
@@ -14,9 +28,12 @@
                 <option value="">helyszínek szerint növekvő ABC sorrendben</option>
                 <option value="">helyszínek szerint növekvő ABC sorrendben</option>
                 <option value="">jegy alapár szerint csökkenő sorrendben</option>
-                <option value="">jegy alapá szerint növekvő sorrendben</option>
+                <option value="">jegy alapár szerint növekvő sorrendben</option>
             </select>
         </div>
+        <label for="esemenyDatum">Esemény időpont</label>
+        <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum">
+        <button (click)="datumTorles()">Időpont törlése</button>
     </div>
     <div class="row">    
         <div class="col">
@@ -58,6 +75,155 @@
         </div>
     </div>
     <!--<div *ngFor="let talalat of keresesTalalatok">
-
     </div>-->
+    <div class="row">
+        <div class="esemeny-container col-4">
+            <div class="row">
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Előadó:</li>
+                            <li>Műfaj: </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Város:</li>
+                            <li>Helyszín:</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                2023. 12. 31-én!
+            </div>
+            <div class="row">
+                Jegyek akár 10000 Ft-tól!
+            </div>
+            <div class="row">
+                Megnézem!
+            </div>
+        </div>
+        <div class="esemeny-container col-6">
+            <div class="row">
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Előadó:</li>
+                            <li>Műfaj: </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Város:</li>
+                            <li>Helyszín:</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                2023. 12. 31-én!
+            </div>
+            <div class="row">
+                Jegyek akár 10000 Ft-tól!
+            </div>
+            <div class="row">
+                Megnézem!
+            </div>
+        </div>
+        <div class="esemeny-container col-6">
+            <div class="row">
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Előadó:</li>
+                            <li>Műfaj: </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Város:</li>
+                            <li>Helyszín:</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                2023. 12. 31-én!
+            </div>
+            <div class="row">
+                Jegyek akár 10000 Ft-tól!
+            </div>
+            <div class="row">
+                Megnézem!
+            </div>
+        </div>
+        <div class="esemeny-container col-6">
+            <div class="row">
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Előadó:</li>
+                            <li>Műfaj: </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col esemeny-adat-container">
+                    <div class="row">
+                        <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Város:</li>
+                            <li>Helyszín:</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                2023. 12. 31-én!
+            </div>
+            <div class="row">
+                Jegyek akár 10000 Ft-tól!
+            </div>
+            <div class="row">
+                Megnézem!
+            </div>
+        </div>
+    </div>
 </div>
