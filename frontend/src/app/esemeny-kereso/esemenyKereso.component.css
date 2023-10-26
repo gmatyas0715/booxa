@@ -1,12 +1,7 @@
-.container{
-    text-align: center;
-    align-items: center;
-    margin-left: 300px;
-}
-
 .esemeny-container{
     border: 2px solid brown;
     margin: 5px;
+    height: 300px;
 }
 
 .esemeny-container li{

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BalMenusavComponent } from './bal-menusav.component';
+import { BalMenusavComponent } from './felso-menusav.component';
 
 describe('BalMenusavComponent', () => {
   let component: BalMenusavComponent;

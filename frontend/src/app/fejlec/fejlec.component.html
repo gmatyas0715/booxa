@@ -1,10 +1,8 @@
 <div id="fejlec">
-    <div class="row">
-        <div id="cim" class="col">
-            <a routerLink="/kezdooldal"><img src="../../assets/kepek/jegy.jpg" alt=""></a>
-        </div>
-        <app-kosar-kicsi class="col"></app-kosar-kicsi>
+    <div>
+        <app-felso-menusav></app-felso-menusav>
+        <app-kosar-kicsi></app-kosar-kicsi>
         <app-bejelentkezes-user *ngIf=!szerviz.bejelentkezettStatusz></app-bejelentkezes-user>
-        <app-bejelentkezett-user *ngIf=szerviz.bejelentkezettStatusz class="col"></app-bejelentkezett-user>
+        <app-bejelentkezett-user *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
     </div>
 </div>
