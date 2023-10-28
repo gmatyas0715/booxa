@@ -7,7 +7,7 @@ import { LablecComponent } from './lablec/lablec.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { FelsoMenusavComponent } from './felso-menusav/felso-menusav.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
@@ -35,7 +35,8 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

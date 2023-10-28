@@ -1,5 +1,5 @@
 <div class="" id="bejelentkezes">
-    <div class="container">
+    <div class="container" (keyup.enter)="LoginGomb()">
         <div class="row">
             <div class="col"><label for="felhasznalonev">Felhasználónév: </label></div>
             <div class="col"><input type="text" [(ngModel)]="user.felhasznalonev" name="felhasznalonev"></div>
