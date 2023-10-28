@@ -1,0 +1,61 @@
+div{
+  color: #2e2f70;
+}
+
+.esemeny-kereso-teljes{
+  display: flex;
+}
+
+.kereses-szures {
+  width: 300px;
+  height: 100%;
+  background-color:rgba(152, 168, 189,0.5);
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  margin: 0;
+}
+
+.kereses-szures ul {
+  list-style: none;
+  padding: 0;
+}
+  
+.kereses-szures ul li {
+  margin-bottom: 10px;
+}
+
+.kereses-szures-content{
+  max-height: 100vh;
+}
+
+.esemeny-container{
+  background-color:rgba(152, 168, 189,0.5);
+  border: 1px solid rgba(33, 26, 171,0.5);
+  border-radius: 10px;
+  height: flex;
+  width: fit-content;
+  overflow: hidden;
+  padding: 0px 15px 15px 15px;
+}
+
+.esemeny-kep{
+  width: 100%;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  box-shadow: 1px 1px 1px 1px rgb(91, 91, 108);
+}
+
+button:hover{
+  background-color: #5c71db;
+}
+
+.esemeny-container:hover{
+  box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
+}

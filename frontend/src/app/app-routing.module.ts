@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EloadasHelyszinComponent } from './eloadas-helyszin/eloadas-helyszin.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
-import { KeresesComponent } from './kereses/kereses.component';
+import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
+import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
+import { KedvencekComponent } from './kedvencek/kedvencek.component';
 
 const routes: Routes = [
   
     {
-      title:'Előadas helyszín',
-      path:'eloadasHelyszin',
-      component:EloadasHelyszinComponent
+      title:'Esemény részletek',
+      path:'esemenyReszletek',
+      component:EsemenyReszletekComponent
     },
     {
       title:'Regisztráció',
@@ -30,8 +31,13 @@ const routes: Routes = [
     },
     {
       title:'Esemény kereső',
-      path:'kereses',
-      component:KeresesComponent  
+      path:'esemenyKereso',
+      component:EsemenyKeresoComponent 
+    },
+    {
+      title:'Kedvelt helyszínek/előadók',
+      path:'kedvencek',
+      component:KedvencekComponent  
     }
   ];
 
