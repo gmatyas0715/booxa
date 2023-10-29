@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KosarComponent } from './kosar.component';
+import { KosarComponent } from './kosar-osszegzo.component';
 
 describe('KosarComponent', () => {
   let component: KosarComponent;
