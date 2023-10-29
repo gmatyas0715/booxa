@@ -6,6 +6,7 @@ import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
+import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 
 const routes: Routes = [
   
@@ -38,7 +39,12 @@ const routes: Routes = [
       title:'Kedvelt helyszínek/előadók',
       path:'kedvencek',
       component:KedvencekComponent  
-    }
+    },
+    {
+      title:'Szállítás részletek',
+      path:'szallitasReszletek',
+      component:SzallitasReszletekComponent  
+    },
   ];
 
 @NgModule({

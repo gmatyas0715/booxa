@@ -1,0 +1,43 @@
+#regisztracio{
+    width: 70%;
+    margin: 50px;
+    padding: 10px;
+    border: 3px solid rgb(135, 206, 235);
+    background-color: rgba(135, 206, 235, 0.2);
+    border-radius: 10px;
+}
+
+#regisztracio-form{
+    padding: 20px;
+}
+
+.felhasznalo-input{
+    margin: 0 0 20px 0;
+}
+
+.datum{
+    width: 150px;
+    margin:  0 8px 20px 0;
+}
+
+.pipa{
+    display: inline-block;
+}
+
+#adatvedelmi,#hirlevel{
+    margin-right: 5px;
+}
+
+#gomb-reg{
+    display: block;
+    margin: auto;
+}
+
+#gomb-reg:hover{
+    background-color: rgb(152, 152, 181);
+    transition: 0.3s;
+}
+
+.hibauzenet{
+    color: red;
+}

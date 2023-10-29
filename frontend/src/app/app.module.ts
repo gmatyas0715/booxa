@@ -15,6 +15,7 @@ import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-u
 import { KosarKicsiComponent } from './kosar-kicsi/kosar-kicsi.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
+import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
     BejelentkezesUserComponent,
     KosarKicsiComponent,
     EsemenyReszletekComponent,
-    KedvencekComponent
+    KedvencekComponent,
+    SzallitasReszletekComponent
   ],
   imports: [
     BrowserModule,
