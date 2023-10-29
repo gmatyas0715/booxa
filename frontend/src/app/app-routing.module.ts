@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
-import { KosarComponent } from './kosar/kosar.component';
+import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
@@ -20,9 +20,9 @@ const routes: Routes = [
       component:RegisztracioComponent  
     },
     {
-      title:'Kosár',
-      path:'kosar',
-      component:KosarComponent  
+      title:'Kosár összegző',
+      path:'kosarOsszegzo',
+      component:KosarOsszegzoComponent  
     },
     {
       title:'Kezdőoldal',

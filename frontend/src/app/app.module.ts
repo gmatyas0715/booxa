@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FejlecComponent } from './fejlec/fejlec.component';
 import { LablecComponent } from './lablec/lablec.component';
-import { KosarComponent } from './kosar/kosar.component';
+import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.component';
 import { FelsoMenusavComponent } from './felso-menusav/felso-menusav.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
     AppComponent,
     FejlecComponent,
     LablecComponent,
-    KosarComponent,
+    KosarOsszegzoComponent,
     FelsoMenusavComponent,
     KezdooldalComponent,
     EsemenyKeresoComponent,

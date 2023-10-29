@@ -1,0 +1,16 @@
+li{
+    list-style-type: none;
+}
+
+.esemeny-kep{
+    width: 50%;
+}
+
+.jegy-adat-container{
+    box-shadow: 1px 1px 4px 1px rgb(109, 104, 152)
+}
+
+.kuka{
+    height: 25px;
+    background-color: rgba(230, 15, 40, 0.3);
+}
