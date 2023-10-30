@@ -1,8 +1,41 @@
-<div id="fejlec">
-    <div>
-        <app-felso-menusav></app-felso-menusav>
-        <app-kosar-kicsi></app-kosar-kicsi>
-        <app-bejelentkezes-user *ngIf=!szerviz.bejelentkezettStatusz></app-bejelentkezes-user>
-        <app-bejelentkezett-user *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
-    </div>
+<div id="container">
+   <div id="fejlec">
+       <div class="row d-flex align-items-center">
+            <div class="col-2 pl-4">
+                <a class="align-self-center" href="/kezdooldal">
+                    <img src="../../assets/kepek/booxa-atlatszo.png" alt="">
+                </a>
+            </div>
+            <div class="col-5">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/kezdooldal">Kezdőoldal
+                            <img class="menu-ikon" src="../../assets/kepek/kezdolap_ikon.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/esemenyKereso">Esemény kereső
+                            <img class="menu-ikon" src="../../assets/kepek/event_ikon.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/kedvencek">Kedvelt előadók/helyszínek
+                            <img class="menu-ikon" src="../../assets/kepek/kedvencek_ikon.png" alt="">
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </nav>
+            </div>
+            <div class="col-3">
+                <app-kosar-kicsi></app-kosar-kicsi>
+            </div>
+            <div class="col-2">
+                <app-bejelentkezes-user *ngIf=!szerviz.bejelentkezettStatusz></app-bejelentkezes-user>
+                <app-bejelentkezett-user *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
+            </div>
+       </div>
+   </div>
 </div>
