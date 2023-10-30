@@ -1,59 +1,14 @@
-
-#felhasznalo-adatok{
-    position: fixed;
-    width: 100%;
-    height: 110px;
-    top: 10px;
-    right: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 13px;
-}
-
-#felasznalo-adatok p{
-    margin-bottom: 0;
-}
-
-#felhasznalo,#jelszo{
-    width: 120px;
-}
-
 .container{
     padding: 10px;
 }
 
 img{
-    height: 30px;
+    height: 22px;
     margin: 5px;
 }
 
 #ikonok img:hover,#kijelentkezes img:hover{
     scale: 1.5;
-}
-
-#szeparator{
-    position: absolute;
-    height: 84px;
-    width: 150px;
-    border-right: 1px solid black;
-}
-
-#ikonok{
-    position: relative;
-    top: 30px;
-
-}
-
-#felhasznalo-nev{
-    position: relative;
-    top: 15px;
-    left: 20px;
-}
-
-#kijelentkezes{
-    position: absolute;
-    right: 40px;
-    top: -10px;
 }
 
 #profilkep-container{
@@ -62,15 +17,12 @@ img{
     align-items: center;
     overflow: hidden;
     padding: 10px;
-    height: 90px;
-    width: 80px;
-    border: 1px solid black;
-    border-radius: 30%;
-    position: absolute;
-    top: 9px;
-    right: 15px; 
+    max-height: 50px;
+    max-width: 50px;
+    box-shadow: 0px 0px 5px 0px  #2e2f70;
+    border-radius: 50%;
 }
 
 #profilkep{
-    height: 70px;
+    height: 40px;
 }

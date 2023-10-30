@@ -11,7 +11,6 @@ import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
-import { KosarKicsiComponent } from './kosar-kicsi/kosar-kicsi.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
@@ -27,7 +26,6 @@ import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-res
     RegisztracioComponent,
     BejelentkezettUserComponent,
     BejelentkezesUserComponent,
-    KosarKicsiComponent,
     EsemenyReszletekComponent,
     KedvencekComponent,
     SzallitasReszletekComponent

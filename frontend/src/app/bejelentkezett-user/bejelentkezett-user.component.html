@@ -1,20 +1,19 @@
-<div class="" id="felhasznalo-adatok">
-    <div class="container">
-        <div class="col">
-            <div id="szeparator">
-                <div id=felhasznalo-nev class="row">
-                    <div class="col">Üdvözlünk, {{this.szerviz.bejelentkezettUser.felhasznalonev}}!</div>
-                </div>
-                <div id="ikonok"  class="row">
-                    <a href=""><img src="../../assets/kepek/beallitasok_ikon.png" alt="Beállítások" title="Beállítások"></a>
-                    <a href=""><img src="../../assets/kepek/jegyeim_ikon.png" alt="Jegyeim" title="Jegyeim"></a>
-                    <a href=""><img src="../../assets/kepek/baratok_ikon.png" alt="Ismerősök" title="Ismerősök"></a>
-                    <a href="" (click)="LogoutGomb()"><img src="../../assets/kepek/logout.png" alt="" title="Kijelentkezés"></a>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="row float-right">
+                Szia, {{this.szerviz.bejelentkezettUser.felhasznalonev}}
+                <img src="../../assets/kepek/hangjegy_ikon.jpg" alt="">
+            </div>
+            <div id="ikonok"  class="row float-right">
+                <a href=""><img src="../../assets/kepek/beallitasok_ikon.png" alt="Beállítások" title="Beállítások"></a>
+                <a href=""><img src="../../assets/kepek/jegyeim_ikon.png" alt="Jegyeim" title="Jegyeim"></a>
+                <a href=""><img src="../../assets/kepek/baratok_ikon.png" alt="Ismerősök" title="Ismerősök"></a>
+                <a href="" (click)="LogoutGomb()"><img src="../../assets/kepek/logout.png" alt="" title="Kijelentkezés"></a>
             </div>
         </div>
-        <div id="profilkep-container" class="col">
+        <div id="profilkep-container" class="col-4 ml-2">
             <img id="profilkep" src="../../assets/kepek/ferfi_kep.jpg" alt=""><!--<img src="" alt={{felhasznalo}}>-->
         </div>
-    </div>
+    </div> 
 </div>
