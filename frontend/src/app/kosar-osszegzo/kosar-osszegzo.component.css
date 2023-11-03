@@ -1,16 +1,27 @@
+div{
+    color:rgb(1 12 128);
+}
+
 li{
     list-style-type: none;
 }
 
 .esemeny-kep{
-    width: 50%;
+    margin: 5px;
+    height: 140px;
+    box-shadow: 1px 1px 4px 1px rgb(1 12 128)
 }
 
 .jegy-adat-container{
-    box-shadow: 1px 1px 4px 1px rgb(109, 104, 152)
+    box-shadow: 1px 1px 4px 1px rgb(1 12 128);
+    font-size: 110%;
 }
 
 .kuka{
     height: 25px;
     background-color: rgba(230, 15, 40, 0.3);
+}
+
+.jegy-darab{
+    background-color: rgb(1 12 128);
 }
