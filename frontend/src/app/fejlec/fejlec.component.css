@@ -21,7 +21,6 @@ img{
 }
 
 #kosar-adatok{
-    width: 300px;
     top: 10px;
     font-size: 13px;
 }
@@ -34,3 +33,8 @@ a{
 a:hover{
     color: rgb(13, 13, 181)
 }
+
+#navbarNav{
+    background-color: white;
+}
+
