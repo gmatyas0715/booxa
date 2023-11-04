@@ -1,19 +1,13 @@
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            <div class="row float-right">
-                Szia, {{this.szerviz.bejelentkezettUser.felhasznalonev}}
-                <img src="../../assets/kepek/hangjegy_ikon.jpg" alt="">
-            </div>
-            <div id="ikonok"  class="row float-right">
-                <a href=""><img src="../../assets/kepek/beallitasok_ikon.png" alt="Beállítások" title="Beállítások"></a>
-                <a href=""><img src="../../assets/kepek/jegyeim_ikon.png" alt="Jegyeim" title="Jegyeim"></a>
-                <a href=""><img src="../../assets/kepek/baratok_ikon.png" alt="Ismerősök" title="Ismerősök"></a>
-                <a href="" (click)="LogoutGomb()"><img src="../../assets/kepek/logout.png" alt="" title="Kijelentkezés"></a>
-            </div>
-        </div>
-        <div id="profilkep-container" class="col-4 ml-2">
+
+<div class="">
+    <div class="d-inline-block">
+        <div id="profilkep-container" >
             <img id="profilkep" src="../../assets/kepek/ferfi_kep.jpg" alt=""><!--<img src="" alt={{felhasznalo}}>-->
         </div>
-    </div> 
+    </div>
+    <div id="ikonok"  class="d-inline-block">
+        <a class="d-block" href=""><img src="../../assets/kepek/beallitasok_ikon.png" alt="Beállítások" title="Beállítások"></a>
+        <a class="d-block" href="" (click)="LogoutGomb()"><img src="../../assets/kepek/logout.png" alt="" title="Kijelentkezés"></a>
+    </div>
 </div>
+
