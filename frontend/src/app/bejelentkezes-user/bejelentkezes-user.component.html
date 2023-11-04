@@ -1,24 +1,22 @@
-<div class="d-none d-xl-block" id="bejelentkezes">
-    <div>
-        
-    </div>
-    <div class="container" (keyup.enter)="LoginGomb()">
-        <div class="row">
-            <div class="col"><label for="felhasznalonev">Felhasználónév: </label></div>
-            <div class="col"><input type="text" [(ngModel)]="user.felhasznalonev" name="felhasznalonev"></div>
+<div class="mt-5" id="bejelentkezes" (keyup.enter)="LoginGomb()">
+    <div class="text-center">
+        <h2>Bejelentkezés</h2>
+        <div class="">
+            <p class="login-felirat">Felhasználónév:</p>
+            <input class="m-1" type="text" [(ngModel)]="user.felhasznalonev" name="felhasznalonev">
         </div>
-        <div class="row">
-            <div class="col"><label for="jelszo">Jelszó: </label></div>
-            <div class="col"><input type="password" [(ngModel)]="user.jelszo" name="jelszo"></div>
+        <div class="">
+            <p class="login-felirat">Jelszó:</p>
+            <input class="m-1" type="password" [(ngModel)]="user.jelszo" name="jelszo">
         </div>
-        <div class="row">   
-            <div class="col">
-                <input type="button" value="Bejelentkezés" (click)="LoginGomb()"/>
-            </div>
-            <div class="col">
-                <p>Nincs még fiókja?</p>
-                <a routerLink="/regisztracio">Regisztráljon itt!</a>
-            </div>
+        <div class="">
+            <input class="" routerLink="/kezdooldal" type="button" value="Bejelentkezés" (click)="LoginGomb()"/>
+        </div>
+        <div class="">
+            Nincs még fiókod?<a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
+        </div>
+        <div class="">
+            <a class="" routerLink="/regisztracio">Elfelejtetted a jelszavad?</a>
         </div>
     </div>
 </div>

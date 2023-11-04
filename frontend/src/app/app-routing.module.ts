@@ -7,6 +7,7 @@ import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
+import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 
 const routes: Routes = [
   
@@ -45,6 +46,11 @@ const routes: Routes = [
       path:'szallitasReszletek',
       component:SzallitasReszletekComponent  
     },
+    {
+      title:'Bejelentkezés',
+      path:'bejelentkezes',
+      component:BejelentkezesUserComponent  
+    }
   ];
 
 @NgModule({

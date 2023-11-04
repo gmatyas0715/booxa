@@ -1,5 +1,5 @@
 <header id="fejlec">
-    <div class="row d-flex align-items-center">                                  
+    <div class="d-flex align-items-center">                                  
         <nav class="navbar navbar-expand-md">
                 <a class="d-block d-md-none align-self-center navbar-brand ml-2" href="/kezdooldal">
                     <img src="../../assets/kepek/booxa-atlatszo_ikon.png" alt="">
@@ -38,15 +38,24 @@
         <div class="float-right" id="kosar-adatok">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <a href="/kosar"><img src="../../assets/kepek/kosar_ikon.png" alt=""></a>
+                    <a href="/kosarOsszegzo"><img src="../../assets/kepek/kosar_ikon.png" alt=""></a>
                 </div>
                 <div class="d-none d-xl-block col-10 font-weight-bold">
                     Kosár összesen: xxx Ft
                 </div>
             </div>
         </div>
-        <div class="align-self-center">
-            <app-bejelentkezes-user class="align-self-center" *ngIf=!szerviz.bejelentkezettStatusz></app-bejelentkezes-user>
+        <div class="align-self-center ml-auto mr-3">
+            <div class="" *ngIf=!szerviz.bejelentkezettStatusz>
+                <a class="d-flex" routerLink="/bejelentkezes">
+                    <img class="mr-2" src="../../assets/kepek/login-ikon.png" alt="">
+                    <span class="d-none d-sm-block">Bejelentkezés</span>
+                </a>
+                <a class="d-flex" routerLink="/regisztracio">
+                    <img class="mr-2" src="../../assets/kepek/regisztracio-ikon.png" alt="">
+                    <span class="d-none d-sm-block">Regisztráció</span>
+                </a>
+            </div>
             <app-bejelentkezett-user class="align-self-center" *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
         </div>
     </div>

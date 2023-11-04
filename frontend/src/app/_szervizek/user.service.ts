@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserModell } from '../_modellek/user-modell';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class UserService {
   public bejelentkezettStatusz:boolean = false;
   public bejelentkezettUser:UserModell = new UserModell();
 
-  constructor() {
+  constructor(private router: Router) {
     this.regisztraltUserek.push({
       felhasznaloID:1,
       vezeteknev:"Kovács",
@@ -43,7 +44,8 @@ export class UserService {
     for (const user of this.regisztraltUserek) {
       if (user.felhasznalonev==felhasznalonevInput&&user.jelszo==jelszoInput) {
         this.bejelentkezettStatusz=true;
-        this.bejelentkezettUser = user; // Return the first matching item and exit the loop
+        this.bejelentkezettUser = user;
+        this.NavigalasKezdooldal();
         sessionStorage.setItem("user", this.bejelentkezettUser.felhasznalonev);
       }
     }
@@ -52,7 +54,11 @@ export class UserService {
   Logout(){
     for (const user of this.regisztraltUserek) {
         this.bejelentkezettStatusz=false;
-        sessionStorage.clear()// Return the first matching item and exit the loop
+        sessionStorage.clear();
     }
+  }
+
+  NavigalasKezdooldal(){
+    this.router.navigate(['/kezdooldal']);
   }
 }
