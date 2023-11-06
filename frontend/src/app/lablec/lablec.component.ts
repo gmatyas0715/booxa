@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-lablec',
@@ -6,5 +6,5 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./lablec.component.css']
 })
 export class LablecComponent {
-  footerVisible = false;
+
 }

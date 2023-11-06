@@ -8,6 +8,7 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
+import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 
 const routes: Routes = [
   
@@ -50,6 +51,11 @@ const routes: Routes = [
       title:'Bejelentkezés',
       path:'bejelentkezes',
       component:BejelentkezesUserComponent  
+    },
+    {
+      title:'Elfelejtett jelszó',
+      path:'elfelejtettJelszo',
+      component:ElfelejtettJelszoComponent
     }
   ];
 
