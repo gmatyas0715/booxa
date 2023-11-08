@@ -1,11 +1,9 @@
-<div class="container mt-5 border border-primary">
-    <div class="row border border-primary">
+<div class="container pt-3">
+    <div class="row esemeny-fo-reszletek">
         <div class="col">
-            <table class="border border-primary">
-                <tr>Szombat</tr>
-                <tr>2023 December 31</tr>
-                <tr>17:00 óra</tr>
-            </table>
+            <span class="d-block">2023 December 31.</span>
+            <span class="d-block">Vasárnap </span>
+            <span class="d-block">17:00 óra </span>
         </div>
         <div class="col">
             <h4>Minta előadó</h4>
@@ -16,13 +14,14 @@
         <div class="col">
             <table>
                 <thead>
-                    <td>Szektor adat</td>
-                    <td>Jegyárak</td>
-                    <td>Rendezés</td>
+                    <td class="table-szektor">Szektor adat</td>
+                    <td class="table-szektor">Vásárolható jegyszám</td>
+                    <td colspan="2" class="table-jegyar">Jegyárak</td>
                 </thead>
                 <tr>
-                    <td>Bal szárny</td>
-                    <td>xxxx Ft</td>
+                    <td class="szektor-nev">Bal szárny</td>
+                    <td class="szektor-nev"></td>
+                    <td class="">xxxx Ft</td>
                     <td><button>Kiválasztás</button></td>
                 </tr>
                 <tr>
@@ -42,8 +41,8 @@
                 </tr>
             </table>
         </div>
-        <div class="col">
-            <img src="../../assets/svg_helyszin/location05.svg" alt="">
+        <div class="col helyszin-container">
+            <img class="helyszin-svg" src="../../assets/svg_helyszin/location01ready.svg" alt="">
         </div>
     </div>
 </div>

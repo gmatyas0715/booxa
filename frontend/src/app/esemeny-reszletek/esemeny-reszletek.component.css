@@ -1,0 +1,16 @@
+.esemeny-fo-reszletek{
+    background-color: rgba(47, 100, 100,0.5);
+}
+
+.helyszin-container{
+    justify-content: center;
+    align-items: center;
+}
+
+.helyszin-svg{
+    display: block;
+}
+
+.szektor-nev{
+    
+}

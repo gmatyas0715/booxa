@@ -1,3 +1,20 @@
 #content{
-    padding-top: 80px;
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 70px;
+    background-color: rgb(255, 255, 255);
+}
+
+.teljes{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.teljes-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }

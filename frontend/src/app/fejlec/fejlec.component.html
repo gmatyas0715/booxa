@@ -12,30 +12,30 @@
                    Menü
                 </button>
             </div>
-            <div class="collapse navbar-collapse bg-white" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item mr-2">
                         <a class="nav-link d-flex align-items-center" href="/kezdooldal">
                             <span class="d-block d-md-none d-lg-block">Kezdőoldal</span>
-                            <img class="d-block menu-ikon" src="../../assets/kepek/kezdolap_ikon.jpg" alt="">
+                            <img class="d-block menu-ikon" src="../../assets/kepek/kezdolap-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mr-2">
                         <a class="nav-link d-flex align-items-center" href="/esemenyKereso">
                             <span class="d-block d-md-none d-lg-block">Esemény kereső</span>
-                            <img class="menu-ikon" src="../../assets/kepek/event_ikon.jpg" alt="">
+                            <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item mr-2">
                         <a class="nav-link d-flex align-items-center" href="/kedvencek">
                             <span class="d-block d-md-none d-lg-block">Kedvelt előadók/helyszínek</span>
-                            <img class="menu-ikon" src="../../assets/kepek/kedvencek_ikon.png" alt="">
+                            <img class="menu-ikon" src="../../assets/kepek/kedvencek-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li *ngIf=szerviz.bejelentkezettStatusz>
+                    <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
                         <a class="nav-link d-flex align-items-center" href="">
                             <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
-                            <img class="menu-ikon" src="../../assets/kepek/jegyeim_ikon.png" alt="">
+                            <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
                         </a>
                     </li>
                 </ul>
@@ -44,7 +44,7 @@
         <div class="float-right" id="kosar-adatok">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <a href="/kosarOsszegzo"><img src="../../assets/kepek/kosar_ikon.png" alt=""></a>
+                    <a href="/kosarOsszegzo"><img src="../../assets/kepek/kosar-ikon.svg" alt=""></a>
                 </div>
                 <div class="d-none d-xl-block col-10 font-weight-bold">
                     Kosár összesen: xxx Ft

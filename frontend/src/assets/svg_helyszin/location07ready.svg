@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="158.75mm"
+   height="158.75mm"
+   viewBox="0 0 158.75 158.75"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
@@ -58,123 +58,9 @@
     <rect
        x="198.4252"
        y="113.38582"
-       width="60.074798"
-       height="15.114176"
-       id="rect12" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-6" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="76.709039"
-       height="13.718754"
-       id="rect12-6-3-6-5" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="76.709038"
-       height="13.718754"
-       id="rect12-6-3-6-5-8" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-0" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-6-7" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="76.709038"
-       height="13.718754"
-       id="rect12-6-3-6-5-1" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="76.709038"
-       height="13.718754"
-       id="rect12-6-3-6-5-5" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-8" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6-0" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6-5" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6-9" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-6-6" />
-    <rect
-       x="198.4252"
-       y="113.38582"
        width="60.074799"
        height="15.114176"
        id="rect12-6-3-6-6-1" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6-4" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-6-4-9" />
-    <rect
-       x="198.4252"
-       y="113.38582"
-       width="60.074799"
-       height="15.114176"
-       id="rect12-6-3-6-6-9" />
     <rect
        x="198.4252"
        y="113.38582"
@@ -416,572 +302,571 @@
      id="layer1">
     <path
        style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill"
-       d="m 102.5,167.49999 v -25 l 22.5,-5 h 10 v 40 h -22.5 z"
+       d="m 85.000002,54.999999 v -25 l 22.499998,-5 h 10 v 40 H 95.000002 Z"
        id="path4"
        sodipodi:nodetypes="ccccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,84.409805,137.18715)"
+       transform="matrix(0.16933333,0,0,0.16933333,66.909807,24.687159)"
        id="text12-6-6-8-5"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan3">A1</tspan></text>
+         id="tspan1">A1</tspan></text>
     <rect
-       style="opacity:0.6;fill:#ffccaa;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
        id="rect4"
        width="15.414067"
        height="17.432207"
-       x="137.29297"
-       y="137.5089" />
+       x="119.79297"
+       y="25.008905" />
     <rect
        style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2"
        width="7.5005569"
        height="12.519764"
-       x="154.99948"
-       y="137.48074" />
+       x="137.49948"
+       y="24.980753" />
     <rect
        style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7"
        width="7.5146718"
        height="12.518734"
-       x="154.98534"
-       y="152.5" />
+       x="137.48534"
+       y="40.000008" />
     <rect
        style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
        id="rect4-2-7-4"
        width="7.4879136"
        height="9.9752264"
-       x="154.98103"
-       y="167.53105" />
+       x="137.48103"
+       y="55.031059" />
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2-8"
        width="7.5005569"
        height="12.519764"
-       x="154.99951"
-       y="182.5" />
+       x="137.49951"
+       y="70.000008" />
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7-2"
        width="7.5146718"
        height="12.518734"
-       x="154.98537"
-       y="197.51926" />
+       x="137.48537"
+       y="85.019264" />
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
        id="rect4-2-7-4-8"
        width="7.5189385"
        height="14.949696"
-       x="154.98106"
-       y="212.55031" />
+       x="137.48106"
+       y="100.05032" />
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2-8-0"
        width="7.5005569"
        height="12.519764"
-       x="269.83322"
-       y="-61.646683"
+       x="158.13246"
+       y="-83.679329"
        transform="rotate(70)" />
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7-2-2"
        width="7.5146718"
        height="12.518734"
-       x="269.81906"
-       y="-46.627441"
+       x="158.1183"
+       y="-68.660088"
        transform="rotate(70)" />
     <path
        id="rect4-2-7-4-8-8"
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-       transform="rotate(70)"
-       d="m 269.81476,-31.596395 h 7.51894 l -0.17797,24.4587863 -7.98738,-2.9071713 z"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
+       d="m 104.47298,130.23634 2.57163,7.0655 -23.044607,8.19816 2e-6,-8.5 z"
        sodipodi:nodetypes="ccccc" />
     <rect
-       style="opacity:0.6;fill:#80e5ff;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2-2"
        width="7.5005569"
        height="12.519764"
-       x="-36.500526"
-       y="137.48076"
+       x="-19.000528"
+       y="24.980768"
        transform="scale(-1,1)" />
     <rect
-       style="opacity:0.6;fill:#80e5ff;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7-24"
        width="7.5146718"
        height="12.518734"
-       x="-36.514671"
-       y="152.50002"
+       x="-19.014673"
+       y="40.000023"
        transform="scale(-1,1)" />
     <rect
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
        id="rect4-2-7-4-1"
        width="7.4879136"
        height="9.9752264"
-       x="-36.518467"
-       y="167.50157"
+       x="-19.018469"
+       y="55.001579"
        transform="scale(-1,1)" />
     <rect
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2-8-7"
        width="7.5005569"
        height="12.519764"
-       x="-36.500496"
-       y="182.50002"
+       x="-19.000498"
+       y="70.000023"
        transform="scale(-1,1)" />
     <rect
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7-2-5"
        width="7.5146718"
        height="12.518734"
-       x="-36.514641"
-       y="197.51927"
+       x="-19.014643"
+       y="85.019279"
        transform="scale(-1,1)" />
     <rect
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
        id="rect4-2-7-4-8-7"
        width="7.5189385"
        height="14.949696"
-       x="-36.518944"
-       y="212.55031"
+       x="-19.018946"
+       y="100.05032"
        transform="scale(-1,1)" />
     <rect
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
        id="rect4-2-8-0-2"
        width="7.5005569"
        height="12.519764"
-       x="204.3364"
-       y="118.30447"
+       x="104.60634"
+       y="63.382584"
        transform="matrix(-0.34202014,0.93969262,0.93969262,0.34202014,0,0)" />
     <rect
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
        id="rect4-2-7-2-2-1"
        width="7.5146718"
        height="12.518734"
-       x="204.32224"
-       y="133.32372"
+       x="104.59218"
+       y="78.401833"
        transform="matrix(-0.34202014,0.93969262,0.93969262,0.34202014,0,0)" />
     <path
        id="rect4-2-7-4-8-8-0"
-       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-       d="m 69.527026,242.73634 -2.571629,7.06549 23.044605,8.19816 V 249.5 Z"
+       style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
+       d="m 52.027028,130.23635 -2.571629,7.06549 23.044605,8.19816 v -8.49999 z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,109.52009,126.22014)"
+       transform="matrix(0.16933333,0,0,0.16933333,92.020092,13.720149)"
        id="text12-6-6-8-5-0"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan4">A2</tspan></text>
+         id="tspan2">A2</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.84458,123.93959)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.34458,11.439599)"
        id="text12-6-6-8-5-0-9"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan5">A4</tspan></text>
+         id="tspan3">A4</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2442708,123.48724)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.744269,10.987249)"
        id="text12-6-6-8-5-0-9-20"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-43);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan6">D4</tspan></text>
+         id="tspan4">D4</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2442708,138.56849)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.744269,26.068499)"
        id="text12-6-6-8-5-0-9-71"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan7">D5</tspan></text>
+         id="tspan5">D5</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2017096,152.12643)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.701708,39.626439)"
        id="text12-6-6-8-5-0-9-3"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-1);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan8">D6</tspan></text>
+         id="tspan6">D6</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2442708,168.4664)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.744269,55.966409)"
        id="text12-6-6-8-5-0-9-0"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-11);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan9">C4</tspan></text>
+         id="tspan7">C4</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2442708,183.54765)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.744269,71.047659)"
        id="text12-6-6-8-5-0-9-9"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan10">C5</tspan></text>
+         id="tspan8">C5</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-2.2442708,198.6289)"
+       transform="matrix(0.16933333,0,0,0.16933333,-19.744269,86.128909)"
        id="text12-6-6-8-5-0-9-22"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan11">C6</tspan></text>
+         id="tspan9">C6</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,11.310839,217.92975)"
+       transform="matrix(0.16933333,0,0,0.16933333,-6.189159,105.42976)"
        id="text12-6-6-8-5-0-9-31"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-54);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+         x="198.42578"
+         y="124.33468"
+         id="tspan10">C9</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.16933333,0,0,0.16933333,7.772398,110.99975)"
+       id="text12-6-6-8-5-0-9-5"
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-39);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+         x="198.42578"
+         y="124.33468"
+         id="tspan11">C8</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.16933333,0,0,0.16933333,26.35743,116.91707)"
+       id="text12-6-6-8-5-0-9-1"
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-50);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
          id="tspan12">C9</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,25.272396,223.49974)"
-       id="text12-6-6-8-5-0-9-5"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-39);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
-         x="198.42578"
-         y="124.33468"
-         id="tspan13">C8</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,43.857428,229.41706)"
-       id="text12-6-6-8-5-0-9-1"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-50);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
-         x="198.42578"
-         y="124.33468"
-         id="tspan14">C9</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.80758,138.91518)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.30758,26.415189)"
        id="text12-6-6-8-5-0-9-7"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan16">A5</tspan></text>
+         id="tspan13">A5</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.80758,151.35059)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.30758,38.850599)"
        id="text12-6-6-8-5-0-9-2"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan17">A6</tspan></text>
+         id="tspan14">A6</tspan></text>
     <rect
-       style="opacity:0.6;fill:#ffccaa;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
        id="rect4-4"
        width="15.405934"
        height="19.932968"
-       x="137.29703"
-       y="157.50406" />
+       x="119.79703"
+       y="45.004066" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,109.52009,147.12222)"
+       transform="matrix(0.16933333,0,0,0.16933333,92.020092,34.622229)"
        id="text12-6-6-8-5-6"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-56);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan18">A3</tspan></text>
+         id="tspan15">A3</tspan></text>
     <rect
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
        id="rect4-5"
        width="15.414067"
        height="17.432207"
-       x="137.29297"
-       y="182.49612" />
+       x="119.79297"
+       y="69.996132" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,109.52009,172.25764)"
+       transform="matrix(0.16933333,0,0,0.16933333,92.020092,59.757649)"
        id="text12-6-6-8-5-4"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan19">B2</tspan></text>
+         id="tspan16">B2</tspan></text>
     <path
        style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill"
-       d="m 100,192.49999 v 35 l 35,-10 v -35 h -22.5 z"
+       d="M 82.500002,79.999999 V 115 L 117.5,105 V 69.999999 H 95.000002 Z"
        id="path4-8"
        sodipodi:nodetypes="cccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,82.003422,184.69305)"
+       transform="matrix(0.16933333,0,0,0.16933333,64.503424,72.193059)"
        id="text12-6-6-8-5-3"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan20">B1</tspan></text>
+         id="tspan17">B1</tspan></text>
     <path
        id="rect4-51"
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       d="m 137.5,202.5 h 15 v 24.99999 l -15,-10 z"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+       d="m 120,90.000009 h 15 V 115 l -15,-10 z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,109.52009,192.10139)"
+       transform="matrix(0.16933333,0,0,0.16933333,92.020092,79.601399)"
        id="text12-6-6-8-5-5"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-8);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan21">B3</tspan></text>
+         id="tspan18">B3</tspan></text>
     <path
        id="rect4-51-0"
-       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       d="m 100,229.99999 v 17.5 l 50,-17.5 -15,-10 z"
+       style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+       d="M 82.500002,117.5 V 135 L 132.5,117.5 l -15,-10 z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,87.030505,212.20972)"
+       transform="matrix(0.16933333,0,0,0.16933333,69.530507,99.709729)"
        id="text12-6-6-8-5-37"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-2);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan22">B4</tspan></text>
+         id="tspan19">B4</tspan></text>
     <path
        id="rect4-51-5"
        style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       d="m 54.000002,202.5 h -15 v 24.99999 l 15,-10 z"
+       d="m 36.500004,90.000009 h -15 V 115 l 15,-10 z"
        sodipodi:nodetypes="ccccc" />
     <path
        id="rect4-51-0-5"
        style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       d="m 91.500002,229.99999 v 17.5 l -50,-17.5 15,-10 z"
+       d="M 74.000004,117.5 V 135 l -50,-17.5 15,-10 z"
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,34.378422,212.20972)"
+       transform="matrix(0.16933333,0,0,0.16933333,16.878424,99.709729)"
        id="text12-6-6-8-5-2"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan23">C4</tspan></text>
+         id="tspan20">C4</tspan></text>
     <path
        style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill"
-       d="m 91.500002,192.49999 v 35 l -35,-10 v -35 h 22.5 z"
+       d="M 74.000004,79.999999 V 115 l -35,-10 V 69.999999 h 22.5 z"
        id="path4-8-9"
        sodipodi:nodetypes="cccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,39.405505,184.69305)"
+       transform="matrix(0.16933333,0,0,0.16933333,21.905507,72.193059)"
        id="text12-6-6-8-5-38"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-60);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan24">C1</tspan></text>
+         id="tspan21">C1</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,11.888838,192.10139)"
+       transform="matrix(0.16933333,0,0,0.16933333,-5.61116,79.601399)"
        id="text12-6-6-8-5-1"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan25">C3</tspan></text>
+         id="tspan22">C3</tspan></text>
     <rect
        style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
        id="rect4-5-2"
        width="15.414067"
        height="17.432207"
-       x="-54.207035"
-       y="182.49611"
+       x="-36.707039"
+       y="69.996117"
        transform="scale(-1,1)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,11.888838,172.25764)"
+       transform="matrix(0.16933333,0,0,0.16933333,-5.61116,59.757649)"
        id="text12-6-6-8-5-55"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-69);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan26">C2</tspan></text>
+         id="tspan23">C2</tspan></text>
     <rect
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
        id="rect4-4-0"
        width="15.405934"
        height="19.932968"
-       x="-54.202976"
-       y="157.50404"
+       x="-36.70298"
+       y="45.004051"
        transform="scale(-1,1)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,11.888838,147.12222)"
+       transform="matrix(0.16933333,0,0,0.16933333,-5.61116,34.622229)"
        id="text12-6-6-8-5-372"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-31);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan27">D3</tspan></text>
+         id="tspan24">D3</tspan></text>
     <path
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill"
-       d="m 89.000002,167.49999 v -25 l -22.5,-5 h -10 v 40 h 22.5 z"
+       d="m 71.500004,54.999999 v -25 l -22.5,-5 h -10 v 40 h 22.5 z"
        id="path4-0"
        sodipodi:nodetypes="ccccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,37.024255,137.06805)"
+       transform="matrix(0.16933333,0,0,0.16933333,19.524257,24.568059)"
        id="text12-6-6-8-5-19"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-0);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan28">D1</tspan></text>
+         id="tspan25">D1</tspan></text>
     <rect
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
        id="rect4-3"
        width="15.414067"
        height="17.432207"
-       x="-54.207035"
-       y="137.50888"
+       x="-36.707039"
+       y="25.00889"
        transform="scale(-1,1)" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,11.888838,127.27847)"
+       transform="matrix(0.16933333,0,0,0.16933333,-5.61116,14.778479)"
        id="text12-6-6-8-5-67"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-53);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan29">D2</tspan></text>
+         id="tspan26">D2</tspan></text>
     <rect
        style="fill:#716b67;fill-opacity:0.328467;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;paint-order:stroke markers fill"
        id="rect11-0"
        width="6.4262323"
        height="5.4975958"
-       x="128.24063"
-       y="126.50115" />
+       x="110.74063"
+       y="14.001162" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,96.047861,108.93959)"
+       transform="matrix(0.16933333,0,0,0.16933333,78.547863,-3.5604008)"
        id="text12-6-6-8-9-6"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-7-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan30">Mix</tspan></text>
+         id="tspan27">Mix</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,58.383559,237.62157)"
+       transform="matrix(0.16933333,0,0,0.16933333,40.883561,125.12158)"
        id="text12-6-6-8-98-9"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan31">Bejárat</tspan></text>
+         id="tspan28">Bejárat</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,136.83007,159.56786)"
+       transform="matrix(0.16933333,0,0,0.16933333,108.83517,47.067869)"
        id="text12-6-6-8-98-9-7"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-0);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan32">Bejárat</tspan></text>
+         id="tspan29">Bejárat</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,-19.372345,159.55412)"
+       transform="matrix(0.16933333,0,0,0.16933333,-27.357852,47.054129)"
        id="text12-6-6-8-98-9-1"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-08);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan33">Bejárat</tspan></text>
+         id="tspan30">Bejárat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0689999;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       d="m 95.250259,256.53307 1,-0.004 v -2.5 h 1 l -1.5,-2 -1.5,2 1,-0.0102 z"
+       d="m 77.750261,144.03308 1,-0.004 v -2.5 h 1 l -1.5,-2 -1.5,2 1,-0.0102 z"
        id="path15" />
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0689999;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       d="m 24.481507,179.48679 0.004,1 h 2.5 v 1 l 2,-1.5 -2,-1.5 0.0102,1 z"
+       d="m 16.496,66.986799 0.004,1 H 19 v 1 l 2,-1.5 -2,-1.5 0.0102,1 z"
        id="path15-4" />
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0689999;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       d="m 168.004,180.49999 -0.004,-1 h -2.5 v -1 l -2,1.5 2,1.5 -0.0102,-1 z"
+       d="m 140.0091,67.999999 -0.004,-1 h -2.5 v -1 l -2,1.5 2,1.5 -0.0102,-1 z"
        id="path15-4-0" />
     <text
        xml:space="preserve"
-       transform="matrix(0.10884537,0.12971687,-0.12971687,0.10884537,27.228633,190.44588)"
+       transform="matrix(0.10884537,0.12971687,-0.12971687,0.10884537,9.728635,77.945889)"
        id="text12-6-6-8-98-9-5"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan34">Bejárat</tspan></text>
+         id="tspan31">Bejárat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0689999;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       d="m 36.439038,230.84349 0.645854,0.76346 1.915109,-1.60696 0.642788,0.76603 0.567908,-2.43464 -2.496275,0.13652 0.650601,0.75949 z"
+       d="m 18.93904,118.3435 0.645854,0.76346 1.915109,-1.60696 0.642788,0.76603 0.567908,-2.43464 -2.496275,0.13652 0.650601,0.75949 z"
        id="path15-0" />
     <text
        xml:space="preserve"
-       transform="matrix(0.10884537,-0.12971686,0.12971686,0.10884537,115.88515,248.09025)"
+       transform="matrix(0.10884537,-0.12971686,0.12971686,0.10884537,98.385152,135.59026)"
        id="text12-6-6-8-98-9-2"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan35">Bejárat</tspan></text>
+         id="tspan32">Bejárat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0689999;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       d="m 154.06964,232.0048 0.63973,-0.76861 -1.91511,-1.60697 0.64277,-0.76603 -2.49626,-0.13654 0.56791,2.43467 0.63499,-0.77261 z"
+       d="m 136.56964,119.50481 0.63973,-0.76861 -1.91511,-1.60697 0.64277,-0.76603 -2.49626,-0.13654 0.56791,2.43467 0.63499,-0.77261 z"
        id="path15-8" />
     <path
        id="path1"
        style="opacity:0.6;fill:#b46024;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0733705;paint-order:stroke markers fill"
-       d="M 96.249939 119.51002 A 30.000002 9.999999 0 0 0 66.25022 129.50992 A 30.000002 9.999999 0 0 0 92.49978 139.4287 L 92.49978 169.79945 A 12.5 10.093543 0 0 0 83.580428 179.46656 A 12.5 10.093543 0 0 0 96.08044 189.56001 A 12.5 10.093543 0 0 0 108.58045 179.46656 A 12.5 10.093543 0 0 0 100.0001 169.88472 L 100.0001 139.4287 A 30.000002 9.999999 0 0 0 126.25017 129.50992 A 30.000002 9.999999 0 0 0 96.249939 119.51002 z " />
+       d="m 78.749941,7.0100292 a 30.000002,9.999999 0 0 0 -29.999719,9.9998998 30.000002,9.999999 0 0 0 26.24956,9.91878 v 30.37075 a 12.5,10.093543 0 0 0 -8.919352,9.66711 12.5,10.093543 0 0 0 12.500012,10.09345 12.5,10.093543 0 0 0 12.50001,-10.09345 12.5,10.093543 0 0 0 -8.58035,-9.58184 V 26.928709 A 30.000002,9.999999 0 0 0 108.75017,17.009929 30.000002,9.999999 0 0 0 78.749941,7.0100292 Z" />
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,58.524465,108.53081)"
+       transform="matrix(0.16933333,0,0,0.16933333,41.024467,-3.9691808)"
        id="text12-6-6-7"
        style="white-space:pre;shape-inside:url(#rect12-6-3-8-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan36">Színpad</tspan></text>
+         id="tspan33">Színpad</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,58.612931,158.4153)"
+       transform="matrix(0.16933333,0,0,0.16933333,41.112933,45.915309)"
        id="text12-6-6-7-7"
        style="white-space:pre;shape-inside:url(#rect12-6-3-8-6-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan37">Színpad</tspan></text>
+         id="tspan34">Színpad</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.87831,168.37197)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.37831,55.871979)"
        id="text12-6-6-8-5-0-9-8"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-7);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan38">B4</tspan></text>
+         id="tspan35">B4</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,110.6933,217.63537)"
+       transform="matrix(0.16933333,0,0,0.16933333,93.193302,105.13538)"
        id="text12-6-6-8-5-0-9-8-9"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-7-1);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan39">B7</tspan></text>
+         id="tspan36">B7</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,96.38286,223.31726)"
+       transform="matrix(0.16933333,0,0,0.16933333,78.882862,110.81727)"
        id="text12-6-6-8-5-0-9-8-1"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-7-0);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan40">B8</tspan></text>
+         id="tspan37">B8</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,77.862027,229.28209)"
+       transform="matrix(0.16933333,0,0,0.16933333,60.362029,116.7821)"
        id="text12-6-6-8-5-0-9-8-8"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-7-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan41">B9</tspan></text>
+         id="tspan38">B9</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.84131,183.34756)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.34131,70.847569)"
        id="text12-6-6-8-5-0-9-7-4"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-3-0);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan42">B5</tspan></text>
+         id="tspan39">B5</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.16933333,0,0,0.16933333,123.80758,199.80538)"
+       transform="matrix(0.16933333,0,0,0.16933333,106.30758,87.305389)"
        id="text12-6-6-8-5-0-9-2-2"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-4-5-5-4-1);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan43">B6</tspan></text>
+         id="tspan40">B6</tspan></text>
   </g>
 </svg>
