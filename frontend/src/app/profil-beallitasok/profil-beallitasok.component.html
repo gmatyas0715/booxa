@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Profil adatok</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">Felhasználónév: </div>
+        <div class="col">Mintaszöveg<!--{{this.szerviz.bejelentkezettUser.felhasznalonev}}--></div>
+    </div>
+    <div class="row">
+        <div class="col">Jelszó: </div>
+        <div class="col">
+            <input type="button" routerLink="/profilAdatokSzerkesztese" value="Jelszó megváltoztatása">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">Kép feltöltése</div>
+        <div class="col"><input type="file" accept="image/*"></div>
+    </div>
+    <div class="row">
+        <div class="col">Vezetéknév: </div>
+        <div class="col">Mintaszöveg<!--{{this.szerviz.bejelentkezettUser.vezeteknev}}--></div>
+    </div>
+    <div class="row">
+        <div class="col">Keresztnév: </div>
+        <div class="col">Mintaszöveg<!--{{this.szerviz.bejelentkezettUser.keresztnev}}--></div>
+    </div>
+    <div class="row">
+        <div class="col">Email: </div>
+        <div class="col">Mintaszöveg<!--{{this.szerviz.bejelentkezettUser.email}}--></div>
+    </div>
+    <div class="row">
+        <div class="col">Születési dátum: </div>
+        <div class="col">Mintaszöveg<!--{{this.szerviz.bejelentkezettUser.szuletesiDatum}}--></div>
+    </div>
+
+    <div class="row justify-content-center">
+        <input type="button" routerLink="/profilAdatokSzerkesztese" value="Adatok szerkesztése">
+    </div>
+</div>

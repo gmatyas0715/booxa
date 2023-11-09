@@ -17,18 +17,18 @@ export class UserService {
       vezeteknev:"Kovács",
       keresztnev:"Béla",
       email:"kovbela69@gmail.com",
-      nem:"férfi",
+      nem:"f",
       szuletesiDatum:new Date(1991,9,20),
       felhasznalonev:"kovacsbela",
       jelszo:"kovbela",
-      profilKep:""}
-      );
+      profilKep:""
+  });
     this.regisztraltUserek.push({
       felhasznaloID:2,
       vezeteknev:"Horváth",
       keresztnev:"Mariann",
       email:"horvmariann666@gmail.com",
-      nem:"nő",
+      nem:"n",
       szuletesiDatum:new Date(1978,10,21),
       felhasznalonev:"horvmariann",
       jelszo:"horvimari",

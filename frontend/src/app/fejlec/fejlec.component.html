@@ -26,7 +26,7 @@
                             <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li class="nav-item mr-2">
+                    <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
                         <a class="nav-link d-flex align-items-center" href="/kedvencek">
                             <span class="d-block d-md-none d-lg-block">Kedvelt előadók/helyszínek</span>
                             <img class="menu-ikon" src="../../assets/kepek/kedvencek-ikon.svg" alt="">
@@ -46,7 +46,7 @@
                 <div class="col-2">
                     <a href="/kosarOsszegzo"><img src="../../assets/kepek/kosar-ikon.svg" alt=""></a>
                 </div>
-                <div class="d-none d-xl-block col-10 font-weight-bold">
+                <div class="d-none d-xl-block col-10">
                     Kosár összesen: xxx Ft
                 </div>
             </div>

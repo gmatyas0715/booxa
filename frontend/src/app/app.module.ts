@@ -15,6 +15,8 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
+import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
+import { ProfilBeallitasokSzerkesztesComponent } from './profil-beallitasok-szerkesztes/profil-beallitasok-szerkesztes.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jel
     EsemenyReszletekComponent,
     KedvencekComponent,
     SzallitasReszletekComponent,
-    ElfelejtettJelszoComponent
+    ElfelejtettJelszoComponent,
+    ProfilBeallitasokComponent,
+    ProfilBeallitasokSzerkesztesComponent
   ],
   imports: [
     BrowserModule,

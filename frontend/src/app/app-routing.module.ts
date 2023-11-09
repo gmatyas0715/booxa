@@ -9,9 +9,14 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
+import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
+import { ProfilBeallitasokSzerkesztesComponent } from './profil-beallitasok-szerkesztes/profil-beallitasok-szerkesztes.component';
 
 const routes: Routes = [
-  
+    {
+      path:'',
+      component:KezdooldalComponent
+    },
     {
       title:'Esemény részletek',
       path:'esemenyReszletek',
@@ -56,6 +61,16 @@ const routes: Routes = [
       title:'Elfelejtett jelszó',
       path:'elfelejtettJelszo',
       component:ElfelejtettJelszoComponent
+    },
+    {
+      title:'Profil adatok',
+      path:'profilAdatok',
+      component:ProfilBeallitasokComponent
+    },
+    {
+      title:'Profil adatok szerkesztése',
+      path:'profilAdatokSzerkesztese',
+      component:ProfilBeallitasokSzerkesztesComponent
     }
   ];
 
