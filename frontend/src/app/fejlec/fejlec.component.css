@@ -38,3 +38,8 @@ a{
 .menu-ikon:hover{
     transform: scale(1.2);
 }
+
+.nav-link:hover{
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px 0px  #2e2f70;
+}
