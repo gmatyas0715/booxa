@@ -1,5 +1,5 @@
 .container{
-    max-width: 50%;
+    max-width: 55%;
 }
 
 .profil-adat-container{
@@ -23,9 +23,14 @@
 .profil-adat-blokk{
     border-radius: 10px;
     box-shadow: 1px 1px 2px 2px  #2e2f70;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .profil-adat-teljes{
 
+}
+
+.adat-input{
+    min-width: 200px;
+    width: fit-content;
 }

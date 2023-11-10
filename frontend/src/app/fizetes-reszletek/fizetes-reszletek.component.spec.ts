@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SzallitasReszletekComponent } from './szallitas-reszletek.component';
+import { FizetesReszletekComponent } from './fizetes-reszletek.component';
 
 describe('SzallitasReszletekComponent', () => {
-  let component: SzallitasReszletekComponent;
-  let fixture: ComponentFixture<SzallitasReszletekComponent>;
+  let component: FizetesReszletekComponent;
+  let fixture: ComponentFixture<FizetesReszletekComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SzallitasReszletekComponent]
+      declarations: [FizetesReszletekComponent]
     });
-    fixture = TestBed.createComponent(SzallitasReszletekComponent);
+    fixture = TestBed.createComponent(FizetesReszletekComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

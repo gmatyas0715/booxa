@@ -5,10 +5,10 @@ import { UserService } from '../_szervizek/user.service';
 
 @Component({
   selector: 'app-szallitas-reszletek',
-  templateUrl: './szallitas-reszletek.component.html',
-  styleUrls: ['./szallitas-reszletek.component.css']
+  templateUrl: './fizetes-reszletek.component.html',
+  styleUrls: ['./fizetes-reszletek.component.css']
 })
-export class SzallitasReszletekComponent {
+export class FizetesReszletekComponent {
 
   public regisztraloUser:UserModell = new UserModell();
   public jelenEv:number = new Date().getFullYear();

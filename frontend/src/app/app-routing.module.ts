@@ -6,7 +6,7 @@ import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { KedvencekComponent } from './kedvencek/kedvencek.component';
-import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
+import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
@@ -49,7 +49,7 @@ const routes: Routes = [
     {
       title:'Szállítás részletek',
       path:'szallitasReszletek',
-      component:SzallitasReszletekComponent  
+      component:FizetesReszletekComponent  
     },
     {
       title:'Bejelentkezés',

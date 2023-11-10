@@ -12,19 +12,19 @@
             <hr>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus"><span>Felhasználónév:</span> </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="felhasználónév" [disabled]="!this.belepesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.felhasznalonev}}--></div>
+                <div class="col profil-adat"><input class="adat-input" type="text" [placeholder]="this.szerviz.bejelentkezettUser.felhasznalonev" [disabled]="!this.belepesAdatSzerkesztheto"></div>
             </div>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Jelenlegi jelszó: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="*******" [disabled]="!this.belepesAdatSzerkesztheto"></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="*******" [disabled]="!this.belepesAdatSzerkesztheto"></div>
             </div>
             <div *ngIf="this.belepesAdatSzerkesztheto"  class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Új jelszó: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="új jelszó"></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="új jelszó"></div>
             </div>
             <div *ngIf="this.belepesAdatSzerkesztheto"  class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Új jelszó megismétlése:  </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="új jelszó megismétlése"></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="új jelszó megismétlése"></div>
             </div>
             <div class="row justify-content-center mb-2">
                 <input *ngIf="!this.belepesAdatSzerkesztheto" class="rounded font-weight-bold" type="button" (click)="this.belepesAdatSzerkesztheto=true" value="Szerkesztés">
@@ -37,11 +37,11 @@
         <div class="col">
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Email: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="email" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.szerviz.bejelentkezettUser.email" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
             </div>
             <div *ngIf="this.emailSzerkesztheto" class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Email megismétlése: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="email megismétlése" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="email megismétlése" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
             </div>
             <div class="row justify-content-center mb-2">
                 <input *ngIf="!this.emailSzerkesztheto" class="rounded font-weight-bold" type="button" (click)="this.emailSzerkesztheto=true" value="Szerkesztés">
@@ -58,15 +58,15 @@
             <hr>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Vezetéknév: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="vezetéknév" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.vezeteknev}}--></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.szerviz.bejelentkezettUser.vezeteknev" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.vezeteknev}}--></div>
             </div>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Keresztnév: </div>
-                <div class="col-5 profil-adat"><input type="text" placeholder="keresztnév" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.keresztnev}}--></div>
+                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.szerviz.bejelentkezettUser.keresztnev" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.keresztnev}}--></div>
             </div>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Születési dátum: </div>
-                <div class="col-5 profil-adat"><input type="date" placeholder="rad" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.szuletesiDatum}}--></div>
+                <div class="col profil-adat"><input class="adat-input"  type="date"  [placeholder]="this.szerviz.bejelentkezettUser.szuletesiDatum" onfocus="(this.type='date')" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.szuletesiDatum}}--></div>
             </div>
             <div class="row justify-content-center mb-2">
                 <input *ngIf="!this.szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" type="button" (click)="this.szemelyesAdatSzerkesztheto=true" value="Szerkesztés">
@@ -83,7 +83,7 @@
             <hr>
             <div class="row profil-adat-container">
                 <div class="col profil-adat-tipus">Profilkép feltöltése</div>
-                <div class="col-5 profil-adat"><input class="rounded font-weight-bold" type="file" accept="image/*"></div>
+                <div class="col profil-adat"><input class="rounded font-weight-bold" type="file" accept="image/*"></div>
             </div>
             <div class="row justify-content-center mb-2">
                 <input class="rounded font-weight-bold" type="button" value="Profilkép mentése">
