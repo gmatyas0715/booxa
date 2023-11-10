@@ -8,6 +8,10 @@ import { UserService } from '../_szervizek/user.service';
 })
 export class ProfilBeallitasokComponent {
 
+  public belepesAdatSzerkesztheto:boolean = false
+  public emailSzerkesztheto:boolean = false
+  public szemelyesAdatSzerkesztheto:boolean = false
+
   constructor(public szerviz: UserService) {
   }
 }

@@ -10,7 +10,6 @@ import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-res
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
-import { ProfilBeallitasokSzerkesztesComponent } from './profil-beallitasok-szerkesztes/profil-beallitasok-szerkesztes.component';
 
 const routes: Routes = [
     {
@@ -66,11 +65,6 @@ const routes: Routes = [
       title:'Profil adatok',
       path:'profilAdatok',
       component:ProfilBeallitasokComponent
-    },
-    {
-      title:'Profil adatok szerkesztése',
-      path:'profilAdatokSzerkesztese',
-      component:ProfilBeallitasokSzerkesztesComponent
     }
   ];
 

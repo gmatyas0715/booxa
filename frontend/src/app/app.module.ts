@@ -16,7 +16,6 @@ import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { SzallitasReszletekComponent } from './szallitas-reszletek/szallitas-reszletek.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
-import { ProfilBeallitasokSzerkesztesComponent } from './profil-beallitasok-szerkesztes/profil-beallitasok-szerkesztes.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { ProfilBeallitasokSzerkesztesComponent } from './profil-beallitasok-szer
     KedvencekComponent,
     SzallitasReszletekComponent,
     ElfelejtettJelszoComponent,
-    ProfilBeallitasokComponent,
-    ProfilBeallitasokSzerkesztesComponent
+    ProfilBeallitasokComponent
   ],
   imports: [
     BrowserModule,
