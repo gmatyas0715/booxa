@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="235.46656"
-     inkscape:cy="191.44916"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="270"
+     inkscape:cy="332.5"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
@@ -124,8 +124,8 @@
     <rect
        x="198.4252"
        y="113.38582"
-       width="76.709038"
-       height="13.718754"
+       width="76.737329"
+       height="37.012651"
        id="rect12-6-3-6-5-5-9" />
     <rect
        x="198.4252"
@@ -163,6 +163,30 @@
        width="60.074799"
        height="15.114176"
        id="rect12-6-3-6-8" />
+    <rect
+       x="198.4252"
+       y="113.38582"
+       width="76.737328"
+       height="37.01265"
+       id="rect12-6-3-6-5-5-9-6" />
+    <rect
+       x="198.4252"
+       y="113.38582"
+       width="76.737328"
+       height="37.01265"
+       id="rect12-6-3-6-5-5-9-6-8" />
+    <rect
+       x="198.4252"
+       y="113.38582"
+       width="76.737328"
+       height="37.01265"
+       id="rect12-6-3-6-5-5-9-64" />
+    <rect
+       x="198.4252"
+       y="113.38582"
+       width="76.737328"
+       height="37.01265"
+       id="rect12-6-3-6-5-5-9-6-84" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -171,51 +195,61 @@
     <path
        style="fill:#b46024;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
        d="M 57.688217,12.546373 H 98.952296 V 42.020718 H 57.688214 Z"
-       id="path2"
-       sodipodi:nodetypes="ccccc" />
+       id="szinpad"
+       sodipodi:nodetypes="ccccc"
+       inkscape:label="szinpad" />
     <path
        style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
        d="m 28.213871,36.125852 28.295369,-1.91e-4 -3e-6,5.895057 7.073849,5.894871 -28.885142,24.168819 C 32.574769,67.546567 30.40669,63.030749 28.213871,58.526352 v -22.4005"
-       id="path3"
-       sodipodi:nodetypes="ccccccc" />
+       id="l2_bal_szarny_2"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:label="l2_bal_szarny_2" />
     <path
        style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
        d="m 128.42665,36.125852 -28.29538,0.0014 0,5.893434 -7.073842,5.894871 28.885152,24.168819 c 2.12316,-4.537841 4.29125,-9.053659 6.48407,-13.558056 v -22.4005"
-       id="path3-8"
-       sodipodi:nodetypes="ccccccc" />
+       id="l2_jobb_szarny_2"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:label="l2_jobb_szarny_2" />
     <path
        style="fill:#ecbfab;fill-opacity:0.573123;fill-rule:evenodd;stroke:#000000;stroke-width:0.131506;paint-order:stroke markers fill"
        d="m 28.211983,18.442912 28.298298,0.0092 -0.06734,15.287154 -28.230957,0.02846 V 18.442912"
-       id="path3-9"
-       sodipodi:nodetypes="ccccc" />
+       id="l2_bal_szarny_1"
+       sodipodi:nodetypes="ccccc"
+       inkscape:label="l2_bal_szarny_1" />
     <path
        style="fill:#ecbfab;fill-opacity:0.573123;fill-rule:evenodd;stroke:#000000;stroke-width:0.131506;paint-order:stroke markers fill"
        d="m 100.13127,18.443046 28.29828,0.0063 -0.0673,15.290077 -28.23096,0.02846 V 18.443046"
-       id="path3-9-8"
-       sodipodi:nodetypes="ccccc" />
+       id="l2_jobb_szarny_1"
+       sodipodi:nodetypes="ccccc"
+       inkscape:label="l2_jobb_szarny_1" />
     <path
-       d="m 64.762059,47.915589 -29.669305,24.972944 4.910553,9.928455 23.686466,-0.0067 5.788181,-11.315314 h 17.684604 l 5.89487,11.789738 23.580002,8.9e-5 5.04124,-10.692158 -29.800217,-24.677072 z"
+       d="m 65,47.5 -29.669305,24.972944 4.910553,9.928455 23.686466,-0.0067 5.788181,-11.315314 h 17.684604 l 5.89487,11.789738 23.580001,8.9e-5 5.04124,-10.692158 -29.800216,-24.677072 z"
        style="fill:#ddc1dd;fill-opacity:0.260341;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
-       id="path7"
-       sodipodi:nodetypes="ccccccccccc" />
+       id="l2_center_1"
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:label="l2_center_1" />
     <path
        style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
        d="M 27.034893,18.441242 16.424128,24.33611 v 41.264083 l 11.789737,17.684609 h 10.61077 L 27.034893,58.526352 Z"
-       id="path5" />
+       id="l2_vip_bal"
+       inkscape:label="l2_vip_bal" />
     <path
        style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill"
        d="m 129.60563,18.441242 10.61075,5.894868 v 41.264083 l -11.78973,17.684609 h -10.61077 l 11.78975,-24.75845 z"
-       id="path5-8" />
+       id="l2_vip_jobb"
+       inkscape:label="l2_vip_jobb" />
     <path
        d="M 75.372826,124.46909 V 95.074542 l -9.431792,-2.357949 -2.357948,-8.252816 -35.355396,0.01162 -0.01394,28.283823 5.894869,11.78972 c 9.431792,0 11.964752,-0.0797 41.2639,-0.0797 z"
        style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.162569;paint-order:stroke markers fill"
-       id="path6"
-       sodipodi:nodetypes="ccccccccc" />
+       id="l2_center_2"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="l2_center_2" />
     <path
        d="m 92.950732,84.578946 -2.251252,8.137647 -9.431791,2.357949 V 124.46909 H 110.7423 l 7.07343,-30.573473 9.90275,-0.785935 0.69334,-8.634315 z"
        style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.162569;paint-order:stroke markers fill"
-       id="path4"
-       sodipodi:nodetypes="ccccccccc" />
+       id="l2_center_3"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="l2_center_3" />
     <rect
        style="fill:#716b67;fill-opacity:0.328467;fill-rule:evenodd;stroke:#000000;stroke-width:0.235795;stroke-dasharray:none;paint-order:stroke markers fill"
        id="rect11"
@@ -233,7 +267,7 @@
          id="tspan1">VIP bal</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0,0.39927913,-0.39927912,0,182.81054,-43.632233)"
+       transform="matrix(0,-0.39927913,0.39927912,0,86.172738,135.02412)"
        id="text12-6"
        style="white-space:pre;shape-inside:url(#rect12-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
@@ -246,7 +280,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan3">Szektor 1</tspan></text>
+         id="tspan3">Center 1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.39927912,0,0,0.39927913,-11.496469,-21.95131)"
@@ -262,7 +296,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan5">Szektor 2</tspan></text>
+         id="tspan5">Center 2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.39927912,0,0,0.39927913,5.8683053,54.980558)"
@@ -270,7 +304,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-8);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan6">Szektor 2</tspan></text>
+         id="tspan6">Center 3</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.39927912,0,0,0.39927913,-5.1958707,34.919611)"
@@ -281,48 +315,60 @@
          id="tspan7">Mix</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.39927914,0,0,0.39927914,-49.866658,-22.550972)"
+       transform="matrix(0.39927914,0,0,0.39927914,-46.843156,-25.195278)"
        id="text12-6-6-8-6-2-3"
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan8">B szárny 1&#10;</tspan></text>
+         id="tspan8">Bal &#10;</tspan><tspan
+         x="198.42578"
+         y="139.33468"
+         id="tspan9">szárny 1&#10;</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.39927914,0,0,0.39927914,-49.639045,0.6292885)"
-       id="text12-6-6-8-6-2-3-5"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+       transform="matrix(0.39927914,0,0,0.39927914,-46.983279,-1.4260318)"
+       id="text12-6-6-8-6-2-3-9"
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan9">B szárny 2&#10;</tspan></text>
+         id="tspan10">Bal &#10;</tspan><tspan
+         x="198.42578"
+         y="139.33468"
+         id="tspan11">szárny 2&#10;</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.39927914,0,0,0.39927914,22.638335,-22.600374)"
-       id="text12-6-6-8-6-2-3-2"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-1);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+       transform="matrix(0.39927914,0,0,0.39927914,24.934676,-25.195132)"
+       id="text12-6-6-8-6-2-3-3"
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-64);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan10">J szárny 1&#10;</tspan></text>
+         id="tspan12">Jobb&#10;</tspan><tspan
+         x="198.42578"
+         y="139.33468"
+         id="tspan13">szárny 1&#10;</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.39927914,0,0,0.39927914,23.115431,0.6292885)"
-       id="text12-6-6-8-6-2-3-2-3"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-1-0);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+       transform="matrix(0.39927914,0,0,0.39927914,24.794553,-1.425886)"
+       id="text12-6-6-8-6-2-3-9-7"
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-5-5-9-6-84);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan11">J szárny 2&#10;</tspan></text>
+         id="tspan14">Jobb &#10;</tspan><tspan
+         x="198.42578"
+         y="139.33468"
+         id="tspan15">szárny 2&#10;</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="m 140.21638,66.779168 -10.61075,17.684607 v 5.894868 h 10.61075 z"
        id="path12" />
     <text
        xml:space="preserve"
-       transform="matrix(0,0.39927913,-0.39927912,0,184.72414,0.0703387)"
+       transform="matrix(0.39927913,0,0,0.39927912,51.62412,37.435093)"
        id="text12-6-7"
        style="white-space:pre;shape-inside:url(#rect12-6-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan12">WC</tspan></text>
+         id="tspan16">WC</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="M 16.447713,66.864299 27.058476,84.548905 27.034893,110.40121 16.447709,90.443775 Z"
@@ -330,12 +376,12 @@
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0,-0.39927913,0.39927912,0,-28.084657,167.66531)"
+       transform="matrix(0.39927913,0,0,0.39927912,-61.55336,38.902463)"
        id="text12-6-7-0"
        style="white-space:pre;shape-inside:url(#rect12-6-6-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan13">WC</tspan></text>
+         id="tspan17">WC</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="m 111.92102,125.72785 6.64278,-30.653308 9.94205,-0.762086 1.09978,-2.774832 h 10.61075 v 44.801006 h -28.29536 z"
@@ -343,12 +389,12 @@
        sodipodi:nodetypes="cccccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0,0.39927913,-0.39927912,0,179.88157,39.778418)"
+       transform="matrix(0.39927913,0,0,0.39927912,43.727964,69.215901)"
        id="text12-6-7-5"
        style="white-space:pre;shape-inside:url(#rect12-6-6-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan14">Büfé</tspan></text>
+         id="tspan18">Büfé</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="M 4.6343946,24.33611 V 91.53762 H 15.245159 l 0,-67.198277 -10.6107644,-0.0032"
@@ -356,12 +402,12 @@
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0,0.39927913,-0.39927912,0,58.682578,-12.85682)"
+       transform="matrix(0,-0.39927913,0.39927912,0,-36.75739,166.48502)"
        id="text12-6-7-6"
        style="white-space:pre;shape-inside:url(#rect12-6-6-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan15">Parkolók</tspan></text>
+         id="tspan19">Parkolók</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="M 141.39536,24.336112 V 136.33863 h 10.61077 l 0,-112.000292 -10.61077,-0.0022"
@@ -369,12 +415,12 @@
        sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       transform="matrix(0,0.39927913,-0.39927912,0,195.44356,-12.85682)"
+       transform="matrix(0,-0.39927913,0.39927912,0,100.0036,166.48502)"
        id="text12-6-7-6-4"
        style="white-space:pre;shape-inside:url(#rect12-6-6-4-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan16">Parkolók</tspan></text>
+         id="tspan20">Parkolók</tspan></text>
     <path
        id="rect13"
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;paint-order:stroke markers fill"
@@ -387,7 +433,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan17">Előtér</tspan></text>
+         id="tspan21">Előtér</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.3058656,0.25665171,-0.2566517,0.3058656,-23.409718,43.856167)"
@@ -395,7 +441,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan18">Bejárat</tspan></text>
+         id="tspan22">Bejárat</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.162699;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="m 14.518947,133.89324 1.812054,1.50878 3.789148,-4.51572 1.806292,1.51565 0.321881,-5.88606 -5.740756,1.3391 1.821753,1.49723 z"
