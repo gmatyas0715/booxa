@@ -12,10 +12,10 @@ import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
-import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallita
     BejelentkezettUserComponent,
     BejelentkezesUserComponent,
     EsemenyReszletekComponent,
-    KedvencekComponent,
     FizetesReszletekComponent,
     ElfelejtettJelszoComponent,
     ProfilBeallitasokComponent
@@ -38,7 +37,8 @@ import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallita
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

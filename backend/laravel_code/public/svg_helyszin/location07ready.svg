@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1"
-     inkscape:cx="395"
-     inkscape:cy="214.5"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="275.77165"
+     inkscape:cy="318.55161"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
@@ -889,15 +889,18 @@
     <path
        d="m 14,64.945907 h 2.43086 V 25.062036 H 14 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.123668;paint-order:stroke markers fill"
-       id="path81" />
+       id="l7_d_felso_g"
+       inkscape:label="l7_d_felso_g" />
     <path
        d="M 10.50011,25.062036 H 8.0046554 V 64.945907 H 10.50011 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.123668;paint-order:stroke markers fill"
-       id="path79" />
+       id="l7_d_felso_i"
+       inkscape:label="l7_d_felso_i" />
     <path
        d="M 11.000004,25.062036 V 64.945907 H 13.50011 V 25.062036 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.123668;paint-order:stroke markers fill"
-       id="path78" />
+       id="l7_d_felso_h"
+       inkscape:label="l7_d_felso_h" />
     <path
        d="M 10.50011,114.97231 V 70.066007 H 7.9710657 v 44.906303 z"
        style="opacity:1;fill:#e9afaf;fill-opacity:0.25490198;fill-rule:evenodd;stroke:#000000;stroke-width:0.131552;paint-order:stroke markers fill"
@@ -975,27 +978,33 @@
     <path
        d="m 33.999992,42.441337 h 2.706811 V 25.008809 h -2.706811 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path49" />
+       id="l7_d_also_1_a"
+       inkscape:label="l7_d_also_1_a" />
     <path
        d="m 30.946167,42.441105 h 2.494938 V 25.008577 h -2.494938 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path47" />
+       id="l7_d_also_1_b"
+       inkscape:label="l7_d_also_1_b" />
     <path
        d="M 27.999894,42.441105 H 30.5 V 25.008577 h -2.500106 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path45" />
+       id="l7_d_also_1_c"
+       inkscape:label="l7_d_also_1_c" />
     <path
        d="m 24.946167,42.441105 h 2.494938 V 25.008577 h -2.494938 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path43" />
+       id="l7_d_also_1_d"
+       inkscape:label="l7_d_also_1_d" />
     <path
        d="M 21.549076,25.008577 H 18.83658 v 17.432528 h 2.712496 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path41" />
+       id="l7_d_also_1_f"
+       inkscape:label="l7_d_also_1_f" />
     <path
        d="M 21.995243,25.008577 V 42.441105 H 24.5 V 25.008577 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-       id="path40" />
+       id="l7_d_also_1_e"
+       inkscape:label="l7_d_also_1_e" />
     <text
        xml:space="preserve"
        transform="matrix(0.16933333,0,0,0.16933333,-8.4156759,14.340309)"
@@ -1007,27 +1016,33 @@
     <path
        d="M 27.999894,45.003739 V 64.93689 H 30.5 V 45.003739 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path69" />
+       id="l7_d_also_2_c"
+       inkscape:label="l7_d_also_2_c" />
     <path
        d="M 24.942101,45.003739 V 64.93689 h 2.494938 V 45.003739 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path68" />
+       id="l7_d_also_2_d"
+       inkscape:label="l7_d_also_2_d" />
     <path
        d="m 21.932282,64.93689 h 2.504757 V 45.003739 h -2.504757 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path67" />
+       id="l7_d_also_2_e"
+       inkscape:label="l7_d_also_2_e" />
     <path
        d="M 21.486115,64.93689 V 45.003739 H 18.777753 V 64.93689 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path66" />
+       id="l7_d_also_2_f"
+       inkscape:label="l7_d_also_2_f" />
     <path
        d="M 33.441105,45.003739 H 30.946167 V 64.93689 h 2.494938 z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path51" />
+       id="l7_d_also_2_b"
+       inkscape:label="l7_d_also_2_b" />
     <path
        d="m 33.999992,45.003971 v 19.933151 h 2.703194 V 45.003971 Z"
        style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-       id="path50" />
+       id="l7_d_also_2_a"
+       inkscape:label="l7_d_also_2_a" />
     <text
        xml:space="preserve"
        transform="matrix(0.16933333,0,0,0.16933333,-8.3188329,35.585851)"
@@ -1263,9 +1278,10 @@
        d="m 136.56964,119.50481 0.63973,-0.76861 -1.91511,-1.60697 0.64277,-0.76603 -2.49626,-0.13654 0.56791,2.43467 0.63499,-0.77261 z"
        id="path15-8" />
     <path
-       id="path1"
+       id="szinpad"
        style="opacity:0.6;fill:#b46024;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0733705;paint-order:stroke markers fill"
-       d="m 78.749941,7.0100292 a 30.000002,9.999999 0 0 0 -29.999719,9.9998998 30.000002,9.999999 0 0 0 26.24956,9.91878 v 30.37075 a 12.5,10.093543 0 0 0 -8.919352,9.66711 12.5,10.093543 0 0 0 12.500012,10.09345 12.5,10.093543 0 0 0 12.50001,-10.09345 12.5,10.093543 0 0 0 -8.58035,-9.58184 V 26.928709 A 30.000002,9.999999 0 0 0 108.75017,17.009929 30.000002,9.999999 0 0 0 78.749941,7.0100292 Z" />
+       d="m 78.749941,7.0100292 a 30.000002,9.999999 0 0 0 -29.999719,9.9998998 30.000002,9.999999 0 0 0 26.24956,9.91878 v 30.37075 a 12.5,10.093543 0 0 0 -8.919352,9.66711 12.5,10.093543 0 0 0 12.500012,10.09345 12.5,10.093543 0 0 0 12.50001,-10.09345 12.5,10.093543 0 0 0 -8.58035,-9.58184 V 26.928709 A 30.000002,9.999999 0 0 0 108.75017,17.009929 30.000002,9.999999 0 0 0 78.749941,7.0100292 Z"
+       inkscape:label="szinpad" />
     <text
        xml:space="preserve"
        transform="matrix(0.16933333,0,0,0.16933333,41.024467,-3.9691808)"

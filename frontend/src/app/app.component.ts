@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserService } from './_szervizek/user.service';
 
 @Component({
@@ -6,9 +6,14 @@ import { UserService } from './_szervizek/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(szerviz:UserService){
+export class AppComponent implements OnInit{
+  userInfo: any[] = [];
+  constructor(private szerviz:UserService){
 
   }
-  title = 'frontend';
+  ngOnInit(): void {
+    this.szerviz.userInfo().subscribe((result) => {
+      this.userInfo = result;
+    });
+  }
 }

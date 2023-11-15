@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserModell } from '../_modellek/user-modell';
-import { UserService } from '../_szervizek/user.service';
+import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bejelentkezes-user',
@@ -10,12 +11,20 @@ import { UserService } from '../_szervizek/user.service';
 export class BejelentkezesUserComponent {
   
   public user:UserModell = new UserModell();
+  userBejelentkezesAdatok = {felhasznalonev: this.user.felhasznalonev, jelszo:this.user.jelszo};
 
-  constructor(public szerviz:UserService) {
-    
-  }
+  constructor(private userAzonositas:UserAzonositasService, private router:Router) {}
 
   LoginGomb(){
-    this.szerviz.Login(this.user.felhasznalonev,this.user.jelszo);
+    this.userAzonositas.Login(this.userBejelentkezesAdatok).subscribe(
+      (response)=>{
+        console.log('Sikeres bejelentkezés',response);
+        this.router.navigate(['/kezdooldal']);
+      },
+      (error) => {
+        // Handle login failure
+        console.error('Sikertelen bejelentkezés', error);
+      }
+    )
   }
 }

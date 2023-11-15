@@ -5,7 +5,6 @@ import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.componen
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
-import { KedvencekComponent } from './kedvencek/kedvencek.component';
 import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
@@ -40,11 +39,6 @@ const routes: Routes = [
       title:'Esemény kereső',
       path:'esemenyKereso',
       component:EsemenyKeresoComponent 
-    },
-    {
-      title:'Kedvelt helyszínek/előadók',
-      path:'kedvencek',
-      component:KedvencekComponent  
     },
     {
       title:'Szállítás részletek',

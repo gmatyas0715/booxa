@@ -22,14 +22,8 @@
                     </li>
                     <li class="nav-item mr-2">
                         <a class="nav-link d-flex align-items-center" href="/esemenyKereso">
-                            <span class="d-block d-md-none d-lg-block">Esemény kereső</span>
+                            <span class="d-block d-md-none d-lg-block">Események</span>
                             <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
-                        </a>
-                    </li>
-                    <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
-                        <a class="nav-link d-flex align-items-center" href="/kedvencek">
-                            <span class="d-block d-md-none d-lg-block">Kedvelt előadók/helyszínek</span>
-                            <img class="menu-ikon" src="../../assets/kepek/kedvencek-ikon.svg" alt="">
                         </a>
                     </li>
                     <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
@@ -62,7 +56,7 @@
                     <span class="d-none d-sm-block">Regisztráció</span>
                 </a>
             </div>
-            <app-bejelentkezett-user class="align-self-center" *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
         </div>
+        <app-bejelentkezett-user class="align-self-center" *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
     </div>
 </header>

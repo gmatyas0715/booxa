@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { UserModell } from '../_modellek/user-modell';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   public regisztraltUserek:UserModell[] = [];
   public bejelentkezettStatusz:boolean = false;
   public bejelentkezettUser:UserModell = new UserModell();
 
-  constructor(private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router) {
     this.regisztraltUserek.push({
       felhasznaloID:1,
       vezeteknev:"Kovács",
@@ -47,21 +50,8 @@ export class UserService {
     }
   }
 
-  Login(felhasznalonevInput:string,jelszoInput:string){
-    for (const user of this.regisztraltUserek) {
-      if (user.felhasznalonev==felhasznalonevInput&&user.jelszo==jelszoInput) {
-        this.bejelentkezettStatusz=true;
-        this.bejelentkezettUser = user;
-        this.NavigalasKezdooldal();
-        sessionStorage.setItem("felhasznalonev", this.bejelentkezettUser.felhasznalonev);
-        sessionStorage.setItem("jelszo", this.bejelentkezettUser.jelszo);
-        sessionStorage.setItem("email", this.bejelentkezettUser.email);
-        sessionStorage.setItem("vezeteknev", this.bejelentkezettUser.vezeteknev);
-        sessionStorage.setItem("keresztnev", this.bejelentkezettUser.keresztnev);
-        sessionStorage.setItem("nem", this.bejelentkezettUser.nem);
-        sessionStorage.setItem("szuletesiDatum", this.bejelentkezettUser.szuletesiDatum.toString());
-      }
-    }
+  userInfo(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8000/api/data');
   }
 
   Logout(){
