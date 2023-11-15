@@ -5,4 +5,4 @@ use App\Http\Controllers\UserController;
 
 Route::get('/data',[UserController::class,'getData']);
 Route::post('/login',[UserController::class,'login']);
-Route::post('/userHozzaadas', [UserController::class, 'store']);
+Route::post('/user-hozzaadas', [UserController::class, 'userHozzaadas']);    
