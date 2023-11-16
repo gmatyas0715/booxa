@@ -41,8 +41,8 @@ const routes: Routes = [
       component:EsemenyKeresoComponent 
     },
     {
-      title:'Szállítás részletek',
-      path:'szallitasReszletek',
+      title:'Fizetés részletek',
+      path:'fizetesReszletek',
       component:FizetesReszletekComponent  
     },
     {

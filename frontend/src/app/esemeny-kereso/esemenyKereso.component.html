@@ -1,96 +1,72 @@
 <div class="esemeny-kereso-teljes">
     <div class="container kereses-szures"> 
-       <div class="kereses-szures-content">
+       <div class="kereses-szures-content" [ngClass]="">
             <div class="row">
                 <div class="col">
-                    Keresés
+                    <h4 class="font-weight-bold" >Keresés</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">Előadó:
-                    <input type="text" placeholder="bármilyen előadó">
+            <div class="row mb-4 kereses-block">
+                <div class="col mb-2">
+                    <label class="font-weight-bold d-block" >Előadó:</label>
+                    <input class="" type="text" placeholder="bármilyen előadó">
                 </div>
-                <div class="col">Helyszín:
+                <div class="col mb-2">
+                    <label for="" class="font-weight-bold d-block" >Helyszín:</label>
                     <input type="text" placeholder="bárhol">
                 </div>
                 <div class="col">
-                    <button>Keresés</button>
-                </div>
-                <div class="col">
-                    <label for="esemenyDatum">Esemény időpont</label>
-                    <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum">
-                    <button (click)="datumTorles()">Időpont törlése</button>
+                    <button class="mt-2">Keresés</button>
                 </div>
             </div>
-            <hr>
-            <div class="row">
+            <div class="row mb-4 kereses-block">
+                <div class="col d-block mb-2">
+                    <label class="font-weight-bold" for="esemenyDatum">Esemény időpont</label>
+                    <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum">
+                </div>
                 <div class="col">
-                    <p>Szűrés előadókra</p>
-                    <p>Műfaj</p>
-                    <div class="col">
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="" id="rock">
-                                <label for="rock">rock</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="pop">
-                                <label for="pop">pop</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="electro">
-                                <label for="electro">electro</label>
-                            </li>
-                            <!--<li *ngFor="let mufaj of mufajok"></li>-->
-                        </ul>
-                    </div>
-                    <p>Szűrés helyszínekre</p>
-                    <p>Város</p>
-                    <div class="col">
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="" id="budapest">
-                                <label for="rock">Budapest</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="gyor">
-                                <label for="rock">Győr</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="miskolc">
-                                <label for="rock">Miskolc</label>
-                            </li>
-                            <!--<li *ngFor="let varos of varosok"></li>-->
-                        </ul>
-                    </div>
-                    <p>Férőhely</p>
-                    <div class="col">
-                        <ul>
-                            <li>
-                                <input type="checkbox" name="" id="rock">
-                                <label for="rock">0-500</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="pop">
-                                <label for="rock">500-2000</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" name="" id="electro">
-                                <label for="rock">2000-10000</label>
-                            </li>
-                            <!--<li *ngFor="let ferohely of ferohelyek"></li>-->
-                        </ul>
-                    </div>
+                    <button class="mt-2" (click)="datumTorles()">Időpont törlése</button>
+                </div>
+            </div>
+            <div class="row mb-4 kereses-block">
+                <div class="col">
+                    <span class="font-weight-bold">Szűrés műfajokra</span>
+                    <span class="d-block">Műfaj</span>
+                    <ul>
+                        <li *ngFor="let mufaj of mufajok">
+                            <input class="mr-2" type="checkbox" name="" id={{mufaj}}>
+                            <label class="pt-1" for={{mufaj}}>{{mufaj}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row kereses-block">
+                <div class="col">
+                    <span class="d-block font-weight-bold">Szűrés helyszínekre</span>
+                    <span class="d-block">Város</span>
+                    <ul>
+                        <li *ngFor="let varos of varosok">
+                            <input class="mr-2" type="checkbox" name="" id="{{varos}}">
+                            <label class="pt-1" for="{{varos}}">{{varos}}</label>
+                        </li>
+                    </ul>
+                    <span class="d-block">Férőhely</span>
+                    <ul>
+                        <li *ngFor="let ferohely of ferohelyek">
+                            <input class="mr-2" type="checkbox" name="" id="{{ferohely}}">
+                            <label class="pt-1" for="{{ferohely}}">{{ferohely}}</label>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid ml-5 mt-5 w-100">
         <div class="row">
-            <div class="col-10">
+            <div class="col-lg-9 col-md-6 col-sm-12">
                 <h2>Keresési találatok</h2>
             </div>
-            <div class="col-2">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="row">
                     Találatok rendezése
                 </div>
@@ -102,8 +78,6 @@
                         <option value="">helyszínek (Z-A)</option>
                         <option value="">jegy alapár (csökkenő)</option>
                         <option value="">jegy alapár (növekvő)</option>
-                        <option value="">helyszín értékelés (csökkenő)</option>
-                        <option value="">helyszín értékelés (növekvő)</option>
                     </select>
                 </div>
             </div>

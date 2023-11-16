@@ -9,10 +9,11 @@ div{
 .kereses-szures {
   width: 300px;
   height: 100%;
-  background-color:rgba(152, 168, 189,0.5);
-  padding: 20px;
+  background-color:white;
+  padding: 12px 30px 20px 30px;
   overflow-y: auto;
   margin: 0;
+  box-shadow: 1px 1px 1px 1px rgba(152, 168, 189,0.5);
 }
 
 .kereses-szures ul {
@@ -21,11 +22,9 @@ div{
 }
   
 .kereses-szures ul li {
-  margin-bottom: 10px;
-}
-
-.kereses-szures-content{
-  max-height: 100vh;
+  margin-bottom: 1px;
+  align-items: center;
+  display: flex;
 }
 
 .esemeny-container{
@@ -57,4 +56,14 @@ button:hover{
 
 .esemeny-container:hover{
   box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
+}
+
+.kereses-block{
+  box-shadow: 0px 0px 2px 1px rgba(52, 84, 52,0.5);
+  border-radius: 10px;
+  padding: 5px 0px 12px 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .kereses-szures {width: 100%};
 }

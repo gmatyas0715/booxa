@@ -6,6 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./esemenyKereso.component.css']
 })
 export class EsemenyKeresoComponent {
+  mufajok:string[] = 
+  [
+    "rock",
+    "pop",
+    "folk",
+    "klasszikus",
+    "disco"
+  ];
+
+  ferohelyek:string[] = 
+  [
+    "0-500",
+    "501-2000",
+    "2001-5000",
+    "5001-10000",
+    "10000<"
+  ];
+
+  varosok:string[] = 
+  [
+    "Miskolc",
+    "Budapest",
+    "Pécs",
+    "Szombathely",
+    "Répcelak"
+  ];
+
   mostDatum:Date = new Date();
 
   ev:number = this.mostDatum.getFullYear();
@@ -22,5 +49,4 @@ export class EsemenyKeresoComponent {
   datumTorles(){
     this.esemenyDatum = "";
   }
-
 }
