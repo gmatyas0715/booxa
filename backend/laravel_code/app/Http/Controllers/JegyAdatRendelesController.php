@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\helyszin;
-use App\Http\Requests\StorehelyszinRequest;
-use App\Http\Requests\UpdatehelyszinRequest;
+use App\Models\jegy_adat_rendeles;
+use App\Http\Requests\Storejegy_adat_rendelesRequest;
+use App\Http\Requests\Updatejegy_adat_rendelesRequest;
 
-class HelyszinController extends Controller
+class JegyAdatRendelesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class HelyszinController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorehelyszinRequest $request)
+    public function store(Storejegy_adat_rendelesRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class HelyszinController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(helyszin $helyszin)
+    public function show(jegy_adat_rendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -43,7 +43,7 @@ class HelyszinController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(helyszin $helyszin)
+    public function edit(jegy_adat_rendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -51,7 +51,7 @@ class HelyszinController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatehelyszinRequest $request, helyszin $helyszin)
+    public function update(Updatejegy_adat_rendelesRequest $request, jegy_adat_rendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -59,7 +59,7 @@ class HelyszinController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(helyszin $helyszin)
+    public function destroy(jegy_adat_rendeles $jegy_adat_rendeles)
     {
         //
     }

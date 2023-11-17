@@ -2,55 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\user;
+use App\Http\Requests\StoreuserRequest;
+use App\Http\Requests\UpdateuserRequest;
 
 class UserController extends Controller
 {
-    public function getData()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $data = User::all();
-
-        return response()->json($data);
+        //
     }
 
-    public function login(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $userBejelentkezesiAdatok = $request->only('felhasznalonev', 'jelszo');
-
-        if (Auth::attempt($userBejelentkezesiAdatok)) {
-            $user = Auth::user();
-            $token = $user->createToken('authToken')->accessToken;
-
-            return response()->json(['token' => $token]);
-        }
-
-        return response()->json(['error' => 'Unauthorized'], 401);
+        //
     }
 
-    public function userHozzaadas(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreuserRequest $request)
     {
-        // Validate the request data
-        $request->validate([
-            'vezeteknev' => 'required|max:50',
-            'keresztnev' => 'required|max:50',
-            'email' => 'required|email|max:255',
-            'nem' => 'required|in:f,n',
-            'szuletesi_datum' => 'required|date',
-            'felhasznalonev' => 'required|max:50',
-            'jelszo' => 'required|max:255',
-            'profilkep_eleres' => 'nullable|max:100',
-        ]);
+        //
+    }
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-        
-        // Create a new user
-        $user = User::create($request->all());
+    /**
+     * Display the specified resource.
+     */
+    public function show(user $user)
+    {
+        //
+    }
 
-        // You can also return a response or redirect as needed
-        return response()->json(['message' => 'User added successfully', 'user' => $user]);
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(user $user)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateuserRequest $request, user $user)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(user $user)
+    {
+        //
     }
 }
