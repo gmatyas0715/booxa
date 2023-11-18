@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class eloado_mufaj extends Model
 {
+    protected $table = 'eloado_mufaj';
     use HasFactory;
 }

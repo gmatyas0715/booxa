@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class eloado extends Model
 {
+    protected $fillable = ['attribute2'];
+    protected $table = 'eloado';
     use HasFactory;
 }

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class szektor extends Model
 {
+    protected $table = 'szektor';
     use HasFactory;
 }

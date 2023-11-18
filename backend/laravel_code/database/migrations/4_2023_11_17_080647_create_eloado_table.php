@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nev',50);
             $table->string('leiras',400);
-            $table->string('kep_leiras',100)->nullable();
+            $table->string('kep_eleres',100)->nullable();
             $table->timestamps();
         });
     }

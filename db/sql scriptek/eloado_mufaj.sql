@@ -1,446 +1,428 @@
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (1,29);
+values (1,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (1,39);
+values (1,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (2,25);
+values (2,9);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (3,31);
+values (3,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (4,32);
+values (4,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (5,29);
+values (5,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (5,33);
+values (5,17);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (5,34);
+values (5,18);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (5,39);
+values (5,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (6,26);
+values (6,10);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (6,29);
+values (6,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (6,31);
+values (6,15);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (6,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (6,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (6,47);
+values (7,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (6,48);
+values (7,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (7,38);
+values (8,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (7,42);
+values (8,10);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (7,47);
+values (8,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,31);
+values (8,27);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,47);
+values (9,12);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,26);
+values (9,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,31);
+values (10,10);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,48);
+values (10,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,43);
+values (10,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (8,49);
+values (10,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (9,28);
+values (11,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (9,47);
+values (11,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (9,42);
+values (11,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (10,26);
+values (11,10);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (10,31);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (10,32);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (10,47);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (10,50);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (11,31);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (11,41);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (11,47);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (11,48);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (11,26);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,50);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,48);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,47);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,41);
+values (12,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (12,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,31);
+values (12,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (12,26);
+values (12,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (13,18);
+values (12,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (13,19);
+values (12,10);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (13,42);
+values (13,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (14,18);
+values (13,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (14,19);
+values (13,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (14,42);
+values (14,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (14,51);
+values (14,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (15,19);
+values (14,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (16,19);
+values (14,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (17,19);
+values (15,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (17,18);
+values (16,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (17,42);
+values (17,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (18,18);
+values (17,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (18,42);
+values (17,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (19,18);
+values (18,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (19,31);
+values (18,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (19,42);
+values (19,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (19,48);
+values (19,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (20,18);
+values (19,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (20,42);
+values (19,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (20,48);
+values (20,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (20,49);
+values (20,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (21,18);
+values (20,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (21,51);
+values (21,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (21,31);
+values (21,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (21,43);
+values (21,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (21,52);
+values (21,27);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (22,18);
+values (21,36);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (23,29);
+values (22,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (23,39);
+values (23,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (24,29);
+values (23,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (24,39);
+values (24,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (25,29);
+values (24,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (25,39);
+values (25,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (25,41);
+values (25,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (26,29);
+values (25,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (26,39);
+values (26,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (26,31);
+values (26,23);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (27,35);
+values (26,15);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (27,29);
+values (27,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (27,41);
+values (27,13);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (28,48);
+values (27,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (28,35);
+values (28,32);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (28,41);
+values (28,19);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (28,26);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (29,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (29,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (29,51);
+values (29,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (29,41);
+values (30,3);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (30,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (30,35);
+values (31,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (31,35);
+values (31,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (31,50);
+values (31,37);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (31,53);
+values (32,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (32,35);
+values (32,37);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (32,53);
+values (33,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (33,35);
+values (33,25);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (33,41);
+values (33,38);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (33,54);
+values (34,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (34,35);
+values (34,38);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (34,54);
+values (35,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (35,32);
+values (36,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (36,32);
+values (37,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (37,32);
+values (38,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (38,32);
+values (39,16);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (39,32);
+values (40,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (40,18);
+values (40,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (40,51);
+values (40,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (40,42);
+values (41,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (41,17);
+values (41,11);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (41,27);
+values (41,12);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (41,28);
+values (42,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (42,18);
+values (42,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (42,42);
+values (43,21);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (43,37);
+values (43,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (43,42);
+values (43,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (44,55);
+values (44,39);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (44,42);
+values (44,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (45,28);
+values (45,12);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (45,42);
+values (45,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (45,56);
+values (45,40);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (46,42);
+values (46,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (46,28);
+values (46,12);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (47,28);
+values (47,12);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (47,18);
+values (47,2);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (48,37);
+values (48,21);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (48,42);
+values (48,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (48,56);
+values (48,40);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (49,56);
+values (49,40);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (49,42);
+values (49,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (49,37);
+values (49,21);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (50,38);
+values (50,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (50,42);
+values (50,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (50,17);
+values (50,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (51,38);
+values (51,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (51,42);
+values (51,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (51,17);
+values (51,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (52,57);
+values (52,41);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (52,51);
+values (52,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (52,38);
+values (52,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (53,38);
+values (53,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (53,57);
+values (53,41);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (54,17);
+values (54,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (54,42);
+values (54,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (55,17);
+values (55,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (55,27);
+values (55,11);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (55,42);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (56,58);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (56,17);
+values (55,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (56,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (57,58);
+values (56,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (57,59);
+values (56,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (57,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (58,58);
+values (57,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (58,51);
+values (57,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (58,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
+values (58,35);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (58,26);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (59,26);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (59,37);
+insert into eloado_mufaj (eloado_id,mufaj_id)
 values (59,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (59,53);
+values (60,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (59,58);
+values (60,34);
+insert into eloado_mufaj (eloado_id,mufaj_id)
+values (60,22);
 insert into eloado_mufaj (eloado_id,mufaj_id)
 values (60,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (60,50);
+values (61,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (60,38);
+values (61,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (60,58);
+values (62,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (61,17);
+values (62,42);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (61,58);
+values (63,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (62,17);
+values (63,35);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (62,58);
+values (63,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (63,59);
+values (64,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (63,51);
+values (64,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (63,42);
+values (65,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (64,59);
+values (65,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (64,42);
+values (66,9);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (65,42);
+values (66,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (65,59);
+values (66,6);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (66,25);
+values (67,44);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (66,42);
+values (67,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (66,22);
+values (68,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (67,60);
+values (68,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (67,50);
+values (69,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (68,50);
+values (69,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (68,45);
+values (70,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (69,50);
+values (70,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (69,30);
+values (71,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (70,50);
+values (71,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (70,30);
+values (71,5);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (71,50);
+values (72,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (71,30);
+values (72,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (71,21);
+values (72,28);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (72,50);
+values (73,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (72,30);
+values (73,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (72,44);
+values (73,28);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (73,50);
+values (74,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (73,30);
+values (74,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (73,44);
+values (74,28);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (74,50);
+values (75,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (74,30);
+values (75,28);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (74,44);
+values (76,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (75,50);
+values (76,28);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (75,44);
+values (77,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (76,50);
+values (77,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (76,44);
+values (78,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (77,50);
+values (78,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (77,45);
+values (79,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (78,50);
+values (79,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (78,45);
+values (80,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (79,50);
+values (80,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (79,45);
+values (81,34);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (80,50);
+values (81,29);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (80,45);
+values (81,14);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (81,50);
+values (82,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (81,45);
+values (82,26);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (81,30);
+values (82,18);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (82,17);
+values (83,19);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (82,42);
+values (83,38);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (82,34);
+values (84,1);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (83,35);
+values (84,43);
 insert into eloado_mufaj (eloado_id,mufaj_id)
-values (83,54);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (84,17);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (84,59);
-insert into eloado_mufaj (eloado_id,mufaj_id)
-values (84,42);
+values (84,26);

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class jegy_adat extends Model
 {
+    protected $table = 'jegy_adat';
     use HasFactory;
 }

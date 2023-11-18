@@ -33,6 +33,14 @@ export class EsemenyKeresoComponent {
     "Répcelak"
   ];
 
+  keresesEredmenyek:string[] = [
+    'Tankcsapda',
+    'System of a down',
+    'Ariana Grande',
+    'Snarky Puppy',
+    '30Y'
+  ]; 
+
   mostDatum:Date = new Date();
 
   ev:number = this.mostDatum.getFullYear();

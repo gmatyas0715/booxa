@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./kosar-osszegzo.component.css']
 })
 export class KosarOsszegzoComponent {
-  /*let kosarElemek: JegyAdatok[] = []; */
-
-
+  kosarElemek: string[] = ['Tankcsapda','System of a down','Ariana Grande','Snarky Puppy','30Y']; 
+  
 }

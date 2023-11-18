@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('mufaj_id');
             $table->foreign('eloado_id')->references('id')->on('eloado');
             $table->foreign('mufaj_id')->references('id')->on('mufaj');
+            $table->timestamps();
         }
     );
     }

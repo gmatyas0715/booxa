@@ -107,7 +107,7 @@
         <div class="row mb-3" *ngIf="regisztracioForm.get('adatvedelmi')?.hasError('required') && regisztracioForm.get('adatvedelmi')?.touched">
             <span class="hibauzenet">Az adatvédelmi tájékoztató elfogadása kötelező!</span>
         </div>
-        <input type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg" value="Regisztrálok">
+        <input type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg" value="Megrendelés elküldése: {{10000}}Ft">
     </form>
     <input class="float-right p-1" routerLink="/kosarOsszegzo" type="button" value="Vissza a kosárhoz">
 </div>

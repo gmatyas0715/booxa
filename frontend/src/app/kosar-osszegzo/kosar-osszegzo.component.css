@@ -9,11 +9,13 @@ li{
 .esemeny-kep{
     margin: 5px;
     height: 140px;
-    box-shadow: 1px 1px 4px 1px rgb(1 12 128)
+    box-shadow: 1px 1px 4px 1px rgb(1 12 128);
+    border-radius: 10px;
 }
 
 .jegy-adat-container{
     box-shadow: 1px 1px 4px 1px rgb(1 12 128);
+    border-radius: 10px;
     font-size: 110%;
 }
 

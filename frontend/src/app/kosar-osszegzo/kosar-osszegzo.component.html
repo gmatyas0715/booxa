@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <h2>Kosár tartalma</h2>
     <hr>
-    <div class="row p-3 jegy-adat-container mb-5">
+    <div  *ngFor="let kosarElem of kosarElemek" class="row p-3 jegy-adat-container mb-5">
         <div class="col-5">
             <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
             <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
@@ -9,25 +9,26 @@
         <div class="col-3">
             <ul>
                 <li>Minta helyszín </li>
-                <li>Minta előadó</li>
+                <li>{{kosarElem}}</li>
             </ul>
         </div>
         <div class="col-4">
             <div class="row">
-                <div class="col-10"><ul>
-                    <li>Kedvezmény: xxx % </li>
-                    <li>Jegyár (kedvezménnyel): xxx Ft</li>
-                    <br>
-                    <li>
-                        <p>Jegy darabszám:</p>
-                        <div>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="-">
-                            <p class="float-left ml-2 mr-2 p-1">xx</p>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="+">
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                <div class="col-10">
+                    <ul>
+                        <li>Kedvezmény: xxx % </li>
+                        <li>Jegyár (kedvezménnyel): xxx Ft</li>
+                        <br>
+                        <li>
+                            <p>Jegy darabszám:</p>
+                            <div>
+                                <input type="button" class="float-left btn btn-primary jegy-darab" value="-">
+                                <p class="float-left ml-2 mr-2 p-1">xx</p>
+                                <input type="button" class="float-left btn btn-primary jegy-darab" value="+">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col-2">
                     <img class="float-right kuka" src="../../assets/kepek/kuka_ikon.png" alt="">
                 </div>
@@ -37,91 +38,7 @@
                 Tétel ár összesen: xxxx Ft
             </div>
         </div>
-    <!--<ul *ngFor="let item of kosarElemek">
-        <li></li>
-    </ul>-->
     </div>
-    <div class="row p-3 jegy-adat-container mb-5">
-        <div class="col-5">
-            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-        </div>
-        <div class="col-3">
-            <ul>
-                <li>Minta helyszín </li>
-                <li>Minta előadó</li>
-            </ul>
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-10"><ul>
-                    <li>Kedvezmény: xxx % </li>
-                    <li>Jegyár (kedvezménnyel): xxx Ft</li>
-                    <br>
-                    <li>
-                        <p>Jegy darabszám:</p>
-                        <div>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="-">
-                            <p class="float-left ml-2 mr-2 p-1">xx</p>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="+">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-                <div class="col-2">
-                    <img class="float-right kuka" src="../../assets/kepek/kuka_ikon.png" alt="">
-                </div>
-            </div>
-            <hr>
-            <div class="row float-right mr-3 font-weight-bold">
-                Tétel ár összesen: xxxx Ft
-            </div>
-        </div>
-    <!--<ul *ngFor="let item of kosarElemek">
-        <li></li>
-    </ul>-->
-    </div>
-    <div class="row p-3 jegy-adat-container mb-5">
-        <div class="col-5">
-            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-        </div>
-        <div class="col-3">
-            <ul>
-                <li>Minta helyszín </li>
-                <li>Minta előadó</li>
-            </ul>
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-10"><ul>
-                    <li>Kedvezmény: xxx % </li>
-                    <li>Jegyár (kedvezménnyel): xxx Ft</li>
-                    <br>
-                    <li>
-                        <p>Jegy darabszám:</p>
-                        <div class>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="-">
-                            <p class="float-left ml-2 mr-2 p-1">xx</p>
-                            <input type="button" class="float-left btn btn-primary jegy-darab" value="+">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-                <div class="col-2">
-                    <img class="float-right kuka" src="../../assets/kepek/kuka_ikon.png" alt="">
-                </div>
-            </div>
-            <hr>
-            <div class="row float-right mr-3 font-weight-bold">
-                Tétel ár összesen: xxxx Ft
-            </div>
-        </div>
-    <!--<ul *ngFor="let item of kosarElemek">
-        <li></li>
-    </ul>-->
-    </div>
-    
     <hr>
     <h4 class="float-right font-weight-bold">Kosár összesen: xxx Ft</h4>
     <br>

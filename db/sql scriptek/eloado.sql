@@ -1,4 +1,10 @@
-﻿insert into eloado (id,nev,leiras,kep_eleres) values (1,'Krúbi','Horváth Krisztián, művésznevén Krúbi háromszoros Fonogram-díjas magyar énekes, rapper, zeneszerző, dalszövegíró.','egyuttes_kepek/krubi.jpg');
+﻿CREATE TABLE eloado(
+      id          id,
+      nev text,
+      leiras text,
+      kep_eleres text);
+
+insert into eloado (id,nev,leiras,kep_eleres) values (1,'Krúbi','Horváth Krisztián, művésznevén Krúbi háromszoros Fonogram-díjas magyar énekes, rapper, zeneszerző, dalszövegíró.','egyuttes_kepek/krubi.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (2,'Electric Callboy','Az Electric Callboy német metalegyüttes. 2010-ben alakultak Castrop-Rauxel-ben. Zenéjüket az electronicore, metalcore, comedy rock, post-hardcore, melodic metalcore, dubstep, electro, és EDM műfajokba sorolják.','egyuttes_kepek/electric_callboy.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (3,'Esperanza Spalding','Esperanza Emily Spalding négyszeres Grammy-díjas zeneszerző, basszusgitáros, nagybőgős és énekes. Fellépett Oscar- és Nobel-díj gálán, többször a Fehér Házban is. A mai dzsesszzene egyik legkiemelkedőbb alakja.','egyuttes_kepek/esperanza_spalding.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (4,'Hans Zimmer','Hans Florian Zimmer Oscar-, Grammy- és Golden Globe-díjas német zeneszerző, legismertebb művei filmzenék.','egyuttes_kepek/hans_zimmer.jpg');

@@ -83,10 +83,8 @@
             </div>
         </div>
         <hr>
-        <!--<div *ngFor="let talalat of keresesTalalatok">
-        </div>-->
        <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div *ngFor="let keresesEredmeny of keresesEredmenyek" class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
                 <div class="esemeny-container">
                     <div class="row">
                         <div class="col p-1">
@@ -98,7 +96,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            Minta előadó
+                            {{keresesEredmeny}}
                         </div>
                         <div class="col text-center">
                             Minta helyszín
@@ -121,218 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-                        </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            Minta előadó
-                        </div>
-                        <div class="col text-center">
-                            Minta helyszín
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                10000 Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </div>   
     </div>
 </div>
 

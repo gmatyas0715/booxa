@@ -1,3 +1,10 @@
+CREATE TABLE cim(
+      id          id,
+      iranyitoszam text null,
+      telepules text,
+      kozterulet     text,
+      hazszam    integer);
+
 insert into cim (id, iranyitoszam, telepules, kozterulet, hazszam) values (1, null, 'Shensuo', 'Kennedy', 51);
 insert into cim (id, iranyitoszam, telepules, kozterulet, hazszam) values (2, '353210', 'Novotitarovskaya', 'Toban', 42);
 insert into cim (id, iranyitoszam, telepules, kozterulet, hazszam) values (3, '249018', 'Bol’shoy Kamen’', 'Randy', 130);
