@@ -14,7 +14,8 @@ class EloadoController extends Controller
      */
     public function index()
     {
-        //
+        $eloadok = Eloado::all();
+        return response()->json($eloadok);
     }
 
     /**
@@ -28,7 +29,7 @@ class EloadoController extends Controller
         $ujEloado->kep_eleres = $request->input('kep_eleres');
         $ujEloado->save();
 
-        return response()->json(['üzenet' => $ujEloado->nev.' sikeresen létrehozva!']);
+        return response()->json(['üzenet' => $ujEloado->nev.' nevű előadó sikeresen létrehozva!']);
     }
 
     /**
@@ -44,7 +45,11 @@ class EloadoController extends Controller
      */
     public function show(eloado $eloado)
     {
-        //
+        if(!$eloado){
+            return response()->json(['üzenet'=>'Az adott id-val rendelkező előadó nem létezik']);
+        }
+
+        return response()->json($eloado);
     }
 
     /**
@@ -96,5 +101,17 @@ class EloadoController extends Controller
     public function destroy(eloado $eloado)
     {
         //
+    }
+
+    public function destroyEloado($id)
+    {
+        $eloadoTorol = Eloado::find($id);
+
+        if(!$eloadoTorol){
+            return response()->json(['üzenet'=>'A megadott id-val rendelkező előadó nem található!']);
+        }
+
+        $eloadoTorol->delete();
+        return response()->json(['üzenet'=>$eloadoTorol->nev.' nevű előadó sikeresen törölve!']);
     }
 }

@@ -73,7 +73,7 @@ insert into eloado (id,nev,leiras,kep_eleres) values (66,'Pendulum','Az ausztrá
 insert into eloado (id,nev,leiras,kep_eleres) values (67,'Enter Shikari','Az angol zenekar, amely a post-hardcore, post-punk és elektronikus elemeket keveri a zenéjében.','egyuttes_kepek/enter_shikari.webp');
 insert into eloado (id,nev,leiras,kep_eleres) values (68,'Infected Mushroom','Az izraeli psytrance és elektronikus rock zenekar, amely a pszichedelikus és progresszív elemeket is belefoglalja a zenéjébe.','egyuttes_kepek/infected_mushroom.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (69,'David Guetta','Az egyik legismertebb house és elektronikus zenei producerek közé tartozik, sok slágerrel, például a "Titanium" és a "When Love Takes Over."','egyuttes_kepek/david_guetta.jpg');
-insert into eloado (id,nev,leiras,kep_eleres) values (70,'Martin Garrix',' fiatal holland DJ és producer, aki a "Animals" című slágerével vált ismertté.','egyuttes_kepek/martin_garrix.jpg');
+insert into eloado (id,nev,leiras,kep_eleres) values (70,'Martin Garrix','Martin Garrix, fiatal holland DJ és producer, aki a "Animals" című slágerével vált ismertté.','egyuttes_kepek/martin_garrix.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (71,'Nora En Pure','A svájci DJ és producer, aki a deep house és indie dance stílusokban alkot.','egyuttes_kepek/nore_en_pure.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (72,'Peggy Gou','A dél-koreai DJ és producer, aki a house és techno műfajában tevékenykedik.','egyuttes_kepek/peggy_gou.jpg');
 insert into eloado (id,nev,leiras,kep_eleres) values (73,'Carl Cox','A brit DJ és producer, aki az elektronikus zene egyik ikonja, és sok éve vezeti a techno szcéna élén.','egyuttes_kepek/carl_cox.avif');

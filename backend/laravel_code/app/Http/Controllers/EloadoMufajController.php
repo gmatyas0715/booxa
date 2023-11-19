@@ -14,7 +14,8 @@ class EloadoMufajController extends Controller
      */
     public function index()
     {
-        //
+        $eloado_mufaj = Eloado_mufaj::all();
+        return response()->json($eloado_mufaj);
     }
 
     /**
@@ -43,7 +44,11 @@ class EloadoMufajController extends Controller
      */
     public function show(eloado_mufaj $eloado_mufaj)
     {
-        //
+        if(!$eloado_mufaj){
+            return response()->json(['üzenet'=>'Az adott id-val rendelkező előadó-műfaj kapcsolat nem létezik']);
+        }
+
+        return response()->json($eloado_mufaj);
     }
 
     /**
