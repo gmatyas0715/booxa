@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kontakt_informacio',50);
             $table->boolean('szabadteri')->default(0);
             $table->string('helyszin_kep_eleres',100);
+            $table->foreign('cim_id')->references('id')->on('cim');
             $table->timestamps();
         });
     }

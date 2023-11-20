@@ -3,6 +3,7 @@
 use App\Http\Controllers\EloadoController;
 use App\Http\Controllers\EloadoMufajController;
 use App\Http\Controllers\MufajController;
+use App\Http\Controllers\HelyszinController;
 
 Route::get('/eloadok',[EloadoController::class,'index']);
 Route::get('/eloadok/{eloado}',[EloadoController::class,'show']);
@@ -23,3 +24,9 @@ Route::get('/mufajok/{mufaj}',[MufajController::class,'show']);
 Route::post('/create-mufaj',[MufajController::class,'create']);
 Route::put('/update-mufaj/{id}',[MufajController::class,'updateMufaj']);
 Route::delete('/delete-mufaj/{id}',[MufajController::class,'destroyMufaj']);
+
+Route::get('/helyszinek',[HelyszinController::class,'index']);
+Route::get('/helyszinek/{helyszin}',[HelyszinController::class,'show']);
+Route::post('/create-helyszin',[HelyszinController::class,'create']);
+Route::put('/update-helyszin/{id}',[HelyszinController::class,'updateHelyszin']);
+Route::delete('/delete-helyszin/{id}',[HelyszinController::class,'destroyHelyszin']);

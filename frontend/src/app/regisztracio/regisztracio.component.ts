@@ -13,7 +13,7 @@ export class RegisztracioComponent {
 
   public regisztraloUser:UserModell = new UserModell();
   public jelenEv:number = new Date().getFullYear();
-  public maxEvDatum:string = this.jelenEv-12+"-01-01"
+  public maxEvDatum:string = this.jelenEv-18+"-01-01"
   public minEvDatum:string = this.jelenEv-130+"-01-01"
   regisztracioForm: FormGroup;
 

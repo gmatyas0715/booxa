@@ -5,6 +5,5 @@ export class HelyszinModell {
     public kapacitas:number = 0;
     public kontaktInformacio:string = "";
     public helyszinKep:string = "";
-    public ertekeles:number = 0;
     public szabadteri:boolean = false;
 }
