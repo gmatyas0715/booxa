@@ -13,7 +13,8 @@ class CimController extends Controller
      */
     public function index()
     {
-        //
+        $cimek = Cim::all();
+        return response()->json($cimek);
     }
 
     /**
@@ -29,7 +30,14 @@ class CimController extends Controller
      */
     public function store(StorecimRequest $request)
     {
-        //
+        $ujCim = new Cim();
+        $ujCim->iranyitoszam = $request->input('iranyitoszam');
+        $ujCim->telepules = $request->input('telepules');
+        $ujCim->kozterulet = $request->input('kozterulet');
+        $ujCim->hazszam = $request->input('hazszam');
+        $ujCim->save();
+
+        return response()->json(['üzenet' => $ujCim->id.' azonosítójú cím sikeresen létrehozva!']);
     }
 
     /**
@@ -37,7 +45,7 @@ class CimController extends Controller
      */
     public function show(cim $cim)
     {
-        //
+        return response()->json($cim);
     }
 
     /**
@@ -53,7 +61,13 @@ class CimController extends Controller
      */
     public function update(UpdatecimRequest $request, cim $cim)
     {
-        //
+        $cim->iranyitoszam = $request->input('iranyitoszam');
+        $cim->telepules = $request->input('telepules');
+        $cim->kozterulet = $request->input('kozterulet');
+        $cim->hazszam = $request->input('hazszam');
+        $cim->save();
+
+        return response()->json(['üzenet' => $cim->id.' azonosítójú cím sikeresen módosítva!']);
     }
 
     /**
@@ -61,6 +75,8 @@ class CimController extends Controller
      */
     public function destroy(cim $cim)
     {
-        //
+        $cim->delete();
+        return response()->json(['üzenet'=>$cim->id.' azonosítójú cím sikeresen törölve!']);
     }
 }
+

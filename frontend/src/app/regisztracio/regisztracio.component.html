@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12 col-xl-6">
                 <div class="row">
-                    <label for="vezeteknev">Vezetéknév:</label>
+                    <label class="mandatory" for="vezeteknev" title="Kötelező megadni!">Vezetéknév <sup>*</sup>:</label>
                 </div>
                 <div class="row">
                     <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev" placeholder="Vezetéknév">
@@ -123,6 +123,6 @@
         <div class="row mb-3" *ngIf="regisztracioForm.get('adatvedelmi')?.hasError('required') && regisztracioForm.get('adatvedelmi')?.touched">
             <span class="hibauzenet">Az adatvédelmi tájékoztató elfogadása kötelező!</span>
         </div>
-        <input type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg" value="Regisztrálok">
+        <input *ngIf="!validFormEllenorzes()" type="submit" id="gomb-reg" value="Regisztrálok">
     </form>
 </div>

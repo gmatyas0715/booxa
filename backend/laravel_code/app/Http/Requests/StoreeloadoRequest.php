@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
 
 class StoreeloadoRequest extends FormRequest
 {
@@ -11,7 +14,7 @@ class StoreeloadoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +25,19 @@ class StoreeloadoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nev'=>'required|string',
+            'leiras'=>'required|string|max:400',
+            'kep_eleres'=>'required|string'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        $response = new JsonResponse([
+            'message' => 'Validation failed',
+            'errors' => $validator->errors(),
+        ], 422);
+
+        throw new HttpResponseException($response);
     }
 }

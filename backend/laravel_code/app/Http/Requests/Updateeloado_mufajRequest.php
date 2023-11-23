@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
 
 class Updateeloado_mufajRequest extends FormRequest
 {
@@ -11,7 +14,7 @@ class Updateeloado_mufajRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +25,18 @@ class Updateeloado_mufajRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'eloado_id'=>'required|integer',
+            'mufaj_id'=>'required|integer'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        $response = new JsonResponse([
+            'message' => 'Validation failed',
+            'errors' => $validator->errors(),
+        ], 422);
+
+        throw new HttpResponseException($response);
     }
 }

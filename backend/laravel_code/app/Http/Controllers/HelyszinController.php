@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\helyszin;
 use App\Http\Requests\StorehelyszinRequest;
 use App\Http\Requests\UpdatehelyszinRequest;
-use Illuminate\Http\Request;
 
 class HelyszinController extends Controller
 {
@@ -21,7 +20,15 @@ class HelyszinController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
+    {
+
+    }   
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StorehelyszinRequest $request)
     {
         $ujHelyszin = new Helyszin();
         $ujHelyszin->id = $request->input('id');
@@ -32,29 +39,16 @@ class HelyszinController extends Controller
         $ujHelyszin->szabadteri = $request->input('szabadteri');
         $ujHelyszin->helyszin_kep_eleres = $request->input('helyszin_kep_eleres');
 
-
         $ujHelyszin->save();
-        return response()->json(['üzenet'=>'Új helyszín létrehozva']);
-    }   
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorehelyszinRequest $request)
-    {
-        //
+        return response()->json(['üzenet'=>$ujHelyszin->id.' azonosítóval új helyszín lett létrehozva!']);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(helyszin $helyszin)
     {
-        if(!helyszin::find($id)){
-            return response()->json(['üzenet'=>'Az adott id-val rendelkező helyszín nem létezik']);
-        }
-
-        return response()->json(helyszin::find($id));
+        return response()->json($helyszin);
     }
 
     /**
@@ -70,32 +64,15 @@ class HelyszinController extends Controller
      */
     public function update(UpdatehelyszinRequest $request, helyszin $helyszin)
     {
-        //
-    }
+        $helyszin->id = $request->input('id');
+        $helyszin->nev = $request->input('nev');
+        $helyszin->cim_id = $request->input('cim_id');
+        $helyszin->kapacitas = $request->input('kapacitas');
+        $helyszin->kontaktInformacio = $request->input('kontakt_informacio');
+        $helyszin->szabadteri = $request->input('szabadteri');
+        $helyszin->helyszinKepEleres = $request->input('helyszin_kep_eleres');
 
-    public function updateHelyszin(Request $request, $id)
-    {
-        if(!helyszin::find($id)){
-            return response()->json(['üzenet'=>'A megadott id-val rendelkező helyszín nem létezik!']);
-        }
-        $id = $request->input('id');
-        $nev = $request->input('nev');
-        $cim_id = $request->input('cim_id');
-        $kapacitas = $request->input('kapacitas');
-        $kontaktInformacio = $request->input('kontakt_informacio');
-        $szabadteri = $request->input('szabadteri');
-        $helyszinKepEleres = $request->input('helyszin_kep_eleres');
-        helyszin::where('id',$id)->update([
-            'id'=>$id,
-            'nev'=>$nev,
-            'cim_id'=>$cim_id,
-            'kapacitas'=>$kapacitas,
-            'kontakt_informacio'=>$kontaktInformacio,
-            'szabadteri'=> $szabadteri,
-            'helyszin_kep_eleres'=>$helyszinKepEleres
-        ]);
-
-        return response()->json(['üzenet'=>'Helyszín sikeresen frissítve!']);
+        return response()->json(['üzenet'=>$helyszin->id.' azonosítójú helyszín sikeresen frissítve!']);
     }
 
     /**
@@ -103,18 +80,7 @@ class HelyszinController extends Controller
      */
     public function destroy(helyszin $helyszin)
     {
-        //
-    }
-
-    public function destroyHelyszin($id)
-    {
-        $helyszinTorol = Helyszin::find($id);
-
-        if(!$helyszinTorol){
-            return response()->json(['üzenet'=>'A megadott id-val rendelkező helyszín nem található!']);
-        }
-
-        $helyszinTorol->delete();
-        return response()->json(['üzenet'=>'A(z) '.$helyszinTorol->nev.' nevű helyszín sikeresen törölve!']);
+        $helyszin->delete();
+        return response()->json(['üzenet'=>$helyszin->id.' azonosítójú helyszín sikeresen törölve!']);
     }
 }

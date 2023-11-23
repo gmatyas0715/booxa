@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\user;
 use App\Http\Requests\StoreuserRequest;
 use App\Http\Requests\UpdateuserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -13,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::all();
+        return response()->json($user);
     }
 
     /**
@@ -21,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -29,7 +31,17 @@ class UserController extends Controller
      */
     public function store(StoreuserRequest $request)
     {
-        //
+        $ujUser = new User();
+        $ujUser->vezeteknev = $request->input('vezeteknev');
+        $ujUser->keresztnev = $request->input('keresztnev');
+        $ujUser->email = $request->input('email');
+        $ujUser->nem = $request->input('nem');
+        $ujUser->szuletesi_datum = $request->input('szuletesi_datum');
+        $ujUser->felhasznalonev = $request->input('felhasznalonev');
+        $ujUser->jelszo = Hash::make($request->input('jelszo'));
+
+        $ujUser->save();
+        return response()->json(['üzenet'=>$ujUser->id.' azonosítóval új felhasználó lett létrehozva!']);
     }
 
     /**
@@ -37,7 +49,7 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        //
+        return response()->json($user);
     }
 
     /**
@@ -53,7 +65,15 @@ class UserController extends Controller
      */
     public function update(UpdateuserRequest $request, user $user)
     {
-        //
+        $user->vezeteknev = $request->input('vezeteknev');
+        $user->keresztnev = $request->input('keresztnev');
+        $user->email = $request->input('email');
+        $user->nem = $request->input('nem');
+        $user->szuletesi_datum = $request->input('szuletesi_datum');
+        $user->felhasznalonev = $request->input('felhasznalonev');
+        $user->jelszo = Hash::make($request->input('jelszo'));
+
+        return response()->json(['üzenet'=>$user->id.' azonosítójú felhasználó sikeresen frissítve!']);
     }
 
     /**
@@ -61,6 +81,7 @@ class UserController extends Controller
      */
     public function destroy(user $user)
     {
-        //
+        $user->delete();
+        return response()->json(['üzenet'=>$user->id.' azonosítójú felhasználó sikeresen törölve!']);
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\mufaj;
 use App\Http\Requests\StoremufajRequest;
 use App\Http\Requests\UpdatemufajRequest;
-use Illuminate\Http\Request;
 
 class MufajController extends Controller
 {
@@ -21,13 +20,9 @@ class MufajController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
     {
-        $ujMufaj = new Mufaj();
-        $ujMufaj->nev = $request->input('nev');
-        $ujMufaj->leiras = $request->input('leiras');
-        $ujMufaj->save();
-        return response()->json(['üzenet'=>$ujMufaj->nev.' nevű műfaj sikeresen hozzáadva!']);
+
     }
 
     /**
@@ -35,7 +30,11 @@ class MufajController extends Controller
      */
     public function store(StoremufajRequest $request)
     {
-        //
+        $ujMufaj = new Mufaj();
+        $ujMufaj->nev = $request->input('nev');
+        $ujMufaj->leiras = $request->input('leiras');
+        $ujMufaj->save();
+        return response()->json(['üzenet'=>$ujMufaj->id.' azonosítóval új műfaj lett létrehozva!']);
     }
 
     /**
@@ -43,10 +42,6 @@ class MufajController extends Controller
      */
     public function show(mufaj $mufaj)
     {
-        if(!$mufaj){
-            return response()->json(['üzenet'=>'Az adott id-val rendelkező műfaj nem létezik']);
-        }
-
         return response()->json($mufaj);
     }
 
@@ -63,22 +58,10 @@ class MufajController extends Controller
      */
     public function update(UpdatemufajRequest $request, mufaj $mufaj)
     {
-        //
-    }
+        $mufaj->nev = $request->input('nev');
+        $mufaj->leiras = $request->input('leiras');
 
-    public function updateMufaj(Request $request,$id){
-
-        $nev = $request->input('nev');
-        $leiras = $request->input('leiras');
-        $modositandoMufaj = mufaj::where('id',$id)->update([
-            'nev' => $nev,
-            'leiras' => $leiras
-        ]);
-        if($modositandoMufaj===0){
-            return response()->json(['üzenet'=>$id.' azonosító nem létezik!']);
-        }
-
-        return response()->json(['üzenet'=>$id.' azonosítójú műfaj sikeresen frissítve!']);
+        return response()->json(['üzenet'=>$mufaj->id.' azonosítójú műfaj sikeresen frissítve!']);
     }
 
     /**
@@ -86,18 +69,7 @@ class MufajController extends Controller
      */
     public function destroy(mufaj $mufaj)
     {
-        //
-    }
-
-    public function destroyMufaj($id)
-    {
-        $mufajTorol = Mufaj::find($id);
-
-        if(!$mufajTorol){
-            return response()->json(['üzenet'=>'A megadott id-val rendelkező műfaj nem található!']);
-        }
-
-        $mufajTorol->delete();
-        return response()->json(['üzenet'=>'Műfaj sikeresen törölve!']);
+        $mufaj->delete();
+        return response()->json(['üzenet'=>$mufaj->id.' azonosítójú műfaj sikeresen törölve!']);
     }
 }

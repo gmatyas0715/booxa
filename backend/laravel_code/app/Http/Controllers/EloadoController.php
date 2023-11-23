@@ -21,7 +21,15 @@ class EloadoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreeloadoRequest $request)
     {
         $ujEloado = new Eloado();
         $ujEloado->nev = $request->input('nev');
@@ -33,22 +41,10 @@ class EloadoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreeloadoRequest $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(eloado $eloado)
     {
-        if(!$eloado){
-            return response()->json(['üzenet'=>'Az adott id-val rendelkező előadó nem létezik']);
-        }
-
         return response()->json($eloado);
     }
 
@@ -65,53 +61,20 @@ class EloadoController extends Controller
      */
     public function update(UpdateeloadoRequest $request, eloado $eloado)
     {
-        //
+        $eloado->nev = $request->input('leiras');
+        $eloado->leiras = $request->input('nev');
+        $eloado->kep_eleres = $request->input('kep_eleres');        
+
+        return response()->json(['üzenet' =>$eloado->nev.' nevű előadó sikeresen frissítve!']);
     }
 
-    public function updateLeiras(Request $request, $id)
-    {
-        $ujLeiras = $request->input('leiras');
-
-        eloado::where('id', $id)->update(['leiras' => $ujLeiras]);
-
-        return response()->json(['üzenet' => 'Leírás sikeresen frissítve!']);
-    }
-
-    public function updateEloadoNev(Request $request, $id)
-    {
-        $ujEloadoNev = $request->input('nev');
-
-        eloado::where('id', $id)->update(['nev' => $ujEloadoNev]);
-
-        return response()->json(['üzenet' => 'Előadó név sikeresen frissítve!']);
-    }
-
-    public function updateEloadoKepEleres(Request $request, $id)
-    {
-        $ujEloadoKepEleres = $request->input('kep_eleres');
-
-        eloado::where('id', $id)->update(['kep_eleres' => $ujEloadoKepEleres]);
-
-        return response()->json(['üzenet' => 'Előadó kép elérés sikeresen frissítve!']);
-    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(eloado $eloado)
     {
-        //
-    }
-
-    public function destroyEloado($id)
-    {
-        $eloadoTorol = Eloado::find($id);
-
-        if(!$eloadoTorol){
-            return response()->json(['üzenet'=>'A megadott id-val rendelkező előadó nem található!']);
-        }
-
-        $eloadoTorol->delete();
-        return response()->json(['üzenet'=>$eloadoTorol->nev.' nevű előadó sikeresen törölve!']);
+        $eloado->delete();
+        return response()->json(['üzenet'=>$eloado->nev.' nevű előadó sikeresen törölve!']);
     }
 }
