@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eloado_mufaj', function (Blueprint $table) {
+        Schema::create('esemeny', function (Blueprint $table) {
             $table->id();
+            $table->datetime('idopont');
+            $table->integer('jegy_alapar');
             $table->unsignedBigInteger('eloado_id');
-            $table->unsignedBigInteger('mufaj_id');
+            $table->string('helyszin_id',5);
             $table->foreign('eloado_id')->references('id')->on('eloado');
-            $table->foreign('mufaj_id')->references('id')->on('mufaj');
+            $table->foreign('helyszin_id')->references('id')->on('helyszin');
             $table->timestamps();
-        }
-    );
+        });
     }
 
     /**
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eloado_mufaj');
+        Schema::dropIfExists('esemeny');
     }
 };

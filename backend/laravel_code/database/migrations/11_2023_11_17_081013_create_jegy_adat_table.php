@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('jegy_adat', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('esemeny_id');
-            $table->string('helyszin_id',5);
+            $table->string('helyszin_id',10);
             $table->string('szektor',20);
             $table->string('sorjelzes',20)->nullable();
             $table->integer('ulohely')->nullable();

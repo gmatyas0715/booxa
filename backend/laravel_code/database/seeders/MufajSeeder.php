@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\Mufaj;
 
 class MufajSeeder extends Seeder
@@ -25,7 +23,7 @@ class MufajSeeder extends Seeder
                 continue;
             }
 
-            $data = str_getcsv($line);
+            $data = str_getcsv($line,';');
 
             Mufaj::create([
                 'nev' => $data[0],

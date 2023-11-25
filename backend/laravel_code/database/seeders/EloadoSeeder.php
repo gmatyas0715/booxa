@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\Eloado;
 
 class EloadoSeeder extends Seeder
@@ -25,13 +23,12 @@ class EloadoSeeder extends Seeder
                 continue;
             }
 
-            $data = str_getcsv($line);
+            $data = str_getcsv($line,';');
 
             Eloado::create([
-                'id' => $data[0],
-                'nev' => $data[1],
-                'leiras' => $data[2],
-                'kep_eleres' => $data[3],
+                'nev' => $data[0],
+                'leiras' => $data[1],
+                'kep_eleres' => $data[2],
             ]);
         }
     }

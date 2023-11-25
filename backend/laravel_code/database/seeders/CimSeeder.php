@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\Cim;
 
 class CimSeeder extends Seeder
@@ -26,14 +24,13 @@ class CimSeeder extends Seeder
                 continue;
             }
 
-            $data = str_getcsv($line);
+            $data = str_getcsv($line,';');
 
             Cim::create([
-                'id' => $data[0],
-                'iranyitoszam' => $data[1],
-                'telepules' => $data[2],
-                'kozterulet' => $data[3],
-                'hazszam' => $data[4],
+                'iranyitoszam' => $data[0],
+                'telepules' => $data[1],
+                'kozterulet' => $data[2],
+                'hazszam' => $data[3],
             ]);
         }
     }

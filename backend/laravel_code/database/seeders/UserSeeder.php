@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -14,31 +14,29 @@ class UserSeeder extends Seeder
     public function run(): void
     {
 
-        $csvFilePath = storage_path('../../db/sql scriptek/user.csv');
+        $csvFilePath = storage_path('../../../db/sql scriptek/user.csv');
+        $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-        $csvFile = fopen($csvFilePath, 'r');
+        $headerSkipped = false;
 
-        $header = fgetcsv($csvFile);
+        foreach ($fileContents as $line) {
+            if (!$headerSkipped) {
+                $headerSkipped = true;
+                continue;
+            }
 
-        while (($data = fgetcsv($csvFile)) !== false) {
-            $user = array_combine($header, $data);
+            $data = str_getcsv($line,';');
 
-            $user['password'] = Hash::make($user['password']);
-
-            DB::table('user')->insert($user);
+            User::create([
+                'vezeteknev'=>$data[0],
+                'keresztnev'=>$data[1],
+                'email'=>$data[2],
+                'nem'=>$data[3],
+                'szuletesi_datum'=>$data[4],
+                'felhasznalonev'=>$data[5],
+                'jelszo'=>Hash::make($data[6]),
+                'profilkep_eleres'=>null
+            ]);
         }
-
-        // Close the file
-        fclose($csvFile);
-        User::create([
-            'vezeteknev'=>'Kovács',
-            'keresztnev'=>'Béla',
-            'email'=>'kbela1111@gmail.com',
-            'nem'=>'f',
-            'szuletesi_datum'=>'1994-05-04',
-            'felhasznalonev'=>'kbela',
-            'jelszo'=>bcrypt('kbela'),
-            'profilkep_eleres'=>''
-        ]);
     }
 }
