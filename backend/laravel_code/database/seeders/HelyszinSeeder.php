@@ -26,13 +26,12 @@ class HelyszinSeeder extends Seeder
             $data = str_getcsv($line,';');
 
             Helyszin::create([
-                'id' => $data[0],
-                'nev' => $data[1],
-                'cim_id' => $data[2],
-                'kapacitas' => $data[3],
-                'szabadteri' => $data[4],
+                'nev' => $data[0],
+                'cim_id' => $data[1],
+                'kapacitas' => $data[2],
+                'szabadteri' => $data[3],
+                'arkategoria' => $data[4],
                 'helyszin_kep_eleres' => $data[5],
-                'cim_id' => $data[6],
             ]);
         }
     }

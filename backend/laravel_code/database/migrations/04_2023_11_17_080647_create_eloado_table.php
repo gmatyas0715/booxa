@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('eloado', function (Blueprint $table) {
             $table->id();
             $table->string('nev',50);
-            $table->string('leiras',400);
+            $table->text('leiras');
+            $table->integer('arkategoria');
             $table->string('kep_eleres',100)->nullable();
             $table->timestamps();
         });

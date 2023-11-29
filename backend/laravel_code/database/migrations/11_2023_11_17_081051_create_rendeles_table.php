@@ -14,10 +14,18 @@ return new class extends Migration
         Schema::create('rendeles', function (Blueprint $table) {
             $table->id();
             $table->timestamp('rendeles_idopont');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('fizetes_id');
-            $table->foreign('user_id')->references('id')->on('user');
-            $table->foreign('fizetes_id')->references('id')->on('fizetes');
+            $table->foreignId('user_id');
+            $table->foreignId('fizetes_id')->unique();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('user')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('fizetes_id')
+                ->references('id')
+                ->on('fizetes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -12,13 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('helyszin', function (Blueprint $table) {
-            $table->string('id',10)->primary();
+            $table->id();
             $table->string('nev',100);
-            $table->unsignedBigInteger('cim_id')->default(0);
+            $table->foreignId('cim_id')->unique();
             $table->integer('kapacitas');
             $table->boolean('szabadteri')->default(0);
+            $table->integer('arkategoria');
             $table->string('helyszin_kep_eleres',100);
-            $table->foreign('cim_id')->references('id')->on('cim');
+            $table->foreign('cim_id')
+                ->references('id')
+                ->on('cim')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

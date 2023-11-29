@@ -11,20 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('esemeny', function (Blueprint $table) {
+        Schema::create('jegy_adat', function (Blueprint $table) {
             $table->id();
-            $table->datetime('idopont');
-            $table->integer('jegy_alapar');
-            $table->foreignId('eloado_id');
+            $table->foreignId('esemeny_id');
             $table->foreignId('helyszin_id');
-            $table->foreign('eloado_id')
+            $table->foreignId('rendeles_id');
+            $table->string('szektor',20);
+            $table->string('sorjelzes',20)->nullable();
+            $table->integer('ulohely')->nullable();
+            $table->foreign('esemeny_id')
                 ->references('id')
-                ->on('eloado')
+                ->on('esemeny')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('helyszin_id')
                 ->references('id')
                 ->on('helyszin')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('rendeles_id')
+                ->references('id')
+                ->on('rendeles')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
@@ -36,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('esemeny');
+        Schema::dropIfExists('jegy_adat');
     }
 };

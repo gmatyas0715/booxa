@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('fizetes', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('fizetesi_idopont');
+            $table->timestamp('fizetes_idopont');
             $table->integer('fizetes_osszeg');
             $table->string('fizetes_tipusa',50);
-            $table->unsignedBigInteger('szamlazasi_cim_id');
-            $table->foreign('szamlazasi_cim_id')->references('id')->on('cim');
+            $table->foreignId('szamlazasi_cim_id');
+            $table->foreign('szamlazasi_cim_id')
+                ->references('id')
+                ->on('cim');
             $table->timestamps();
         });
     }

@@ -13,10 +13,18 @@ return new class extends Migration
     {
         Schema::create('eloado_mufaj', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('eloado_id');
-            $table->unsignedBigInteger('mufaj_id');
-            $table->foreign('eloado_id')->references('id')->on('eloado')->onDelete('cascade');
-            $table->foreign('mufaj_id')->references('id')->on('mufaj')->onDelete('cascade');
+            $table->foreignId('eloado_id');
+            $table->foreignId('mufaj_id');
+            $table->foreign('eloado_id')
+                ->references('id')
+                ->on('eloado')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('mufaj_id')
+                ->references('id')
+                ->on('mufaj')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         }
     );

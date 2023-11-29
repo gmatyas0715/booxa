@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
                 JegyAdatSeeder::class,
                 JegyAdatKedvezmenySeeder::class,
                 RendelesSeeder::class,
-                JegyAdatRendelesSeeder::class,
             ]
         ); 
 

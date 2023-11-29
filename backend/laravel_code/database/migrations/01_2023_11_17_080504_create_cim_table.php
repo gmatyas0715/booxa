@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cim', function (Blueprint $table) {
             $table->id();
             $table->string('iranyitoszam',50)->nullable();
-            $table->string('telepules',50);
+            $table->string('telepules',100);
             $table->string('kozterulet',50);
             $table->integer('hazszam');
             $table->timestamps();

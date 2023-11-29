@@ -2,22 +2,22 @@
 
 namespace Database\Factories;
 
+use App\Models\Esemeny;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\esemeny>
  */
 class EsemenyFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Esemeny::class;
+
     public function definition(): array
     {
         return [
-            //
+
         ];
     }
+
 }

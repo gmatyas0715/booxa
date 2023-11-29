@@ -13,10 +13,18 @@ return new class extends Migration
     {
         Schema::create('jegy_adat_kedvezmeny', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('kedvezmeny_id');
-            $table->unsignedBigInteger('jegy_adat_id');
-            $table->foreign('kedvezmeny_id')->references('id')->on('kedvezmeny');
-            $table->foreign('jegy_adat_id')->references('id')->on('jegy_adat');
+            $table->foreignId('kedvezmeny_id');
+            $table->foreignId('jegy_adat_id');
+            $table->foreign('kedvezmeny_id')
+                ->references('id')
+                ->on('kedvezmeny')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('jegy_adat_id')
+                ->references('id')
+                ->on('jegy_adat')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

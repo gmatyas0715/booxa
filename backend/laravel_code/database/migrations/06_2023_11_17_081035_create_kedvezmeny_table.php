@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kedvezmeny', function (Blueprint $table) {
             $table->id();
-            $table->text('leiras',50);
+            $table->text('leiras');
             $table->string('kedvezmeny_tipus',20);
             $table->decimal('kedvezmeny_erteke',3,2);
             $table->timestamps();

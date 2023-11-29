@@ -28,7 +28,8 @@ class EloadoSeeder extends Seeder
             Eloado::create([
                 'nev' => $data[0],
                 'leiras' => $data[1],
-                'kep_eleres' => $data[2],
+                'arkategoria' => $data[2],
+                'kep_eleres' => $data[3],
             ]);
         }
     }
