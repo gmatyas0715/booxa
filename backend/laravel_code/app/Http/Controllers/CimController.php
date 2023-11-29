@@ -61,13 +61,13 @@ class CimController extends Controller
      */
     public function update(UpdatecimRequest $request, cim $cim)
     {
-        $cim->iranyitoszam = $request->input('iranyitoszam');
-        $cim->telepules = $request->input('telepules');
-        $cim->kozterulet = $request->input('kozterulet');
-        $cim->hazszam = $request->input('hazszam');
-        $cim->save();
+        $tablaMezok = \Schema::getColumnListing($cim->getTable());
 
-        return response()->json(['üzenet' => $cim->id.' azonosítójú cím sikeresen módosítva!']);
+        $updateAdat = $request->only($tablaMezok);
+
+        $cim->update($updateAdat);     
+
+        return response()->json($cim);
     }
 
     /**

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nev',50);
             $table->text('leiras');
-            $table->integer('arkategoria');
+            $table->decimal('arkategoria',2,1);
             $table->string('kep_eleres',100)->nullable();
             $table->timestamps();
         });

@@ -25,10 +25,10 @@ class UpdatecimRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'iranyitoszam'=>'required|string|max:50',
-            'telepules'=>'required|string|max:50',
-            'kozterulet'=>'required|string|max:50',
-            'hazszam'=>'required|integer',
+            'iranyitoszam'=>'string|max:50',
+            'telepules'=>'string|max:50',
+            'kozterulet'=>'string|max:50',
+            'hazszam'=>'integer',
         ];
     }
 

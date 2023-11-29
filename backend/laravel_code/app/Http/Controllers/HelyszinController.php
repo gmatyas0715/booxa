@@ -37,6 +37,7 @@ class HelyszinController extends Controller
         $ujHelyszin->kapacitas = $request->input('kapacitas');
         $ujHelyszin->kontakt_informacio = $request->input('kontakt_informacio');
         $ujHelyszin->szabadteri = $request->input('szabadteri');
+        $ujHelyszin->arkategoria = $request->input('arkategoria');
         $ujHelyszin->helyszin_kep_eleres = $request->input('helyszin_kep_eleres');
 
         $ujHelyszin->save();
@@ -64,15 +65,13 @@ class HelyszinController extends Controller
      */
     public function update(UpdatehelyszinRequest $request, helyszin $helyszin)
     {
-        $helyszin->id = $request->input('id');
-        $helyszin->nev = $request->input('nev');
-        $helyszin->cim_id = $request->input('cim_id');
-        $helyszin->kapacitas = $request->input('kapacitas');
-        $helyszin->kontaktInformacio = $request->input('kontakt_informacio');
-        $helyszin->szabadteri = $request->input('szabadteri');
-        $helyszin->helyszinKepEleres = $request->input('helyszin_kep_eleres');
+        $tablaMezok = \Schema::getColumnListing($helyszin->getTable());
 
-        return response()->json(['üzenet'=>$helyszin->id.' azonosítójú helyszín sikeresen frissítve!']);
+        $updateAdat = $request->only($tablaMezok);
+
+        $helyszin->update($updateAdat);     
+
+        return response()->json($helyszin);;
     }
 
     /**

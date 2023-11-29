@@ -25,13 +25,13 @@ class UpdatehelyszinRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id'=>'required|string|max:5',
-            'nev'=>'required|string|max:50',
-            'cim_id'=>'required|integer',
-            'kapacitas'=>'required|integer',
-            'kontakt_informacio'=>'required|string|max:50',
-            'szabadteri'=>'required|numeric|integer|max:1|min:0',
-            'helyszin_kep_eleres'=>'required|string|max:100'
+            'nev'=>'string|max:50',
+            'cim_id'=>'integer',
+            'kapacitas'=>'integer',
+            'kontakt_informacio'=>'string|max:50',
+            'szabadteri'=>'numeric|integer|max:1|min:0',
+            'arkategoria'=>['regex:/^\d+(\.\d{1})?$/'],
+            'helyszin_kep_eleres'=>'string|max:100'
         ];
     }
 

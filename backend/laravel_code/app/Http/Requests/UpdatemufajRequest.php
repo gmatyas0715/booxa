@@ -25,8 +25,8 @@ class UpdatemufajRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nev'=>'required|string|max:50',
-            'leiras'=>'required|string'
+            'nev'=>'string|max:50',
+            'leiras'=>'string'
         ];
     }
 

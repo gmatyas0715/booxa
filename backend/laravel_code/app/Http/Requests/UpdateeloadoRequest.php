@@ -25,9 +25,10 @@ class UpdateeloadoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nev'=>'required|string',
-            'leiras'=>'required|string|max:400',
-            'kep_eleres'=>'required|string'
+            'nev'=>'string',
+            'leiras'=>'string|max:400',
+            'arkategoria'=>['regex:/^\d+(\.\d{1})?$/'],
+            'kep_eleres'=>'string'
         ];
     }
 

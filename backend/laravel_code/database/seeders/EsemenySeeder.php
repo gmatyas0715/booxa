@@ -8,6 +8,8 @@ use App\Models\Helyszin;
 use App\Models\Eloado;
 use Carbon\Carbon;
 use App\database\factories\EsemenyFactory;
+use Illuminate\Support\Facades\Log;
+
 
 class EsemenySeeder extends Seeder
 {
@@ -22,8 +24,8 @@ class EsemenySeeder extends Seeder
 
         foreach ($helyszinek as $helyszin) {
             $helyszin_id = $helyszin->id;
-            for ($napSzama=0; $napSzama < 30; $napSzama++) { 
-                for ($percSzorzo=0; $percSzorzo < 7 ; $percSzorzo++) { 
+            for ($napSzama=0; $napSzama < 30; $napSzama+=rand(1,3)) { 
+                for ($percSzorzo=0; $percSzorzo < 6 ; $percSzorzo++) { 
                     $idopont = Carbon::instance($startDate)
                     ->addDays($napSzama)
                     ->modify('15:00')
@@ -42,7 +44,9 @@ class EsemenySeeder extends Seeder
                     // Jegyár generátor
                     $eloadoArszorzo = Eloado::where('id',$eloado_id)->first()->arkategoria;
                     $helyszinArszorzo = Helyszin::where('id',$helyszin_id)->first()->arkategoria;
-                    $jegyAlapar = $eloadoArszorzo*$helyszinArszorzo*2000;
+                    $jegyAlapar = round($eloadoArszorzo*$helyszinArszorzo*4000/100)*100-1;
+
+                    Log::info($eloadoArszorzo.' '.$helyszinArszorzo);
 
                     $esemenyAdatok = [
                         'idopont' => $idopont,

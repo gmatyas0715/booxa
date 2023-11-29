@@ -13,7 +13,8 @@ class JegyAdatController extends Controller
      */
     public function index()
     {
-        //
+        $jegyAdatok = Jegy_adat::all();
+        return response()->json($jegyAdatok);
     }
 
     /**
@@ -29,7 +30,16 @@ class JegyAdatController extends Controller
      */
     public function store(Storejegy_adatRequest $request)
     {
-        //
+        $ujJegyAdat = new Cim();
+        $ujJegyAdat->esemeny_id = $request->input('esemeny_id');
+        $ujJegyAdat->helyszin_id = $request->input('helyszin_id');
+        $ujJegyAdat->rendeles_id = $request->input('rendeles_id');
+        $ujJegyAdat->szektor = $request->input('szektor');
+        $ujJegyAdat->sorjelzes = $request->input('sorjelzes');
+        $ujJegyAdat->ulohely = $request->input('ulohely');
+        $ujJegyAdat->save();
+
+        return response()->json(['üzenet' => $ujJegyAdat->id.' azonosítójú jegyadat sikeresen létrehozva!']);
     }
 
     /**
@@ -37,7 +47,7 @@ class JegyAdatController extends Controller
      */
     public function show(jegy_adat $jegy_adat)
     {
-        //
+        return response()->json($jegy_adat);
     }
 
     /**
@@ -53,7 +63,13 @@ class JegyAdatController extends Controller
      */
     public function update(Updatejegy_adatRequest $request, jegy_adat $jegy_adat)
     {
-        //
+        $tablaMezok = \Schema::getColumnListing($jegy_adat->getTable());
+
+        $updateAdat = $request->only($tablaMezok);
+
+        $jegy_adat->update($updateAdat);     
+
+        return response()->json($jegy_adat);
     }
 
     /**
@@ -61,6 +77,7 @@ class JegyAdatController extends Controller
      */
     public function destroy(jegy_adat $jegy_adat)
     {
-        //
+        $jegy_adat->delete();
+        return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);
     }
 }

@@ -13,7 +13,8 @@ class FizetesController extends Controller
      */
     public function index()
     {
-        //
+        $fizetesek = Fizetes::all();
+        return response()->json($fizetesek);
     }
 
     /**
@@ -29,7 +30,14 @@ class FizetesController extends Controller
      */
     public function store(StorefizetesRequest $request)
     {
-        //
+        $ujFizetes = new Fizetes();
+        $ujFizetes->fizetes_idopont = $request->input('fizetes_idopont');
+        $ujFizetes->fizetes_osszeg = $request->input('fizetes_osszeg');
+        $ujFizetes->fizetes_tipusa = $request->input('fizetes_tipusa');
+        $ujFizetes->szamlazasi_cim_id = $request->input('szamlazasi_cim_id');
+        $ujFizetes->save();
+
+        return response()->json(['üzenet' => $ujFizetes->id.' azonosítójú fizetés sikeresen létrehozva!']);
     }
 
     /**
@@ -37,7 +45,7 @@ class FizetesController extends Controller
      */
     public function show(fizetes $fizetes)
     {
-        //
+        return response()->json($fizetes);
     }
 
     /**
@@ -53,7 +61,13 @@ class FizetesController extends Controller
      */
     public function update(UpdatefizetesRequest $request, fizetes $fizetes)
     {
-        //
+        $tablaMezok = \Schema::getColumnListing($fizetes->getTable());
+
+        $updateAdat = $request->only($tablaMezok);
+
+        $fizetes->update($updateAdat);     
+
+        return response()->json($fizetes);
     }
 
     /**
@@ -61,6 +75,7 @@ class FizetesController extends Controller
      */
     public function destroy(fizetes $fizetes)
     {
-        //
+        $fizetes->delete();
+        return response()->json(['üzenet'=>$fizetes->id.' azonosítójú cím sikeresen törölve!']);
     }
 }

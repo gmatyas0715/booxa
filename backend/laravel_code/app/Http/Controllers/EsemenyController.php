@@ -13,7 +13,8 @@ class EsemenyController extends Controller
      */
     public function index()
     {
-        //
+        $esemenyek = Esemeny::all();
+        return response()->json($cimek);
     }
 
     /**
@@ -29,7 +30,11 @@ class EsemenyController extends Controller
      */
     public function store(StoreesemenyRequest $request)
     {
-        //
+        $ujEsemeny = new Esemeny();
+        $ujEsemeny->eloado_id = $request->input('eloado_id');
+        $ujEsemeny->mufaj_id = $request->input('mufaj_id');
+        $ujEsemeny->save();
+        return response()->json(['üzenet'=>$ujEsemeny->id.' azonosítóval új előadó műfaj kapcsolat lett sikeresen létrehozva!']);
     }
 
     /**
@@ -37,7 +42,7 @@ class EsemenyController extends Controller
      */
     public function show(esemeny $esemeny)
     {
-        //
+        return response()->json($esemeny);
     }
 
     /**
@@ -53,7 +58,13 @@ class EsemenyController extends Controller
      */
     public function update(UpdateesemenyRequest $request, esemeny $esemeny)
     {
-        //
+        $tablaMezok = \Schema::getColumnListing($esemeny->getTable());
+
+        $updateAdat = $request->only($tablaMezok);
+
+        $esemeny->update($updateAdat);     
+
+        return response()->json($esemeny);
     }
 
     /**
@@ -61,6 +72,7 @@ class EsemenyController extends Controller
      */
     public function destroy(esemeny $esemeny)
     {
-        //
+        $esemeny->delete();
+        return response()->json(['üzenet'=>$esemeny->id.' azonosítójú esemény sikeresen törölve!']);
     }
 }

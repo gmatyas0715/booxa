@@ -59,10 +59,13 @@ class EloadoMufajController extends Controller
      */
     public function update(Updateeloado_mufajRequest $request, eloado_mufaj $eloado_mufaj)
     {
-        $eloado_mufaj->eloado_id = $request->input('eloado_id');
-        $eloado_mufaj->mufaj_id = $request->input('mufaj_id');
+        $tablaMezok = \Schema::getColumnListing($eloado_mufaj->getTable());
 
-        return response()->json(['üzenet'=>$eloado_mufaj->id.' azonosítójú előadó műfaj kapcsolat sikeresen frissítve!']);
+        $updateAdat = $request->only($tablaMezok);
+
+        $eloado_mufaj->update($updateAdat);     
+
+        return response()->json($eloado_mufaj);
     }
 
     /**

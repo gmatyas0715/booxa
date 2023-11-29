@@ -25,8 +25,8 @@ class Updateeloado_mufajRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'eloado_id'=>'required|integer',
-            'mufaj_id'=>'required|integer'
+            'eloado_id'=>'integer',
+            'mufaj_id'=>'integer'
         ];
     }
 

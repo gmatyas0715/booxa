@@ -1,4 +1,4 @@
-﻿szektor_id;szektor_nev;szektor_tipus;arszorzo;max_kapacitas;sorjelzes;helyszin_id
+﻿id;szektor_nev;szektor_tipus;arszorzo;max_kapacitas;sorjelzes;helyszin_id
 l01_center_1;Center-1;allo;1.5;3000;null;1
 l01_center_2;Center-2;allo;1;3200;null;1
 l01_bal_szarny;Bal-szárny;allo;1.4;800;null;1

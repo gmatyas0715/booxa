@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('szektor', function (Blueprint $table) {
-            $table->string('szektor_id',20)->primary();
+            $table->string('id',20)->primary();
             $table->string('szektor_nev',50);
             $table->string('szektor_tipus',50);
             $table->decimal('arszorzo',3,2);

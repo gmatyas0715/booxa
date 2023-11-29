@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('cim_id')->unique();
             $table->integer('kapacitas');
             $table->boolean('szabadteri')->default(0);
-            $table->integer('arkategoria');
+            $table->decimal('arkategoria',2,1);
             $table->string('helyszin_kep_eleres',100);
             $table->foreign('cim_id')
                 ->references('id')

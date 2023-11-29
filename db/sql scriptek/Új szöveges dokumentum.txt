@@ -1,2 +1,2 @@
 krubi:7000
-electric callboy:
+electric callboy: 9000

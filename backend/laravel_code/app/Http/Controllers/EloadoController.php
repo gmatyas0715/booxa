@@ -6,6 +6,7 @@ use App\Models\eloado;
 use App\Http\Requests\StoreeloadoRequest;
 use App\Http\Requests\UpdateeloadoRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class EloadoController extends Controller
 {
@@ -34,6 +35,7 @@ class EloadoController extends Controller
         $ujEloado = new Eloado();
         $ujEloado->nev = $request->input('nev');
         $ujEloado->leiras = $request->input('leiras');
+        $ujEloado->arkategoria = $request->input('arkategoria');
         $ujEloado->kep_eleres = $request->input('kep_eleres');
         $ujEloado->save();
 
@@ -61,11 +63,13 @@ class EloadoController extends Controller
      */
     public function update(UpdateeloadoRequest $request, eloado $eloado)
     {
-        $eloado->nev = $request->input('leiras');
-        $eloado->leiras = $request->input('nev');
-        $eloado->kep_eleres = $request->input('kep_eleres');        
+        $tablaMezok = \Schema::getColumnListing($eloado->getTable());
 
-        return response()->json(['üzenet' =>$eloado->nev.' nevű előadó sikeresen frissítve!']);
+        $updateAdat = $request->only($tablaMezok);
+
+        $eloado->update($updateAdat);     
+
+        return response()->json($eloado);
     }
 
 
