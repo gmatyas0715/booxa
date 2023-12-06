@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\UserModel;
-use App\Models\szektor;
+use App\Models\User;
+use App\Models\Szektor;
 use Illuminate\Auth\Access\Response;
 
 class SzektorPolicy
@@ -11,7 +11,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(UserModel $userModel): bool
+    public function viewAny(User $user): bool
     {
         //
     }
@@ -19,7 +19,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserModel $userModel, szektor $szektor): bool
+    public function view(User $user, Szektor $szektor): bool
     {
         //
     }
@@ -27,7 +27,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(UserModel $userModel): bool
+    public function create(User $user): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserModel $userModel, szektor $szektor): bool
+    public function update(User $user, Szektor $szektor): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserModel $userModel, szektor $szektor): bool
+    public function delete(User $user, Szektor $szektor): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(UserModel $userModel, szektor $szektor): bool
+    public function restore(User $user, Szektor $szektor): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class SzektorPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(UserModel $userModel, szektor $szektor): bool
+    public function forceDelete(User $user, Szektor $szektor): bool
     {
         //
     }

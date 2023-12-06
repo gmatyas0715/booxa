@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kedvezmeny;
-use App\Http\Requests\StorekedvezmenyRequest;
-use App\Http\Requests\UpdatekedvezmenyRequest;
+use App\Models\Kedvezmeny;
+use App\Http\Requests\StoreKedvezmenyRequest;
+use App\Http\Requests\UpdateKedvezmenyRequest;
 
 class KedvezmenyController extends Controller
 {
@@ -27,7 +27,7 @@ class KedvezmenyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorekedvezmenyRequest $request)
+    public function store(StoreKedvezmenyRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class KedvezmenyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(kedvezmeny $kedvezmeny)
+    public function show(Kedvezmeny $kedvezmeny)
     {
         //
     }
@@ -43,7 +43,7 @@ class KedvezmenyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(kedvezmeny $kedvezmeny)
+    public function edit(Kedvezmeny $kedvezmeny)
     {
         //
     }
@@ -51,7 +51,7 @@ class KedvezmenyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatekedvezmenyRequest $request, kedvezmeny $kedvezmeny)
+    public function update(UpdateKedvezmenyRequest $request, Kedvezmeny $kedvezmeny)
     {
         //
     }
@@ -59,7 +59,7 @@ class KedvezmenyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(kedvezmeny $kedvezmeny)
+    public function destroy(Kedvezmeny $kedvezmeny)
     {
         //
     }

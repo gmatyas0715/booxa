@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jegy_adat_rendeles;
-use App\Http\Requests\Storejegy_adat_rendelesRequest;
-use App\Http\Requests\Updatejegy_adat_rendelesRequest;
+use App\Models\JegyAdatRendeles;
+use App\Http\Requests\StoreJegyAdatRendelesRequest;
+use App\Http\Requests\UpdateJegyAdatRendelesRequest;
 
 class JegyAdatRendelesController extends Controller
 {
@@ -27,7 +27,7 @@ class JegyAdatRendelesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Storejegy_adat_rendelesRequest $request)
+    public function store(StoreJegyAdatRendelesRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class JegyAdatRendelesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(jegy_adat_rendeles $jegy_adat_rendeles)
+    public function show(JegyAdatRendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -43,7 +43,7 @@ class JegyAdatRendelesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(jegy_adat_rendeles $jegy_adat_rendeles)
+    public function edit(JegyAdatRendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -51,7 +51,7 @@ class JegyAdatRendelesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Updatejegy_adat_rendelesRequest $request, jegy_adat_rendeles $jegy_adat_rendeles)
+    public function update(UpdateJegyAdatRendelesRequest $request, JegyAdatRendeles $jegy_adat_rendeles)
     {
         //
     }
@@ -59,7 +59,7 @@ class JegyAdatRendelesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(jegy_adat_rendeles $jegy_adat_rendeles)
+    public function destroy(JegyAdatRendeles $jegy_adat_rendeles)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\szektor;
+use App\Models\Szektor;
 use App\Http\Requests\StoreszektorRequest;
 use App\Http\Requests\UpdateszektorRequest;
 
@@ -28,7 +28,7 @@ class SzektorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreszektorRequest $request)
+    public function store(StoreSzektorRequest $request)
     {
         $ujSzektor = new Szektor();
         $ujSzektor->szektor_id = $request->input('szektor_id');
@@ -46,7 +46,7 @@ class SzektorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(szektor $szektor)
+    public function show(Szektor $szektor)
     {
         return response()->json($szektor);
     }
@@ -54,7 +54,7 @@ class SzektorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(szektor $szektor)
+    public function edit(Szektor $szektor)
     {
         //
     }
@@ -62,7 +62,7 @@ class SzektorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateszektorRequest $request, szektor $szektor)
+    public function update(UpdateSzektorRequest $request, Szektor $szektor)
     {
         $tablaMezok = \Schema::getColumnListing($szektor->getTable());
 
@@ -76,7 +76,7 @@ class SzektorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(szektor $szektor)
+    public function destroy(Szektor $szektor)
     {
         $szektor->delete();
         return response()->json(['üzenet'=>$szektor->id.' azonosítójú szektor sikeresen törölve!']);

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\rendeles;
-use App\Http\Requests\StorerendelesRequest;
-use App\Http\Requests\UpdaterendelesRequest;
+use App\Models\Rendeles;
+use App\Http\Requests\StoreRendelesRequest;
+use App\Http\Requests\UpdateRendelesRequest;
 
 class RendelesController extends Controller
 {
@@ -27,7 +27,7 @@ class RendelesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorerendelesRequest $request)
+    public function store(StoreRendelesRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class RendelesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(rendeles $rendeles)
+    public function show(Rendeles $rendeles)
     {
         //
     }
@@ -43,7 +43,7 @@ class RendelesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(rendeles $rendeles)
+    public function edit(Rendeles $rendeles)
     {
         //
     }
@@ -51,7 +51,7 @@ class RendelesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdaterendelesRequest $request, rendeles $rendeles)
+    public function update(UpdateRendelesRequest $request, Rendeles $rendeles)
     {
         //
     }
@@ -59,7 +59,7 @@ class RendelesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(rendeles $rendeles)
+    public function destroy(Rendeles $rendeles)
     {
         //
     }

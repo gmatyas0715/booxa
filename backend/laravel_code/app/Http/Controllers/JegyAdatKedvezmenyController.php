@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jegy_adat_kedvezmeny;
-use App\Http\Requests\Storejegy_adat_kedvezmenyRequest;
-use App\Http\Requests\Updatejegy_adat_kedvezmenyRequest;
+use App\Models\JegyAdatKedvezmeny;
+use App\Http\Requests\StoreJegyAdatKedvezmenyyRequest;
+use App\Http\Requests\UpdateJegyAdatKedvezmenyRequest;
 
 class JegyAdatKedvezmenyController extends Controller
 {
@@ -27,7 +27,7 @@ class JegyAdatKedvezmenyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Storejegy_adat_kedvezmenyRequest $request)
+    public function store(StoreJegyAdatKedvezmenyRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class JegyAdatKedvezmenyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(jegy_adat_kedvezmeny $jegy_adat_kedvezmeny)
+    public function show(JegyAdatKedvezmeny $jegy_adat_kedvezmeny)
     {
         //
     }
@@ -43,7 +43,7 @@ class JegyAdatKedvezmenyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(jegy_adat_kedvezmeny $jegy_adat_kedvezmeny)
+    public function edit(JegyAdatKedvezmeny $jegy_adat_kedvezmeny)
     {
         //
     }
@@ -51,7 +51,7 @@ class JegyAdatKedvezmenyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Updatejegy_adat_kedvezmenyRequest $request, jegy_adat_kedvezmeny $jegy_adat_kedvezmeny)
+    public function update(UpdateJegyAdatKedvezmenyRequest $request, JegyAdatKedvezmeny $jegy_adat_kedvezmeny)
     {
         //
     }
@@ -59,7 +59,7 @@ class JegyAdatKedvezmenyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(jegy_adat_kedvezmeny $jegy_adat_kedvezmeny)
+    public function destroy(JegyAdatKedvezmeny $jegy_adat_kedvezmeny)
     {
         //
     }

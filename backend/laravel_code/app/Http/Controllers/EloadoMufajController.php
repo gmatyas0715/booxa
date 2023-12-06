@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\eloado_mufaj;
-use App\Http\Requests\Storeeloado_mufajRequest;
-use App\Http\Requests\Updateeloado_mufajRequest;
+use App\Models\EloadoMufaj;
+use App\Http\Requests\StoreEloadoMufajRequest;
+use App\Http\Requests\UpdateEloadoMufajRequest;
 
 class EloadoMufajController extends Controller
 {
@@ -13,8 +13,8 @@ class EloadoMufajController extends Controller
      */
     public function index()
     {
-        $eloado_mufaj = Eloado_mufaj::all();
-        return response()->json($eloado_mufaj);
+        $eloadoMufaj = EloadoMufaj::all();
+        return response()->json($eloadoMufaj);
     }
 
     /**
@@ -28,9 +28,9 @@ class EloadoMufajController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Storeeloado_mufajRequest $request)
+    public function store(StoreEloadoMufajRequest $request)
     {
-        $ujEloadoMufajKapcsolat = new Eloado_mufaj();
+        $ujEloadoMufajKapcsolat = new EloadoMufaj();
         $ujEloadoMufajKapcsolat->eloado_id = $request->input('eloado_id');
         $ujEloadoMufajKapcsolat->mufaj_id = $request->input('mufaj_id');
 
@@ -41,15 +41,15 @@ class EloadoMufajController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(eloado_mufaj $eloado_mufaj)
+    public function show(EloadoMufaj $eloadoMufaj)
     {
-        return response()->json($eloado_mufaj);
+        return response()->json($eloadoMufaj);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(eloado_mufaj $eloado_mufaj)
+    public function edit(EloadoMufaj $eloadoMufaj)
     {
         //
     }
@@ -57,21 +57,21 @@ class EloadoMufajController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Updateeloado_mufajRequest $request, eloado_mufaj $eloado_mufaj)
+    public function update(UpdateEloadoMufajRequest $request, EloadoMufaj $eloadoMufaj)
     {
-        $tablaMezok = \Schema::getColumnListing($eloado_mufaj->getTable());
+        $tablaMezok = \Schema::getColumnListing($eloadoMufaj->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 
-        $eloado_mufaj->update($updateAdat);     
+        $eloadoMufaj->update($updateAdat);     
 
-        return response()->json($eloado_mufaj);
+        return response()->json($eloadoMufaj);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(eloado_mufaj $eloado_mufaj)
+    public function destroy(EloadoMufaj $eloadoMufaj)
     {
         $eloado_mufaj->delete();
         return response()->json(['üzenet'=>$eloado_mufaj->id.' azonosítójú előadó-műfaj kapcsolat sikeresen törölve!']);

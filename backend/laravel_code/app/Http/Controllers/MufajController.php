@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\mufaj;
-use App\Http\Requests\StoremufajRequest;
-use App\Http\Requests\UpdatemufajRequest;
+use App\Models\Mufaj;
+use App\Http\Requests\StoreMufajRequest;
+use App\Http\Requests\UpdateMufajRequest;
 
 class MufajController extends Controller
 {
@@ -28,7 +28,7 @@ class MufajController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoremufajRequest $request)
+    public function store(StoreMufajRequest $request)
     {
         $ujMufaj = new Mufaj();
         $ujMufaj->nev = $request->input('nev');
@@ -40,7 +40,7 @@ class MufajController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(mufaj $mufaj)
+    public function show(Mufaj $mufaj)
     {
         return response()->json($mufaj);
     }
@@ -48,7 +48,7 @@ class MufajController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(mufaj $mufaj)
+    public function edit(Mufaj $mufaj)
     {
         //
     }
@@ -56,7 +56,7 @@ class MufajController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatemufajRequest $request, mufaj $mufaj)
+    public function update(UpdateMufajRequest $request, Mufaj $mufaj)
     {
         $mufaj->nev = $request->input('nev');
         $mufaj->leiras = $request->input('leiras');
@@ -67,7 +67,7 @@ class MufajController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(mufaj $mufaj)
+    public function destroy(Mufaj $mufaj)
     {
         $mufaj->delete();
         return response()->json(['üzenet'=>$mufaj->id.' azonosítójú műfaj sikeresen törölve!']);

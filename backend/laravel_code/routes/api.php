@@ -1,54 +1,74 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
+
 use App\Http\Controllers\EloadoController;
-use App\Http\Controllers\EloadoMufajController;
+Route::controller(EloadoController::class)->group(function () {
+    Route::get('/eloadok','index');
+    Route::get('/eloadok/{eloado}','show');
+    Route::patch('/update-eloado/{eloado}','update');
+    Route::delete('/delete-eloado/{eloado}','destroy');
+});
+
 use App\Http\Controllers\MufajController;
+Route::controller(MufajController::class)->group(function(){
+    Route::post('/create-mufaj','store');
+    Route::get('/mufajok','show');
+    Route::get('/mufajok/{mufaj}','show');
+    Route::patch('/update-mufaj/{mufaj}','update');
+    Route::delete('/delete-mufaj/{mufaj}','destroy');
+});
+
+use App\Http\Controllers\EloadoMufajController;
+Route::controller(EloadoMufajController::class)->group(function(){
+    Route::post('/create-eloado-mufaj','store');
+    Route::get('/eloado-mufaj-kapcsolatok','show');
+    Route::get('/eloado-mufaj-kapcsolatok/{eloado_mufaj}','show');
+    Route::patch('/update-eloado-mufaj/{eloado_mufaj}','update');
+    Route::delete('/delete-eloado-mufaj/{eloado_mufaj}','destroy');
+});
+
 use App\Http\Controllers\HelyszinController;
+Route::controller(HelyszinController::class)->group(function(){
+    Route::post('/create-helyszin','store');
+    Route::get('/helyszinek','show');
+    Route::get('/helyszinek/{helyszin}','show');
+    Route::patch('/update-helyszin/{helyszin}','update');
+    Route::delete('/delete-helyszin/{helyszin}','destroy');
+});
+
 use App\Http\Controllers\CimController;
+Route::controller(CimController::class)->group(function(){
+    Route::post('/create-cim','store');
+    Route::get('/cimek','show');
+    Route::get('/cimek/{cim}','show');
+    Route::patch('/update-cim/{cim}','update');
+    Route::delete('/delete-cim/{cim}','destroy');
+});
+
 use App\Http\Controllers\UserController;
+Route::controller(UserController::class)->group(function(){
+    Route::post('/create-user','store');
+    Route::get('/userek','show');
+    Route::middleware('auth:sanctum')->get('/userek/{user}','show');
+    Route::patch('/update-user/{user}','update');
+    Route::delete('/delete-user/{user}','destroy');
+});
+
 use App\Http\Controllers\SzektorController;
-use App\Http\Controllers\Auth\LoginController;
+Route::controller(SzektorController::class)->group(function(){
+    Route::post('/create-szektor','store');
+    Route::get('/szektorok','show');
+    Route::get('/szektorok/{szektor}','show');
+    Route::patch('/update-szektor/{szektor}','update');
+    Route::delete('/delete-szektor/{szektor}','destroy');
+});
 
-Route::post('/create-eloado',[EloadoController::class,'store']);
-Route::get('/eloadok',[EloadoController::class,'index']);
-Route::get('/eloadok/{eloado}',[EloadoController::class,'show']);
-Route::patch('/update-eloado/{eloado}',[EloadoController::class,'update']);
-Route::delete('/delete-eloado/{eloado}',[EloadoController::class,'destroy']);
-
-Route::post('/create-mufaj',[MufajController::class,'store']);
-Route::get('/mufajok',[MufajController::class,'index']);
-Route::get('/mufajok/{mufaj}',[MufajController::class,'show']);
-Route::patch('/update-mufaj/{mufaj}',[MufajController::class,'update']);
-Route::delete('/delete-mufaj/{mufaj}',[MufajController::class,'destroy']);
-
-Route::post('/create-eloado-mufaj',[EloadoMufajController::class,'store']);
-Route::get('/eloado-mufaj-kapcsolatok',[EloadoMufajController::class,'index']);
-Route::get('/eloado-mufaj-kapcsolatok/{eloado_mufaj}',[EloadoMufajController::class,'show']);
-Route::patch('/update-eloado-mufaj/{eloado_mufaj}',[EloadoMufajController::class,'update']);
-Route::delete('/delete-eloado-mufaj/{eloado_mufaj}',[EloadoMufajController::class,'destroy']);
-
-Route::post('/create-helyszin',[HelyszinController::class,'store']);
-Route::get('/helyszinek',[HelyszinController::class,'index']);
-Route::get('/helyszinek/{helyszin}',[HelyszinController::class,'show']);
-Route::patch('/update-helyszin/{helyszin}',[HelyszinController::class,'update']);
-Route::delete('/delete-helyszin/{helyszin}',[HelyszinController::class,'destroy']);
-
-Route::post('/create-cim',[CimController::class,'store']);
-Route::get('/cimek',[CimController::class,'index']);
-Route::get('/cimek/{cim}',[CimController::class,'show']);
-Route::patch('/update-cim/{cim}',[CimController::class,'update']);
-Route::delete('/delete-cim/{cim}',[CimController::class,'destroy']);
-
-Route::post('/create-user',[UserController::class,'store']);
-Route::get('/userek',[UserController::class,'index']);
-Route::get('/userek/{user}',[UserController::class,'show']);
-Route::patch('/update-user/{user}',[UserController::class,'update']);
-Route::delete('/delete-user/{user}',[UserController::class,'destroy']);
-
-Route::post('/create-szektor',[SzektorController::class,'store']);
-Route::get('/szektorok',[SzektorController::class,'index']);
-Route::get('/szektorok/{szektor}',[SzektorController::class,'show']);
-Route::patch('/update-szektor/{szektor}',[SzektorController::class,'update']);
-Route::delete('/delete-szektor/{szektor}',[SzektorController::class,'destroy']);
-
-Route::post('/login', [LoginController::class, 'login']);
+use App\Http\Controllers\AuthController;
+Route::controller(AuthController::class)->group(function () {
+    Route::post('/', 'register');
+    Route::post('/login', 'login');
+    Route::middleware('auth:sanctum')->post('/logout', 'logout');
+});

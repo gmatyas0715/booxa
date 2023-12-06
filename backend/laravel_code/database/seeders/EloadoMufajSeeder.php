@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Eloado_mufaj;
+use App\Models\EloadoMufaj;
 
 class EloadoMufajSeeder extends Seeder
 {
@@ -25,7 +25,7 @@ class EloadoMufajSeeder extends Seeder
 
             $data = str_getcsv($line,';');
 
-            Eloado_mufaj::create([
+            EloadoMufaj::create([
                 'eloado_id' => $data[0],
                 'mufaj_id' => $data[1]
             ]);

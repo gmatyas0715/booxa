@@ -26,7 +26,7 @@ class SzektorSeeder extends Seeder
             $data = str_getcsv($line,';');
 
             Szektor::create([
-                'szektor_id' => $data[0],
+                'id' => $data[0],
                 'szektor_nev' => $data[1],
                 'szektor_tipus' => $data[2],
                 'arszorzo' => $data[3],

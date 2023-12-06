@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\UserModel;
-use App\Models\rendeles;
+use App\Models\User;
+use App\Models\Rendeles;
 use Illuminate\Auth\Access\Response;
 
 class RendelesPolicy
@@ -11,7 +11,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(UserModel $userModel): bool
+    public function viewAny(User $user): bool
     {
         //
     }
@@ -19,7 +19,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserModel $userModel, rendeles $rendeles): bool
+    public function view(User $user, Rendeles $rendeles): bool
     {
         //
     }
@@ -27,7 +27,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(UserModel $userModel): bool
+    public function create(User $user): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserModel $userModel, rendeles $rendeles): bool
+    public function update(User $user, Rendeles $rendeles): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserModel $userModel, rendeles $rendeles): bool
+    public function delete(User $user, Rendeles $rendeles): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(UserModel $userModel, rendeles $rendeles): bool
+    public function restore(User $user, Rendeles $rendeles): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class RendelesPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(UserModel $userModel, rendeles $rendeles): bool
+    public function forceDelete(User $user, Rendeles $rendeles): bool
     {
         //
     }

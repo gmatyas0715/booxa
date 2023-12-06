@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class jegy_adat_kedvezmeny extends Model
+class JegyAdatKedvezmeny extends Model
 {
     protected $table = 'jegy_adat_kedvezmeny';
     use HasFactory;

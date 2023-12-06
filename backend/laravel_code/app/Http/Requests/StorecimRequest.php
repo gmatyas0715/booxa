@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 
-class StorecimRequest extends FormRequest
+class StoreCimRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

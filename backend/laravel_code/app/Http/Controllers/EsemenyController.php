@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\esemeny;
-use App\Http\Requests\StoreesemenyRequest;
-use App\Http\Requests\UpdateesemenyRequest;
+use App\Models\Esemeny;
+use App\Http\Requests\StoreEsemenyRequest;
+use App\Http\Requests\UpdateEsemenyRequest;
 
 class EsemenyController extends Controller
 {
@@ -28,7 +28,7 @@ class EsemenyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreesemenyRequest $request)
+    public function store(StoreEsemenyRequest $request)
     {
         $ujEsemeny = new Esemeny();
         $ujEsemeny->eloado_id = $request->input('eloado_id');
@@ -40,7 +40,7 @@ class EsemenyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(esemeny $esemeny)
+    public function show(Esemeny $esemeny)
     {
         return response()->json($esemeny);
     }
@@ -48,7 +48,7 @@ class EsemenyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(esemeny $esemeny)
+    public function edit(Esemeny $esemeny)
     {
         //
     }
@@ -56,7 +56,7 @@ class EsemenyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateesemenyRequest $request, esemeny $esemeny)
+    public function update(UpdateEsemenyRequest $request, Esemeny $esemeny)
     {
         $tablaMezok = \Schema::getColumnListing($esemeny->getTable());
 
@@ -70,7 +70,7 @@ class EsemenyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(esemeny $esemeny)
+    public function destroy(Esemeny $esemeny)
     {
         $esemeny->delete();
         return response()->json(['üzenet'=>$esemeny->id.' azonosítójú esemény sikeresen törölve!']);

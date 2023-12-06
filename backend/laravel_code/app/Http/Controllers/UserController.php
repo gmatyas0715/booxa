@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\User;
 use App\Http\Requests\StoreuserRequest;
 use App\Http\Requests\UpdateuserRequest;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +29,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreuserRequest $request)
+    public function store(StoreUserRequest $request)
     {
         $ujUser = new User();
         $ujUser->vezeteknev = $request->input('vezeteknev');
@@ -47,7 +47,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(user $user)
+    public function show(User $user)
     {
         return response()->json($user);
     }
@@ -55,7 +55,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(user $user)
+    public function edit(User $user)
     {
         //
     }
@@ -63,7 +63,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateuserRequest $request, user $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         $user->vezeteknev = $request->input('vezeteknev');
         $user->keresztnev = $request->input('keresztnev');
@@ -79,7 +79,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(user $user)
+    public function destroy(User $user)
     {
         $user->delete();
         return response()->json(['üzenet'=>$user->id.' azonosítójú felhasználó sikeresen törölve!']);

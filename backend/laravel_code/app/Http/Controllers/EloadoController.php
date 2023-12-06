@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\eloado;
-use App\Http\Requests\StoreeloadoRequest;
-use App\Http\Requests\UpdateeloadoRequest;
+use App\Http\Requests\StoreEloadoRequest;
+use App\Http\Requests\UpdateEloadoRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -30,7 +30,7 @@ class EloadoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreeloadoRequest $request)
+    public function store(StoreEloadoRequest $request)
     {
         $ujEloado = new Eloado();
         $ujEloado->nev = $request->input('nev');
@@ -45,7 +45,7 @@ class EloadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(eloado $eloado)
+    public function show(Eloado $eloado)
     {
         return response()->json($eloado);
     }
@@ -53,7 +53,7 @@ class EloadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(eloado $eloado)
+    public function edit(Eloado $eloado)
     {
         //
     }
@@ -61,7 +61,7 @@ class EloadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateeloadoRequest $request, eloado $eloado)
+    public function update(UpdateEloadoRequest $request, Eloado $eloado)
     {
         $tablaMezok = \Schema::getColumnListing($eloado->getTable());
 
@@ -76,7 +76,7 @@ class EloadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(eloado $eloado)
+    public function destroy(Eloado $eloado)
     {
         $eloado->delete();
         return response()->json(['üzenet'=>$eloado->nev.' nevű előadó sikeresen törölve!']);

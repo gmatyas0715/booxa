@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cim;
-use App\Http\Requests\StorecimRequest;
-use App\Http\Requests\UpdatecimRequest;
+use App\Models\Cim;
+use App\Http\Requests\StoreCimRequest;
+use App\Http\Requests\UpdateCimRequest;
 
 class CimController extends Controller
 {
@@ -28,7 +28,7 @@ class CimController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorecimRequest $request)
+    public function store(StoreCimRequest $request)
     {
         $ujCim = new Cim();
         $ujCim->iranyitoszam = $request->input('iranyitoszam');
@@ -43,7 +43,7 @@ class CimController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(cim $cim)
+    public function show(Cim $cim)
     {
         return response()->json($cim);
     }
@@ -51,7 +51,7 @@ class CimController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cim $cim)
+    public function edit(Cim $cim)
     {
         //
     }
@@ -59,7 +59,7 @@ class CimController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatecimRequest $request, cim $cim)
+    public function update(UpdateCimRequest $request, Cim $cim)
     {
         $tablaMezok = \Schema::getColumnListing($cim->getTable());
 
@@ -73,7 +73,7 @@ class CimController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cim $cim)
+    public function destroy(Cim $cim)
     {
         $cim->delete();
         return response()->json(['üzenet'=>$cim->id.' azonosítójú cím sikeresen törölve!']);

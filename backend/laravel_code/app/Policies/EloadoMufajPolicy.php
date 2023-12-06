@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\UserModel;
-use App\Models\eloado_mufaj;
+use App\Models\User;
+use App\Models\EloadoMufaj;
 use Illuminate\Auth\Access\Response;
 
 class EloadoMufajPolicy
@@ -11,7 +11,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(UserModel $userModel): bool
+    public function viewAny(User $user): bool
     {
         //
     }
@@ -19,7 +19,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserModel $userModel, eloado_mufaj $eloadoMufaj): bool
+    public function view(User $user, EloadoMufaj $eloadoMufaj): bool
     {
         //
     }
@@ -27,7 +27,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(UserModel $userModel): bool
+    public function create(User $user): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserModel $userModel, eloado_mufaj $eloadoMufaj): bool
+    public function update(User $user, EloadoMufaj $eloadoMufaj): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserModel $userModel, eloado_mufaj $eloadoMufaj): bool
+    public function delete(User $user, EloadoMufaj $eloadoMufaj): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(UserModel $userModel, eloado_mufaj $eloadoMufaj): bool
+    public function restore(User $user, EloadoMufaj $eloadoMufaj): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class EloadoMufajPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(UserModel $userModel, eloado_mufaj $eloadoMufaj): bool
+    public function forceDelete(User $user, EloadoMufaj $eloadoMufaj): bool
     {
         //
     }

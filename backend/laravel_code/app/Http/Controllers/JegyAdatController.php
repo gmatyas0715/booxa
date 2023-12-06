@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jegy_adat;
-use App\Http\Requests\Storejegy_adatRequest;
-use App\Http\Requests\Updatejegy_adatRequest;
+use App\Models\JegyAdat;
+use App\Http\Requests\StoreJegyAdatRequest;
+use App\Http\Requests\UpdateJegyAdatRequest;
 
 class JegyAdatController extends Controller
 {
@@ -13,7 +13,7 @@ class JegyAdatController extends Controller
      */
     public function index()
     {
-        $jegyAdatok = Jegy_adat::all();
+        $jegyAdatok = JegyAdat::all();
         return response()->json($jegyAdatok);
     }
 
@@ -28,9 +28,9 @@ class JegyAdatController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Storejegy_adatRequest $request)
+    public function store(StoreJegyAdatRequest $request)
     {
-        $ujJegyAdat = new Cim();
+        $ujJegyAdat = new JegyAdat();
         $ujJegyAdat->esemeny_id = $request->input('esemeny_id');
         $ujJegyAdat->helyszin_id = $request->input('helyszin_id');
         $ujJegyAdat->rendeles_id = $request->input('rendeles_id');
@@ -45,7 +45,7 @@ class JegyAdatController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(jegy_adat $jegy_adat)
+    public function show(JegyAdat $jegy_adat)
     {
         return response()->json($jegy_adat);
     }
@@ -53,7 +53,7 @@ class JegyAdatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(jegy_adat $jegy_adat)
+    public function edit(JegyAdat $jegy_adat)
     {
         //
     }
@@ -61,7 +61,7 @@ class JegyAdatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Updatejegy_adatRequest $request, jegy_adat $jegy_adat)
+    public function update(UpdateJegyAdatRequest $request, JegyAdat $jegy_adat)
     {
         $tablaMezok = \Schema::getColumnListing($jegy_adat->getTable());
 
@@ -75,7 +75,7 @@ class JegyAdatController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(jegy_adat $jegy_adat)
+    public function destroy(JegyAdat $jegy_adat)
     {
         $jegy_adat->delete();
         return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);

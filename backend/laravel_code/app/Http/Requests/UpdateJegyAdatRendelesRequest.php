@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Updatejegy_adat_kedvezmenyRequest extends FormRequest
+class UpdateJegyAdatRendelesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

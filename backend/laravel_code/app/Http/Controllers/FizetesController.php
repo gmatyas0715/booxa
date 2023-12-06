@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\fizetes;
-use App\Http\Requests\StorefizetesRequest;
-use App\Http\Requests\UpdatefizetesRequest;
+use App\Models\Fizetes;
+use App\Http\Requests\StoreFizetesRequest;
+use App\Http\Requests\UpdateFizetesRequest;
 
 class FizetesController extends Controller
 {
@@ -28,7 +28,7 @@ class FizetesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorefizetesRequest $request)
+    public function store(StoreFizetesRequest $request)
     {
         $ujFizetes = new Fizetes();
         $ujFizetes->fizetes_idopont = $request->input('fizetes_idopont');
@@ -43,7 +43,7 @@ class FizetesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(fizetes $fizetes)
+    public function show(Fizetes $fizetes)
     {
         return response()->json($fizetes);
     }
@@ -51,7 +51,7 @@ class FizetesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(fizetes $fizetes)
+    public function edit(Fizetes $fizetes)
     {
         //
     }
@@ -59,7 +59,7 @@ class FizetesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatefizetesRequest $request, fizetes $fizetes)
+    public function update(UpdateFizetesRequest $request, Fizetes $fizetes)
     {
         $tablaMezok = \Schema::getColumnListing($fizetes->getTable());
 
@@ -73,7 +73,7 @@ class FizetesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(fizetes $fizetes)
+    public function destroy(Fizetes $fizetes)
     {
         $fizetes->delete();
         return response()->json(['üzenet'=>$fizetes->id.' azonosítójú cím sikeresen törölve!']);

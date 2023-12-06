@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 
-class StoreeloadoRequest extends FormRequest
+class StoreEloadoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

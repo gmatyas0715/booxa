@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\helyszin;
-use App\Http\Requests\StorehelyszinRequest;
-use App\Http\Requests\UpdatehelyszinRequest;
+use App\Models\Helyszin;
+use App\Http\Requests\StoreHelyszinRequest;
+use App\Http\Requests\UpdateHelyszinRequest;
 
 class HelyszinController extends Controller
 {
@@ -28,7 +28,7 @@ class HelyszinController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorehelyszinRequest $request)
+    public function store(StoreHelyszinRequest $request)
     {
         $ujHelyszin = new Helyszin();
         $ujHelyszin->id = $request->input('id');
@@ -47,7 +47,7 @@ class HelyszinController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(helyszin $helyszin)
+    public function show(Helyszin $helyszin)
     {
         return response()->json($helyszin);
     }
@@ -55,7 +55,7 @@ class HelyszinController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(helyszin $helyszin)
+    public function edit(Helyszin $helyszin)
     {
         //
     }
@@ -63,7 +63,7 @@ class HelyszinController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatehelyszinRequest $request, helyszin $helyszin)
+    public function update(UpdateHelyszinRequest $request, Helyszin $helyszin)
     {
         $tablaMezok = \Schema::getColumnListing($helyszin->getTable());
 
@@ -77,7 +77,7 @@ class HelyszinController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(helyszin $helyszin)
+    public function destroy(Helyszin $helyszin)
     {
         $helyszin->delete();
         return response()->json(['üzenet'=>$helyszin->id.' azonosítójú helyszín sikeresen törölve!']);
