@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             [
                 CimSeeder::class,
                 MufajSeeder::class,
+                SzerepSeeder::class,
                 UserSeeder::class,
                 EloadoSeeder::class,
                 EloadoMufajSeeder::class,
@@ -29,13 +30,5 @@ class DatabaseSeeder extends Seeder
                 RendelesSeeder::class,
             ]
         ); 
-
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

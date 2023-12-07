@@ -31,17 +31,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        $ujUser = new User();
-        $ujUser->vezeteknev = $request->input('vezeteknev');
-        $ujUser->keresztnev = $request->input('keresztnev');
-        $ujUser->email = $request->input('email');
-        $ujUser->nem = $request->input('nem');
-        $ujUser->szuletesi_datum = $request->input('szuletesi_datum');
-        $ujUser->felhasznalonev = $request->input('felhasznalonev');
-        $ujUser->jelszo = Hash::make($request->input('jelszo'));
-
-        $ujUser->save();
-        return response()->json(['üzenet'=>$ujUser->id.' azonosítóval új felhasználó lett létrehozva!']);
+       
     }
 
     /**
