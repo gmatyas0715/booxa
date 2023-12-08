@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\eloado;
+use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
 use Illuminate\Http\Request;
