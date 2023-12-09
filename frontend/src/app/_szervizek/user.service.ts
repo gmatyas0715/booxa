@@ -50,8 +50,8 @@ export class UserService {
     }
   }
 
-  userInfo(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8000/api/data');
+  eloadokInfo(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8000/api/eloadok');
   }
 
   Logout(){

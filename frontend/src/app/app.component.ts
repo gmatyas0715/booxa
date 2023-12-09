@@ -12,8 +12,6 @@ export class AppComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.szerviz.userInfo().subscribe((result) => {
-      this.userInfo = result;
-    });
+
   }
 }
