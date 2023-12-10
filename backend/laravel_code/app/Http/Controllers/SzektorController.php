@@ -8,26 +8,13 @@ use App\Http\Requests\UpdateszektorRequest;
 
 class SzektorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $szektorok = Szektor::all();
         return response()->json($szektorok);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreSzektorRequest $request)
     {
         $ujSzektor = new Szektor();
@@ -43,25 +30,11 @@ class SzektorController extends Controller
         return response()->json(['üzenet' => $ujSzektor->szektor_id.' azonosítójú szektor sikeresen létrehozva!']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Szektor $szektor)
     {
         return response()->json($szektor);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Szektor $szektor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateSzektorRequest $request, Szektor $szektor)
     {
         $tablaMezok = \Schema::getColumnListing($szektor->getTable());
@@ -73,9 +46,6 @@ class SzektorController extends Controller
         return response()->json($szektor);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Szektor $szektor)
     {
         $szektor->delete();

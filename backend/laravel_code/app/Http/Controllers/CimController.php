@@ -8,26 +8,13 @@ use App\Http\Requests\UpdateCimRequest;
 
 class CimController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $cimek = Cim::all();
         return response()->json($cimek);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCimRequest $request)
     {
         $ujCim = new Cim();
@@ -40,25 +27,11 @@ class CimController extends Controller
         return response()->json(['üzenet' => $ujCim->id.' azonosítójú cím sikeresen létrehozva!']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Cim $cim)
     {
         return response()->json($cim);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cim $cim)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCimRequest $request, Cim $cim)
     {
         $tablaMezok = \Schema::getColumnListing($cim->getTable());
@@ -70,9 +43,6 @@ class CimController extends Controller
         return response()->json($cim);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Cim $cim)
     {
         $cim->delete();

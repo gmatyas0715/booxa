@@ -8,26 +8,13 @@ use App\Http\Requests\UpdateHelyszinRequest;
 
 class HelyszinController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $helyszin = Helyszin::all();
         return response()->json($helyszin);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-
-    }   
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreHelyszinRequest $request)
     {
         $ujHelyszin = new Helyszin();
@@ -44,25 +31,11 @@ class HelyszinController extends Controller
         return response()->json(['üzenet'=>$ujHelyszin->id.' azonosítóval új helyszín lett létrehozva!']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Helyszin $helyszin)
     {
         return response()->json($helyszin);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Helyszin $helyszin)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateHelyszinRequest $request, Helyszin $helyszin)
     {
         $tablaMezok = \Schema::getColumnListing($helyszin->getTable());
@@ -74,9 +47,6 @@ class HelyszinController extends Controller
         return response()->json($helyszin);;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Helyszin $helyszin)
     {
         $helyszin->delete();

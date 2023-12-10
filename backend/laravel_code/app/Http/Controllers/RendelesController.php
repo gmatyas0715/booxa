@@ -8,59 +8,44 @@ use App\Http\Requests\UpdateRendelesRequest;
 
 class RendelesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $rendelesek = Rendeles::all();
+        return response()->json($rendelesek);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreRendelesRequest $request)
     {
-        //
+        $ujrendeles = new Rendeles();
+        $ujrendeles->rendeles_idopont = $request->input('rendeles_idopont');
+        $ujrendeles->user_id = $request->input('user_id');
+        $ujrendeles->fizetes_id = $request->input('fizetes_id');
+        $ujrendeles->save();
+
+        return response()->json(['üzenet' => $ujrendeles->id.' azonosítójú rendelés sikeresen leadva!']);
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Rendeles $rendeles)
     {
-        //
+        return response()->json($rendeles);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Rendeles $rendeles)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateRendelesRequest $request, Rendeles $rendeles)
     {
-        //
+        $tablaMezok = \Schema::getColumnListing($rendeles->getTable());
+
+        $updateAdat = $request->only($tablaMezok);
+
+        $rendeles->update($updateAdat);     
+
+        return response()->json($rendeles);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Rendeles $rendeles)
     {
-        //
+        $rendeles->delete();
+        return response()->json(['üzenet'=>$rendeles->id.' azonosítójú rendelés sikeresen törölve!']);
     }
 }

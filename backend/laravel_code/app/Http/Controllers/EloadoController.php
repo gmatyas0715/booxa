@@ -10,26 +10,13 @@ use Illuminate\Support\Facades\Log;
 
 class EloadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $eloadok = Eloado::all();
         return response()->json($eloadok);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreEloadoRequest $request)
     {
         $ujEloado = new Eloado();
@@ -42,25 +29,11 @@ class EloadoController extends Controller
         return response()->json(['üzenet' => $ujEloado->nev.' nevű előadó sikeresen létrehozva!']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Eloado $eloado)
     {
         return response()->json($eloado);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Eloado $eloado)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateEloadoRequest $request, Eloado $eloado)
     {
         $tablaMezok = \Schema::getColumnListing($eloado->getTable());
@@ -72,10 +45,6 @@ class EloadoController extends Controller
         return response()->json($eloado);
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Eloado $eloado)
     {
         $eloado->delete();
