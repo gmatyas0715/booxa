@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JegyAdat;
 use App\Http\Requests\StoreJegyAdatRequest;
 use App\Http\Requests\UpdateJegyAdatRequest;
+use Illuminate\Support\Facades\Schema;
 
 class JegyAdatController extends Controller
 {
@@ -36,7 +37,7 @@ class JegyAdatController extends Controller
 
     public function update(UpdateJegyAdatRequest $request, JegyAdat $jegy_adat)
     {
-        $tablaMezok = \Schema::getColumnListing($jegy_adat->getTable());
+        $tablaMezok = Schema::getColumnListing($jegy_adat->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

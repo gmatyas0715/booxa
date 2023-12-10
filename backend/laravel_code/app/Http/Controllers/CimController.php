@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cim;
 use App\Http\Requests\StoreCimRequest;
 use App\Http\Requests\UpdateCimRequest;
+use Illuminate\Support\Facades\Schema;
 
 class CimController extends Controller
 {
@@ -34,7 +35,7 @@ class CimController extends Controller
 
     public function update(UpdateCimRequest $request, Cim $cim)
     {
-        $tablaMezok = \Schema::getColumnListing($cim->getTable());
+        $tablaMezok = Schema::getColumnListing($cim->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

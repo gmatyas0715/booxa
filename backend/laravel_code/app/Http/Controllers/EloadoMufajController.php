@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\EloadoMufaj;
 use App\Http\Requests\StoreEloadoMufajRequest;
 use App\Http\Requests\UpdateEloadoMufajRequest;
+use Illuminate\Support\Facades\Schema;
 
 class EloadoMufajController extends Controller
 {
@@ -32,7 +33,7 @@ class EloadoMufajController extends Controller
 
     public function update(UpdateEloadoMufajRequest $request, EloadoMufaj $eloadoMufaj)
     {
-        $tablaMezok = \Schema::getColumnListing($eloadoMufaj->getTable());
+        $tablaMezok = Schema::getColumnListing($eloadoMufaj->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 
@@ -43,7 +44,7 @@ class EloadoMufajController extends Controller
 
     public function destroy(EloadoMufaj $eloadoMufaj)
     {
-        $eloado_mufaj->delete();
-        return response()->json(['üzenet'=>$eloado_mufaj->id.' azonosítójú előadó-műfaj kapcsolat sikeresen törölve!']);
+        $eloadoMufaj->delete();
+        return response()->json(['üzenet'=>$eloadoMufaj->id.' azonosítójú előadó-műfaj kapcsolat sikeresen törölve!']);
     }
 }

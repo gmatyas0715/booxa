@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Rendeles;
 use App\Http\Requests\StoreRendelesRequest;
 use App\Http\Requests\UpdateRendelesRequest;
+use Illuminate\Support\Facades\Schema;
 
 class RendelesController extends Controller
 {
@@ -34,7 +35,7 @@ class RendelesController extends Controller
 
     public function update(UpdateRendelesRequest $request, Rendeles $rendeles)
     {
-        $tablaMezok = \Schema::getColumnListing($rendeles->getTable());
+        $tablaMezok = Schema::getColumnListing($rendeles->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

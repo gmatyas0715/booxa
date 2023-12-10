@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Helyszin;
 use App\Http\Requests\StoreHelyszinRequest;
 use App\Http\Requests\UpdateHelyszinRequest;
+use Illuminate\Support\Facades\Schema;
 
 class HelyszinController extends Controller
 {
@@ -38,7 +39,7 @@ class HelyszinController extends Controller
 
     public function update(UpdateHelyszinRequest $request, Helyszin $helyszin)
     {
-        $tablaMezok = \Schema::getColumnListing($helyszin->getTable());
+        $tablaMezok = Schema::getColumnListing($helyszin->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

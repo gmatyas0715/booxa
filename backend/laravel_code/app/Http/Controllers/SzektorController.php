@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Szektor;
 use App\Http\Requests\StoreszektorRequest;
 use App\Http\Requests\UpdateszektorRequest;
+use Illuminate\Support\Facades\Schema;
 
 class SzektorController extends Controller
 {
 
     public function index()
     {
-        $szektorok = Szektor::all();
+        $szektorok = Szektor::with('helyszin')->get();
         return response()->json($szektorok);
     }
 
@@ -37,7 +38,7 @@ class SzektorController extends Controller
 
     public function update(UpdateSzektorRequest $request, Szektor $szektor)
     {
-        $tablaMezok = \Schema::getColumnListing($szektor->getTable());
+        $tablaMezok = Schema::getColumnListing($szektor->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

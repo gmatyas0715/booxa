@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Esemeny;
 use App\Http\Requests\StoreEsemenyRequest;
 use App\Http\Requests\UpdateEsemenyRequest;
+use Illuminate\Support\Facades\Schema;
 
 class EsemenyController extends Controller
 {
@@ -12,7 +13,7 @@ class EsemenyController extends Controller
     public function index()
     {
         $esemenyek = Esemeny::all();
-        return response()->json($cimek);
+        return response()->json($esemenyek);
     }
 
     public function store(StoreEsemenyRequest $request)
@@ -31,7 +32,7 @@ class EsemenyController extends Controller
 
     function update(UpdateEsemenyRequest $request, Esemeny $esemeny)
     {
-        $tablaMezok = \Schema::getColumnListing($esemeny->getTable());
+        $tablaMezok = Schema::getColumnListing($esemeny->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

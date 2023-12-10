@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 
 class EloadoController extends Controller
 {
@@ -36,7 +35,7 @@ class EloadoController extends Controller
 
     public function update(UpdateEloadoRequest $request, Eloado $eloado)
     {
-        $tablaMezok = \Schema::getColumnListing($eloado->getTable());
+        $tablaMezok = Schema::getColumnListing($eloado->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

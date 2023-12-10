@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fizetes;
 use App\Http\Requests\StoreFizetesRequest;
 use App\Http\Requests\UpdateFizetesRequest;
+use Illuminate\Support\Facades\Schema;
 
 class FizetesController extends Controller
 {
@@ -34,7 +35,7 @@ class FizetesController extends Controller
 
     public function update(UpdateFizetesRequest $request, Fizetes $fizetes)
     {
-        $tablaMezok = \Schema::getColumnListing($fizetes->getTable());
+        $tablaMezok = Schema::getColumnListing($fizetes->getTable());
 
         $updateAdat = $request->only($tablaMezok);
 

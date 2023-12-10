@@ -35,10 +35,9 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // BEJELENTKEZÉSHEZ KÖTÖTT ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum']],function(){
-        Route::controller(AuthController::class)->group(function () {
-            Route::post('/logout', 'logout');
+            Route::post('/logout', 'AuthController@logout');
         });
-    });
+
 
     // ADMIN & ESEMÉNY-SZERKESZTŐ JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:admin|szerkeszto']],function(){
@@ -138,5 +137,5 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::post('/jegyadatok', 'JegyAdatController@store');
         Route::delete('/jegyadatok', 'JegyAdatController@destroy');
         Route::patch('/jegyadatok', 'JegyAdatController@update');
-});
+    });
 });
