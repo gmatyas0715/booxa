@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::namespace('App\Http\Controllers')->group(function () {
     // PUBLIKUS ROUTE-OK
@@ -32,6 +31,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     // Esemény route-ok
     Route::get('/esemenyek','EsemenyController@index');
     Route::get('/esemenyek/{esemeny}','EsemenyController@show');
+    Route::get('/esemenyKereso','EsemenyController@esemenyKereso');
 
     // BEJELENTKEZÉSHEZ KÖTÖTT ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum']],function(){

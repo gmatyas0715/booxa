@@ -1,6 +1,6 @@
 <div class="esemeny-kereso-teljes">
     <div class="container kereses-szures"> 
-       <div class="kereses-szures-content" [ngClass]="">
+       <div class="kereses-szures-content">
             <div class="row">
                 <div class="col">
                     <h4 class="font-weight-bold" >Keresés</h4>
@@ -9,14 +9,14 @@
             <div class="row mb-4 kereses-block">
                 <div class="col mb-2">
                     <label class="font-weight-bold d-block" >Előadó:</label>
-                    <input class="" type="text" placeholder="bármilyen előadó">
+                    <input [(ngModel)]="eloado" class="" type="text" placeholder="bármilyen előadó">
                 </div>
                 <div class="col mb-2">
                     <label for="" class="font-weight-bold d-block" >Helyszín:</label>
-                    <input type="text" placeholder="bárhol">
+                    <input [(ngModel)]="helyszin"  type="text" placeholder="bárhol">
                 </div>
                 <div class="col">
-                    <button class="mt-2">Keresés</button>
+                    <button (click)="esemenyKereses()" class="mt-2">Keresés</button>
                 </div>
             </div>
             <div class="row mb-4 kereses-block">
@@ -84,11 +84,11 @@
         </div>
         <hr>
        <div class="row">
-            <div *ngFor="let keresesEredmeny of keresesEredmenyek" class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div *ngFor="let esemeny of esemenyLista" class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
                 <div class="esemeny-container">
                     <div class="row">
                         <div class="col p-1">
-                            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
+                            <img class="esemeny-kep" [src]="eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
                         </div>
                         <div class="col p-1 ">
                             <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
@@ -96,22 +96,22 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            {{keresesEredmeny}}
+                            {{esemeny.eloado.nev}}
                         </div>
                         <div class="col text-center">
-                            Minta helyszín
+                            {{esemeny.helyszin.nev}}
                         </div>
                     </div>
                     <div class="row text-center pt-1 pb-0">
                         <div class="col p-0">
                             <b>Időpont:</b>
-                            <br>
-                            2023. 12. 31
+                                <br>
+                                {{esemeny.idopont}}
                         </div>
                         <div class="col p-0">
                             <b>Jegyárak:</b>
                                 <br>
-                                10000 Ft-tól!
+                                {{esemeny.jegy_alapar}} Ft-tól!
                         </div>
                         <div class="col">
                             <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>

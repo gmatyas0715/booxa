@@ -11,15 +11,5 @@ export class KezdooldalComponent {
     constructor(protected userService: UserService) {
 
     }
-    eloadoLista: any;
 
-    eloadok = this.userService.eloadokInfo().subscribe(
-      (response) =>{
-        console.log('Válasz a backendtől',response);
-        this.eloadoLista = response
-      },
-      (error)=>{
-        console.error('Error',error);
-      }
-    );
 }

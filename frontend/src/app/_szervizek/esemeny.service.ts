@@ -1,17 +1,29 @@
 import { Injectable } from '@angular/core';
-import { EloadoModell } from '../_modellek/eloado-modell';
-import { HelyszinModell } from '../_modellek/helyszin-modell';
-import { EsemenyModell } from '../_modellek/esemeny-modell';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EsemenyService {
 
-  public esemenyLista:EsemenyModell[] = []
-
   constructor(
-    public eloado:EloadoModell,
-    public helyszin:HelyszinModell
-  ) { }
+    private http: HttpClient,
+  ) { 
+
+  }
+
+  eloadoAdatok(eloado:string,helyszin:string):Observable<any>{
+    console.log(eloado,' ',helyszin)
+    const params = new HttpParams()
+      .set('eloado',eloado)
+      .set('helyszin',helyszin);
+
+      console.log(params);
+
+      return this.http.get('http://localhost:8000/api/esemenyKereso',{params});
+  }
+  esemenyFrissites(){
+
+  }
 }

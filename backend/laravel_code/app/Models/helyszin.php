@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Helyszin extends Model
 {
     protected $table = 'helyszin';
-    protected $primaryKey = 'id';
     use HasFactory;
 
     public function esemeny() : HasMany 

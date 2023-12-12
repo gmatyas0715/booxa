@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 
 class EloadoController extends Controller
