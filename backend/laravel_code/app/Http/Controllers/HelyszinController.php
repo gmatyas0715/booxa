@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Helyszin;
+use App\Models\Cim;
 use App\Http\Requests\StoreHelyszinRequest;
 use App\Http\Requests\UpdateHelyszinRequest;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,12 @@ class HelyszinController extends Controller
         return response()->json($helyszin);
     }
 
+    public function helyszinek()
+    {
+        $helyszinek = Helyszin::select('nev')->get();
+        return response()->json($helyszinek);
+    }
+
     public function store(StoreHelyszinRequest $request)
     {
         $ujHelyszin = new Helyszin();
@@ -27,6 +34,7 @@ class HelyszinController extends Controller
         $ujHelyszin->szabadteri = $request->input('szabadteri');
         $ujHelyszin->arkategoria = $request->input('arkategoria');
         $ujHelyszin->helyszin_kep_eleres = $request->input('helyszin_kep_eleres');
+        $ujHelyszin->svg_kep_eleres = $request->input('svg_kep_eleres');
 
         $ujHelyszin->save();
         return response()->json(['üzenet'=>$ujHelyszin->id.' azonosítóval új helyszín lett létrehozva!']);

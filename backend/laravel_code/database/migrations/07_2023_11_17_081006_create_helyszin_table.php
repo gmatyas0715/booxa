@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('szabadteri')->default(0);
             $table->decimal('arkategoria',2,1);
             $table->string('helyszin_kep_eleres',100);
+            $table->string('svg_kep_eleres',100);
             $table->foreign('cim_id')
                 ->references('id')
                 ->on('cim')

@@ -7,22 +7,34 @@
                 </div>
             </div>
             <div class="row mb-4 kereses-block">
-                <div class="col mb-2">
-                    <label class="font-weight-bold d-block" >Előadó:</label>
-                    <input [(ngModel)]="eloado" class="" type="text" placeholder="bármilyen előadó">
-                </div>
-                <div class="col mb-2">
-                    <label for="" class="font-weight-bold d-block" >Helyszín:</label>
-                    <input [(ngModel)]="helyszin"  type="text" placeholder="bárhol">
-                </div>
-                <div class="col">
-                    <button (click)="esemenyKereses()" class="mt-2">Keresés</button>
-                </div>
+                <form (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
+                    <div class="col mb-2">
+                        <label class="font-weight-bold d-block" >Előadó:</label>
+                        <input name="eloado"  [(ngModel)]="eloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
+                        <mat-autocomplete #auto1="matAutocomplete">
+                            <mat-option *ngFor="let javaslat of eloadoFilterezett" [value]="javaslat">
+                              {{ javaslat }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>
+                    <div class="col mb-2">
+                        <label for="" class="font-weight-bold d-block" >Helyszín:</label>
+                        <input name="helyszin" [(ngModel)]="helyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
+                        <mat-autocomplete #auto2="matAutocomplete">
+                            <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
+                              {{ javaslat }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>
+                    <div class="col">
+                        <button class="mt-2">Keresés</button>
+                    </div>
+                </form>
             </div>
             <div class="row mb-4 kereses-block">
                 <div class="col d-block mb-2">
                     <label class="font-weight-bold" for="esemenyDatum">Esemény időpont</label>
-                    <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum">
+                    <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum" (ngModelChange)="esemenyKereses()">
                 </div>
                 <div class="col">
                     <button class="mt-2" (click)="datumTorles()">Időpont törlése</button>
@@ -91,7 +103,7 @@
                             <img class="esemeny-kep" [src]="eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
                         </div>
                         <div class="col p-1 ">
-                            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+                            <img class="esemeny-kep" [src]="helyszinKepUrl(esemeny.helyszin.helyszin_kep_eleres)" alt="">
                         </div>
                     </div>
                     <div class="row">

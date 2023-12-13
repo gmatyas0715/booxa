@@ -18,6 +18,12 @@ class EloadoController extends Controller
         return response()->json($eloadok);
     }
 
+    public function eloadoNevek()
+    {
+        $eloadok = Eloado::select('nev')->get();
+        return response()->json($eloadok);
+    }
+
     public function store(StoreEloadoRequest $request)
     {
         $ujEloado = new Eloado();

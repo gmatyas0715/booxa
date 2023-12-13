@@ -15,7 +15,10 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,8 +15,21 @@ Route::get('/eloado-kep/{kepNev}', function ($kepNev) {
     return response($file)->header('Content-Type', $type);
 })->where('filename', '.*');
 
-Route::get('/helyszin-kep/{kep-nev}', function ($filename) {
-    $path = public_path('images/' . $filename);
+Route::get('/helyszin-kep/{kepNev}', function ($kepNev) {
+    $path = public_path('helyszin_kep/' . $kepNev);
+
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    $file = file_get_contents($path);
+    $type = mime_content_type($path);
+
+    return response($file)->header('Content-Type', $type);
+})->where('filename', '.*');
+
+Route::get('/svg-helyszin-kep/{kepNev}', function ($kepNev) {
+    $path = public_path('svg_helyszin/' . $kepNev);
 
     if (!file_exists($path)) {
         abort(404);

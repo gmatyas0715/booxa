@@ -22,7 +22,6 @@ class EsemenyController extends Controller
         $eloado = $request->query('eloado');
         $helyszin = $request->query('helyszin');
 
-
     $query = Esemeny::select('id', 'idopont', 'jegy_alapar', 'helyszin_id', 'eloado_id');
 
     // Check if $eloado is not empty, then add the eloado condition
@@ -41,7 +40,7 @@ class EsemenyController extends Controller
     
     $query->with([
         'helyszin' => function ($query) {
-            $query->select('id', 'nev');
+            $query->select('id', 'nev','helyszin_kep_eleres');
         },
         'eloado' => function ($query) {
             $query->select('id', 'nev', 'kep_eleres');

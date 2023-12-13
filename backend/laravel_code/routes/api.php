@@ -10,6 +10,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Előadó route-ok
     Route::get('/eloadok','EloadoController@index');
+    Route::get('/eloado-nevek','EloadoController@eloadoNevek');
     Route::get('/eloadok/{eloado}','EloadoController@show');
 
     // Műfaj route-ok
@@ -22,6 +23,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Helyszín route-ok
     Route::get('/helyszinek','HelyszinController@index');
+    Route::get('/helyszin-nevek','HelyszinController@helyszinek');
     Route::get('/helyszinek/{helyszin}','HelyszinController@show');
 
     // Szektor route-ok

@@ -32,6 +32,7 @@ class HelyszinSeeder extends Seeder
                 'szabadteri' => $data[3],
                 'arkategoria' => $data[4],
                 'helyszin_kep_eleres' => $data[5],
+                'svg_kep_eleres' => $data[6]
             ]);
         }
     }
