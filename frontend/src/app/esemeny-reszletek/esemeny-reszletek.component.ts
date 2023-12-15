@@ -1,4 +1,9 @@
 import {Component} from '@angular/core';
+import { EsemenyService } from '../_szervizek/esemeny.service';
+import { EsemenyModell } from '../_modellek/esemeny-modell';
+import { HelyszinModell } from '../_modellek/helyszin-modell';
+import { HelyszinService } from '../_szervizek/helyszin.service';
+import { EloadoModell } from '../_modellek/eloado-modell';
 
 @Component({
   selector: 'app-esemeny-reszletek',
@@ -6,6 +11,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./esemeny-reszletek.component.css']
 })
 export class EsemenyReszletekComponent{
+
+  constructor(public esemenySzerviz:EsemenyService,
+              public helyszinSzerviz:HelyszinService) {
+
+  }
+
+  kivalasztottEsemeny:EsemenyModell = this.esemenySzerviz.kivalasztottEsemeny
+  kivalasztottHelyszin:HelyszinModell = this.kivalasztottEsemeny.helyszin
+  kivalasztottEloado:EloadoModell = this.kivalasztottEsemeny.eloado
   public id:string = "";
 
   Kattintas(event:Event):void{

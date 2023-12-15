@@ -12,7 +12,7 @@ class Helyszin extends Model
     protected $table = 'helyszin';
     use HasFactory;
 
-    public function esemeny() : HasMany 
+    public function esemeny() : HasMany
     {
         return $this->hasMany(Esemeny::class);
     }

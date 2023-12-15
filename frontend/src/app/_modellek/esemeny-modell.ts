@@ -1,9 +1,12 @@
-export class EsemenyModell {
-    public esemenyID:number = 0;
-    public helyszin:string = "";
-    public esemenyIdopont:Date = new Date();
+import { EloadoModell } from "./eloado-modell";
+import { HelyszinModell } from "./helyszin-modell";
 
-    public jegyAlapar:number = 0;
-    public eloadoID:number = 0;
-    public helyszinID:number = 0;
+export interface EsemenyModell {
+    id:number;
+    idopont:Date;
+    jegy_alapar:number;
+    eloado_id:number;
+    helyszin_id:number;
+    helyszin:HelyszinModell;
+    eloado:EloadoModell
 }

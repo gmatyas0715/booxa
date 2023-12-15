@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
+import { EsemenyModell } from '../_modellek/esemeny-modell';
 import { EloadoService } from '../_szervizek/eloado.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { NevJson } from '../nev-json';
@@ -10,17 +11,16 @@ import { NevJson } from '../nev-json';
   styleUrls: ['./esemenyKereso.component.css']
 })
 export class EsemenyKeresoComponent {
-  constructor(public eloadoSzerviz: EloadoService,
-              public helyszinSzerviz: HelyszinService,
-              public esemenySzerviz:EsemenyService) {
-
-              this.eloadoJavaslatBetoltes();
-              this.helyszinJavaslatBetoltes();
+  constructor(public esemenySzerviz:EsemenyService,
+              public eloadoSzerviz:EloadoService,
+              public helyszinSzerviz:HelyszinService) {
+    this.eloadoJavaslatBetoltes();
+    this.helyszinJavaslatBetoltes();
   }
 
   public eloadoJavaslatok: string[] = [];
   public helyszinJavaslatok: string[] = [];
-  public esemenyLista:any[] = [];
+  public esemenyLista:EsemenyModell[] = [];
   public eloado:string = "";
   public helyszin:string = "";
 
@@ -30,6 +30,18 @@ export class EsemenyKeresoComponent {
 
   get helyszinFilterezett(): string[] {
     return this.filterezo(this.helyszinJavaslatok, this.helyszin);
+  }
+
+  eloadoJavaslatBetoltes(){
+    this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz:NevJson[])=>{
+      this.eloadoJavaslatok = valasz.map(item => item.nev);   
+    });
+  }
+
+  helyszinJavaslatBetoltes(){
+    this.helyszinSzerviz.helyszinNevekLekerdezese().subscribe((valasz:NevJson[])=>{
+      this.helyszinJavaslatok = valasz.map(item => item.nev);
+    });
   }
 
   private filterezo(javaslatok: string[], inputText: string): string[] {
@@ -43,29 +55,11 @@ export class EsemenyKeresoComponent {
         this.esemenyLista = valasz;
     },
     (error) => {
-      console.error('Error fetching products:', error);
+      console.error('Hiba az eseménylekérdezésben!', error);
     });
   }
 
-  eloadoKepUrl(kepNev: string): string{
-    return 'http://localhost:8000/eloado-kep/'+kepNev;
-  }
-
-  helyszinKepUrl(kepNev: string): string{
-    return 'http://localhost:8000/helyszin-kep/'+kepNev;
-  }
-
-  eloadoJavaslatBetoltes(){
-    this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz:NevJson[])=>{
-      this.eloadoJavaslatok = valasz.map(item => item.nev);
-    });
-  }
-
-  helyszinJavaslatBetoltes(){
-    this.helyszinSzerviz.helyszinNevekLekerdezese().subscribe((valasz:NevJson[])=>{
-      this.helyszinJavaslatok = valasz.map(item => item.nev);
-    });
-  }
+  
 
   mufajok:string[] = 
   [

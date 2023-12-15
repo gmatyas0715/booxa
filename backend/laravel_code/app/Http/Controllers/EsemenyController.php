@@ -18,39 +18,40 @@ class EsemenyController extends Controller
         return response()->json($esemenyek);
     }
 
-    public function esemenyKereso(Request $request){
+    public function esemenyKereso(Request $request)
+    {
         $eloado = $request->query('eloado');
         $helyszin = $request->query('helyszin');
 
-    $query = Esemeny::select('id', 'idopont', 'jegy_alapar', 'helyszin_id', 'eloado_id');
+        $query = Esemeny::select('id', 'idopont', 'jegy_alapar', 'helyszin_id', 'eloado_id');
 
-    // Check if $eloado is not empty, then add the eloado condition
-    if ($eloado !== null) {
-        $query->whereHas('eloado', function ($subquery) use ($eloado) {
-            $subquery->where('nev', $eloado);
-        });
-    }
+        // Check if $eloado is not empty, then add the eloado condition
+        if ($eloado !== null) {
+            $query->whereHas('eloado', function ($subquery) use ($eloado) {
+                $subquery->where('nev', $eloado);
+            });
+        }
 
-    // Check if $helyszin is not empty, then add the helyszin condition
-    if ($helyszin !== null) {
-        $query->whereHas('helyszin', function ($subquery) use ($helyszin) {
-            $subquery->where('nev', $helyszin);
-        });
-    }
-    
-    $query->with([
-        'helyszin' => function ($query) {
-            $query->select('id', 'nev','helyszin_kep_eleres');
-        },
-        'eloado' => function ($query) {
-            $query->select('id', 'nev', 'kep_eleres');
-        },
-    ]);
-    $esemenyek = $query->get();
-    
-    Log::info($esemenyek);
+        // Check if $helyszin is not empty, then add the helyszin condition
+        if ($helyszin !== null) {
+            $query->whereHas('helyszin', function ($subquery) use ($helyszin) {
+                $subquery->where('nev', $helyszin);
+            });
+        }
+        
+        $query->with([
+            'helyszin' => function ($query) {
+                $query->select('id', 'nev','helyszin_kep_eleres','svg_kep_eleres');
+            },
+            'eloado' => function ($query) {
+                $query->select('id','nev','leiras','kep_eleres');
+            },
+        ]);
+        $esemenyek = $query->get();
+        
+        Log::info($esemenyek);
 
-    return response()->json($esemenyek);
+        return response()->json($esemenyek);
     }
 
     public function store(StoreEsemenyRequest $request)

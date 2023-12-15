@@ -96,14 +96,14 @@
         </div>
         <hr>
        <div class="row">
-            <div *ngFor="let esemeny of esemenyLista" class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div *ngFor="let esemeny of esemenyLista" class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-5">
                 <div class="esemeny-container">
                     <div class="row">
                         <div class="col p-1">
-                            <img class="esemeny-kep" [src]="eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
+                            <img class="esemeny-kep" [src]="this.eloadoSzerviz.eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
                         </div>
                         <div class="col p-1 ">
-                            <img class="esemeny-kep" [src]="helyszinKepUrl(esemeny.helyszin.helyszin_kep_eleres)" alt="">
+                            <img class="esemeny-kep" [src]="this.helyszinSzerviz.helyszinKepUrl(esemeny.helyszin.helyszin_kep_eleres)" alt="">
                         </div>
                     </div>
                     <div class="row">
@@ -126,12 +126,12 @@
                                 {{esemeny.jegy_alapar}} Ft-tól!
                         </div>
                         <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" routerLink="/esemenyReszletek">Megnézem</button>
+                            <button class="float-right rounded font-weight-bold p-2" [routerLink]="['/esemenyReszletek']" (click)="this.esemenySzerviz.esemenyKivalasztas(esemeny)">Megnézem</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
 </div>
 

@@ -1,13 +1,13 @@
 <div class="container pt-3">
     <div class="row esemeny-fo-reszletek">
         <div class="col">
-            <span class="d-block">2023 December 31.</span>
-            <span class="d-block">Vasárnap </span>
-            <span class="d-block">17:00 óra </span>
+            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
+            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
+            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
         </div>
         <div class="col">
-            <h4>Minta előadó</h4>
-            <h4>Minta helyszín</h4>
+            <h4>{{kivalasztottEloado.nev}}</h4>
+            <h4>{{kivalasztottHelyszin.nev}}</h4>
         </div>
     </div>
     <div class="row">
@@ -42,7 +42,7 @@
             </table>
         </div>
         <div class="col helyszin-container">
-            <img class="helyszin-svg" src="../../assets/location04ready.svg" alt="">
+            <img class="helyszin-svg" [src]="this.helyszinSzerviz.helyszinSvgKepUrl(kivalasztottHelyszin.svg_kep_eleres)" alt="">
         </div>
     </div>
 </div>

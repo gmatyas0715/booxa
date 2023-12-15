@@ -12,5 +12,9 @@ export class EloadoService {
   eloadokNevekLekerdezese():Observable<any> {
     return this.http.get('http://localhost:8000/api/eloado-nevek');
   } 
+  
+  eloadoKepUrl(kepNev: string): string{
+    return 'http://localhost:8000/eloado-kep/'+kepNev;
+  }
 
 }

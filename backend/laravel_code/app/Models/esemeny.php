@@ -16,7 +16,7 @@ class Esemeny extends Model
         return $this->hasMany(JegyAdat::class);
     }
 
-    public function helyszin() : BelongsTo 
+    public function helyszin() : BelongsTo
     {
         return $this->belongsTo(Helyszin::class);
     }
