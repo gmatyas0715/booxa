@@ -22,6 +22,35 @@ export class EsemenyKeresoComponent {
     this.helyszinJavaslatBetoltes();
     this.helyszinCimBetoltes();
   }
+  
+  talalatRendezes(){
+    switch (this.talalatRendezesOpcio){
+      case 'eloado_AZ':
+        this.esemenyLista.sort((a,b)=>a.eloado.nev.localeCompare(b.eloado.nev));
+        break;
+      case 'eloado_ZA':
+        this.esemenyLista.sort((a,b)=>b.eloado.nev.localeCompare(a.eloado.nev));
+        break;
+      case 'helyszin_AZ':
+        this.esemenyLista.sort((a,b)=>a.helyszin.nev.localeCompare(b.helyszin.nev));
+        break;
+      case 'helyszin_ZA':
+        this.esemenyLista.sort((a,b)=>b.helyszin.nev.localeCompare(a.helyszin.nev));
+        break;
+      case 'jegy_n':
+        this.esemenyLista.sort((a,b)=>a.jegy_alapar-b.jegy_alapar);
+        break;
+      case 'jegy_cs':
+        this.esemenyLista.sort((a,b)=>b.jegy_alapar-a.jegy_alapar);
+        break;
+      case 'datum_n':
+        this.esemenyLista.sort((a,b)=>a.idopont.getTime()-b.idopont.getTime());
+        break;
+      case 'datum_cs':
+        this.esemenyLista.sort((a,b)=>b.idopont.getTime()-a.idopont.getTime());
+        break;
+    }
+  }
 
   helyszinCimBetoltes(){
     this.cimSzerviz.helyszinCimekLekerdezese().subscribe((valasz)=>{
@@ -52,15 +81,16 @@ export class EsemenyKeresoComponent {
   public eloadoJavaslatok: string[] = [];
   public helyszinJavaslatok: string[] = [];
   public esemenyLista:EsemenyModell[] = [];
-  public eloado:string = "";
-  public helyszin:string = "";
+  public keresettEloado:string = "";
+  public keresettHelyszin:string = "";
+  public talalatRendezesOpcio:string = "datum_n"
 
   get eloadoFilterezett(): string[] {
-    return this.filterezo(this.eloadoJavaslatok, this.eloado);
+    return this.filterezo(this.eloadoJavaslatok, this.keresettEloado);
   }
 
   get helyszinFilterezett(): string[] {
-    return this.filterezo(this.helyszinJavaslatok, this.helyszin);
+    return this.filterezo(this.helyszinJavaslatok, this.keresettHelyszin);
   }
 
   private filterezo(javaslatok: string[], inputText: string): string[] {
@@ -69,9 +99,10 @@ export class EsemenyKeresoComponent {
   }
 
   esemenyKereses(){
-    this.esemenySzerviz.eloadoAdatok(this.eloado,this.helyszin)
+    this.esemenySzerviz.eloadoAdatok(this.keresettEloado,this.keresettHelyszin)
       .subscribe((valasz) => {
         this.esemenyLista = valasz;
+        console.log(this.esemenyLista[0].idopont,this.esemenyLista[0].idopont instanceof Date)
     },
     (error) => {
       console.error('Hiba az eseménylekérdezésben!', error);

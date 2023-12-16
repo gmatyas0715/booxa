@@ -64,6 +64,16 @@ button:hover{
   padding: 5px 0px 12px 2px;
 }
 
+.szuro-container{
+  height: 200px;
+  overflow-y: auto;
+}
+
+body {
+  padding: 4em;
+  background-color: #333;
+}
+
 @media screen and (max-width: 600px) {
   .kereses-szures {width: 100%};
 }

@@ -10,7 +10,7 @@
                 <form (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
                     <div class="col mb-2">
                         <label class="font-weight-bold d-block" >Előadó:</label>
-                        <input name="eloado"  [(ngModel)]="eloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
+                        <input name="eloado"  [(ngModel)]="keresettEloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
                         <mat-autocomplete #auto1="matAutocomplete">
                             <mat-option *ngFor="let javaslat of eloadoFilterezett" [value]="javaslat">
                               {{ javaslat }}
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col mb-2">
                         <label for="" class="font-weight-bold d-block" >Helyszín:</label>
-                        <input name="helyszin" [(ngModel)]="helyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
+                        <input name="helyszin" [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
                         <mat-autocomplete #auto2="matAutocomplete">
                             <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
                               {{ javaslat }}
@@ -31,19 +31,26 @@
                     </div>
                 </form>
             </div>
+            <span class="font-weight-bold d-block mb-2">Szűrés esemény időpontra</span>
             <div class="row mb-4 kereses-block">
                 <div class="col d-block mb-2">
-                    <label class="font-weight-bold" for="esemenyDatum">Esemény időpont</label>
                     <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum" (ngModelChange)="esemenyKereses()">
                 </div>
                 <div class="col">
                     <button class="mt-2" (click)="datumTorles()">Időpont törlése</button>
                 </div>
             </div>
+            <span class="font-weight-bold d-block mb-2">Szűrés jegyárra</span>
             <div class="row mb-4 kereses-block">
+                <div class="col d-block mb-2">
+                    <input class="mb-2" type="text" id="minJegyar" placeholder="Min. jegyár">
+                    <input type="text" id="maxJegyar" placeholder="Max. jegyár">
+                </div>
+
+            </div>
+            <span class="font-weight-bold d-block mb-2">Szűrés műfajokra</span>
+            <div class="row mb-4 kereses-block szuro-container">
                 <div class="col">
-                    <span class="font-weight-bold">Szűrés műfajokra</span>
-                    <span class="d-block">Műfaj</span>
                     <ul>
                         <li *ngFor="let mufaj of mufajLista">
                             <input class="mr-2" type="checkbox" name="" id={{mufaj}}>
@@ -52,9 +59,9 @@
                     </ul>
                 </div>
             </div>
+            <span class="font-weight-bold d-block mb-2">Szűrés helyszínekre</span>
             <div class="row kereses-block">
                 <div class="col">
-                    <span class="d-block font-weight-bold">Szűrés helyszínekre</span>
                     <span class="d-block">Város</span>
                     <ul>
                         <li *ngFor="let varos of telepulesLista">
@@ -83,13 +90,15 @@
                     Találatok rendezése
                 </div>
                 <div class="row">
-                    <select name="" id="">
-                        <option value="">előadók (A-Z)</option>
-                        <option value="">előadók (Z-A)</option>
-                        <option value="">helyszínek (A-Z)</option>
-                        <option value="">helyszínek (Z-A)</option>
-                        <option value="">jegy alapár (csökkenő)</option>
-                        <option value="">jegy alapár (növekvő)</option>
+                    <select [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
+                        <option value="eloado_AZ">előadók (A-Z)</option>
+                        <option value="eloado_ZA">előadók (Z-A)</option>
+                        <option value="helyszin_AZ">helyszínek (A-Z)</option>
+                        <option value="helyszin_ZA">helyszínek (Z-A)</option>
+                        <option value="jegy_n">jegy alapár (növekvő)</option>
+                        <option value="jegy_cs">jegy alapár (csökkenő)</option>
+                        <option value="datum_n">dátum (legkorábbitól)</option>
+                        <option value="datum_cs">dátum (legkésőbbitől)</option>
                     </select>
                 </div>
             </div>
