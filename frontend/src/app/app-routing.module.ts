@@ -17,7 +17,7 @@ const routes: Routes = [
     },
     {
       title:'Esemény részletek',
-      path:'esemenyReszletek',
+      path:'esemenyReszletek/:id',
       component:EsemenyReszletekComponent
     },
     {

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 
 class EloadoController extends Controller
@@ -20,7 +18,7 @@ class EloadoController extends Controller
 
     public function eloadoNevek()
     {
-        $eloadok = Eloado::select('nev')->get();
+        $eloadok = Eloado::pluck('nev')->toArray();
         return response()->json($eloadok);
     }
 

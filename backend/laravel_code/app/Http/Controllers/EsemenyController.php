@@ -41,10 +41,10 @@ class EsemenyController extends Controller
         
         $query->with([
             'helyszin' => function ($query) {
-                $query->select('id', 'nev','helyszin_kep_eleres','svg_kep_eleres');
+                $query->select('id', 'nev','helyszin_kep_eleres');
             },
             'eloado' => function ($query) {
-                $query->select('id','nev','leiras','kep_eleres');
+                $query->select('id','nev','kep_eleres');
             },
         ]);
         $esemenyek = $query->get();
@@ -67,7 +67,16 @@ class EsemenyController extends Controller
 
     public function show(Esemeny $esemeny)
     {
-        return response()->json($esemeny);
+        $esemenyToReturn = Esemeny::with([
+            'helyszin' => function ($query) {
+                $query->select('id', 'nev','helyszin_kep_eleres','svg_kep_eleres');
+            },
+            'eloado' => function ($query) {
+                $query->select('id','nev','leiras','kep_eleres');
+            },
+        ])->find($esemeny->id, ['id', 'idopont', 'jegy_alapar', 'helyszin_id', 'eloado_id']);
+
+        return response()->json($esemenyToReturn);
     }
 
     function update(UpdateEsemenyRequest $request, Esemeny $esemeny)

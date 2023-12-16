@@ -16,6 +16,12 @@ class CimController extends Controller
         return response()->json($cimek);
     }
 
+    public function helyszinCimek()
+    {
+        $cimek = Cim::whereHas('helyszin')->pluck('telepules')->toArray();
+        return response()->json($cimek);
+    }
+
     public function store(StoreCimRequest $request)
     {
         $ujCim = new Cim();

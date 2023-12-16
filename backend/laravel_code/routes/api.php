@@ -15,11 +15,15 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Műfaj route-ok
     Route::get('/mufajok','MufajController@index');
+    Route::get('/mufaj-nevek', 'MufajController@mufajNevek');
     Route::get('/mufajok/{mufaj}','MufajController@show');
 
     // Előadó-műfaj kapcsolat route-ok
     Route::get('/eloado-mufaj-kapcsolatok','EloadoMufajController@index');
     Route::get('/eloado-mufaj-kapcsolatok/{eloado-mufaj-kapcsolat}','EloadoMufajController@show');
+
+    // Cím route-ok
+    Route::get('/helyszin-cimek','CimController@helyszinCimek');
 
     // Helyszín route-ok
     Route::get('/helyszinek','HelyszinController@index');

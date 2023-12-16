@@ -3,7 +3,8 @@ import { EsemenyService } from '../_szervizek/esemeny.service';
 import { EsemenyModell } from '../_modellek/esemeny-modell';
 import { EloadoService } from '../_szervizek/eloado.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
-import { NevJson } from '../nev-json';
+import { MufajService } from '../_szervizek/mufaj.service';
+import { CimService } from '../_szervizek/cim.service';
 
 @Component({
   selector: 'app-esemeny-kereso',
@@ -13,11 +14,41 @@ import { NevJson } from '../nev-json';
 export class EsemenyKeresoComponent {
   constructor(public esemenySzerviz:EsemenyService,
               public eloadoSzerviz:EloadoService,
-              public helyszinSzerviz:HelyszinService) {
+              public helyszinSzerviz:HelyszinService,
+              public mufajSzerviz: MufajService,
+              public cimSzerviz:CimService) {
+    this.mufajBetoltes();
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();
+    this.helyszinCimBetoltes();
   }
 
+  helyszinCimBetoltes(){
+    this.cimSzerviz.helyszinCimekLekerdezese().subscribe((valasz)=>{
+      this.telepulesLista = valasz; 
+    });
+  }
+
+  mufajBetoltes(){
+    this.mufajSzerviz.mufajokLekerdezese().subscribe((valasz)=>{
+      this.mufajLista = valasz; 
+    });
+  }
+
+  eloadoJavaslatBetoltes(){
+    this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz)=>{
+      this.eloadoJavaslatok = valasz;   
+    });
+  }
+
+  helyszinJavaslatBetoltes(){
+    this.helyszinSzerviz.helyszinNevekLekerdezese().subscribe((valasz)=>{
+      this.helyszinJavaslatok = valasz;
+    });
+  }
+
+  public mufajLista: string[] = [];
+  public telepulesLista: string[] = [];
   public eloadoJavaslatok: string[] = [];
   public helyszinJavaslatok: string[] = [];
   public esemenyLista:EsemenyModell[] = [];
@@ -30,18 +61,6 @@ export class EsemenyKeresoComponent {
 
   get helyszinFilterezett(): string[] {
     return this.filterezo(this.helyszinJavaslatok, this.helyszin);
-  }
-
-  eloadoJavaslatBetoltes(){
-    this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz:NevJson[])=>{
-      this.eloadoJavaslatok = valasz.map(item => item.nev);   
-    });
-  }
-
-  helyszinJavaslatBetoltes(){
-    this.helyszinSzerviz.helyszinNevekLekerdezese().subscribe((valasz:NevJson[])=>{
-      this.helyszinJavaslatok = valasz.map(item => item.nev);
-    });
   }
 
   private filterezo(javaslatok: string[], inputText: string): string[] {
@@ -59,42 +78,14 @@ export class EsemenyKeresoComponent {
     });
   }
 
-  
-
-  mufajok:string[] = 
-  [
-    "rock",
-    "pop",
-    "folk",
-    "klasszikus",
-    "disco"
-  ];
-
   ferohelyek:string[] = 
   [
-    "0-500",
-    "501-2000",
-    "2001-5000",
-    "5001-10000",
-    "10000<"
+    "<2000",
+    "2001-4000",
+    "4001-10000",
+    "10001-15000",
+    "15000<"
   ];
-
-  varosok:string[] = 
-  [
-    "Miskolc",
-    "Budapest",
-    "Pécs",
-    "Szombathely",
-    "Répcelak"
-  ];
-
-  keresesEredmenyek:string[] = [
-    'Tankcsapda',
-    'System of a down',
-    'Ariana Grande',
-    'Snarky Puppy',
-    '30Y'
-  ]; 
 
   mostDatum:Date = new Date();
 

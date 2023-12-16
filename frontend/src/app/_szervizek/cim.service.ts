@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MufajService {
+export class CimService {
 
   constructor(private http:HttpClient) { }
 
-  mufajokLekerdezese():Observable<string[]>{
-    return this.http.get<string[]>('http://localhost:8000/api/mufaj-nevek')
-  }
+  helyszinCimekLekerdezese():Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:8000/api/helyszin-cimek');
+  } 
 }

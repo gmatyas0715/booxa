@@ -9,12 +9,11 @@ export class EloadoService {
 
   constructor(private http:HttpClient){ }
 
-  eloadokNevekLekerdezese():Observable<any> {
-    return this.http.get('http://localhost:8000/api/eloado-nevek');
+  eloadokNevekLekerdezese():Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:8000/api/eloado-nevek');
   } 
   
   eloadoKepUrl(kepNev: string): string{
     return 'http://localhost:8000/eloado-kep/'+kepNev;
   }
-
 }

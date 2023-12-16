@@ -9,8 +9,8 @@ export class HelyszinService {
 
   constructor(private http:HttpClient){ }
 
-  helyszinNevekLekerdezese():Observable<any> {
-    return this.http.get('http://localhost:8000/api/helyszin-nevek');
+  helyszinNevekLekerdezese():Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:8000/api/helyszin-nevek');
   } 
 
   helyszinKepUrl(kepNev: string): string{

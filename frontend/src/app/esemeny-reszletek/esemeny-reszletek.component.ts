@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
-import { EsemenyModell } from '../_modellek/esemeny-modell';
-import { HelyszinModell } from '../_modellek/helyszin-modell';
 import { HelyszinService } from '../_szervizek/helyszin.service';
-import { EloadoModell } from '../_modellek/eloado-modell';
+import { ActivatedRoute } from '@angular/router';
+import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 
 @Component({
   selector: 'app-esemeny-reszletek',
@@ -12,29 +11,25 @@ import { EloadoModell } from '../_modellek/eloado-modell';
 })
 export class EsemenyReszletekComponent{
 
-  constructor(public esemenySzerviz:EsemenyService,
+  kivalasztottEsemeny:any;
+  kivalasztottHelyszin:any;
+  kivalasztottEloado:any;
+
+  constructor(private route: ActivatedRoute,
+              public esemenySzerviz:EsemenyService,
               public helyszinSzerviz:HelyszinService) {
-
   }
 
-  kivalasztottEsemeny:EsemenyModell = this.esemenySzerviz.kivalasztottEsemeny
-  kivalasztottHelyszin:HelyszinModell = this.kivalasztottEsemeny.helyszin
-  kivalasztottEloado:EloadoModell = this.kivalasztottEsemeny.eloado
-  public id:string = "";
-
-  Kattintas(event:Event):void{
-      const element = event.target as HTMLElement;
-      const elementId = element.id;
-      console.log(elementId)
+  jegyadatLista: JegyAdatModell[] = [];
+  
+  ngOnInit():void{
+    const id = this.route.snapshot.paramMap.get('id') as string;
+    this.esemenySzerviz.esemenyAdatok(id).subscribe((valasz)=>{
+      this.kivalasztottEsemeny=valasz;
+      console.log(this.kivalasztottEsemeny)
+      this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
+      this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
+    });
   }
 
-  FillValtoztatas(event:Event){
-    const element = event.target as SVGAElement;
-    element.style.fill = 'blue';
-  }
-
-  FillVisszavaltoztatas(event:Event){
-    const element = event.target as SVGAElement;
-    element.style.fill = 'white';
-  }
 }

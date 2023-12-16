@@ -30,6 +30,12 @@ export class EsemenyService {
 
       return this.http.get<EsemenyModell[]>('http://localhost:8000/api/esemenyKereso',{params});
   }
+
+  esemenyAdatok(esemenyId:string):Observable<EsemenyModell>{
+
+    return this.http.get<EsemenyModell>('http://localhost:8000/api/esemenyek/'+esemenyId);
+  }
+
   esemenyFrissites(){
 
   }

@@ -13,13 +13,13 @@ class HelyszinController extends Controller
 
     public function index()
     {
-        $helyszin = Helyszin::all();
-        return response()->json($helyszin);
+        $helyszinek = Helyszin::all();
+        return response()->json($helyszinek);
     }
 
     public function helyszinek()
     {
-        $helyszinek = Helyszin::select('nev')->get();
+        $helyszinek = Helyszin::pluck('nev')->toArray();
         return response()->json($helyszinek);
     }
 

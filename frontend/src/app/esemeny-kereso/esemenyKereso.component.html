@@ -45,7 +45,7 @@
                     <span class="font-weight-bold">Szűrés műfajokra</span>
                     <span class="d-block">Műfaj</span>
                     <ul>
-                        <li *ngFor="let mufaj of mufajok">
+                        <li *ngFor="let mufaj of mufajLista">
                             <input class="mr-2" type="checkbox" name="" id={{mufaj}}>
                             <label class="pt-1" for={{mufaj}}>{{mufaj}}</label>
                         </li>
@@ -57,7 +57,7 @@
                     <span class="d-block font-weight-bold">Szűrés helyszínekre</span>
                     <span class="d-block">Város</span>
                     <ul>
-                        <li *ngFor="let varos of varosok">
+                        <li *ngFor="let varos of telepulesLista">
                             <input class="mr-2" type="checkbox" name="" id="{{varos}}">
                             <label class="pt-1" for="{{varos}}">{{varos}}</label>
                         </li>
@@ -126,7 +126,7 @@
                                 {{esemeny.jegy_alapar}} Ft-tól!
                         </div>
                         <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" [routerLink]="['/esemenyReszletek']" (click)="this.esemenySzerviz.esemenyKivalasztas(esemeny)">Megnézem</button>
+                            <button class="float-right rounded font-weight-bold p-2" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
                         </div>
                     </div>
                 </div>
