@@ -86,7 +86,7 @@ l08_a_also;D-felső;ulo;7
 l08_a_center;A-center;allo;8
 l08_a_also_1;A-alsó-1;ulo;8
 l08_a_also_2;A-alsó-2;ulo;8
-l08_a_felso_1;A-felső-1;8
+l08_a_felso_1;A-felső-1;ulo;8
 l08_a_felso_2;A-felső-2;ulo;8
 l08_a_felso_3;A-felső-3;ulo;8
 l08_b_center;B-center;allo;8
@@ -124,9 +124,9 @@ l10_center;Center;allo;10
 l10_a_also;A-alsó;ulo;10
 l10_a_felso;A-felső;ulo;10
 l10_b_also;B-alsó;ulo;10
-l10_b_felso;B-felső;10
+l10_b_felso;B-felső;ulo;10
 l10_c_also;C-alsó;ulo;10
-l10_c_felso;C-felső;10
+l10_c_felso;C-felső;ulo;10
 l10_d_also;D-alsó;ulo;10
 l10_d_felso;D-felső;ulo;10
 l10_e_also;E-alsó;ulo;10

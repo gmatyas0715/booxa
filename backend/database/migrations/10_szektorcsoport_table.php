@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('szektor', function (Blueprint $table) {
+        Schema::create('szektorcsoport', function (Blueprint $table) {
             $table->string('id',20)->primary();
-            $table->string('szektor_nev',50);
+            $table->string('szektorcsoport_nev',50);
             $table->string('szektor_tipus',50);
-            $table->decimal('arszorzo',3,2);
-            $table->integer('max_kapacitas');
-            $table->string('sorjelzes',20)->nullable();
             $table->foreignId('helyszin_id');
             $table->foreign('helyszin_id')
                 ->references('id')

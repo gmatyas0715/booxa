@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
+use App\Models\SzektorCsoport;
 use Illuminate\Database\Seeder;
-use App\Models\Helyszin;
 
-class HelyszinSeeder extends Seeder
+class SzektorCsoportSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../db/sql scriptek/helyszin.csv');
+        $csvFilePath = storage_path('../../db/sql scriptek/szektor_csoport.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;
@@ -25,14 +25,11 @@ class HelyszinSeeder extends Seeder
 
             $data = str_getcsv($line,';');
 
-            Helyszin::create([
-                'nev' => $data[0],
-                'cim_id' => $data[1],
-                'kapacitas' => $data[2],
-                'szabadteri' => $data[3],
-                'arkategoria' => $data[4],
-                'helyszin_kep_eleres' => $data[5],
-                'svg_kep_eleres' => $data[6]
+            SzektorCsoport::create([
+                'id' => $data[0],
+                'szektorcsoport_nev' => $data[1],
+                'szektor_tipus' => $data[2],
+                'helyszin_id' => $data[3]
             ]);
         }
     }

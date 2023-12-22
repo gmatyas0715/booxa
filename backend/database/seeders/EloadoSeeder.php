@@ -12,7 +12,7 @@ class EloadoSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../../db/sql scriptek/eloado.csv');
+        $csvFilePath = storage_path('../../db/sql scriptek/eloado.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;

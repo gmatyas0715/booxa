@@ -12,7 +12,7 @@ class SzektorSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../../db/sql scriptek/szektor.csv');
+        $csvFilePath = storage_path('../../db/sql scriptek/szektor.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;
@@ -27,12 +27,10 @@ class SzektorSeeder extends Seeder
 
             Szektor::create([
                 'id' => $data[0],
-                'szektor_nev' => $data[1],
-                'szektor_tipus' => $data[2],
-                'arszorzo' => $data[3],
-                'max_kapacitas' => $data[4],
-                'sorjelzes' => $data[5],
-                'helyszin_id' => $data[6],
+                'arszorzo' => $data[1],
+                'max_kapacitas' => $data[2],
+                'sorjelzes' => $data[3],
+                'szektorcsoport_id' => $data[4],
             ]);
         }
     }

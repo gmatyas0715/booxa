@@ -11,7 +11,7 @@ class Szektor extends Model
     protected $table = 'szektor';
     use HasFactory;
 
-    public function helyszin() : BelongsTo {
-        return $this->belongsTo(Helyszin::class,'helyszin_id');
+    public function szektorcsoport():BelongsTo{
+        return $this->belongsTo(SzektorCsoport::class);
     }
 }
