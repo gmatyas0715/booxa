@@ -11,6 +11,6 @@
     display: block;
 }
 
-.szektor-nev{
-    
-}
+::ng-deep #l01_vip_bal{
+    fill: green;
+ }

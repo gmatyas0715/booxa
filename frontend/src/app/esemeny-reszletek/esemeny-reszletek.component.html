@@ -22,7 +22,7 @@
                     <td class="szektor-nev">Bal szárny</td>
                     <td class="szektor-nev"></td>
                     <td class="">xxxx Ft</td>
-                    <td><button>Kiválasztás</button></td>
+                    <td><button (click)="szektorSzinezes()">Kiválasztás</button></td>
                 </tr>
                 <tr>
                     <td>Bal szárny</td>
@@ -42,7 +42,9 @@
             </table>
         </div>
         <div class="col helyszin-container">
-            <img class="helyszin-svg" [src]="this.helyszinSzerviz.helyszinSvgKepUrl(kivalasztottHelyszin.svg_kep_eleres)" alt="">
+            <ng-container *ngIf="helyszinSvg">
+                <div class="helyszin-svg"  [innerHTML]="helyszinSvg" (click)="szektorSzinezes()"></div>
+            </ng-container>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/eloado-kep/{kepNev}', function ($kepNev) {
@@ -31,12 +32,12 @@ Route::get('/helyszin-kep/{kepNev}', function ($kepNev) {
 Route::get('/svg-helyszin-kep/{kepNev}', function ($kepNev) {
     $path = public_path('svg_helyszin/' . $kepNev);
 
-    if (!file_exists($path)) {
-        abort(404);
+    if (file_exists($path)) {
+
+        $response = Response::make(file_get_contents($path),200);
+        $response->header('Access-Control-Allow-Origin', '*');
+
+        return $response;
     }
-
-    $file = file_get_contents($path);
-    $type = mime_content_type($path);
-
-    return response($file)->header('Content-Type', $type);
-})->where('filename', '.*');
+    abort(404);
+})->where('filename', '.*\.svg');
