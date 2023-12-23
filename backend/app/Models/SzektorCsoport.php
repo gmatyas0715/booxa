@@ -9,7 +9,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SzektorCsoport extends Model
 {
-    protected $table = 'szektorcsoport';
+
+    protected $casts = [
+        'id' => 'string'
+    ];
+
+    protected $table = 'szektor_csoport';
     use HasFactory;
 
     public function helyszin():BelongsTo{

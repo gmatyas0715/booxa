@@ -30,7 +30,7 @@ class SzektorSeeder extends Seeder
                 'arszorzo' => $data[1],
                 'max_kapacitas' => $data[2],
                 'sorjelzes' => $data[3],
-                'szektorcsoport_id' => $data[4],
+                'szektor_csoport_id' => $data[4],
             ]);
         }
     }

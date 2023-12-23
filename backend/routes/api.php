@@ -34,6 +34,11 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/szektorok','SzektorController@index');
     Route::get('/szektorok/{szektor}','SzektorController@show');
 
+
+    // Szektorcsoport route-ok
+    Route::get('/szektorcsoportok','SzektorCsoportController@index');
+    Route::get('/szektorcsoportok/{szektorcsoport}','SzektorCsoportController@show');
+
     // Esemény route-ok
     Route::get('/esemenyek','EsemenyController@index');
     Route::get('/esemenyek/{esemeny}','EsemenyController@show');

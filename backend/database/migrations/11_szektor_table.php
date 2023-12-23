@@ -16,10 +16,10 @@ return new class extends Migration
             $table->decimal('arszorzo',3,2);
             $table->integer('max_kapacitas');
             $table->string('sorjelzes',20)->nullable();
-            $table->string('szektorcsoport_id',20);
-            $table->foreign('szektorcsoport_id')
+            $table->string('szektor_csoport_id',20);
+            $table->foreign('szektor_csoport_id')
                 ->references('id')
-                ->on('szektorcsoport')
+                ->on('szektor_csoport')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();

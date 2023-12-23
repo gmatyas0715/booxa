@@ -12,7 +12,7 @@ class SzektorController extends Controller
 
     public function index()
     {
-        $szektorok = Szektor::with('helyszin')->get();
+        $szektorok = Szektor::with('szektor_csoport')->get();
         return response()->json($szektorok);
     }
 

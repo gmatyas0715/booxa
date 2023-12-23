@@ -27,7 +27,7 @@ class SzektorCsoportSeeder extends Seeder
 
             SzektorCsoport::create([
                 'id' => $data[0],
-                'szektorcsoport_nev' => $data[1],
+                'szektor_csoport_nev' => $data[1],
                 'szektor_tipus' => $data[2],
                 'helyszin_id' => $data[3]
             ]);

@@ -8,10 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Szektor extends Model
 {
+
+    protected $casts = [
+    'id' => 'string',
+    ];
+
     protected $table = 'szektor';
     use HasFactory;
 
-    public function szektorcsoport():BelongsTo{
+    public function szektor_csoport():BelongsTo{
         return $this->belongsTo(SzektorCsoport::class);
     }
 }

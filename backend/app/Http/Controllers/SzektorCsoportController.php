@@ -13,7 +13,8 @@ class SzektorCsoportController extends Controller
      */
     public function index()
     {
-        //
+        $szektorcsoportok = SzektorCsoport::with('szektor')->get();
+        return response()->json($szektorcsoportok);
     }
 
     /**
