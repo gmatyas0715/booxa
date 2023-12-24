@@ -1,3 +1,5 @@
+import { SzektorCsoportModell } from "./szektor-csoport-modell";
+
 export interface HelyszinModell {
     id:number;
     nev:string;
@@ -6,4 +8,5 @@ export interface HelyszinModell {
     szabadteri:boolean;
     helyszin_kep_eleres:string;
     svg_kep_eleres:string;
+    szektorcsoport:SzektorCsoportModell[];
 }

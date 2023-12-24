@@ -6,8 +6,8 @@ l01_jobb_szarny;Jobb-szárny;allo;1
 l01_vip_jobb;Vip-jobb;ulo;1
 l01_vip_bal;Vip-bal;ulo;1
 l02_center_1;Center-1;allo;2
-l02_center_2;Center-2;allo;1;2
-l02_center_3;Center-3;allo;1;2
+l02_center_2;Center-2;allo;2
+l02_center_3;Center-3;allo;2
 l02_bal_szarny_1;Bal-szárny-1;allo;2
 l02_bal_szarny_2;Bal-szárny-2;allo;2
 l02_jobb_szarny_1;Jobb-szárny-1;allo;2
@@ -82,7 +82,7 @@ l07_d_center;D-center;allo;7
 l07_d_also_1;D-alsó-1;ulo;7
 l07_d_also_2;D-alsó-2;ulo;7
 l07_d_felso;D-felső;ulo;7
-l08_a_also;D-felső;ulo;7
+l08_a_also;D-felső;ulo;8
 l08_a_center;A-center;allo;8
 l08_a_also_1;A-alsó-1;ulo;8
 l08_a_also_2;A-alsó-2;ulo;8

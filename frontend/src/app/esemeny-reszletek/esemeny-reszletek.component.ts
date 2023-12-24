@@ -16,6 +16,7 @@ export class EsemenyReszletekComponent{
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
+  kivalasztottSzektorCsoport:any;
   helyszinSvg: SafeHtml ='';
 
   constructor(private route: ActivatedRoute,
@@ -34,6 +35,7 @@ export class EsemenyReszletekComponent{
       console.log(this.kivalasztottEsemeny)
       this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
       this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
+      this.kivalasztottSzektorCsoport = this.kivalasztottEsemeny.helyszin.szektor_csoport;
       this.helyszinSvgBetoltes();
     });
 

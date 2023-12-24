@@ -2,8 +2,6 @@
     <div class="row esemeny-fo-reszletek">
         <div class="col">
             <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
-            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
-            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
         </div>
         <div class="col">
             <h4>{{kivalasztottEloado.nev}}</h4>
@@ -18,27 +16,16 @@
                     <td class="table-szektor">Vásárolható jegyszám</td>
                     <td colspan="2" class="table-jegyar">Jegyárak</td>
                 </thead>
-                <tr>
-                    <td class="szektor-nev">Bal szárny</td>
-                    <td class="szektor-nev"></td>
-                    <td class="">xxxx Ft</td>
-                    <td><button (click)="szektorSzinezes()">Kiválasztás</button></td>
-                </tr>
-                <tr>
-                    <td>Bal szárny</td>
-                    <td>xxxx Ft</td>
-                    <td><button>Kiválasztás</button></td>
-                </tr>
-                <tr>
-                    <td>Bal szárny</td>
-                    <td>xxxx Ft</td>
-                    <td><button>Kiválasztás</button></td>
-                </tr>
-                <tr>
-                    <td>Bal szárny</td>
-                    <td>xxxx Ft</td>
-                    <td><button>Kiválasztás</button></td>
-                </tr>
+                <tbody>
+                    <div *ngFor="let szektorcsoport of kivalasztottSzektorCsoport">
+                        <div *ngFor="let szektor of szektorcsoport.szektor">
+                            <td class="szektor-nev">{{szektorcsoport.szektor_csoport_nev}} {{szektor.sorjelzes}}</td>
+                            <td class="szektor-nev"></td>
+                            <td class="">xxxx Ft</td>
+                            <td><button>Kiválasztás</button></td>
+                        </div>
+                    </div>
+                </tbody>
             </table>
         </div>
         <div class="col helyszin-container">
