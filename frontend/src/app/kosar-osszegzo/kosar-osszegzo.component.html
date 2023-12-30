@@ -3,34 +3,33 @@
     <hr>
     <div  *ngFor="let kosarElem of kosarElemek" class="row p-3 jegy-adat-container mb-5">
         <div class="col-5">
-            <img class="esemeny-kep" src="../../assets/kepek/eloado_minta.jpg" alt="">
-            <img class="esemeny-kep" src="../../assets/kepek/helyszin_minta.jpg" alt="">
+            <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.esemeny.eloado.kep_eleres)" alt="">
+            <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.esemeny.helyszin.helyszin_kep_eleres)" alt="">
         </div>
         <div class="col-3">
             <ul>
-                <li>Minta helyszín </li>
-                <li>{{kosarElem}}</li>
+                <li>{{kosarElem.esemeny.helyszin.nev}}</li>
+                <li>{{kosarElem.esemeny.eloado.nev}}</li>
             </ul>
         </div>
         <div class="col-4">
             <div class="row">
                 <div class="col-10">
                     <ul>
-                        <li>Kedvezmény: xxx % </li>
-                        <li>Jegyár (kedvezménnyel): xxx Ft</li>
+                        <li>Jegyár : {{kosarElem.szektor.szektor_jegyar}} Ft</li>
                         <br>
                         <li>
                             <p>Jegy darabszám:</p>
                             <div>
                                 <input type="button" class="float-left btn btn-primary jegy-darab" value="-">
-                                <p class="float-left ml-2 mr-2 p-1">xx</p>
+                                <p class="float-left ml-2 mr-2 p-1">{{kosarElem.jegyDarabszam}}</p>
                                 <input type="button" class="float-left btn btn-primary jegy-darab" value="+">
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-2">
-                    <img class="float-right kuka" src="../../assets/kepek/kuka_ikon.png" alt="">
+                    <img class="float-right kuka" (click)="kosarService.tetelTorles()" src="../../assets/kepek/kuka_ikon.png" alt="">
                 </div>
             </div>
             <hr>
@@ -38,6 +37,9 @@
                 Tétel ár összesen: xxxx Ft
             </div>
         </div>
+    </div>
+    <div *ngIf="kosarElemek.length==0">
+        <h1 class="d-block m-auto text-center font-size-10">A kosarad jelenleg üres!</h1>
     </div>
     <hr>
     <h4 class="float-right font-weight-bold">Kosár összesen: xxx Ft</h4>

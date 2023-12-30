@@ -1,15 +1,18 @@
-import {Component, ElementRef, QueryList, Renderer2, ViewChildren} from '@angular/core';
+import {Component, ElementRef, QueryList, ViewChildren} from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SzektorCsoportService } from '../_szervizek/szektor-csoport.service';
+import { SzektorCsoportModell } from '../_modellek/szektor-csoport-modell';
+import { SzektorModell } from '../_modellek/szektor-modell';
+import { KosarService } from '../_szervizek/kosar.service';
 
 @Component({
   selector: 'app-esemeny-reszletek',
   templateUrl: './esemeny-reszletek.component.html',
-  styleUrls: ['./esemeny-reszletek.component.css']
+  styleUrls: ['./esemeny-reszletek.component.css'],
 })
 export class EsemenyReszletekComponent{
   @ViewChildren('path') szektorok!: QueryList<ElementRef>;
@@ -24,11 +27,9 @@ export class EsemenyReszletekComponent{
               public esemenySzerviz:EsemenyService,
               public helyszinSzerviz:HelyszinService,
               public szektorCsoportSzerviz:SzektorCsoportService,
-              private renderer: Renderer2,
+              private kosarService:KosarService,
               private sanitizer: DomSanitizer) {
   }
-
-  jegyadatLista: JegyAdatModell[] = [];
   
   ngOnInit():void{
     const id = this.route.snapshot.paramMap.get('id') as string;
@@ -56,5 +57,15 @@ export class EsemenyReszletekComponent{
     });
   }
 
-
+  jegyKosarbaHelyezes(szektorCsoport:SzektorCsoportModell,szektor:SzektorModell){
+    console.log('Jegy kosárba helyezve!')
+    this.kosarService.kosarbaHelyezes(new JegyAdatModell(
+      this.kivalasztottEsemeny,
+      szektorCsoport,
+      szektor,
+      1,
+      3
+    ));
+    console.log(this.kosarService.jegyAdatLista)
+  }
 }
