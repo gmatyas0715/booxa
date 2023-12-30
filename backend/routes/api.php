@@ -37,6 +37,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Szektorcsoport route-ok
     Route::get('/szektorcsoportok','SzektorCsoportController@index');
+    Route::get('/kivalasztottSzektorcsoportok/{esemeny}','SzektorCsoportController@kivalasztottSzektorCsoportok');
     Route::get('/szektorcsoportok/{szektorcsoport}','SzektorCsoportController@show');
 
     // Esemény route-ok

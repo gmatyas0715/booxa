@@ -69,16 +69,7 @@ class EsemenyController extends Controller
     {
         $esemenyToReturn = Esemeny::with([
             'helyszin' => function ($query) {
-                $query->select('id', 'nev','helyszin_kep_eleres','svg_kep_eleres')
-                    ->with([
-                        'szektor_csoport' => function ($query) {
-                            $query->select('id', 'szektor_csoport_nev','szektor_tipus','helyszin_id')
-                                ->with([
-                                    'szektor'=>function($query){
-                                        $query->select('id','arszorzo','max_kapacitas','sorjelzes','szektor_csoport_id');
-                                    }]);
-                        }
-                    ]);
+                $query->select('id', 'nev','helyszin_kep_eleres','svg_kep_eleres');
             },
             'eloado' => function ($query) {
                 $query->select('id','nev','leiras','kep_eleres');

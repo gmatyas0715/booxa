@@ -11,6 +11,7 @@
     display: block;
 }
 
-::ng-deep #l01_vip_bal{
-    fill: green;
- }
+.tbody{
+    height: 300px;
+    overflow-y: auto;
+}

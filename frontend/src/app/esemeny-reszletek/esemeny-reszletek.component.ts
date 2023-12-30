@@ -4,6 +4,7 @@ import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SzektorCsoportService } from '../_szervizek/szektor-csoport.service';
 
 @Component({
   selector: 'app-esemeny-reszletek',
@@ -16,12 +17,13 @@ export class EsemenyReszletekComponent{
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
-  kivalasztottSzektorCsoport:any;
+  kivalasztottSzektorCsoportok:any;
   helyszinSvg: SafeHtml ='';
 
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
               public helyszinSzerviz:HelyszinService,
+              public szektorCsoportSzerviz:SzektorCsoportService,
               private renderer: Renderer2,
               private sanitizer: DomSanitizer) {
   }
@@ -32,13 +34,13 @@ export class EsemenyReszletekComponent{
     const id = this.route.snapshot.paramMap.get('id') as string;
     this.esemenySzerviz.esemenyAdatok(id).subscribe((valasz)=>{
       this.kivalasztottEsemeny=valasz;
-      console.log(this.kivalasztottEsemeny)
       this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
       this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
-      this.kivalasztottSzektorCsoport = this.kivalasztottEsemeny.helyszin.szektor_csoport;
       this.helyszinSvgBetoltes();
     });
-
+    this.szektorCsoportSzerviz.szektorCsoportok(id).subscribe((valasz)=>{
+      this.kivalasztottSzektorCsoportok = valasz;
+    })
 
   }
 
@@ -51,8 +53,8 @@ export class EsemenyReszletekComponent{
   helyszinSvgBetoltes(){
    this.helyszinSzerviz.helyszinSvgKepUrl(this.kivalasztottHelyszin.svg_kep_eleres).subscribe((valasz)=>{
       this.helyszinSvg =  this.sanitizer.bypassSecurityTrustHtml(valasz);
-      console.log(this.helyszinSvg)
     });
   }
+
 
 }

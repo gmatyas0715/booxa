@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Szektor extends Model
 {
-
     protected $casts = [
     'id' => 'string',
     ];
