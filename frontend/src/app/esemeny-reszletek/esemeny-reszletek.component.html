@@ -23,7 +23,7 @@
                     <ng-container *ngFor="let szektorcsoport of kivalasztottSzektorCsoportok">
                         <tr *ngFor="let szektor of szektorcsoport.szektor">
                             <td class="border pl-3">{{szektorcsoport.szektor_csoport_nev}} {{szektor.sorjelzes!==null?szektor.sorjelzes+" sor":""}}</td>
-                            <td class="border"><input type="number" min="0" max="10000"></td>
+                            <td class="border"><input type="number" [value]="jegyDarab" min="0" max="10000"></td>
                             <td class="border pl-3">{{szektor.szektor_jegyar}} Ft</td>
                             <td><button (click)="jegyKosarbaHelyezes(szektorcsoport,szektor)">Kosárba</button></td>
                         </tr>

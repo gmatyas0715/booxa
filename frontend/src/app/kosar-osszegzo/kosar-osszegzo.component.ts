@@ -13,9 +13,11 @@ export class KosarOsszegzoComponent {
 
   kosarElemek: JegyAdatModell[];
 
-  constructor(public kosarService:KosarService,
+  constructor(public kosarSzerviz:KosarService,
               public helyszinService:HelyszinService,
               public eloadoService:EloadoService) {
-    this.kosarElemek = this.kosarService.jegyAdatLista
+    this.kosarElemek = this.kosarSzerviz.jegyAdatLista
   }
+
+  
 }

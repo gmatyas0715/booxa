@@ -5,6 +5,7 @@ import { EloadoService } from '../_szervizek/eloado.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { MufajService } from '../_szervizek/mufaj.service';
 import { CimService } from '../_szervizek/cim.service';
+import { KosarService } from '../_szervizek/kosar.service';
 
 @Component({
   selector: 'app-esemeny-kereso',
@@ -16,7 +17,8 @@ export class EsemenyKeresoComponent {
               public eloadoSzerviz:EloadoService,
               public helyszinSzerviz:HelyszinService,
               public mufajSzerviz: MufajService,
-              public cimSzerviz:CimService) {
+              public cimSzerviz:CimService,
+              public kosarSzerviz:KosarService) {
     this.mufajBetoltes();
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();

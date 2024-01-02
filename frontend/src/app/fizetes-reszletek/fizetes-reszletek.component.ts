@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UserService } from '../_szervizek/user.service';
+import { KosarService } from '../_szervizek/kosar.service';
 
 @Component({
   selector: 'app-szallitas-reszletek',
@@ -18,7 +19,8 @@ export class FizetesReszletekComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    public szerviz:UserService) {
+    public szerviz:UserService,
+    public kosarSzerviz:KosarService) {
         this.regisztracioForm = this.formBuilder.group({
         vezeteknev: ['',[Validators.required]],
         keresztnev: ['',[Validators.required]],

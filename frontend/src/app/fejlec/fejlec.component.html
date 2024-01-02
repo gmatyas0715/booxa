@@ -15,19 +15,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-2">
-                        <a class="nav-link d-flex align-items-center" href="/kezdooldal">
+                        <a class="nav-link d-flex align-items-center" routerLink="/kezdooldal">
                             <span class="d-block d-md-none d-lg-block">Kezdőoldal</span>
                             <img class="d-block menu-ikon" src="../../assets/kepek/kezdolap-ikon.svg" alt="">
                         </a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link d-flex align-items-center" href="/esemenyKereso">
+                        <a class="nav-link d-flex align-items-center" routerLink="/esemenyKereso">
                             <span class="d-block d-md-none d-lg-block">Események</span>
                             <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
                         </a>
                     </li>
                     <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
-                        <a class="nav-link d-flex align-items-center" href="">
+                        <a class="nav-link d-flex align-items-center" routerLink="">
                             <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
                             <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
                         </a>
@@ -41,7 +41,7 @@
                     <a routerLink="/kosarOsszegzo"><img src="../../assets/kepek/kosar-ikon.svg" alt=""></a>
                 </div>
                 <div class="d-none d-xl-block col-10">
-                    Kosárban: xxx Ft
+                    Kosárban: {{kosarSzerviz.getKosarOsszar()}} Ft
                 </div>
             </div>
         </div>
