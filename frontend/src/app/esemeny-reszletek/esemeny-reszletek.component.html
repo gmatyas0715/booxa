@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <table>
+            <table *ngIf="jegyKivalasztas_e">
                 <thead>
                     <tr>
                         <th class="col-4 border">Szektor adat</th>
@@ -23,13 +23,16 @@
                     <ng-container *ngFor="let szektorcsoport of kivalasztottSzektorCsoportok">
                         <tr *ngFor="let szektor of szektorcsoport.szektor">
                             <td class="border pl-3">{{szektorcsoport.szektor_csoport_nev}} {{szektor.sorjelzes!==null?szektor.sorjelzes+" sor":""}}</td>
-                            <td class="border"><input type="number" [value]="jegyDarab" min="0" max="10000"></td>
                             <td class="border pl-3">{{szektor.szektor_jegyar}} Ft</td>
-                            <td><button (click)="jegyKosarbaHelyezes(szektorcsoport,szektor)">Kosárba</button></td>
+                            <td><button (click)="jegyKivalasztas(szektorcsoport,szektor)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
             </table>
+            <div *ngIf="!jegyKivalasztas_e">
+                <input type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000">
+                <button (click)="jegyKosarbaHelyezes()">Kiválaszt</button>
+            </div>
         </div>
         <div class="col helyszin-container">
             <ng-container *ngIf="helyszinSvg">

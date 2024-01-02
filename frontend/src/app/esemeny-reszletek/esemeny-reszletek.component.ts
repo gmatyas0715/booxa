@@ -21,7 +21,11 @@ export class EsemenyReszletekComponent{
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
   kivalasztottSzektorCsoportok:any;
+  kivalasztottSzektorCsoport:any;
+  kivalasztottSzektor:any;
+  jegyFoglaltDarab:number=0
   helyszinSvg: SafeHtml ='';
+  jegyKivalasztas_e:boolean = true;
 
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
@@ -57,15 +61,27 @@ export class EsemenyReszletekComponent{
     });
   }
 
-  jegyKosarbaHelyezes(szektorCsoport:SzektorCsoportModell,szektor:SzektorModell){
-    console.log('Jegy kosárba helyezve!')
+  jegyKivalasztas(szektorCsoport:SzektorCsoportModell,szektor:SzektorModell){
+    this.kivalasztottSzektor = szektor;
+    this.kivalasztottSzektorCsoport = szektorCsoport;
+    this.jegyKivalasztas_e = false;
+  }
+
+  jegyKosarbaHelyezes(){
+
+    console.log(this.kivalasztottSzektor,this.kivalasztottSzektorCsoport)
+
     this.kosarService.kosarbaHelyezes(new JegyAdatModell(
       this.kivalasztottEsemeny,
-      szektorCsoport,
-      szektor,
+      this.kivalasztottSzektorCsoport,
+      this.kivalasztottSzektor,
       1,
-      3
+      this.jegyFoglaltDarab
     ));
-    console.log(this.kosarService.jegyAdatLista)
+
+    console.log(this.kosarService.jegyAdatLista[0])
+
+    this.jegyKivalasztas_e = true;
+    this.jegyFoglaltDarab = 0;
   }
 }

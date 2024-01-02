@@ -21,15 +21,15 @@
                         <li>
                             <p>Jegy darabszám:</p>
                             <div>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i)" value="-">
+                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i,kosarElem.szektor)" value="-">
                                 <p class="float-left ml-2 mr-2 p-1">{{kosarElem.jegyDarabszam}}</p>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i)" value="+">
+                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i,kosarElem.szektor)" value="+">
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-2">
-                    <img class="float-right kuka" (click)="kosarSzerviz.tetelTorles(i)" src="../../assets/kepek/kuka_ikon.png" alt="">
+                    <img class="float-right kuka d-block" (click)="kosarSzerviz.tetelTorles(i)" src="../../assets/kepek/kuka_ikon.png" alt="">
                 </div>
             </div>
             <hr>

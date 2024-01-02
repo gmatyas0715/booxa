@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
+import { SzektorModell } from '../_modellek/szektor-modell';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class KosarService {
     return kosarOsszar;
   }
 
-  kosarbaHelyezes(item:JegyAdatModell){
-    this.jegyAdatLista.push(item);
+  kosarbaHelyezes(jegyAdat:JegyAdatModell){
+    this.jegyAdatLista.push(jegyAdat);
   }
 
   tetelTorles(index:number){
@@ -33,13 +34,13 @@ export class KosarService {
     return kosarElem.jegyDarabszam*kosarElem.szektor.szektor_jegyar;
   }
 
-  jegyDarabCsokkentes(index:number){
+  jegyDarabCsokkentes(index:number,szektor:SzektorModell){
     if (this.jegyAdatLista[index].jegyDarabszam==1) return;
     this.jegyAdatLista[index].jegyDarabszam!--
     //this.getTetelOsszar(index);
   }
 
-  jegyDarabNoveles(index:number){
+  jegyDarabNoveles(index:number,szektor:SzektorModell){
     this.jegyAdatLista[index].jegyDarabszam!++
     //this.getTetelOsszar(index);
   }
