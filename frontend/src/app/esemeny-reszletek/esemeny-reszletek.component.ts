@@ -23,6 +23,7 @@ export class EsemenyReszletekComponent{
   kivalasztottSzektorCsoportok:any;
   kivalasztottSzektorCsoport:any;
   kivalasztottSzektor:any;
+  kivalasztottUlohelyek:number[] = []
   jegyFoglaltDarab:number=0
   helyszinSvg: SafeHtml ='';
   jegyKivalasztas_e:boolean = true;
@@ -75,12 +76,16 @@ export class EsemenyReszletekComponent{
       this.kivalasztottEsemeny,
       this.kivalasztottSzektorCsoport,
       this.kivalasztottSzektor,
-      1,
+      [1],
       this.jegyFoglaltDarab
     ));
 
     console.log(this.kosarService.jegyAdatLista[0])
 
+    this.jegyInfoVisszaallitas();
+  }
+
+  jegyInfoVisszaallitas(){
     this.jegyKivalasztas_e = true;
     this.jegyFoglaltDarab = 0;
   }
