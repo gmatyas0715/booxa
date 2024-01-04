@@ -50,10 +50,6 @@ button{
   box-shadow: 0px 1px 1px 1px rgb(91, 91, 108);
 }
 
-button:hover{
-  background-color: #5c71db;
-}
-
 .esemeny-container:hover{
   box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
 }

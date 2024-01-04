@@ -111,9 +111,9 @@
        style="fill:none;fill-rule:evenodd;stroke:#010c80;stroke-width:0.12092102;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
        d="m 1.8810221,0.83095702 c 0,0.22599828 0,0.45199648 0,0.67799478"
        id="path3"
-       inkscape:path-effect="#path-effect3"
+       transform="matrix(0.69057989,0,0,0.24758395,-0.50822365,-0.04264599)"
        inkscape:original-d="m 1.8810221,0.83095702 c 0,0.22599828 0,0.45199648 0,0.67799478"
-       transform="matrix(0.69057989,0,0,0.24758395,-0.50822365,-0.04264599)" />
+       inkscape:path-effect="#path-effect3" />
     <rect
        style="fill:none;fill-rule:evenodd;stroke:#010c80;stroke-width:0.05;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
        id="rect3"
@@ -121,19 +121,5 @@
        height="0.16917221"
        x="0.29119933"
        y="0.46640718" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#010c80;stroke-width:0.07029846;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
-       d="m 1.2730799,1.257002 c 0,0.076979 0,0.1539584 0,0.2309376"
-       id="path4"
-       inkscape:path-effect="#path-effect4"
-       inkscape:original-d="m 1.2730799,1.257002 c 0,0.076979 0,0.1539584 0,0.2309376"
-       transform="matrix(0.69057989,0,0,0.7325452,-0.50822365,-0.45440361)" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#010c80;stroke-width:0.07029846;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
-       d="m 1.1576111,1.3724708 c 0.076979,0 0.1539584,0 0.2309376,0"
-       id="path5"
-       inkscape:path-effect="#path-effect5"
-       inkscape:original-d="m 1.1576111,1.3724708 c 0.076979,0 0.1539584,0 0.2309376,0"
-       transform="matrix(0.69057989,0,0,0.7325452,-0.50822365,-0.45440361)" />
   </g>
 </svg>

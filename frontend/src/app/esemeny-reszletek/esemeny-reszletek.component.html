@@ -23,7 +23,7 @@
                         <tr *ngFor="let szektor of szektorcsoport.szektor">
                             <td class="border pl-3">{{szektorcsoport.szektor_csoport_nev}} {{szektor.sorjelzes!='null'?szektor.sorjelzes+" sor":""}}</td>
                             <td class="border pl-3">{{szektor.szektor_jegyar}} Ft</td>
-                            <td class="border pl-3 m-auto"><button (click)="jegyKivalasztas(szektorcsoport,szektor)">Kiválaszt</button></td>
+                            <td class="border pl-3 m-auto"><button mat-raised-button (click)="jegyKivalasztas(szektorcsoport,szektor)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -55,10 +55,10 @@
                         <td>{{kivalasztottSzektor.szektor_jegyar*jegyFoglaltDarab}} Ft</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
+                        <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><button class="d-block" (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></td>
+                        <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></td>
                     </tr>
                 </table>
             </div>
@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="row">
-        <button class="float-right" routerLink="/esemenyKereso">Vissza az eseményekhez</button>
+        <button mat-raised-button class="float-right" routerLink="/esemenyKereso">Vissza az eseményekhez</button>
     </div>
 </div>
 

@@ -27,7 +27,7 @@
                         </mat-autocomplete>
                     </div>
                     <div class="col">
-                        <button class="mt-2">Keresés</button>
+                        <button  mat-raised-button class="mt-2">Keresés</button>
                     </div>
                 </form>
             </div>
@@ -37,7 +37,7 @@
                     <input type="date" id="esemenyDatum" [min]="maiDatum" [(ngModel)]="esemenyDatum" (ngModelChange)="esemenyKereses()">
                 </div>
                 <div class="col">
-                    <button class="mt-2" (click)="datumTorles()">Időpont törlése</button>
+                    <button mat-raised-button class="mt-2" (click)="datumTorles()">Időpont törlése</button>
                 </div>
             </div>
             <span class="font-weight-bold d-block mb-2">Szűrés jegyárra</span>
@@ -135,7 +135,7 @@
                                 {{esemeny.jegy_alapar}} Ft-tól!
                         </div>
                         <div class="col">
-                            <button class="float-right rounded font-weight-bold p-2" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
+                            <button mat-raised-button class="float-right p-2" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
                         </div>
                     </div>
                 </div>
