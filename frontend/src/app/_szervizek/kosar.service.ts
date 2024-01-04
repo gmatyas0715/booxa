@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
-import { SzektorModell } from '../_modellek/szektor-modell';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KosarService {
+
+  constructor() {
+    
+  }
 
   jegyAdatLista: JegyAdatModell[] = [];
 
@@ -34,14 +37,38 @@ export class KosarService {
     return kosarElem.jegyDarabszam*kosarElem.szektor.szektor_jegyar;
   }
 
-  jegyDarabCsokkentes(index:number,szektor:SzektorModell){
-    if (this.jegyAdatLista[index].jegyDarabszam==1) return;
-    this.jegyAdatLista[index].jegyDarabszam!--
-    //this.getTetelOsszar(index);
+  jegyDarabCsokkentes(index:number){
+    let foglaltUlohelyek:JegyAdatModell = this.jegyAdatLista[index];
+    if (foglaltUlohelyek.jegyDarabszam==1) return;
+    foglaltUlohelyek.jegyDarabszam!--;
+    foglaltUlohelyek.ulohely.pop();
   }
 
-  jegyDarabNoveles(index:number,szektor:SzektorModell){
-    this.jegyAdatLista[index].jegyDarabszam!++
-    //this.getTetelOsszar(index);
+  jegyDarabNoveles(index:number){
+    this.jegyAdatLista[index].jegyDarabszam!++;
+    this.ulohelyHozzaadas(index);
+  }
+  
+  ulohelySzamGeneralas(jegyFoglaltDarab:number):number[]{
+    let ulohelyek:number[] = [];
+    let hely = 1;
+    while(ulohelyek.length!=jegyFoglaltDarab){
+      
+      ulohelyek.push(hely);
+      hely++;
+    }
+    return ulohelyek;
+  }
+
+  ulohelyHozzaadas(index:number){
+
+    let hely = 1;
+    while(this.jegyAdatLista[index].ulohely.length!=this.jegyAdatLista[index].jegyDarabszam){
+      if (!this.jegyAdatLista[index].ulohely.includes(hely)){ // idejönne majd a check hogy melyik hely nincs foglalva if (hely!="foglalt")
+        this.jegyAdatLista[index].ulohely.push(hely);
+      }
+      hely++;
+    }
+    console.log(this.jegyAdatLista[index].ulohely)
   }
 }

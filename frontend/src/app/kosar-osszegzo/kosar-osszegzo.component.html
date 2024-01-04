@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <h2>Kosár tartalma</h2>
     <hr>
-    <div  *ngFor="let kosarElem of kosarElemek; let i = index" class="row p-3 jegy-adat-container mb-5">
+    <div  *ngFor="let kosarElem of kosarSzerviz.jegyAdatLista; let i = index" class="row p-3 jegy-adat-container mb-5">
         <div class="col-5">
             <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.esemeny.eloado.kep_eleres)" alt="">
             <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.esemeny.helyszin.helyszin_kep_eleres)" alt="">
@@ -11,6 +11,7 @@
                 <li>Előadó: {{kosarElem.esemeny.eloado.nev}}</li>
                 <li>Helyszín: {{kosarElem.esemeny.helyszin.nev}}</li>
                 <li>Szektor: {{kosarElem.szektorCsoport.szektor_csoport_nev}}</li>
+                <li>Szektor típus: {{kosarElem.szektorCsoport.szektor_tipus==='ulo'?'ülő':'álló'}}</li>
                 <li>Sorjelzés: {{kosarElem.szektor.sorjelzes}}</li>
                 <li>Ülőhelyek: {{kosarElem.ulohely}}</li>
             </ul>
@@ -24,9 +25,9 @@
                         <li>
                             <p>Jegy darabszám:</p>
                             <div>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i,kosarElem.szektor)" value="-">
+                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i)" value="-">
                                 <p class="float-left ml-2 mr-2 p-1">{{kosarElem.jegyDarabszam}}</p>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i,kosarElem.szektor)" value="+">
+                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i)" value="+">
                             </div>
                         </li>
                     </ul>
@@ -41,13 +42,13 @@
             </div>
         </div>
     </div>
-    <div *ngIf="kosarElemek.length==0">
+    <div *ngIf="kosarSzerviz.jegyAdatLista.length==0">
         <h1 class="d-block m-auto text-center font-size-10">A kosarad jelenleg üres!</h1>
     </div>
     <hr>
     <h4 class="float-right font-weight-bold">Kosár összesen: {{kosarSzerviz.getKosarOsszar()}} Ft</h4>
     <br>
     <br>
-    <input class="float-right p-1" routerLink="/fizetesReszletek" type="button" value="Tovább a fizetéshez">
+    <input *ngIf="kosarSzerviz.jegyAdatLista.length!=0" class="float-right p-1" routerLink="/fizetesReszletek" type="button" value="Tovább a fizetéshez">
     <input class="float-right p-1" routerLink="/esemenyKereso" type="button" value="Vissza az eseményekhez">
 </div>

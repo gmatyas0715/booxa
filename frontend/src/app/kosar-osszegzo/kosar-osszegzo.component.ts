@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { KosarService } from '../_szervizek/kosar.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { EloadoService } from '../_szervizek/eloado.service';
-import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 
 @Component({
   selector: 'app-kosar-osszegzo',
@@ -11,12 +10,10 @@ import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 })
 export class KosarOsszegzoComponent {
 
-  kosarElemek: JegyAdatModell[];
-
   constructor(public kosarSzerviz:KosarService,
               public helyszinService:HelyszinService,
               public eloadoService:EloadoService) {
-    this.kosarElemek = this.kosarSzerviz.jegyAdatLista
+
   }
 
   

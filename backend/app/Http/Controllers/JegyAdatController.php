@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\JegyAdat;
 use App\Http\Requests\StoreJegyAdatRequest;
 use App\Http\Requests\UpdateJegyAdatRequest;
+use App\Models\Esemeny;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Schema;
+
+use function PHPSTORM_META\map;
 
 class JegyAdatController extends Controller
 {
@@ -50,5 +54,24 @@ class JegyAdatController extends Controller
     {
         $jegy_adat->delete();
         return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);
+    }
+        
+    public function szektorFoglaltsag(Esemeny $esemeny)
+    {
+        $jegyMap = new Collection(); 
+        $jegyAdatok = JegyAdat::whereHas('esemeny',function ($query) use ($esemeny){
+            $query->where('esemeny_id',$esemeny);
+        })->get();
+
+        foreach($jegyAdatok as $jegyadat)
+        {
+            if (!$jegyMap.hasKey($jegyadat->szektor->max_kapacitas)){
+                $jegyMap->put($jegyadat->szektor->max_kapacitas,1);
+            }
+            else{
+                $jegyMap->put($jegyadat->szektor->max_kapacitas,$jegyMap->get($jegyadat->szektor->max_kapacitas) + 1);
+            }
+        }
+        return response()->json([$jegyAdatok]);
     }
 }

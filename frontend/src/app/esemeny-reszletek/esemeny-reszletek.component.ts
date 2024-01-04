@@ -69,19 +69,13 @@ export class EsemenyReszletekComponent{
   }
 
   jegyKosarbaHelyezes(){
-
-    console.log(this.kivalasztottSzektor,this.kivalasztottSzektorCsoport)
-
     this.kosarService.kosarbaHelyezes(new JegyAdatModell(
       this.kivalasztottEsemeny,
       this.kivalasztottSzektorCsoport,
       this.kivalasztottSzektor,
-      [1],
+      this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab),
       this.jegyFoglaltDarab
     ));
-
-    console.log(this.kosarService.jegyAdatLista[0])
-
     this.jegyInfoVisszaallitas();
   }
 

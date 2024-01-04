@@ -25,4 +25,14 @@ class JegyAdat extends Model
     {
         return $this->belongsTo(Helyszin::class);
     }
+
+    public function szektor() : BelongsTo 
+    {
+        return $this->belongsTo(Szektor::class);
+    }
+
+    public function szektor_csoport() : BelongsTo 
+    {
+        return $this->belongsTo(SzektorCsoport::class);
+    }
 }
