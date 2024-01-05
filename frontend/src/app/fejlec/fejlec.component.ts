@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component} from '@angular/core';
 import { UserService } from '../_szervizek/user.service';
 import { KosarService } from '../_szervizek/kosar.service';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
@@ -11,7 +11,6 @@ import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 export class FejlecComponent {
   constructor(public szerviz:UserService,
               public userAzonositas:UserAzonositasService,
-              public kosarSzerviz:KosarService) {
-    
-  }
+              public kosarSzerviz:KosarService,
+              public userSzerviz:UserService) {}
 }

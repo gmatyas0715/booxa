@@ -110,14 +110,15 @@ Route::namespace('App\Http\Controllers')->group(function () {
     });
 
     // ADMIN & USER-SUPPORT & REGISZTRÁLT USER ROUTE-OK JOGOSULTSÁG ROUTE-OK
-    Route::group(['middleware'=>['auth:sanctum','role:admin|user_support|regisztralt_user']],function(){
+    Route::group(['middleware'=>['auth:sanctum','role:admin|user_support|regisztralt_user|szerkeszto']],function(){
 
         // User route-ok
-        Route::get('/userek/{user}','UserController@index');
         Route::patch('/userek/{user}', 'UserController@update');
         Route::delete('/userek/{user}', 'UserController@destroy');
-
+        Route::get('/userek/{user}','UserController@show');
     });
+
+    
 
     // USER-SUPPORT & REGISZTRÁLT USER JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:regisztralt_user']],function(){

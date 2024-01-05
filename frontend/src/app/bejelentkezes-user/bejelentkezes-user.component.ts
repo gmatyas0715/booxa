@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { Router } from '@angular/router';
+import { UserService } from '../_szervizek/user.service';
 
 @Component({
   selector: 'app-bejelentkezes-user',
@@ -12,7 +13,7 @@ export class BejelentkezesUserComponent {
   felhasznalonev:string = "";
   jelszo:string = "";
 
-  constructor(private userAzonositas:UserAzonositasService, private router:Router) {}
+  constructor(private userAzonositas:UserAzonositasService,private userService:UserService, private router:Router) {}
 
   userLogin(){
     let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
@@ -20,8 +21,10 @@ export class BejelentkezesUserComponent {
     this.userAzonositas.login(userBejelentkezesAdatok).subscribe(
       (response)=>{
         console.log('Sikeres bejelentkezés',response);
-        this.userAzonositas.userToken = response.token;
-        console.log(response.token)
+        this.userAzonositas.setAuthToken(response.token);
+        this.userAzonositas.setUsername(response.felhasznalonev);
+        this.userAzonositas.setUserId(response.user_id);
+        console.log(this.userService.bejelentkezettUser)
         this.router.navigate(['/kezdooldal']);
       },
       (error) => {

@@ -54,7 +54,7 @@
                         <th>Jegy összár:</th>
                         <td>{{kivalasztottSzektor.szektor_jegyar*jegyFoglaltDarab}} Ft</td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="jegyFoglaltDarab>0">
                         <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
                     </tr>
                     <tr>

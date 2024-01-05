@@ -26,7 +26,7 @@
                             <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li class="nav-item mr-2" *ngIf=userAzonositas.userToken>
+                    <li class="nav-item mr-2" *ngIf=userAzonositas.getAuthToken()>
                         <a class="nav-link d-flex align-items-center" routerLink="/jegyVasarlasElozmenyek">
                             <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
                             <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="align-self-center ml-auto mr-3">
-            <div class="" *ngIf=!userAzonositas.userToken>
+            <div class="" *ngIf=!userAzonositas.getAuthToken()>
                 <a class="d-flex" routerLink="/bejelentkezes">
                     <img class="mr-2" src="../../assets/kepek/bejelentkezes-ikon.svg" alt="">
                     <span class="d-none d-sm-block">Bejelentkezés</span>
@@ -56,7 +56,8 @@
                     <span class="d-none d-sm-block">Regisztráció</span>
                 </a>
             </div>
+            <app-bejelentkezett-user class="align-self-center" *ngIf=userAzonositas.getAuthToken()></app-bejelentkezett-user>
         </div>
-        <app-bejelentkezett-user class="align-self-center" *ngIf=userAzonositas.userToken></app-bejelentkezett-user>
+        
     </div>
 </header>

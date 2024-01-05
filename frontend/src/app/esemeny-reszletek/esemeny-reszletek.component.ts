@@ -8,6 +8,7 @@ import { SzektorCsoportService } from '../_szervizek/szektor-csoport.service';
 import { SzektorCsoportModell } from '../_modellek/szektor-csoport-modell';
 import { SzektorModell } from '../_modellek/szektor-modell';
 import { KosarService } from '../_szervizek/kosar.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-esemeny-reszletek',
@@ -33,7 +34,8 @@ export class EsemenyReszletekComponent{
               public helyszinSzerviz:HelyszinService,
               public szektorCsoportSzerviz:SzektorCsoportService,
               private kosarService:KosarService,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private _snackBar: MatSnackBar) {
   }
   
   ngOnInit():void{
@@ -77,10 +79,15 @@ export class EsemenyReszletekComponent{
       this.jegyFoglaltDarab
     ));
     this.jegyInfoVisszaallitas();
+    this.openSnackbar()
   }
 
   jegyInfoVisszaallitas(){
     this.jegyKivalasztas_e = true;
     this.jegyFoglaltDarab = 0;
+  }
+
+  openSnackbar(){
+    this._snackBar.open("Jegy kosárba helyezve!",'Mégse',{duration:2500}).onAction().subscribe(()=>{this.kosarService.jegyAdatLista.pop();});
   }
 }

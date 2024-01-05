@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UserService } from '../_szervizek/user.service';
-import { EloadoModell } from '../_modellek/eloado-modell';
 
 @Component({
   selector: 'app-kezdooldal',

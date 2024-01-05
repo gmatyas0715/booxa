@@ -1,30 +1,27 @@
 import { Injectable } from '@angular/core';
 import { UserModell } from '../_modellek/user-modell';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public regisztraltUserek:UserModell[] = [];
-  public bejelentkezettStatusz:boolean = false;
+
   public bejelentkezettUser:UserModell = new UserModell();
+  private apiUrl = 'http://localhost:8000/api/userek/';
 
-  constructor(
-    private http: HttpClient,
-    private router: Router) {
+  constructor(private http:HttpClient) {}
 
-  }
+  userAdatok(userId:string,userToken:string):Observable<any>{
 
-  Logout(){
-    for (const user of this.regisztraltUserek) {
-        this.bejelentkezettStatusz=false;
-        sessionStorage.clear();
-    }
-  }
+    const requestOptions = {
+       headers: new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization': `Bearer ${userToken}`
+      }),
+    };
 
-  NavigalasKezdooldal(){
-    this.router.navigate(['/kezdooldal']);
+    return this.http.get<any>(this.apiUrl+userId,requestOptions)
   }
 }

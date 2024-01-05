@@ -17,7 +17,8 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return response()->json($user);
+        $userInfo = $user->only(['vezeteknev','keresztnev','email','szuletesi_datum','felhasznalonev']);
+        return response()->json($userInfo);
     }
 
     public function update(UpdateUserRequest $request, User $user)

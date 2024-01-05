@@ -55,6 +55,8 @@ class AuthController extends Controller
 
             return response()->json([
                 'üzenet' => 'Sikeres bejelentkezés',
+                'user_id' => $user->id,
+                'felhasznalonev' => $user->felhasznalonev,
                 'token' => $token
             ], 200);
         }

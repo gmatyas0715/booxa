@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy
     MatButtonModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

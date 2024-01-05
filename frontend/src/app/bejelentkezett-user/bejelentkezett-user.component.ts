@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { UserService } from '../_szervizek/user.service';
 
 @Component({
@@ -7,12 +8,9 @@ import { UserService } from '../_szervizek/user.service';
   styleUrls: ['./bejelentkezett-user.component.css']
 })
 export class BejelentkezettUserComponent {
-  constructor(public szerviz:UserService) {
-    
-  }
-
+  constructor(public userAzonositas:UserAzonositasService,public userService:UserService) {}
 
   LogoutGomb(){
-    this.szerviz.Logout()
+    this.userAzonositas.logout()
   }
 }
