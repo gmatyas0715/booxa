@@ -9,6 +9,7 @@ import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
+import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 
 const routes: Routes = [
     {
@@ -59,6 +60,11 @@ const routes: Routes = [
       title:'Profil adatok',
       path:'profilAdatok',
       component:ProfilBeallitasokComponent
+    },
+    {
+      title:'Jegyvásárlás előzmények',
+      path:'jegyVasarlasElozmenyek',
+      component:JegyVasarlasElozmenyekComponent
     }
   ];
 

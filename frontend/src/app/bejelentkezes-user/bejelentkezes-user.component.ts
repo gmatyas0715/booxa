@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserModell } from '../_modellek/user-modell';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { Router } from '@angular/router';
 
@@ -10,15 +9,19 @@ import { Router } from '@angular/router';
 })
 export class BejelentkezesUserComponent {
   
-  public user:UserModell = new UserModell();
-  userBejelentkezesAdatok = {felhasznalonev: this.user.felhasznalonev, jelszo:this.user.jelszo};
+  felhasznalonev:string = "";
+  jelszo:string = "";
 
   constructor(private userAzonositas:UserAzonositasService, private router:Router) {}
 
-  LoginGomb(){
-    this.userAzonositas.Login(this.userBejelentkezesAdatok).subscribe(
+  userLogin(){
+    let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
+    console.log(userBejelentkezesAdatok)
+    this.userAzonositas.login(userBejelentkezesAdatok).subscribe(
       (response)=>{
         console.log('Sikeres bejelentkezés',response);
+        this.userAzonositas.userToken = response.token;
+        console.log(response.token)
         this.router.navigate(['/kezdooldal']);
       },
       (error) => {

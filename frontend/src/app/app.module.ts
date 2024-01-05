@@ -22,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EsemenyReszletekComponent,
     FizetesReszletekComponent,
     ElfelejtettJelszoComponent,
-    ProfilBeallitasokComponent
+    ProfilBeallitasokComponent,
+    JegyVasarlasElozmenyekComponent
   ],
   imports: [
     BrowserModule,

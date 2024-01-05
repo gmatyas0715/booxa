@@ -26,8 +26,8 @@
                             <img class="menu-ikon" src="../../assets/kepek/esemeny-ikon.svg" alt="">
                         </a>
                     </li>
-                    <li class="nav-item mr-2" *ngIf=szerviz.bejelentkezettStatusz>
-                        <a class="nav-link d-flex align-items-center" routerLink="">
+                    <li class="nav-item mr-2" *ngIf=userAzonositas.userToken>
+                        <a class="nav-link d-flex align-items-center" routerLink="/jegyVasarlasElozmenyek">
                             <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
                             <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
                         </a>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="align-self-center ml-auto mr-3">
-            <div class="" *ngIf=!szerviz.bejelentkezettStatusz>
+            <div class="" *ngIf=!userAzonositas.userToken>
                 <a class="d-flex" routerLink="/bejelentkezes">
                     <img class="mr-2" src="../../assets/kepek/bejelentkezes-ikon.svg" alt="">
                     <span class="d-none d-sm-block">Bejelentkezés</span>
@@ -57,6 +57,6 @@
                 </a>
             </div>
         </div>
-        <app-bejelentkezett-user class="align-self-center" *ngIf=szerviz.bejelentkezettStatusz></app-bejelentkezett-user>
+        <app-bejelentkezett-user class="align-self-center" *ngIf=userAzonositas.userToken></app-bejelentkezett-user>
     </div>
 </header>

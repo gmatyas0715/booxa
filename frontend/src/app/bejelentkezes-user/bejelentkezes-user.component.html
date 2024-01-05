@@ -1,22 +1,24 @@
-<div class="mt-5" id="bejelentkezes" (keyup.enter)="LoginGomb()">
+<div class="mt-5" id="bejelentkezes">
     <div class="text-center">
-        <h2>Bejelentkezés</h2>
-        <div class="">
-            <p class="login-felirat">Felhasználónév:</p>
-            <input class="m-1" type="text" [(ngModel)]="user.felhasznalonev" name="felhasznalonev">
-        </div>
-        <div class="">
-            <p class="login-felirat">Jelszó:</p>
-            <input class="m-1" type="password" [(ngModel)]="user.jelszo" name="jelszo">
-        </div>
-        <div class="">
-            <input class="" routerLink="/kezdooldal" type="button" value="Bejelentkezés" (click)="LoginGomb()"/>
-        </div>
-        <div class="">
-            Nincs még fiókod?<a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
-        </div>
-        <div class="">
-            <a class="" routerLink="/elfelejtettJelszo">Elfelejtetted a jelszavad?</a>
-        </div>
+        <form (ngSubmit)="userLogin()" (keyup.enter)="userLogin()">
+            <h2>Bejelentkezés</h2>
+            <div class="">
+                <p class="login-felirat">Felhasználónév:</p>
+                <input class="m-1" type="text" [(ngModel)]="felhasznalonev" name="felhasznalonev" id="felhasznalonev">
+            </div>
+            <div class="">
+                <p class="login-felirat">Jelszó:</p>
+                <input class="m-1" type="password" [(ngModel)]="jelszo" name="jelszo" id="jelszo">
+            </div>
+            <div class="">
+                <button mat-raised-button type="submit" routerLink="/kezdooldal" (click)="userLogin()">Bejelentkezés</button>
+            </div>
+            <div class="">
+                Nincs még fiókod?<a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
+            </div>
+            <div class="">
+                <a class="" routerLink="/elfelejtettJelszo">Elfelejtetted a jelszavad?</a>
+            </div>
+        </form>
     </div>
 </div>

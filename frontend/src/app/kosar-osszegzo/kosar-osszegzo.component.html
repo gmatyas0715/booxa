@@ -12,8 +12,8 @@
                 <li>Helyszín: {{kosarElem.esemeny.helyszin.nev}}</li>
                 <li>Szektor: {{kosarElem.szektorCsoport.szektor_csoport_nev}}</li>
                 <li>Szektor típus: {{kosarElem.szektorCsoport.szektor_tipus==='ulo'?'ülő':'álló'}}</li>
-                <li>Sorjelzés: {{kosarElem.szektor.sorjelzes}}</li>
-                <li>Ülőhelyek: {{kosarElem.ulohely}}</li>
+                <li *ngIf="kosarElem.szektorCsoport.szektor_tipus==='ulo'">Sorjelzés: {{kosarElem.szektor.sorjelzes}}</li>
+                <li *ngIf="kosarElem.szektorCsoport.szektor_tipus==='ulo'">Ülőhelyek: {{kosarElem.ulohely}}</li>
             </ul>
         </div>
         <div class="col-3">
@@ -49,6 +49,6 @@
     <h4 class="float-right font-weight-bold">Kosár összesen: {{kosarSzerviz.getKosarOsszar()}} Ft</h4>
     <br>
     <br>
-    <input *ngIf="kosarSzerviz.jegyAdatLista.length!=0" class="float-right p-1" routerLink="/fizetesReszletek" type="button" value="Tovább a fizetéshez">
+    <button mat-raised-button *ngIf="kosarSzerviz.jegyAdatLista.length!=0" class="float-right p-1" routerLink="/fizetesReszletek">Tovább a fizetéshez</button>
     <button mat-raised-button class="float-right p-1" routerLink="/esemenyKereso">Vissza az eseményekhez</button>
 </div>
