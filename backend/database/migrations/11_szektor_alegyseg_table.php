@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('szektor', function (Blueprint $table) {
+        Schema::create('szektor_alegyseg', function (Blueprint $table) {
             $table->string('id',20)->primary();
             $table->decimal('arszorzo',3,2);
             $table->integer('max_kapacitas');
             $table->string('sorjelzes',20)->nullable();
-            $table->string('szektor_csoport_id',20);
-            $table->foreign('szektor_csoport_id')
+            $table->string('szektor_id',20);
+            $table->foreign('szektor_id')
                 ->references('id')
-                ->on('szektor_csoport')
+                ->on('szektor')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('szektor');
+        Schema::dropIfExists('szektor_alegyseg');
     }
 };

@@ -25,7 +25,7 @@ class Helyszin extends Model
         return $this->belongsTo(Cim::class);
     }
 
-    public function szektor_csoport() : HasMany {
-        return $this->hasMany(SzektorCsoport::class);
+    public function szektor() : HasMany {
+        return $this->hasMany(Szektor::class);
     }
 }

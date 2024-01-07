@@ -9,8 +9,6 @@ use App\Models\Esemeny;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Schema;
 
-use function PHPSTORM_META\map;
-
 class JegyAdatController extends Controller
 {
 
@@ -65,11 +63,11 @@ class JegyAdatController extends Controller
 
         foreach($jegyAdatok as $jegyadat)
         {
-            if (!$jegyMap.hasKey($jegyadat->szektor->max_kapacitas)){
-                $jegyMap->put($jegyadat->szektor->max_kapacitas,1);
+            if (!$jegyMap.hasKey($jegyadat->szektor_alegyseg->max_kapacitas)){
+                $jegyMap->put($jegyadat->szektor_alegyseg->max_kapacitas,1);
             }
             else{
-                $jegyMap->put($jegyadat->szektor->max_kapacitas,$jegyMap->get($jegyadat->szektor->max_kapacitas) + 1);
+                $jegyMap->put($jegyadat->szektor_alegyseg->max_kapacitas,$jegyMap->get($jegyadat->szektor_alegyseg->max_kapacitas) + 1);
             }
         }
         return response()->json([$jegyAdatok]);

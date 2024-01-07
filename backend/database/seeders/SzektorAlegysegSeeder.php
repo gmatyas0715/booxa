@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\SzektorCsoport;
 use Illuminate\Database\Seeder;
+use App\Models\SzektorAlegyseg;
 
-class SzektorCsoportSeeder extends Seeder
+class SzektorAlegysegSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../db/sql scriptek/szektor_csoport.csv');
+        $csvFilePath = storage_path('../../db/sql scriptek/szektor_alegyseg.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;
@@ -25,11 +25,12 @@ class SzektorCsoportSeeder extends Seeder
 
             $data = str_getcsv($line,';');
 
-            SzektorCsoport::create([
+            SzektorAlegyseg::create([
                 'id' => $data[0],
-                'szektor_csoport_nev' => $data[1],
-                'szektor_tipus' => $data[2],
-                'helyszin_id' => $data[3]
+                'arszorzo' => $data[1],
+                'max_kapacitas' => $data[2],
+                'sorjelzes' => $data[3],
+                'szektor_id' => $data[4],
             ]);
         }
     }

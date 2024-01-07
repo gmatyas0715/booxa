@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('szektor_csoport', function (Blueprint $table) {
+        Schema::create('szektor', function (Blueprint $table) {
             $table->string('id',20)->primary();
-            $table->string('szektor_csoport_nev',50);
+            $table->string('szektor_nev',50);
             $table->string('szektor_tipus',50);
             $table->foreignId('helyszin_id');
             $table->foreign('helyszin_id')

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Szektor;
+use Illuminate\Database\Seeder;
 
 class SzektorSeeder extends Seeder
 {
@@ -27,10 +27,9 @@ class SzektorSeeder extends Seeder
 
             Szektor::create([
                 'id' => $data[0],
-                'arszorzo' => $data[1],
-                'max_kapacitas' => $data[2],
-                'sorjelzes' => $data[3],
-                'szektor_csoport_id' => $data[4],
+                'szektor_nev' => $data[1],
+                'szektor_tipus' => $data[2],
+                'helyszin_id' => $data[3]
             ]);
         }
     }

@@ -19,11 +19,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <ng-container *ngFor="let szektorcsoport of kivalasztottSzektorCsoportok">
-                        <tr *ngFor="let szektor of szektorcsoport.szektor">
-                            <td class="border pl-3">{{szektorcsoport.szektor_csoport_nev}} {{szektor.sorjelzes!='null'?szektor.sorjelzes+" sor":""}}</td>
-                            <td class="border pl-3">{{szektor.szektor_jegyar}} Ft</td>
-                            <td class="border pl-3 m-auto"><button mat-raised-button (click)="jegyKivalasztas(szektorcsoport,szektor)">Kiválaszt</button></td>
+                    <ng-container *ngFor="let szektor of kivalasztottSzektorok">
+                        <tr *ngFor="let szektor_alegyseg of szektor.szektor_alegyseg">
+                            <td class="border pl-3">{{szektor.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
+                            <td class="border pl-3">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
+                            <td class="border pl-3 m-auto"><button mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -32,19 +32,19 @@
                 <table>
                     <tr>
                         <th>Szektor jelzés:</th>
-                        <td>{{kivalasztottSzektorCsoport.szektor_csoport_nev}}</td>
+                        <td>{{kivalasztottSzektor.szektor_nev}}</td>
                     </tr>
-                    <tr *ngIf="kivalasztottSzektor.sorjelzes!='null'">
+                    <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
                         <th>Sorjelzés:</th>
-                        <td>{{kivalasztottSzektor.sorjelzes}}</td>
+                        <td>{{kivalasztottSzektorAlegyseg.sorjelzes}}</td>
                     </tr>
-                    <tr *ngIf="kivalasztottSzektor.sorjelzes!='null'">
+                    <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
                         <th>Ülőhelyek:</th>
                         <td>{{kivalasztottUlohelyek}}</td>
                     </tr>
                     <tr>
                         <th>Jegy darabár:</th>
-                        <td>{{kivalasztottSzektor.szektor_jegyar}} Ft</td>
+                        <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar}} Ft</td>
                     </tr>
                     <tr>
                         <th>Jegy darabszám:</th>
@@ -52,7 +52,7 @@
                     </tr>
                     <tr>
                         <th>Jegy összár:</th>
-                        <td>{{kivalasztottSzektor.szektor_jegyar*jegyFoglaltDarab}} Ft</td>
+                        <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar*jegyFoglaltDarab}} Ft</td>
                     </tr>
                     <tr *ngIf="jegyFoglaltDarab>0">
                         <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>

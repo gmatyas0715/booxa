@@ -1,8 +1,9 @@
+import { SzektorAlegysegModell } from "./szektor-alegyseg-modell";
+
 export interface SzektorModell {
     id:string;
-    arszorzo:number;
-    max_kapacitas:number;
-    sorjelzes:string;
-    szektor_jegyar:number;
-    szektor_csoport_id:string;
+    szektor_nev:string;
+    szektor_tipus:string;
+    helyszin_id:number;
+    szektor_alegyseg:SzektorAlegysegModell[];
 }

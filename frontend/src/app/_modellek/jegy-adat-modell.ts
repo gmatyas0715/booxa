@@ -1,18 +1,18 @@
 import { EsemenyModell } from "./esemeny-modell";
-import { SzektorCsoportModell } from "./szektor-csoport-modell";
 import { SzektorModell } from "./szektor-modell";
+import { SzektorAlegysegModell } from "./szektor-alegyseg-modell";
 
 export class JegyAdatModell {
     public esemeny:EsemenyModell;
-    public szektorCsoport:SzektorCsoportModell;
     public szektor:SzektorModell;
+    public szektorAlegyseg:SzektorAlegysegModell;
     public ulohely:number[];
     public jegyDarabszam:number;
 
-    constructor(esemeny:EsemenyModell,szektorCsoport:SzektorCsoportModell,szektor:SzektorModell,ulohely:number[],jegyDarabszam:number) {
+    constructor(esemeny:EsemenyModell,szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell,ulohely:number[],jegyDarabszam:number) {
         this.esemeny=esemeny;
-        this.szektorCsoport = szektorCsoport;
         this.szektor = szektor;
+        this.szektorAlegyseg = szektorAlegyseg;
         this.ulohely=ulohely;
         this.jegyDarabszam = jegyDarabszam;
     }

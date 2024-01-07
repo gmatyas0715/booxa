@@ -10,17 +10,17 @@
             <ul>
                 <li>Előadó: {{kosarElem.esemeny.eloado.nev}}</li>
                 <li>Helyszín: {{kosarElem.esemeny.helyszin.nev}}</li>
-                <li>Szektor: {{kosarElem.szektorCsoport.szektor_csoport_nev}}</li>
-                <li>Szektor típus: {{kosarElem.szektorCsoport.szektor_tipus==='ulo'?'ülő':'álló'}}</li>
-                <li *ngIf="kosarElem.szektorCsoport.szektor_tipus==='ulo'">Sorjelzés: {{kosarElem.szektor.sorjelzes}}</li>
-                <li *ngIf="kosarElem.szektorCsoport.szektor_tipus==='ulo'">Ülőhelyek: {{kosarElem.ulohely}}</li>
+                <li>Szektor: {{kosarElem.szektor.szektor_nev}}</li>
+                <li>Szektor típus: {{kosarElem.szektor.szektor_tipus==='ulo'?'ülő':'álló'}}</li>
+                <li *ngIf="kosarElem.szektor.szektor_tipus==='ulo'">Sorjelzés: {{kosarElem.szektorAlegyseg.sorjelzes}}</li>
+                <li *ngIf="kosarElem.szektor.szektor_tipus==='ulo'">Ülőhelyek: {{kosarElem.ulohely}}</li>
             </ul>
         </div>
         <div class="col-3">
             <div class="row">
                 <div class="col-10">
                     <ul>
-                        <li>Jegyár : {{kosarElem.szektor.szektor_jegyar}} Ft</li>
+                        <li>Jegyár : {{kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar}} Ft</li>
                         <br>
                         <li>
                             <p>Jegy darabszám:</p>

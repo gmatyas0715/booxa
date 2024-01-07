@@ -20,14 +20,12 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 EloadoSeeder::class,
                 EloadoMufajSeeder::class,
-                KedvezmenySeeder::class,
                 HelyszinSeeder::class,
-                SzektorCsoportSeeder::class,
                 SzektorSeeder::class,
+                SzektorAlegysegSeeder::class,
                 EsemenySeeder::class,
                 FizetesSeeder::class,
                 JegyAdatSeeder::class,
-                JegyAdatKedvezmenySeeder::class,
                 RendelesSeeder::class,
             ]
         ); 

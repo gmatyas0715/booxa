@@ -30,7 +30,6 @@ class HelyszinController extends Controller
         $ujHelyszin->nev = $request->input('nev');
         $ujHelyszin->cim_id = $request->input('cim_id');
         $ujHelyszin->kapacitas = $request->input('kapacitas');
-        $ujHelyszin->kontakt_informacio = $request->input('kontakt_informacio');
         $ujHelyszin->szabadteri = $request->input('szabadteri');
         $ujHelyszin->arkategoria = $request->input('arkategoria');
         $ujHelyszin->helyszin_kep_eleres = $request->input('helyszin_kep_eleres');

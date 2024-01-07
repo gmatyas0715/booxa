@@ -29,12 +29,12 @@ export class KosarService {
   }
 
   getTetelOsszarByItem(kosarElem:JegyAdatModell):number{
-    return kosarElem.jegyDarabszam*kosarElem.szektor.szektor_jegyar;
+    return kosarElem.jegyDarabszam*kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar;
   }
   
   getTetelOsszarByIndex(index:number):number{
     const kosarElem:JegyAdatModell = this.jegyAdatLista[index];
-    return kosarElem.jegyDarabszam*kosarElem.szektor.szektor_jegyar;
+    return kosarElem.jegyDarabszam*kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar;
   }
 
   jegyDarabCsokkentes(index:number){

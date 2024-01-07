@@ -4,9 +4,9 @@ import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SzektorCsoportService } from '../_szervizek/szektor-csoport.service';
-import { SzektorCsoportModell } from '../_modellek/szektor-csoport-modell';
+import { SzektorService } from '../_szervizek/szektor.service';
 import { SzektorModell } from '../_modellek/szektor-modell';
+import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
 import { KosarService } from '../_szervizek/kosar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -21,9 +21,9 @@ export class EsemenyReszletekComponent{
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
-  kivalasztottSzektorCsoportok:any;
-  kivalasztottSzektorCsoport:any;
+  kivalasztottSzektorok:any;
   kivalasztottSzektor:any;
+  kivalasztottSzektorAlegyseg:any;
   kivalasztottUlohelyek:number[] = []
   jegyFoglaltDarab:number=0
   helyszinSvg: SafeHtml ='';
@@ -32,7 +32,7 @@ export class EsemenyReszletekComponent{
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
               public helyszinSzerviz:HelyszinService,
-              public szektorCsoportSzerviz:SzektorCsoportService,
+              public szektorSzerviz:SzektorService,
               private kosarService:KosarService,
               private sanitizer: DomSanitizer,
               private _snackBar: MatSnackBar) {
@@ -46,8 +46,8 @@ export class EsemenyReszletekComponent{
       this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
       this.helyszinSvgBetoltes();
     });
-    this.szektorCsoportSzerviz.szektorCsoportok(id).subscribe((valasz)=>{
-      this.kivalasztottSzektorCsoportok = valasz;
+    this.szektorSzerviz.szektorok(id).subscribe((valasz)=>{
+      this.kivalasztottSzektorok = valasz;
     })
 
   }
@@ -64,17 +64,17 @@ export class EsemenyReszletekComponent{
     });
   }
 
-  jegyKivalasztas(szektorCsoport:SzektorCsoportModell,szektor:SzektorModell){
+  jegyKivalasztas(szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell){
+    this.kivalasztottSzektorAlegyseg = szektorAlegyseg;
     this.kivalasztottSzektor = szektor;
-    this.kivalasztottSzektorCsoport = szektorCsoport;
     this.jegyKivalasztas_e = false;
   }
 
   jegyKosarbaHelyezes(){
     this.kosarService.kosarbaHelyezes(new JegyAdatModell(
       this.kivalasztottEsemeny,
-      this.kivalasztottSzektorCsoport,
       this.kivalasztottSzektor,
+      this.kivalasztottSzektorAlegyseg,
       this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab),
       this.jegyFoglaltDarab
     ));

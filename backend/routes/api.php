@@ -32,15 +32,15 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/helyszin-nevek','HelyszinController@helyszinek');
     Route::get('/helyszinek/{helyszin}','HelyszinController@show');
 
+    // Szektor alegység route-ok
+    Route::get('/szektor-alegysegek','SzektorAlegysegController@index');
+    Route::get('/szektor-alegysegek/{szektor-alegyseg}','SzektorAlegyseg@show');
+
+
     // Szektor route-ok
-    Route::get('/szektorok','SzektorController@index');
+    Route::get('/szektor','SzektorController@index');
+    Route::get('/kivalasztott-szektorok/{esemeny}','SzektorController@kivalasztottSzektorok');
     Route::get('/szektorok/{szektor}','SzektorController@show');
-
-
-    // Szektorcsoport route-ok
-    Route::get('/szektorcsoportok','SzektorCsoportController@index');
-    Route::get('/kivalasztottSzektorcsoportok/{esemeny}','SzektorCsoportController@kivalasztottSzektorCsoportok');
-    Route::get('/szektorcsoportok/{szektorcsoport}','SzektorCsoportController@show');
 
     // Esemény route-ok
     Route::get('/esemenyek','EsemenyController@index');

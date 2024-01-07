@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('esemeny_id');
             $table->foreignId('helyszin_id');
             $table->foreignId('rendeles_id');
-            $table->string('szektor_csoport_id',20);
-            $table->string('szektor_id',20)->nullable();
+            $table->string('szektor_id',20);
+            $table->string('szektor_alegyseg_id',20)->nullable();
             $table->integer('ulohely')->nullable();
             $table->foreign('esemeny_id')
                 ->references('id')
@@ -29,14 +29,14 @@ return new class extends Migration
                 ->on('helyszin')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('szektor_csoport_id')
-                ->references('id')
-                ->on('szektor_csoport')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
             $table->foreign('szektor_id')
                 ->references('id')
                 ->on('szektor')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('szektor_alegyseg_id')
+                ->references('id')
+                ->on('szektor_alegyseg')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
