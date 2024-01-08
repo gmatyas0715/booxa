@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
@@ -109,6 +110,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::get('/userek','UserController@index');
     });
 
+    Route::get('/user-felhasznalonevek','UserController@userFelhasznalonevek');
+    
     // ADMIN & USER-SUPPORT & REGISZTRÁLT USER ROUTE-OK JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:admin|user_support|regisztralt_user|szerkeszto']],function(){
 

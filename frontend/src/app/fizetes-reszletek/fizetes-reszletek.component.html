@@ -96,7 +96,7 @@
             <span class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
         </div>
         <br>
-        <input type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg" value="Megrendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft">
+        <button mat-raised-button type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg">Megrendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
     </form>
-    <input class="float-right p-1" routerLink="/kosarOsszegzo" type="button" value="Vissza a kosárhoz">
+    <button mat-raised-button class="float-right p-1" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
 </div>

@@ -21,6 +21,18 @@ class UserController extends Controller
         return response()->json($userInfo);
     }
 
+    public function userFelhasznalonevek(){
+        $felhasznalonevek = User::select('felhasznalonev','email')->get();
+
+        foreach ($felhasznalonevek as $item) {
+            $organizedResult['felhasznalonev'][] = $item->felhasznalonev;
+            $organizedResult['email'][] = $item->email;
+        }
+
+        return $organizedResult;
+
+    }
+
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->vezeteknev = $request->input('vezeteknev');

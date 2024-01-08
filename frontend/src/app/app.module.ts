@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 import {CookieService} from 'ngx-cookie-service';
@@ -54,7 +55,8 @@ import {CookieService} from 'ngx-cookie-service';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

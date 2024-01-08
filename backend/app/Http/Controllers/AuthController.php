@@ -20,9 +20,9 @@ class AuthController extends Controller
             'nem'=>'required|string|in:f,n',
             'szuletesi_datum'=>'required|string|date-format:Y-m-d',
             'felhasznalonev'=>'required|unique:user,felhasznalonev|string',
-            'jelszo'=>'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/',
-            'profilkep_eleres'=>'string'
+            'jelszo'=>'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/'
         ]);
+        Log::info($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo'));
         if ($validator->fails())
             return response()->json($validator->errors(), 400);
         $input = $request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo');

@@ -15,27 +15,34 @@ export class RegisztracioComponent {
   public jelenEv:number = new Date().getFullYear();
   public maxEvDatum:string = this.jelenEv-18+"-01-01"
   public minEvDatum:string = this.jelenEv-130+"-01-01"
+  public regisztraltFelhasznalonevek:any[] = [];
+  public regisztraltEmailek:any[] = [];
   regisztracioForm: FormGroup;
+
 
   constructor(
     private formBuilder: FormBuilder,
-    public szerviz:UserService) {
+    public szerviz:UserService,
+    private userService:UserService) {
+        this.regisztraltFelhasznalokEmailek()
         this.regisztracioForm = this.formBuilder.group({
         vezeteknev: ['',[Validators.required]],
         keresztnev: ['',[Validators.required]],
         email: ['',[Validators.required,this.emailValidator]],
         nem: ['',[Validators.required]],
-        szulDatum: ['',[Validators.required]],
+        szuletesi_datum: ['',[Validators.required]],
         felhasznalonev: ['',[Validators.required,Validators.minLength(3)]],
         jelszo: ['',[Validators.required,this.jelszoValidator]],
-        jelszoUjra:['',[Validators.required]],
+        jelszo_megerosites:['',[Validators.required]],
         hirlevel: false,
         adatvedelmi: ['',[Validators.required]],
       },{validators: this.jelszoEgyezesValidator});
     }
 
   regisztracioGomb():void{
-    console.warn('Regisztrációs adatok sikeresen feldolgozva', this.regisztracioForm.value);
+    this.userService.userRegisztralas(this.regisztracioForm.value).subscribe(()=>{
+      console.warn('Regisztrációs adatok sikeresen feldolgozva')
+  })
     this.regisztracioForm.reset();
   }
   
@@ -49,8 +56,8 @@ export class RegisztracioComponent {
 
   jelszoEgyezesValidator(control: AbstractControl):ValidationErrors|null {
     const jelszo = control.get('jelszo')?.value;
-    const jelszoUjra = control.get('jelszoUjra')?.value;
-    if (jelszo !== jelszoUjra) {
+    const jelszo_megerosites = control.get('jelszo_megerosites')?.value;
+    if (jelszo !== jelszo_megerosites) {
       return { jelszoKulonbozes: true };
     }
     return null;
@@ -64,7 +71,32 @@ export class RegisztracioComponent {
     return null;
   }
 
+  felhasznalonevFoglaltValidator(control: AbstractControl):ValidationErrors|null{
+      if (this.regisztraltFelhasznalonevek.includes(control.value)){
+        return {foglaltFelhasznalonev:true};
+      }
+    return null;
+  }
+
+  emailFoglaltValidator(control: AbstractControl):ValidationErrors|null{
+    if (this.regisztraltEmailek.includes(control.value)){
+      return {foglaltEmail:true};
+    }
+  return null;
+}
+
   validFormEllenorzes():boolean{
     return this.regisztracioForm.invalid;
+  }
+
+  regisztraltFelhasznalokEmailek(){
+    this.userService.userFelhasznalonevek().subscribe((valasz)=>{
+      this.regisztraltFelhasznalonevek = valasz.felhasznalonev;
+      this.regisztraltEmailek = valasz.email;
+      this.regisztracioForm.get('felhasznalonev')
+      ?.addValidators(this.felhasznalonevFoglaltValidator.bind(this));
+      this.regisztracioForm.get('email')
+      ?.addValidators(this.emailFoglaltValidator.bind(this))
+    })
   }
 }
