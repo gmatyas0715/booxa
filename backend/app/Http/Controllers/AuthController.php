@@ -28,6 +28,7 @@ class AuthController extends Controller
         $input = $request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo');
         $input['jelszo'] = Hash::make($request['jelszo']) ;
         $user = User::create($input);
+        $user -> assignRole('regisztralt_user');
         $data =  [
             'token' => $user->createToken('Booxa-bro')->plainTextToken,
             'user' => $user,

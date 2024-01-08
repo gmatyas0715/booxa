@@ -15,16 +15,18 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
-import {HttpClientModule} from '@angular/common/http';
+import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
+import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
-import {CookieService} from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import {CookieService} from 'ngx-cookie-service';
     MatPaginatorModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
