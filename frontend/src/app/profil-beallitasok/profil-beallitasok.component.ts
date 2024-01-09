@@ -33,6 +33,10 @@ export class ProfilBeallitasokComponent {
         this.userService.bejelentkezettUser = valasz
     })
   }
+
+  profilMentes(){
+    
+  }
 }
 
 @Component({

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/f
 import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl } from '@angular/forms';
 import { UserService } from '../_szervizek/user.service';
+import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-regisztracio',
@@ -23,7 +25,9 @@ export class RegisztracioComponent {
   constructor(
     private formBuilder: FormBuilder,
     public szerviz:UserService,
-    private userService:UserService) {
+    private userService:UserService,
+    private userAzonositasService:UserAzonositasService,
+    private router: Router) {
         this.regisztraltFelhasznalokEmailek()
         this.regisztracioForm = this.formBuilder.group({
         vezeteknev: ['',[Validators.required]],
@@ -40,10 +44,12 @@ export class RegisztracioComponent {
     }
 
   regisztracioGomb():void{
-    this.userService.userRegisztralas(this.regisztracioForm.value).subscribe(()=>{
-      console.warn('Regisztrációs adatok sikeresen feldolgozva')
-  })
-    this.regisztracioForm.reset();
+    this.userService.userRegisztralas(this.regisztracioForm.value).subscribe((valasz)=>{
+      this.userAzonositasService.setUserId(valasz.user_id);
+      this.userAzonositasService.setAuthToken(valasz.token);
+      this.router.navigate(['/kezdooldal']);
+      this.regisztracioForm.reset();
+    });
   }
   
   jelszoValidator(control: AbstractControl):ValidationErrors|null {

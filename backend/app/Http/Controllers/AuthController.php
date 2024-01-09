@@ -31,7 +31,7 @@ class AuthController extends Controller
         $user -> assignRole('regisztralt_user');
         $data =  [
             'token' => $user->createToken('Booxa-bro')->plainTextToken,
-            'user' => $user,
+            'user_id' => $user->id,
         ];
         return response()->json($data, 200);
     }

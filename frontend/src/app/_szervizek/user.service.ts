@@ -17,7 +17,7 @@ export class UserService {
               public cookieService:CookieService,
               public router:Router) {}
     
-  userRegisztralas(userAdatok: any) {
+  userRegisztralas(userAdatok: any):Observable<any> {
 
     const body = JSON.stringify(userAdatok);
 
@@ -26,7 +26,7 @@ export class UserService {
       Accept:'application/json'
     });
 
-    return this.http.post(this.apiUrl+'register',body,{headers})
+    return this.http.post<any>(this.apiUrl+'register',body,{headers})
   }
 
   userAdatok(userId:string,userToken:string):Observable<any>{
