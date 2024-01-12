@@ -50,7 +50,7 @@
                 <div class="row justify-content-center mb-2">
                     <button mat-raised-button *ngIf="!belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatSzerkesztesClick()">Szerkesztés</button>
                     <button mat-raised-button *ngIf="belepesAdatSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(belepesAdatForm)">Mentés</button>
-                    <button mat-raised-button *ngIf="belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatMegseClick()" >Mégse</button>
+                    <button mat-raised-button *ngIf="belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatReset()" >Mégse</button>
                 </div>
             </form>
         </div>
@@ -82,7 +82,7 @@
                 <div class="row justify-content-center mb-2">
                     <button mat-raised-button *ngIf="!emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailSzerkesztesClick()">Szerkesztés</button>
                     <button mat-raised-button *ngIf="emailSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(emailForm)">Mentés</button>
-                    <button mat-raised-button *ngIf="emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailMegseClick()" >Mégse</button>
+                    <button mat-raised-button *ngIf="emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailReset()" >Mégse</button>
                 </div>
             </form>
         </div>
@@ -115,7 +115,7 @@
                 <div class="row justify-content-center mb-2">
                     <button mat-raised-button *ngIf="!szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="szemelyesAdatSzerkesztesClick()">Szerkesztés</button>
                     <button mat-raised-button *ngIf="szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(szemelyesAdatForm)">Mentés</button>
-                    <button mat-raised-button *ngIf="szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="szemelyesAdatMegseClick()" >Mégse</button>
+                    <button mat-raised-button *ngIf="szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="szemelyesAdatReset()" >Mégse</button>
                 </div>
             </form>
         </div>

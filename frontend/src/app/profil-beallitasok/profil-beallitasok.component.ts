@@ -77,20 +77,20 @@ export class ProfilBeallitasokComponent {
     this.szemelyesAdatSzerkesztheto=true
   }
 
-  belepesAdatMegseClick(){
+  belepesAdatReset(){
     this.belepesAdatSzerkesztheto = false;
     this.belepesAdatForm.get('felhasznalonev')?.disable();
     this.belepesAdatForm.get('jelszo')?.disable();
     this.belepesAdatForm.reset();
   }
 
-  emailMegseClick(){
+  emailReset(){
     this.emailSzerkesztheto = false;
     this.emailForm.get('email')?.disable();
     this.emailForm.reset();
   }
 
-  szemelyesAdatMegseClick(){
+  szemelyesAdatReset(){
     this.szemelyesAdatSzerkesztheto = false;
     this.szemelyesAdatForm.get('vezeteknev')?.disable();
     this.szemelyesAdatForm.get('keresztnev')?.disable();
@@ -177,16 +177,19 @@ export class ProfilBeallitasokComponent {
       console.log(valasz);
       this.userService.bejelentkezettUser = valasz.user_adatok
       formTipus.reset();
+      
       switch (formSzerkesztheto) {
+
         case 'belepesAdatSzerkesztheto':
-          this.belepesAdatSzerkesztheto = false
+          this.belepesAdatReset()
           break;
+
         case 'emailSzerkesztheto':
-          this.emailSzerkesztheto = false
+          this.emailReset()
           break;
       
         case 'szemelyesAdatSzerkesztheto':
-          this.szemelyesAdatSzerkesztheto = false
+          this.szemelyesAdatReset()
           break;
       }
     });

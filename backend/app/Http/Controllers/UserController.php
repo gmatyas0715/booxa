@@ -131,12 +131,14 @@ class UserController extends Controller
             return response()->json(['error'=>'Nincs módosítandó adat.'],400);
         }
 
-        $datumMost = new DateTime('now');
-        $szuletesi_datum = new DateTime($request->szuletesi_datum);
-        $korEvben = $datumMost->diff($szuletesi_datum);
+        if ($request->szuletesi_datum!=""){
+            $datumMost = new DateTime('now');
+            $szuletesi_datum = new DateTime($request->szuletesi_datum);
+            $korEvben = $datumMost->diff($szuletesi_datum);
 
-        if ($korEvben->y<18){
-            return response()->json(['error'=>'A felhasználó életkora minimun 18 év!'],400);
+            if ($korEvben->y<18){
+                return response()->json(['error'=>'A felhasználó életkora minimun 18 év!'],400);
+            }
         }
 
         if ($request->filled('vezeteknev')) {
