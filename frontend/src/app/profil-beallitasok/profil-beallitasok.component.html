@@ -1,104 +1,133 @@
 <div class="container profil-adat-teljes">
-    <div class="row profil-adat-blokk cim">
+    <mat-card class="row profil-adat-blokk cim">
         <div class="col">
             <h2>Profil adatok</h2>
         </div>
-    </div>
-    <div class="profil-adat-blokk row felhasznaloi-adat">
+    </mat-card>
+    <mat-card class="profil-adat-blokk row felhasznaloi-adat">
         <div class="col">
-            <div class="row">
-                <h4 class="pl-3 pt-3">Belépési adatok</h4>
-            </div>
-            <hr>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus"><span>Felhasználónév:</span> </div>
-                <div class="col profil-adat"><input class="adat-input" type="text" [placeholder]="this.userService.bejelentkezettUser.felhasznalonev" [disabled]="!this.belepesAdatSzerkesztheto"></div>
-            </div>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Jelenlegi jelszó: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="*******" [disabled]="!this.belepesAdatSzerkesztheto"></div>
-            </div>
-            <div *ngIf="this.belepesAdatSzerkesztheto"  class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Új jelszó: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="új jelszó"></div>
-            </div>
-            <div *ngIf="this.belepesAdatSzerkesztheto"  class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Új jelszó megismétlése:  </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="új jelszó megismétlése"></div>
-            </div>
-            <div class="row justify-content-center mb-2">
-                <button mat-raised-button *ngIf="!this.belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.belepesAdatSzerkesztheto=true" >Szerkesztés</button>
-                <button mat-raised-button *ngIf="this.belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.belepesAdatSzerkesztheto=false" >Mentés</button>
-                <button mat-raised-button *ngIf="this.belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.belepesAdatSzerkesztheto=false" >Mégse</button>
-            </div>
+            <form [formGroup]="belepesAdatForm" (ngSubmit)="profilMentes(belepesAdatForm,'belepesAdatForm','belepesAdatSzerkesztheto')">
+                <div class="row">
+                    <h4 class="pl-3 pt-3">Belépési adatok</h4>
+                </div>
+                <hr>
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus"><span>Felhasználónév:</span> </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="felhasznalonev" id="felhasznalonev" type="text" [placeholder]="userService.bejelentkezettUser.felhasznalonev">
+                    </div>
+                </div>
+                <div class="row mb-3" *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('minlength') && belepesAdatForm.get('felhasznalonev')?.touched">
+                    <span class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
+                </div>
+                <div class="row mb-3" *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev') && belepesAdatForm.get('felhasznalonev')?.touched">
+                    <span class="hibauzenet">Az felhasználónév foglalt!</span>
+                </div>
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Jelenlegi jelszó: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="jelszo" id="jelszo" type="password" placeholder="*******">
+                    </div>
+                </div>
+                <div *ngIf="belepesAdatSzerkesztheto"  class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Új jelszó: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="uj_jelszo" id="uj_jelszo" type="password" placeholder="új jelszó">
+                    </div>
+                    <div class="row mb-3" *ngIf="belepesAdatForm.get('uj_jelszo')?.hasError('nemMegfeleloJelszo') && belepesAdatForm.get('uj_jelszo')?.touched">
+                        <span class="hibauzenet">A megadott jelszó nem megfelelő</span>
+                    </div>
+                </div>
+                <div *ngIf="belepesAdatSzerkesztheto"  class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Új jelszó megismétlése:  </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="uj_jelszo_megerosites" id="uj_jelszo_megerosites" type="password" placeholder="új jelszó megismétlése">
+                    </div>
+                </div>
+                <div class="row mb-3" *ngIf="belepesAdatForm.hasError('jelszoKulonbozes') && belepesAdatForm.get('uj_jelszo_megerosites')?.touched">
+                    <span class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <button mat-raised-button *ngIf="!belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatSzerkesztesClick()">Szerkesztés</button>
+                    <button mat-raised-button *ngIf="belepesAdatSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(belepesAdatForm)">Mentés</button>
+                    <button mat-raised-button *ngIf="belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatMegseClick()" >Mégse</button>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="profil-adat-blokk row felhasznaloi-adat">
+    </mat-card>
+    <mat-card class="profil-adat-blokk row felhasznaloi-adat">
         <div class="col">
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Email: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.userService.bejelentkezettUser.email" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
-            </div>
-            <div *ngIf="this.emailSzerkesztheto" class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Email megismétlése: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text" placeholder="email megismétlése" [disabled]="!this.emailSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.email}}--></div>
-            </div>
-            <div class="row justify-content-center mb-2">
-                <button mat-raised-button *ngIf="!this.emailSzerkesztheto" class="rounded font-weight-bold" (click)="this.emailSzerkesztheto=true" >Szerkesztés</button>
-                <button mat-raised-button *ngIf="this.emailSzerkesztheto" class="rounded font-weight-bold" (click)="this.emailSzerkesztheto=false" >Mentés</button>
-                <button mat-raised-button *ngIf="this.emailSzerkesztheto" class="rounded font-weight-bold" (click)="this.emailSzerkesztheto=false" >Mégse</button>
-            </div>
+            <form [formGroup]="emailForm" (ngSubmit)="profilMentes(emailForm,'emailForm','emailSzerkesztheto')">
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Email: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="email" id="email" type="text" [placeholder]="userService.bejelentkezettUser.email">
+                        <div class="row mb-3"  *ngIf="emailForm.get('email')?.hasError('nemMegfeleloEmail') && emailForm.get('email')?.touched">
+                            <span class="hibauzenet">Nem érvényes e-mail cím!</span>
+                        </div>
+                        <div class="row mb-3" *ngIf="emailForm.get('email')?.hasError('foglaltEmail') && emailForm.get('email')?.touched">
+                            <span class="hibauzenet">Az email foglalt!</span>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="emailSzerkesztheto" class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Email megismétlése: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" formControlName="email_megerosites" id="email_megerosites" type="text" placeholder="email megismétlése">
+                    </div>
+                </div>
+                <div class="row mb-3" *ngIf="emailForm.hasError('emailKulonbozes') && emailForm.get('email_megerosites')?.touched">
+                    <span class="hibauzenet">A két email címnek meg kell egyeznie!</span>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <button mat-raised-button *ngIf="!emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailSzerkesztesClick()">Szerkesztés</button>
+                    <button mat-raised-button *ngIf="emailSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(emailForm)">Mentés</button>
+                    <button mat-raised-button *ngIf="emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailMegseClick()" >Mégse</button>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="profil-adat-blokk row szemelyes-adat">
+    </mat-card>
+    <mat-card class="profil-adat-blokk row szemelyes-adat">
         <div class="col">
-            <div class="row">
-                <h4 class="pl-3 pt-3">Személyes adatok</h4>
-            </div>
-            <hr>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Vezetéknév: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.userService.bejelentkezettUser.vezeteknev" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.vezeteknev}}--></div>
-            </div>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Keresztnév: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="text"  [placeholder]="this.userService.bejelentkezettUser.keresztnev" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.keresztnev}}--></div>
-            </div>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Születési dátum: </div>
-                <div class="col profil-adat"><input class="adat-input"  type="date" onfocus="(this.type='date')" [disabled]="!this.szemelyesAdatSzerkesztheto"><!--{{this.szerviz.bejelentkezettUser.szuletesiDatum}}--></div>
-            </div>
-            <div class="row justify-content-center mb-2">
-                <button mat-raised-button *ngIf="!this.szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.szemelyesAdatSzerkesztheto=true">Szerkesztés</button>
-                <button mat-raised-button *ngIf="this.szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.szemelyesAdatSzerkesztheto=false" >Mentés</button>
-                <button mat-raised-button *ngIf="this.szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="this.szemelyesAdatSzerkesztheto=false" >Mégse</button>
-            </div>
+            <form [formGroup]="szemelyesAdatForm" (ngSubmit)="profilMentes(szemelyesAdatForm,'szemelyesAdatForm','szemelyesAdatSzerkesztheto')">
+                <div class="row">
+                    <h4 class="pl-3 pt-3">Személyes adatok</h4>
+                </div>
+                <hr>
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Vezetéknév: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" id="vezeteknev" formControlName="vezeteknev" type="text" [placeholder]="userService.bejelentkezettUser.vezeteknev">
+                    </div>
+                </div>
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Keresztnév: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" id="keresztnev" formControlName="keresztnev"  type="text" [placeholder]="userService.bejelentkezettUser.keresztnev">
+                    </div>
+                </div>
+                <div class="row profil-adat-container">
+                    <div class="col profil-adat-tipus">Születési dátum: </div>
+                    <div class="col profil-adat">
+                        <input class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"  type="date" onfocus="(type='date')" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <button mat-raised-button *ngIf="!szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="szemelyesAdatSzerkesztesClick()">Szerkesztés</button>
+                    <button mat-raised-button *ngIf="szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" type="submit" [disabled]="validFormEllenorzes(szemelyesAdatForm)">Mentés</button>
+                    <button mat-raised-button *ngIf="szemelyesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="szemelyesAdatMegseClick()" >Mégse</button>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="profil-adat-blokk row profilkep-adat">
-        <div class="col">
-            <div class="row">
-                <h4 class="pl-3 pt-3">Profilkép</h4>
-            </div>
-            <hr>
-            <div class="row profil-adat-container">
-                <div class="col profil-adat-tipus">Profilkép feltöltése</div>
-                <div class="col profil-adat"><input class="rounded font-weight-bold" type="file" accept="image/*"></div>
-            </div>
-            <div class="row justify-content-center mb-2">
-                <button mat-raised-button  class="rounded font-weight-bold" (click)="profilMentes()">Profilkép mentése</button>
-            </div>
-        </div>
-    </div>
-    <div class="profil-adat-blokk row profilkep-adat">
+    </mat-card>
+    <mat-card class="profil-adat-blokk row profilkep-adat">
         <div class="col">
             <div class="row">
                 <h4 class="pl-3 pt-3">Profil törlése</h4>
             </div>
             <div class="row justify-content-center mb-2">
-                <button mat-raised-button (click)="openDialog('100ms','100ms')" class="rounded font-weight-bold">Profil törlése</button>
+                <button mat-raised-button (click)="torlesAblak('100ms','100ms')" class="rounded font-weight-bold">Profil törlése</button>
             </div>
-            <hr>
         </div>
-    </div>
+    </mat-card>
 </div>

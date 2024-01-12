@@ -4,6 +4,8 @@ import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { CookieService } from 'ngx-cookie-service';
+import { UserModell } from '../_modellek/user-modell';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profil-beallitasok',
@@ -15,18 +17,154 @@ export class ProfilBeallitasokComponent {
   public belepesAdatSzerkesztheto:boolean = false
   public emailSzerkesztheto:boolean = false
   public szemelyesAdatSzerkesztheto:boolean = false
+  public belepesAdatForm: FormGroup;
+  public emailForm: FormGroup;
+  public szemelyesAdatForm: FormGroup;
+  public regisztraltFelhasznalonevek:any[] = [];
+  public regisztraltEmailek:any[] = [];
+  public jelenEv:number = new Date().getFullYear();
+  public maxEvDatum:string = this.jelenEv-18+"-01-01";
+  public minEvDatum:string = this.jelenEv-130+"-01-01";
 
-  constructor(public userService: UserService,
+  user:UserModell = new UserModell();
+
+  constructor(private formBuilder:FormBuilder,
+              public userService: UserService,
               public userAzonositas:UserAzonositasService,
               public dialog:MatDialog) {
-    this.profilAdatok();
+              this.regisztraltFelhasznalokEmailek()
+              this.profilAdatBetoltes();
+              this.belepesAdatForm = this.formBuilder.group({felhasznalonev:[''],jelszo:[''],uj_jelszo:[''],uj_jelszo_megerosites:['']});
+              this.emailForm = this.formBuilder.group({email:[''],email_megerosites:['']});
+              this.szemelyesAdatForm = this.formBuilder.group({vezeteknev:[],keresztnev:[],szuletesi_datum:[]});
+              this.belepesAdatForm.get('felhasznalonev')?.disable();
+              this.belepesAdatForm.get('jelszo')?.disable();
+              this.emailForm.get('email')?.disable();
+              this.szemelyesAdatForm.get('vezeteknev')?.disable();
+              this.szemelyesAdatForm.get('keresztnev')?.disable();
+              this.szemelyesAdatForm.get('szuletesi_datum')?.disable();
   }
 
-  openDialog(enterAnimationDuration:string,exitAnimationDuration:string): void {
+  jelszoValidator(control: AbstractControl):ValidationErrors|null {
+    const regexMinta = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (control.value && !regexMinta.test(control.value)) {
+      return { nemMegfeleloJelszo: true };
+    }
+    return null;
+  }
+
+  belepesAdatSzerkesztesClick(){
+    this.belepesAdatForm.get('felhasznalonev')?.enable();
+    this.belepesAdatForm.get('jelszo')?.enable();
+    this.belepesAdatSzerkesztheto=true
+    this.belepesAdatForm.get('felhasznalonev')?.addValidators([Validators.minLength(3)]);
+    this.belepesAdatForm.get('uj_jelszo')?.addValidators([this.jelszoValidator]);
+    this.belepesAdatForm.addValidators(this.jelszoEgyezesValidator);
+  }
+
+  emailSzerkesztesClick(){
+    this.emailForm.get('email')?.enable();
+    console.log(this.emailForm.get('email'))
+    this.emailSzerkesztheto=true
+    this.emailForm.get('email')?.addValidators([this.emailValidator]);
+    this.emailForm.addValidators(this.emailEgyezesValidator);
+  }
+
+  szemelyesAdatSzerkesztesClick(){
+    this.szemelyesAdatForm.get('vezeteknev')?.enable();
+    this.szemelyesAdatForm.get('keresztnev')?.enable();
+    this.szemelyesAdatForm.get('szuletesi_datum')?.enable();
+    this.szemelyesAdatSzerkesztheto=true
+  }
+
+  belepesAdatMegseClick(){
+    this.belepesAdatSzerkesztheto = false;
+    this.belepesAdatForm.get('felhasznalonev')?.disable();
+    this.belepesAdatForm.get('jelszo')?.disable();
+    this.belepesAdatForm.reset();
+  }
+
+  emailMegseClick(){
+    this.emailSzerkesztheto = false;
+    this.emailForm.get('email')?.disable();
+    this.emailForm.reset();
+  }
+
+  szemelyesAdatMegseClick(){
+    this.szemelyesAdatSzerkesztheto = false;
+    this.szemelyesAdatForm.get('vezeteknev')?.disable();
+    this.szemelyesAdatForm.get('keresztnev')?.disable();
+    this.szemelyesAdatForm.get('szuletesi_datum')?.disable();
+    this.szemelyesAdatForm.reset();
+  }
+  emailEgyezesValidator(control: AbstractControl):ValidationErrors|null {
+    const uj_jelszo = control.get('email')?.value;
+    const uj_jelszo_megerosites = control.get('email_megerosites')?.value;
+    if (uj_jelszo !== uj_jelszo_megerosites) {
+      return { emailKulonbozes: true };
+    }
+    return null;
+  }
+
+  jelszoEgyezesValidator(control: AbstractControl):ValidationErrors|null {
+    const uj_jelszo = control.get('uj_jelszo')?.value;
+    const uj_jelszo_megerosites = control.get('uj_jelszo_megerosites')?.value;
+    if (uj_jelszo !== uj_jelszo_megerosites) {
+      return { jelszoKulonbozes: true };
+    }
+    return null;
+  }
+
+  emailValidator(control: AbstractControl):ValidationErrors|null {
+    const regexMinta = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (control.value && !regexMinta.test(control.value)) {
+      return { nemMegfeleloEmail: true };
+    }
+    return null;
+  }
+
+  felhasznalonevFoglaltValidator(control: AbstractControl):ValidationErrors|null{
+      if (this.regisztraltFelhasznalonevek.includes(control.value)){
+        return {foglaltFelhasznalonev:true};
+      }
+    return null;
+  }
+
+  emailFoglaltValidator(control: AbstractControl):ValidationErrors|null{
+    if (this.regisztraltEmailek.includes(control.value)){
+      return {foglaltEmail:true};
+    }
+  return null;
+  }
+
+  validFormEllenorzes(form:FormGroup):boolean{
+    return form.invalid || this.uresvalidatorTeszt(form);
+  }
+
+  uresvalidatorTeszt(form:FormGroup):boolean {
+    const allControlsEmpty = Object.keys(form.controls).every(controlName => {
+      const control = form.get(controlName);
+      return control?.value === '' || control?.value === null;
+    });
+    return allControlsEmpty;
+  }
+  
+  regisztraltFelhasznalokEmailek(){
+    this.userService.userFelhasznalonevek().subscribe((valasz)=>{
+      this.regisztraltFelhasznalonevek = valasz.felhasznalonev;
+      this.regisztraltEmailek = valasz.email;
+      this.belepesAdatForm.get('felhasznalonev')
+      ?.addValidators(this.felhasznalonevFoglaltValidator.bind(this));
+      this.emailForm.get('email')
+      ?.addValidators(this.emailFoglaltValidator.bind(this))
+    })
+  }
+
+  torlesAblak(enterAnimationDuration:string,exitAnimationDuration:string): void {
     this.dialog.open(ProfilTorles,{width:'250px',enterAnimationDuration,exitAnimationDuration});
   }
 
-  profilAdatok(){
+  profilAdatBetoltes(){
     this.userService
       .userAdatok(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken())
       .subscribe((valasz)=>{
@@ -34,8 +172,24 @@ export class ProfilBeallitasokComponent {
     })
   }
 
-  profilMentes(){
-    
+  profilMentes(formTipus:FormGroup,formTipusString:string,formSzerkesztheto:string){
+    this.userService.profilSzerkesztes(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken(),formTipus.value,formTipusString).subscribe((valasz)=>{
+      console.log(valasz);
+      this.userService.bejelentkezettUser = valasz.user_adatok
+      formTipus.reset();
+      switch (formSzerkesztheto) {
+        case 'belepesAdatSzerkesztheto':
+          this.belepesAdatSzerkesztheto = false
+          break;
+        case 'emailSzerkesztheto':
+          this.emailSzerkesztheto = false
+          break;
+      
+        case 'szemelyesAdatSzerkesztheto':
+          this.szemelyesAdatSzerkesztheto = false
+          break;
+      }
+    });
   }
 }
 

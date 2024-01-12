@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors, Validators, AbstractControl } from '@angular/forms';
 import { UserModell } from '../_modellek/user-modell';
-import { AbstractControl } from '@angular/forms';
 import { UserService } from '../_szervizek/user.service';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { Router } from '@angular/router';

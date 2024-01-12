@@ -25,13 +25,7 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'vezeteknev'=>'string|max:50',
-            'keresztnev'=>'string|max:50',
-            'email'=>'email|unique:user,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'nem'=>'string|size:1',
-            'szuletesi_datum'=>'string|date-format:YYYY-MM-DD',
-            'felhasznalonev'=>'string',
-            'jelszo'=>'string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/',
+
         ];
     }
 

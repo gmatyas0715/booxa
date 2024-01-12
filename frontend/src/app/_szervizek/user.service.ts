@@ -43,6 +43,19 @@ export class UserService {
     return this.http.get<any>(this.apiUrl+'user-felhasznalonevek')
   }
 
+  profilSzerkesztes(userId:string,userToken:string,userAdatok: any,formTipusString:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${userToken}`
+    })
+
+    userAdatok.form_tipus = formTipusString
+    const body = JSON.stringify(userAdatok);
+    console.log(body)
+
+    return this.http.patch<any>(this.apiUrl+'userek/'+userId,body,{headers});
+  }
+
   profilTorles(userId:string,userToken:string){
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -50,12 +63,12 @@ export class UserService {
     })
     this.http.delete(this.apiUrl+'userek/'+userId,{headers}).subscribe(
       (response) => {
-        console.log('Delete successful', response);
+        console.log('Sikeres törlés', response);
         this.cookieService.deleteAll();
         this.router.navigate(['/kezdooldal']);
       },
       (error) => {
-        console.error('Error deleting item', error);
+        console.error('Hiba a törlés során', error);
       })
   }
 }

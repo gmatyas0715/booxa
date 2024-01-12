@@ -119,16 +119,12 @@
         </div>
         <br>
         <div class="row">
-            <input id="hirlevel" type="checkbox" formControlName="hirlevel">
-            <label for="hirlevel">Feliratkozás hírlevelünkre*</label>
-        </div>
-        <div class="row">
             <input id="adatvedelmi" type="checkbox" formControlName="adatvedelmi" required>
             <label for="adatvedelmi" matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above">Elolvastam és elfogadom az adatvédelmi nyilatkozatot<sup>*</sup></label>
         </div>
         <div class="row mb-3" *ngIf="regisztracioForm.get('adatvedelmi')?.hasError('required') && regisztracioForm.get('adatvedelmi')?.touched">
             <span class="hibauzenet">Az adatvédelmi tájékoztató elfogadása kötelező!</span>
         </div>
-        <button [disabled]="validFormEllenorzes()" mat-raised-button type="submit" id="gomb-reg" value=>Regisztrálok</button>
+        <button [disabled]="validFormEllenorzes()" mat-raised-button type="submit" id="gomb-reg">Regisztrálok</button>
     </form>
 </div> 

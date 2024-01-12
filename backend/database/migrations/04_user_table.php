@@ -20,7 +20,6 @@ return new class extends Migration
             $table->date('szuletesi_datum');
             $table->string('felhasznalonev',100);
             $table->string('jelszo',255);
-            $table->string('profilkep_eleres',100)->nullable();
 	    $table->timestamp('email_verified_at')->nullable();
 	    $table->rememberToken();
             $table->timestamps();
