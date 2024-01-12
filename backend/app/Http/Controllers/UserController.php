@@ -61,7 +61,7 @@ class UserController extends Controller
         unset($data['nem']);
 
         $user->save();
-        return response()->json(['msg'=>'Sikeres profilmódosítás!.','user_adatok'=>$data],200);
+        return response()->json(['msg'=>'Sikeres profilmódosítás!','user_adatok'=>$data],200);
     }
 
     public function destroy(User $user)
@@ -73,7 +73,7 @@ class UserController extends Controller
     public function belepesAdatCheck(UpdateUserRequest $request, User $user) {
 
         if ($request->felhasznalonev=="" && $request->uj_jelszo==""){
-            return response()->json(['error'=>'Nincs módosítandó adat.'],400);
+            return response()->json(['msg'=>'Nincs módosítandó adat.'],400);
         }
 
         $validator = Validator::make($request->only('felhasznalonev', 'jelszo'), [
@@ -82,16 +82,16 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['error'=>'A megadott felhasználónév/jelszó nem felel meg a követelményeknek!'],400);
+            return response()->json(['msg'=>'A megadott felhasználónév/jelszó nem felel meg a követelményeknek!'],400);
         } 
 
         if ($request->uj_jelszo!=""){
             if ($user && Hash::check($request['jelszo'], $user->jelszo)){
-                return response()->json(['error'=>'A megadott jelenlegi jelszó nem megfelelő.'],400);
+                return response()->json(['msg'=>'A megadott jelenlegi jelszó nem megfelelő.'],400);
             }
 
             if ($request->uj_jelszo!=$request->uj_jelszo_megerosites){
-                return response()->json(['error'=>'Az új jelszó és jelszó megerősítés nem egyezik meg.'],400);
+                return response()->json(['msg'=>'Az új jelszó és jelszó megerősítés nem egyezik meg.'],400);
             }
         }
         
@@ -107,7 +107,7 @@ class UserController extends Controller
     public function emailCheck(UpdateUserRequest $request, User $user) {
 
         if ($request->email==""){
-            return response()->json(['error'=>'Nincs módosítandó adat.'],400);
+            return response()->json(['msg'=>'Nincs módosítandó adat.'],400);
         }
 
         $validator = Validator::make($request->only('email'), [
@@ -115,11 +115,11 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['error'=>'A megadott email nem megfelelő formátumú!'],400);
+            return response()->json(['msg'=>'A megadott email nem megfelelő formátumú!'],400);
         } 
 
         if ($request->email!=$request->email_megerosites){
-            return response()->json(['error'=>'Az új email és email megerősítés nem egyezik meg.'],400);
+            return response()->json(['msg'=>'Az új email és email megerősítés nem egyezik meg.'],400);
         }
 
         $user->email = $request->email;
@@ -137,7 +137,7 @@ class UserController extends Controller
             $korEvben = $datumMost->diff($szuletesi_datum);
 
             if ($korEvben->y<18){
-                return response()->json(['error'=>'A felhasználó életkora minimun 18 év!'],400);
+                return response()->json(['msg'=>'A felhasználó minimun életkora 18 év!'],400);
             }
         }
 

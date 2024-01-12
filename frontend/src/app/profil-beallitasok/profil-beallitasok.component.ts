@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CookieService } from 'ngx-cookie-service';
 import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-profil-beallitasok',
@@ -31,7 +32,8 @@ export class ProfilBeallitasokComponent {
   constructor(private formBuilder:FormBuilder,
               public userService: UserService,
               public userAzonositas:UserAzonositasService,
-              public dialog:MatDialog) {
+              public dialog:MatDialog,
+              private _snackBar: MatSnackBar) {
               this.regisztraltFelhasznalokEmailek()
               this.profilAdatBetoltes();
               this.belepesAdatForm = this.formBuilder.group({felhasznalonev:[''],jelszo:[''],uj_jelszo:[''],uj_jelszo_megerosites:['']});
@@ -100,7 +102,7 @@ export class ProfilBeallitasokComponent {
   emailEgyezesValidator(control: AbstractControl):ValidationErrors|null {
     const uj_jelszo = control.get('email')?.value;
     const uj_jelszo_megerosites = control.get('email_megerosites')?.value;
-    if (uj_jelszo !== uj_jelszo_megerosites) {
+    if (uj_jelszo !== uj_jelszo_megerosites && uj_jelszo!="" && uj_jelszo_megerosites!="") {
       return { emailKulonbozes: true };
     }
     return null;
@@ -192,7 +194,13 @@ export class ProfilBeallitasokComponent {
           this.szemelyesAdatReset()
           break;
       }
+
+      this.openSnackbar(valasz.msg)
     });
+  }
+
+  openSnackbar(msg:string){
+    this._snackBar.open(msg,undefined,{duration:1500,panelClass:['modositasSnack']});
   }
 }
 
