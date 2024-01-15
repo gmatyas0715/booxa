@@ -6,7 +6,10 @@ use App\Models\JegyAdat;
 use App\Http\Requests\StoreJegyAdatRequest;
 use App\Http\Requests\UpdateJegyAdatRequest;
 use App\Models\Esemeny;
+use App\Models\SzektorAlegyseg;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
 class JegyAdatController extends Controller
@@ -72,4 +75,59 @@ class JegyAdatController extends Controller
         }
         return response()->json([$jegyAdatok]);
     }
+    
+    public function szabadHelySzam(Request $request){
+        
+        $szektorAlegyseg = $request->input('szektor_alegyseg');
+        $esemeny = $request->input('esemeny');
+        $szektor_tipus = $request->input('szektor_tipus');
+        $jegyAdatok = Esemeny::find($esemeny)->jegy_adat()->where('szektor_alegyseg_id',$szektorAlegyseg)->get();
+        $kivalasztottSzektor = SzektorAlegyseg::find($szektorAlegyseg);
+
+        if ($szektor_tipus=='allo'){
+            return $kivalasztottSzektor->max_kapacitas-count($jegyAdatok); 
+        }
+
+        else if($szektor_tipus=='ulo'){
+            $ulohelyLista = [];
+            $szabadUlohelyLista = [];
+            foreach ($jegyAdatok as $jegyAdat) {
+                $ulohelyLista[] = $jegyAdat->ulohely;
+            }
+            for ($ulohely=1; $ulohely <= $kivalasztottSzektor->max_kapacitas ; $ulohely++) { 
+                if (!in_array($ulohely,$ulohelyLista)){
+                    $szabadUlohelyLista[] = $ulohely;
+                }
+            }
+            return $szabadUlohelyLista;
+        }
+        return;
+    }
+
+    public function foglaltsagLekerdezes(Esemeny $esemeny) {
+
+        $szektorAlegysegMap = array();
+        $foglaltsagMap = array();
+
+        $jegyAdatok = $esemeny->jegy_adat()->get();
+        Log::info($jegyAdatok);
+        foreach ($jegyAdatok as $jegyAdat) {
+            $szektorAlegysegId = $jegyAdat->szektor_alegyseg_id;
+            if (!isset($szektorAlegysegMap[$szektorAlegysegId])) {
+                $szektorAlegysegMap[$jegyAdat->szektor_alegyseg_id] = 1;
+            }
+            else{
+                $szektorAlegysegMap[$jegyAdat->szektor_alegyseg_id] += 1;
+            }
+        }
+
+        foreach ($szektorAlegysegMap as $szektorAlegyseg => $jegyDarab) {
+            $maradekHely = SzektorAlegyseg::find($szektorAlegyseg)->max_kapacitas - $jegyDarab;
+
+            $foglaltsagMap[$szektorAlegyseg] = [$maradekHely>0,$maradekHely];
+        }
+        return $foglaltsagMap;
+    }
+
+
 }

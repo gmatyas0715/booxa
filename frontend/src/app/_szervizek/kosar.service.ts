@@ -48,7 +48,7 @@ export class KosarService {
     this.jegyAdatLista[index].jegyDarabszam!++;
     this.ulohelyHozzaadas(index);
   }
-  
+
   ulohelySzamGeneralas(jegyFoglaltDarab:number):number[]{
     let ulohelyek:number[] = [];
     let hely = 1;

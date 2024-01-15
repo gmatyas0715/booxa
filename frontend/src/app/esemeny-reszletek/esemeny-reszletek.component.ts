@@ -9,6 +9,7 @@ import { SzektorModell } from '../_modellek/szektor-modell';
 import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
 import { KosarService } from '../_szervizek/kosar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SzektorAlegysegService } from '../_szervizek/szektor-alegyseg.service';
 
 @Component({
   selector: 'app-esemeny-reszletek',
@@ -24,33 +25,37 @@ export class EsemenyReszletekComponent{
   kivalasztottSzektorok:any;
   kivalasztottSzektor:any;
   kivalasztottSzektorAlegyseg:any;
-  kivalasztottUlohelyek:number[] = []
-  jegyFoglaltDarab:number=0
+  kivalasztottUlohelyek:number[] = [];
+  szektorFoglaltsagok:Map<string,[boolean,number]> = new Map<string,[boolean,number]>;
+  jegyFoglaltDarab:number = 0
   helyszinSvg: SafeHtml ='';
   jegyKivalasztas_e:boolean = true;
+  esemenyId:string;
 
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
               public helyszinSzerviz:HelyszinService,
               public szektorSzerviz:SzektorService,
+              public szektorAlegysegSzerviz:SzektorAlegysegService,
               private kosarService:KosarService,
               private sanitizer: DomSanitizer,
               private _snackBar: MatSnackBar) {
-  }
-  
-  ngOnInit():void{
-    const id = this.route.snapshot.paramMap.get('id') as string;
-    this.esemenySzerviz.esemenyAdatok(id).subscribe((valasz)=>{
-      this.kivalasztottEsemeny=valasz;
-      this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
-      this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
-      this.helyszinSvgBetoltes();
-    });
-    this.szektorSzerviz.szektorok(id).subscribe((valasz)=>{
-      this.kivalasztottSzektorok = valasz;
-    })
+
+                this.esemenyId = this.route.snapshot.paramMap.get('id') as string;
+                this.szektorFoglaltsag(this.esemenyId);
+                this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
+                  this.kivalasztottEsemeny=valasz;
+                  this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
+                  this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
+                  this.helyszinSvgBetoltes();
+                });
+                this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
+                  this.kivalasztottSzektorok = valasz;
+                })
+            
 
   }
+
 
   szektorSzinezes(){
     const element = document.getElementById('l01_vip_bal');
@@ -85,6 +90,13 @@ export class EsemenyReszletekComponent{
   jegyInfoVisszaallitas(){
     this.jegyKivalasztas_e = true;
     this.jegyFoglaltDarab = 0;
+  }
+
+  szektorFoglaltsag(esemenyId:string){
+    this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz)=>{
+      this.szektorFoglaltsagok = valasz;
+      console.log(this.szektorFoglaltsagok)
+    });
   }
 
   openSnackbar(){

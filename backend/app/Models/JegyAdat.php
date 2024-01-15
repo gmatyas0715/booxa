@@ -26,7 +26,7 @@ class JegyAdat extends Model
         return $this->belongsTo(Helyszin::class);
     }
 
-    public function szektorAlegyseg() : BelongsTo 
+    public function szektor_alegyseg() : BelongsTo 
     {
         return $this->belongsTo(SzektorAlegyseg::class);
     }

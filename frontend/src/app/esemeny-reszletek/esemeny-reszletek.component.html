@@ -2,6 +2,11 @@
     <div class="row esemeny-fo-reszletek">
         <div class="col">
             <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
+            <div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
+                <div *ngIf="szektorfoglaltsag.value">
+                    <h2>{{szektorfoglaltsag.value[0]}}</h2>
+                </div>    
+            </div>
         </div>
         <div class="col">
             <h4>Előadó: {{kivalasztottEloado.nev}}</h4>
@@ -70,7 +75,8 @@
         </div>
     </div>
     <div class="row">
-        <button mat-raised-button class="float-right" routerLink="/esemenyKereso">Vissza az eseményekhez</button>
+        <button mat-raised-button routerLink="/esemenyKereso">Vissza az eseményekhez</button>
+        <button mat-raised-button routerLink="/kosarOsszegzo">Tovább a kosárhoz</button>
     </div>
 </div>
 

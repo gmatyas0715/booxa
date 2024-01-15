@@ -11,7 +11,7 @@ class Esemeny extends Model
     protected $table = 'esemeny';
     use HasFactory;
 
-    public function jegyAdat() : HasMany
+    public function jegy_adat() : HasMany
     {
         return $this->hasMany(JegyAdat::class);
     }

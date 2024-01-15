@@ -13,6 +13,17 @@ import { KosarService } from '../_szervizek/kosar.service';
   styleUrls: ['./esemenyKereso.component.css']
 })
 export class EsemenyKeresoComponent {
+
+  
+  public mufajLista: string[] = [];
+  public telepulesLista: string[] = [];
+  public eloadoJavaslatok: string[] = [];
+  public helyszinJavaslatok: string[] = [];
+  public esemenyLista:EsemenyModell[] = [];
+  public keresettEloado:string = "";
+  public keresettHelyszin:string = "";
+  public talalatRendezesOpcio:string = "datum_n";
+  
   constructor(public esemenySzerviz:EsemenyService,
               public eloadoSzerviz:EloadoService,
               public helyszinSzerviz:HelyszinService,
@@ -77,15 +88,6 @@ export class EsemenyKeresoComponent {
       this.helyszinJavaslatok = valasz;
     });
   }
-
-  public mufajLista: string[] = [];
-  public telepulesLista: string[] = [];
-  public eloadoJavaslatok: string[] = [];
-  public helyszinJavaslatok: string[] = [];
-  public esemenyLista:EsemenyModell[] = [];
-  public keresettEloado:string = "";
-  public keresettHelyszin:string = "";
-  public talalatRendezesOpcio:string = "datum_n"
 
   get eloadoFilterezett(): string[] {
     return this.filterezo(this.eloadoJavaslatok, this.keresettEloado);

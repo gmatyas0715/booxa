@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SzektorAlegyseg;
 use App\Http\Requests\StoreSzektorAlegysegRequest;
 use App\Http\Requests\UpdateSzektorAlegysegRequest;
+use App\Models\Esemeny;
 use Illuminate\Support\Facades\Schema;
 
 class SzektorAlegysegController extends Controller

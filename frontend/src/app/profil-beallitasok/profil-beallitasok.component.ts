@@ -200,7 +200,7 @@ export class ProfilBeallitasokComponent {
   }
 
   openSnackbar(msg:string){
-    this._snackBar.open(msg,undefined,{duration:1500,panelClass:['modositasSnack']});
+    this._snackBar.open(msg,undefined,{duration:1500});
   }
 }
 

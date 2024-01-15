@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
@@ -34,6 +33,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/helyszinek/{helyszin}','HelyszinController@show');
 
     // Szektor alegység route-ok
+    Route::get('/szektor-alegyseg-foglaltsag-check/{esemeny}','JegyAdatController@foglaltsagLekerdezes');
+    Route::get('/szektor-alegyseg-szabad-hely','JegyAdatController@szabadHelySzam');
     Route::get('/szektor-alegysegek','SzektorAlegysegController@index');
     Route::get('/szektor-alegysegek/{szektor-alegyseg}','SzektorAlegyseg@show');
 
