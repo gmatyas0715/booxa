@@ -324,7 +324,7 @@
          y="124.33468"
          id="tspan9">WC</tspan></text>
     <path
-       style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill;cursor: pointer;"
        d="m 30.374999,11.249999 -10.125,5.624997 v 39.374997 l 11.249997,16.875003 h 10.125005 l -11.250002,-23.625 z"
        id="l01_vip_bal"
        inkscape:label="l01_vip_bal" />
@@ -338,7 +338,7 @@
          y="124.33468"
          id="tspan10">VIP-bal</tspan></text>
     <path
-       style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill;cursor: pointer;"
        d="m 128.25,11.249999 10.125,5.624997 v 39.374997 l -11.25,16.875003 H 117 l 11.25,-23.625 z"
        id="l01_vip_jobb"
        inkscape:label="l01_vip_jobb" />
@@ -352,7 +352,7 @@
          y="124.33468"
          id="tspan11">VIP-jobb</tspan></text>
     <path
-       style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill;cursor: pointer;"
        d="m 31.499996,11.249999 17.91633,-0.110893 9.08367,22.61089 -26.999995,15.75 -5e-6,-38.249997"
        id="l01_bal_szarny"
        sodipodi:nodetypes="ccccc"
@@ -367,7 +367,7 @@
          y="124.33468"
          id="tspan12">Bal-szárny</tspan></text>
     <path
-       style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill;cursor: pointer;"
        d="m 109.13778,11.249998 -9,22.499998 26.98722,15.75 0.007,-38.246421 -17.99422,-0.0036"
        id="l01_jobb_szarny"
        sodipodi:nodetypes="ccccc"
@@ -383,7 +383,7 @@
          id="tspan13">Jobb-szárny</tspan></text>
     <path
        d="m 87.749996,74.249996 v 5.45724 H 70.7887 V 74.261057 H 31.513189 l -0.01335,6.738939 H 20.249842 c 6.154788,10.202981 11.567869,20.775854 16.887259,31.423844 h 84.350669 l 5.62291,-38.162783 z"
-       style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.155128;paint-order:stroke markers fill"
+       style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.155128;paint-order:stroke markers fill;cursor: pointer;"
        id="l01_center_2"
        sodipodi:nodetypes="ccccccccccc"
        inkscape:label="l01_center_2" />
@@ -398,7 +398,7 @@
          id="tspan14">Center-2</tspan></text>
     <path
        d="M 59.625425,34.875091 32.624749,51.749641 42.749713,73.125082 H 70.7887 v -7.621631 h 16.961296 v 7.621545 l 28.125494,8.6e-5 10.12496,-21.375441 -27.000679,-16.87455 z"
-       style="fill:#ddc1dd;fill-opacity:0.260341;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#ddc1dd;fill-opacity:0.260341;fill-rule:evenodd;stroke:#000000;stroke-width:0.1305;paint-order:stroke markers fill;cursor: pointer;"
        id="l01_center_1"
        sodipodi:nodetypes="ccccccccccc"
        inkscape:label="l01_center_1" />

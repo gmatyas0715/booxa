@@ -69,9 +69,7 @@
             </div>
         </div>
         <div class="col helyszin-container">
-            <ng-container *ngIf="helyszinSvg">
-                <div class="helyszin-svg"  [innerHTML]="helyszinSvg" (click)="szektorSzinezes()"></div>
-            </ng-container>
+            <div #svgContainer></div>
         </div>
     </div>
     <div class="row">

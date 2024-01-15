@@ -17,7 +17,7 @@ export class HelyszinService {
     return 'http://localhost:8000/helyszin-kep/'+kepNev;
   }
 
-  helyszinSvgKepUrl(kepNev: string):Observable<string>{
+  helyszinSvgKepUrl(kepNev: string){
     return this.http.get('http://localhost:8000/svg-helyszin-kep/'+kepNev, { responseType: 'text'});
   }
 }
