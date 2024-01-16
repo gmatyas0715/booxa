@@ -157,7 +157,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="opacity:0.6;fill:#b43f24;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.147157;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#b43f24;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.147157;paint-order:stroke markers fill;cursor:pointer"
        d="M 121.22613,64.09287 V 37.785189 h 24.50776 V 64.09287 Z"
        id="l09_jobb_szarny_2"
        sodipodi:nodetypes="ccccc" />
@@ -168,16 +168,16 @@
        sodipodi:nodetypes="ccccc" />
     <path
        d="M 102.98834,32.920899 91.706609,42.870329 75.011094,47.024312 57.168583,43.056626 45.549506,32.921895 24.116943,36.940948 44.5,60.248983 44.400591,85.528758 H 69.73391 v -5.846152 h 10.717945 v 5.846152 l 12.90226,-0.0038 c 0.557139,-0.496493 1.038687,-0.933063 1.639456,-1.464226 2.900861,-2.564745 6.285059,-5.512745 9.911169,-8.645326 3.62609,-3.132583 7.49344,-6.449769 11.36129,-9.752046 1.07569,-0.918409 2.08954,-1.775903 3.16004,-2.687768 V 37.786729 Z"
-       style="opacity:0.6;fill:#ac9d93;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.208387;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#ac9d93;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.208387;paint-order:stroke markers fill;cursor:pointer"
        id="l09_center_1"
        sodipodi:nodetypes="cccccccccccccsssccc" />
     <path
-       style="opacity:0.6;fill:#786a60;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.329859;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#786a60;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.329859;paint-order:stroke markers fill;cursor:pointer"
        d="M 44,111.74202 V 87.5 h 25.710475 l -0.0038,2.733861 H 80.5 V 87.5 h 12.84681 l 16.16488,15.40792 v 8.7538 C 87.674998,111.8046 65.837146,111.73803 44,111.74202 Z"
        id="l09_center_2"
        sodipodi:nodetypes="cccccccccc" />
     <path
-       style="opacity:0.6;fill:#2724b4;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.134462;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#2724b4;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.134462;paint-order:stroke markers fill;cursor:pointer"
        d="M 95.067233,86.503117 119.42621,65.067229 h 26.30768 L 109.68262,101.11849 100,91.725782 Z"
        id="l09_jobb_szarny_1"
        sodipodi:nodetypes="cccccc" />
@@ -233,7 +233,7 @@
          y="124.33468"
          id="tspan5">Színpad</tspan></text>
     <path
-       style="opacity:0.6;fill:#3a961e;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.134462;paint-order:stroke markers fill"
+       style="opacity:0.6;fill:#3a961e;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.134462;paint-order:stroke markers fill;cursor:pointer"
        d="M 43.5,61 22.5,37.5 10,47.5 43.336297,85.632982 Z"
        id="l09_vip"
        sodipodi:nodetypes="ccccc" />
