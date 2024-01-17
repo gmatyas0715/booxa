@@ -1438,81 +1438,101 @@
          x="198.42578"
          y="124.33468"
          id="tspan162">E</tspan></text>
+   <g
+       id="l08_a_center">
     <path
        style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill;cursor:pointer"
        d="m 90.207034,36.558898 v -14 l 17.499996,-5.00001 h 10 v 40 h -15.76367 z"
-       id="l08_a_center"
+       class="l08_a_center"
        sodipodi:nodetypes="ccccccc" />
+   </g>
+   <g
+       id="l08_b_center">
     <path
        style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill;cursor:pointer"
        d="M 82.707034,87.558888 V 107.55889 L 117.70703,97.558888 v -35 h -15.71406 z"
-       id="l08_b_center"
+       class="l08_b_center"
        sodipodi:nodetypes="cccccc" />
+   </g>
+   <g
+       id="l08_c_center">
     <path
        style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill;cursor:pointer"
        d="m 74.265931,87.558888 -0.0589,20.000002 -35,-10.000002 v -35 h 16 z"
-       id="l08_c_center"
+       class="l08_c_center"
        sodipodi:nodetypes="cccccc" />
-    <path
-       style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill;cursor:pointer"
-       d="m 67.707036,36.692228 v -14.13334 l -18.5,-5 h -10 v 40 h 16 z"
-       id="l08_d_center"
-       sodipodi:nodetypes="ccccccc" />
-    <g
-       id="l08_b_felso_5"
-       style="cursor:pointer">
+   </g>
+   <g
+       id="l08_d_center">
       <path
-         d="m 108.23629,128.57261 1.37614,3.78116 11.76362,-4.28191 -1.34927,-3.70778 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_b_felso_5_f" />
-      <path
-         d="m 108.23629,127.70487 11.79049,-4.20853 -1.2206,-3.35329 -11.76413,4.2814 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_felso_5_e" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 109.61361,133.11359 121.86488,128.35903 119,119.5 106.43007,124.31962 109.5,133 Z"
-         id="b_felso_5_korvonal" />
-    </g>
-    <g
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.1;paint-order:stroke markers fill;cursor:pointer"
+         d="m 67.707036,36.692228 v -14.13334 l -18.5,-5 h -10 v 40 h 16 z"
+         class="l08_d_center"
+         sodipodi:nodetypes="ccccccc" />
+   </g>
+   <g
        id="l08_a_also_1"
        style="cursor:pointer">
       <path
          d="m 133.05889,34.990906 h 3.91398 V 17.558895 h -3.91398 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_a_also_1_d" />
+         class="l08_a_also_1_d" />
       <path
          d="m 128.5,34.932011 h 3.99975 V 17.5 H 128.5 Z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_a_also_1_c" />
+         class="l08_a_also_1_c" />
       <path
          d="m 124.00018,17.56792 h -4.00027 v 17.432011 h 4.00027 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_a_also_1_a" />
+         class="l08_a_also_1_a" />
       <path
          d="m 124.5,17.5 v 17.432011 h 3.50005 V 17.5 Z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_a_also_1_b" />
+         class="l08_a_also_1_b" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 119.5,35.5 h 18 V 17.131771 h -18 z"
          id="a_also_1_korvonal" />
     </g>
-    <g
+   <g
+       id="l08_a_also_2"
+       style="cursor:pointer">
+      <path
+         d="m 124.5,57.427795 h 3.50005 V 37.495162 H 124.5 Z"
+         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_a_also_2_b" />
+      <path
+         d="M 124.00018,57.495715 V 37.563082 h -3.99614 v 19.932633 z"
+         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_a_also_2_a" />
+      <path
+         d="M 132.49975,37.495162 H 128.5 v 19.932633 h 3.99975 z"
+         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_a_also_2_c" />
+      <path
+         d="M 133.05889,37.554057 V 57.48669 h 3.90984 V 37.554057 Z"
+         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_a_also_2_d" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 119.5,58 h 18 V 37 h -18 z"
+         id="a_also_2_korvonal" />
+    </g>
+   <g
        id="l08_a_felso_1"
        style="cursor:pointer">
       <path
          d="m 143.0588,17.530473 h -3.79357 v 12.519649 h 3.79357 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_a_felso_1_e" />
+         class="l08_a_felso_1_e" />
       <path
          d="m 143.53482,17.534816 v 12.519649 h 3.70727 V 17.534816 Z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_a_felso_1_f" />
+         class="l08_a_felso_1_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 138.98907,30.507146 8.66496,-0.0071 V 17.200467 h -8.81393 z"
-         id="a_felso_1_korvonal" />
+         class="a_felso_1_korvonal" />
     </g>
     <g
        id="l08_a_felso_2"
@@ -1520,11 +1540,11 @@
       <path
          d="m 143.0588,32.549711 h -3.80752 v 12.519133 h 3.80752 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_a_felso_2_e" />
+         class="l08_a_felso_2_e" />
       <path
          d="m 143.53482,32.554054 v 12.519133 h 3.70727 V 32.554054 Z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_a_felso_2_f" />
+         class="l08_a_felso_2_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 139,45.499998 h 8.62465 V 32.155865 l -8.78455,0.04062 z"
@@ -1536,15 +1556,87 @@
       <path
          d="m 143.0588,47.580835 h -3.81165 v 9.975102 h 3.81165 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
-         id="l08_a_felso_3_e" />
+         class="l08_a_felso_3_e" />
       <path
          d="m 143.53482,47.585178 v 9.975102 h 3.67626 v -9.975102 z"
          style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
-         id="l08_a_felso_3_f" />
+         class="l08_a_felso_3_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 138.84318,58 h 8.83994 l -0.004,-10.829753 -8.83874,-0.02479 z"
          id="a_felso_3_korvonal" />
+    </g>
+<g
+       id="l08_b_also_1"
+       style="cursor:pointer">
+      <path
+         d="m 124.5,79.919446 h 3.50005 V 62.486918 H 124.5 Z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         iclass"l08_b_also_1_b" />
+      <path
+         d="M 124.00018,79.987366 V 62.554838 h -4.00027 v 17.432528 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_1_a" />
+      <path
+         d="M 132.49975,62.486918 H 128.5 v 17.432528 h 3.99975 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_1_c" />
+      <path
+         d="m 133.05889,62.545813 v 17.432528 h 3.91398 V 62.545813 Z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_1_d" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 119.5,80.499999 h 18 V 62 l -18,0.07786 z"
+         id="b_also_1_korvonal" />
+    </g>
+    <g
+       id="l08_b_also_2"
+       style="cursor:pointer">
+      <path
+         d="M 124.00018,100.08743 V 82.558785 h -3.79305 v 15.000118 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_2_a" />
+      <path
+         d="M 128.00005,102.35322 V 82.490865 H 124.5 v 17.528645 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_2_b" />
+      <path
+         d="M 132.49975,82.490865 H 128.5 v 19.862355 l 3.99975,2.66599 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_2_c" />
+      <path
+         d="m 133.05889,82.54976 v 22.52834 l 3.70727,2.47168 V 82.54976 Z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_2_d" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 119.9554,97.98769 137,108.16064 V 82.211002 l -17.3568,0.06124 z"
+         id="b_also_2_korvonal" />
+    </g>
+    <g
+       id="l08_b_also_3"
+       style="cursor:pointer">
+      <path
+         d="m 82.707096,125.26559 v 4.778 l 50.000054,-17.50022 -4.25763,-2.83807 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_b_also_3_d" />
+      <path
+         d="m 82.707096,119.67507 v 4.65295 l 45.742424,-15.56029 -4.03799,-2.69183 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_also_3_c" />
+      <path
+         d="m 82.707096,114.94811 v 3.96668 l 41.704434,-13.59917 -3.69332,-2.46238 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_also_3_b" />
+      <path
+         d="m 82.707096,114.16151 38.011114,-12.09487 -3.01118,-2.00763 -34.999934,9.99991 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_also_3_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 82.365785,110 0.0117,20.5 51.385925,-18 -16.00637,-12.917449 z"
+         id="b_also_3_korvonal" />
     </g>
     <g
        id="l08_b_felso_1"
@@ -1556,11 +1648,11 @@
       <path
          d="m 143.05883,62.55429 h -3.79357 v 12.519649 h 3.79357 z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_b_felso_1_e" />
+         class="l08_b_felso_1_e" />
       <path
          d="m 143.53482,62.55429 v 12.519649 h 3.70727 V 62.55429 Z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_b_felso_1_f" />
+         class="l08_b_felso_1_f" />
     </g>
     <g
        id="l08_b_felso_2"
@@ -1568,11 +1660,11 @@
       <path
          d="m 143.0588,77.569185 h -3.80752 v 12.518616 h 3.80752 z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_b_felso_2_e" />
+         class="l08_b_felso_2_e" />
       <path
          d="m 143.53482,77.573528 v 12.518616 h 3.70727 V 77.573528 Z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_b_felso_2_f" />
+         class="l08_b_felso_2_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 138.8401,90.499998 h 8.84302 l 0.0288,-13.249934 h -8.85527 z"
@@ -1584,63 +1676,136 @@
       <path
          d="m 143.0588,92.600309 h -3.81165 v 14.949471 h 3.81165 z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_b_felso_3_e" />
+         class="l08_b_felso_3_e" />
       <path
          d="m 143.53482,92.604652 v 14.949468 h 3.70727 V 92.604652 Z"
          style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_b_felso_3_f" />
+         class="l08_b_felso_3_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 138.87826,108 h 8.82538 l -0.0289,-15.846452 -8.83461,0.0227 z"
          id="b_felso_3_korvonal" />
     </g>
     <g
-       id="l08_d_felso_1"
+       id="l08_b_felso_4"
        style="cursor:pointer">
       <path
-         d="M 13.465184,17.534816 H 9.6721335 v 12.520166 h 3.7930505 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_d_felso_1_f" />
+         d="m 122.38064,123.52434 1.34411,3.69279 11.76517,-4.28191 -1.31775,-3.61993 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+         class="l08_b_felso_4_f" />
       <path
-         d="m 13.940682,17.530473 v 12.520166 h 3.707784 V 17.530473 Z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_d_felso_1_e" />
+         d="m 122.38064,122.6566 11.79153,-4.20905 -1.24798,-3.42821 -11.76466,4.28191 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_felso_4_e"
+         inkscape:label="" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 9.4999999,30.499999 18,30.493226 V 16.999997 H 9.1920376 Z"
-         id="d_felso_1_korvonal" />
+         d="m 123.5,128 12.5,-5 -2.78118,-8.5 -12.52324,4.5 z"
+         id="b_felso_4_korvonal" />
     </g>
     <g
-       id="l08_d_felso_2"
+       id="l08_b_felso_5"
        style="cursor:pointer">
       <path
-         d="M 13.465184,32.554054 H 9.6721335 v 12.519133 h 3.7930505 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_d_felso_2_f" />
+         d="m 108.23629,128.57261 1.37614,3.78116 11.76362,-4.28191 -1.34927,-3.70778 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+         class="l08_b_felso_5_f" />
       <path
-         d="m 13.940682,32.549711 v 12.519133 h 3.721737 V 32.549711 Z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_d_felso_2_e" />
+         d="m 108.23629,127.70487 11.79049,-4.20853 -1.2206,-3.35329 -11.76413,4.2814 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_felso_5_e" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 9.4999999,45.499998 H 18 V 31.999999 H 9.4999999 Z"
-         id="d_felso_2_korvonal" />
+         d="M 109.61361,133.11359 121.86488,128.35903 119,119.5 106.43007,124.31962 109.5,133 Z"
+         id="b_felso_5_korvonal" />
     </g>
     <g
-       id="l08_d_felso_3"
+       id="l08_b_felso_6"
        style="cursor:pointer">
       <path
-         d="M 13.465184,47.555722 H 9.7031395 v 9.975102 h 3.7620445 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
-         id="l08_d_felso_3_f" />
+         d="m 84.207263,137.14883 v 4.26227 l 23.044587,-8.19795 -1.38183,-3.79615 z"
+         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
+         class="l08_b_felso_6_f" />
       <path
-         d="m 13.940682,47.551379 v 9.975102 h 3.725871 v -9.975102 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
-         id="l08_d_felso_3_e" />
+         d="m 84.207263,136.28109 21.662757,-7.73183 -1.1901,-3.26957 -20.472657,6.76341 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_b_felso_6_e" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 9.1987377,57.910676 C 9.5084634,58 18.107422,58 18.107422,58 L 18,47.261197 9.4999999,47.228124 Z"
-         id="d_felso_3_korvonal" />
+         d="M 83.999998,142 107.80984,133.34745 105,124.80065 83.999998,131.5 Z"
+         id="b_felso_6_korvonal" />
+    </g>
+    <g
+       id="l08_c_also_1"
+       style="cursor:pointer">
+      <path
+         d="m 24.441349,79.978341 h 3.999756 V 62.545813 h -3.999756 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_1_c" />
+      <path
+         d="M 23.941105,79.978341 V 62.545813 h -4.000272 v 17.432528 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_1_d" />
+      <path
+         d="m 32.441105,62.545813 h -3.505213 v 17.432528 h 3.505213 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_1_b" />
+      <path
+         d="m 33.005221,62.554838 v 17.432528 h 3.908805 V 62.554838 Z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_1_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 19.5,80.499999 17.999999,0.02998 V 62 H 19.5 Z"
+         id="c_also_1_korvonal" />
+    </g>
+    <g
+       id="l08_c_also_2"
+       style="cursor:pointer">
+      <path
+         d="M 23.941105,105.02125 V 82.54976 h -3.79305 v 25.00002 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_2_d" />
+      <path
+         d="M 28.441105,102.35423 V 82.54976 h -3.999756 v 22.47149 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_2_c" />
+      <path
+         d="m 32.441105,82.54976 h -3.505213 v 19.80447 l 3.505213,-2.33681 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_2_b" />
+      <path
+         d="m 33.005221,82.558785 v 17.467665 l 3.701582,-2.467547 V 82.558785 Z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_2_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 19.744531,108 37.499999,97.999999 37.231835,82.095246 19.673543,82.067613 Z"
+         id="c_also_2_korvonal" />
+    </g>
+    <g
+       id="l08_c_also_3"
+       style="cursor:pointer">
+      <path
+         d="m 74.20684,125.26042 -45.680933,-15.59647 -4.319116,2.87942 50.000049,17.50022 z"
+         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_c_also_3_d" />
+      <path
+         d="m 74.20684,119.67714 -42.00002,-13.40435 -3.680913,2.45359 45.680933,15.59647 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_c_also_3_c" />
+      <path
+         d="M 74.20684,114.94501 35.975582,103 l -3.768762,2.51251 42.00002,13.40435 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_c_also_3_b" />
+      <path
+         d="m 39.206909,100.05901 -3.231327,2.15439 38.231258,11.94501 v -4.09949 z"
+         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
+         class="l08_c_also_3_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 23.5,113 50.999998,17.5 V 110 L 39.276927,99.741645 Z"
+         id="c_also_3_korvonal" />
     </g>
     <g
        id="l08_c_felso_1"
@@ -1648,11 +1813,11 @@
       <path
          d="M 13.465184,62.55429 H 9.6721335 v 12.519649 h 3.7930505 z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_c_felso_1_f" />
+         class="l08_c_felso_1_f" />
       <path
          d="m 13.940682,62.549947 v 12.519649 h 3.707784 V 62.549947 Z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_c_felso_1_e" />
+         class="l08_c_felso_1_e" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="M 9.4999999,75.499999 H 18 V 62 H 9.1987377 Z"
@@ -1664,11 +1829,11 @@
       <path
          d="M 13.465184,77.573528 H 9.6721335 v 12.518616 h 3.7930505 z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_c_felso_2_f" />
+         class="l08_c_felso_2_f" />
       <path
          d="m 13.940682,77.569185 v 12.518616 h 3.721737 V 77.569185 Z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_c_felso_2_e" />
+         class="l08_c_felso_2_e" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="M 9.2375026,90.619791 18,90.499998 v -13.5 H 9.4999999 Z"
@@ -1680,11 +1845,11 @@
       <path
          d="M 13.465184,92.604652 H 9.6726505 v 14.949468 h 3.7925335 z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_c_felso_3_f" />
+         class="l08_c_felso_3_f" />
       <path
          d="M 13.940682,92.600309 V 107.54978 H 17.66707 V 92.600309 Z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_c_felso_3_e" />
+         class="l08_c_felso_3_e" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="M 9.2375028,108 H 18 V 92 H 9.4999999 Z"
@@ -1696,11 +1861,11 @@
       <path
          d="m 23.98975,115.01934 -1.291911,3.54965 11.813233,4.1491 1.243335,-3.41684 z"
          style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_felso_4_e" />
+         class="l08_c_felso_4_e" />
       <path
          d="m 34.511072,123.58583 -11.813233,-4.1491 -1.273307,3.49849 11.764657,4.28191 z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_c_felso_4_f" />
+         class="l08_c_felso_4_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="M 20.883773,123.32711 33.28789,127.70088 36.297526,119 24,114.5 Z"
@@ -1712,264 +1877,15 @@
       <path
          d="m 36.869584,123.54595 11.812199,4.14858 1.190108,-3.27008 -11.763623,-4.2814 z"
          style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_felso_5_e" />
+         class="l08_c_felso_5_e" />
       <path
          d="m 36.869584,124.41369 -1.331702,3.65817 11.763624,4.28191 1.380277,-3.7915 z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
-         id="l08_c_felso_5_f" />
+         class="l08_c_felso_5_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 35.173046,128.27331 12.229177,4.4483 2.967828,-8.35222 L 38,119.5 Z"
          id="c_felso_5_korvonal" />
-    </g>
-    <g
-       id="l08_d_also_2"
-       style="cursor:pointer">
-      <path
-         d="m 24.441349,57.48669 h 3.999756 V 37.554057 h -3.999756 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_d_also_2_c" />
-      <path
-         d="M 23.941105,57.48669 V 37.554057 H 19.944967 V 57.48669 Z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_d_also_2_d" />
-      <path
-         d="M 32.441105,37.554057 H 28.935892 V 57.48669 h 3.505213 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_d_also_2_b" />
-      <path
-         d="m 33.005221,37.563082 v 19.932633 h 3.904671 V 37.563082 Z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_d_also_2_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 19.5,58.026432 37.499999,58 V 37 H 19.5 Z"
-         id="d_also_2_korvonal" />
-    </g>
-    <g
-       id="l08_d_also_1"
-       style="cursor:pointer">
-      <path
-         d="m 24.441349,34.990906 h 3.999756 V 17.558895 h -3.999756 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_d_also_1_c" />
-      <path
-         d="M 23.941105,34.990906 V 17.558895 h -4.000272 v 17.432011 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_d_also_1_d" />
-      <path
-         d="m 32.441105,17.558895 h -3.505213 v 17.432011 h 3.505213 z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_d_also_1_b" />
-      <path
-         d="m 33.005221,17.56792 v 17.432011 h 3.908805 V 17.56792 Z"
-         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_d_also_1_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 19.5,35.503776 17.999999,0.03138 V 17 H 19.5 Z"
-         id="d_also_1_korvonal" />
-    </g>
-    <g
-       id="l08_a_also_2"
-       style="cursor:pointer">
-      <path
-         d="m 124.5,57.427795 h 3.50005 V 37.495162 H 124.5 Z"
-         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_a_also_2_b" />
-      <path
-         d="M 124.00018,57.495715 V 37.563082 h -3.99614 v 19.932633 z"
-         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_a_also_2_a" />
-      <path
-         d="M 132.49975,37.495162 H 128.5 v 19.932633 h 3.99975 z"
-         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_a_also_2_c" />
-      <path
-         d="M 133.05889,37.554057 V 57.48669 h 3.90984 V 37.554057 Z"
-         style="opacity:0.6;fill:#ffccaa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
-         id="l08_a_also_2_d" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 119.5,58 h 18 V 37 h -18 z"
-         id="a_also_2_korvonal" />
-    </g>
-    <g
-       id="l08_b_also_1"
-       style="cursor:pointer">
-      <path
-         d="m 124.5,79.919446 h 3.50005 V 62.486918 H 124.5 Z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_1_b" />
-      <path
-         d="M 124.00018,79.987366 V 62.554838 h -4.00027 v 17.432528 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_1_a" />
-      <path
-         d="M 132.49975,62.486918 H 128.5 v 17.432528 h 3.99975 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_1_c" />
-      <path
-         d="m 133.05889,62.545813 v 17.432528 h 3.91398 V 62.545813 Z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_1_d" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 119.5,80.499999 h 18 V 62 l -18,0.07786 z"
-         id="b_also_1_korvonal" />
-    </g>
-    <g
-       id="l08_b_felso_4"
-       style="cursor:pointer">
-      <path
-         d="m 122.38064,123.52434 1.34411,3.69279 11.76517,-4.28191 -1.31775,-3.61993 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
-         id="l08_b_felso_4_f" />
-      <path
-         d="m 122.38064,122.6566 11.79153,-4.20905 -1.24798,-3.42821 -11.76466,4.28191 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_felso_4_e"
-         inkscape:label="" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 123.5,128 12.5,-5 -2.78118,-8.5 -12.52324,4.5 z"
-         id="b_felso_4_korvonal" />
-    </g>
-    <g
-       id="l08_b_felso_6"
-       style="cursor:pointer">
-      <path
-         d="m 84.207263,137.14883 v 4.26227 l 23.044587,-8.19795 -1.38183,-3.79615 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_b_felso_6_f" />
-      <path
-         d="m 84.207263,136.28109 21.662757,-7.73183 -1.1901,-3.26957 -20.472657,6.76341 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_felso_6_e" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 83.999998,142 107.80984,133.34745 105,124.80065 83.999998,131.5 Z"
-         id="b_felso_6_korvonal" />
-    </g>
-    <g
-       id="l08_b_also_2"
-       style="cursor:pointer">
-      <path
-         d="M 124.00018,100.08743 V 82.558785 h -3.79305 v 15.000118 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_2_a" />
-      <path
-         d="M 128.00005,102.35322 V 82.490865 H 124.5 v 17.528645 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_2_b" />
-      <path
-         d="M 132.49975,82.490865 H 128.5 v 19.862355 l 3.99975,2.66599 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_2_c" />
-      <path
-         d="m 133.05889,82.54976 v 22.52834 l 3.70727,2.47168 V 82.54976 Z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_2_d" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 119.9554,97.98769 137,108.16064 V 82.211002 l -17.3568,0.06124 z"
-         id="b_also_2_korvonal" />
-    </g>
-    <g
-       id="l08_c_also_2"
-       style="cursor:pointer">
-      <path
-         d="M 23.941105,105.02125 V 82.54976 h -3.79305 v 25.00002 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_2_d" />
-      <path
-         d="M 28.441105,102.35423 V 82.54976 h -3.999756 v 22.47149 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_2_c" />
-      <path
-         d="m 32.441105,82.54976 h -3.505213 v 19.80447 l 3.505213,-2.33681 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_2_b" />
-      <path
-         d="m 33.005221,82.558785 v 17.467665 l 3.701582,-2.467547 V 82.558785 Z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_2_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="M 19.744531,108 37.499999,97.999999 37.231835,82.095246 19.673543,82.067613 Z"
-         id="c_also_2_korvonal" />
-    </g>
-    <g
-       id="l08_c_also_1"
-       style="cursor:pointer">
-      <path
-         d="m 24.441349,79.978341 h 3.999756 V 62.545813 h -3.999756 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_1_c" />
-      <path
-         d="M 23.941105,79.978341 V 62.545813 h -4.000272 v 17.432528 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_1_d" />
-      <path
-         d="m 32.441105,62.545813 h -3.505213 v 17.432528 h 3.505213 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_1_b" />
-      <path
-         d="m 33.005221,62.554838 v 17.432528 h 3.908805 V 62.554838 Z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_1_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 19.5,80.499999 17.999999,0.02998 V 62 H 19.5 Z"
-         id="c_also_1_korvonal" />
-    </g>
-    <g
-       id="l08_b_also_3"
-       style="cursor:pointer">
-      <path
-         d="m 82.707096,125.26559 v 4.778 l 50.000054,-17.50022 -4.25763,-2.83807 z"
-         style="opacity:0.6;fill:#aaffcc;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_b_also_3_d" />
-      <path
-         d="m 82.707096,119.67507 v 4.65295 l 45.742424,-15.56029 -4.03799,-2.69183 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_also_3_c" />
-      <path
-         d="m 82.707096,114.94811 v 3.96668 l 41.704434,-13.59917 -3.69332,-2.46238 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_also_3_b" />
-      <path
-         d="m 82.707096,114.16151 38.011114,-12.09487 -3.01118,-2.00763 -34.999934,9.99991 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_b_also_3_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 82.365785,110 0.0117,20.5 51.385925,-18 -16.00637,-12.917449 z"
-         id="b_also_3_korvonal" />
-    </g>
-    <g
-       id="l08_c_also_3"
-       style="cursor:pointer">
-      <path
-         d="m 74.20684,125.26042 -45.680933,-15.59647 -4.319116,2.87942 50.000049,17.50022 z"
-         style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
-         id="l08_c_also_3_d" />
-      <path
-         d="m 74.20684,119.67714 -42.00002,-13.40435 -3.680913,2.45359 45.680933,15.59647 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_also_3_c" />
-      <path
-         d="M 74.20684,114.94501 35.975582,103 l -3.768762,2.51251 42.00002,13.40435 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_also_3_b" />
-      <path
-         d="m 39.206909,100.05901 -3.231327,2.15439 38.231258,11.94501 v -4.09949 z"
-         style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_also_3_a" />
-      <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
-         d="m 23.5,113 50.999998,17.5 V 110 L 39.276927,99.741645 Z"
-         id="c_also_3_korvonal" />
     </g>
     <g
        id="l08_c_felso_6"
@@ -1977,15 +1893,111 @@
       <path
          d="m 51.052181,128.52704 21.655009,7.60522 v -4.08916 l -20.473169,-6.76341 z"
          style="fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.01;paint-order:stroke markers fill"
-         id="l08_c_felso_6_e" />
+         class="l08_c_felso_6_e" />
       <path
          d="m 51.052181,129.39478 -1.389579,3.81837 23.044588,8.19795 V 137 Z"
          style="opacity:0.6;fill:#e9afaf;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0761841;paint-order:stroke markers fill"
-         id="l08_c_felso_6_f" />
+         class="l08_c_felso_6_f" />
       <path
          style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 48.999999,133.5 24,9 0.500001,-11 -21.500001,-7 z"
          id="c_felso_6_korvonal" />
+    </g>
+    <g
+       id="l08_d_also_1"
+       style="cursor:pointer">
+      <path
+         d="m 24.441349,34.990906 h 3.999756 V 17.558895 h -3.999756 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_d_also_1_c" />
+      <path
+         d="M 23.941105,34.990906 V 17.558895 h -4.000272 v 17.432011 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_d_also_1_d" />
+      <path
+         d="m 32.441105,17.558895 h -3.505213 v 17.432011 h 3.505213 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_d_also_1_b" />
+      <path
+         d="m 33.005221,17.56792 v 17.432011 h 3.908805 V 17.56792 Z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.117789;paint-order:stroke markers fill"
+         class="l08_d_also_1_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="m 19.5,35.503776 17.999999,0.03138 V 17 H 19.5 Z"
+         id="d_also_1_korvonal" />
+    </g>
+    <g
+       id="l08_d_also_2"
+       style="cursor:pointer">
+      <path
+         d="m 24.441349,57.48669 h 3.999756 V 37.554057 h -3.999756 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_d_also_2_c" />
+      <path
+         d="M 23.941105,57.48669 V 37.554057 H 19.944967 V 57.48669 Z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_d_also_2_d" />
+      <path
+         d="M 32.441105,37.554057 H 28.935892 V 57.48669 h 3.505213 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_d_also_2_b" />
+      <path
+         d="m 33.005221,37.563082 v 19.932633 h 3.904671 V 37.563082 Z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.125922;paint-order:stroke markers fill"
+         class="l08_d_also_2_a" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 19.5,58.026432 37.499999,58 V 37 H 19.5 Z"
+         id="d_also_2_korvonal" />
+    </g>
+    <g
+       id="l08_d_felso_1"
+       style="cursor:pointer">
+      <path
+         d="M 13.465184,17.534816 H 9.6721335 v 12.520166 h 3.7930505 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+         class="l08_d_felso_1_f" />
+      <path
+         d="m 13.940682,17.530473 v 12.520166 h 3.707784 V 17.530473 Z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696329;paint-order:stroke markers fill"
+         class="l08_d_felso_1_e" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 9.4999999,30.499999 18,30.493226 V 16.999997 H 9.1920376 Z"
+         id="d_felso_1_korvonal" />
+    </g>
+    <g
+       id="l08_d_felso_2"
+       style="cursor:pointer">
+      <path
+         d="M 13.465184,32.554054 H 9.6721335 v 12.519133 h 3.7930505 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+         class="l08_d_felso_2_f" />
+      <path
+         d="m 13.940682,32.549711 v 12.519133 h 3.721737 V 32.549711 Z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0696955;paint-order:stroke markers fill"
+         class="l08_d_felso_2_e" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 9.4999999,45.499998 H 18 V 31.999999 H 9.4999999 Z"
+         id="d_felso_2_korvonal" />
+    </g>
+    <g
+       id="l08_d_felso_3"
+       style="cursor:pointer">
+      <path
+         d="M 13.465184,47.555722 H 9.7031395 v 9.975102 h 3.7620445 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
+         class="l08_d_felso_3_f" />
+      <path
+         d="m 13.940682,47.551379 v 9.975102 h 3.725871 v -9.975102 z"
+         style="opacity:0.6;fill:#80e5ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.0621029;paint-order:stroke markers fill"
+         class="l08_d_felso_3_e" />
+      <path
+         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
+         d="M 9.1987377,57.910676 C 9.5084634,58 18.107422,58 18.107422,58 L 18,47.261197 9.4999999,47.228124 Z"
+         id="d_felso_3_korvonal" />
     </g>
   </g>
 </svg>

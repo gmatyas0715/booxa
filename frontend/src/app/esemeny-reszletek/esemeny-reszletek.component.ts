@@ -21,6 +21,9 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
+  kivalasztottHelyszinNev:string = "";
+  kivalasztottEloadoNev:string = "";
+  kivalasztottEsemenyDatum:Date = new Date('MM/DD/YYYY');
   kivalasztottSzektorok:any[] = [];
   kivalasztottSzektor:any;
   kivalasztottSzektorAlegyseg:any;
@@ -41,6 +44,16 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
               private renderer: Renderer2) {
 
                 this.esemenyId = this.route.snapshot.paramMap.get('id') as string;
+                this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
+                  this.kivalasztottEsemeny=valasz;
+                  console.log(this.kivalasztottEsemeny)
+                  this.kivalasztottEsemenyDatum = this.kivalasztottEsemeny.idopont;
+                  this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
+                  this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
+                  this.kivalasztottHelyszinNev = this.kivalasztottHelyszin.nev;
+                  this.kivalasztottEloadoNev = this.kivalasztottEloado.nev;
+                  this.helyszinSvgBetoltes();
+                });
                 this.szektorFoglaltsag(this.esemenyId);
                 this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
                   this.kivalasztottSzektorok = valasz;
@@ -48,15 +61,11 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
   }
 
   ngOnInit(): void {
-    this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
-      this.kivalasztottEsemeny=valasz;
-      this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
-      this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
-    });
+
   }
 
   ngAfterViewInit(): void {
-    this.helyszinSvgBetoltes();
+    
   }
 
   szektorSzinezes(group:string){
@@ -67,7 +76,7 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
     for (let i = 0; i < childElements.length; i++) {
       const child = childElements[i];
       console.log(child)
-      this.renderer.setStyle(child, 'opacity', 50);
+      this.renderer.setStyle(child, 'fill', 'blue');
     }
   }
 
@@ -81,6 +90,7 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
     this.helyszinSzerviz.helyszinSvgKepUrl(this.kivalasztottHelyszin.svg_kep_eleres).subscribe((valasz)=>{
         this.helyszinSvg =  valasz;
         this.renderer.setProperty(this.svgContainer.nativeElement, 'innerHTML', this.helyszinSvg);
+        console.log(this.kivalasztottSzektorok)
         this.kivalasztottSzektorok.forEach(szektor => {
           const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
           this.renderer.listen(g, 'click', () => {

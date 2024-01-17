@@ -1,7 +1,7 @@
 <div class="container pt-3">
     <div class="row esemeny-fo-reszletek">
         <div class="col">
-            <span class="d-block">{{kivalasztottEsemeny.idopont}}</span>
+            <span class="d-block">{{kivalasztottEsemenyDatum}}</span>
             <div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
                 <div *ngIf="szektorfoglaltsag.value">
                     <h2>{{szektorfoglaltsag.value[0]}}</h2>
@@ -9,8 +9,8 @@
             </div>
         </div>
         <div class="col">
-            <h4>Előadó: {{kivalasztottEloado.nev}}</h4>
-            <h4>Helyszín: {{kivalasztottHelyszin.nev}}</h4>
+            <h4>Előadó: {{kivalasztottEloadoNev}}</h4>
+            <h4>Helyszín: {{kivalasztottHelyszinNev}}</h4>
         </div>
     </div>
     <div class="row">

@@ -18,8 +18,8 @@ export class BejelentkezesUserComponent {
   userLogin(){
     let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
     console.log(userBejelentkezesAdatok)
-    this.userAzonositas.login(userBejelentkezesAdatok).subscribe(
-      (response)=>{
+    this.userAzonositas.login(userBejelentkezesAdatok).subscribe({
+      next:(response)=>{
         console.log('Sikeres bejelentkezés',response);
         this.userAzonositas.setAuthToken(response.token);
         this.userAzonositas.setUsername(response.felhasznalonev);
@@ -27,10 +27,10 @@ export class BejelentkezesUserComponent {
         console.log(this.userService.bejelentkezettUser)
         this.router.navigate(['/kezdooldal']);
       },
-      (error) => {
+      error:(error) => {
         // Handle login failure
         console.error('Sikertelen bejelentkezés', error);
       }
-    )
+    });
   }
 }

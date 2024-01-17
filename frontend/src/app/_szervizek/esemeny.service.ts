@@ -22,12 +22,9 @@ export class EsemenyService {
   }
 
   eloadoAdatok(eloado:string,helyszin:string):Observable<EsemenyModell[]>{
-    console.log(eloado,' ',helyszin)
     const params = new HttpParams()
       .set('eloado',eloado)
       .set('helyszin',helyszin);
-
-      console.log(params);
 
       return this.http.get<EsemenyModell[]>('http://localhost:8000/api/esemenyKereso',{params})
       .pipe(

@@ -51,7 +51,6 @@ export class UserAzonositasService {
   }
 
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {
-    console.log(userBejelentkezesAdatok)
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       // Add any other headers as needed

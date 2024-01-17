@@ -18,8 +18,8 @@
                         </mat-autocomplete>
                     </div>
                     <div class="col mb-2">
-                        <label for="" class="font-weight-bold d-block" >Helyszín:</label>
-                        <input name="helyszin" [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
+                        <label for="helyszin" class="font-weight-bold d-block" >Helyszín:</label>
+                        <input name="helyszin" id="helyszin" [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
                         <mat-autocomplete #auto2="matAutocomplete">
                             <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
                               {{ javaslat }}
@@ -90,7 +90,7 @@
                     Találatok rendezése
                 </div>
                 <div class="row">
-                    <select [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
+                    <select name="talalat-rendezes" [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
                         <option value="eloado_AZ">előadók (A-Z)</option>
                         <option value="eloado_ZA">előadók (Z-A)</option>
                         <option value="helyszin_AZ">helyszínek (A-Z)</option>

@@ -198,58 +198,85 @@
        id="szinpad"
        sodipodi:nodetypes="ccccc"
        inkscape:label="szinpad" />
-    <path
+    <g 
+	id="l02_bal_szarny_2">
+       <path
        style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill;cursor: pointer;"
        d="m 28.213871,36.125852 28.295369,-1.91e-4 -3e-6,5.895057 7.073849,5.894871 -28.885142,24.168819 C 32.574769,67.546567 30.40669,63.030749 28.213871,58.526352 v -22.4005"
-       id="l02_bal_szarny_2"
+       class="l02_bal_szarny_2"
        sodipodi:nodetypes="ccccccc"
        inkscape:label="l02_bal_szarny_2" />
-    <path
+    </g>
+    <g 
+	id="l02_jobb_szarny_2">
+        <path
        style="fill:#409598;fill-opacity:0.639903;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill;cursor: pointer;"
        d="m 128.42665,36.125852 -28.29538,0.0014 0,5.893434 -7.073842,5.894871 28.885152,24.168819 c 2.12316,-4.537841 4.29125,-9.053659 6.48407,-13.558056 v -22.4005"
-       id="l02_jobb_szarny_2"
+       class="l02_jobb_szarny_2"
        sodipodi:nodetypes="ccccccc"
        inkscape:label="l02_jobb_szarny_2" />
-    <path
+    </g>
+    <g 
+	id="l02_bal_szarny_1">
+        <path
        style="fill:#ecbfab;fill-opacity:0.573123;fill-rule:evenodd;stroke:#000000;stroke-width:0.131506;paint-order:stroke markers fill;cursor: pointer;"
        d="m 28.211983,18.442912 28.298298,0.0092 -0.06734,15.287154 -28.230957,0.02846 V 18.442912"
-       id="l02_bal_szarny_1"
+       class="l02_bal_szarny_1"
        sodipodi:nodetypes="ccccc"
        inkscape:label="l02_bal_szarny_1" />
-    <path
+    </g>
+    <g 
+	id="l02_jobb_szarny_1">
+        <path
        style="fill:#ecbfab;fill-opacity:0.573123;fill-rule:evenodd;stroke:#000000;stroke-width:0.131506;paint-order:stroke markers fill;cursor: pointer;"
        d="m 100.13127,18.443046 28.29828,0.0063 -0.0673,15.290077 -28.23096,0.02846 V 18.443046"
-       id="l02_jobb_szarny_1"
+       class="l02_jobb_szarny_1"
        sodipodi:nodetypes="ccccc"
        inkscape:label="l02_jobb_szarny_1" />
-    <path
+    </g>
+    <g 
+	id="l02_center_1">
+        <path
        d="m 65,47.5 -29.669305,24.972944 4.910553,9.928455 23.686466,-0.0067 5.788181,-11.315314 h 17.684604 l 5.89487,11.789738 23.580001,8.9e-5 5.04124,-10.692158 -29.800216,-24.677072 z"
        style="fill:#ddc1dd;fill-opacity:0.260341;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill;cursor: pointer;"
-       id="l02_center_1"
+       class="l02_center_1"
        sodipodi:nodetypes="ccccccccccc"
        inkscape:label="l02_center_1" />
-    <path
+    </g>
+    <g 
+	id="l02_vip_bal">
+        <path
        style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill;cursor: pointer;"
        d="M 27.034893,18.441242 16.424128,24.33611 v 41.264083 l 11.789737,17.684609 h 10.61077 L 27.034893,58.526352 Z"
-       id="l02_vip_bal"
+       class="l02_vip_bal"
        inkscape:label="l02_vip_bal" />
-    <path
+    </g>
+    <g 
+	id="l02_vip_jobb">
+        <path
        style="fill:#999a3e;fill-opacity:0.618005;fill-rule:evenodd;stroke:#000000;stroke-width:0.136762;paint-order:stroke markers fill;cursor: pointer;"
        d="m 129.60563,18.441242 10.61075,5.894868 v 41.264083 l -11.78973,17.684609 h -10.61077 l 11.78975,-24.75845 z"
-       id="l02_vip_jobb"
+       class="l02_vip_jobb"
        inkscape:label="l02_vip_jobb" />
-    <path
+    </g>
+    <g 
+	id="l02_center_2">
+        <path
        d="M 75.372826,124.46909 V 95.074542 l -9.431792,-2.357949 -2.357948,-8.252816 -35.355396,0.01162 -0.01394,28.283823 5.894869,11.78972 c 9.431792,0 11.964752,-0.0797 41.2639,-0.0797 z"
        style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.162569;paint-order:stroke markers fill;cursor: pointer;"
-       id="l02_center_2"
+       class="l02_center_2"
        sodipodi:nodetypes="ccccccccc"
        inkscape:label="l02_center_2" />
-    <path
+    </g>
+    <g 
+	id="l02_center_3">
+        <path
        d="m 92.950732,84.578946 -2.251252,8.137647 -9.431791,2.357949 V 124.46909 H 110.7423 l 7.07343,-30.573473 9.90275,-0.785935 0.69334,-8.634315 z"
        style="fill:#f6aea5;fill-opacity:0.613139;fill-rule:evenodd;stroke:#000000;stroke-width:0.162569;paint-order:stroke markers fill;cursor: pointer;"
-       id="l02_center_3"
+       class="l02_center_3"
        sodipodi:nodetypes="ccccccccc"
        inkscape:label="l02_center_3" />
+    </g>
     <rect
        style="fill:#716b67;fill-opacity:0.328467;fill-rule:evenodd;stroke:#000000;stroke-width:0.235795;stroke-dasharray:none;paint-order:stroke markers fill"
        id="rect11"

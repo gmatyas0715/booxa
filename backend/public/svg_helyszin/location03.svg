@@ -1578,33 +1578,36 @@
          x="198.42578"
          y="124.33468"
          id="tspan162">L</tspan></text>
-    <path
+	<g
+           id="l03_center">
+    	   <path
        d="m 79.890341,35.041451 -18.301261,3.660406 -10.980456,18.301277 -3.660412,21.960915 3.660412,21.961681 10.980456,18.30124 18.301261,3.6604 18.301266,-3.6604 10.981223,-18.30124 3.65965,-21.961681 L 109.17283,57.003134 98.191607,38.701857 Z M 80,60 a 15.615545,17.438555 0 0 1 1.166669,0.04846 15.615545,17.438555 0 0 1 1.160621,0.145971 15.615545,17.438555 0 0 1 1.146991,0.242865 15.615545,17.438555 0 0 1 1.128088,0.337446 15.615545,17.438555 0 0 1 1.102351,0.430504 15.615545,17.438555 0 0 1 1.070595,0.521292 15.615545,17.438555 0 0 1 1.031985,0.609813 15.615545,17.438555 0 0 1 0.988867,0.693792 15.615545,17.438555 0 0 1 0.939688,0.773998 15.615545,17.438555 0 0 1 0.885225,0.851168 15.615545,17.438555 0 0 1 0.825445,0.921535 15.615545,17.438555 0 0 1 0.761888,0.988868 15.615545,17.438555 0 0 1 0.693047,1.049393 15.615545,17.438555 0 0 1 0.62192,1.103873 15.615545,17.438555 0 0 1 0.545495,1.153051 15.615545,17.438555 0 0 1 0.466828,1.195424 15.615545,17.438555 0 0 1 0.385864,1.230971 15.615545,17.438555 0 0 1 0.301881,1.259741 15.615545,17.438555 0 0 1 0.217142,1.280912 15.615545,17.438555 0 0 1 0.13089,1.296051 15.615545,17.438555 0 0 1 0.04392,1.303605 15.615545,17.438555 0 0 1 -0.39191,3.879821 15.615545,17.438555 0 0 1 -1.154574,3.68612 15.615545,17.438555 0 0 1 -1.860461,3.306319 15.615545,17.438555 0 0 1 -2.472558,2.761571 15.615545,17.438555 0 0 1 -2.960542,2.077615 15.615545,17.438555 0 0 1 -3.301034,1.289243 15.615545,17.438555 0 0 1 -3.474279,0.437313 15.615545,17.438555 0 0 1 -3.475042,-0.437313 15.615545,17.438555 0 0 1 -3.300257,-1.289243 15.615545,17.438555 0 0 1 -2.961318,-2.077615 15.615545,17.438555 0 0 1 -2.472544,-2.761571 15.615545,17.438555 0 0 1 -1.860475,-3.306319 15.615545,17.438555 0 0 1 -1.154555,-3.68612 15.615545,17.438555 0 0 1 -0.39191,-3.879821 15.615545,17.438555 0 0 1 0.39191,-3.880568 15.615545,17.438555 0 0 1 1.154555,-3.686136 15.615545,17.438555 0 0 1 1.860475,-3.306317 15.615545,17.438555 0 0 1 2.472544,-2.761571 15.615545,17.438555 0 0 1 2.961318,-2.077603 15.615545,17.438555 0 0 1 3.300257,-1.289242 15.615545,17.438555 0 0 1 3.475042,-0.437312 z"
        style="opacity:0.6;fill:#2ab424;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.114001;paint-order:stroke markers fill;cursor:pointer;"
-       id="l03_center"
+       class="l03_center"
        inkscape:label="l03_center" />
+       </g>
     <g
        id="l03_l_felso"
        style="cursor: pointer;">
       <path
          d="m 79.054606,13.417269 -26.514661,5.681824 0.893486,1.48208 25.621175,-5.318022 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_felso_i"
+         class="l03_l_felso_i"
          inkscape:label="l03_l_felso_i" />
       <path
          d="m 78.98846,11.270419 -27.488245,5.953642 0.973584,1.615922 26.514661,-5.681824 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_felso_j"
+         class="l03_l_felso_j"
          inkscape:label="l03_l_felso_j" />
       <path
          d="M 78.98846,9.1938458 50.570556,15.384682 51.500215,16.926707 78.98846,10.973065 Z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_felso_k"
+         class="l03_l_felso_k"
          inkscape:label="l03_l_felso_k" />
       <path
          d="M 78.98846,6.7095795 49.632629,13.500895 50.570556,15.056873 78.98846,8.866037 Z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_felso_l"
+         class="l03_l_felso_l"
          inkscape:label="l03_l_felso_l" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1617,42 +1620,42 @@
       <path
          d="m 79.50092,31.037833 -19.417529,3.841535 1.082774,1.960639 18.321881,-3.555319 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_a"
+         class="l03_l_also_a"
          inkscape:label="l03_l_also_a" />
       <path
          d="m 79.513657,28.814948 -20.419654,4.039918 0.990708,1.794228 19.417529,-3.841535 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_b"
+         class="l03_l_also_b"
          inkscape:label="l03_l_also_b" />
       <path
          d="m 79.524893,26.854057 -21.271229,4.208674 0.841872,1.524653 20.419654,-4.039918 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_c"
+         class="l03_l_also_c"
          inkscape:label="l03_l_also_c" />
       <path
          d="m 79.536892,24.759969 -22.208684,4.393992 0.926777,1.678104 21.27123,-4.208675 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_d"
+         class="l03_l_also_d"
          inkscape:label="l03_l_also_d" />
       <path
          d="M 79.582998,22.802181 56.52274,27.364929 57.364612,28.889582 79.573295,24.49559 Z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_e"
+         class="l03_l_also_e"
          inkscape:label="l03_l_also_e" />
       <path
          d="m 79.594332,20.857478 -23.932524,4.735003 0.862329,1.561978 23.060258,-4.562748 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_f"
+         class="l03_l_also_f"
          inkscape:label="l03_l_also_f" />
       <path
          d="m 79.605241,18.953598 -24.784099,4.90376 0.841872,1.524652 23.932524,-4.735003 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_g"
+         class="l03_l_also_g"
          inkscape:label="l03_l_also_g" />
       <path
          d="m 79.581167,17.032949 -25.651192,5.07501 0.857218,1.55213 24.784099,-4.903759 z"
          style="opacity:0.6;fill:#ac939d;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_l_also_h"
+         class="l03_l_also_h"
          inkscape:label="l03_l_also_h" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1665,22 +1668,22 @@
       <path
          d="M 45.31558,23.452832 30.254484,49.571651 32.053857,50.062577 46.429724,24.683765 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_felso_i"
+         class="l03_k_felso_i"
          inkscape:label="l03_k_felso_i" />
       <path
          d="M 25.86139,47.713204 42.316199,19.953658 41,18.5 23.431047,47.050195 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_felso_l"
+         class="l03_k_felso_l"
          inkscape:label="l03_k_felso_l" />
       <path
          d="m 43.698437,21.5 -1.167371,-1.289843 -16.454809,27.759546 2.019515,0.55087 z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_felso_k"
+         class="l03_k_felso_k"
          inkscape:label="l03_k_felso_k" />
       <path
          d="M 43.869031,21.803401 28.266366,48.823974 30.069873,49.315417 45.130969,23.196598 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_felso_j"
+         class="l03_k_felso_j"
          inkscape:label="l03_k_felso_j" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1693,42 +1696,42 @@
       <path
          d="m 58.698226,36.545056 -11.157459,19.324919 1.60352,0.401009 10.980725,-18.301209 z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_a"
+         class="l03_k_also_a"
          inkscape:label="l03_k_also_a" />
       <path
          d="M 57.320227,35.193619 45.485807,55.232706 47.342541,55.696761 58.5,36.371842 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_b"
+         class="l03_k_also_b"
          inkscape:label="l03_k_also_b" />
       <path
          d="M 55.758155,33.566308 43.610576,54.606884 45.365507,55.045617 57.199927,35.00653 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_c"
+         class="l03_k_also_c"
          inkscape:label="l03_k_also_c" />
       <path
          d="m 54.37394,32.081878 -12.566158,21.8736 1.670699,0.417545 12.147579,-21.040576 z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_d"
+         class="l03_k_also_d"
          inkscape:label="l03_k_also_d" />
       <path
          d="M 53.012184,30.64706 39.93443,53.29839 41.655772,53.728855 54.22193,31.855255 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_e"
+         class="l03_k_also_e"
          inkscape:label="l03_k_also_e" />
       <path
          d="m 51.524855,29.08223 -13.582633,23.525179 1.840198,0.45992 13.077754,-22.65133 z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_f"
+         class="l03_k_also_f"
          inkscape:label="l03_k_also_f" />
       <path
          d="M 49.740564,27.28004 48.040926,25.582469 33.416495,51.206745 35.61016,51.755032 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_h"
+         class="l03_k_also_h"
          inkscape:label="l03_k_also_h" />
       <path
          d="M 49.899115,27.5 35.768711,51.974992 37.768589,52.47522 51.351222,28.950041 Z"
          style="opacity:0.6;fill:#ff80b2;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_k_also_g"
+         class="l03_k_also_g"
          inkscape:label="l03_k_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1741,22 +1744,22 @@
       <path
          d="m 28.781424,53.037561 -4.372343,23.046655 1.877405,0.07803 4.39198,-22.693705 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_felso_i"
+         class="l03_j_felso_i"
          inkscape:label="l03_j_felso_i" />
       <path
          d="m 26.61961,52.408296 -4.742863,23.393921 2.324922,0.09715 4.372343,-23.046655 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_felso_j"
+         class="l03_j_felso_j"
          inkscape:label="l03_j_felso_j" />
       <path
          d="m 24.288506,51.942134 -2.325439,-0.52865 -5.124752,24.157699 2.261877,0.09405 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_felso_l"
+         class="l03_j_felso_l"
          inkscape:label="l03_j_felso_l" />
       <path
          d="m 24.529298,51.866727 -5.188314,23.7231 2.320789,0.09664 4.742863,-23.393921 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_felso_k"
+         class="l03_j_felso_k"
          inkscape:label="l03_j_felso_k" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1769,42 +1772,42 @@
       <path
          d="m 47.221817,57.166372 -3.965132,20.715532 1.905826,0.08682 3.660242,-20.497457 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_a"
+         class="l03_j_also_a"
          inkscape:label="l03_j_also_a" />
       <path
          d="m 45.319345,56.75977 -4.513419,20.926888 2.175579,0.0987 3.965131,-20.715532 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_b"
+         class="l03_j_also_b"
          inkscape:label="l03_j_also_b" />
       <path
          d="m 43.103712,56.282392 -4.541842,21.204391 1.950786,0.08837 4.513419,-20.926888 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_c"
+         class="l03_j_also_c"
          inkscape:label="l03_j_also_c" />
       <path
          d="m 40.830213,55.775788 -4.448824,21.502047 1.929081,0.08785 4.541842,-21.204391 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_d"
+         class="l03_j_also_d"
          inkscape:label="l03_j_also_d" />
       <path
          d="m 38.749323,55.291547 -4.505668,21.769214 1.915129,0.08682 4.448824,-21.502047 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_e"
+         class="l03_j_also_e"
          inkscape:label="l03_j_also_e" />
       <path
          d="m 36.336033,54.761578 -4.327901,22.092191 1.995744,0.09095 4.505668,-21.769214 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_f"
+         class="l03_j_also_f"
          inkscape:label="l03_j_also_f" />
       <path
          d="m 33.930221,54.078444 -2.233972,-0.425297 -4.392497,22.693705 2.244308,0.101802 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_h"
+         class="l03_j_also_h"
          inkscape:label="l03_j_also_h" />
       <path
          d="m 34.211341,54.284316 -4.382161,22.37021 1.988509,0.09043 4.327901,-22.092191 z"
          style="opacity:0.6;fill:#de87aa;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_j_also_g"
+         class="l03_j_also_g"
          inkscape:label="l03_j_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1817,22 +1820,22 @@
       <path
          d="m 28.792819,104.98177 -4.372343,-23.046657 1.877405,-0.078 4.39198,22.693707 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_felso_i"
+         class="l03_i_felso_i"
          inkscape:label="l03_i_felso_i" />
       <path
          d="m 26.631005,105.61103 -4.742863,-23.393917 2.324922,-0.0971 4.372343,23.046657 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_felso_j"
+         class="l03_i_felso_j"
          inkscape:label="l03_i_felso_j" />
       <path
          d="m 24.299901,106.28123 -2.325439,0.52865 -5.124752,-24.157697 2.261877,-0.0941 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_felso_l"
+         class="l03_i_felso_l"
          inkscape:label="l03_i_felso_l" />
       <path
          d="m 24.540693,106.1526 -5.188314,-23.723097 2.320789,-0.0966 4.742863,23.393917 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_felso_k"
+         class="l03_i_felso_k"
          inkscape:label="l03_i_felso_k" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1845,42 +1848,42 @@
       <path
          d="m 47.233212,100.85296 -3.965132,-20.715527 1.905826,-0.0868 3.660242,20.497447 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_a"
+         class="l03_i_also_a"
          inkscape:label="l03_i_also_a" />
       <path
          d="M 45.33074,101.25956 40.817321,80.332673 42.9929,80.233973 46.958031,100.9495 Z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_b"
+         class="l03_i_also_b"
          inkscape:label="l03_i_also_b" />
       <path
          d="m 43.115107,101.73694 -4.541842,-21.204387 1.950786,-0.0884 4.513419,20.926887 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_c"
+         class="l03_i_also_c"
          inkscape:label="l03_i_also_c" />
       <path
          d="m 40.841608,102.24354 -4.448824,-21.502037 1.929081,-0.0879 4.541842,21.204387 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_d"
+         class="l03_i_also_d"
          inkscape:label="l03_i_also_d" />
       <path
          d="m 38.760718,102.72778 -4.505668,-21.769207 1.915129,-0.0868 4.448824,21.502047 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_e"
+         class="l03_i_also_e"
          inkscape:label="l03_i_also_e" />
       <path
          d="m 36.347428,103.25775 -4.327901,-22.092187 1.995744,-0.0909 4.505668,21.769217 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_f"
+         class="l03_i_also_f"
          inkscape:label="l03_i_also_f" />
       <path
          d="m 33.941616,103.94089 -2.233972,0.42529 -4.392497,-22.693697 2.244308,-0.1018 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_h"
+         class="l03_i_also_h"
          inkscape:label="l03_i_also_h" />
       <path
          d="m 34.222736,103.73501 -4.382161,-22.370207 1.988509,-0.0904 4.327901,22.092197 z"
          style="opacity:0.6;fill:#b380ff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_i_also_g"
+         class="l03_i_also_g"
          inkscape:label="l03_i_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1893,22 +1896,22 @@
       <path
          d="m 45.326975,134.5665 -15.061096,-26.11882 1.799373,-0.49093 14.375867,25.37882 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_felso_i"
+         class="l03_h_felso_i"
          inkscape:label="l03_h_felso_i" />
       <path
          d="m 25.872785,110.30613 16.454809,27.75954 -1.316199,1.45366 -17.568953,-28.55019 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_felso_l"
+         class="l03_h_felso_l"
          inkscape:label="l03_h_felso_l" />
       <path
          d="m 43.709832,136.51933 -1.167371,1.28984 -16.454809,-27.75954 2.019515,-0.55087 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_felso_k"
+         class="l03_h_felso_k"
          inkscape:label="l03_h_felso_k" />
       <path
          d="m 43.880426,136.21593 -15.602665,-27.02057 1.803507,-0.49145 15.061096,26.11882 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_felso_j"
+         class="l03_h_felso_j"
          inkscape:label="l03_h_felso_j" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1921,42 +1924,42 @@
       <path
          d="m 58.709621,121.47427 -11.157459,-19.32491 1.60352,-0.40101 10.980725,18.30121 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_a"
+         class="l03_h_also_a"
          inkscape:label="l03_h_also_a" />
       <path
          d="m 57.331622,122.82571 -11.83442,-20.03909 1.856734,-0.46405 11.157459,19.32492 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_b"
+         class="l03_h_also_b"
          inkscape:label="l03_h_also_b" />
       <path
          d="m 55.76955,124.45302 -12.147579,-21.04057 1.754931,-0.43874 11.83442,20.03909 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_c"
+         class="l03_h_also_c"
          inkscape:label="l03_h_also_c" />
       <path
          d="m 54.385335,125.93745 -12.566158,-21.8736 1.670699,-0.41754 12.147579,21.04057 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_d"
+         class="l03_h_also_d"
          inkscape:label="l03_h_also_d" />
       <path
          d="m 53.023579,127.37227 -13.077754,-22.65133 1.721342,-0.43046 12.566158,21.8736 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_e"
+         class="l03_h_also_e"
          inkscape:label="l03_h_also_e" />
       <path
          d="M 51.53625,128.9371 37.953617,105.41192 39.793815,104.952 52.871569,127.60333 Z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_f"
+         class="l03_h_also_f"
          inkscape:label="l03_h_also_f" />
       <path
          d="m 49.751959,130.73929 -1.699638,1.69757 -14.624431,-25.62427 2.193665,-0.54829 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_h"
+         class="l03_h_also_h"
          inkscape:label="l03_h_also_h" />
       <path
          d="m 49.91051,130.51933 -14.130404,-24.47499 1.999878,-0.50023 13.582633,23.52518 z"
          style="opacity:0.6;fill:#5f8dd3;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_h_also_g"
+         class="l03_h_also_g"
          inkscape:label="l03_h_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1969,22 +1972,22 @@
       <path
          d="m 79.066001,144.60206 -26.514661,-5.68182 0.893486,-1.48208 25.621175,5.31802 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l3_g_felso_i"
+         class="l3_g_felso_i"
          inkscape:label="l3_g_felso_i" />
       <path
          d="m 78.999855,146.74891 -27.488245,-5.95364 0.973584,-1.61592 26.514661,5.68182 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_felso_j"
+         class="l03_g_felso_j"
          inkscape:label="l03_g_felso_j" />
       <path
          d="m 78.999855,148.82548 -28.417904,-6.19083 0.929659,-1.54203 27.488245,5.95365 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_felso_k"
+         class="l03_g_felso_k"
          inkscape:label="l03_g_felso_k" />
       <path
          d="m 78.999855,151.30975 -29.355831,-6.79131 0.937927,-1.55598 28.417904,6.19083 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_felso_l"
+         class="l03_g_felso_l"
          inkscape:label="l03_g_felso_l" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -1997,42 +2000,42 @@
       <path
          d="m 79.53574,127.05481 -19.395199,-3.95273 1.09399,-1.9544 18.301209,3.66024 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_a"
+         class="l03_g_also_a"
          inkscape:label="l03_g_also_a" />
       <path
          d="m 79.53574,129.27773 -20.396171,-4.15685 1.000972,-1.78852 19.395199,3.95273 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_b"
+         class="l03_g_also_b"
          inkscape:label="l03_g_also_b" />
       <path
          d="m 79.53574,131.23866 -21.246765,-4.33049 0.850594,-1.5198 20.396171,4.15685 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_c"
+         class="l03_g_also_c"
          inkscape:label="l03_g_also_c" />
       <path
          d="m 79.53574,133.33278 -22.183142,-4.52117 0.936377,-1.67277 21.246765,4.33049 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_d"
+         class="l03_g_also_d"
          inkscape:label="l03_g_also_d" />
       <path
          d="m 79.570628,135.2908 -23.033736,-4.6948 0.850594,-1.51981 22.183142,4.52117 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_e"
+         class="l03_g_also_e"
          inkscape:label="l03_g_also_e" />
       <path
          d="m 79.570819,137.23554 -23.905001,-4.87206 0.871265,-1.55701 23.033736,4.6948 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_f"
+         class="l03_g_also_f"
          inkscape:label="l03_g_also_f" />
       <path
          d="m 79.570819,139.13945 -24.755595,-5.04569 0.850594,-1.5198 23.905001,4.87205 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_g"
+         class="l03_g_also_g"
          inkscape:label="l03_g_also_g" />
       <path
          d="m 79.53574,141.05993 -25.621692,-5.22191 0.866097,-1.54719 24.755595,5.04569 z"
          style="opacity:0.6;fill:#55ddff;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_g_also_h"
+         class="l03_g_also_h"
          inkscape:label="l03_g_also_h" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2045,22 +2048,22 @@
       <path
          d="m 80.868,144.59981 26.51466,-5.68182 -0.89349,-1.48208 -25.62117,5.31802 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_felso_i"
+         class="l03_f_felso_i"
          inkscape:label="l03_f_felso_i" />
       <path
          d="m 80.93414,146.74666 27.48825,-5.95364 -0.97359,-1.61592 -26.51466,5.68182 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_felso_j"
+         class="l03_f_felso_j"
          inkscape:label="l03_f_felso_j" />
       <path
          d="m 80.93414,148.82323 28.41791,-6.19083 -0.92966,-1.54203 -27.48825,5.95365 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_felso_k"
+         class="l03_f_felso_k"
          inkscape:label="l03_f_felso_k" />
       <path
          d="m 80.93414,151.3075 29.35583,-6.79131 -0.93792,-1.55598 -28.41791,6.19083 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_felso_l"
+         class="l03_f_felso_l"
          inkscape:label="l03_f_felso_l" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2073,42 +2076,42 @@
       <path
          d="m 80.39826,127.05256 19.395206,-3.95273 -1.093995,-1.9544 -18.301211,3.66024 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_a"
+         class="l03_f_also_a"
          inkscape:label="l03_f_also_a" />
       <path
          d="m 80.39826,129.27548 20.39617,-4.15685 -1.000964,-1.78852 -19.395206,3.95273 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_b"
+         class="l03_f_also_b"
          inkscape:label="l03_f_also_b" />
       <path
          d="m 80.39826,131.23641 21.24676,-4.33049 -0.85059,-1.5198 -20.39617,4.15685 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_c"
+         class="l03_f_also_c"
          inkscape:label="l03_f_also_c" />
       <path
          d="m 80.39826,133.33053 22.18314,-4.52117 -0.93638,-1.67277 -21.24676,4.33049 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_d"
+         class="l03_f_also_d"
          inkscape:label="l03_f_also_d" />
       <path
          d="m 80.39826,135.02397 23.03374,-4.6948 -0.8506,-1.51981 -22.18314,4.52117 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_e"
+         class="l03_f_also_e"
          inkscape:label="l03_f_also_e" />
       <path
          d="m 80.36318,137.23329 23.905,-4.87206 -0.87126,-1.55701 -23.03374,4.6948 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_f"
+         class="l03_f_also_f"
          inkscape:label="l03_f_also_f" />
       <path
          d="m 80.36318,139.1372 24.75559,-5.04569 -0.85059,-1.5198 -23.905,4.87205 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_g"
+         class="l03_f_also_g"
          inkscape:label="l03_f_also_g" />
       <path
          d="m 80.39826,141.05768 25.62169,-5.22191 -0.8661,-1.54719 -24.75559,5.04569 z"
          style="opacity:0.6;fill:#55ff99;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_f_also_h"
+         class="l03_f_also_h"
          inkscape:label="l03_f_also_h" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2121,22 +2124,22 @@
       <path
          d="m 114.60702,134.56425 15.0611,-26.11882 -1.79937,-0.49093 -14.37587,25.37882 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_felso_i"
+         class="l03_e_felso_i"
          inkscape:label="l03_e_felso_i" />
       <path
          d="m 134.06121,110.30388 -16.45481,27.75954 1.3162,1.45366 17.56896,-28.55019 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_felso_l"
+         class="l03_e_felso_l"
          inkscape:label="l03_e_felso_l" />
       <path
          d="m 116.22417,136.51708 1.16737,1.28984 16.45481,-27.75954 -2.01952,-0.55087 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_felso_k"
+         class="l03_e_felso_k"
          inkscape:label="l03_e_felso_k" />
       <path
          d="m 116.05357,136.21368 15.60267,-27.02057 -1.80351,-0.49145 -15.0611,26.11882 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_felso_j"
+         class="l03_e_felso_j"
          inkscape:label="l03_e_felso_j" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2149,42 +2152,42 @@
       <path
          d="m 101.22438,121.47202 11.15746,-19.32491 -1.60352,-0.40101 -10.980724,18.30121 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_a"
+         class="l03_e_also_a"
          inkscape:label="l03_e_also_a" />
       <path
          d="m 102.60238,122.82346 11.83442,-20.03909 -1.85674,-0.46405 -11.15746,19.32492 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_b"
+         class="l03_e_also_b"
          inkscape:label="l03_e_also_b" />
       <path
          d="m 104.16445,124.45077 12.14758,-21.04057 -1.75493,-0.43874 -11.83442,20.03909 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_c"
+         class="l03_e_also_c"
          inkscape:label="l03_e_also_c" />
       <path
          d="m 105.54866,125.9352 12.56616,-21.8736 -1.6707,-0.41754 -12.14758,21.04057 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_d"
+         class="l03_e_also_d"
          inkscape:label="l03_e_also_d" />
       <path
          d="m 106.91042,127.37002 13.07775,-22.65133 -1.72134,-0.43046 -12.56616,21.8736 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_e"
+         class="l03_e_also_e"
          inkscape:label="l03_e_also_e" />
       <path
          d="m 108.39775,128.93485 13.58263,-23.52518 -1.8402,-0.45992 -13.07775,22.65133 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_f"
+         class="l03_e_also_f"
          inkscape:label="l03_e_also_f" />
       <path
          d="m 110.18204,130.73704 1.69964,1.69757 14.62443,-25.62427 -2.19367,-0.54829 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_h"
+         class="l03_e_also_h"
          inkscape:label="l03_e_also_h" />
       <path
          d="m 110.02349,130.51708 14.1304,-24.47499 -1.99988,-0.50023 -13.58263,23.52518 z"
          style="opacity:0.6;fill:#99ff55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_e_also_g"
+         class="l03_e_also_g"
          inkscape:label="l03_e_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2197,22 +2200,22 @@
       <path
          d="m 131.14118,104.97952 4.37234,-23.046647 -1.8774,-0.078 -4.39198,22.693697 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_felso_i"
+         class="l03_d_felso_i"
          inkscape:label="l03_d_felso_i" />
       <path
          d="m 133.30299,105.60878 4.74286,-23.393917 -2.32492,-0.0971 -4.37234,23.046657 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_felso_j"
+         class="l03_d_felso_j"
          inkscape:label="l03_d_felso_j" />
       <path
          d="m 135.6341,106.27898 2.32543,0.52865 5.12476,-24.157697 -2.26188,-0.0941 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_felso_l"
+         class="l03_d_felso_l"
          inkscape:label="l03_d_felso_l" />
       <path
          d="m 135.39331,106.15035 5.18831,-23.723097 -2.32079,-0.0966 -4.74286,23.393907 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_felso_k"
+         class="l03_d_felso_k"
          inkscape:label="l03_d_felso_k" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2225,42 +2228,42 @@
       <path
          d="m 112.70079,100.85071 3.96513,-20.715527 -1.90583,-0.0868 -3.66024,20.497447 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_a"
+         class="l03_d_also_a"
          inkscape:label="l03_d_also_a" />
       <path
          d="m 114.60326,101.25731 4.51342,-20.926887 -2.17558,-0.0987 -3.96513,20.715527 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_b"
+         class="l03_d_also_b"
          inkscape:label="l03_d_also_b" />
       <path
          d="m 116.81889,101.73469 4.54184,-21.204387 -1.95078,-0.0884 -4.51342,20.926887 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_c"
+         class="l03_d_also_c"
          inkscape:label="l03_d_also_c" />
       <path
          d="m 119.09239,102.24129 4.44882,-21.502037 -1.92908,-0.0879 -4.54184,21.204387 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_d"
+         class="l03_d_also_d"
          inkscape:label="l03_d_also_d" />
       <path
          d="m 121.17328,102.72553 4.50567,-21.769207 -1.91513,-0.0868 -4.44882,21.502047 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_e"
+         class="l03_d_also_e"
          inkscape:label="l03_d_also_e" />
       <path
          d="m 123.58657,103.2555 4.3279,-22.092187 -1.99574,-0.091 -4.50567,21.769217 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_f"
+         class="l03_d_also_f"
          inkscape:label="l03_d_also_f" />
       <path
          d="m 125.99238,103.93864 2.23397,0.42529 4.3925,-22.693697 -2.24431,-0.1018 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_h"
+         class="l03_d_also_h"
          inkscape:label="l03_d_also_h" />
       <path
          d="m 125.71126,103.73276 4.38216,-22.370197 -1.98851,-0.0904 -4.3279,22.092187 z"
          style="opacity:0.6;fill:#ffdd55;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_d_also_g"
+         class="l03_d_also_g"
          inkscape:label="l03_d_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2273,22 +2276,22 @@
       <path
          d="m 131.12979,53.039811 4.37234,23.046651 -1.8774,0.078 -4.39198,-22.693701 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_felso_i"
+         class="l03_c_felso_i"
          inkscape:label="l03_c_felso_i" />
       <path
          d="m 133.2916,52.410546 4.74286,23.393926 -2.32492,0.0971 -4.37234,-23.04666 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_felso_j"
+         class="l03_c_felso_j"
          inkscape:label="l03_c_felso_j" />
       <path
          d="m 135.62271,51.740354 2.32543,-0.52865 5.12476,24.157698 -2.26188,0.0941 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_felso_l"
+         class="l03_c_felso_l"
          inkscape:label="l03_c_felso_l" />
       <path
          d="m 135.38192,51.868977 5.18831,23.723105 -2.32079,0.0966 -4.74286,-23.393916 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_felso_k"
+         class="l03_c_felso_k"
          inkscape:label="l03_c_felso_k" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2301,42 +2304,42 @@
       <path
          d="m 112.6894,57.168622 3.96513,20.71553 -1.90583,0.0868 -3.66024,-20.497455 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_a"
+         class="l03_c_also_a"
          inkscape:label="l03_c_also_a" />
       <path
          d="m 114.59187,56.76202 4.51342,20.926892 -2.17558,0.0987 -3.96513,-20.715536 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_b"
+         class="l03_c_also_b"
          inkscape:label="l03_c_also_b" />
       <path
          d="m 116.8075,56.284642 4.54184,21.20439 -1.95078,0.0884 -4.51342,-20.926887 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_c"
+         class="l03_c_also_c"
          inkscape:label="l03_c_also_c" />
       <path
          d="m 119.081,55.778038 4.44882,21.502044 -1.92908,0.0879 -4.54184,-21.204388 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_d"
+         class="l03_c_also_d"
          inkscape:label="l03_c_also_d" />
       <path
          d="m 121.16189,55.293797 4.50567,21.769215 -1.91513,0.0868 -4.44882,-21.502048 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_e"
+         class="l03_c_also_e"
          inkscape:label="l03_c_also_e" />
       <path
          d="m 123.57518,54.763828 4.3279,22.092194 -1.99574,0.091 -4.50567,-21.769217 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_f"
+         class="l03_c_also_f"
          inkscape:label="l03_c_also_f" />
       <path
          d="m 125.98099,54.080694 2.23397,-0.425297 4.3925,22.693705 -2.24431,0.1018 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_h"
+         class="l03_c_also_h"
          inkscape:label="l03_c_also_h" />
       <path
          d="m 125.69987,54.286566 4.38216,22.370206 -1.98851,0.0904 -4.3279,-22.092187 z"
          style="opacity:0.6;fill:#d38d5f;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_c_also_g"
+         class="l03_c_also_g"
          inkscape:label="l03_c_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2349,22 +2352,22 @@
       <path
          d="m 114.59563,23.455082 15.0611,26.118819 -1.79937,0.490926 -14.37587,-25.378812 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_felso_i"
+         class="l03_b_felso_i"
          inkscape:label="l03_b_felso_i" />
       <path
          d="m 134.04982,47.715454 -16.45481,-27.759546 1.3162,-1.453658 17.56896,28.550195 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_felso_l"
+         class="l03_b_felso_l"
          inkscape:label="l03_b_felso_l" />
       <path
          d="m 116.21278,21.50225 1.16737,-1.289843 16.45481,27.759546 -2.01952,0.55087 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_felso_k"
+         class="l03_b_felso_k"
          inkscape:label="l03_b_felso_k" />
       <path
          d="m 116.04218,21.805651 15.60267,27.020573 -1.80351,0.491443 -15.0611,-26.118819 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_felso_j"
+         class="l03_b_felso_j"
          inkscape:label="l03_b_felso_j" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2377,42 +2380,42 @@
       <path
          d="m 101.21299,36.547306 11.15746,19.324919 -1.60352,0.401009 -10.980729,-18.301209 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_a"
+         class="l03_b_also_a"
          inkscape:label="l03_b_also_a" />
       <path
          d="m 102.59099,35.195869 11.83442,20.039087 -1.85674,0.464055 -11.15746,-19.324919 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_b"
+         class="l03_b_also_b"
          inkscape:label="l03_b_also_b" />
       <path
          d="m 104.15306,33.568558 12.14758,21.040576 -1.75493,0.438733 -11.83442,-20.039087 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_c"
+         class="l03_b_also_c"
          inkscape:label="l03_b_also_c" />
       <path
          d="m 105.53727,32.084128 12.56616,21.8736 -1.6707,0.417545 -12.14758,-21.040576 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_d"
+         class="l03_b_also_d"
          inkscape:label="l03_b_also_d" />
       <path
          d="m 106.89903,30.64931 13.07775,22.65133 -1.72134,0.430465 -12.56616,-21.8736 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_e"
+         class="l03_b_also_e"
          inkscape:label="l03_b_also_e" />
       <path
          d="m 108.38636,29.08448 13.58263,23.525179 -1.8402,0.45992 -13.07775,-22.65133 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_f"
+         class="l03_b_also_f"
          inkscape:label="l03_b_also_f" />
       <path
          d="m 110.17065,27.28229 1.69964,-1.697571 14.62443,25.624276 -2.19367,0.548287 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_h"
+         class="l03_b_also_h"
          inkscape:label="l03_b_also_h" />
       <path
          d="m 110.0121,27.50225 14.1304,24.474992 -1.99988,0.500228 -13.58263,-23.525179 z"
          style="opacity:0.6;fill:#ac9393;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_b_also_g"
+         class="l03_b_also_g"
          inkscape:label="l03_b_also_g" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2425,22 +2428,22 @@
       <path
          d="m 80.856605,13.419519 26.514665,5.681824 -0.89349,1.48208 -25.621175,-5.318022 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_felso_i"
+         class="l03_a_felso_i"
          inkscape:label="l03_a_felso_i" />
       <path
          d="M 80.922745,11.272669 108.411,17.226311 107.43741,18.842233 80.922745,13.160409 Z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_felso_j"
+         class="l03_a_felso_j"
          inkscape:label="l03_a_felso_j" />
       <path
          d="M 80.922745,9.196096 109.34066,15.386932 108.411,16.928957 80.922745,10.975315 Z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_felso_k"
+         class="l03_a_felso_k"
          inkscape:label="l03_a_felso_k" />
       <path
          d="m 80.922745,6.711829 29.355835,6.791316 -0.93792,1.555978 -28.417915,-6.190836 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_felso_l"
+         class="l03_a_felso_l"
          inkscape:label="l03_a_felso_l" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2453,42 +2456,42 @@
       <path
          d="m 80.351975,22.730781 23.033745,4.694804 -0.8506,1.519804 -22.183145,-4.521171 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_e"
+         class="l03_a_also_e"
          inkscape:label="l03_a_also_e" />
       <path
          d="M 80.386865,30.966768 99.782071,34.919499 98.688076,36.873901 80.386865,33.21366 Z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_a"
+         class="l03_a_also_a"
          inkscape:label="l03_a_also_a" />
       <path
          d="M 80.386865,28.743847 100.78304,32.900699 99.782071,34.689221 80.386865,30.73649 Z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_b"
+         class="l03_a_also_b"
          inkscape:label="l03_a_also_b" />
       <path
          d="m 80.386865,26.782923 21.246765,4.330485 -0.85059,1.519804 -20.396175,-4.156852 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_c"
+         class="l03_a_also_c"
          inkscape:label="l03_a_also_c" />
       <path
          d="m 80.386865,24.688801 22.183145,4.521171 -0.93638,1.672766 -21.246765,-4.330485 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_d"
+         class="l03_a_also_d"
          inkscape:label="l03_a_also_d" />
       <path
          d="m 80.351785,20.786045 23.905005,4.872054 -0.87126,1.557011 -23.033745,-4.694804 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_f"
+         class="l03_a_also_f"
          inkscape:label="l03_a_also_f" />
       <path
          d="m 80.351785,18.882134 24.755595,5.045687 -0.85059,1.519803 -23.905005,-4.872054 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_g"
+         class="l03_a_also_g"
          inkscape:label="l03_a_also_g" />
       <path
          d="m 80.386865,16.961654 25.621695,5.221903 -0.8661,1.547193 -24.755595,-5.045687 z"
          style="opacity:0.6;fill:#ff5555;fill-opacity:0.254902;fill-rule:evenodd;stroke:#000000;stroke-width:0.101023;paint-order:stroke markers fill"
-         id="l03_a_also_h"
+         class="l03_a_also_h"
          inkscape:label="l03_a_also_h" />
       <path
          style="fill:#2e2f70;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill"

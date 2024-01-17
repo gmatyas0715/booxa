@@ -69,6 +69,5 @@ export class KosarService {
       }
       hely++;
     }
-    console.log(this.jegyAdatLista[index].ulohely)
   }
 }

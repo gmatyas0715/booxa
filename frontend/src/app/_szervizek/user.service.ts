@@ -63,7 +63,6 @@ export class UserService {
     })
     this.http.delete(this.apiUrl+'userek/'+userId,{headers}).subscribe(
       (response) => {
-        console.log('Sikeres törlés', response);
         this.cookieService.deleteAll();
         this.router.navigate(['/kezdooldal']);
       },

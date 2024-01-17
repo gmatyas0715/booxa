@@ -104,13 +104,10 @@ export class EsemenyKeresoComponent {
 
   esemenyKereses(){
     this.esemenySzerviz.eloadoAdatok(this.keresettEloado,this.keresettHelyszin)
-      .subscribe((valasz) => {
-        this.esemenyLista = valasz;
-        console.log(this.esemenyLista[0].idopont,this.esemenyLista[0].idopont instanceof Date)
-    },
-    (error) => {
-      console.error('Hiba az eseménylekérdezésben!', error);
-    });
+      .subscribe({
+        next: (valasz) => {this.esemenyLista = valasz},
+        error: (error) =>{console.error('Hiba az eseménylekérdezésben!', error)}
+      });
   }
 
   ferohelyek:string[] = 
