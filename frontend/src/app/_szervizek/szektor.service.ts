@@ -10,7 +10,7 @@ export class SzektorService {
 
   constructor(private http:HttpClient) { }
 
-  szektorok(esemenyId:string):Observable<SzektorModell[]> {
-    return this.http.get<SzektorModell[]>('http://localhost:8000/api/kivalasztott-szektorok/'+esemenyId);
+  szektorok(esemenyId:string):Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8000/api/kivalasztott-szektorok/'+esemenyId);
   }
 }

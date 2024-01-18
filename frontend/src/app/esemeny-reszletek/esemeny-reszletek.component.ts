@@ -24,7 +24,8 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
   kivalasztottHelyszinNev:string = "";
   kivalasztottEloadoNev:string = "";
   kivalasztottEsemenyDatum:Date = new Date('MM/DD/YYYY');
-  kivalasztottSzektorok:any[] = [];
+  kivalasztottSzektorok:SzektorModell[] = [];
+  osszesSzektor:SzektorModell[] = [];
   kivalasztottSzektor:any;
   kivalasztottSzektorAlegyseg:any;
   kivalasztottUlohelyek:number[] = [];
@@ -56,7 +57,8 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
                 });
                 this.szektorFoglaltsag(this.esemenyId);
                 this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
-                  this.kivalasztottSzektorok = valasz;
+                  this.kivalasztottSzektorok = [...valasz]
+                  this.osszesSzektor = [...valasz]
                 });
   }
 
@@ -68,21 +70,44 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
     
   }
 
-  szektorSzinezes(group:string){
+  szektorSzinezes(group:string,opacity:number){
     const svg = document.querySelector("svg");
     const element = svg!.getElementById(group);
     const childElements = element.children;
 
     for (let i = 0; i < childElements.length; i++) {
       const child = childElements[i];
-      console.log(child)
-      this.renderer.setStyle(child, 'fill', 'blue');
+      this.renderer.setStyle(child, 'opacity',opacity);
     }
+  }
+    
+  szektorKijelolesTorles(){
+    this.kivalasztottSzektorok = []
+  }
+  
+  osszesSzektorKijeloles(){
+    this.kivalasztottSzektorok = [...this.osszesSzektor]
   }
 
   clickEvent(group:string){
-    console.log(group+' szektor clicked!')
-    this.szektorSzinezes(group);
+    let szektorListaban:boolean = false;
+    for (let szektor of this.kivalasztottSzektorok){
+      if (szektor.id==group){
+        szektorListaban = true;
+        this.kivalasztottSzektorok.splice(this.kivalasztottSzektorok.indexOf(szektor),1);
+        this.szektorSzinezes(group,0.3);
+        break;
+      }
+    }
+      
+    if (!szektorListaban){
+      for (let szektor of this.osszesSzektor){
+        if (szektor.id==group){
+          this.kivalasztottSzektorok.push(szektor);
+          this.szektorSzinezes(group,1);
+        }
+      }
+    }
   }
 
   helyszinSvgBetoltes(){
@@ -90,7 +115,6 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
     this.helyszinSzerviz.helyszinSvgKepUrl(this.kivalasztottHelyszin.svg_kep_eleres).subscribe((valasz)=>{
         this.helyszinSvg =  valasz;
         this.renderer.setProperty(this.svgContainer.nativeElement, 'innerHTML', this.helyszinSvg);
-        console.log(this.kivalasztottSzektorok)
         this.kivalasztottSzektorok.forEach(szektor => {
           const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
           this.renderer.listen(g, 'click', () => {
