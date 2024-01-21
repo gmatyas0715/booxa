@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('iranyitoszam',50)->nullable();
             $table->string('telepules',100);
             $table->string('kozterulet',50);
-            $table->integer('hazszam');
+            $table->string('hazszam',10);
             $table->timestamps();
         });
     }

@@ -67,7 +67,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return response()->json(['üzenet'=>$user->id.' azonosítójú felhasználó sikeresen törölve!']);
+        return response()->json(['msg'=>$user->felhasznalonev.', sikeresen törölted a fiókodat!']);
     }
 
     public function belepesAdatCheck(UpdateUserRequest $request, User $user) {

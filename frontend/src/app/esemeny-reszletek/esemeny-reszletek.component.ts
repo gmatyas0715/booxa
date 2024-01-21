@@ -82,11 +82,32 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
   }
     
   szektorKijelolesTorles(){
+    
+    const mainGroup = document.querySelector("g");
+    const groups = mainGroup!.querySelectorAll("g");
+    groups.forEach(group => {
+      const childElements = group.children;
+      for (let i = 0; i < childElements.length; i++) {
+        const child = childElements[i];
+        this.renderer.setStyle(child, 'opacity',0.3);
+      }
+      
+    });
     this.kivalasztottSzektorok = []
   }
   
   osszesSzektorKijeloles(){
+    const mainGroup = document.querySelector("g");
+    const groups = mainGroup!.querySelectorAll("g");
+    groups.forEach(group => {
+      const childElements = group.children;
+      for (let i = 0; i < childElements.length; i++) {
+        const child = childElements[i];
+        this.renderer.setStyle(child, 'opacity',1);
+      }
+    });
     this.kivalasztottSzektorok = [...this.osszesSzektor]
+    this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
   }
 
   clickEvent(group:string){
@@ -95,6 +116,7 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
       if (szektor.id==group){
         szektorListaban = true;
         this.kivalasztottSzektorok.splice(this.kivalasztottSzektorok.indexOf(szektor),1);
+        this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
         this.szektorSzinezes(group,0.3);
         break;
       }
@@ -104,6 +126,7 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
       for (let szektor of this.osszesSzektor){
         if (szektor.id==group){
           this.kivalasztottSzektorok.push(szektor);
+          this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
           this.szektorSzinezes(group,1);
         }
       }

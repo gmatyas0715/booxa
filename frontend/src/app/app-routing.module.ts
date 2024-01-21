@@ -5,11 +5,12 @@ import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.componen
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemenyKereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
-import { FizetesReszletekComponent } from './fizetes-reszletek/fizetes-reszletek.component';
+import { SzamlazasiAdatokComponent } from './fizetes-reszletek/szamlazasi-adatok.component';
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
+import { BankkartyaComponent } from './bankkartya/bankkartya.component';
 
 const routes: Routes = [
     {
@@ -42,9 +43,9 @@ const routes: Routes = [
       component:EsemenyKeresoComponent 
     },
     {
-      title:'Fizetés részletek',
-      path:'fizetesReszletek',
-      component:FizetesReszletekComponent  
+      title:'Számlázási adatok',
+      path:'szamlazasiAdatok',
+      component:SzamlazasiAdatokComponent  
     },
     {
       title:'Bejelentkezés',
@@ -65,6 +66,11 @@ const routes: Routes = [
       title:'Jegyvásárlás előzmények',
       path:'jegyVasarlasElozmenyek',
       component:JegyVasarlasElozmenyekComponent
+    },
+    {
+      title:'Bankkártya adatok',
+      path:'bankkartyaAdatok',
+      component:BankkartyaComponent
     }
   ];
 

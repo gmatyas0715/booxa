@@ -1,0 +1,93 @@
+<div class="container" id="regisztracio">
+    <form [formGroup]="fizetesForm" (ngSubmit)="megrendelesElkuldes()">
+        <div class="row"><h2>Fizetés részletek</h2></div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 col-xl-6">
+                <div class="row">
+                    <label class="mandatory" for="vezeteknev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev" placeholder="Vezetéknév">
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-6">
+                <div class="row">
+                    <label for="keresztnev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev" placeholder="Keresztnév">
+                </div>
+            </div>
+            <div class="mb-3" *ngIf="fizetesForm.get('vezeteknev')?.hasError('required') && fizetesForm.get('vezeteknev')?.touched || 
+            fizetesForm.get('keresztnev')?.hasError('required') && fizetesForm.get('keresztnev')?.touched">
+                <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
+                    <label for="email">E-mail cím <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input" id="email" type="email" formControlName="email" placeholder="E-mail cím">
+                </div>
+                <div class="row mb-3" *ngIf="fizetesForm.get('email')?.hasError('required') && fizetesForm.get('email')?.touched">
+                    <span class="hibauzenet">Az e-mail mező nem maradhat üresen!</span>
+                </div>
+                <div class="row mb-3"  *ngIf="fizetesForm.get('email')?.hasError('nemMegfeleloEmail')">
+                    <span class="hibauzenet">A megadott adat nem érvényes e-mail cím!</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
+                    <label>Irányítószám <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input" id="iranyitoszam" type="text" formControlName="iranyitoszam" placeholder="Irányítószám">
+                </div>
+                <div class="row mb-3"  *ngIf="fizetesForm.get('iranyitoszam')?.hasError('required') && fizetesForm.get('iranyitoszam')?.touched">
+                    <span class="hibauzenet">Az irányítószám mező nem maradhat üresen!</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
+                    <label>Település <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input" id="telepules" type="text" formControlName="telepules" placeholder="Település">
+                </div>
+                <div class="row mb-3"  *ngIf="fizetesForm.get('telepules')?.hasError('required') && fizetesForm.get('telepules')?.touched">
+                    <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
+                    <label>Utca <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input" id="kozterulet" type="text" formControlName="kozterulet" placeholder="Közterület">
+                </div>
+                <div class="row mb-3"  *ngIf="fizetesForm.get('kozterulet')?.hasError('required') && fizetesForm.get('kozterulet')?.touched">
+                    <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
+                    <label>Házszám <sup>*</sup>:</label>
+                </div>
+                <div class="row">
+                    <input class="felhasznalo-input" id="hazszam" type="text" formControlName="hazszam" placeholder="Házszám">
+                </div>
+                <div class="row mb-3"  *ngIf="fizetesForm.get('hazszam')?.hasError('required') && fizetesForm.get('hazszam')?.touched">
+                    <span class="hibauzenet">Az házszám mező nem maradhat üresen!</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button mat-raised-button type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg">Megrendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
+    </form>
+    <button mat-raised-button class="float-right p-1" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
+</div>

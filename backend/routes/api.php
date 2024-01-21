@@ -148,7 +148,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::post('/fizetesek', 'FizetesController@store');
 
         // Rendelés route-ok
-        Route::post('/rendelesek', 'RendelesController@store');
+        Route::post('/rendeles', 'RendelesController@store');
 
         // Jegy adat route-ok
         Route::get('/jegyadatok','JegyAdatController@index');

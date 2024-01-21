@@ -3,7 +3,6 @@ import { UserModell } from '../_modellek/user-modell';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +13,7 @@ export class UserService {
   private apiUrl = 'http://localhost:8000/api/';
 
   constructor(private http:HttpClient,
-              public cookieService:CookieService,
-              public router:Router) {}
+              public cookieService:CookieService) {}
     
   userRegisztralas(userAdatok: any):Observable<any> {
 
@@ -56,18 +54,11 @@ export class UserService {
     return this.http.patch<any>(this.apiUrl+'userek/'+userId,body,{headers});
   }
 
-  profilTorles(userId:string,userToken:string){
+  profilTorles(userId:string,userToken:string):Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
     })
-    this.http.delete(this.apiUrl+'userek/'+userId,{headers}).subscribe(
-      (response) => {
-        this.cookieService.deleteAll();
-        this.router.navigate(['/kezdooldal']);
-      },
-      (error) => {
-        console.error('Hiba a törlés során', error);
-      })
+    return this.http.delete<any>(this.apiUrl+'userek/'+userId,{headers});
   }
 }

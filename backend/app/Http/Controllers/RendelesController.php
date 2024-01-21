@@ -6,6 +6,7 @@ use App\Models\Rendeles;
 use App\Http\Requests\StoreRendelesRequest;
 use App\Http\Requests\UpdateRendelesRequest;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Log;
 
 class RendelesController extends Controller
 {
@@ -18,6 +19,8 @@ class RendelesController extends Controller
 
     public function store(StoreRendelesRequest $request)
     {
+        
+        Log::info($request);
         $ujrendeles = new Rendeles();
         $ujrendeles->rendeles_idopont = $request->input('rendeles_idopont');
         $ujrendeles->user_id = $request->input('user_id');

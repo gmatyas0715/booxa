@@ -9,7 +9,7 @@ export class JegyAdatModell {
     public ulohely:number[];
     public jegyDarabszam:number;
 
-    constructor(esemeny:EsemenyModell,szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell,ulohely:number[],jegyDarabszam:number) {
+    constructor(esemeny:EsemenyModell,szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell,ulohely:number[]=[],jegyDarabszam:number) {
         this.esemeny=esemeny;
         this.szektor = szektor;
         this.szektorAlegyseg = szektorAlegyseg;

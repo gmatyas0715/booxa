@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
+use App\Models\Szerep;
 
 class UserSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $szerepek = ['admin', 'szerkeszto', 'user_support', 'regisztralt_user'];
+        $szerepek = Szerep::pluck('name');
         $csvFilePath = storage_path('../../db/sql scriptek/user.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 

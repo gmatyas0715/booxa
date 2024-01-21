@@ -7,6 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil-beallitasok',
@@ -221,15 +222,30 @@ export class ProfilTorles {
   constructor(public dialogRef: MatDialogRef<ProfilTorles>,
               public userService: UserService,
               public userAzonositasService:UserAzonositasService,
-              public cookieService:CookieService)
+              public cookieService:CookieService,
+              private router:Router,
+              private _snackBar: MatSnackBar)
               {}
 
   profilTorles(){
-    this.userService.profilTorles(this.userAzonositasService.getUserId(),this.userAzonositasService.getAuthToken());
-    this.dialogRef.close();
+    this.userService.profilTorles(this.userAzonositasService.getUserId(),this.userAzonositasService.getAuthToken()).subscribe({
+      next:(response) => {
+        this.cookieService.deleteAll();
+        this.router.navigate(['/kezdooldal']);
+        this.dialogRef.close();
+        this.openSnackbar(response.msg)
+      },
+      error:(error) => {
+        console.error('Hiba a törlés során', error);
+      }    
+    });
   }
 
   megseClick(){
     this.dialogRef.close();
+  }
+  
+  openSnackbar(msg:string){
+    this._snackBar.open(msg,undefined,{duration:1500});
   }
 }
