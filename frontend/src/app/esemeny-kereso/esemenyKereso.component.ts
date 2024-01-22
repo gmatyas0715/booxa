@@ -14,7 +14,8 @@ import { KosarService } from '../_szervizek/kosar.service';
 })
 export class EsemenyKeresoComponent {
 
-  
+  public minJegyar:number = 3000;
+  public maxJegyar:number = 50000;
   public mufajLista: string[] = [];
   public telepulesLista: string[] = [];
   public eloadoJavaslatok: string[] = [];
@@ -63,6 +64,11 @@ export class EsemenyKeresoComponent {
         this.esemenyLista.sort((a,b)=>b.idopont.getTime()-a.idopont.getTime());
         break;
     }
+  }
+
+  jegyArHatarertekValtozas(){
+    if (this.maxJegyar<this.minJegyar)this.maxJegyar=this.minJegyar;
+    this.esemenyLista.sort()
   }
 
   helyszinCimBetoltes(){

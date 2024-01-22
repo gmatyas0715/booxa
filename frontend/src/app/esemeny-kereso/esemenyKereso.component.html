@@ -43,10 +43,21 @@
             <span class="font-weight-bold d-block mb-2">Szűrés jegyárra</span>
             <div class="row mb-4 kereses-block">
                 <div class="col d-block mb-2">
-                    <input class="mb-2" type="text" id="minJegyar" placeholder="Min. jegyár">
-                    <input type="text" id="maxJegyar" placeholder="Max. jegyár">
-                </div>
+                    <label for="minJegyar">Min. jegyár</label>
+                    <div class="row">
+                        <span>0 Ft</span>
+                        <input id="minJegyar" class="mb-2" type="range" id="minJegyar" placeholder="Min. jegyár" [(ngModel)]="minJegyar" max="50000" (change)="jegyArHatarertekValtozas()">
+                        <span>{{minJegyar}} Ft</span>
+                    </div>
 
+                    <label for="maxJegyar">Max. jegyár</label>
+                    <div>
+                        <span>{{minJegyar}} Ft</span>
+                        <input id="maxJegyar" type="range" placeholder="Max. jegyár" [(ngModel)]="maxJegyar" max="50000" [attr.min]="minJegyar">
+                        <span>{{maxJegyar}} Ft</span>
+                    </div>
+                    <span>Jegyárak {{minJegyar}} Ft - {{maxJegyar}} Ft között</span>
+                </div>
             </div>
             <span class="font-weight-bold d-block mb-2">Szűrés műfajokra</span>
             <div class="row mb-4 kereses-block szuro-container">

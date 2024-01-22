@@ -1,82 +1,86 @@
 <div class="container pt-3">
     <div class="row esemeny-fo-reszletek">
-        <div class="col">
-            <span class="d-block">{{kivalasztottEsemenyDatum}}</span>
-            <div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
+        <div class="col-2 pt-2 esemeny-fo-reszletek-cim d-flex align-items-center">
+            <h2 class="font-weight-bold text-center">Esemény info:</h2>
+        </div>
+        <div class="col pt-2">
+            <h4><span class="font-weight-bold">Előadó:</span> {{kivalasztottEloadoNev}}</h4>
+            <h4><span class="font-weight-bold">Helyszín:</span> {{kivalasztottHelyszinNev}}</h4>
+        </div>
+        <div class="col pt-2">
+            <h4 class="font-weight-bold">Esemény időpont:</h4>
+            <h4 >{{kivalasztottEsemenyDatum}}</h4>
+            <!--<div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
                 <div *ngIf="szektorfoglaltsag.value">
                     <h2>{{szektorfoglaltsag.value[0]}}</h2>
                 </div>    
-            </div>
-        </div>
-        <div class="col">
-            <h4>Előadó: {{kivalasztottEloadoNev}}</h4>
-            <h4>Helyszín: {{kivalasztottHelyszinNev}}</h4>
+            </div>-->
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <table *ngIf="jegyKivalasztas_e">
+    <div class="row mt-3">
+        <div class="col szektor-container p-0">
+            <table id="osszes-jegyadat-table" *ngIf="jegyKivalasztas_e">
                 <thead>
-                    <tr>
-                        <th class="col-4 border">Szektor adat</th>
-                        <th class="col-3 border">Jegyárak</th>
-                        <th class="col-2 border">Lefoglalás</th>
-                    </tr>
+                    <ng-container>
+                        <tr>
+                            <th class="col-4 border">Szektor adat</th>
+                            <th class="col-3 border">Jegyárak</th>
+                            <th class="col-2 border">Helyfoglaláshoz</th>
+                        </tr>
+                    </ng-container>
                 </thead>
                 <tbody>
                     <ng-container *ngFor="let szektor of kivalasztottSzektorok">
                         <tr *ngFor="let szektor_alegyseg of szektor.szektor_alegyseg">
                             <td class="border pl-3">{{szektor.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
                             <td class="border pl-3">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                            <td class="border pl-3 m-auto"><button mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
+                            <td class="border pl-3 m-auto kivalasztas-gomb"><button mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
             </table>
-            <div *ngIf="!jegyKivalasztas_e">
-                <table>
-                    <tr>
-                        <th>Szektor jelzés:</th>
-                        <td>{{kivalasztottSzektor.szektor_nev}}</td>
-                    </tr>
-                    <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
-                        <th>Sorjelzés:</th>
-                        <td>{{kivalasztottSzektorAlegyseg.sorjelzes}}</td>
-                    </tr>
-                    <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
-                        <th>Ülőhelyek:</th>
-                        <td>{{kivalasztottUlohelyek}}</td>
-                    </tr>
-                    <tr>
-                        <th>Jegy darabár:</th>
-                        <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                    </tr>
-                    <tr>
-                        <th>Jegy darabszám:</th>
-                        <td><input class="d-inline-block" type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000" placeholder="Jegyek száma"></td>
-                    </tr>
-                    <tr>
-                        <th>Jegy összár:</th>
-                        <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar*jegyFoglaltDarab}} Ft</td>
-                    </tr>
-                    <tr *ngIf="jegyFoglaltDarab>0">
-                        <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></td>
-                    </tr>
-                </table>
-            </div>
+            <table id="jegyadat-reszletek-table" *ngIf="!jegyKivalasztas_e">
+                <tr>
+                    <th class="jegyadat-cella">Szektor jelzés:</th>
+                    <td>{{kivalasztottSzektor.szektor_nev}}</td>
+                </tr>
+                <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
+                    <th class="jegyadat-cella">Sorjelzés:</th>
+                    <td>{{kivalasztottSzektorAlegyseg.sorjelzes}}</td>
+                </tr>
+                <tr *ngIf="kivalasztottSzektorAlegyseg.sorjelzes!='null'">
+                    <th class="jegyadat-cella">Ülőhelyek:</th>
+                    <td>{{kivalasztottUlohelyek}}</td>
+                </tr>
+                <tr>
+                    <th class="jegyadat-cella">Jegy darabár:</th>
+                    <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar}} Ft</td>
+                </tr>
+                <tr>
+                    <th class="jegyadat-cella">Jegy darabszám:</th>
+                    <td><input class="d-inline-block" type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000" placeholder="Jegyek száma"></td>
+                </tr>
+                <tr>
+                    <th class="jegyadat-cella">Jegy összár:</th>
+                    <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar*jegyFoglaltDarab}} Ft</td>
+                </tr>
+                <tr *ngIf="jegyFoglaltDarab>0">
+                    <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button mat-raised-button class="d-block" (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></td>
+                </tr>
+            </table>
         </div>
         <div class="col helyszin-container">
+            <button mat-raised-button class="d-inline bg-success text-white"  (click)="osszesSzektorKijeloles()">Összes szektor kijelölése</button>
+            <button mat-raised-button class="d-inline float-right bg-danger text-white"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
             <div #svgContainer></div>
-            <button mat-raised-button class="d-block"  (click)="osszesSzektorKijeloles()">Összes szektor kijelölése</button>
-            <button mat-raised-button class="d-block"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
         </div>
     </div>
-    <div class="row">
-        <button mat-raised-button routerLink="/esemenyKereso">Vissza az eseményekhez</button>
-        <button mat-raised-button routerLink="/kosarOsszegzo">Tovább a kosárhoz</button>
+    <div class="row mb-4">
+        <button mat-raised-button class="d-inline" routerLink="/esemenyKereso"><img class="ml-0 mr-2" id="kosar-ikon" src="../../assets/kepek/bal_nyil.png" alt="">Vissza az eseményekhez</button>
+        <button mat-raised-button class="d-inline ml-auto mr-0" routerLink="/kosarOsszegzo">Tovább a kosárhoz<img id="kosar-ikon" src="../../assets/kepek/kosar-ikon.svg" alt=""></button>
     </div>
 </div>
 

@@ -33,6 +33,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -70,7 +71,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatFormFieldModule,
     MatCardModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

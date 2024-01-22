@@ -6,7 +6,7 @@
     z-index: 100;
     width: 100%;
     height: 70px;
-    box-shadow: 0px 0px 5px 0px  #2e2f70;
+    box-shadow: 1px 1px 6px 1px #c8c8d6;
     background-color: rgb(246, 223, 92);
     color: #2e2f70;
 }
@@ -44,3 +44,4 @@ a{
     border-radius: 10px;
     box-shadow: 2px 2px 0px 0px  #2e2f70;
 }
+

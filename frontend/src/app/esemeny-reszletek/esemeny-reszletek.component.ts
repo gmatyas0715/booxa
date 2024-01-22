@@ -9,13 +9,14 @@ import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
 import { KosarService } from '../_szervizek/kosar.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SzektorAlegysegService } from '../_szervizek/szektor-alegyseg.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-esemeny-reszletek',
   templateUrl: './esemeny-reszletek.component.html',
   styleUrls: ['./esemeny-reszletek.component.css'],
 })
-export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
+export class EsemenyReszletekComponent{
   @ViewChild('svgContainer') svgContainer!: ElementRef;
 
   kivalasztottEsemeny:any;
@@ -23,7 +24,7 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
   kivalasztottEloado:any;
   kivalasztottHelyszinNev:string = "";
   kivalasztottEloadoNev:string = "";
-  kivalasztottEsemenyDatum:Date = new Date('MM/DD/YYYY');
+  kivalasztottEsemenyDatum:string = "";
   kivalasztottSzektorok:SzektorModell[] = [];
   osszesSzektor:SzektorModell[] = [];
   kivalasztottSzektor:any;
@@ -42,13 +43,13 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
               public szektorAlegysegSzerviz:SzektorAlegysegService,
               private kosarService:KosarService,
               private _snackBar: MatSnackBar,
-              private renderer: Renderer2) {
-
+              private renderer: Renderer2,
+              private datePipe:DatePipe) {
                 this.esemenyId = this.route.snapshot.paramMap.get('id') as string;
                 this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
                   this.kivalasztottEsemeny=valasz;
                   console.log(this.kivalasztottEsemeny)
-                  this.kivalasztottEsemenyDatum = this.kivalasztottEsemeny.idopont;
+                  this.kivalasztottEsemenyDatum = this.datumFormazas(this.kivalasztottEsemeny.idopont);
                   this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
                   this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
                   this.kivalasztottHelyszinNev = this.kivalasztottHelyszin.nev;
@@ -60,14 +61,6 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
                   this.kivalasztottSzektorok = [...valasz]
                   this.osszesSzektor = [...valasz]
                 });
-  }
-
-  ngOnInit(): void {
-
-  }
-
-  ngAfterViewInit(): void {
-    
   }
 
   szektorSzinezes(group:string,opacity:number){
@@ -174,6 +167,11 @@ export class EsemenyReszletekComponent implements OnInit, AfterViewInit{
     this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz)=>{
       this.szektorFoglaltsagok = valasz;
     });
+  }
+
+  datumFormazas(datum:Date):string{
+    return this.datePipe.transform(datum,'yyyy/MM/dd HH:mm')!+', '+
+    datum.toLocaleDateString('hu-HU',{weekday:'long'}).charAt(0).toUpperCase()+datum.toLocaleDateString('hu-HU',{weekday:'long'}).slice(1)
   }
 
   openSnackbar(){
