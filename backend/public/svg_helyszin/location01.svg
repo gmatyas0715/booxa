@@ -481,7 +481,7 @@
     </g>
     <g
        id="l01_bal_szarny"
-       style="fill:#e0b200;fill-opacity:1;stroke:none"
+       style="fill:#e0b200;fill-opacity:1;stroke:none;cursor:pointer"
        transform="matrix(0.99,0,0,0.99,0.44999996,0.30319551)">
       <path
          style="fill:#e0b200;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill"
@@ -514,7 +514,7 @@
     </g>
     <g
        id="l01_center_1"
-       style="fill:#44aa00;fill-opacity:1;stroke:none"
+       style="fill:#44aa00;fill-opacity:1;stroke:none;cursor:pointer"
        transform="matrix(0.96059601,0,0,0.96059601,2.1872629,2.1904573)">
       <path
          d="m 59.625425,34.875091 -27.000676,16.87455 10.124964,21.375441 28.68414,0 -0.03652,-7.621631 17.414961,0 v 7.621545 l 27.063194,8.6e-5 10.12496,-21.375441 -27.000679,-16.87455 z"
@@ -526,7 +526,7 @@
     </g>
     <g
        id="l01_center_2"
-       style="fill:#0868ff;fill-opacity:1;stroke:none"
+       style="fill:#0868ff;fill-opacity:1;stroke:none;cursor:pointer"
        transform="matrix(0.99,0,0,0.99,0.73680261,0.93336918)">
       <path
          d="m 87.749996,74.249996 v 5.45724 H 70.7887 V 74.261057 H 31.513189 l -0.01335,6.738939 H 20.249842 c 6.154788,10.202981 11.567869,20.775854 16.887259,31.423844 h 84.350669 l 5.62291,-38.162783 z"

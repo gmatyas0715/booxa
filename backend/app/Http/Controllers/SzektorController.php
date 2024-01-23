@@ -6,6 +6,8 @@ use App\Models\Szektor;
 use App\Models\Esemeny;
 use App\Http\Requests\StoreSzektorRequest;
 use App\Http\Requests\UpdateSzektorRequest;
+use App\Models\SzektorAlegyseg;
+use App\Models\SzektorAlegysegAr;
 
 class SzektorController extends Controller
 {
@@ -21,7 +23,6 @@ class SzektorController extends Controller
 
     public function kivalasztottSzektorok(Esemeny $esemeny){
 
-        $jegyAlapar = $esemeny->jegy_alapar;
         $szektorok = Szektor::query()
         ->whereHas('helyszin.esemeny', function ($query) use ($esemeny){
             $query->where('id', $esemeny->id);
@@ -33,12 +34,15 @@ class SzektorController extends Controller
                 $query->select('id','arszorzo','max_kapacitas','sorjelzes','szektor_id');
             }
         ]);
-
-        $szektorok->each(function ($szektor) use ($jegyAlapar){
-            $szektor->szektor_alegyseg->each(function ($szektorAlegyseg) use ($jegyAlapar){
-                $szektorAlegyseg->szektor_alegyseg_jegyar = round($jegyAlapar * $szektorAlegyseg->arszorzo-$jegyAlapar * $szektorAlegyseg->arszorzo%100-1);
-            });
-        });
+        
+        foreach ($szektorok as $szektor) {
+            foreach ($szektor->szektor_alegyseg as $szektor_alegyseg) {
+                $szektor_alegyseg->szektor_alegyseg_jegyar = SzektorAlegysegAr::where('esemeny_id', $esemeny->id)
+                ->where('szektor_alegyseg_id', $szektor_alegyseg->id)
+                ->pluck('szektor_alegyseg_ar')
+                ->first();
+            }
+        }
 
     return response()->json($szektorok);
     }

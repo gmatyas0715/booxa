@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
@@ -48,7 +48,6 @@ export class EsemenyReszletekComponent{
                 this.esemenyId = this.route.snapshot.paramMap.get('id') as string;
                 this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
                   this.kivalasztottEsemeny=valasz;
-                  console.log(this.kivalasztottEsemeny)
                   this.kivalasztottEsemenyDatum = this.datumFormazas(this.kivalasztottEsemeny.idopont);
                   this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
                   this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;

@@ -86,8 +86,18 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <span>Fizetési mód kiválasztása:</span>
+            </div>
+            <div class="col">
+                <input type="radio" name="" id="">
+                <img class="w-50 ml-2" src="../../assets/kepek/credit-card.svg" alt="">
+                <span>Bankkártya</span>
+            </div>
+        </div>
         <br>
-        <button mat-raised-button type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg">Megrendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
+        <button mat-raised-button class="p-1 float-left" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
+        <button mat-raised-button type="submit" [disabled]="validFormEllenorzes()" id="gomb-reg">Tovább a fizetéshez</button>
     </form>
-    <button mat-raised-button class="float-right p-1" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
 </div>

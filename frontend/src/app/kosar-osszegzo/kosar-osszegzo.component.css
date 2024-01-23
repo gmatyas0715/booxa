@@ -27,3 +27,8 @@ li{
 .jegy-darab{
     background-color: rgb(1 12 128);
 }
+
+#kosar-ikon{
+    margin-left: 10px;
+    height: 25px;
+}

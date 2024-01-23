@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('szektor_alegyseg_id',20);
             $table->foreignId('esemeny_id');
             $table->integer('szektor_alegyseg_ar');
-            $table->foreign('szektor_id')
+            $table->foreign('szektor_alegyseg_id')
                 ->references('id')
-                ->on('szektor')
+                ->on('szektor_alegyseg')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('esemeny_id')
