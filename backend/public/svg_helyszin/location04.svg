@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1"
-     inkscape:cx="243"
-     inkscape:cy="169.5"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="201"
+     inkscape:cy="222.5"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
@@ -556,7 +556,7 @@
        xlink:href="#linearGradient146"
        id="linearGradient161"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.029932,0,0,1.1255088,-1.0337658,-12.794238)"
+       gradientTransform="matrix(1.029932,0,0,1.1255088,-1.0337658,-12.860384)"
        x1="101.15678"
        y1="74.910924"
        x2="122.95812"
@@ -566,7 +566,7 @@
        xlink:href="#linearGradient165"
        id="linearGradient163"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.029932,0,0,1.1255088,-1.0337658,-12.794238)"
+       gradientTransform="matrix(1.029932,0,0,1.1255088,-1.0337658,-12.860384)"
        x1="101.15678"
        y1="74.910924"
        x2="122.95812"
@@ -785,12 +785,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#b46024;fill-opacity:0.253041;fill-rule:evenodd;stroke:none;stroke-width:0.106705;paint-order:stroke markers fill"
+       style="fill:#b46024;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.106705;paint-order:stroke markers fill"
        d="m 52.457633,133.36027 h 56.494387 v 20.44036 H 52.457627 Z"
        id="szinpad"
        sodipodi:nodetypes="ccccc" />
     <rect
-       style="fill:#716b67;fill-opacity:0.328467;fill-rule:evenodd;stroke:none;stroke-width:0.157634;stroke-dasharray:none;paint-order:stroke markers fill"
+       style="fill:#716b67;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.157634;stroke-dasharray:none;paint-order:stroke markers fill"
        id="rect11"
        width="9.6902666"
        height="9.0592556"
@@ -1191,7 +1191,7 @@
        width="22.453897"
        height="6.0268998"
        x="103.15082"
-       y="68.505219"
+       y="68.439072"
        ry="3.0134499" />
     <text
        xml:space="preserve"
@@ -1461,7 +1461,7 @@
        xml:space="preserve"
        transform="matrix(0.11297031,0.10455834,-0.11204688,0.1199771,127.77767,6.1403975)"
        id="text12-6-6-8-98-9-3-9-95-2-5-5-2-8-93-5-3-9-1-0-8-7"
-       style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9-23-3-5-5-0-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.4371;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
+       style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9-23-3-5-5-0-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.43429;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
          id="tspan36">N</tspan></text>
