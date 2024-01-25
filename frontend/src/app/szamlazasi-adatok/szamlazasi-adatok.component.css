@@ -1,7 +1,61 @@
-.field-container input {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+#regisztracio{
+    width: 30%;
+    height: auto;
+    margin: 20px auto 20px auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px  #c8c8d6;
+    padding: 10px;
 }
+
+#regisztracio-form{
+    padding: 20px;
+}
+
+.felhasznalo-input{
+    margin: 0 0 20px 0;
+}
+
+.datum{
+    width: 150px;
+    margin:  0 8px 20px 0;
+}
+
+#gomb-reg{
+    display: block;
+    margin: auto;
+}
+
+#gomb-reg:hover{
+    background-color: rgb(152, 152, 181);
+    transition: 0.3s;
+}
+
+.hibauzenet{
+    color: red;
+}
+
+form{
+    padding: 5px 10px 10px 30px;
+}
+
+@media (max-width: 768px) {
+    #regisztracio {
+      width: 60%;
+    }
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.felhasznalo-input{
+    max-width: fit-content;
+}
+
+
+/*Bankkártya stílusok*/
 
 .field-container{
     width: 300px;
@@ -11,8 +65,19 @@ label {
     font-size: 13px;
 }
 
-input {
+#fizetesForm input {
     margin-top: 3px;
+    height: 10px;
+    padding: 15px;
+    font-size: 16px;
+    width: 90%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+}
+
+#bankkartyaAdatok input {
+    margin-top: 3px;
+    height: 10px;
     padding: 15px;
     font-size: 16px;
     width: 100%;
@@ -28,15 +93,6 @@ input {
     width: 60px;
 }
 
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    max-height: 251px;
-    height: 54vw;
-    padding: 20px;
-}
-
 #ccsingle svg {
     width: 100px;
     max-height: 60px;
@@ -44,7 +100,6 @@ input {
 
 .creditcard svg#cardfront{
     width: 100%;
-    -webkit-box-shadow: 1px 5px 6px 0px black;
     box-shadow: 1px 5px 6px 0px black;
     border-radius: 22px;
 }
@@ -120,18 +175,6 @@ input {
     padding: 10px;
     width: 420px;
     min-height: 650px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 2px #707070 ;
 }
 
-.whole-payment-page{
-    width: 100%;
-    justify-content: center;
-}
-
-.container{
-    max-width: 500px;
-    padding: 20px;
-    color: #707070;
-}
 

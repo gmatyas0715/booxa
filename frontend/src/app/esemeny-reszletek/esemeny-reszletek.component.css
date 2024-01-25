@@ -29,7 +29,7 @@
   }
 
 .szektor-container{
-    height: 500px;
+    height: 350px;
     overflow-y: auto;
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     border-radius: 10px;
@@ -67,3 +67,22 @@ thead{
     height: 25px;
 }
 
+.darab-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(246, 223, 92); /* Replace with your preferred background color */
+    color:#2e2f70; /* Replace with your preferred text color */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 1px 1px 1px 1px rgba(152, 168, 189,0.5);;
+  }
+  
+  .darab-button:hover {
+    background-color: #5e7997; /* Change the color for hover effect */
+  }

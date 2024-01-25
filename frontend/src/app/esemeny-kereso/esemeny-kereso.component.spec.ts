@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KeresesComponent } from './esemenyKereso.component';
+import { EsemenyKeresoComponent } from './esemeny-kereso.component';
 
 describe('KeresesComponent', () => {
-  let component: KeresesComponent;
-  let fixture: ComponentFixture<KeresesComponent>;
+  let component: EsemenyKeresoComponent;
+  let fixture: ComponentFixture<EsemenyKeresoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [KeresesComponent]
+      declarations: [EsemenyKeresoComponent]
     });
-    fixture = TestBed.createComponent(KeresesComponent);
+    fixture = TestBed.createComponent(EsemenyKeresoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

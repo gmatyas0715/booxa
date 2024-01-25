@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamp('rendeles_idopont');
             $table->foreignId('user_id');
+            $table->string('vezeteknev');
+            $table->string('keresztnev');
+            $table->string('email',100);
             $table->foreignId('fizetes_id')->unique();
             $table->foreign('user_id')
                 ->references('id')

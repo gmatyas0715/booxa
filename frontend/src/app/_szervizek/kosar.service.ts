@@ -12,12 +12,13 @@ export class KosarService {
 
   jegyAdatLista: JegyAdatModell[] = [];
 
-  getKosarOsszar():number{
+  getKosarOsszar(szervizAr:number=390):number{
+    if (this.jegyAdatLista.length==0)szervizAr=0;
     let kosarOsszar:number = 0;
     this.jegyAdatLista.forEach(jegy=>{
       kosarOsszar+=this.getTetelOsszarByItem(jegy);
     });
-    return kosarOsszar;
+    return kosarOsszar+szervizAr;
   }
 
   kosarbaHelyezes(jegyAdat:JegyAdatModell){

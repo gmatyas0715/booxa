@@ -12,10 +12,16 @@ import { Router } from '@angular/router';
 })
 export class SzamlazasiAdatokComponent {
 
+  bankkartyaSzam:string = "";
+  lejaratiIdo:string = "";
+  kartyaTulajdonos:string = "";
+  formazottBankkartyaSzam:string = ""
+  formazottLejaratiIdo:string = "";
   public jelenEv:number = new Date().getFullYear();
   public maxEvDatum:string = this.jelenEv-12+"-01-01"
   public minEvDatum:string = this.jelenEv-130+"-01-01"
   fizetesForm: FormGroup;
+  fizetesiMod:string = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,7 +36,8 @@ export class SzamlazasiAdatokComponent {
         iranyitoszam: ['',[Validators.required]],
         telepules: ['',[Validators.required]],
         kozterulet: ['',[Validators.required]],
-        hazszam: ['',[Validators.required]]
+        hazszam: ['',[Validators.required]],
+        fizetesmod: ['',[Validators.required]],
       });
     }
 
@@ -60,5 +67,25 @@ export class SzamlazasiAdatokComponent {
 
   validFormEllenorzes():boolean{
     return this.fizetesForm.invalid;
+  }
+
+  bankkartyaSzamFormazasa(){
+    switch (this.formazottBankkartyaSzam.length) {
+      case 4:
+        this.formazottBankkartyaSzam+=" "
+        break;
+      case 9:
+        this.formazottBankkartyaSzam+=" "
+        break; 
+      case 14:
+        this.formazottBankkartyaSzam+=" "
+        break;
+    }
+  }
+
+  bankkartyaLejaratFormazasa(){
+    if (this.formazottLejaratiIdo.length==2) {
+      this.formazottLejaratiIdo+="/"
+    }
   }
 }

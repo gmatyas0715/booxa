@@ -9,8 +9,8 @@ import { KosarService } from '../_szervizek/kosar.service';
 
 @Component({
   selector: 'app-esemeny-kereso',
-  templateUrl: './esemenyKereso.component.html',
-  styleUrls: ['./esemenyKereso.component.css']
+  templateUrl: './esemeny-kereso.component.html',
+  styleUrls: ['./esemeny-kereso.component.css']
 })
 export class EsemenyKeresoComponent {
 

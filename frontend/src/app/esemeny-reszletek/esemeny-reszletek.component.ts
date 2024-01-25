@@ -19,6 +19,7 @@ import { DatePipe } from '@angular/common';
 export class EsemenyReszletekComponent{
   @ViewChild('svgContainer') svgContainer!: ElementRef;
 
+  jegyFoglalhatoDarabok:number[] = [1,2,3,4,5]
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
@@ -175,5 +176,14 @@ export class EsemenyReszletekComponent{
 
   openSnackbar(){
     this._snackBar.open("Jegy kosárba helyezve!",'Mégse',{duration:2500}).onAction().subscribe(()=>{this.kosarService.jegyAdatLista.pop();});
+  }
+
+  foglaltDarabBeallitas(jegyFoglalhatoDarab:number){
+    this.jegyFoglaltDarab = jegyFoglalhatoDarab;
+  }
+
+  getSvgSzin(szektorAlegyseg:string):string{
+    const szin = this.svgContainer.nativeElement.querySelector(szektorAlegyseg).style.fill;
+    return szin ||'white';
   }
 }

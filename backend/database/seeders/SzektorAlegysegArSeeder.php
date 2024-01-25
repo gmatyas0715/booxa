@@ -12,9 +12,7 @@ class SzektorAlegysegArSeeder extends Seeder
 
     public function run(): void
     {
-        Log::info('seeder eleje');
         $esemenyek = Esemeny::select('id','helyszin_id','jegy_alapar')->get();
-        Log::info($esemenyek);
 
         foreach ($esemenyek as $esemeny) {
             $esemenyAlapar = $esemeny->jegy_alapar;
@@ -30,6 +28,5 @@ class SzektorAlegysegArSeeder extends Seeder
                 }
             }
         }
-        Log::info('seeder vége');
     }
 }
