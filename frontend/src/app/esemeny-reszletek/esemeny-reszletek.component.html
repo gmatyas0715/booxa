@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabszám:</th>
-                    <td><button  *ngFor="let jegyFoglalhatoDarab of jegyFoglalhatoDarabok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyFoglalhatoDarab)">+{{jegyFoglalhatoDarab}}</button><!--<input class="d-inline-block" type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000" placeholder="Jegyek száma">--></td>
+                    <td><button  *ngFor="let jegyFoglalhatoDarab of jegyFoglalhatoDarabok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyFoglalhatoDarab)">{{jegyFoglalhatoDarab}}</button><!--<input class="d-inline-block" type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000" placeholder="Jegyek száma">--></td>
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy összár:</th>

@@ -6,6 +6,8 @@ import { HelyszinService } from '../_szervizek/helyszin.service';
 import { MufajService } from '../_szervizek/mufaj.service';
 import { CimService } from '../_szervizek/cim.service';
 import { KosarService } from '../_szervizek/kosar.service';
+import { DatePipe } from '@angular/common';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-esemeny-kereso',
@@ -24,13 +26,35 @@ export class EsemenyKeresoComponent {
   public keresettEloado:string = "";
   public keresettHelyszin:string = "";
   public talalatRendezesOpcio:string = "datum_n";
+  public cols:number = 2;
   
   constructor(public esemenySzerviz:EsemenyService,
               public eloadoSzerviz:EloadoService,
               public helyszinSzerviz:HelyszinService,
               public mufajSzerviz: MufajService,
               public cimSzerviz:CimService,
-              public kosarSzerviz:KosarService) {
+              public kosarSzerviz:KosarService,
+              private datePipe:DatePipe,
+              private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge
+    ]).subscribe(result => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        this.cols = 1;
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        this.cols = 2;
+      } else if (result.breakpoints[Breakpoints.Medium]) {
+        this.cols = 3;
+      } else if (result.breakpoints[Breakpoints.Large]) {
+        this.cols = 3;
+      } else if (result.breakpoints[Breakpoints.XLarge]) {
+        this.cols = 3;
+      }
+    });
     this.mufajBetoltes();
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();
@@ -136,5 +160,10 @@ export class EsemenyKeresoComponent {
 
   datumTorles(){
     this.esemenyDatum = "";
+  }
+
+  datumFormazas(datum:Date):string{
+    return this.datePipe.transform(datum,'yyyy/MM/dd HH:mm')!+', '+
+    datum.toLocaleDateString('hu-HU',{weekday:'long'}).charAt(0).toUpperCase()+datum.toLocaleDateString('hu-HU',{weekday:'long'}).slice(1)
   }
 }

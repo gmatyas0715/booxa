@@ -36,6 +36,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 
 import { CookieService } from 'ngx-cookie-service';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 
 
@@ -73,9 +75,13 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatCardModule,
     MatStepperModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatGridListModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
-  providers: [CookieService,DatePipe],
+  providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

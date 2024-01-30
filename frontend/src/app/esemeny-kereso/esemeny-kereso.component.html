@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid ml-5 mt-5 w-100">
+    <div class="ml-5 mt-5 w-100">
         <div class="row">
             <div class="col-lg-9 col-md-6 col-sm-12">
                 <h2>Keresési találatok</h2>
@@ -115,43 +115,29 @@
             </div>
         </div>
         <hr>
-       <div class="row">
-            <div *ngFor="let esemeny of esemenyLista" class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-5">
-                <div class="esemeny-container">
-                    <div class="row">
-                        <div class="col p-1">
-                            <img class="esemeny-kep" [src]="this.eloadoSzerviz.eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
+        <mat-grid-list  [cols]="cols" rowHeight="2:1">
+            <mat-grid-tile *ngFor="let esemeny of esemenyLista">
+                <mat-card class="container">
+                    <mat-card-content>
+                        <div class="row p-0">
+                            <div class="col text-center p-0">
+                                <img class="esemeny-kep m-2" [src]="this.eloadoSzerviz.eloadoKepUrl(esemeny.eloado.kep_eleres)" alt="">
+                                <span class="d-block text-center mt-2" style="font-family: fantasy;">{{esemeny.eloado.nev}}</span>
+                            </div>
+                            <div class="col p-0 relative">
+                                <b>Helyszín:</b>
+                                <span class="d-block">{{esemeny.helyszin.nev}}</span>
+                                <b>Időpont:</b>
+                                <span class="d-block">{{datumFormazas(esemeny.idopont)}}</span>
+                                <b>Jegyárak:</b>
+                                <span class="d-block">Már {{esemeny.jegy_alapar}} Ft-tól!</span>
+                                <button mat-raised-button class="float-right float-bottom" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
+                            </div>
                         </div>
-                        <div class="col p-1 ">
-                            <img class="esemeny-kep" [src]="this.helyszinSzerviz.helyszinKepUrl(esemeny.helyszin.helyszin_kep_eleres)" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            {{esemeny.eloado.nev}}
-                        </div>
-                        <div class="col text-center">
-                            {{esemeny.helyszin.nev}}
-                        </div>
-                    </div>
-                    <div class="row text-center pt-1 pb-0">
-                        <div class="col p-0">
-                            <b>Időpont:</b>
-                                <br>
-                                {{esemeny.idopont}}
-                        </div>
-                        <div class="col p-0">
-                            <b>Jegyárak:</b>
-                                <br>
-                                Már {{esemeny.jegy_alapar}} Ft-tól!
-                        </div>
-                        <div class="col">
-                            <button mat-raised-button class="float-right p-2" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
     </div>
 </div>
 

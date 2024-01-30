@@ -27,19 +27,10 @@ div{
   display: flex;
 }
 
-.esemeny-container{
-  box-shadow: 1px 1px 1px 1px #2e2f70;
-  border-radius: 10px;
-  height: flex;
-  width: fit-content;
-  overflow: hidden;
-  padding: 0px 15px 15px 15px;
-}
-
 .esemeny-kep{
-  width: 100%;
+  height: 150px;
   border-radius: 10px;
-  box-shadow: 0px 1px 1px 1px #2e2f70;
+  box-shadow: 0px 1px 1px 1px #c8c8d6;
 }
 
 a{
@@ -48,10 +39,6 @@ a{
 
 button{
   box-shadow: 0px 1px 1px 1px rgb(91, 91, 108);
-}
-
-.esemeny-container:hover{
-  box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
 }
 
 .kereses-block{
@@ -72,4 +59,18 @@ body {
 
 @media screen and (max-width: 600px) {
   .kereses-szures {width: 100%};
+}
+
+mat-card{
+  height: 95%;
+  width: 95%;
+}
+
+mat-grid-tile{
+  height: 100px;
+  overflow: hidden;
+}
+
+.esemeny-card:hover{
+  box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
 }

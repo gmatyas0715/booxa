@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $szerepek = Szerep::pluck('name');
+        $szerepek = Szerep::pluck('name')->toArray();
         $csvFilePath = storage_path('../../db/sql scriptek/user.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
@@ -36,8 +36,7 @@ class UserSeeder extends Seeder
                 'nem'=>$data[3],
                 'szuletesi_datum'=>$data[4],
                 'felhasznalonev'=>$data[5],
-                'jelszo'=>Hash::make($data[6]),
-                'profilkep_eleres'=>null,
+                'jelszo'=>Hash::make($data[6])
             ])->assignRole(Arr::random($szerepek));
         }
     }

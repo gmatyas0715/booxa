@@ -1,5 +1,5 @@
-<div class="container" id="regisztracio">
-    <form [formGroup]="fizetesForm" (ngSubmit)="megrendelesElkuldes()" id="fizetesForm">
+<div class="container" id="regisztracio" (ngSubmit)="megrendelesElkuldes()" >
+    <form [formGroup]="szamlazasiAdatForm" id="szamlazasiAdatForm">
         <div class="row"><h2>Rendelés összege: {{kosarSzerviz.getKosarOsszar()}} Ft</h2></div>
         <div class="row"><h2>Számlázási adatok</h2></div>
         <hr>
@@ -9,7 +9,7 @@
                     <label class="mandatory" for="vezeteknev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév <sup>*</sup>:</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev">
+                    <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev" mask="S*">
                 </div>
             </div>
             <div class="col-sm-12 col-xl-6">
@@ -17,11 +17,11 @@
                     <label for="keresztnev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév <sup>*</sup>:</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev">
+                    <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev" mask="S*">
                 </div>
             </div>
-            <div class="mb-3" *ngIf="fizetesForm.get('vezeteknev')?.hasError('required') && fizetesForm.get('vezeteknev')?.touched || 
-            fizetesForm.get('keresztnev')?.hasError('required') && fizetesForm.get('keresztnev')?.touched">
+            <div class="mb-3" *ngIf="vezeteknev?.hasError('required') && vezeteknev?.touched || 
+            keresztnev?.hasError('required') && keresztnev?.touched">
                 <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
             </div>
         </div>
@@ -33,10 +33,10 @@
                 <div class="row">
                     <input class="felhasznalo-input" id="email" type="email" formControlName="email">
                 </div>
-                <div class="row mb-3" *ngIf="fizetesForm.get('email')?.hasError('required') && fizetesForm.get('email')?.touched">
+                <div class="row mb-3" *ngIf="email?.hasError('required') && email?.touched">
                     <span class="hibauzenet">Az e-mail mező nem maradhat üresen!</span>
                 </div>
-                <div class="row mb-3"  *ngIf="fizetesForm.get('email')?.hasError('nemMegfeleloEmail')">
+                <div class="row mb-3"  *ngIf="email?.hasError('email')">
                     <span class="hibauzenet">A megadott adat nem érvényes e-mail cím!</span>
                 </div>
             </div>
@@ -47,9 +47,9 @@
                     <label>Irányítószám <sup>*</sup>:</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input" id="iranyitoszam" type="text" formControlName="iranyitoszam">
+                    <input class="felhasznalo-input" id="iranyitoszam" type="text" formControlName="iranyitoszam" mask="A*" maxlength="5">
                 </div>
-                <div class="row mb-3"  *ngIf="fizetesForm.get('iranyitoszam')?.hasError('required') && fizetesForm.get('iranyitoszam')?.touched">
+                <div class="row mb-3"  *ngIf="iranyitoszam?.hasError('required') && iranyitoszam?.touched">
                     <span class="hibauzenet">Az irányítószám mező nem maradhat üresen!</span>
                 </div>
             </div>
@@ -58,9 +58,9 @@
                     <label>Település <sup>*</sup>:</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input" id="telepules" type="text" formControlName="telepules">
+                    <input class="felhasznalo-input" id="telepules" type="text" formControlName="telepules" mask="S*">
                 </div>
-                <div class="row mb-3"  *ngIf="fizetesForm.get('telepules')?.hasError('required') && fizetesForm.get('telepules')?.touched">
+                <div class="row mb-3"  *ngIf="telepules?.hasError('required') && telepules?.touched">
                     <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <div class="row">
                     <input class="felhasznalo-input" id="kozterulet" type="text" formControlName="kozterulet">
                 </div>
-                <div class="row mb-3"  *ngIf="fizetesForm.get('kozterulet')?.hasError('required') && fizetesForm.get('kozterulet')?.touched">
+                <div class="row mb-3"  *ngIf="kozterulet?.hasError('required') && kozterulet?.touched">
                     <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
                 </div>
             </div>
@@ -80,9 +80,9 @@
                     <label>Házszám <sup>*</sup>:</label>
                 </div>
                 <div class="row">
-                    <input class="felhasznalo-input" id="hazszam" type="text" formControlName="hazszam">
+                    <input class="felhasznalo-input" id="hazszam" type="text" formControlName="hazszam" mask="0*" maxlength="4">
                 </div>
-                <div class="row mb-3"  *ngIf="fizetesForm.get('hazszam')?.hasError('required') && fizetesForm.get('hazszam')?.touched">
+                <div class="row mb-3"  *ngIf="hazszam?.hasError('required') && hazszam?.touched">
                     <span class="hibauzenet">Az házszám mező nem maradhat üresen!</span>
                 </div>
             </div>
@@ -92,12 +92,12 @@
                 <span>Fizetési mód kiválasztása:</span>
             </div>
             <div class="col">
-                <input formControlName="fizetesmod" id="fizetesmod" type="radio" value="bankkartya" [(ngModel)]="fizetesiMod">
+                <input formControlName="fizetesmod" id="fizetesmod" type="radio" value="bankkartya">
                 <img class="w-50 ml-2" src="../../assets/kepek/credit-card.svg" alt="">
                 <span>Bankkártya</span>
             </div>
         </div>
-        <div class="row mb-3" *ngIf="fizetesForm.get('fizetesmod')?.hasError('required') && fizetesForm.get('fizetesmod')?.touched">
+        <div class="row mb-3" *ngIf="fizetesmod?.hasError('required') && fizetesmod?.touched">
             <span class="hibauzenet">Az fizetésmód kiválasztása kötelező!</span>
         </div>
         <br>
@@ -126,16 +126,16 @@
                                         </g>
                                         <path class="lightblue" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                                     </g>
-                                    <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">{{formazottBankkartyaSzam}}</text>
-                                    <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{kartyaTulajdonos}}</text>
+                                    <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">{{bankkartyaSzam?.value |  mask:'0000 0000 0000 0000'}}</text>
+                                    <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{kartyaTulajdonos?.value | mask:'S*'}}</text>
                                     <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">kártyatulajdonos</text>
                                     <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">lejárati idő</text>
                                     <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">bankkártyaszám</text>
                                     <g>
-                                        <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">{{formazottLejaratiIdo}}</text>
+                                        <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">{{bankkartyaLejarat?.value | mask:'00/00'}}</text>
                                         <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
                                         <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
-                                        <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
+                                        <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9" />
                                     </g>
                                     <g id="cchip">
                                         <g>
@@ -176,29 +176,55 @@
                     </div>
                 </div>
                 <div id="bankkartyaAdatok" class="container mt-3 ml-auto mr-auto justify-content-center">
-                    <div class="field-container row w-100 m-auto">
-                        <label for="cardnumber" class="mb-1 mt-2" >Bankkártyaszám</label>
-                        <input id="cardnumber" class="mt-0"  [(ngModel)]="formazottBankkartyaSzam" type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" (input)="bankkartyaSzamFormazasa()" maxlength="19">
-                    </div>
-                    <div class="field-container row w-100 m-auto">
-                        <label for="name" class="mb-1 mt-2" >Kártyatulajdonos</label>
-                        <input id="name" class="mt-0"  [(ngModel)]="kartyaTulajdonos" maxlength="20" type="text">
-                    </div>
-                    <div class="field-container row w-100">
-                        <div class="col-8 ml-0">
-                            <label for="expirationdate" class="mb-1 mt-2" >Lejárati idő (mm/yy)</label>
-                            <input id="expirationdate" class="mt-0" [(ngModel)]="formazottLejaratiIdo" type="text" pattern="[0-9]*" (input)="bankkartyaLejaratFormazasa()" inputmode="numeric" maxlength="5">
+                    <form [formGroup]="bankkartyaAdatForm" id="bankkartyaAdatForm">
+                        <div class="field-container row w-100 m-auto">
+                            <label class="mb-1 mt-2" >Bankkártyaszám</label>
+                            <input id="bankkartyaSzam" formControlName="bankkartyaSzam" class="mt-0"  type="text" maxlength="19" mask="0000 0000 0000 0000">
                         </div>
-                        <div class="col-4 ml-0">
-                            <label for="securitycode" class="mb-1 mt-2" >CVV2</label>
-                            <input id="securitycode" class="mt-0"  type="password" pattern="[0-9]*" inputmode="numeric" maxlength="3">
+                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('required') && bankkartyaSzam?.touched">
+                            <span class="hibauzenet">A bankkártyaszám mező nem maradhat üresen!</span>
                         </div>
-                    </div>
-                    <div class="field-container d-flex justify-content-center mt-5" >
-                        <button mat-raised-button type="submit" [disabled]="validFormEllenorzes()" routerLink="/bankkartyaAdatok" id="gomb-reg">Megrendelem</button>
-                    </div>
+                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('bankkartyaSzamInvalid')">
+                            <span class="hibauzenet">A bankkkártyaszám csak számokat tartalmazhat!</span>
+                        </div>
+                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('bankkartyaSzamInvalid')">
+                            <span class="hibauzenet">A bankkkártyaszám csak számokat tartalmazhat!</span>
+                        </div>
+                        <div class="field-container row w-100 m-auto">
+                            <label class="mb-1 mt-2" >Kártyatulajdonos</label>
+                            <input id="kartyaTulajdonos" formControlName="kartyaTulajdonos" class="mt-0" maxlength="20" type="text" mask="S*">
+                        </div>
+                        <div class="row mb-3" *ngIf="kartyaTulajdonos?.hasError('required') && kartyaTulajdonos?.touched">
+                            <span class="hibauzenet">A bankkártya tulajdonos név mező nem maradhat üresen!</span>
+                        </div>
+                        <div class="field-container row w-100">
+                            <div class="col-8 ml-0">
+                                <label class="mb-1 mt-2" >Lejárati idő (mm/yy)</label>
+                                <input id="bankkartyaLejarat" formControlName="bankkartyaLejarat" class="mt-0" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="5" mask="00/00">
+                            </div>
+                            <div class="row mb-3" *ngIf="bankkartyaLejarat?.hasError('required') && bankkartyaLejarat?.touched">
+                                <span class="hibauzenet">A bankkártya lejárati idő mező nem maradhat üresen!</span>
+                            </div>
+                            <div class="row mb-3" *ngIf="bankkartyaLejarat?.hasError('bankkartyaLejaratInvalid')">
+                                <span class="hibauzenet">A bankkkártyaszám lejárat csak számokat tartalmazhat!</span>
+                            </div>
+                            <div class="col-4 ml-0">
+                                <label class="mb-1 mt-2" >CVV2</label>
+                                <input id="cvvKod" formControlName="cvvKod" class="mt-0"  type="password" maxlength="3" mask="000">
+                            </div>
+                            <div class="row mb-3" *ngIf="cvvKod?.hasError('required') && cvvKod?.touched">
+                                <span class="hibauzenet">Az CVV2 mező megadása kötelező!</span>
+                            </div>
+                            <div class="row mb-3" *ngIf="cvvKod?.hasError('cvvKodInvalid')">
+                                <span class="hibauzenet">A CVV2 mező csak számokat tartalmazhat!</span>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="field-container d-flex justify-content-center mt-5" >
+        <button mat-raised-button (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes()" id="gomb-reg">Megrendelem</button>
     </div>
 </div>

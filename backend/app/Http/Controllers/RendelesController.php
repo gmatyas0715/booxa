@@ -18,7 +18,7 @@ class RendelesController extends Controller
     }
 
     public function store(StoreRendelesRequest $request)
-    {
+    {   
         
         Log::info($request);
         $ujrendeles = new Rendeles();

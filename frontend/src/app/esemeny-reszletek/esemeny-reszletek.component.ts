@@ -19,7 +19,7 @@ import { DatePipe } from '@angular/common';
 export class EsemenyReszletekComponent{
   @ViewChild('svgContainer') svgContainer!: ElementRef;
 
-  jegyFoglalhatoDarabok:number[] = [1,2,3,4,5]
+  jegyFoglalhatoDarabok:number[] = [1,2,3,4,5];
   kivalasztottEsemeny:any;
   kivalasztottHelyszin:any;
   kivalasztottEloado:any;
