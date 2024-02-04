@@ -21,25 +21,32 @@ export class EsemenyService {
     this.kivalasztottEsemeny = valasztottEsemeny
   }
 
-  eloadoAdatok(eloado:string,helyszin:string):Observable<EsemenyModell[]>{
-    const params = new HttpParams()
-      .set('eloado',eloado)
-      .set('helyszin',helyszin);
+  esemenyKereses(eloado:string,
+                 helyszin:string,
+                 datum:string,
+                 keresettTelepulesek:string,
+                 keresettMufajok:string,
+                 minJegyar:number,
+                 maxJegyar:number):Observable<any[]>{
 
-      return this.http.get<EsemenyModell[]>('http://localhost:8000/api/esemenyKereso',{params})
-      .pipe(
-        map((responseArray: EsemenyModell[]) => {
-          // Convert string dates to Date objects for each element in the array
-          return responseArray.map((item: EsemenyModell) => {
-            item.idopont = new Date(item.idopont);
-            return item;
-          });
-        })
-      );
+    console.log(eloado+" "+helyszin+" "+datum+" "+keresettTelepulesek+" "+keresettMufajok+" "+minJegyar+" "+maxJegyar+" ")
+    let params = new HttpParams();
+
+    if (eloado!="") params = params.set('eloado',eloado)
+    if (helyszin!="") params = params.set('helyszin',helyszin)
+    if (datum!="") params = params.set('datum',datum)
+    if (keresettTelepulesek!="") params = params.set('keresett-telepulesek',keresettTelepulesek)
+    if (keresettMufajok!="") params = params.set('keresett-mufajok',keresettMufajok)
+
+    params = params.set('min-jegyar',minJegyar)
+    params = params.set('max-jegyar',maxJegyar)
+
+    console.log(params)
+
+      return this.http.get<any[]>('http://localhost:8000/api/esemenyKereso',{params})
   }
 
   esemenyAdatok(esemenyId:string):Observable<EsemenyModell>{
-
     return this.http.get<EsemenyModell>('http://localhost:8000/api/esemenyek/'+esemenyId)
     .pipe(
       map((response: EsemenyModell) => {

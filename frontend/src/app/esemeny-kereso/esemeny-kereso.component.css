@@ -29,7 +29,7 @@ div{
 
 .esemeny-kep{
   height: 150px;
-  border-radius: 10px;
+  border-radius: 3px;
   box-shadow: 0px 1px 1px 1px #c8c8d6;
 }
 
@@ -43,7 +43,7 @@ button{
 
 .kereses-block{
   box-shadow: 0px 0px 2px 1px rgba(52, 84, 52,0.5);
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 5px 0px 12px 2px;
 }
 
@@ -73,4 +73,9 @@ mat-grid-tile{
 
 .esemeny-card:hover{
   box-shadow: 2px 2px 2px 2px rgb(98, 139, 193);
+}
+
+.szuro-input{
+  width: 90%;
+  height: 80px;
 }

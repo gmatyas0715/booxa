@@ -43,12 +43,13 @@ export class RendelesService {
   rendelesJegyReszadatExtrakcio():any[]{
     var reszadatLista:any[] = []
     this.kosarSzerviz.jegyAdatLista.forEach((jegyAdat)=>{
-        let jegyAdatElem:any[] = [];
-        jegyAdatElem.push(`esemeny_id:${jegyAdat.esemeny.id}`)
-        jegyAdatElem.push(`jegy_darabszam:${jegyAdat.jegyDarabszam}`)
-        jegyAdatElem.push(`szektor_id:${jegyAdat.szektor.id}`)
-        jegyAdatElem.push(`szektor_alegyseg_id:${jegyAdat.szektorAlegyseg.id}`)
-        jegyAdatElem.push(`ulo_helyek:${jegyAdat.ulohely}`)
+        let jegyAdatElem = {
+          esemeny_id: jegyAdat.esemeny.id,
+          jegy_darabszam: jegyAdat.jegyDarabszam,
+          szektor_id: jegyAdat.szektor.id,
+          szektor_alegyseg_id: jegyAdat.szektorAlegyseg.id,
+          ulo_helyek: jegyAdat.ulohely
+        }
         reszadatLista.push(jegyAdatElem);
     })
     return reszadatLista;

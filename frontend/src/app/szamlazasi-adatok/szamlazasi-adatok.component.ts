@@ -48,9 +48,9 @@ export class SzamlazasiAdatokComponent {
     console.log(typeof(this.szamlazasiAdatForm.value));
     this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value,this.bankkartyaAdatForm.value)).subscribe({
       next:()=>{
-        this.kosarSzerviz.jegyAdatLista = [];
+        /*this.kosarSzerviz.jegyAdatLista = [];
         this.router.navigate(['/kezdooldal']);
-        this.szamlazasiAdatForm.reset();
+        this.szamlazasiAdatForm.reset();*/
       },
       error:()=>{
 

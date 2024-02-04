@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nev',100);
             $table->foreignId('cim_id')->unique();
             $table->integer('kapacitas');
-            $table->boolean('szabadteri')->default(0);
             $table->decimal('arkategoria',2,1);
             $table->string('helyszin_kep_eleres',100);
             $table->string('svg_kep_eleres',100);

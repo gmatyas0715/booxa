@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1"
-     inkscape:cx="238"
-     inkscape:cy="228.5"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="282.1356"
+     inkscape:cy="136.11805"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
@@ -380,7 +380,7 @@
          id="tspan4">Előtér</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.381,0,0,0.381,49.79788,66.96606)"
+       transform="matrix(0.381,0,0,0.381,50.266599,62.983551)"
        id="text12-6-7-5"
        style="white-space:pre;shape-inside:url(#rect12-6-6-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        inkscape:label="bufe_felirat"><tspan
@@ -446,29 +446,11 @@
        d="m 20.272504,57.456227 10.124997,16.874999 v 5.625 H 20.272504 Z"
        id="path12-1"
        inkscape:label="wc_bal" />
-    <text
-       xml:space="preserve"
-       transform="matrix(0,-0.381,0.381,0,-22.22116,153.64254)"
-       id="text12-6-7-0"
-       style="white-space:pre;shape-inside:url(#rect12-6-6-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       inkscape:label="wc_bal_felirat"><tspan
-         x="198.42578"
-         y="124.33468"
-         id="tspan8">WC</tspan></text>
     <path
        style="fill:#786a60;fill-opacity:0.253041;fill-rule:evenodd;stroke:none;stroke-width:0.15525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        d="M 138.375,57.374996 128.25,74.249993 v 5.625 h 10.125 z"
        id="path12"
        inkscape:label="wc_jobb" />
-    <text
-       xml:space="preserve"
-       transform="matrix(0,-0.381,0.381,0,89.426238,152.66037)"
-       id="text12-6-7"
-       style="white-space:pre;shape-inside:url(#rect12-6-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-       inkscape:label="wc_jobb_felirat"><tspan
-         x="198.42578"
-         y="124.33468"
-         id="tspan9">WC</tspan></text>
     <g
        id="l01_vip_bal"
        style="stroke:none;fill:#b84a00;fill-opacity:1">
@@ -549,7 +531,7 @@
        inkscape:label="szinpad_felirat"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan10">Színpad</tspan></text>
+         id="tspan8">Színpad</tspan></text>
     <rect
        style="fill:#2e2f70;fill-rule:nonzero;stroke:url(#linearGradient161);stroke-width:0.0286385;paint-order:stroke markers fill;fill-opacity:1"
        id="rect12-2"
@@ -565,7 +547,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan11">Center-2</tspan></text>
+         id="tspan9">Center-2</tspan></text>
     <rect
        style="fill:#2e2f70;fill-rule:nonzero;stroke:url(#linearGradient7);stroke-width:0.0286385;paint-order:stroke markers fill;fill-opacity:1"
        id="rect12-2-2"
@@ -581,7 +563,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan12">Center-1</tspan></text>
+         id="tspan10">Center-1</tspan></text>
     <rect
        style="fill:#2e2f70;fill-rule:nonzero;stroke:url(#linearGradient163-4);stroke-width:0.0311337;paint-order:stroke markers fill;fill-opacity:1"
        id="rect12-2-5"
@@ -598,7 +580,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-8);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan13">Jobb-szárny</tspan></text>
+         id="tspan11">Jobb-szárny</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient10);stroke-width:0.0311337;paint-order:stroke markers fill"
        id="rect12-2-5-1"
@@ -615,7 +597,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-8-9);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan14">Bal-szárny</tspan></text>
+         id="tspan12">Bal-szárny</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient8);stroke-width:0.0279005;paint-order:stroke markers fill"
        id="rect12-2-5-2"
@@ -632,7 +614,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-8-3);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan15">VIP-jobb</tspan></text>
+         id="tspan13">VIP-jobb</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient9);stroke-width:0.0279005;paint-order:stroke markers fill"
        id="rect12-2-5-2-0"
@@ -649,6 +631,79 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-8-3-8);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:#f6df5c;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan16">VIP-bal</tspan></text>
+         id="tspan14">VIP-bal</tspan></text>
+    <g
+       id="g4"
+       transform="matrix(0.01577653,0,0,0.01577653,127.02706,113.57016)">
+      <g
+         id="g3">
+        <path
+           style="fill:#010002"
+           d="m 181.423,12.772 -1.805,85.74 c 0,3.381 -2.292,7.755 -6.6,7.755 v 0 h -2.309 v 0 0 c -4.308,0 -6.6,-4.804 -6.6,-8.275 l -6.893,-85.895 c -1.764,0.008 -3.568,0.008 -5.454,0.008 -3.292,0 -6.373,-0.016 -9.291,-0.016 l -6.893,87.081 c 0.024,3.146 -2.276,7.096 -6.584,7.096 v 0 h -2.309 v 0 0 c -4.308,0 -6.6,-4.804 -6.6,-8.275 l -1.788,-84.879 c -22.866,3.601 -22.858,19.647 -22.858,89.935 0,23.711 9.421,44.358 26.247,55.453 2.3,1.52 4.731,2.861 7.308,4.007 2.552,1.13 5.251,2.04 8.064,2.764 l -7.73,295.571 c 0,6.17 13.136,11.209 19.305,11.209 h 10.161 c 6.17,0 19.305,-5.023 19.305,-11.193 l -7.755,-296.677 c 2.837,-0.967 5.495,-2.211 8.039,-3.609 3.13,-1.715 6.023,-3.739 8.689,-6.04 13.526,-11.681 21.021,-30.36 21.021,-51.478 0,-72.903 -1.407,-87.445 -26.67,-90.282 z"
+           id="path1-1" />
+        <path
+           style="fill:#010002"
+           d="m 314.642,193.194 v 45.764 c 0,4.845 1.39,9.332 3.682,13.176 3.869,-3.503 9.34,-3.552 12.063,-3.552 1.967,0 4.113,0.122 6.381,0.244 2.398,0.13 4.934,0.268 7.584,0.268 h 2.552 c 2.642,0 5.186,-0.146 7.584,-0.268 2.268,-0.13 4.414,-0.244 6.381,-0.244 2.731,0 8.194,0.049 12.063,3.552 2.292,-3.845 3.682,-8.324 3.682,-13.176 V 0.002 c -52.827,-0.715 -61.972,179.276 -61.972,193.192 z"
+           id="path2-0" />
+        <path
+           style="fill:#010002"
+           d="m 360.869,256.711 c -1.837,0 -3.829,0.114 -5.934,0.228 -2.536,0.146 -5.235,0.285 -8.023,0.285 h -2.561 c -2.796,0 -5.495,-0.146 -8.023,-0.285 -2.113,-0.122 -4.105,-0.228 -5.934,-0.228 -3.471,0 -5.576,0.325 -6.804,1.609 -1.032,1.081 -1.447,2.829 -1.447,5.739 v 180.836 c 0,12.729 9.966,23.093 22.207,23.093 h 2.552 c 12.25,0 22.207,-10.356 22.207,-23.093 V 264.059 c 0,-2.91 -0.423,-4.658 -1.447,-5.739 -1.217,-1.284 -3.314,-1.609 -6.793,-1.609 z"
+           id="path3-4" />
+      </g>
+    </g>
+    <circle
+       cx="22.899929"
+       cy="72.783554"
+       r="0.54162323"
+       id="circle1"
+       style="stroke-width:0.0116365" />
+    <path
+       d="m 22.824936,76.758229 v 1.88318 c -0.0028,0.34214 -0.512127,0.34214 -0.516627,0 v -1.88318 h -0.666614 l 0.71661,-2.516459 h -0.116657 l -0.416634,1.433215 c -0.105326,0.316974 -0.533959,0.188652 -0.4333,-0.149988 l 0.46663,-1.549871 c 0.05366,-0.177986 0.277979,-0.492277 0.666616,-0.49996 h 0.349972 0.399969 c 0.377438,0.0077 0.602687,0.324641 0.666615,0.49996 l 0.466631,1.549871 c 0.09466,0.336972 -0.330575,0.475295 -0.433299,0.149988 L 23.558213,74.24177 h -0.133324 l 0.733277,2.516459 h -0.68328 v 1.88318 c 0.0053,0.34214 -0.501962,0.340474 -0.499962,0 v -1.88318 z"
+       id="path1-2"
+       style="stroke-width:0.0116365" />
+    <circle
+       cx="27.332916"
+       cy="72.783554"
+       r="0.54162323"
+       id="circle2"
+       style="stroke-width:0.0116365" />
+    <path
+       d="m 26.757961,73.475166 c -0.416467,0 -0.68328,0.360587 -0.68328,0.716608 v 1.666529 c -0.0038,0.32564 0.465064,0.32564 0.466631,0 v -1.533207 h 0.116657 v 4.232987 c -0.0072,0.441965 0.617285,0.429299 0.616619,0 v -2.466466 h 0.09999 v 2.466466 c 0.0082,0.429299 0.635951,0.441965 0.633285,0 v -4.232987 h 0.116657 v 1.533207 c -0.0055,0.32814 0.460965,0.32814 0.46663,0 v -1.666529 c -0.0066,-0.356021 -0.283478,-0.710225 -0.699945,-0.716608 z"
+       id="path2-8"
+       style="stroke-width:0.0116365" />
+    <rect
+       x="24.841377"
+       y="72.308578"
+       width="0.61669677"
+       height="6.5494866"
+       id="rect2"
+       style="stroke-width:0.0116365" />
+    <circle
+       cx="131.35861"
+       cy="72.691856"
+       r="0.54162323"
+       id="circle1-4"
+       style="stroke-width:0.0116365" />
+    <path
+       d="m 131.28363,76.666529 v 1.88318 c -0.003,0.34214 -0.51213,0.34214 -0.51663,0 v -1.88318 h -0.66661 l 0.7166,-2.516459 h -0.11665 l -0.41664,1.433215 c -0.10532,0.316974 -0.53395,0.188652 -0.4333,-0.149988 l 0.46663,-1.549871 c 0.0537,-0.177986 0.27798,-0.492277 0.66662,-0.49996 h 0.34997 0.39997 c 0.37744,0.0077 0.60269,0.324641 0.66662,0.49996 l 0.46663,1.549871 c 0.0947,0.336972 -0.33058,0.475295 -0.4333,0.149988 L 132.0169,74.15007 h -0.13332 l 0.73328,2.516459 h -0.68328 v 1.88318 c 0.005,0.34214 -0.50197,0.340474 -0.49997,0 v -1.88318 z"
+       id="path1-2-2"
+       style="stroke-width:0.0116365" />
+    <circle
+       cx="135.7916"
+       cy="72.691856"
+       r="0.54162323"
+       id="circle2-2"
+       style="stroke-width:0.0116365" />
+    <path
+       d="m 135.21665,73.383466 c -0.41647,0 -0.68328,0.360587 -0.68328,0.716608 v 1.666529 c -0.004,0.32564 0.46506,0.32564 0.46663,0 v -1.533207 h 0.11666 v 4.232987 c -0.007,0.441965 0.61728,0.429299 0.61662,0 v -2.466466 h 0.1 v 2.466466 c 0.008,0.429299 0.63595,0.441965 0.63328,0 v -4.232987 h 0.11666 v 1.533207 c -0.006,0.32814 0.46096,0.32814 0.46663,0 v -1.666529 c -0.007,-0.356021 -0.28348,-0.710225 -0.69995,-0.716608 z"
+       id="path2-8-9"
+       style="stroke-width:0.0116365" />
+    <rect
+       x="133.30006"
+       y="72.216881"
+       width="0.61669677"
+       height="6.5494866"
+       id="rect2-0"
+       style="stroke-width:0.0116365" />
   </g>
 </svg>

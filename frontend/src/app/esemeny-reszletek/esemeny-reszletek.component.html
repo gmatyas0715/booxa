@@ -67,7 +67,10 @@
                 </tr>
                 <tr>
                     <th class="pl-3"><button mat-raised-button (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></th>
-                    <td class="float-right mr-3" *ngIf="jegyFoglaltDarab>0"><button mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button></td>
+                    <td class="float-right mr-3">
+                        <span *ngIf="jegyFoglaltDarab==0">Jegy kosárba helyezéséhez válassz darabszámot!</span>
+                        <button *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
+                    </td>
                 </tr>
             </table>
         </div>

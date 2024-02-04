@@ -140,7 +140,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         // User route-ok
         Route::post('/userek', 'UserController@store');
     });
-
+    Route::post('/rendeles', 'RendelesController@store');
     // REGISZTRÁLT USER JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:regisztralt_user']],function(){
 
@@ -148,7 +148,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::post('/fizetesek', 'FizetesController@store');
 
         // Rendelés route-ok
-        Route::post('/rendeles', 'RendelesController@store');
+
 
         // Jegy adat route-ok
         Route::get('/jegyadatok','JegyAdatController@index');
