@@ -167,11 +167,7 @@ export class EsemenyKeresoComponent implements OnInit{
         this.esemenyLista.sort((a,b)=>new Date(b.idopont.toString()).getTime()-new Date(a.idopont.toString()).getTime());
         break;
     }
-    this.megjelenitettEsemenyekValtozas();
-  }
-
-  jegyarValtozas(){
-    this.esemenyKereses()
+    this.elsoOldal()
   }
 
   jegyArHatarertekValtozas(){
@@ -247,6 +243,7 @@ export class EsemenyKeresoComponent implements OnInit{
     this.esemenySzerviz.esemenyKereses(this.keresettEloado,this.keresettHelyszin,this.esemenyDatum,this.keresettTelepulesek.toString(),this.keresettMufajok.toString(),this.minJegyar,this.maxJegyar)
       .subscribe({
         next: (valasz) => {
+          console.log(valasz)
           if(this.esemenyLista.length==0){
           valasz.forEach((esemeny)=>{
             this.esemenyLista.push(
@@ -273,6 +270,7 @@ export class EsemenyKeresoComponent implements OnInit{
           })
         }
         this.elsoOldal()
+        console.log(this.esemenyLista)
         },
         error: (error) =>{console.error('Hiba az eseménylekérdezésben!', error)}
       });
@@ -324,5 +322,15 @@ export class EsemenyKeresoComponent implements OnInit{
     }
   }
 
+  eloadoHelyszinKeresesAlaphelyzet(){
+    this.keresettEloado = ""
+    this.keresettHelyszin = ""
+    this.esemenyKereses()
+  }
 
+  jegyArAlaphelyzet(){
+    this.minJegyar = 0
+    this.maxJegyar = 30000
+    this.esemenyKereses()
+  }
 }

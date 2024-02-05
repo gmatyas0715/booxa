@@ -33,7 +33,9 @@
                     </ul>
                 </div>
                 <div class="col-2">
-                    <img class="float-right kuka d-block" (click)="kosarSzerviz.tetelTorles(i)" src="../../assets/kepek/kuka_ikon.png" alt="">
+                    <button mat-icon-button color="warn" class="szuro-torlo-button" (click)="kosarSzerviz.tetelTorles(i)" >
+                        <mat-icon class="szuro-torlo-icon">delete</mat-icon>
+                    </button>
                 </div>
             </div>
             <hr>

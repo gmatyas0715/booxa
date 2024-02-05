@@ -32,3 +32,18 @@ li{
     margin-left: 10px;
     height: 25px;
 }
+
+.szuro-torlo-button{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+  
+.szuro-torlo-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

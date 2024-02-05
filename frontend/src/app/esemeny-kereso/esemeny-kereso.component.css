@@ -79,3 +79,33 @@ mat-grid-tile{
   width: 90%;
   height: 80px;
 }
+
+.eloado-nev{
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 17px;
+}
+
+.szuro-torlo-button{
+  position: relative;
+  height: 10px;
+  width: 10px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.szuro-torlo-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.szuro-cim-torles-container{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
