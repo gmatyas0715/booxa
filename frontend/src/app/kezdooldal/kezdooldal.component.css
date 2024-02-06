@@ -1,0 +1,46 @@
+mat-grid-tile{
+    height: 25px;
+    width: 25px;
+}
+
+.kezdooldal-container{
+    width: 50%;
+}
+
+.kezdooldal-content{
+    overflow: hidden;
+}
+
+.kezdooldal-img{
+    height: 100%;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+
+.kezdooldal-img:hover{
+    filter:grayscale(0%);
+    scale: 1.1;
+}
+
+#button-tile-content{
+    height: 70px;
+    width: 360px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(246, 223, 92);
+    background-color: #2e2f70;
+    transition: background-color 0.5s ease;
+}
+
+#button-tile-content:hover{
+    background-color: rgb(246, 223, 92);
+    color: #2e2f70;
+}
+
+.img-container{
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgb(179, 179, 179);
+}

@@ -110,39 +110,37 @@
                     </div>
                     <div class="col">
                         <button mat-raised-button class="mt-2" (click)="esemenyKereses()">Keresés</button>
-                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''&&keresettHelyszin==''">Keresés visszaálítás<mat-icon>close</mat-icon></button>
+                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''&&keresettHelyszin==''">Keresés visszaállítás<mat-icon>close</mat-icon></button>
                     </div>
                 </div>
             </div>              
             <div class="col">
-                <div class="row">
-                    <button mat-button (click)="elsoOldal()"><mat-icon>first_page</mat-icon></button>
-                    <button mat-button (click)="lapozasHatra()"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                    <button mat-button (click)="lapozasElore()"><mat-icon>keyboard_arrow_right</mat-icon></button>
-                    <button mat-button (click)="utolsoOldal()"><mat-icon>last_page</mat-icon></button>
-                    <mat-form-field>
-                        <mat-label>Események oldalon</mat-label>
-                        <mat-select name="talalat-rendezes" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
-                            <mat-option [value]=5>5</mat-option>
-                            <mat-option [value]=10>10</mat-option>
-                            <mat-option [value]=25>25</mat-option>
-                            <mat-option [value]=50>50</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Találatok rendezése</mat-label>
-                        <mat-select name="talalat-rendezes" [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
-                            <mat-option value="eloado_AZ">előadók (A-Z)</mat-option>
-                            <mat-option value="eloado_ZA">előadók (Z-A)</mat-option>
-                            <mat-option value="helyszin_AZ">helyszínek (A-Z)</mat-option>
-                            <mat-option value="helyszin_ZA">helyszínek (Z-A)</mat-option>
-                            <mat-option value="jegy_n">jegy alapár (növekvő)</mat-option>
-                            <mat-option value="jegy_cs">jegy alapár (csökkenő)</mat-option>
-                            <mat-option value="datum_n">dátum (legkorábbitól)</mat-option>
-                            <mat-option value="datum_cs">dátum (legkésőbbitől)</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
+                <button mat-button (click)="elsoOldal()"><mat-icon>first_page</mat-icon></button>
+                <button mat-button (click)="lapozasHatra()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                <button mat-button (click)="lapozasElore()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                <button mat-button (click)="utolsoOldal()"><mat-icon>last_page</mat-icon></button>
+                <mat-form-field>
+                    <mat-label>Megjelenített események</mat-label>
+                    <mat-select name="talalat-rendezes" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
+                        <mat-option [value]=5>5</mat-option>
+                        <mat-option [value]=10>10</mat-option>
+                        <mat-option [value]=25>25</mat-option>
+                        <mat-option [value]=50>50</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Találatok rendezése</mat-label>
+                    <mat-select name="talalat-rendezes" [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
+                        <mat-option value="eloado_AZ">előadók (A-Z)</mat-option>
+                        <mat-option value="eloado_ZA">előadók (Z-A)</mat-option>
+                        <mat-option value="helyszin_AZ">helyszínek (A-Z)</mat-option>
+                        <mat-option value="helyszin_ZA">helyszínek (Z-A)</mat-option>
+                        <mat-option value="jegy_n">jegy alapár (növekvő)</mat-option>
+                        <mat-option value="jegy_cs">jegy alapár (csökkenő)</mat-option>
+                        <mat-option value="datum_n">dátum (legkorábbitól)</mat-option>
+                        <mat-option value="datum_cs">dátum (legkésőbbitől)</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </div>
         <hr>
@@ -169,6 +167,21 @@
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>
+        <div class="row">
+            <button mat-button (click)="elsoOldal()"><mat-icon>first_page</mat-icon></button>
+            <button mat-button (click)="lapozasHatra()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+            <button mat-button (click)="lapozasElore()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+            <button mat-button (click)="utolsoOldal()"><mat-icon>last_page</mat-icon></button>
+            <mat-form-field>
+                <mat-label>Megjelenített események</mat-label>
+                <mat-select name="talalat-rendezes" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
+                    <mat-option [value]=5>5</mat-option>
+                    <mat-option [value]=10>10</mat-option>
+                    <mat-option [value]=25>25</mat-option>
+                    <mat-option [value]=50>50</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
 </div>
 

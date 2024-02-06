@@ -1,13 +1,23 @@
-<div class="d-inline-block">
-    <div id="profilkep-container" >
-        <img id="profilkep" src="../../assets/kepek/ferfi_kep.jpg" alt=""><!--<img src="" alt={{felhasznalo}}>-->
+<div id="bejelentkezett-user-container">
+    <div class="d-none d-sm-block">
+        <div id="profil-adat-container">
+            <div id="profilkep-container">
+                <mat-icon id="profilkep">person</mat-icon>
+            </div>
+            <div>
+                <span>{{userAzonositas.getUsername()}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="logout-panel-icon-container">
+        <a routerLink="/profilAdatok">
+            <mat-icon class="logout-panel-icon">settings</mat-icon>
+        </a>
+        <a (click)="LogoutGomb()" routerLink="/kezdooldal">
+            <mat-icon class="logout-panel-icon">exit_to_app</mat-icon>
+        </a>
     </div>
 </div>
-<div id="ikonok"  class="d-inline-block">
-    <a class="d-block" routerLink="/profilAdatok">
-        <img src="../../assets/kepek/beallitasok-ikon.svg" alt="Beállítások" title="Beállítások">
-    </a>
-    <a class="d-block" href="" (click)="LogoutGomb()"><img src="../../assets/kepek/kijelentkezes-ikon.svg" alt="" title="Kijelentkezés"></a>
-</div>
+
 
 

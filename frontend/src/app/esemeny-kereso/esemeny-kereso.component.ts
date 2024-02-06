@@ -60,11 +60,11 @@ export class EsemenyKeresoComponent implements OnInit{
       if (result.breakpoints[Breakpoints.XSmall]) {
         this.cols = 1;
       } else if (result.breakpoints[Breakpoints.Small]) {
-        this.cols = 2;
+        this.cols = 1;
       } else if (result.breakpoints[Breakpoints.Medium]) {
-        this.cols = 3;
+        this.cols = 1;
       } else if (result.breakpoints[Breakpoints.Large]) {
-        this.cols = 3;
+        this.cols = 2;
       } else if (result.breakpoints[Breakpoints.XLarge]) {
         this.cols = 3;
       }

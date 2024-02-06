@@ -1,8 +1,7 @@
 #fejlec{
+    display: flex;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
     width: 100%;
     height: 70px;
@@ -11,23 +10,19 @@
     color: #2e2f70;
 }
 
+.nav-container{
+    left: 0;
+    align-items: center;
+}
+
 img{
     height: 30px;
 }
 
 .menu-ikon{
-    height: 30px;
-    margin: 5px;
+    height: 25px;
     transition: 0.3s;
-}
-
-#kosar-adatok{
-    top: 10px;
-    font-size: 13px;
-}
-
-#kosar-adatok img{
-    height: 40px;
+    margin-right: 3px;
 }
 
 a{
@@ -45,3 +40,13 @@ a{
     box-shadow: 2px 2px 0px 0px  #2e2f70;
 }
 
+.logging-container{
+    position: fixed;
+    right: 0;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#kosar-adatok{
+    margin-left: 20px;
+}

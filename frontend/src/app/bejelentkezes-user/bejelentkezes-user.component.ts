@@ -10,8 +10,8 @@ import { UserService } from '../_szervizek/user.service';
 })
 export class BejelentkezesUserComponent {
   
-  felhasznalonev:string = "";
-  jelszo:string = "";
+  felhasznalonev:string = "aansteysd";
+  jelszo:string = "xA4)ij7}UPde2";
 
   constructor(private userAzonositas:UserAzonositasService,private userService:UserService, private router:Router) {}
 
