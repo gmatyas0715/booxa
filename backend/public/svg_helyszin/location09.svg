@@ -259,7 +259,7 @@
        style="stroke:none"
        transform="matrix(0.97014925,0,0,0.98684931,0.29850746,0.49315093)">
       <path
-         style="opacity:1;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill"
+         style="opacity:1;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill;cursor:pointer"
          d="M 43.5,61 22.5,37.5 10,47.5 43.336297,85.632982 Z"
          class="l09_vip"
          sodipodi:nodetypes="ccccc"
@@ -270,7 +270,7 @@
        style="stroke:none"
        transform="matrix(0.98882517,0,0,0.977464,1.6285511,0.85152716)">
       <path
-         style="opacity:1;fill:#b43f24;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.147157;paint-order:stroke markers fill"
+         style="opacity:1;fill:#b43f24;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.147157;paint-order:stroke markers fill;cursor:pointer"
          d="M 121.22613,64.09287 V 37.785189 h 24.50776 V 64.09287 Z"
          class="l09_jobb_szarny_2"
          sodipodi:nodetypes="ccccc"
@@ -290,7 +290,7 @@
        id="l09_center_2"
        style="stroke:none">
       <path
-         style="opacity:1;fill:#bc6f1c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.326275;paint-order:stroke markers fill"
+         style="opacity:1;fill:#bc6f1c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.326275;paint-order:stroke markers fill;cursor:pointer"
          d="M 44,111.21804 V 87.5 h 25.710475 l -0.0038,2.674769 H 80.5 V 87.5 h 12.84681 l 16.16488,15.07488 v 8.56459 C 87.674998,111.27926 65.837146,111.21413 44,111.21804 Z"
          class="l09_center_2"
          sodipodi:nodetypes="cccccccccc"
@@ -300,7 +300,7 @@
        id="l09_jobb_szarny_1"
        style="stroke:none">
       <path
-         style="opacity:1;fill:#3a961e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill"
+         style="opacity:1;fill:#3a961e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill;cursor:pointer"
          d="M 95.067233,86.503117 119.42621,65.067229 h 26.30768 L 109.51169,100.96309 100,91.725782 Z"
          class="l09_jobb_szarny_1"
          sodipodi:nodetypes="cccccc"

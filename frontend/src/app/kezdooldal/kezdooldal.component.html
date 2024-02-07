@@ -3,48 +3,48 @@
         <div class="kezdooldal-content">
             <mat-grid-list cols="20" rows="24" rowHeight="1:1">
                 <mat-grid-tile colspan="8" rowspan="6">
-                    <div class="img-container">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock5.jpg" alt="">
                     </div>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="6" rowspan="6">
-                    <div class="img-container">
-                        <img class="kezdooldal-img" src="../../assets/kepek/stock2.jpg" alt="">
+                    <div class="img-container d-none d-xl-block">
+                        <img class="kezdooldal-img" src="../../assets/kepek/stock2.webp" alt="">
                     </div>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="6" rowspan="4">
-                    <div class="img-container">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock4.jpg" alt="">
                     </div>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="6" rowspan="5">
-                    <div class="img-container">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock8.jpg" alt="">
                     </div>
                 </mat-grid-tile>
-                <mat-grid-tile colspan="2" rowspan="2">
-                    <div class="img-container">
+                <mat-grid-tile colspan="4" rowspan="3">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock7.jpg" alt="">
                     </div>
                 </mat-grid-tile>
-                <mat-grid-tile colspan="8" rowspan="2">
+                <mat-grid-tile [colspan]="colspan" [rowspan]="rowspan">
                     <button mat-button id="button-tile-content" routerLink="/esemenyKereso">
+                        <mat-icon class="menu-ikon d-block d-xl-none">event</mat-icon>
                         <span>TOVÁBB AZ ESEMÉNYEKHEZ!</span>
-                        <mat-icon iconPositionEnd>keyboard_arrow_right</mat-icon>
                     </button>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="4" rowspan="3">
-                    <div class="img-container">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock3.jpg" alt="">
                     </div>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="10" rowspan="8">
-                    <div class="img-container">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock1.jpg" alt="">      
                     </div>
                 </mat-grid-tile>
-                <mat-grid-tile colspan="10" rowspan="7">
-                    <div class="img-container">
+                <mat-grid-tile colspan="10" rowspan="8">
+                    <div class="img-container d-none d-xl-block">
                         <img class="kezdooldal-img" src="../../assets/kepek/stock6.jpg" alt="">  
                     </div>
                 </mat-grid-tile>

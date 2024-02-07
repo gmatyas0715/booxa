@@ -58,11 +58,11 @@
         </div>
         <div class="logging-container">
             <div *ngIf=!userAzonositas.getAuthToken()>
-                <a class="d-flex align-items-center" routerLink="/bejelentkezes">
+                <a matTooltip="Bejelentkezés" class="d-flex align-items-center" routerLink="/bejelentkezes">
                     <mat-icon class="menu-ikon">login</mat-icon> 
                     <span class="d-none d-sm-block ml-2">Bejelentkezés</span>
                 </a>
-                <a class="d-flex align-items-center" routerLink="/regisztracio">
+                <a matTooltip="Regisztráció" class="d-flex align-items-center" routerLink="/regisztracio">
                     <mat-icon class="menu-ikon">person_add</mat-icon> 
                     <span class="d-none d-sm-block ml-2">Regisztráció</span>
                 </a>

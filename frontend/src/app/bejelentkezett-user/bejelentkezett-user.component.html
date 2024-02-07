@@ -10,10 +10,10 @@
         </div>
     </div>
     <div class="logout-panel-icon-container">
-        <a routerLink="/profilAdatok">
+        <a matTooltip="Profilbeállítások" routerLink="/profilAdatok">
             <mat-icon class="logout-panel-icon">settings</mat-icon>
         </a>
-        <a (click)="LogoutGomb()" routerLink="/kezdooldal">
+        <a matTooltip="Kijelentkezés" (click)="LogoutGomb()" routerLink="/kezdooldal">
             <mat-icon class="logout-panel-icon">exit_to_app</mat-icon>
         </a>
     </div>

@@ -109,7 +109,8 @@
                 <div class="row profil-adat-container">
                     <div class="col profil-adat-tipus">Születési dátum: </div>
                     <div class="col profil-adat">
-                        <input class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"  type="date" onfocus="(type='date')" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                        <input *ngIf="!szemelyesAdatSzerkesztheto" class="adat-input" type="text" [placeholder]="userService.bejelentkezettUser.szuletesiDatum" disabled>
+                        <input *ngIf="szemelyesAdatSzerkesztheto" class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"  type="date" onfocus="(type='date')" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
                     </div>
                 </div>
                 <div class="row justify-content-center mb-2">

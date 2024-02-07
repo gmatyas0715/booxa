@@ -171,7 +171,13 @@ export class ProfilBeallitasokComponent {
     this.userService
       .userAdatok(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken())
       .subscribe((valasz)=>{
-        this.userService.bejelentkezettUser = valasz
+        this.userService.bejelentkezettUser.felhasznalonev = valasz.felhasznalonev
+        this.userService.bejelentkezettUser.email = valasz.felhasznalonev
+        this.userService.bejelentkezettUser.keresztnev = valasz.felhasznalonev
+        this.userService.bejelentkezettUser.vezeteknev = valasz.felhasznalonev
+        this.userService.bejelentkezettUser.szuletesiDatum = valasz.szuletesi_datum
+
+        console.log(this.userService.bejelentkezettUser)
     })
   }
 

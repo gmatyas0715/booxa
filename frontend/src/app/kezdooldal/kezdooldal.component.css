@@ -1,6 +1,9 @@
 mat-grid-tile{
     height: 25px;
     width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
 }
 
 .kezdooldal-container{
@@ -14,7 +17,7 @@ mat-grid-tile{
 .kezdooldal-img{
     height: 100%;
     filter: grayscale(100%);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .kezdooldal-img:hover{
@@ -23,13 +26,14 @@ mat-grid-tile{
 }
 
 #button-tile-content{
-    height: 70px;
-    width: 360px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
     font-size: 16px;
     font-weight: bold;
     color: rgb(246, 223, 92);
     background-color: #2e2f70;
-    transition: background-color 0.5s ease;
+    transition: 0.5s;
 }
 
 #button-tile-content:hover{
@@ -38,9 +42,20 @@ mat-grid-tile{
 }
 
 .img-container{
-    height: calc(100% - 10px);
-    width: calc(100% - 10px);
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    max-width: 100%;
+    max-height: 100%;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 1px 1px 4px 1px rgb(179, 179, 179);
+    box-shadow: 1% 1% 4% 1% rgb(179, 179, 179);
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+}
+
+@media (max-width: 576px) {
+    .kezdooldal-container {
+        width: 70%;
+    }
 }
