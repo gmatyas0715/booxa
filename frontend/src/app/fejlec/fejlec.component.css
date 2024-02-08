@@ -35,8 +35,11 @@ a{
     transform: scale(1.2);
 }
 
-.nav-link:hover{
+.nav-link{
     border-radius: 10px;
+}
+
+.nav-link:hover{
     box-shadow: 2px 2px 0px 0px  #2e2f70;
 }
 
@@ -49,4 +52,13 @@ a{
 
 #kosar-adatok{
     margin-left: 20px;
+}
+
+.kosar-disabled{
+    color: grey;
+    margin-left: 16px;
+}
+  
+.kosar-button{
+    border-radius: 10px;
 }

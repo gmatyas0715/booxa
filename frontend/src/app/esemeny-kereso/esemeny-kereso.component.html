@@ -115,13 +115,23 @@
                 </div>
             </div>              
             <div class="col">
-                <button class="paginalas" mat-button (click)="elsoOldal()"><mat-icon>first_page</mat-icon></button>
-                <button class="paginalas" mat-button (click)="lapozasHatra()"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                <button class="paginalas" mat-button (click)="lapozasElore()"><mat-icon>keyboard_arrow_right</mat-icon></button>
-                <button class="paginalas" mat-button (click)="utolsoOldal()"><mat-icon>last_page</mat-icon></button>
-                <mat-form-field>
+                <div class="row oldalnavigacio">
+                    <button class="paginalas" (click)="elsoOldal()">
+                        <mat-icon>first_page</mat-icon>
+                    </button>
+                    <button class="paginalas" (click)="lapozasHatra()">
+                        <mat-icon>keyboard_arrow_left</mat-icon>
+                    </button>
+                    <button class="paginalas" (click)="lapozasElore()">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                    <button class="paginalas" (click)="utolsoOldal()">
+                        <mat-icon>last_page</mat-icon>
+                    </button>
+                </div>
+                <mat-form-field style="width: 100px;">
                     <mat-label>Megjelenített események</mat-label>
-                    <mat-select name="talalat-rendezes" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
+                    <mat-select class="megjelenitett-esemeny-darab" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
                         <mat-option [value]=5>5</mat-option>
                         <mat-option [value]=10>10</mat-option>
                         <mat-option [value]=25>25</mat-option>
@@ -168,13 +178,21 @@
             </mat-grid-tile>
         </mat-grid-list>
         <div class="row">
-            <button class="paginalas" mat-button (click)="elsoOldal()"><mat-icon>first_page</mat-icon></button>
-            <button class="paginalas" mat-button (click)="lapozasHatra()"><mat-icon>keyboard_arrow_left</mat-icon></button>
-            <button class="paginalas" mat-button (click)="lapozasElore()"><mat-icon>keyboard_arrow_right</mat-icon></button>
-            <button class="paginalas" mat-button (click)="utolsoOldal()"><mat-icon>last_page</mat-icon></button>
+            <button class="paginalas" (click)="elsoOldal()">
+                <mat-icon>first_page</mat-icon>
+            </button>
+            <button class="paginalas" (click)="lapozasHatra()">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <button class="paginalas" (click)="lapozasElore()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+            <button class="paginalas" (click)="utolsoOldal()">
+                <mat-icon>last_page</mat-icon>
+            </button>
             <mat-form-field>
                 <mat-label>Megjelenített események</mat-label>
-                <mat-select name="talalat-rendezes" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
+                <mat-select class="megjelenitett-esemeny-darab" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
                     <mat-option [value]=5>5</mat-option>
                     <mat-option [value]=10>10</mat-option>
                     <mat-option [value]=25>25</mat-option>

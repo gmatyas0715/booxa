@@ -10,19 +10,19 @@
                         <div class="navbar-collapse align-self-center">
                             <ul class="navbar-nav mr-auto">
                                 <li class="mr-2 nav-item">
-                                    <a class="nav-link d-flex align-items-center" routerLink="/kezdooldal">
+                                    <a matTooltip="Kezdőoldal" class="nav-link d-flex align-items-center" routerLink="/kezdooldal">
                                         <mat-icon class="menu-ikon">home</mat-icon>
                                         <span class="d-block d-md-none d-lg-block">Kezdőoldal</span>
                                     </a>
                                 </li>
                                 <li class="mr-2 nav-item">
-                                    <a class="nav-link d-flex align-items-center" routerLink="/esemenyKereso">
+                                    <a matTooltip="Események" class="nav-link d-flex align-items-center" routerLink="/esemenyKereso">
                                         <mat-icon class="menu-ikon">event</mat-icon>
                                         <span class="d-block d-md-none d-lg-block">Események</span>
                                     </a>
                                 </li>
                                 <li class="mr-2 nav-item" *ngIf=userAzonositas.getAuthToken()>
-                                    <a class="nav-link d-flex align-items-center" routerLink="/jegyVasarlasElozmenyek">
+                                    <a matTooltip="Jegyvásárlásaim" class="nav-link d-flex align-items-center" routerLink="/jegyVasarlasElozmenyek">
                                         <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
                                         <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
                                     </a>
@@ -51,9 +51,9 @@
             </nav>
         </div>                            
         <div id="kosar-adatok">
-            <a class="nav-link d-flex align-items-center" routerLink="/kosarOsszegzo">
-                <mat-icon class="menu-ikon">shopping_cart</mat-icon>
-                <span class="d-none d-md-block">Kosárban: {{kosarSzerviz.getKosarOsszar()}} Ft</span>
+            <a [ngClass]="{'kosar-disabled':kosarSzerviz.getKosarOsszar()==0,'nav-link':kosarSzerviz.getKosarOsszar()!=0}" class="kosar-button d-flex align-items-center" routerLink="/kosarOsszegzo">
+                <mat-icon [ngClass]="{'menu-ikon':kosarSzerviz.getKosarOsszar()!=0}">shopping_cart</mat-icon>
+                <span class="d-none d-md-block">Kosarad: {{kosarSzerviz.getKosarOsszar()==0?'üres':kosarSzerviz.getKosarOsszar() + ' Ft'}}</span>
             </a>
         </div>
         <div class="logging-container">

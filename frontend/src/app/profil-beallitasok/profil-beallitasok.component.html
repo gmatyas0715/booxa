@@ -12,10 +12,10 @@
                 </div>
                 <hr>
                 <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus"><span>Felhasználónév:</span> </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="felhasznalonev" id="felhasznalonev" type="text" [placeholder]="userService.bejelentkezettUser.felhasznalonev">
-                    </div>
+                    <mat-form-field>
+                        <mat-label>Felhasználónév:</mat-label>
+                        <input matInput  class="adat-input" formControlName="felhasznalonev" id="felhasznalonev" type="text" [placeholder]="userService.bejelentkezettUser.felhasznalonev">
+                    </mat-form-field>
                 </div>
                 <div class="row mb-3" *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('minlength') && belepesAdatForm.get('felhasznalonev')?.touched">
                     <span class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
