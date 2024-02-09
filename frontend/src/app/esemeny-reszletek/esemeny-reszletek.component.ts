@@ -36,6 +36,7 @@ export class EsemenyReszletekComponent{
   kivalasztottEloadoNev:string = "";
   kivalasztottEsemenyDatum:string = "";
   kivalasztottSzektorok:SzektorModell[] = [];
+  kivalasztottSzektorAlegysegek:SzektorAlegysegModell[] = [];
   osszesSzektor:SzektorModell[] = [];
   kivalasztottSzektor:any;
   kivalasztottSzektorAlegyseg:any;
@@ -167,6 +168,8 @@ export class EsemenyReszletekComponent{
           }
         });
         this.kivalasztottSzektorok.forEach(szektor => {
+          this.kivalasztottSzektorAlegysegek.push(...szektor.szektor_alegyseg)
+          console.log(this.kivalasztottSzektorAlegysegek)
           const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
           szektor.szin = g.style.fill
           this.renderer.listen(g, 'click', () => {

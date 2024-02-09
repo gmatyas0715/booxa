@@ -27,11 +27,11 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="1"
-     inkscape:cx="239.99999"
-     inkscape:cy="270.49999"
+     inkscape:cx="240"
+     inkscape:cy="270.5"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -552,7 +552,8 @@
        id="szinpad" />
     <g
        id="l10_center"
-       transform="translate(-0.04995,-0.132979)">
+       transform="translate(-0.04995,-0.132979)"
+       style="fill:#2ab424;fill-opacity:1;cursor:pointer">
       <path
          d="m 82.5,42.5 -25,10 c -3.298262,7.226621 -9.154491,19.600101 -12.686935,26.875 2.801923,6.4232 10.408929,20.95427 13.541954,27.22033 l 23.88994,9.41046 24.267841,-9.52378 c 2.97065,-6.3405 9.40943,-20.843577 12.54114,-27.10701 -2.9787,-7.475257 -9.17191,-20.318043 -12.60728,-27.599726 z m -1.001619,19.584795 c 0.361838,-8.2e-5 0.723571,0.01496 1.084402,0.04505 0.360984,0.03022 0.720836,0.07537 1.078782,0.135677 0.357771,0.06041 0.713391,0.135678 1.066113,0.225737 0.3529,0.08996 0.702654,0.194539 1.048547,0.313653 0.345888,0.119077 0.687669,0.25255 1.024616,0.400148 0.336992,0.147601 0.668933,0.30923 0.995105,0.484536 0.325954,0.175527 0.645919,0.364587 0.959217,0.566813 0.313473,0.202089 0.620063,0.417187 0.919139,0.644872 0.299077,0.227563 0.590423,0.467536 0.873428,0.71942 0.283006,0.252166 0.557463,0.516065 0.822807,0.79115 0.265217,0.274743 0.521141,0.560456 0.767239,0.856553 0.246234,0.29641 0.482454,0.602997 0.708164,0.919139 0.225535,0.316048 0.440413,0.641416 0.644174,0.975399 0.204074,0.333847 0.3969,0.67609 0.57807,1.026035 0.180917,0.350068 0.350048,0.707567 0.507028,1.071747 0.156993,0.364206 0.30173,0.734839 0.433919,1.111129 0.132271,0.376266 0.251914,0.757919 0.35865,1.144173 0.106551,0.386267 0.200173,0.776834 0.280599,1.170913 0.08053,0.393914 0.147871,0.791057 0.20182,1.190589 0.05395,0.399728 0.09458,0.801548 0.121668,1.204665 0.02716,0.40318 0.0407,0.807355 0.04078,1.211684 -1.78e-4,1.21352 -0.12235,2.423177 -0.36429,3.606242 -0.24172,1.183338 -0.601692,2.33261 -1.073154,3.426201 -0.471578,1.093466 -1.051647,2.124319 -1.729272,3.073178 -0.677601,0.949012 -1.448502,1.810029 -2.298211,2.566845 -0.849625,0.75672 -1.772671,1.404492 -2.751784,1.931118 -0.979358,0.526471 -2.008565,0.928444 -3.068268,1.198331 -1.059414,0.270068 -2.142636,0.406413 -3.229298,0.40648 -1.086906,-6e-6 -2.170356,-0.136356 -3.230005,-0.40648 -1.05944,-0.269943 -2.088403,-0.671917 -3.067527,-1.198334 -0.97936,-0.526572 -1.90265,-1.174342 -2.752507,-1.931119 -0.849709,-0.756827 -1.62061,-1.617831 -2.298196,-2.566844 -0.677642,-0.948859 -1.257708,-1.979711 -1.729289,-3.073178 -0.471457,-1.093602 -0.831426,-2.242861 -1.073146,-3.426201 -0.241924,-1.183064 -0.364114,-2.392722 -0.364275,-3.606242 1.12e-4,-1.213752 0.122304,-2.423655 0.364275,-3.606937 0.241718,-1.183338 0.601689,-2.332614 1.073146,-3.426215 0.471581,-1.093465 1.051647,-2.12432 1.729289,-3.073182 0.677586,-0.94901 1.448487,-1.810013 2.298196,-2.566843 0.849857,-0.756761 1.773147,-1.404532 2.752507,-1.931105 0.979124,-0.526419 2.008087,-0.928391 3.067544,-1.198334 1.059649,-0.270117 2.143099,-0.40646 3.230004,-0.406474 z"
          style="opacity:1;fill:#2ab424;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.105962;paint-order:stroke markers fill"
@@ -562,7 +563,7 @@
     </g>
     <g
        id="l10_c_also"
-       style="stroke:none"
+       style="stroke:none;fill:#24b4a4;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 139.34592,80.225886 c -1.37674,3.491692 -2.72113,6.840204 -4.02695,10.024264 -1.44297,3.518405 -2.85438,6.901705 -4.25821,10.26689 -1.40384,3.36518 -2.80053,6.7124 -4.21508,10.15785 -0.89583,2.1821 -1.82069,4.51648 -2.73714,6.80726 l 6.36991,2.94143 15.15591,-40.227048 z"
@@ -580,13 +581,13 @@
          class="l10_c_also_b"
          id="path4" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="M 120,79.499999 107.272,107 l 14.98203,9.23476 1.5379,1.76524 7.00643,3.25396 15.42482,-41.240241 z"
          id="c_korvonal" />
     </g>
     <g
        id="l10_a_also"
-       style="stroke:none"
+       style="stroke:none;fill:#ffeeaa;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 83.813449,22.5 37.406041,14.027259 4.0509,-4.960911 -41.456941,-16.324699 z"
@@ -604,13 +605,13 @@
          class="l10_a_also_b"
          id="path7" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="M 82.973824,14.5 82.499998,41.499998 107,51.000001 l 11.5,-11.000002 3,-2.5 L 126,31.5 Z"
          id="a_korvonal" />
     </g>
     <g
        id="l10_h_also"
-       style="stroke:none"
+       style="stroke:none;fill:#bfcf46;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="M 81.554351,15.241649 40.096809,31.566348 44.492195,36.949004 81.554351,22.694098 Z"
@@ -628,13 +629,13 @@
          class="l10_h_also_b"
          id="path10" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="M 38.807593,31.243807 57.499998,51.000001 81.999999,41.258463 V 14.5 Z"
          id="h_korvonal" />
     </g>
     <g
        id="l10_c_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#24b4a4;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 157.7999,80.209712 -7.59981,0.09287 -15.51298,41.183778 5.37727,2.71679 c 0.63473,-1.3989 1.35621,-2.89121 1.96436,-4.26541 1.95631,-4.42044 3.78655,-8.7351 5.56299,-13.08611 1.77642,-4.35101 3.49913,-8.738538 5.24067,-13.304177 1.61595,-4.23647 3.26129,-8.680678 4.9675,-13.337726 z"
@@ -644,7 +645,7 @@
     </g>
     <g
        id="l10_h_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#bfcf46;fill-opacity:1"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="M 81.554351,4.4692969 35.259903,21.928636 39.139491,26.37854 81.554351,10.904524 Z"
@@ -654,7 +655,7 @@
     </g>
     <g
        id="l10_d_also"
-       style="stroke:none"
+       style="stroke:none;fill:#2724b4;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 113.19059,114.23367 -29.587655,11.59349 0.0044,8.48548 34.420205,-14.15545 z"
@@ -672,13 +673,13 @@
          class="l10_d_also_c"
          id="path15" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="m 83,117 24.272,-9.4474 5.228,5.9474 3.5,3 5.04637,4.51947 L 126,127.7276 83.327549,144.59479 Z"
          id="d_korvonal" />
     </g>
     <g
        id="l10_d_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#2724b4;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 130.13966,137.07632 -3.98982,-4.57632 -42.41427,16.29115 0.04074,6.52687 z"
@@ -688,7 +689,7 @@
     </g>
     <g
        id="l10_f_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#b43f24;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="M 23.189212,124.54819 28.666524,121.53666 8.1333484,80.302568 0.86241799,80.263028 c 2.23140381,4.3547 4.33124221,8.553904 6.31301541,12.588288 2.1580305,4.393199 4.2208806,8.646914 6.3040296,12.871044 2.083148,4.22414 4.186832,8.41891 6.42564,12.69375 1.058281,2.02069 2.153116,4.06389 3.284109,6.13207 z"
@@ -698,7 +699,7 @@
     </g>
     <g
        id="l10_f_also"
-       style="stroke:none"
+       style="stroke:none;fill:#b43f24;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 50.207299,108.94432 5.727196,-2.89127 -12.568959,-25.628671 -6.914151,-0.08889 c 1.083081,2.45582 2.170821,4.880284 3.274508,7.245221 1.290324,2.764859 2.595723,5.483337 3.920148,8.19319 2.120582,4.33884 4.331912,8.72385 6.561258,13.17042 z"
@@ -716,14 +717,14 @@
          class="l10_f_also_c"
          id="path20" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="m 33,121 6.756341,-3.5 0.982216,-2 8.761441,-4 1.729949,-2.22135 L 56.999999,106.5 43.738932,79.999998 H 12.5 Z"
          id="f_korvonal" />
     </g>
     <g
        id="l10_e_also"
-       style="stroke:none"
-       transform="translate(-0.04995,-0.132979)">
+       style="stroke:none;fill:#b42495;fill-opacity:1;cursor:pointer"
+       transform="translate(0.21463333,-0.132979)">
       <path
          d="m 81.469564,126.04117 -29.574107,-11.82952 -4.916125,6.02008 34.490232,13.90755 z"
          style="opacity:1;fill:#b42495;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.146931;paint-order:stroke markers fill"
@@ -740,13 +741,13 @@
          class="l10_e_also_c"
          id="path23" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.2;paint-order:stroke markers fill"
          d="M 39.145704,127.33073 44.5,120.76574 45.722084,120.41494 57.499998,107.5 81.933345,116.97719 81.999999,145 Z"
          id="e_korvonal" />
     </g>
     <g
        id="l10_e_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#b42495;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 81.554351,154.85973 v -6.10272 l -42.288607,-17.57599 -3.111425,4.83253 z"
@@ -757,7 +758,7 @@
     </g>
     <g
        id="l10_b_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#e9afc6;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 140.37111,34.040471 -5.684,2.871947 15.51298,41.131052 7.55189,0.03894 c -0.95996,-2.377021 -1.8773,-4.67412 -2.70122,-6.791074 -0.95626,-2.456997 -1.83358,-4.760165 -2.66227,-6.959414 -1.65736,-4.398496 -3.1196,-8.380829 -4.62544,-12.345065 -0.75291,-1.982117 -1.51667,-3.959591 -2.3214,-5.982328 -0.80472,-2.022737 -1.65067,-4.090895 -2.56701,-6.253708 -0.76695,-1.810168 -1.61993,-3.73807 -2.50353,-5.71035 z"
@@ -767,7 +768,8 @@
     </g>
     <g
        id="l10_b_also"
-       transform="translate(-0.04995,-0.132979)">
+       transform="translate(-0.04995,-0.132979)"
+       style="fill:#e9afc6;fill-opacity:1;cursor:pointer">
       <path
          d="m 113.867,48.760333 -5.93319,2.739579 12.59558,26.606443 6.92426,-0.04471 c -0.51964,-1.287018 -1.0371,-2.563579 -1.54198,-3.757275 -0.64578,-1.526858 -1.28162,-2.9858 -1.91297,-4.398656 -1.26268,-2.825713 -2.50757,-5.467157 -3.77803,-8.097382 -1.27045,-2.630225 -2.56627,-5.249282 -3.93186,-8.031381 -0.76046,-1.549288 -1.61076,-3.336379 -2.42181,-5.016618 z"
          style="opacity:1;fill:#e9afc6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.138496;paint-order:stroke markers fill"
@@ -784,13 +786,13 @@
          class="l10_b_also_c"
          id="path28" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke:none;stroke-width:0.2;paint-order:stroke markers fill"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.2;paint-order:stroke markers fill"
          d="m 107.28854,51.5 c 0,0 8.21146,-5.5 8.71146,-6.000002 C 116.5,44.999999 122,41 122,41 l 8.5,-3.500001 15.99043,40.602193 L 120.5,78.499998 Z"
          id="b_korvonal" />
     </g>
     <g
        id="l10_a_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#ffeeaa;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 83.813449,4.0954763 v 6.8090477 l 42.336391,16.309122 3.8694,-4.438521 z"
@@ -800,7 +802,7 @@
     </g>
     <g
        id="l10_g_felso"
-       style="stroke:none"
+       style="stroke:none;fill:#da7c0f;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="M 0.95647151,77.84218 H 8.1662968 L 28.666524,36.862097 23.501929,34.0225 c -3.173325,6.107876 -6.487993,12.507967 -9.338327,17.966751 -2.24334,4.296308 -4.4519282,8.545391 -6.7281718,12.990266 -2.0671337,4.036544 -4.2232236,8.321968 -6.47895869,12.862663 z"
@@ -810,7 +812,7 @@
     </g>
     <g
        id="l10_g_also"
-       style="stroke:none"
+       style="stroke:none;fill:#da7c0f;fill-opacity:1;cursor:pointer"
        transform="translate(-0.04995,-0.132979)">
       <path
          d="m 36.292769,78.106355 h 6.960458 L 55.934495,52.213683 49.497254,48.96419 c -0.225262,0.58669 -0.448679,1.230155 -0.674914,1.790548 -0.601333,1.48952 -1.206006,2.891676 -1.813435,4.23525 -0.607429,1.343574 -1.217534,2.628956 -1.829935,3.884486 -0.6124,1.255531 -1.226996,2.48132 -1.843242,3.70671 -0.616245,1.22539 -1.23439,2.450365 -1.853354,3.703515 -0.618964,1.253152 -1.239185,2.534494 -1.859741,3.873309 -0.620558,1.338815 -1.24138,2.734774 -1.862404,4.217154 -0.489359,1.168096 -0.978437,2.441812 -1.46746,3.731193 z"
@@ -828,7 +830,7 @@
          class="l10_g_also_c"
          id="path33" />
       <path
-         style="fill:#ffffff;fill-opacity:0;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
+         style="fill:none;fill-opacity:1;stroke-width:0.2;paint-order:stroke markers fill;stroke:none"
          d="M 13.237858,78.04347 43.5,78.499998 56.348767,51.999999 49.7422,48.5 48.5,47.000001 40.500001,41 33,37.499999 12.857096,77.787499 Z"
          id="g_korvonal" />
     </g>
@@ -839,7 +841,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-8);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0755906;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan36">Színpad</tspan></text>
+         id="tspan1">Színpad</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08904891,0.09710698,-0.09710698,0.08904891,110.9773,12.454672)"
@@ -847,7 +849,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-88);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan37">B</tspan></text>
+         id="tspan2">B</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08904891,0.09710698,-0.09710698,0.08904891,104.34563,17.739858)"
@@ -855,7 +857,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan38">A</tspan></text>
+         id="tspan3">A</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08904891,0.09710698,-0.09710698,0.08904891,118.9467,6.1181734)"
@@ -863,7 +865,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-9-7);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan39">C</tspan></text>
+         id="tspan4">C</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08904891,0.09710698,-0.09710698,0.08904891,126.86613,-0.77668699)"
@@ -871,7 +873,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-7-2);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan40">D</tspan></text>
+         id="tspan5">D</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.07719782,-0.10677065,0.10677065,0.07719782,89.502459,127.97858)"
@@ -879,7 +881,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-88-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan41">B</tspan></text>
+         id="tspan6">B</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.07719782,-0.10677065,0.10677065,0.07719782,82.200684,121.84146)"
@@ -887,7 +889,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9-42);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan42">A</tspan></text>
+         id="tspan7">A</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.07719782,-0.10677065,0.10677065,0.07719782,97.224199,134.00946)"
@@ -895,7 +897,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-9-7-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan43">C</tspan></text>
+         id="tspan8">C</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.07719782,-0.10677065,0.10677065,0.07719782,105.17755,140.91127)"
@@ -903,7 +905,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-7-2-3);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan44">D</tspan></text>
+         id="tspan9">D</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.0917433,0.09456553,-0.09456553,0.0917433,39.123141,85.112045)"
@@ -911,7 +913,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-88-4-7);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan45">B</tspan></text>
+         id="tspan10">B</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.0917433,0.09456553,-0.09456553,0.0917433,46.434957,78.986904)"
@@ -919,7 +921,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9-42-9);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan46">A</tspan></text>
+         id="tspan11">A</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.0917433,0.09456553,-0.09456553,0.0917433,31.843009,91.669224)"
@@ -927,7 +929,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-9-7-5-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan47">C</tspan></text>
+         id="tspan12">C</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.0917433,0.09456553,-0.09456553,0.0917433,23.664966,98.303263)"
@@ -935,7 +937,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-7-2-3-6);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan48">D</tspan></text>
+         id="tspan13">D</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08124481,-0.10372442,0.10372442,0.08124481,17.39777,53.975947)"
@@ -943,7 +945,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-88-8);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan49">B</tspan></text>
+         id="tspan14">B</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08124481,-0.10372442,0.10372442,0.08124481,23.695892,59.654498)"
@@ -951,7 +953,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-76-9-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan50">A</tspan></text>
+         id="tspan15">A</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08124481,-0.10372442,0.10372442,0.08124481,9.8438121,47.149512)"
@@ -959,7 +961,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-9-7-4);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan51">C</tspan></text>
+         id="tspan16">C</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.08124481,-0.10372442,0.10372442,0.08124481,1.7471683,40.463645)"
@@ -967,7 +969,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-0-3-4-8-9-6-9-7-2-5);display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.758982;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan52">D</tspan></text>
+         id="tspan17">D</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4"
@@ -984,7 +986,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan53">B-felső</tspan></text>
+         id="tspan18">B-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20"
@@ -1001,7 +1003,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan54">C-felső</tspan></text>
+         id="tspan19">C-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3"
@@ -1018,7 +1020,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan55">D-felső</tspan></text>
+         id="tspan20">D-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4"
@@ -1035,7 +1037,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan56">D-alsó</tspan></text>
+         id="tspan21">D-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-1"
@@ -1052,7 +1054,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-4);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan57">E-felső</tspan></text>
+         id="tspan22">E-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4-7"
@@ -1069,7 +1071,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8-7);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan58">E-alsó</tspan></text>
+         id="tspan23">E-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-1-2"
@@ -1086,7 +1088,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-4-9);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan59">F-felső</tspan></text>
+         id="tspan24">F-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4-7-8"
@@ -1103,7 +1105,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8-7-1);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan60">F-alsó</tspan></text>
+         id="tspan25">F-alsó</tspan></text>
     <rect
        style="stroke:none;fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke-width:0.0248601;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-4"
@@ -1120,7 +1122,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-5);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan61">Center</tspan></text>
+         id="tspan26">Center</tspan></text>
     <rect
        style="stroke:none;fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke-width:0.0248601;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-4-3"
@@ -1137,7 +1139,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-5-9);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan62">Center</tspan></text>
+         id="tspan27">Center</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-2"
@@ -1154,7 +1156,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-9);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan63">B-alsó</tspan></text>
+         id="tspan28">B-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-21"
@@ -1171,7 +1173,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-8);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan64">C-alsó</tspan></text>
+         id="tspan29">C-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-1-2-2"
@@ -1188,7 +1190,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-4-9-1);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan65">G-felső</tspan></text>
+         id="tspan30">G-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-1-2-2-1"
@@ -1205,7 +1207,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-4-9-1-4);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan66">H-felső</tspan></text>
+         id="tspan31">H-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-1-2-2-3"
@@ -1222,7 +1224,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-4-9-1-41);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan67">A-felső</tspan></text>
+         id="tspan32">A-felső</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4-7-8-5"
@@ -1239,7 +1241,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8-7-1-9);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan68">G-alsó</tspan></text>
+         id="tspan33">G-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4-7-8-5-7"
@@ -1256,7 +1258,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8-7-1-9-5);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan69">H-alsó</tspan></text>
+         id="tspan34">H-alsó</tspan></text>
     <rect
        style="fill:#2e2f70;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0257427;paint-order:stroke markers fill"
        id="rect12-2-2-2-7-8-5-4-20-3-4-7-8-5-4"
@@ -1273,7 +1275,7 @@
        style="white-space:pre;shape-inside:url(#rect12-6-3-6-6-1-2-9-6-74-9-6-5-9-6-54-7-8-7-1-9-6);display:inline;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.709354;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"><tspan
          x="198.42578"
          y="124.33468"
-         id="tspan70">A-alsó</tspan></text>
+         id="tspan35">A-alsó</tspan></text>
     <text
        xml:space="preserve"
        id="text33"

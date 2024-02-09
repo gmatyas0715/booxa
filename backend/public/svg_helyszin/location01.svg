@@ -453,7 +453,7 @@
        inkscape:label="wc_jobb" />
     <g
        id="l01_vip_bal"
-       style="fill:#b84a00;fill-opacity:1;stroke:none"
+       style="fill:#b84a00;fill-opacity:1;stroke:none;cursor:pointer"
        transform="translate(0.05554862,2.500003)">
       <path
          style="fill:#b84a00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill;cursor:pointer"
@@ -464,7 +464,7 @@
     </g>
     <g
        id="l01_bal_szarny"
-       style="fill:#e0b200;fill-opacity:1;stroke:none"
+       style="fill:#e0b200;fill-opacity:1;stroke:none;cursor:pointer"
        transform="matrix(0.99,0,0,0.99,0.50554862,2.8032015)">
       <path
          style="fill:#e0b200;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill;cursor:pointer"
@@ -476,7 +476,7 @@
     </g>
     <g
        id="l01_jobb_szarny"
-       style="fill:#e0b200;fill-opacity:1;stroke:none"
+       style="fill:#e0b200;fill-opacity:1;stroke:none;cursor:pointer"
        transform="translate(0.05554862,2.500003)">
       <path
          style="fill:#e0b200;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill;cursor:pointer"
@@ -488,7 +488,7 @@
     </g>
     <g
        id="l01_vip_jobb"
-       style="fill:#b84a00;fill-opacity:1;stroke:none"
+       style="fill:#b84a00;fill-opacity:1;stroke:none;cursor:pointer"
        transform="translate(0.05554862,2.500003)">
       <path
          style="fill:#b84a00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill;cursor:pointer"
@@ -499,7 +499,7 @@
     </g>
     <g
        id="l01_center_1"
-       style="fill:#44aa00;fill-opacity:1;stroke:none"
+       style="fill:#44aa00;fill-opacity:1;stroke:none;cursor:pointer"
        transform="matrix(0.96059601,0,0,0.96059601,2.2428116,4.6904633)">
       <path
          d="m 59.625425,34.875091 -27.000676,16.87455 10.124964,21.375441 h 28.68414 l -0.03652,-7.621631 h 17.414961 v 7.621545 l 27.063196,8.6e-5 10.12496,-21.375441 -27.000681,-16.87455 z"
@@ -522,7 +522,7 @@
          id="path6" />
     </g>
     <path
-       style="fill:#9a5b2e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill"
+       style="fill:#9a5b2e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1305;paint-order:stroke markers fill;cursor:pointer"
        d="m 48.430547,8.1250037 c 0,0 61.874993,0 61.874993,0 L 99.055549,36.250002 H 59.680547 Z"
        id="szinpad"
        inkscape:label="szinpad" />

@@ -98,6 +98,9 @@
                         </mat-form-field>
                     </div>
                     <div class="col">
+                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''"><mat-icon>close</mat-icon></button>
+                    </div>
+                    <div class="col">
                         <mat-form-field class="example-full-width">
                             <mat-label>Helyszín</mat-label>
                             <input matInput [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
@@ -109,8 +112,10 @@
                         </mat-autocomplete>
                     </div>
                     <div class="col">
+                        <button mat-raised-button class="mt-2 d-flex align-items-center" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''"><mat-icon>close</mat-icon></button>
+                    </div>
+                    <div class="col">
                         <button mat-raised-button class="mt-2" (click)="esemenyKereses()">Keresés</button>
-                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''&&keresettHelyszin==''">Keresés visszaállítás<mat-icon>close</mat-icon></button>
                     </div>
                 </div>
             </div>              
