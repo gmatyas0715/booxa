@@ -13,4 +13,9 @@ export class FejlecComponent {
               public userAzonositas:UserAzonositasService,
               public kosarSzerviz:KosarService,
               public userSzerviz:UserService) {}
+
+  
+  get matBadgeMegjelenites():boolean{
+    return window.innerWidth<768
+  }
 }

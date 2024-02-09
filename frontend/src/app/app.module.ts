@@ -40,6 +40,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
@@ -87,7 +88,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     MatNativeDateModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatBadgeModule
   ],
   providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]

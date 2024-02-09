@@ -1,37 +1,53 @@
 <div class="container pt-3">
-    <div class="row esemeny-fo-reszletek">
-        <div class="pt-2 esemeny-fo-reszletek-cim d-flex align-items-center">
-            <h2 class="font-weight-bold text-center">Esemény információk:</h2>
-        </div>
-        <div class="col pt-2">
-            <h4><span class="font-weight-bold">Előadó:</span> {{kivalasztottEloadoNev}}</h4>
-            <h4><span class="font-weight-bold">Helyszín:</span> {{kivalasztottHelyszinNev}}</h4>
-        </div>
-        <div class="col pt-2">
-            <h4 class="font-weight-bold">Esemény időpont:</h4>
-            <h4 >{{kivalasztottEsemenyDatum}}</h4>
-            <!--<div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
-                <div *ngIf="szektorfoglaltsag.value">
-                    <h2>{{szektorfoglaltsag.value[0]}}</h2>
-                </div>    
-            </div>-->
+    <div class="d-flex justify-content-center">
+        <div class="row esemeny-fo-reszletek">
+            <div class="col col-12 pt-2 esemeny-fo-reszletek-cim text-center">
+                <h2 class="font-weight-bold">Esemény információk:</h2>
+            </div>
+            <div class="col col-sm-12 col-md-6 pt-2">
+                <h4><span class="font-weight-bold">Előadó:</span> {{kivalasztottEloadoNev}}</h4>
+                <h4><span class="font-weight-bold">Helyszín:</span> {{kivalasztottHelyszinNev}}</h4>
+            </div>
+            <div class="col col-sm-12 col-md-6 pt-2">
+                <h4><span class="font-weight-bold">Esemény időpont:</span>
+                {{kivalasztottEsemenyDatum}}</h4>
+                <!--<div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
+                    <div *ngIf="szektorfoglaltsag.value">
+                        <h2>{{szektorfoglaltsag.value[0]}}</h2>
+                    </div>    
+                </div>-->
+            </div>
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 szektor-container p-0 text-center mb-5">
+        <div class="col szektor-container p-0 text-center mb-5">
             <table id="osszes-jegyadat-table" *ngIf="jegyKivalasztas_e">
                 <thead>
                     <ng-container>
                         <tr>
-                            <th colspan="2" class="border">Szektor adat</th>
+                            <th colspan="2" class="border">
+                                <span>
+                                    Szektor adat
+                                </span>
+                                <div class="order-buttons">
+                                    <button class="order-btn">
+                                        <mat-icon (click)="jegyRendezesAr(true)">keyboard_arrow_up</mat-icon>
+                                    </button>
+                                    <button class="order-btn">
+                                        <mat-icon (click)="jegyRendezesAr(false)">keyboard_arrow_down</mat-icon>
+                                    </button>
+                                </div>
+                            </th>
                             <th class="col-4 border">
                                 <span>Jegyárak</span>
-                                <button>
-                                    <mat-icon (click)="jegyRendezesAr(true)">keyboard_arrow_up</mat-icon>
-                                </button>
-                                <button>
-                                    <mat-icon (click)="jegyRendezesAr(false)">keyboard_arrow_down</mat-icon>
-                                </button>
+                                <div class="order-buttons">
+                                    <button class="order-btn">
+                                        <mat-icon (click)="jegyRendezesAr(true)">keyboard_arrow_up</mat-icon>
+                                    </button>
+                                    <button class="order-btn">
+                                        <mat-icon (click)="jegyRendezesAr(false)">keyboard_arrow_down</mat-icon>
+                                    </button>
+                                </div>
                             </th>
                             <th class="col-4 border">Jegy részletek</th>
                         </tr>
@@ -43,7 +59,7 @@
                             <td class="border col-1" [style.background-color]="szektor.szin"></td>
                             <td class="border pl-3">{{szektor.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
                             <td class="border pl-3">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                            <td class="border pl-3 m-auto kivalasztas-gomb text-center"><button mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
+                            <td class="border pl-3 m-auto kivalasztas-gomb text-center"><button class="mr-2" mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -82,19 +98,15 @@
                 </tr>
             </table>
         </div>
-        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 helyszin-container">
-            <div class="row">
-                <button mat-raised-button class="bg-success text-white ml-5 mr-auto"  (click)="osszesSzektorKijeloles()">Szektorok kijelölése</button>
-                <button mat-raised-button class="float-right bg-danger text-white mr-5 ml-auto"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
-            </div>
-            <div class="row" class="d-flex align-items-center justify-content-center">
+        <div class="col helyszin-container">
+                <button mat-raised-button class="bg-success text-white ml-auto mr-auto mb-2"  (click)="osszesSzektorKijeloles()">Szektorok kijelölése</button>
+                <button mat-raised-button class="bg-danger text-white mr-auto ml-auto"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
                 <div #svgContainer></div>
-            </div>
         </div>
     </div>
-    <div class="row mb-4">
-        <button mat-raised-button class="d-inline" routerLink="/esemenyKereso"><mat-icon>keyboard_arrow_left</mat-icon>Vissza az eseményekhez</button>
-        <button mat-raised-button class="d-inline ml-auto mr-0" routerLink="/kosarOsszegzo">Tovább a kosárhoz<mat-icon iconPositionEnd>shopping_cart</mat-icon></button>
+    <div class="row mb-4 d-flex justify-content-center">
+        <button mat-raised-button class="d-inline ml-2 mr-auto" routerLink="/esemenyKereso"><mat-icon>keyboard_arrow_left</mat-icon><mat-icon class="menu-ikon">event</mat-icon>Eseményekhez</button>
+        <button mat-raised-button class="d-inline mr-2 ml-auto" routerLink="/kosarOsszegzo">Kosárhoz<mat-icon iconPositionEnd>shopping_cart</mat-icon><mat-icon class="ml-2" iconPositionEnd>keyboard_arrow_right</mat-icon></button>
     </div>
 </div>
 

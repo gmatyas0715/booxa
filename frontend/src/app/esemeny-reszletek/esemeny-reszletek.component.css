@@ -2,6 +2,7 @@
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     color: #2e2f70;
+    width: 80%;
 }
 
 .esemeny-fo-reszletek-cim{
@@ -11,17 +12,14 @@
 }
 
 .helyszin-container{
-    width: 100%;
-    justify-content: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.helyszin-svg{
-    display: block;
-}
-
 .tbody{
-    height: 300px;
+    height: 350px;
     overflow-y: auto;
 }
 
@@ -30,11 +28,12 @@
   }
 
 .szektor-container{
-    width: 100%;
+    min-width: 200px;
     height: 350px;
     overflow-y: auto;
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     border-radius: 10px;
+    margin: 10px;
 }
 
 thead{
@@ -86,4 +85,17 @@ thead{
   
   .darab-button:hover {
     background-color: #5e7997; /* Change the color for hover effect */
+  }
+
+  .order-buttons {
+    display: inline-block;
+  }
+
+  .order-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0 5px;
+    vertical-align: middle;
   }

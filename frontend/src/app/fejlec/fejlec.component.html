@@ -52,7 +52,7 @@
         </div>                            
         <div id="kosar-adatok">
             <a [ngClass]="{'kosar-disabled':kosarSzerviz.getKosarOsszar()==0,'nav-link':kosarSzerviz.getKosarOsszar()!=0}" class="kosar-button d-flex align-items-center" routerLink="/kosarOsszegzo">
-                <mat-icon [ngClass]="{'menu-ikon':kosarSzerviz.getKosarOsszar()!=0}">shopping_cart</mat-icon>
+                <mat-icon matBadge="{{kosarSzerviz.jegyAdatLista.length}}" [matBadgeHidden]="!matBadgeMegjelenites||kosarSzerviz.jegyAdatLista.length==0" matBadgeColor="primary" [ngClass]="{'menu-ikon':kosarSzerviz.getKosarOsszar()!=0}">shopping_cart</mat-icon>
                 <span class="d-none d-md-block">Kosarad: {{kosarSzerviz.getKosarOsszar()==0?'üres':kosarSzerviz.getKosarOsszar() + ' Ft'}}</span>
             </a>
         </div>
