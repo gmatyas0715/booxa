@@ -1,6 +1,6 @@
 <div class="esemeny-kereso-teljes">
     <div class="container kereses-szures"> 
-       <div class="kereses-szures-content">
+       <div class="col kereses-szures-content">
             <div class="row">
                 <div class="col">
                     <h4 class="font-weight-bold" >Szűrők beállítása</h4>
@@ -98,7 +98,7 @@
                         </mat-form-field>
                     </div>
                     <div class="col">
-                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''"><mat-icon>close</mat-icon></button>
+                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''"><mat-icon class="ml-1">close</mat-icon></button>
                     </div>
                     <div class="col">
                         <mat-form-field class="example-full-width">
@@ -112,7 +112,7 @@
                         </mat-autocomplete>
                     </div>
                     <div class="col">
-                        <button mat-raised-button class="mt-2 d-flex align-items-center" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''"><mat-icon>close</mat-icon></button>
+                        <button mat-raised-button class="mt-2 d-flex align-items-center" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''"><mat-icon class="ml-1">close</mat-icon></button>
                     </div>
                     <div class="col">
                         <button mat-raised-button class="mt-2" (click)="esemenyKereses()">Keresés</button>
@@ -181,6 +181,14 @@
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-content>
+                        <h1 *ngIf="megjelenitettEsemenyekTomb.length==0">A kereséshez állíts be esemény, előadó vagy helyszín adatokat!</h1>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        
         </mat-grid-list>
         <div class="row">
             <button class="paginalas" (click)="elsoOldal()">

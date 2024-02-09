@@ -7,45 +7,46 @@
     <mat-card class="profil-adat-blokk row felhasznaloi-adat">
         <div class="col">
             <form [formGroup]="belepesAdatForm" (ngSubmit)="profilMentes(belepesAdatForm,'belepesAdatForm','belepesAdatSzerkesztheto')">
-                <div class="row">
+                <div class="row d-flex align-items-center">
                     <h4 class="pl-3 pt-3">Belépési adatok</h4>
                 </div>
                 <hr>
                 <div class="row profil-adat-container">
-                    <mat-form-field>
-                        <mat-label>Felhasználónév:</mat-label>
-                        <input matInput  class="adat-input" formControlName="felhasznalonev" id="felhasznalonev" type="text" [placeholder]="userService.bejelentkezettUser.felhasznalonev">
-                    </mat-form-field>
-                </div>
-                <div class="row mb-3" *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('minlength') && belepesAdatForm.get('felhasznalonev')?.touched">
-                    <span class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
-                </div>
-                <div class="row mb-3" *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev') && belepesAdatForm.get('felhasznalonev')?.touched">
-                    <span class="hibauzenet">Az felhasználónév foglalt!</span>
-                </div>
-                <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Jelenlegi jelszó: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="jelszo" id="jelszo" type="password" placeholder="*******">
+                    <div class="col profil-adat-col">
+                        <mat-form-field class="row">
+                            <mat-label>Felhasználónév:</mat-label>
+                            <input matInput class="adat-input" formControlName="felhasznalonev" id="felhasznalonev" type="text" [placeholder]="userService.bejelentkezettUser.felhasznalonev">
+                        </mat-form-field>
+                        <div *ngIf="belepesAdatSzerkesztheto" class="mb-3 hibauzenet-container row">
+                            <span *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('minlength') && belepesAdatForm.get('felhasznalonev')?.touched" class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
+                            <span *ngIf="belepesAdatForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev') && belepesAdatForm.get('felhasznalonev')?.touched" class="hibauzenet">Az felhasználónév foglalt!</span>
+                        </div>
                     </div>
-                </div>
-                <div *ngIf="belepesAdatSzerkesztheto"  class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Új jelszó: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="uj_jelszo" id="uj_jelszo" type="password" placeholder="új jelszó">
+                    <div class="col profil-adat-col">
+                        <mat-form-field>
+                            <mat-label>Jelenlegi jelszó:</mat-label>
+                            <input matInput  class="adat-input" formControlName="jelszo" id="jelszo" type="password" placeholder="*******">
+                        </mat-form-field>
+                        <div *ngIf="belepesAdatSzerkesztheto">
+                            <div class="row mb-3 hibauzenet-container">
+
+                            </div>
+                            <mat-form-field>
+                                <mat-label>Új jelszó:</mat-label>
+                                <input matInput class="adat-input" formControlName="uj_jelszo" id="uj_jelszo" type="password">
+                            </mat-form-field>
+                            <div class="row mb-3 hibauzenet-container">
+                                <span *ngIf="belepesAdatForm.get('uj_jelszo')?.hasError('nemMegfeleloJelszo') && belepesAdatForm.get('uj_jelszo')?.touched" class="hibauzenet">A megadott jelszó nem megfelelő</span>
+                            </div>
+                            <mat-form-field>
+                                <mat-label>Új jelszó megismétlése:</mat-label>
+                                <input matInput class="adat-input" formControlName="uj_jelszo_megerosites" id="uj_jelszo_megerosites" type="password">
+                            </mat-form-field>
+                            <div class="row mb-3 hibauzenet-container">
+                                <span *ngIf="belepesAdatForm.hasError('jelszoKulonbozes') && belepesAdatForm.get('uj_jelszo_megerosites')?.touched" class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row mb-3" *ngIf="belepesAdatForm.get('uj_jelszo')?.hasError('nemMegfeleloJelszo') && belepesAdatForm.get('uj_jelszo')?.touched">
-                        <span class="hibauzenet">A megadott jelszó nem megfelelő</span>
-                    </div>
-                </div>
-                <div *ngIf="belepesAdatSzerkesztheto"  class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Új jelszó megismétlése:  </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="uj_jelszo_megerosites" id="uj_jelszo_megerosites" type="password" placeholder="új jelszó megismétlése">
-                    </div>
-                </div>
-                <div class="row mb-3" *ngIf="belepesAdatForm.hasError('jelszoKulonbozes') && belepesAdatForm.get('uj_jelszo_megerosites')?.touched">
-                    <span class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
                 </div>
                 <div class="row justify-content-center mb-2">
                     <button mat-raised-button *ngIf="!belepesAdatSzerkesztheto" class="rounded font-weight-bold" (click)="belepesAdatSzerkesztesClick()">Szerkesztés</button>
@@ -58,26 +59,29 @@
     <mat-card class="profil-adat-blokk row felhasznaloi-adat">
         <div class="col">
             <form [formGroup]="emailForm" (ngSubmit)="profilMentes(emailForm,'emailForm','emailSzerkesztheto')">
+                <div class="row">
+                    <h4 class="pl-3 pt-3">Email</h4>
+                </div>
                 <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Email: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="email" id="email" type="text" [placeholder]="userService.bejelentkezettUser.email">
-                        <div class="row mb-3"  *ngIf="emailForm.get('email')?.hasError('nemMegfeleloEmail') && emailForm.get('email')?.touched">
-                            <span class="hibauzenet">Nem érvényes e-mail cím!</span>
+                    <div class="col profil-adat-col">
+                        <mat-form-field class="mr">
+                            <mat-label>Email:</mat-label>
+                            <input matInput class="adat-input" formControlName="email" id="email" type="text" [placeholder]="userService.bejelentkezettUser.email">
+                        </mat-form-field>
+                        <div *ngIf="emailSzerkesztheto" class="row mb-3 hibauzenet-container">
+                            <span *ngIf="emailForm.get('email')?.hasError('nemMegfeleloEmail') && emailForm.get('email')?.touched" class="hibauzenet">Nem érvényes e-mail cím!</span>
+                            <span *ngIf="emailForm.get('email')?.hasError('foglaltEmail') && emailForm.get('email')?.touched" class="hibauzenet">Az email foglalt!</span>
                         </div>
-                        <div class="row mb-3" *ngIf="emailForm.get('email')?.hasError('foglaltEmail') && emailForm.get('email')?.touched">
-                            <span class="hibauzenet">Az email foglalt!</span>
+                        <div *ngIf="emailSzerkesztheto" class="col profil-adat-col">
+                            <mat-form-field>
+                                <mat-label>Email megismétlése:</mat-label>
+                                <input matInput class="adat-input" formControlName="email_megerosites" id="email_megerosites" type="text" placeholder="email megismétlése">
+                            </mat-form-field>
+                            <div class="row mb-3 hibauzenet-container">
+                                <span *ngIf="emailForm.hasError('emailKulonbozes') && emailForm.get('email_megerosites')?.touched" class="hibauzenet">A két email címnek meg kell egyeznie!</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div *ngIf="emailSzerkesztheto" class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Email megismétlése: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" formControlName="email_megerosites" id="email_megerosites" type="text" placeholder="email megismétlése">
-                    </div>
-                </div>
-                <div class="row mb-3" *ngIf="emailForm.hasError('emailKulonbozes') && emailForm.get('email_megerosites')?.touched">
-                    <span class="hibauzenet">A két email címnek meg kell egyeznie!</span>
                 </div>
                 <div class="row justify-content-center mb-2">
                     <button mat-raised-button *ngIf="!emailSzerkesztheto" class="rounded font-weight-bold" (click)="emailSzerkesztesClick()">Szerkesztés</button>
@@ -94,23 +98,27 @@
                     <h4 class="pl-3 pt-3">Személyes adatok</h4>
                 </div>
                 <hr>
-                <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Vezetéknév: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" id="vezeteknev" formControlName="vezeteknev" type="text" [placeholder]="userService.bejelentkezettUser.vezeteknev">
-                    </div>
-                </div>
-                <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Keresztnév: </div>
-                    <div class="col profil-adat">
-                        <input class="adat-input" id="keresztnev" formControlName="keresztnev"  type="text" [placeholder]="userService.bejelentkezettUser.keresztnev">
-                    </div>
-                </div>
-                <div class="row profil-adat-container">
-                    <div class="col profil-adat-tipus">Születési dátum: </div>
-                    <div class="col profil-adat">
-                        <input *ngIf="!szemelyesAdatSzerkesztheto" class="adat-input" type="text" [placeholder]="userService.bejelentkezettUser.szuletesiDatum" disabled>
-                        <input *ngIf="szemelyesAdatSzerkesztheto" class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"  type="date" onfocus="(type='date')" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                <div class="row profil-adat-container d-flex">
+                    <div class="col">
+                        <mat-form-field class="mr-3">
+                            <mat-label>Vezetéknév:</mat-label>
+                            <input matInput class="adat-input" id="vezeteknev" formControlName="vezeteknev" type="text" [placeholder]="userService.bejelentkezettUser.vezeteknev">
+                        </mat-form-field>
+                        <mat-form-field class="mr-3">
+                            <mat-label>Keresztnév:</mat-label>
+                            <input matInput class="adat-input" id="keresztnev" formControlName="keresztnev"  type="text" [placeholder]="userService.bejelentkezettUser.keresztnev">
+                        </mat-form-field>
+                        <div class="col profil-adat-col">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Születési dátum:</mat-label>
+                                <input matInput [matDatepicker]="picker" [placeholder]="dateString(userService.bejelentkezettUser.szuletesiDatum)"class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"[attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                              <div class="float-right mr-5 hibauzenet-container">
+                                <span *ngIf="szemelyesAdatForm.invalid" class="hibauzenet">A megadott dátum nem megfelelő!</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-2">

@@ -8,6 +8,7 @@ import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MAT_DATEPICKER_VALIDATORS } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-profil-beallitasok',
@@ -77,6 +78,7 @@ export class ProfilBeallitasokComponent {
     this.szemelyesAdatForm.get('vezeteknev')?.enable();
     this.szemelyesAdatForm.get('keresztnev')?.enable();
     this.szemelyesAdatForm.get('szuletesi_datum')?.enable();
+    this.szemelyesAdatForm.get('szuletesi_datum')?.addValidators(MAT_DATEPICKER_VALIDATORS);
     this.szemelyesAdatSzerkesztheto=true
   }
 
@@ -208,6 +210,11 @@ export class ProfilBeallitasokComponent {
 
   openSnackbar(msg:string){
     this._snackBar.open(msg,undefined,{duration:1500});
+  }
+
+  dateString(date:Date):string{
+    date = new Date(date);
+    return date.toISOString().slice(0,10)
   }
 }
 

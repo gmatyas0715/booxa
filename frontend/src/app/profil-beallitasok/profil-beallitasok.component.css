@@ -1,10 +1,13 @@
 .container{
-    max-width: 55%;
+    max-width: 45%;
+    min-width: 280px;
 }
 
 .profil-adat-container{
     margin-top: 40px;
     margin-bottom: 40px;
+    display: flex;
+    text-align: center;
 }
 
 .profil-adat-tipus{
@@ -24,7 +27,21 @@
     margin-bottom: 20px;
 }
 
+.profil-adat-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .adat-input{
     min-width: 200px;
     width: fit-content;
+}
+
+.hibauzenet{
+    color: red;
+}
+
+.hibauzenet-container{
+    height: 40px;
 }
