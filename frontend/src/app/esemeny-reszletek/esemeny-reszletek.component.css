@@ -2,20 +2,23 @@
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     color: #2e2f70;
-    width: 80%;
+    width: 90%;
 }
 
 .esemeny-fo-reszletek-cim{
     background-color: rgb(246, 223, 92);
     border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .helyszin-container{
-    padding: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 1px 1px 4px 1px #c8c8d6;
+    border-radius: 10px;
+    margin: 10px 10px 20px 10px;
 }
 
 .tbody{
@@ -60,6 +63,8 @@ thead{
 .jegyadat-cella{
     height: 50px;
     padding-left: 15px;
+    padding-top: 15px;
+    float: left
 }
 
 #kosar-ikon{
@@ -71,8 +76,8 @@ thead{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: rgb(246, 223, 92); /* Replace with your preferred background color */
     color:#2e2f70; /* Replace with your preferred text color */

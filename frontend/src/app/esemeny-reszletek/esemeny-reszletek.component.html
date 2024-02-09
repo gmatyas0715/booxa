@@ -89,17 +89,19 @@
                     <th class="jegyadat-cella">Jegy összár:</th>
                     <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar*jegyFoglaltDarab}} Ft</td>
                 </tr>
-                <tr>
-                    <th class="pl-3"><button mat-raised-button (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button></th>
-                    <td class="float-right mr-3">
-                        <span *ngIf="jegyFoglaltDarab==0">Jegy kosárba helyezéséhez válassz darabszámot!</span>
-                        <button *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
-                    </td>
-                </tr>
             </table>
+            <div *ngIf="!jegyKivalasztas_e">
+                <div class="d-inline-block">
+                    <button mat-raised-button (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button>
+                </div>
+                <div class="d-inline-block">
+                    <span *ngIf="jegyFoglaltDarab==0">Jegy kosárba helyezéséhez válassz darabszámot!</span>
+                    <button class="" *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
+                </div>
+            </div>
         </div>
         <div class="col helyszin-container">
-                <button mat-raised-button class="bg-success text-white ml-auto mr-auto mb-2"  (click)="osszesSzektorKijeloles()">Szektorok kijelölése</button>
+                <button mat-raised-button class="bg-success text-white ml-auto mr-auto mb-2"  (click)="osszesSzektorKijeloles()">Összes szektor kijelölése</button>
                 <button mat-raised-button class="bg-danger text-white mr-auto ml-auto"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
                 <div #svgContainer></div>
         </div>
