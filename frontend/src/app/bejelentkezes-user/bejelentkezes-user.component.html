@@ -1,22 +1,22 @@
-<div class="mt-5" id="bejelentkezes">
-    <div class="text-center" (keyup.enter)="userLogin()">
-        <h2>Bejelentkezés</h2>
-        <div class="">
-            <p class="login-felirat">Felhasználónév:</p>
-            <input class="m-1" type="text" [(ngModel)]="felhasznalonev" name="felhasznalonev" id="felhasznalonev">
+<div class="bejelentkezes-container">
+    <mat-card class="bejelentkezes-content" (keyup.enter)="userLogin()">
+        <h2 class="">Bejelentkezés</h2>
+        <mat-form-field>
+            <mat-label>Felhasználónév:</mat-label>
+            <input matInput class="adat-input" [(ngModel)]="felhasznalonev" id="felhasznalonev" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Jelszó:</mat-label>
+            <input matInput class="adat-input" [(ngModel)]="jelszo" id="jelszo" type="password">
+        </mat-form-field>
+        <div class="error-container">
+            <span *ngIf="errorMessage" class="error"><mat-icon>error_outline</mat-icon> Hibás felhasználónév vagy jelszó!</span>
         </div>
-        <div class="">
-            <p class="login-felirat">Jelszó:</p>
-            <input class="m-1" type="password" [(ngModel)]="jelszo" name="jelszo" id="jelszo">
+        <div class="mb-3">
+            <button mat-raised-button type="submit" (click)="userLogin()">Bejelentkezés</button>
         </div>
-        <div class="">
-            <button mat-raised-button type="submit" routerLink="/kezdooldal" (click)="userLogin()">Bejelentkezés</button>
+        <div>
+            <span>Nincs még fiókod?</span><a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
         </div>
-        <div class="">
-            Nincs még fiókod?<a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
-        </div>
-        <div class="">
-            <a class="" routerLink="/elfelejtettJelszo">Elfelejtetted a jelszavad?</a>
-        </div>
-    </div>
+    </mat-card>
 </div>

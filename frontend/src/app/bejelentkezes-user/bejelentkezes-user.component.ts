@@ -12,6 +12,7 @@ export class BejelentkezesUserComponent {
   
   felhasznalonev:string = "aansteysd";
   jelszo:string = "xA4)ij7}UPde2";
+  errorMessage = false;
 
   constructor(private userAzonositas:UserAzonositasService,private userService:UserService, private router:Router) {}
 
@@ -28,7 +29,9 @@ export class BejelentkezesUserComponent {
         this.router.navigate(['/kezdooldal']);
       },
       error:(error) => {
-        // Handle login failure
+        this.errorMessage = true
+        this.felhasznalonev = "";
+        this.jelszo = "";
         console.error('Sikertelen bejelentkezés', error);
       }
     });

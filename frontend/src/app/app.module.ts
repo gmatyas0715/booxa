@@ -18,7 +18,6 @@ import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezet
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
 import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok.component';
-import { ElfelejtettJelszoComponent } from './elfelejtett-jelszo/elfelejtett-jelszo.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 
@@ -58,7 +57,6 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     BejelentkezesUserComponent,
     EsemenyReszletekComponent,
     SzamlazasiAdatokComponent,
-    ElfelejtettJelszoComponent,
     ProfilBeallitasokComponent,
     JegyVasarlasElozmenyekComponent,
   ],
