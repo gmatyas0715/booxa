@@ -5,11 +5,11 @@
                 <h2 class="font-weight-bold">Esemény információk:</h2>
             </div>
             <div class="col col-sm-12 col-md-6 pt-2">
-                <h4><span class="font-weight-bold">Előadó:</span> {{kivalasztottEloadoNev}}</h4>
-                <h4><span class="font-weight-bold">Helyszín:</span> {{kivalasztottHelyszinNev}}</h4>
+                <h4 class="d-inline-block border p-2 shadow-sm rounded"><span class="font-weight-bold">Előadó:</span> {{kivalasztottEloadoNev}}</h4>
+                <h4 class="d-inline-block border p-2 shadow-sm rounded"><span class="font-weight-bold">Helyszín:</span> {{kivalasztottHelyszinNev}}</h4>
             </div>
             <div class="col col-sm-12 col-md-6 pt-2">
-                <h4><span class="font-weight-bold">Esemény időpont:</span>
+                <h4 class="d-inline-block border p-2 shadow-sm rounded"><span class="font-weight-bold">Esemény időpont:</span>
                 {{kivalasztottEsemenyDatum}}</h4>
                 <!--<div *ngFor="let szektorfoglaltsag of szektorFoglaltsagok | keyvalue">
                     <div *ngIf="szektorfoglaltsag.value">
@@ -20,6 +20,11 @@
         </div>
     </div>
     <div class="row mt-3">
+        <div class="col helyszin-container">
+            <button mat-raised-button class="bg-success text-white ml-auto mr-auto mb-2"  (click)="osszesSzektorKijeloles()">Összes szektor kijelölése</button>
+            <button mat-raised-button class="bg-danger text-white mr-auto ml-auto"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
+            <div #svgContainer></div>
+        </div>
         <div class="col szektor-container p-0 text-center mb-5">
             <table id="osszes-jegyadat-table" *ngIf="jegyKivalasztas_e">
                 <thead>
@@ -39,7 +44,7 @@
                                 </div>
                             </th>
                             <th class="col-4 border">
-                                <span>Jegyárak</span>
+                                <span>Jegyár</span>
                                 <div class="order-buttons">
                                     <button class="order-btn">
                                         <mat-icon (click)="jegyRendezesAr(true)">keyboard_arrow_up</mat-icon>
@@ -49,7 +54,7 @@
                                     </button>
                                 </div>
                             </th>
-                            <th class="col-4 border">Jegy részletek</th>
+                            <th class="col-4 border">Részletek</th>
                         </tr>
                     </ng-container>
                 </thead>
@@ -57,9 +62,9 @@
                     <ng-container *ngFor="let szektor of kivalasztottSzektorok">
                         <tr *ngFor="let szektor_alegyseg of szektor.szektor_alegyseg">
                             <td class="border col-1" [style.background-color]="szektor.szin"></td>
-                            <td class="border pl-3">{{szektor.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
-                            <td class="border pl-3">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                            <td class="border pl-3 m-auto kivalasztas-gomb text-center"><button class="mr-2" mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
+                            <td class="border">{{szektor.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
+                            <td class="border">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
+                            <td class="border m-auto kivalasztas-gomb text-center"><button mat-raised-button (click)="jegyKivalasztas(szektor,szektor_alegyseg)">Kiválaszt</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -100,15 +105,10 @@
                 </div>
             </div>
         </div>
-        <div class="col helyszin-container">
-                <button mat-raised-button class="bg-success text-white ml-auto mr-auto mb-2"  (click)="osszesSzektorKijeloles()">Összes szektor kijelölése</button>
-                <button mat-raised-button class="bg-danger text-white mr-auto ml-auto"  (click)="szektorKijelolesTorles()">Szektor kijelölés törlése</button>
-                <div #svgContainer></div>
-        </div>
     </div>
     <div class="row mb-4 d-flex justify-content-center">
-        <button mat-raised-button class="d-inline ml-2 mr-auto" routerLink="/esemenyKereso"><mat-icon>keyboard_arrow_left</mat-icon><mat-icon class="menu-ikon">event</mat-icon>Eseményekhez</button>
-        <button mat-raised-button class="d-inline mr-2 ml-auto" routerLink="/kosarOsszegzo">Kosárhoz<mat-icon iconPositionEnd>shopping_cart</mat-icon><mat-icon class="ml-2" iconPositionEnd>keyboard_arrow_right</mat-icon></button>
+        <button mat-raised-button class="d-inline ml-2 mr-auto" routerLink="/esemenyKereso"><mat-icon>keyboard_arrow_left</mat-icon>Események</button>
+        <button mat-raised-button class="d-inline mr-2 ml-auto" routerLink="/kosarOsszegzo">Kosár<mat-icon class="ml-2" iconPositionEnd>keyboard_arrow_right</mat-icon></button>
     </div>
 </div>
 

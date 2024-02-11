@@ -29,10 +29,9 @@ class HelyszinSeeder extends Seeder
                 'nev' => $data[0],
                 'cim_id' => $data[1],
                 'kapacitas' => $data[2],
-                'szabadteri' => $data[3],
-                'arkategoria' => $data[4],
-                'helyszin_kep_eleres' => $data[5],
-                'svg_kep_eleres' => $data[6]
+                'arkategoria' => $data[3],
+                'helyszin_kep_eleres' => $data[4],
+                'svg_kep_eleres' => $data[5]
             ]);
         }
     }

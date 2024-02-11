@@ -162,9 +162,9 @@ export class EsemenyReszletekComponent{
           } else if (result.breakpoints[this.customBreakpoints.md]) {
             this.setSvgSize('140mm');
           } else if (result.breakpoints[this.customBreakpoints.sm]) {
-            this.setSvgSize('120mm');
+            this.setSvgSize('100mm');
           } else if (result.breakpoints[this.customBreakpoints.xs]) {
-            this.setSvgSize('90mm');
+            this.setSvgSize('70mm');
           }
         });
         this.kivalasztottSzektorok.forEach(szektor => {
@@ -219,6 +219,7 @@ export class EsemenyReszletekComponent{
   szektorFoglaltsag(esemenyId:string){
     this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz)=>{
       this.szektorFoglaltsagok = valasz;
+      console.log(this.szektorFoglaltsagok);
     });
   }
 
