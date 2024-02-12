@@ -33,14 +33,14 @@
                             </div>
                             <mat-form-field>
                                 <mat-label>Új jelszó:</mat-label>
-                                <input matInput class="adat-input" formControlName="uj_jelszo" id="uj_jelszo" type="password">
+                                <input matInput class="adat-input" formControlName="uj_jelszo" id="uj_jelszo" type="password" placeholder="új jelszó">
                             </mat-form-field>
                             <div class="row mb-3 hibauzenet-container">
                                 <span *ngIf="belepesAdatForm.get('uj_jelszo')?.hasError('nemMegfeleloJelszo') && belepesAdatForm.get('uj_jelszo')?.touched" class="hibauzenet">A megadott jelszó nem megfelelő</span>
                             </div>
                             <mat-form-field>
                                 <mat-label>Új jelszó megismétlése:</mat-label>
-                                <input matInput class="adat-input" formControlName="uj_jelszo_megerosites" id="uj_jelszo_megerosites" type="password">
+                                <input matInput class="adat-input" formControlName="uj_jelszo_megerosites" id="uj_jelszo_megerosites" type="password" placeholder="új jelszó megismétlése">
                             </mat-form-field>
                             <div class="row mb-3 hibauzenet-container">
                                 <span *ngIf="belepesAdatForm.hasError('jelszoKulonbozes') && belepesAdatForm.get('uj_jelszo_megerosites')?.touched" class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="row profil-adat-container">
                     <div class="col profil-adat-col">
-                        <mat-form-field class="mr">
+                        <mat-form-field>
                             <mat-label>Email:</mat-label>
                             <input matInput class="adat-input" formControlName="email" id="email" type="text" [placeholder]="userService.bejelentkezettUser.email">
                         </mat-form-field>
@@ -78,7 +78,7 @@
                                 <input matInput class="adat-input" formControlName="email_megerosites" id="email_megerosites" type="text" placeholder="email megismétlése">
                             </mat-form-field>
                             <div class="row mb-3 hibauzenet-container">
-                                <span *ngIf="emailForm.hasError('emailKulonbozes') && emailForm.get('email_megerosites')?.touched" class="hibauzenet">A két email címnek meg kell egyeznie!</span>
+                                <span *ngIf="emailForm.hasError('emailKulonbozes')" class="hibauzenet">A két email címnek meg kell egyeznie!</span>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                         <div class="col profil-adat-col">
                             <mat-form-field appearance="fill">
                                 <mat-label>Születési dátum:</mat-label>
-                                <input matInput [matDatepicker]="picker" [placeholder]="dateString(userService.bejelentkezettUser.szuletesiDatum)"class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum"[attr.min]="minEvDatum" [attr.max]="maxEvDatum">
+                                <input matInput [matDatepicker]="picker" [placeholder]="dateString(userService.bejelentkezettUser.szuletesi_datum)" class="adat-input" id="szuletesi_datum" formControlName="szuletesi_datum" [min]="minEvDatum" [max]="maxEvDatum">
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                               </mat-form-field>

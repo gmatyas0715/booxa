@@ -4,6 +4,8 @@ import { UserModell } from '../_modellek/user-modell';
 import { UserService } from '../_szervizek/user.service';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-regisztracio',
@@ -20,13 +22,14 @@ export class RegisztracioComponent {
   public regisztraltEmailek:any[] = [];
   regisztracioForm: FormGroup;
 
-
   constructor(
     private formBuilder: FormBuilder,
     public szerviz:UserService,
     private userService:UserService,
     private userAzonositasService:UserAzonositasService,
-    private router: Router) {
+    private router: Router,
+    private datePipe: DatePipe,
+    private _snackbar:MatSnackBar) {
         this.regisztraltFelhasznalokEmailek()
         this.regisztracioForm = this.formBuilder.group({
         vezeteknev: ['',[Validators.required]],
@@ -42,12 +45,32 @@ export class RegisztracioComponent {
       },{validators: this.jelszoEgyezesValidator});
     }
 
+  snackbarMegnyitas(siker:boolean){
+    let config = new MatSnackBarConfig()
+    config.duration = 1500
+    if(siker){
+      config.panelClass = ['snackSuccess']
+      this._snackbar.open("Sikeres regisztráció!",'Mégse',config);
+    } 
+    else{
+      config.panelClass = ['snackFail']
+      this._snackbar.open("Regisztráció sikertelen!",'Mégse',config);
+    } 
+  }
+
   regisztracioGomb():void{
-    this.userService.userRegisztralas(this.regisztracioForm.value).subscribe((valasz)=>{
-      this.userAzonositasService.setUserId(valasz.user_id);
-      this.userAzonositasService.setAuthToken(valasz.token);
-      this.router.navigate(['/kezdooldal']);
-      this.regisztracioForm.reset();
+    this.regisztracioForm.get('szuletesi_datum')?.setValue(this.datePipe.transform(this.regisztracioForm.get('szuletesi_datum')?.value, 'yyyy-MM-dd'))
+    this.userService.userRegisztralas(this.regisztracioForm.value).subscribe({
+      next:(valasz)=>{
+        this.snackbarMegnyitas(true)
+        this.userAzonositasService.setUsername(valasz.felhasznalonev);
+        this.userAzonositasService.setUserId(valasz.userId);
+        this.userAzonositasService.setAuthToken(valasz.token);
+        this.router.navigate(['/kezdooldal']);
+      },
+      error:()=>{
+        this.snackbarMegnyitas(false)
+      }
     });
   }
   

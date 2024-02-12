@@ -30,8 +30,10 @@ class AuthController extends Controller
         $user = User::create($input);
         $user -> assignRole('regisztralt_user');
         $data =  [
+            'üzenet' => 'Sikeres regisztráció',
             'token' => $user->createToken('Booxa-bro')->plainTextToken,
-            'user_id' => $user->id,
+            'felhasznalonev' => $user->felhasznalonev,
+            'userId' => $user->id
         ];
         return response()->json($data, 200);
     }
@@ -56,9 +58,9 @@ class AuthController extends Controller
 
             return response()->json([
                 'üzenet' => 'Sikeres bejelentkezés',
-                'user_id' => $user->id,
                 'felhasznalonev' => $user->felhasznalonev,
-                'token' => $token
+                'token' => $token,
+                'userId' => $user->id
             ], 200);
         }
         else{

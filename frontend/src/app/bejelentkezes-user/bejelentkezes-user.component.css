@@ -7,7 +7,7 @@
 .bejelentkezes-content{
     width: 22%;
     min-width: 270px;
-    height: 350px;
+    height: 360px;
     padding: 20px;
     align-items: center;
     margin: 50px auto;
@@ -42,6 +42,6 @@ a:hover{
 }
 
 .error-container{
-    height: 20px;
-    margin-bottom: 10px;
+    height: 40px;
+    padding-bottom: 15px;
 }

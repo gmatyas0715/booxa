@@ -1,129 +1,113 @@
-<div class="container" id="regisztracio">
-    <form [formGroup]="regisztracioForm" (ngSubmit)="regisztracioGomb()" method="post">
-        <div class="row"><h2>Regisztráció</h2></div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label class="mandatory" for="vezeteknev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev" placeholder="Vezetéknév">
+<div class="regisztracio">
+    <mat-card class="regisztracio-content">
+        <form class="regisztracio-form container" [formGroup]="regisztracioForm" (ngSubmit)="regisztracioGomb()" method="post">
+            <div class="row text-center">
+                <div class="col">
+                    <h2>Regisztráció</h2>
                 </div>
             </div>
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label for="keresztnev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev" placeholder="Keresztnév">
+            <hr>
+            <div class="row">
+                <mat-form-field class="col-xs-12 col-lg-6 col-xl-5 pb-1">
+                    <mat-label matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév:</mat-label>
+                    <input matInput id="vezeteknev" type="text" formControlName="vezeteknev" placeholder="Vezetéknév">
+                </mat-form-field>
+                <mat-form-field class="col-xs-12 col-lg-6 col-xl-5">
+                    <mat-label matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév:</mat-label>
+                    <input matInput id="keresztnev" type="text" formControlName="keresztnev" placeholder="Keresztnév">
+                </mat-form-field>
+            </div>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('vezeteknev')?.hasError('required') && regisztracioForm.get('vezeteknev')?.touched || 
+                    regisztracioForm.get('keresztnev')?.hasError('required') && regisztracioForm.get('keresztnev')?.touched" class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
                 </div>
             </div>
-            <div class="mb-3" *ngIf="regisztracioForm.get('vezeteknev')?.hasError('required') && regisztracioForm.get('vezeteknev')?.touched || 
-            regisztracioForm.get('keresztnev')?.hasError('required') && regisztracioForm.get('keresztnev')?.touched">
-                <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
+            <div class="row mt-5">
+                <mat-form-field class="col-md-12 col-lg-9 col-xl-7">
+                    <mat-label for="email" matTooltip="Kötelező megadni!" matTooltipPosition="above">E-mail cím:</mat-label>
+                    <input matInput class="felhasznalo-input" id="email" type="email" formControlName="email" placeholder="E-mail cím">
+                </mat-form-field>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <label for="email" matTooltip="Kötelező megadni!" matTooltipPosition="above">E-mail cím <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="email" type="email" formControlName="email" placeholder="E-mail cím">
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('email')?.hasError('required') && regisztracioForm.get('email')?.touched">
-                    <span class="hibauzenet">E-mail mező nem lehet üres!</span>
-                </div>
-                <div class="row mb-3"  *ngIf="regisztracioForm.get('email')?.hasError('nemMegfeleloEmail')">
-                    <span class="hibauzenet">Nem érvényes e-mail cím!</span>
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('email')?.hasError('foglaltEmail')">
-                    <span class="hibauzenet">Az email foglalt!</span>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('email')?.hasError('required') && regisztracioForm.get('email')?.touched" class="hibauzenet">E-mail mező nem lehet üres!</span>
+                    <span *ngIf="regisztracioForm.get('email')?.hasError('nemMegfeleloEmail')" class="hibauzenet">Nem érvényes e-mail cím!</span>
+                    <span *ngIf="regisztracioForm.get('email')?.hasError('foglaltEmail')" class="hibauzenet">Az email foglalt!</span>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <label matTooltip="Kötelező megadni!" matTooltipPosition="above">Nem <sup>*</sup>:</label>
-            <ul>
-                <li><input id="ferfi" type="radio" formControlName="nem" [value]="'f'">
-                    <label for="ferfi">Férfi</label>
-                </li>
-                <li><input id="no" type="radio" formControlName="nem" [value]="'n'">
-                    <label for="no">Nő</label>
-                </li>
-            </ul>
-        </div>
-        <div class="row mb-3" *ngIf="regisztracioForm.get('nem')?.hasError('required')">
-            <span class="hibauzenet">Kérjük válassza ki a nemét!</span>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <label matTooltip="Kötelező megadni!" matTooltipPosition="above">Születési dátum <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input datum" id="szuletesi_datum" type="date" formControlName="szuletesi_datum" placeholder="ÉÉÉÉ" [attr.min]="minEvDatum" [attr.max]="maxEvDatum">
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('szuletesi_datum')?.hasError('required') && regisztracioForm.get('szuletesi_datum')?.touched">
-                    <span class="hibauzenet">Születési dátum nem maradhat üresen!</span>
+            <div class="row mt-5">
+                <mat-label class="col-md-3 col-lg-3" matTooltip="Kötelező megadni!" matTooltipPosition="above">Nem:</mat-label>
+                <mat-radio-group class="col-md-6 col-lg-4" formControlName="nem">
+                    <mat-radio-button color="primary" value="f">Férfi</mat-radio-button>
+                    <mat-radio-button value="n">Nő</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('nem')?.hasError('required')" class="hibauzenet">Kérjük válassza ki a nemét!</span>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-lg-6">
-                <div class="row">
-                    <label for="felhasznalonev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Felhasználónév <sup>*</sup></label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="felhasznalonev" type="text" formControlName="felhasznalonev" placeholder="Felhasználónév">
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('required') && regisztracioForm.get('felhasznalonev')?.touched">
-                    <span class="hibauzenet">Az felhasználónév mező nem maradhat üresen!</span>
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('minlength')">
-                    <span class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev')">
-                    <span class="hibauzenet">Az felhasználónév foglalt!</span>
+            <div class="row mt-5">
+                <div class="col-md-10 col-lg-8">
+                    <mat-form-field appearance="fill" style="min-width: 200px;">
+                        <mat-label matTooltip="Kötelező megadni!" matTooltipPosition="above">Születési dátum:</mat-label>
+                        <input matInput [matDatepicker]="picker" class="felhasznalo-input datum" formControlName="szuletesi_datum" [min]="minEvDatum" [max]="maxEvDatum">
+                        <mat-hint></mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label for="jelszo" matTooltip="Kötelező megadni! Legalább egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó <sup>*</sup></label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input"  id="jelszo" type="password" formControlName="jelszo" placeholder="Jelszó">
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('jelszo')?.hasError('required') && regisztracioForm.get('jelszo')?.touched">
-                    <span class="hibauzenet">Az jelszó mező nem maradhat üresen!</span>
-                </div>
-                <div class="row mb-3" *ngIf="regisztracioForm.get('jelszo')?.hasError('nemMegfeleloJelszo')">
-                    <span class="hibauzenet">A megadott jelszó nem megfelelő</span>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('szuletesi_datum')?.hasError('required') && regisztracioForm.get('szuletesi_datum')?.touched" class="hibauzenet">Születési dátum nem megfelelő!</span>
                 </div>
             </div>
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label for="jelszo_megerosites" matTooltip="Kötelező megadni!" matTooltipPosition="above">Jelszó újra <sup>*</sup></label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input"  id="jelszo_megerosites" type="password" formControlName="jelszo_megerosites" placeholder="Jelszó újra">
+            <div class="row mt-5">
+                <mat-form-field class="ccol-xs-12 col-lg-6 col-xl-5">
+                    <mat-label matTooltip="Kötelező megadni!" matTooltipPosition="above">Felhasználónév:</mat-label>
+                    <input matInput class="felhasznalo-input" id="felhasznalonev" type="text" formControlName="felhasznalonev" placeholder="Felhasználónév">
+                </mat-form-field>
+            </div>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('required') && regisztracioForm.get('felhasznalonev')?.touched" class="hibauzenet">Az felhasználónév mező nem maradhat üresen!</span>
+                    <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('minlength')" class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
+                    <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev')" class="hibauzenet">Az felhasználónév foglalt!</span>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3" *ngIf="regisztracioForm.hasError('jelszoKulonbozes') && regisztracioForm.get('jelszo_megerosites')?.touched">
-            <span class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
-        </div>
-        <br>
-        <div class="row">
-            <input id="adatvedelmi" type="checkbox" formControlName="adatvedelmi" required>
-            <label for="adatvedelmi" matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above">Elolvastam és elfogadom az adatvédelmi nyilatkozatot<sup>*</sup></label>
-        </div>
-        <div class="row mb-3" *ngIf="regisztracioForm.get('adatvedelmi')?.hasError('required') && regisztracioForm.get('adatvedelmi')?.touched">
-            <span class="hibauzenet">Az adatvédelmi tájékoztató elfogadása kötelező!</span>
-        </div>
-        <button [disabled]="validFormEllenorzes()" mat-raised-button type="submit" id="gomb-reg">Regisztrálok</button>
-    </form>
+            <div class="row mt-5">
+                <mat-form-field class="col-sm-12 col-md-9 col-lg-6">
+                    <mat-label matTooltip="Kötelező megadni! Legalább egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó:</mat-label>
+                    <input matInput class="felhasznalo-input" id="jelszo" type="password" formControlName="jelszo" placeholder="Jelszó">
+                </mat-form-field>
+                <mat-form-field class="col-sm-12 col-md-9 col-lg-6">
+                    <mat-label matTooltip="Kötelező megadni! Legalább egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó újra:</mat-label>
+                    <input matInput class="felhasznalo-input"  id="jelszo_megerosites" type="password" formControlName="jelszo_megerosites" placeholder="Jelszó újra">
+                </mat-form-field>
+            </div>
+            <div class="row error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.get('jelszo')?.hasError('required') && regisztracioForm.get('jelszo')?.touched" class="hibauzenet">Az jelszó mező nem maradhat üresen!</span>
+                    <span *ngIf="regisztracioForm.get('jelszo')?.hasError('nemMegfeleloJelszo')" class="hibauzenet">A megadott jelszó nem megfelelő!</span>
+                </div>
+            </div>
+            <div class="row mt-2 error-container">
+                <div class="col">
+                    <span *ngIf="regisztracioForm.hasError('jelszoKulonbozes') && regisztracioForm.get('jelszo_megerosites')?.touched" class="hibauzenet">A két jelszónak meg kell egyeznie!</span>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <mat-checkbox matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above" class="mr-2" id="adatvedelmi" color="primary" formControlName="adatvedelmi" required>Elolvastam és elfogadom az adatvédelmi nyilatkozatot.</mat-checkbox>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <button [disabled]="validFormEllenorzes()" mat-raised-button type="submit">Regisztrálok</button> <!--[disabled]="validFormEllenorzes()" -->
+                </div>
+            </div>
+        </form>
+    </mat-card>
 </div> 

@@ -1,39 +1,20 @@
-#regisztracio{
-    width: 30%;
-    height: auto;
-    margin: 20px auto 20px auto;
+.regisztracio{
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px  #2e2f70;
     padding: 10px;
 }
 
-#regisztracio-form{
-    padding: 20px;
+.regisztracio-content{
+    width: 40%;
+    height: fit-content;
+    min-width: 330px;
+    padding: 10px;
+    margin: 20px 0;
 }
 
-.felhasznalo-input{
-    margin: 0 0 20px 0;
-}
-
-.datum{
-    width: 150px;
-    margin:  0 8px 20px 0;
-}
-
-#adatvedelmi,#hirlevel{
-    margin-right: 5px;
-}
-
-#gomb-reg{
-    display: block;
-    margin: auto;
-}
-
-#gomb-reg:hover{
-    background-color: rgb(152, 152, 181);
-    transition: 0.3s;
+.regisztracio-form{
+    padding: 15px;
 }
 
 .hibauzenet{
@@ -44,16 +25,25 @@ form{
     padding: 5px 10px 10px 30px;
 }
 
-@media (max-width: 768px) {
-    #regisztracio {
-      width: 60%;
-    }
+.error-container{
+    height: 5px;
 }
 
-ul li{
-    list-style-type: none;
+.snackSuccess {
+    background: rgb(65, 252, 134);
+    color: white;
 }
-
-.felhasznalo-input{
-    max-width: fit-content;
+.snackSuccess button {
+    background-color: rgb(65, 252, 134);
+    color: white;
+    border: none;
+}
+.snackFail {
+    background: #F44336;
+    color: white;
+}
+.snackFail button {
+    background-color: #F44336;
+    color: white !important;
+    border: none;
 }

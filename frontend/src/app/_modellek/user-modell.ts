@@ -4,7 +4,7 @@ export class UserModell {
     public keresztnev:string = "";
     public email:string = "";
     public nem:string = "";
-    public szuletesiDatum = new Date();
+    public szuletesi_datum = new Date();
     public felhasznalonev:string = "";
     public jelszo:string = "";
 }

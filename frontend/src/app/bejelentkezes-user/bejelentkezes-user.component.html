@@ -10,7 +10,7 @@
             <input matInput class="adat-input" [(ngModel)]="jelszo" id="jelszo" type="password">
         </mat-form-field>
         <div class="error-container">
-            <span *ngIf="errorMessage" class="error"><mat-icon>error_outline</mat-icon> Hibás felhasználónév vagy jelszó!</span>
+            <span *ngIf="errorMessage" class="error"><mat-icon class="mr-2">error_outline</mat-icon> Hibás felhasználónév vagy jelszó!</span>
         </div>
         <div class="mb-3">
             <button mat-raised-button type="submit" (click)="userLogin()">Bejelentkezés</button>

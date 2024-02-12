@@ -40,6 +40,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
@@ -87,7 +88,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     MatCheckboxModule,
     MatSelectModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatRadioModule
   ],
   providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]

@@ -20,11 +20,11 @@ export class BejelentkezesUserComponent {
     let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
     console.log(userBejelentkezesAdatok)
     this.userAzonositas.login(userBejelentkezesAdatok).subscribe({
-      next:(response)=>{
-        console.log('Sikeres bejelentkezés',response);
-        this.userAzonositas.setAuthToken(response.token);
-        this.userAzonositas.setUsername(response.felhasznalonev);
-        this.userAzonositas.setUserId(response.user_id);
+      next:(valasz)=>{
+        console.log('Sikeres bejelentkezés',valasz);
+        this.userAzonositas.setAuthToken(valasz.token);
+        this.userAzonositas.setUserId(valasz.userId);
+        this.userAzonositas.setUsername(valasz.felhasznalonev);
         console.log(this.userService.bejelentkezettUser)
         this.router.navigate(['/kezdooldal']);
       },

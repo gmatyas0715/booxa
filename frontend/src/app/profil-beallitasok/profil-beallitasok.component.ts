@@ -8,7 +8,7 @@ import { UserModell } from '../_modellek/user-modell';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { MAT_DATEPICKER_VALIDATORS } from '@angular/material/datepicker';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-profil-beallitasok',
@@ -35,7 +35,8 @@ export class ProfilBeallitasokComponent {
               public userService: UserService,
               public userAzonositas:UserAzonositasService,
               public dialog:MatDialog,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private datePipe:DatePipe) {
               this.regisztraltFelhasznalokEmailek()
               this.profilAdatBetoltes();
               this.belepesAdatForm = this.formBuilder.group({felhasznalonev:[''],jelszo:[''],uj_jelszo:[''],uj_jelszo_megerosites:['']});
@@ -78,7 +79,6 @@ export class ProfilBeallitasokComponent {
     this.szemelyesAdatForm.get('vezeteknev')?.enable();
     this.szemelyesAdatForm.get('keresztnev')?.enable();
     this.szemelyesAdatForm.get('szuletesi_datum')?.enable();
-    this.szemelyesAdatForm.get('szuletesi_datum')?.addValidators(MAT_DATEPICKER_VALIDATORS);
     this.szemelyesAdatSzerkesztheto=true
   }
 
@@ -103,9 +103,9 @@ export class ProfilBeallitasokComponent {
     this.szemelyesAdatForm.reset();
   }
   emailEgyezesValidator(control: AbstractControl):ValidationErrors|null {
-    const uj_jelszo = control.get('email')?.value;
-    const uj_jelszo_megerosites = control.get('email_megerosites')?.value;
-    if (uj_jelszo !== uj_jelszo_megerosites && uj_jelszo!="" && uj_jelszo_megerosites!="") {
+    const email = control.get('email')?.value;
+    const email_megerosites = control.get('email_megerosites')?.value;
+    if (email !== email_megerosites) {
       return { emailKulonbozes: true };
     }
     return null;
@@ -166,6 +166,7 @@ export class ProfilBeallitasokComponent {
   }
 
   torlesAblak(enterAnimationDuration:string,exitAnimationDuration:string): void {
+    console.log(this.userService.bejelentkezettUser.szuletesi_datum)
     this.dialog.open(ProfilTorles,{width:'250px',enterAnimationDuration,exitAnimationDuration});
   }
 
@@ -174,19 +175,21 @@ export class ProfilBeallitasokComponent {
       .userAdatok(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken())
       .subscribe((valasz)=>{
         this.userService.bejelentkezettUser.felhasznalonev = valasz.felhasznalonev
-        this.userService.bejelentkezettUser.email = valasz.felhasznalonev
-        this.userService.bejelentkezettUser.keresztnev = valasz.felhasznalonev
-        this.userService.bejelentkezettUser.vezeteknev = valasz.felhasznalonev
-        this.userService.bejelentkezettUser.szuletesiDatum = valasz.szuletesi_datum
+        this.userService.bejelentkezettUser.email = valasz.email
+        this.userService.bejelentkezettUser.keresztnev = valasz.keresztnev
+        this.userService.bejelentkezettUser.vezeteknev = valasz.vezeteknev
+        this.userService.bejelentkezettUser.szuletesi_datum = valasz.szuletesi_datum
 
         console.log(this.userService.bejelentkezettUser)
     })
   }
 
   profilMentes(formTipus:FormGroup,formTipusString:string,formSzerkesztheto:string){
+    if (formSzerkesztheto=='szemelyesAdatSzerkesztheto')this.szemelyesAdatForm.get('szuletesi_datum')?.setValue(this.datePipe.transform(this.szemelyesAdatForm.get('szuletesi_datum')?.value, 'yyyy-MM-dd'))
+    console.log(this.szemelyesAdatForm.get('szuletesi_datum')?.value)
     this.userService.profilSzerkesztes(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken(),formTipus.value,formTipusString).subscribe((valasz)=>{
-      console.log(valasz);
       this.userService.bejelentkezettUser = valasz.user_adatok
+      console.log(this.userService.bejelentkezettUser);
       formTipus.reset();
       
       switch (formSzerkesztheto) {
@@ -212,9 +215,12 @@ export class ProfilBeallitasokComponent {
     this._snackBar.open(msg,undefined,{duration:1500});
   }
 
-  dateString(date:Date):string{
-    date = new Date(date);
-    return date.toISOString().slice(0,10)
+  dateString(date:Date|null|undefined):string{
+    if (date != null && date !=undefined){
+      date = new Date(date);
+      return date.toISOString().slice(0,10)
+    }
+    return "";
   }
 }
 
