@@ -1,47 +1,56 @@
 <div class="container mt-5">
-    <h2>Kosár tartalma</h2>
-    <hr>
-    <div  *ngFor="let kosarElem of kosarSzerviz.jegyAdatLista; let i = index" class="row p-3 jegy-adat-container mb-5">
-        <div class="col-5">
-            <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.esemeny.eloado.kep_eleres)" alt="">
-            <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.esemeny.helyszin.helyszin_kep_eleres)" alt="">
-        </div>
-        <div class="col-3">
-            <ul>
-                <li>Előadó: {{kosarElem.esemeny.eloado.nev}}</li>
-                <li>Helyszín: {{kosarElem.esemeny.helyszin.nev}}</li>
-                <li>Szektor: {{kosarElem.szektor.szektor_nev}}</li>
-                <li>Szektor típus: {{kosarElem.szektor.szektor_tipus==='ulo'?'ülő':'álló'}}</li>
-                <li *ngIf="kosarElem.szektor.szektor_tipus==='ulo'">Sorjelzés: {{kosarElem.szektorAlegyseg.sorjelzes}}</li>
-                <li *ngIf="kosarElem.szektor.szektor_tipus==='ulo'">Ülőhelyek: {{kosarElem.ulohely}}</li>
-            </ul>
-        </div>
-        <div class="col-3">
-            <div class="row">
-                <div class="col-10">
-                    <ul>
-                        <li>Jegyár : {{kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar}} Ft</li>
-                        <br>
-                        <li>
-                            <p>Jegy darabszám:</p>
-                            <div>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i)" value="-">
-                                <p class="float-left ml-2 mr-2 p-1">{{kosarElem.jegyDarabszam}}</p>
-                                <input type="button" class="float-left btn btn-primary jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i)" value="+">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-2">
-                    <button mat-icon-button color="warn" class="szuro-torlo-button" (click)="kosarSzerviz.tetelTorles(i)" >
-                        <mat-icon class="szuro-torlo-icon">delete</mat-icon>
-                    </button>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col">
+            <h2>Kosár tartalma</h2>
             <hr>
-            <div class="row float-right mr-3 font-weight-bold">
-                Tétel ár összesen: {{kosarSzerviz.getTetelOsszarByIndex(i)}} Ft
-            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-card *ngFor="let kosarElem of kosarSzerviz.jegyAdatLista; let i = index" class="pt-2 pb-2 mb-5 kosar-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-6 d-none d-lg-block">
+                            <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.esemeny.eloado.kep_eleres)" alt="">
+                            <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.esemeny.helyszin.helyszin_kep_eleres)" alt="">
+                        </div>
+                        <div class="col col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-8 mb-3">
+                                    <span class="d-block mb-1"><b>Előadó:</b> {{kosarElem.esemeny.eloado.nev}}</span>
+                                    <span class="d-block mb-1"><b>Helyszín:</b> {{kosarElem.esemeny.helyszin.nev}}</span>
+                                    <span class="d-block mb-1"><b>Szektor:</b> {{kosarElem.szektor.szektor_nev}}</span>
+                                    <span class="d-block mb-1"><b>Szektor típus:</b> {{kosarElem.szektor.szektor_tipus==='ulo'?'ülő':'álló'}}</span>
+                                    <span *ngIf="kosarElem.szektor.szektor_tipus==='ulo'" class="d-block mb-1"><b>Sorjelzés:</b> {{kosarElem.szektorAlegyseg.sorjelzes}}</span>
+                                    <span *ngIf="kosarElem.szektor.szektor_tipus==='ulo'" class="d-block mb-1"><b>Ülőhelyek:</b> {{kosarElem.ulohely}}</span>
+                                </div>
+                                <div class="col col-sm-12 col-md-4 d-inline-block">
+                                    <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar}} Ft</span>
+                                    <span class="d-block mb-2"><b>Jegy darabszám:</b></span>
+                                    <div class="">
+                                        <button mat-mini-fab color="primary" class="jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i)"><h2>-</h2></button>
+                                        <span class="ml-2 mr-2 pt-2 font-weight-bold">{{kosarElem.jegyDarabszam}}</span>
+                                        <button mat-mini-fab color="primary" class="jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i)"><h2>+</h2></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row font-weight-bold align-items-center mb-1">
+                        <div class="col col-5">
+                            <button mat-raised-button color="warn" class="szuro-torlo-button" (click)="kosarSzerviz.tetelTorles(i)">
+                                <mat-icon>delete</mat-icon> <span class="ml-3">Törlés</span>
+                            </button>
+                        </div>
+                        <div class="col col-7 text-right">
+                            <span>
+                                Tétel összesen: {{kosarSzerviz.getTetelOsszarByIndex(i)}} Ft
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
         </div>
     </div>
     <div *ngIf="kosarSzerviz.jegyAdatLista.length==0">
@@ -62,3 +71,5 @@
         </div>
     </div>
 </div>
+
+

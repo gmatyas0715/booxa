@@ -13,7 +13,6 @@ export class KosarOsszegzoComponent {
   constructor(public kosarSzerviz:KosarService,
               public helyszinService:HelyszinService,
               public eloadoService:EloadoService) {
-
   }
 
   

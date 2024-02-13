@@ -99,9 +99,9 @@
                 <div class="d-inline-block">
                     <button mat-raised-button (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button>
                 </div>
-                <div class="d-inline-block">
+                <div class="d-inline-block ml-2">
                     <span *ngIf="jegyFoglaltDarab==0">Jegy kosárba helyezéséhez válassz darabszámot!</span>
-                    <button class="" *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
+                    <button *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
                 </div>
             </div>
         </div>

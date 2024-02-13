@@ -19,13 +19,12 @@ li{
     font-size: 110%;
 }
 
-.kuka{
-    height: 25px;
-    background-color: rgba(230, 15, 40, 0.3);
-}
-
 .jegy-darab{
     background-color: rgb(1 12 128);
+    padding-top: 3px;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
 }
 
 #kosar-ikon{
@@ -34,16 +33,10 @@ li{
 }
 
 .szuro-torlo-button{
-    position: relative;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 110px;
     text-align: center;
-    margin-left: 10px;
-}
-  
-.szuro-torlo-icon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    font-size: 13px;
+    align-items: center;
+    display: flex;
 }
