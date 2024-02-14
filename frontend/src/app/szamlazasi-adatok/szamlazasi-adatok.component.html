@@ -1,230 +1,237 @@
-<div class="container" id="regisztracio" (ngSubmit)="megrendelesElkuldes()" >
+<mat-card class="container" id="szamlazas" (ngSubmit)="megrendelesElkuldes()" >
     <form [formGroup]="szamlazasiAdatForm" id="szamlazasiAdatForm">
-        <div class="row"><h2>Rendelés összege: {{kosarSzerviz.getKosarOsszar()}} Ft</h2></div>
-        <div class="row"><h2>Számlázási adatok</h2></div>
+        <div class="row">
+            <div class="col">
+                <div><h2>Rendelés összege: {{kosarSzerviz.getKosarOsszar()}} Ft</h2></div>
+                <div><h2>Számlázási adatok</h2></div>
+            </div>
+        </div>
         <hr>
         <div class="row">
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label class="mandatory" for="vezeteknev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input mr-5" id="vezeteknev" type="text" formControlName="vezeteknev" mask="S*">
-                </div>
+            <div class="col col-md-12 col-lg-6">
+                <mat-form-field class="w-100">
+                    <mat-label for="vezeteknev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Vezetéknév:</mat-label>
+                    <input matInput id="vezeteknev" type="text" class="felhasznalo-input mr-5" formControlName="vezeteknev" mask="S*">
+                </mat-form-field>
             </div>
-            <div class="col-sm-12 col-xl-6">
-                <div class="row">
-                    <label for="keresztnev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input"  id="keresztnev" type="text" formControlName="keresztnev" mask="S*">
-                </div>
+            <div class="col col-md-12 col-lg-6">
+                <mat-form-field class="w-100">
+                    <mat-label for="keresztnev" matTooltip="Kötelező megadni!" matTooltipPosition="above">Keresztnév:</mat-label>
+                    <input matInput id="keresztnev" type="text" class="felhasznalo-input mr-5" formControlName="keresztnev" mask="S*">
+                </mat-form-field>
             </div>
-            <div class="mb-3" *ngIf="vezeteknev?.hasError('required') && vezeteknev?.touched || 
-            keresztnev?.hasError('required') && keresztnev?.touched">
-                <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
+        </div>
+        <div class="row hibauzenet-container">
+            <div class="col">
+                <div *ngIf="vezeteknev?.hasError('required') && vezeteknev?.touched || 
+                keresztnev?.hasError('required') && keresztnev?.touched">
+                    <span class="hibauzenet">A vezetéknév és keresztnév mezők nem maradhatnak üresen!</span>
+                </div>
             </div>
         </div>
         <div class="row">
+            <div class="col col-md-12 col-lg-9 col-xl-7">
+                <mat-form-field class="w-100">
+                    <mat-label for="email" matTooltip="Kötelező megadni!" matTooltipPosition="above">E-mail cím:</mat-label>
+                    <input matInput id="email" type="email" class="felhasznalo-input mr-5" formControlName="email">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row hibauzenet-container">
             <div class="col">
-                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
-                    <label for="email">E-mail cím <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="email" type="email" formControlName="email">
-                </div>
-                <div class="row mb-3" *ngIf="email?.hasError('required') && email?.touched">
+                <div *ngIf="email?.hasError('required') && email?.touched">
                     <span class="hibauzenet">Az e-mail mező nem maradhat üresen!</span>
                 </div>
-                <div class="row mb-3"  *ngIf="email?.hasError('email')">
+                <div *ngIf="email?.hasError('email')">
                     <span class="hibauzenet">A megadott adat nem érvényes e-mail cím!</span>
                 </div>
             </div>
         </div>
         <div class="row">
+            <div class="col col-md-12 col-lg-5">
+                <mat-form-field class="w-100">
+                    <mat-label for="iranyitoszam" matTooltip="Kötelező megadni!" matTooltipPosition="above">Irányítószám:</mat-label>
+                    <input matInput id="iranyitoszam" type="text" class="felhasznalo-input mr-5" formControlName="iranyitoszam"  mask="A*" maxlength="5">
+                </mat-form-field>
+            </div>
+            <div class="col col-md-12 col-lg-7">
+                <mat-form-field class="w-100">
+                    <mat-label for="telepules" matTooltip="Kötelező megadni!" matTooltipPosition="above">Település:</mat-label>
+                    <input matInput id="telepules" type="text" class="felhasznalo-input mr-5" formControlName="telepules" mask="S*">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row hibauzenet-container">
             <div class="col">
-                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
-                    <label>Irányítószám <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="iranyitoszam" type="text" formControlName="iranyitoszam" mask="A*" maxlength="5">
-                </div>
-                <div class="row mb-3"  *ngIf="iranyitoszam?.hasError('required') && iranyitoszam?.touched">
-                    <span class="hibauzenet">Az irányítószám mező nem maradhat üresen!</span>
+                <div *ngIf="iranyitoszam?.hasError('required') && iranyitoszam?.touched || telepules?.hasError('required') && telepules?.touched">
+                    <span class="hibauzenet">Az irányítószám, település mezők nem maradhatnak üresen!</span>
                 </div>
             </div>
-            <div class="col">
-                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
-                    <label>Település <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="telepules" type="text" formControlName="telepules" mask="S*">
-                </div>
-                <div class="row mb-3"  *ngIf="telepules?.hasError('required') && telepules?.touched">
-                    <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 col-lg-8">
+                <mat-form-field class="w-100">
+                    <mat-label for="kozterulet" matTooltip="Kötelező megadni!" matTooltipPosition="above">Közterület:</mat-label>
+                    <input matInput id="kozterulet" type="text" class="felhasznalo-input mr-5" formControlName="kozterulet" mask="S*">
+                </mat-form-field>
             </div>
-            <div class="col">
-                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
-                    <label>Utca <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="kozterulet" type="text" formControlName="kozterulet">
-                </div>
-                <div class="row mb-3"  *ngIf="kozterulet?.hasError('required') && kozterulet?.touched">
-                    <span class="hibauzenet">Az település mező nem maradhat üresen!</span>
-                </div>
+            <div class="col col-md-12 col-lg-4">
+                <mat-form-field class="w-100">
+                    <mat-label for="hazszam" matTooltip="Kötelező megadni!" matTooltipPosition="above">Házszám:</mat-label>
+                    <input matInput id="hazszam" type="text" class="felhasznalo-input mr-5" formControlName="hazszam" mask="0*" maxlength="4">
+                </mat-form-field>
             </div>
+        </div>
+        <div class="row hibauzenet-container">
             <div class="col">
-                <div class="row" matTooltip="Kötelező megadni!" matTooltipPosition="above">
-                    <label>Házszám <sup>*</sup>:</label>
-                </div>
-                <div class="row">
-                    <input class="felhasznalo-input" id="hazszam" type="text" formControlName="hazszam" mask="0*" maxlength="4">
-                </div>
-                <div class="row mb-3"  *ngIf="hazszam?.hasError('required') && hazszam?.touched">
-                    <span class="hibauzenet">Az házszám mező nem maradhat üresen!</span>
+                <div *ngIf="kozterulet?.hasError('required') && kozterulet?.touched || hazszam?.hasError('required') && hazszam?.touched">
+                    <span class="hibauzenet">Az közterület, házszám mezők nem maradhatnak üresen!</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <span>Fizetési mód kiválasztása:</span>
+                <h3>Fizetési mód kiválasztása:</h3>
             </div>
             <div class="col">
-                <input formControlName="fizetesmod" id="fizetesmod" type="radio" value="bankkartya">
-                <img class="w-50 ml-2" src="../../assets/kepek/credit-card.svg" alt="">
-                <span>Bankkártya</span>
+                <mat-radio-group formControlName="fizetesmod">
+                    <mat-radio-button id="fizetesmod" color="primary" value="bankkartya">
+                        <div class="bankkartya">
+                            <img class="d-block" src="../../assets/kepek/credit-card.svg" alt="">
+                            <mat-label class="d-block">Bankkártya</mat-label>
+                        </div>
+                    </mat-radio-button>
+                </mat-radio-group>
+                
             </div>
         </div>
-        <div class="row mb-3" *ngIf="fizetesmod?.hasError('required') && fizetesmod?.touched">
-            <span class="hibauzenet">Az fizetésmód kiválasztása kötelező!</span>
+        <div class="row">
+            <div class="col">
+                <div class="row mb-3" *ngIf="fizetesmod?.hasError('required') && fizetesmod?.touched">
+                    <span class="hibauzenet">Az fizetésmód kiválasztása kötelező!</span>
+                </div>
+            </div>
         </div>
         <br>
         <button mat-raised-button class="p-1 float-left" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
     </form>
-    <div *ngIf="fizetesiMod!='bankkartya'">
-        <div class="whole-payment-page">
+    <div class="w-100 justify-content-center" *ngIf="fizetesiMod!='bankkartya'">
             <div class="whole-payment-container">
-                <hr>
-                <div class="w-100 justify-content-center text-align-center">
-                    <h1>Bankkártyás fizetés</h1>
-                </div>
-                <div class="container">
-                    <div class="creditcard">
-                        <div class="front">
-                            <div id="ccsingle"></div>
-                            <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
-                                <g id="Front">
-                                    <g id="CardBackground">
-                                        <g id="Page-1_1_">
-                                            <g id="amex_1_">
-                                                <path id="Rectangle-1_1_" class="lightbluedark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
-                                        C0,17.9,17.9,0,40,0z" />
-                                            </g>
+                <div class="bankkartya-container container">
+                    <div class="w-100">
+                        <hr>
+                        <h1>Bankkártyás fizetés</h1>
+                    </div>
+                    <div class="creditcard row m-auto">
+                        <div class="col">
+                            <svg version="1.1" id="creditcard" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="100%" height="100%" x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                            <g id="Front">
+                                <g id="CardBackground">
+                                    <g id="Page-1_1_">
+                                        <g id="amex_1_">
+                                            <path id="Rectangle-1_1_" class="lightbluedark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                    C0,17.9,17.9,0,40,0z" />
                                         </g>
-                                        <path class="lightblue" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                                     </g>
-                                    <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">{{bankkartyaSzam?.value |  mask:'0000 0000 0000 0000'}}</text>
-                                    <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{kartyaTulajdonos?.value | mask:'S*'}}</text>
-                                    <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">kártyatulajdonos</text>
-                                    <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">lejárati idő</text>
-                                    <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">bankkártyaszám</text>
+                                    <path class="lightblue" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
+                                </g>
+                                <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4 kartyaszoveg-nagy">{{bankkartyaSzam?.value |  mask:'0000 0000 0000 0000'}}</text>
+                                <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6 kartyaszoveg-kozepes">{{kartyaTulajdonos?.value | mask:'A*'}}</text>
+                                <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="kartyaszoveg">kártyatulajdonos</text>
+                                <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="kartyaszoveg">lejárati idő</text>
+                                <text transform="matrix(1 0 0 1 65.1054 241.5)" class="kartyaszoveg">bankkártyaszám</text>
+                                <g>
+                                    <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="kartyaszoveg-nagy">{{bankkartyaLejarat?.value | mask:'00/00'}}</text>
+                                    <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="kartyaszoveg">VALID</text>
+                                    <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="kartyaszoveg">THRU</text>
+                                    <polygon style="fill: white;" class="st2" points="554.5,421 540.4,414.2 540.4,427.9" />
+                                </g>
+                                <g id="cchip">
                                     <g>
-                                        <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">{{bankkartyaLejarat?.value | mask:'00/00'}}</text>
-                                        <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
-                                        <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
-                                        <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9" />
+                                        <path class="st2 yellow" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
+                                c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
                                     </g>
-                                    <g id="cchip">
+                                    <g>
                                         <g>
-                                            <path class="st2 yellow" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
-                                    c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
+                                            <rect x="82" y="70" class="st12" width="1.5" height="60" />
                                         </g>
                                         <g>
-                                            <g>
-                                                <rect x="82" y="70" class="st12" width="1.5" height="60" />
-                                            </g>
-                                            <g>
-                                                <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
-                                            </g>
-                                            <g>
-                                                <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
-                                        c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
-                                        C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
-                                        c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
-                                        c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
-                                            </g>
-                                            <g>
-                                                <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5" />
-                                            </g>
-                                            <g>
-                                                <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5" />
-                                            </g>
-                                            <g>
-                                                <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5" />
-                                            </g>
-                                            <g>
-                                                <rect x="142" y="117.9" class="st12" width="26.2" height="1.5" />
-                                            </g>
+                                            <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
+                                        </g>
+                                        <g>
+                                            <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
+                                    c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
+                                    C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
+                                    c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
+                                    c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
+                                        </g>
+                                        <g>
+                                            <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5" />
+                                        </g>
+                                        <g>
+                                            <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5" />
+                                        </g>
+                                        <g>
+                                            <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5" />
+                                        </g>
+                                        <g>
+                                            <rect x="142" y="117.9" class="st12" width="26.2" height="1.5" />
                                         </g>
                                     </g>
                                 </g>
-                            </svg>
+                            </g>
+                        </svg>
                         </div>
                     </div>
                 </div>
                 <div id="bankkartyaAdatok" class="container mt-3 ml-auto mr-auto justify-content-center">
                     <form [formGroup]="bankkartyaAdatForm" id="bankkartyaAdatForm">
-                        <div class="field-container row w-100 m-auto">
-                            <label class="mb-1 mt-2" >Bankkártyaszám</label>
-                            <input id="bankkartyaSzam" formControlName="bankkartyaSzam" class="mt-0"  type="text" maxlength="19" mask="0000 0000 0000 0000">
+                        <div class="row w-100 m-auto">
+                            <mat-form-field class="col-12">
+                                <mat-label for="bankkartyaSzam" matTooltip="Kötelező megadni!" matTooltipPosition="above">Bankkártyaszám:</mat-label>
+                                <input matInput id="bankkartyaSzam" type="text" class="felhasznalo-input mr-5" formControlName="bankkartyaSzam" maxlength="19" mask="0000 0000 0000 0000">
+                            </mat-form-field>
                         </div>
-                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('required') && bankkartyaSzam?.touched">
-                            <span class="hibauzenet">A bankkártyaszám mező nem maradhat üresen!</span>
-                        </div>
-                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('bankkartyaSzamInvalid')">
-                            <span class="hibauzenet">A bankkkártyaszám csak számokat tartalmazhat!</span>
-                        </div>
-                        <div class="row mb-3" *ngIf="bankkartyaSzam?.hasError('bankkartyaSzamInvalid')">
-                            <span class="hibauzenet">A bankkkártyaszám csak számokat tartalmazhat!</span>
-                        </div>
-                        <div class="field-container row w-100 m-auto">
-                            <label class="mb-1 mt-2" >Kártyatulajdonos</label>
-                            <input id="kartyaTulajdonos" formControlName="kartyaTulajdonos" class="mt-0" maxlength="20" type="text" mask="S*">
-                        </div>
-                        <div class="row mb-3" *ngIf="kartyaTulajdonos?.hasError('required') && kartyaTulajdonos?.touched">
-                            <span class="hibauzenet">A bankkártya tulajdonos név mező nem maradhat üresen!</span>
-                        </div>
-                        <div class="field-container row w-100">
-                            <div class="col-8 ml-0">
-                                <label class="mb-1 mt-2" >Lejárati idő (mm/yy)</label>
-                                <input id="bankkartyaLejarat" formControlName="bankkartyaLejarat" class="mt-0" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="5" mask="00/00">
+                        <div class="row hibauzenet-container ml-auto mr-auto mb-4">
+                            <div class="col">
+                                <span *ngIf="bankkartyaSzam?.hasError('required') && bankkartyaSzam?.touched" class="hibauzenet">A bankkártyaszám mező nem maradhat üresen!</span>
+                                <span *ngIf="bankkartyaSzam?.hasError('bankkartyaSzamInvalid')" class="hibauzenet">A bankkkártyaszám csak számokat tartalmazhat!</span>
+                                <span *ngIf="bankkartyaSzam?.hasError('minlength') && bankkartyaSzam?.touched" class="hibauzenet">A bankkkártyaszámnak 16 karaktert kell tartalmaznia!</span>
                             </div>
-                            <div class="row mb-3" *ngIf="bankkartyaLejarat?.hasError('required') && bankkartyaLejarat?.touched">
-                                <span class="hibauzenet">A bankkártya lejárati idő mező nem maradhat üresen!</span>
+                        </div>
+                        <div class="row w-100 m-auto">
+                            <mat-form-field class="col-12">
+                                <mat-label for="kartyaTulajdonos" matTooltip="Kötelező megadni!" matTooltipPosition="above">Kártyatulajdonos:</mat-label>
+                                <input matInput id="kartyaTulajdonos" type="text" class="mt-0" formControlName="kartyaTulajdonos" maxlength="20" mask="S*">
+                            </mat-form-field>
+                        </div>
+                        <div class="row hibauzenet-container ml-auto mr-auto mb-4">
+                            <div class="col">
+                                <span *ngIf="kartyaTulajdonos?.hasError('required') && kartyaTulajdonos?.touched" class="hibauzenet">A bankkártya tulajdonos név mező nem maradhat üresen!</span>
                             </div>
-                            <div class="row mb-3" *ngIf="bankkartyaLejarat?.hasError('bankkartyaLejaratInvalid')">
-                                <span class="hibauzenet">A bankkkártyaszám lejárat csak számokat tartalmazhat!</span>
-                            </div>
-                            <div class="col-4 ml-0">
-                                <label class="mb-1 mt-2" >CVV2</label>
-                                <input id="cvvKod" formControlName="cvvKod" class="mt-0"  type="password" maxlength="3" mask="000">
-                            </div>
-                            <div class="row mb-3" *ngIf="cvvKod?.hasError('required') && cvvKod?.touched">
-                                <span class="hibauzenet">Az CVV2 mező megadása kötelező!</span>
-                            </div>
-                            <div class="row mb-3" *ngIf="cvvKod?.hasError('cvvKodInvalid')">
-                                <span class="hibauzenet">A CVV2 mező csak számokat tartalmazhat!</span>
+                        </div>
+                        <div class="row w-100 m-auto">
+                            <mat-form-field class="col-md-12 col-lg-8">
+                                <mat-label  for="bankkartyaLejarat" matTooltip="Kötelező megadni!" matTooltipPosition="above">Lejárati idő (mm/yy):</mat-label>
+                                <input matInput id="bankkartyaLejarat" type="text" class="mt-0" formControlName="bankkartyaLejarat" pattern="[0-9]*" inputmode="numeric" maxlength="5" mask="00/00">
+                            </mat-form-field>
+                            <mat-form-field class="col-md-12 col-lg-4">
+                                <mat-label for="cvvKod" matTooltip="Kötelező megadni!" matTooltipPosition="above">CVV2:</mat-label>
+                                <input matInput id="cvvKod" type="text" class="mt-0" formControlName="cvvKod" type="password" maxlength="3" mask="000">
+                            </mat-form-field>
+                        </div>
+                        <div class="row hibauzenet-container ml-auto mr-auto mb-4">
+                            <div class="col">
+                                <span *ngIf="bankkartyaLejarat?.hasError('required') && bankkartyaLejarat?.touched || cvvKod?.hasError('required') && cvvKod?.touched" class="hibauzenet">A bankkártya lejárati idő és CVV2 mezők nem maradhatnak üresen!</span>
+                                <span *ngIf="bankkartyaLejarat?.hasError('bankkartyaLejaratInvalid') || cvvKod?.hasError('cvvKodInvalid')" class="hibauzenet">A bankkkártyaszám lejárat, CVV2 mezők csak számokat tartalmazhatnak!</span>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
     </div>
-    <div class="field-container d-flex justify-content-center mt-5" >
-        <button mat-raised-button (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes()" id="gomb-reg">Megrendelem</button>
+    <div class="field-container d-flex justify-content-center mt-2" >
+        <button mat-raised-button (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes()" id="rendeles">Rendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
     </div>
-</div>
+</mat-card>
