@@ -6,7 +6,7 @@
 }
 
 .kereses-szures-container{
-  width: 300px;
+  width: 400px;
   height: 100%;
   overflow-y: auto;
 }
@@ -40,8 +40,7 @@ button{
 }
 
 .kereses-block{
-  padding: 5px 0px 12px 2px;
-  margin-bottom: 10px;
+  padding: 10px;
   background-color: white;
 }
 
@@ -93,9 +92,7 @@ mat-grid-tile{
 }
 
 .szuro-cim-torles-container{
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .megjelenitett-esemeny-darab{

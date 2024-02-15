@@ -64,9 +64,9 @@ export class EsemenyKeresoComponent implements OnInit{
       } else if (result.breakpoints[Breakpoints.Medium]) {
         this.cols = 1;
       } else if (result.breakpoints[Breakpoints.Large]) {
-        this.cols = 2;
+        this.cols = 1;
       } else if (result.breakpoints[Breakpoints.XLarge]) {
-        this.cols = 3;
+        this.cols = 1;
       }
     });
     this.mufajBetoltes();

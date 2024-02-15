@@ -2,165 +2,183 @@
     <div class="row">
         <div class="col-3 kereses-szures-container">
             <div class="row">
-                <h4 class="font-weight-bold" >Szűrők beállítása</h4>
-            </div>
-            <div class="row szuro-cim-torles-container">
-                <span class="font-weight-bold d-block">Szűrés esemény időpontra</span>
-                <button class="szuro-torlo-button" matTooltip="Eseményidőpont törlése" matTooltipPosition="above" mat-icon-button (click)="datumTorles()" [disabled]="esemenyDatum==''">                
-                    <mat-icon class="szuro-torlo-icon" >close</mat-icon>
-                </button>
-            </div>
-            <mat-card class="row kereses-block">
-                <div class="col d-block mb-2 pt-2">
-                    <mat-form-field class="szuro-input">
-                        <mat-label>Időpont</mat-label>
-                        <input matInput [matDatepicker]="picker" [min]="maiDatum" (dateChange)="esemenyKivalasztas($event)" [value]="esemenyDatum">
-                        <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                </div>
-            </mat-card>
-            <div class="row szuro-cim-torles-container">
-                <span class="font-weight-bold d-block">Szűrés jegy alapárra</span>
-                <button class="szuro-torlo-button" matTooltip="Jegyár visszaállítás" matTooltipPosition="above" mat-icon-button (click)="jegyArAlaphelyzet()" [disabled]="minJegyar==0&&maxJegyar==30000">                
-                    <mat-icon class="szuro-torlo-icon">replay</mat-icon>
-                </button>
-            </div>
-            <mat-card class="row kereses-block">
-                <div class="col d-block mb-2 pt-2">
-                    <mat-form-field class="szuro-input">
-                        <mat-label>Min. jegy alapár</mat-label>
-                        <input matInput class="mb-2" id="min-jegyar" mask="9*" [(ngModel)]="minJegyar" (change)="esemenyKereses()">
-                    </mat-form-field>
-                    <mat-form-field class="szuro-input">
-                        <mat-label>Max. jegy alapár</mat-label>
-                        <input matInput id="max-jegyar"  mask="9*" [(ngModel)]="maxJegyar" (change)="esemenyKereses()">
-                    </mat-form-field>
-                    <mat-slider min="0" max="30000" (change)="esemenyKereses()" class="w-75">
-                        <input [(ngModel)]="minJegyar" matSliderStartThumb>
-                        <input [(ngModel)]="maxJegyar" matSliderEndThumb>
-                    </mat-slider>
-                    <br>
-                    <span>Jegy alapárak:</span> 
-                    <br>
-                    <span>{{minJegyar}} Ft - {{maxJegyar}} Ft között</span>
-                </div>
-            </mat-card>
-            <div class="row szuro-cim-torles-container">
-                <span class="font-weight-bold d-block">Szűrés műfajokra</span>
-                <button class="szuro-torlo-button" matTooltip="Műfajszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('mufaj')" [disabled]="keresettMufajok.length==0">                
-                    <mat-icon class="szuro-torlo-icon" >close</mat-icon>
-                </button>
-            </div>
-            <mat-card class="row kereses-block szuro-container">
                 <div class="col">
-                    <ul class="szuro-elem-lista">
-                        <li *ngFor="let mufaj of mufajLista">
-                            <mat-checkbox [checked]="keresettMufajok.includes(mufaj)" id={{mufaj}} color="primary" (change)="checkValtozas('mufaj',mufaj)">{{mufaj}}</mat-checkbox>
-                        </li>
-                    </ul>
+                    <h4 class="font-weight-bold" >Szűrők beállítása</h4>
                 </div>
-            </mat-card>
-            <div class="row szuro-cim-torles-container">
-                <span class="font-weight-bold d-block">Szűrés helyszínekre</span>
-                <button class="szuro-torlo-button" matTooltip="Helyszínszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('varos')" [disabled]="keresettTelepulesek.length==0">                
-                    <mat-icon class="szuro-torlo-icon">close</mat-icon>
-                </button>
             </div>
-            <mat-card class="row kereses-block">
-                <div class="col">
-                    <ul class="szuro-elem-lista">
-                        <li *ngFor="let varos of telepulesLista">
-                            <mat-checkbox [checked]="keresettTelepulesek.includes(varos)" id="{{varos}}" color="primary" (change)="checkValtozas('varos',varos)">{{varos}}</mat-checkbox>
-                        </li>
-                    </ul>
+            <div class="row">
+                <div class="col szuro-cim-torles-container">
+                    <span class="font-weight-bold d-block">Szűrés időpontra</span>
+                    <button class="szuro-torlo-button" matTooltip="Eseményidőpont törlése" matTooltipPosition="above" mat-icon-button (click)="datumTorles()" [disabled]="esemenyDatum==''">                
+                        <mat-icon class="szuro-torlo-icon" >close</mat-icon>
+                    </button>
                 </div>
-            </mat-card>
+            </div>
+            <div class="row mb-4">
+                <div class="col d-block">
+                    <mat-card class="kereses-block">
+                        <mat-form-field class="szuro-input">
+                            <mat-label>Időpont</mat-label>
+                            <input matInput [matDatepicker]="picker" [min]="maiDatum" (dateChange)="esemenyKivalasztas($event)" [value]="esemenyDatum">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col szuro-cim-torles-container">
+                    <span class="font-weight-bold d-block">Szűrés jegy alapárra</span>
+                    <button class="szuro-torlo-button" matTooltip="Jegyár visszaállítás" matTooltipPosition="above" mat-icon-button (click)="jegyArAlaphelyzet()" [disabled]="minJegyar==0&&maxJegyar==30000">                
+                        <mat-icon class="szuro-torlo-icon">replay</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col d-block">
+                    <mat-card class="kereses-block">
+                        <mat-form-field class="szuro-input">
+                            <mat-label>Min. jegy alapár</mat-label>
+                            <input matInput class="mb-2" id="min-jegyar" mask="9*" [(ngModel)]="minJegyar" (change)="esemenyKereses()">
+                        </mat-form-field>
+                        <mat-form-field class="szuro-input">
+                            <mat-label>Max. jegy alapár</mat-label>
+                            <input matInput id="max-jegyar"  mask="9*" [(ngModel)]="maxJegyar" (change)="esemenyKereses()">
+                        </mat-form-field>
+                        <mat-slider min="0" max="30000" (change)="esemenyKereses()" class="w-75">
+                            <input [(ngModel)]="minJegyar" matSliderStartThumb>
+                            <input [(ngModel)]="maxJegyar" matSliderEndThumb>
+                        </mat-slider>
+                        <br>
+                        <span>Jegy alapárak:</span> 
+                        <br>
+                        <span>{{minJegyar}} Ft - {{maxJegyar}} Ft között</span>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col szuro-cim-torles-container">
+                    <span class="font-weight-bold d-block">Szűrés műfajokra</span>
+                    <button class="szuro-torlo-button" matTooltip="Műfajszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('mufaj')" [disabled]="keresettMufajok.length==0">                
+                        <mat-icon class="szuro-torlo-icon" >close</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <mat-card class=" kereses-block szuro-container">
+                        <ul class="szuro-elem-lista">
+                            <li *ngFor="let mufaj of mufajLista">
+                                <mat-checkbox [checked]="keresettMufajok.includes(mufaj)" id={{mufaj}} color="primary" (change)="checkValtozas('mufaj',mufaj)">{{mufaj}}</mat-checkbox>
+                            </li>
+                        </ul>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col szuro-cim-torles-container">
+                    <span class="font-weight-bold d-block">Szűrés helyszínekre</span>
+                    <button class="szuro-torlo-button" matTooltip="Helyszínszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('varos')" [disabled]="keresettTelepulesek.length==0">                
+                        <mat-icon class="szuro-torlo-icon">close</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <mat-card class="kereses-block szuro-container">
+                        <ul class="szuro-elem-lista">
+                            <li *ngFor="let varos of telepulesLista">
+                                <mat-checkbox [checked]="keresettTelepulesek.includes(varos)" id="{{varos}}" color="primary" (change)="checkValtozas('varos',varos)">{{varos}}</mat-checkbox>
+                            </li>
+                        </ul>
+                    </mat-card>
+                </div>
+            </div>
         </div>
-        <div class="col">
-    <div class="konkret-kereses-container"> 
-        <div class="row">
-            <div class="col mb-2" (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
-                <div class="row">
-                    <div class="col">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Előadó</mat-label>
-                            <input matInput [(ngModel)]="keresettEloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
-                            <mat-autocomplete #auto1="matAutocomplete">
-                                <mat-option *ngFor="let javaslat of eloadoFilterezett" [value]="javaslat">
+        <div class="col konkret-kereses-container"> 
+            <div class="row">
+                <div class="col mb-2" (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
+                    <div class="row p-3">
+                        <mat-card>
+                        <div class="col">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Előadó</mat-label>
+                                    <input matInput [(ngModel)]="keresettEloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
+                                    <mat-autocomplete #auto1="matAutocomplete">
+                                        <mat-option *ngFor="let javaslat of eloadoFilterezett" [value]="javaslat">
+                                            {{ javaslat }}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''"><mat-icon class="ml-1">close</mat-icon></button>
+                        </div>
+                        <div class="col">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Helyszín</mat-label>
+                                <input matInput [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
+                            </mat-form-field>
+                            <mat-autocomplete #auto2="matAutocomplete">
+                                <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
                                     {{ javaslat }}
                                 </mat-option>
                             </mat-autocomplete>
-                        </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button class="mt-2 d-flex align-items-center" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''"><mat-icon class="ml-1">close</mat-icon></button>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button class="mt-2" (click)="esemenyKereses()">Keresés</button>
+                        </div>
+                    </mat-card>
                     </div>
-                    <div class="col">
-                        <button mat-raised-button class="mt-2" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettEloado==''"><mat-icon class="ml-1">close</mat-icon></button>
+                </div>              
+                <div class="col">
+                    <div class="row oldalnavigacio">
+                        <button class="paginalas" (click)="elsoOldal()">
+                            <mat-icon>first_page</mat-icon>
+                        </button>
+                        <button class="paginalas" (click)="lapozasHatra()">
+                            <mat-icon>keyboard_arrow_left</mat-icon>
+                        </button>
+                        <button class="paginalas" (click)="lapozasElore()">
+                            <mat-icon>keyboard_arrow_right</mat-icon>
+                        </button>
+                        <button class="paginalas" (click)="utolsoOldal()">
+                            <mat-icon>last_page</mat-icon>
+                        </button>
                     </div>
-                    <div class="col">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Helyszín</mat-label>
-                            <input matInput [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2" >
-                        </mat-form-field>
-                        <mat-autocomplete #auto2="matAutocomplete">
-                            <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
-                                {{ javaslat }}
-                            </mat-option>
-                        </mat-autocomplete>
-                    </div>
-                    <div class="col">
-                        <button mat-raised-button class="mt-2 d-flex align-items-center" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''"><mat-icon class="ml-1">close</mat-icon></button>
-                    </div>
-                    <div class="col">
-                        <button mat-raised-button class="mt-2" (click)="esemenyKereses()">Keresés</button>
-                    </div>
+                    <mat-form-field style="width: 100px;">
+                        <mat-label>Megjelenített események</mat-label>
+                        <mat-select class="megjelenitett-esemeny-darab" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
+                            <mat-option [value]=5>5</mat-option>
+                            <mat-option [value]=10>10</mat-option>
+                            <mat-option [value]=25>25</mat-option>
+                            <mat-option [value]=50>50</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Találatok rendezése</mat-label>
+                        <mat-select name="talalat-rendezes" [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
+                            <mat-option value="eloado_AZ">előadók (A-Z)</mat-option>
+                            <mat-option value="eloado_ZA">előadók (Z-A)</mat-option>
+                            <mat-option value="helyszin_AZ">helyszínek (A-Z)</mat-option>
+                            <mat-option value="helyszin_ZA">helyszínek (Z-A)</mat-option>
+                            <mat-option value="jegy_n">jegy alapár (növekvő)</mat-option>
+                            <mat-option value="jegy_cs">jegy alapár (csökkenő)</mat-option>
+                            <mat-option value="datum_n">dátum (legkorábbitól)</mat-option>
+                            <mat-option value="datum_cs">dátum (legkésőbbitől)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
-            </div>              
-            <div class="col">
-                <div class="row oldalnavigacio">
-                    <button class="paginalas" (click)="elsoOldal()">
-                        <mat-icon>first_page</mat-icon>
-                    </button>
-                    <button class="paginalas" (click)="lapozasHatra()">
-                        <mat-icon>keyboard_arrow_left</mat-icon>
-                    </button>
-                    <button class="paginalas" (click)="lapozasElore()">
-                        <mat-icon>keyboard_arrow_right</mat-icon>
-                    </button>
-                    <button class="paginalas" (click)="utolsoOldal()">
-                        <mat-icon>last_page</mat-icon>
-                    </button>
-                </div>
-                <mat-form-field style="width: 100px;">
-                    <mat-label>Megjelenített események</mat-label>
-                    <mat-select class="megjelenitett-esemeny-darab" [(ngModel)]="esemenyekDbOldalon" (ngModelChange)="this.elsoOldal()">
-                        <mat-option [value]=5>5</mat-option>
-                        <mat-option [value]=10>10</mat-option>
-                        <mat-option [value]=25>25</mat-option>
-                        <mat-option [value]=50>50</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Találatok rendezése</mat-label>
-                    <mat-select name="talalat-rendezes" [(ngModel)]="talalatRendezesOpcio" (ngModelChange)="talalatRendezes()">
-                        <mat-option value="eloado_AZ">előadók (A-Z)</mat-option>
-                        <mat-option value="eloado_ZA">előadók (Z-A)</mat-option>
-                        <mat-option value="helyszin_AZ">helyszínek (A-Z)</mat-option>
-                        <mat-option value="helyszin_ZA">helyszínek (Z-A)</mat-option>
-                        <mat-option value="jegy_n">jegy alapár (növekvő)</mat-option>
-                        <mat-option value="jegy_cs">jegy alapár (csökkenő)</mat-option>
-                        <mat-option value="datum_n">dátum (legkorábbitól)</mat-option>
-                        <mat-option value="datum_cs">dátum (legkésőbbitől)</mat-option>
-                    </mat-select>
-                </mat-form-field>
             </div>
-        </div>
-    </div>
-    <div class="ml-5 mt-5 w-100">
+        <div class="ml-5 mt-5 w-100">
         <hr>
         <mat-grid-list  [cols]="cols" rowHeight="2:1">
             <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb"> <!--; index as i; trackBy: trackByFn-->
-                <mat-card class="container esemeny-containe">
+                <mat-card class="container esemeny-container">
                     <mat-card-content>
                         <div class="row p-0">
                             <div class="col text-center p-0">
