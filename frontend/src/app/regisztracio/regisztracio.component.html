@@ -103,9 +103,14 @@
                     <mat-checkbox matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above" class="mr-2" id="adatvedelmi" color="primary" formControlName="adatvedelmi" required>Elolvastam és elfogadom az adatvédelmi nyilatkozatot.</mat-checkbox>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row error-container">
                 <div class="col">
-                    <button [disabled]="validFormEllenorzes()" mat-raised-button type="submit">Regisztrálok</button> <!--[disabled]="validFormEllenorzes()" -->
+                    <span *ngIf="regisztracioForm.get('adatvedelmi')?.hasError('required') && regisztracioForm.get('adatvedelmi')?.touched" class="hibauzenet">A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!</span>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <button class="reg-button" [disabled]="validFormEllenorzes() || toltes" mat-raised-button type="submit"><span *ngIf="!toltes">Regisztrálok</span><mat-spinner *ngIf="toltes" diameter="20" mode="indeterminate"></mat-spinner></button>
                 </div>
             </div>
         </form>

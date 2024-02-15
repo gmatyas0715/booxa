@@ -115,7 +115,7 @@
         <br>
         <button mat-raised-button class="p-1 float-left" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
     </form>
-    <div class="w-100 justify-content-center" *ngIf="fizetesiMod!='bankkartya'">
+    <div class="w-100 justify-content-center" *ngIf="!fizetesmod?.hasError('required')">
             <div class="whole-payment-container">
                 <div class="bankkartya-container container">
                     <div class="w-100">
@@ -231,7 +231,7 @@
                 </div>
             </div>
     </div>
-    <div class="field-container d-flex justify-content-center mt-2" >
+    <div *ngIf="!fizetesmod?.hasError('required')" class="field-container d-flex justify-content-center mt-2" >
         <button mat-raised-button (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes()" id="rendeles">Rendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
     </div>
 </mat-card>

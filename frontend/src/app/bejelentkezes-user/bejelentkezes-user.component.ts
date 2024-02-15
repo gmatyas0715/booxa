@@ -13,14 +13,17 @@ export class BejelentkezesUserComponent {
   felhasznalonev:string = "aansteysd";
   jelszo:string = "xA4)ij7}UPde2";
   errorMessage = false;
+  toltes = false
 
   constructor(private userAzonositas:UserAzonositasService,private userService:UserService, private router:Router) {}
 
   userLogin(){
+    this.toltes = true
     let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
     console.log(userBejelentkezesAdatok)
     this.userAzonositas.login(userBejelentkezesAdatok).subscribe({
       next:(valasz)=>{
+        this.toltes = false
         console.log('Sikeres bejelentkezés',valasz);
         this.userAzonositas.setAuthToken(valasz.token);
         this.userAzonositas.setUserId(valasz.userId);
@@ -29,6 +32,7 @@ export class BejelentkezesUserComponent {
         this.router.navigate(['/kezdooldal']);
       },
       error:(error) => {
+        this.toltes = false
         this.errorMessage = true
         this.felhasznalonev = "";
         this.jelszo = "";

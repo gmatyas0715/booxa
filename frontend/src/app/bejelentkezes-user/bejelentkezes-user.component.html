@@ -13,10 +13,10 @@
             <span *ngIf="errorMessage" class="error"><mat-icon class="mr-2">error_outline</mat-icon> Hibás felhasználónév vagy jelszó!</span>
         </div>
         <div class="mb-3">
-            <button mat-raised-button type="submit" (click)="userLogin()">Bejelentkezés</button>
+            <button class="login-button" mat-raised-button type="submit" (click)="userLogin()" [disabled]="toltes"><span><mat-spinner *ngIf="toltes" class="ml-2" diameter="20" mode="indeterminate"></mat-spinner></span> <span *ngIf="!toltes"> Bejelentkezés</span></button>
         </div>
         <div>
-            <span>Nincs még fiókod?</span><a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a>
+            <b><span>Nincs még fiókod?</span><a class="ml-2" routerLink="/regisztracio">Regisztrálj!</a></b>
         </div>
     </mat-card>
 </div>

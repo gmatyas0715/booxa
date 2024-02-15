@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { KosarService } from '../_szervizek/kosar.service';
 import { RendelesService } from '../_szervizek/rendeles.service';
 import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
@@ -17,7 +17,6 @@ export class SzamlazasiAdatokComponent {
   public minEvDatum:string = this.jelenEv-130+"-01-01"
   szamlazasiAdatForm: FormGroup;
   bankkartyaAdatForm: FormGroup;
-  fizetesiMod:string = "";
 
   constructor(
     private formBuilder: FormBuilder,

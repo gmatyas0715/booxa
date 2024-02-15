@@ -21,6 +21,7 @@ export class RegisztracioComponent {
   public regisztraltFelhasznalonevek:any[] = [];
   public regisztraltEmailek:any[] = [];
   regisztracioForm: FormGroup;
+  toltes = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -59,9 +60,11 @@ export class RegisztracioComponent {
   }
 
   regisztracioGomb():void{
+    this.toltes = true
     this.regisztracioForm.get('szuletesi_datum')?.setValue(this.datePipe.transform(this.regisztracioForm.get('szuletesi_datum')?.value, 'yyyy-MM-dd'))
     this.userService.userRegisztralas(this.regisztracioForm.value).subscribe({
       next:(valasz)=>{
+        this.toltes = false
         this.snackbarMegnyitas(true)
         this.userAzonositasService.setUsername(valasz.felhasznalonev);
         this.userAzonositasService.setUserId(valasz.userId);
@@ -69,6 +72,7 @@ export class RegisztracioComponent {
         this.router.navigate(['/kezdooldal']);
       },
       error:()=>{
+        this.toltes = false
         this.snackbarMegnyitas(false)
       }
     });

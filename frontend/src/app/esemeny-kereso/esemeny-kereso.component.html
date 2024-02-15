@@ -1,15 +1,16 @@
-<div class="esemeny-kereso-teljes">
-    <div class="container kereses-szures"> 
-       <div class="col kereses-szures-content">
+<div class="esemeny-kereso-teljes container">
+    <div class="row">
+        <div class="col-3 kereses-szures-container">
             <div class="row">
-                <div class="col">
-                    <h4 class="font-weight-bold" >Szűrők beállítása</h4>
-                </div>
+                <h4 class="font-weight-bold" >Szűrők beállítása</h4>
             </div>
             <div class="row szuro-cim-torles-container">
                 <span class="font-weight-bold d-block">Szűrés esemény időpontra</span>
+                <button class="szuro-torlo-button" matTooltip="Eseményidőpont törlése" matTooltipPosition="above" mat-icon-button (click)="datumTorles()" [disabled]="esemenyDatum==''">                
+                    <mat-icon class="szuro-torlo-icon" >close</mat-icon>
+                </button>
             </div>
-            <div class="row mb-4 kereses-block">
+            <mat-card class="row kereses-block">
                 <div class="col d-block mb-2 pt-2">
                     <mat-form-field class="szuro-input">
                         <mat-label>Időpont</mat-label>
@@ -19,17 +20,14 @@
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
                 </div>
-                <div class="col">
-                    <button mat-raised-button class="mt-2" (click)="datumTorles()" [disabled]="esemenyDatum==''"><mat-icon>close</mat-icon>Időpont törlése</button>
-                </div>
-            </div>
+            </mat-card>
             <div class="row szuro-cim-torles-container">
                 <span class="font-weight-bold d-block">Szűrés jegy alapárra</span>
                 <button class="szuro-torlo-button" matTooltip="Jegyár visszaállítás" matTooltipPosition="above" mat-icon-button (click)="jegyArAlaphelyzet()" [disabled]="minJegyar==0&&maxJegyar==30000">                
                     <mat-icon class="szuro-torlo-icon">replay</mat-icon>
                 </button>
             </div>
-            <div class="row mb-4 kereses-block">
+            <mat-card class="row kereses-block">
                 <div class="col d-block mb-2 pt-2">
                     <mat-form-field class="szuro-input">
                         <mat-label>Min. jegy alapár</mat-label>
@@ -48,41 +46,40 @@
                     <br>
                     <span>{{minJegyar}} Ft - {{maxJegyar}} Ft között</span>
                 </div>
-            </div>
+            </mat-card>
             <div class="row szuro-cim-torles-container">
                 <span class="font-weight-bold d-block">Szűrés műfajokra</span>
                 <button class="szuro-torlo-button" matTooltip="Műfajszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('mufaj')" [disabled]="keresettMufajok.length==0">                
                     <mat-icon class="szuro-torlo-icon" >close</mat-icon>
                 </button>
             </div>
-            <div class="row mb-4 kereses-block szuro-container">
+            <mat-card class="row kereses-block szuro-container">
                 <div class="col">
-                    <ul>
+                    <ul class="szuro-elem-lista">
                         <li *ngFor="let mufaj of mufajLista">
-                            <mat-checkbox [checked]="keresettMufajok.includes(mufaj)" class="mr-2" id={{mufaj}} color="primary" (change)="checkValtozas('mufaj',mufaj)">{{mufaj}}</mat-checkbox>
+                            <mat-checkbox [checked]="keresettMufajok.includes(mufaj)" id={{mufaj}} color="primary" (change)="checkValtozas('mufaj',mufaj)">{{mufaj}}</mat-checkbox>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </mat-card>
             <div class="row szuro-cim-torles-container">
                 <span class="font-weight-bold d-block">Szűrés helyszínekre</span>
                 <button class="szuro-torlo-button" matTooltip="Helyszínszűrők törlése" matTooltipPosition="above" mat-icon-button (click)="szuroTorles('varos')" [disabled]="keresettTelepulesek.length==0">                
                     <mat-icon class="szuro-torlo-icon">close</mat-icon>
                 </button>
             </div>
-            <div class="row mb-4 kereses-block">
+            <mat-card class="row kereses-block">
                 <div class="col">
-                    <span class="d-block">Város</span>
-                    <ul>
+                    <ul class="szuro-elem-lista">
                         <li *ngFor="let varos of telepulesLista">
-                            <mat-checkbox [checked]="keresettTelepulesek.includes(varos)" class="mr-2" id="{{varos}}" color="primary" (change)="checkValtozas('varos',varos)">{{varos}}</mat-checkbox>
+                            <mat-checkbox [checked]="keresettTelepulesek.includes(varos)" id="{{varos}}" color="primary" (change)="checkValtozas('varos',varos)">{{varos}}</mat-checkbox>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </mat-card>
         </div>
-    </div>
-    <div class="ml-5 mt-5 w-100">
+        <div class="col">
+    <div class="konkret-kereses-container"> 
         <div class="row">
             <div class="col mb-2" (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
                 <div class="row">
@@ -158,10 +155,12 @@
                 </mat-form-field>
             </div>
         </div>
+    </div>
+    <div class="ml-5 mt-5 w-100">
         <hr>
         <mat-grid-list  [cols]="cols" rowHeight="2:1">
             <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb"> <!--; index as i; trackBy: trackByFn-->
-                <mat-card class="container">
+                <mat-card class="container esemeny-containe">
                     <mat-card-content>
                         <div class="row p-0">
                             <div class="col text-center p-0">
@@ -212,6 +211,8 @@
                     <mat-option [value]=50>50</mat-option>
                 </mat-select>
             </mat-form-field>
+        </div>
+        </div>
         </div>
     </div>
 </div>
