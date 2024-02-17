@@ -29,6 +29,7 @@ export class EsemenyKeresoComponent implements OnInit{
   public telepulesLista: string[] = [];
   public eloadoJavaslatok: string[] = [];
   public helyszinJavaslatok: string[] = [];
+  public eloadoHelyszinJavaslatok: string[] = [];
   public esemenyLista:EsemenyModell[] = [];
   public megjelenitettEsemenyekTomb:EsemenyModell[] = []
   public keresettEloado:string = "";
@@ -37,7 +38,7 @@ export class EsemenyKeresoComponent implements OnInit{
   public keresettTelepulesek: string[] = [];
   public talalatRendezesOpcio:string = "datum_n";
   public cols:number = 2;
-  public esemenyekDbOldalon = 10;
+  public esemenyekDbOldalon = 5;
   public oldalSzam = 0; 
   
   constructor(public esemenySzerviz:EsemenyService,
@@ -189,7 +190,8 @@ export class EsemenyKeresoComponent implements OnInit{
 
   eloadoJavaslatBetoltes(){
     this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz)=>{
-      this.eloadoJavaslatok = valasz;   
+      console.log(valasz)
+      this.eloadoJavaslatok = valasz; 
     });
   }
 

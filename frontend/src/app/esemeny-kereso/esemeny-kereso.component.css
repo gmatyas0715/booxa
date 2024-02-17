@@ -1,12 +1,11 @@
 .esemeny-kereso-teljes{
-  display: flex;
+  min-width: 70%;
   color: #2e2f70;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .kereses-szures-container{
-  width: 400px;
   height: 100%;
   overflow-y: auto;
 }
@@ -19,10 +18,6 @@
   margin-bottom: 1px;
   align-items: center;
   display: flex;
-}
-
-.konkret-kereses-container{
-
 }
 
 .esemeny-kep{
@@ -42,6 +37,10 @@ button{
 .kereses-block{
   padding: 10px;
   background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .szuro-container{
@@ -64,7 +63,7 @@ mat-grid-tile{
 }
 
 .szuro-input{
-  width: 90%;
+  width: 100%;
   height: 80px;
 }
 
@@ -80,7 +79,6 @@ mat-grid-tile{
   position: relative;
   height: 10px;
   width: 10px;
-  text-align: center;
   margin-left: 10px;
 }
 
@@ -93,24 +91,50 @@ mat-grid-tile{
 
 .szuro-cim-torles-container{
   margin-bottom: 5px;
+  align-items: center;
 }
 
 .megjelenitett-esemeny-darab{
-  height: 30px;
-  width: 50px;
+  height: fit-content;
+  width: 70px;
+}
+
+.rendezes{
+  height: fit-content;
+  width: 150px;
 }
 
 .paginalas{
   height: 25px;
-  width: 40px;
+  width: 36px;
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 0px 10px;
+  margin: 0px 5px;
   border-radius: 5px;
   border: 1px solid rgb(228, 225, 225);
 }
 
 .szuro-elem-lista{
   padding-left: 0px;
+}
+
+.oldalnavigacio{
+  display: flex;
+  justify-self: center;
+}
+
+.rendezes{
+  justify-self: end;
+  align-self: flex-end;
+}
+
+.esemeny-megjelenito{
+  border-radius: 2px;
+}
+
+.paginacio{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
 }
