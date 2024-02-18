@@ -39,7 +39,18 @@ export class EsemenyKeresoComponent implements OnInit{
   public talalatRendezesOpcio:string = "datum_n";
   public cols:number = 2;
   public esemenyekDbOldalon = 5;
-  public oldalSzam = 0; 
+  public oldalSzam = 0;
+  public szuroMenu = false;
+  public konkretKereses = true;
+
+  customBreakpoints = {
+    xs: '(min-width: 0px)',
+    sm: '(min-width: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+    xxl: '(min-width: 2200px)'
+  };
   
   constructor(public esemenySzerviz:EsemenyService,
               public eloadoSzerviz:EloadoService,
@@ -52,28 +63,36 @@ export class EsemenyKeresoComponent implements OnInit{
               private route:ActivatedRoute,
               private router: Router) {
     this.breakpointObserver.observe([
-      Breakpoints.XSmall,
-      Breakpoints.Small,
-      Breakpoints.Medium,
-      Breakpoints.Large,
-      Breakpoints.XLarge
+      this.customBreakpoints.xs,
+      this.customBreakpoints.sm,
+      this.customBreakpoints.md,
+      this.customBreakpoints.lg,
+      this.customBreakpoints.xl,
+      this.customBreakpoints.xxl
     ]).subscribe(result => {
-      if (result.breakpoints[Breakpoints.XSmall]) {
+      if (result.breakpoints[this.customBreakpoints.xxl]) {
+        this.cols = 3;
+      } else if (result.breakpoints[this.customBreakpoints.xl]) {
+        this.cols = 2;
+      } else if (result.breakpoints[this.customBreakpoints.lg]) {
         this.cols = 1;
-      } else if (result.breakpoints[Breakpoints.Small]) {
+      } else if (result.breakpoints[this.customBreakpoints.md]) {
         this.cols = 1;
-      } else if (result.breakpoints[Breakpoints.Medium]) {
+      } else if (result.breakpoints[this.customBreakpoints.sm]) {
         this.cols = 1;
-      } else if (result.breakpoints[Breakpoints.Large]) {
+      } else if (result.breakpoints[this.customBreakpoints.xs]) {
         this.cols = 1;
-      } else if (result.breakpoints[Breakpoints.XLarge]) {
-        this.cols = 1;
+
       }
     });
     this.mufajBetoltes();
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();
     this.helyszinCimBetoltes();
+  }
+
+  szuroMuvelet(){
+    this.szuroMenu = !this.szuroMenu
   }
 
   ngOnInit(): void {
@@ -190,7 +209,6 @@ export class EsemenyKeresoComponent implements OnInit{
 
   eloadoJavaslatBetoltes(){
     this.eloadoSzerviz.eloadokNevekLekerdezese().subscribe((valasz)=>{
-      console.log(valasz)
       this.eloadoJavaslatok = valasz; 
     });
   }

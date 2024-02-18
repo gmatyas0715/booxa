@@ -5,9 +5,8 @@
   padding-bottom: 30px;
 }
 
-.kereses-szures-container{
+#kereses-szures-container{
   height: 100%;
-  overflow-y: auto;
 }
 
 .kereses-szures-container ul {
@@ -21,7 +20,8 @@
 }
 
 .esemeny-kep{
-  height: 150px;
+  max-width: 50%;
+  max-height: 80%;
   border-radius: 3px;
   box-shadow: 0px 1px 1px 1px #c8c8d6;
 }
@@ -46,6 +46,7 @@ button{
 .szuro-container{
   height: 400px;
   overflow-y: auto;
+  padding-left: 15px;
 }
 
 .esemeny-container{
@@ -117,6 +118,7 @@ mat-grid-tile{
 
 .szuro-elem-lista{
   padding-left: 0px;
+  list-style-type: none;
 }
 
 .oldalnavigacio{
@@ -137,4 +139,38 @@ mat-grid-tile{
   display: flex;
   flex-direction: row;
   padding: 10px;
+  width: 100%;
+}
+
+.kepes-blokk{
+  max-height: 200px;
+}
+
+.megnez-button{
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  background-color: #2e2f70;
+  color: rgb(246, 223, 92);
+}
+
+.konkret-kereses-container{
+  align-items: start;
+}
+
+.szuro-nyito{
+  z-index: 1;
+  position: fixed;
+  top: 80px;
+  left: 5px;
+  background-color: #d9d9df;
+}
+
+.szuro-zaro{
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background-color: #d9d9df;
 }
