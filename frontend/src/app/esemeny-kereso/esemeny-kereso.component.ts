@@ -353,4 +353,8 @@ export class EsemenyKeresoComponent implements OnInit{
     this.maxJegyar = 30000
     this.esemenyKereses()
   }
+
+  trackByFn(index: number, esemeny:any):any {
+    return esemeny.id;
+  }
 }

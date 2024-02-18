@@ -172,7 +172,7 @@
                         </div>
                     </div>
                     <mat-grid-list class="esemeny-megjelenito" [cols]="cols" rowHeight="250px">
-                        <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb">
+                        <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb; trackBy: trackByFn">
                             <mat-card class="container esemeny-container p-0">
                                 <mat-card-content class="h-100 w-100">
                                     <div class="row p-0 h-100 w-100">
