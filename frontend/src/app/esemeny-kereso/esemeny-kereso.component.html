@@ -181,12 +181,13 @@
                                             <span class="eloado-nev">{{esemeny.eloado.nev}}</span>
                                         </div>
                                         <div class="col-6 p-0 h-100">
-                                            <b>Helyszín:</b>
-                                            <span class="d-block">{{esemeny.helyszin.nev}}</span>
+                                            <span class="font-weight-bold">Helyszín:
+                                                <span class="helyszin-info">
+                                                <mat-icon style="cursor: pointer;" >info</mat-icon><img class="helyszin-info-kep" [src]="this.helyszinSzerviz.helyszinKepUrl(esemeny.helyszin.helyszin_kep_eleres)"></span></span>
+                                            <span class="d-block mb-1">{{esemeny.helyszin.nev}}</span>
                                             <b>Időpont:</b>
-                                            <span class="d-block">{{datumFormazas(esemeny.idopont)}}</span>
-                                            <b>Jegyárak:</b>
-                                            <span class="d-block">Már {{esemeny.jegy_alapar}} Ft-tól!</span>
+                                            <span class="d-block mb-2">{{datumFormazas(esemeny.idopont)}}</span>
+                                            <span class="d-block font-weight-bold text-danger">Jegyárak {{esemeny.jegy_alapar}} Ft-tól!</span>
                                             <button mat-raised-button class="megnez-button" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
                                         </div>
                                     </div>
