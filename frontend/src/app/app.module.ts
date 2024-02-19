@@ -45,6 +45,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     SzamlazasiAdatokComponent,
     ProfilBeallitasokComponent,
     JegyVasarlasElozmenyekComponent,
+    AdatSzerkesztoComponent,
   ],
   imports: [
     BrowserModule,

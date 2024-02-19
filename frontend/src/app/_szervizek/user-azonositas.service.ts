@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserAzonositasService {
-  private apiUrl = 'http://localhost:8000/api/login';
+
+  private apiUrl = 'http://localhost:8000/api';
   private readonly USER_TOKEN_COOKIE:string = "userToken";
   private readonly USERNAME_COOKIE:string = "username";
   private readonly USER_ID_COOKIE:string = "userId";
@@ -50,6 +51,14 @@ export class UserAzonositasService {
     this.cookieService.delete(this.USER_ID_COOKIE);
   }
 
+  authorizacioCheck(){
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.getAuthToken()}`
+    })
+
+    return this.http.get(this.apiUrl+'/auth',{headers})
+  }
+
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -59,7 +68,7 @@ export class UserAzonositasService {
     // Create the HTTP request with the data in the body
     const body = JSON.stringify(userBejelentkezesAdatok);
 
-    return this.http.post<any>(this.apiUrl, body,{ headers });
+    return this.http.post<any>(this.apiUrl+'/login', body,{ headers });
   }
 
   logout(){

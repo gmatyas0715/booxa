@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
+    public function authCheck() {
+        return true;
+    }
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo', 'jelszo_megerosites'), [
