@@ -97,6 +97,11 @@
             </div>
         </div>
         <div class="col-xs-12 col-lg-9 d-lg-block konkret-kereses-container" [class.d-block]="!szuroMenu" [class.d-none]="szuroMenu">
+            <div class="row mb-1">
+                <div class="col w-100 d-flex justify-content-center">
+                    <h4 class="font-weight-bold">Keresés előadó, helyszín alapján</h4>
+                </div>
+            </div>
             <mat-card class="pt-3 pb-3 mb-4 container" (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-md-5 d-flex justify-content-center">
@@ -167,8 +172,8 @@
             <div class="row mb-4">
                 <div class="w-100 col">
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-center">
-                            <h3 *ngIf="megjelenitettEsemenyekTomb.length==0"><i>Eseménykereséshez állíts be több előadó/helyszín/esemény adatot!</i></h3>
+                        <div class="col w-100 d-flex justify-content-center">
+                            <h3 *ngIf="megjelenitettEsemenyekTomb.length==0"><i>Eseménykereséshez állíts be több előadó, helyszín, esemény adatot!</i></h3>
                         </div>
                     </div>
                     <mat-grid-list class="esemeny-megjelenito" [cols]="cols" rowHeight="250px">
