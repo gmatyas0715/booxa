@@ -51,12 +51,16 @@ export class UserAzonositasService {
     this.cookieService.delete(this.USER_ID_COOKIE);
   }
 
+  
+
   authorizacioCheck(){
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${this.getAuthToken()}`
     })
 
-    return this.http.get(this.apiUrl+'/auth',{headers})
+    return this.http.get(this.apiUrl+'/auth',{headers}).subscribe((valasz)=>{
+      console.log(valasz);
+    })
   }
 
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {
@@ -73,5 +77,7 @@ export class UserAzonositasService {
 
   logout(){
     this.deleteAuthToken();
+    this.deleteUserId();
+    this.deleteUsername();
   }
 }

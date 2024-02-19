@@ -20,15 +20,15 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $userInfo = $user->only(['vezeteknev','keresztnev','email','szuletesi_datum','felhasznalonev']);
+        $userInfo = $user->only(['vezeteknev','keresztnev','email','szuletesi_datum','username']);
         return response()->json($userInfo);
     }
 
     public function userFelhasznalonevek(){
-        $felhasznalonevek = User::select('felhasznalonev','email')->get();
+        $felhasznalonevek = User::select('username','email')->get();
 
         foreach ($felhasznalonevek as $item) {
-            $organizedResult['felhasznalonev'][] = $item->felhasznalonev;
+            $organizedResult['username'][] = $item->username;
             $organizedResult['email'][] = $item->email;
         }
 
@@ -53,7 +53,7 @@ class UserController extends Controller
                 break;
         }
         $data = $user->toArray();
-        unset($data['jelszo']);
+        unset($data['password']);
         unset($data['email_verified_at']);
         unset($data['created_at']);
         unset($data['updated_at']);
@@ -86,7 +86,7 @@ class UserController extends Controller
         } 
 
         if ($request->uj_jelszo!=""){
-            if ($user && Hash::check($request['jelszo'], $user->jelszo)){
+            if ($user && Hash::check($request['jelszo'], $user->password)){
                 return response()->json(['msg'=>'A megadott jelenlegi jelszó nem megfelelő.'],400);
             }
 
@@ -96,11 +96,11 @@ class UserController extends Controller
         }
         
         if ($request->filled('felhasznalonev')) {
-            $user->felhasznalonev = $request->felhasznalonev;
+            $user->username = $request->felhasznalonev;
         }
         
         if ($request->filled('uj_jelszo')) {
-            $user->jelszo = $request->uj_jelszo;
+            $user->password = $request->uj_jelszo;
         }
     }
 

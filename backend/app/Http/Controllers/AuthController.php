@@ -8,11 +8,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     public function authCheck() {
-        return true;
+        $user = Auth::user();
+        Log::info($user);
     }
 
     public function register(Request $request)
@@ -20,23 +22,23 @@ class AuthController extends Controller
         $validator = Validator::make($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo', 'jelszo_megerosites'), [
             'vezeteknev'=>'required|string|max:50',
             'keresztnev'=>'required|string|max:50',
-            'email'=>'required|email|unique:user,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            'email'=>'required|email|unique:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'nem'=>'required|string|in:f,n',
             'szuletesi_datum'=>'required|string|date-format:Y-m-d',
-            'felhasznalonev'=>'required|unique:user,felhasznalonev|string',
+            'felhasznalonev'=>'required|unique:users,username|string',
             'jelszo'=>'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/'
         ]);
-        Log::info($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo'));
-        if ($validator->fails())
-            return response()->json($validator->errors(), 400);
-        $input = $request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum',  'felhasznalonev', 'jelszo');
-        $input['jelszo'] = Hash::make($request['jelszo']) ;
+
+        if ($validator->fails()) return response()->json($validator->errors(), 400);
+        $input = $request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'szuletesi_datum','jelszo','felhasznalonev');
+        $input['username'] =  $request['felhasznalonev']; 
+        $input['password'] = Hash::make($request['jelszo']) ;
         $user = User::create($input);
         $user -> assignRole('regisztralt_user');
         $data =  [
             'üzenet' => 'Sikeres regisztráció',
             'token' => $user->createToken('Booxa-bro')->plainTextToken,
-            'felhasznalonev' => $user->felhasznalonev,
+            'felhasznalonev' => $user->username,
             'userId' => $user->id
         ];
         return response()->json($data, 200);
@@ -51,25 +53,22 @@ class AuthController extends Controller
         if ($validator->fails())
             return response()->json($validator->errors(), 400);
 
-        $user = User::where('felhasznalonev', $request['felhasznalonev'])->first();
-        Log::info('Inputból generált: '.Hash::make($request['jelszo']));
-        Log::info('Adatbázisból kinyert: '.$user->jelszo);
+        $credentials = ['username'=>$request['felhasznalonev'],'password'=>$request['jelszo']];
 
-        if ($user && Hash::check($request['jelszo'], $user->jelszo)) {
-            Log::info('Autentikációs rész');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
 
             $token = $user->createToken('Booxa-bro')->plainTextToken;
 
             return response()->json([
                 'üzenet' => 'Sikeres bejelentkezés',
-                'felhasznalonev' => $user->felhasznalonev,
+                'felhasznalonev' => $user->username,
                 'token' => $token,
                 'userId' => $user->id
             ], 200);
         }
         else{
-            return response('Sikertelen bejelentkezés!', 401)
-                  ->header('Content-Type', 'text/plain');
+
         }
     }
 

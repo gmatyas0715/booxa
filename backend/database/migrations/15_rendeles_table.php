@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('fizetes_id')->unique();
             $table->foreign('user_id')
                 ->references('id')
-                ->on('user')
+                ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('fizetes_id')

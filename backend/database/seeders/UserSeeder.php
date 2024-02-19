@@ -35,8 +35,8 @@ class UserSeeder extends Seeder
                 'email'=>$data[2],
                 'nem'=>$data[3],
                 'szuletesi_datum'=>$data[4],
-                'felhasznalonev'=>$data[5],
-                'jelszo'=>Hash::make($data[6])
+                'username'=>$data[5],
+                'password'=>Hash::make($data[6])
             ])->assignRole(Arr::random($szerepek));
         }
     }
