@@ -45,7 +45,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.component';
+import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,7 @@ import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.compo
     SzamlazasiAdatokComponent,
     ProfilBeallitasokComponent,
     JegyVasarlasElozmenyekComponent,
-    AdatSzerkesztoComponent,
+    MufajDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +93,8 @@ import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.compo
     MatTableModule,
     MatBadgeModule,
     MatRadioModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]

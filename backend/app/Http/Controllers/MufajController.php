@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Mufaj;
 use App\Http\Requests\StoreMufajRequest;
 use App\Http\Requests\UpdateMufajRequest;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
 class MufajController extends Controller
 {
+
+    public function mufajTable(){
+        return view('mufaj-table');
+    } 
 
     public function index()
     {
@@ -39,17 +44,17 @@ class MufajController extends Controller
 
     public function update(UpdateMufajRequest $request, Mufaj $mufaj)
     {
-        $tablaMezok = Schema::getColumnListing($mufaj->getTable());
+        $mufaj->nev = $request->mufajAdatok['nev'];
+        $mufaj->leiras = $request->mufajAdatok['leiras'];
 
-        $updateAdat = $request->only($tablaMezok);
-
-        $mufaj->update($updateAdat);     
+        $mufaj->save();
 
         return response()->json($mufaj);
     }
 
     public function destroy(Mufaj $mufaj)
     {
+        Log::info($mufaj);
         $mufaj->delete();
         return response()->json(['üzenet'=>$mufaj->nev.' nevű műfaj sikeresen törölve!']);
     }

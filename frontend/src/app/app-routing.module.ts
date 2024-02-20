@@ -10,7 +10,7 @@ import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-u
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 import { adminGuard, bejelentkezettUserGuard, vendegUserGuard } from './auth/auth.guard';
-import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.component';
+import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
 
 const generalRoutes: Routes = [
     {
@@ -78,11 +78,12 @@ const bejelentkezettUserRoutes = [{
   const adminRoutes = [{
     canActivate: [adminGuard],
     path:'',
-    children: [{
-      title:'Adatok szerkesztése',
-      path:'szerkesztoiFelulet',
-      component:AdatSzerkesztoComponent
-    }]
+    children: [
+      {
+        title:'Műfaj adatok',
+        path:'mufajdata',
+        component:MufajDataComponent
+      }]
   }];
 
 @NgModule({

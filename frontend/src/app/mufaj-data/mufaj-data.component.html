@@ -1,0 +1,36 @@
+<div class="justify-content-center text-center m-4">
+    <button class="mb-4" mat-raised-button color="primary" (click)="letrehozasAblak('100ms','100ms')">Műfaj hozzáadása</button>
+    <mat-form-field>
+        <mat-label>Keresés</mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="nev">
+        <th mat-header-cell *matHeaderCellDef> név </th>
+        <td mat-cell *matCellDef="let element"> {{element.nev}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="leiras">
+        <th mat-header-cell *matHeaderCellDef> leírás </th>
+        <td mat-cell *matCellDef="let element"> {{element.leiras}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="modositas">
+            <th mat-header-cell *matHeaderCellDef> módosítás </th>
+            <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="modositasAblak('100ms','100ms',element)">Módosítás</button></td>
+        </ng-container> 
+
+        <ng-container matColumnDef="torles">
+            <th mat-header-cell *matHeaderCellDef> törlés </th>
+            <td mat-cell *matCellDef="let element"><button mat-raised-button color="warn" (click)="torlesAblak('100ms','100ms',element)">Törlés</button></td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
