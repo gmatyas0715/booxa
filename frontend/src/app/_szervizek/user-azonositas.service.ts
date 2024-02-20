@@ -53,14 +53,13 @@ export class UserAzonositasService {
 
   
 
-  authorizacioCheck(){
+  authorizacioCheck(role:string):Observable<boolean>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${this.getAuthToken()}`
     })
+    const body = {'role':role}
 
-    return this.http.get(this.apiUrl+'/auth',{headers}).subscribe((valasz)=>{
-      console.log(valasz);
-    })
+    return this.http.post<boolean>(this.apiUrl+'/role-check',body,{headers});
   }
 
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {

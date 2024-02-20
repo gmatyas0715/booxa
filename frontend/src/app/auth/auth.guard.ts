@@ -1,8 +1,28 @@
 import { inject } from "@angular/core";
 import { UserAzonositasService } from "../_szervizek/user-azonositas.service";
-import { Router } from "@angular/router";
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from "@angular/router";
+import { CanActivateFn } from '@angular/router';
+import { map } from 'rxjs/operators';
 
-export const regisztraltUserGuard  = () => {
+export const authGuard: CanActivateFn = (
+  route: ActivatedRouteSnapshot, 
+  state: RouterStateSnapshot
+  ) => {
+  return true;
+};
+
+export const vendegUserGuard  = () => {
+  const userAzonositasService = inject(UserAzonositasService)
+  const router = inject(Router);
+
+  if (!userAzonositasService.getAuthToken()){
+    return true
+  }
+
+  return router.parseUrl('/kezdooldal');
+}
+
+export const bejelentkezettUserGuard  = () => {
   const userAzonositasService = inject(UserAzonositasService)
   const router = inject(Router);
 
@@ -17,9 +37,10 @@ export const adminGuard = () => {
   const userAzonositasService = inject(UserAzonositasService)
   const router = inject(Router);
 
-  if (userAzonositasService){
-    return true
-  }
-
-  return true
+  return userAzonositasService.authorizacioCheck('admin').pipe(
+    map(authorizacio => {
+      if (authorizacio) return true;
+      else  return router.parseUrl('/kezdooldal'); 
+    })
+  )
 }

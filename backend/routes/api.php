@@ -6,7 +6,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/rendelesekEsemennyel/{esemeny}', 'JegyAdatController@szektorFoglaltsag');
 
-    Route::get('/auth','AuthController@authCheck');
+
     // PUBLIKUS ROUTE-OK
     // Autentikációs route-ok
     Route::post('/register', 'AuthController@register');
@@ -54,9 +54,12 @@ Route::namespace('App\Http\Controllers')->group(function () {
     // BEJELENTKEZÉSHEZ KÖTÖTT ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum']],function(){
             Route::post('/logout', 'AuthController@logout');
+            Route::post('/role-check','AuthController@roleCheck');
         });
 
 
+
+        
     // ADMIN & ESEMÉNY-SZERKESZTŐ JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:admin|szerkeszto']],function(){
 

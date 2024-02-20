@@ -9,7 +9,7 @@ import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
-import { adminGuard, regisztraltUserGuard } from './auth/auth.guard';
+import { adminGuard, bejelentkezettUserGuard, vendegUserGuard } from './auth/auth.guard';
 import { AdatSzerkesztoComponent } from './adat-szerkeszto/adat-szerkeszto.component';
 
 const generalRoutes: Routes = [
@@ -23,11 +23,6 @@ const generalRoutes: Routes = [
       component:EsemenyReszletekComponent
     },
     {
-      title:'Regisztráció',
-      path:'regisztracio',
-      component:RegisztracioComponent  
-    },
-    {
       title:'Kezdőoldal',
       path:'kezdooldal',
       component:KezdooldalComponent  
@@ -38,15 +33,30 @@ const generalRoutes: Routes = [
       component:EsemenyKeresoComponent 
     },
     {
+      title:'Kosár összegző',
+      path:'kosarOsszegzo',
+      component:KosarOsszegzoComponent  
+    }
+  ];
+
+const vendegUserRoutes = [{
+  canActivate: [vendegUserGuard],
+  path:'',
+  children: [
+    {
       title:'Bejelentkezés',
       path:'bejelentkezes',
       component:BejelentkezesUserComponent  
     },
-
-  ];
-
-const regisztraltUserRoutes = [{
-  canActivate: [regisztraltUserGuard],
+    {
+      title:'Regisztráció',
+      path:'regisztracio',
+      component:RegisztracioComponent  
+    },
+  ]
+}];
+const bejelentkezettUserRoutes = [{
+  canActivate: [bejelentkezettUserGuard],
   path:'',
   children: [{
       title:'Profil adatok',
@@ -54,20 +64,15 @@ const regisztraltUserRoutes = [{
       component:ProfilBeallitasokComponent
     },
     {
-      title:'Jegyvásárlás előzmények',
-      path:'jegyVasarlasElozmenyek',
-      component:JegyVasarlasElozmenyekComponent
-    },
-    {
       title:'Számlázási adatok',
       path:'szamlazasiAdatok',
       component:SzamlazasiAdatokComponent  
     },
     {
-      title:'Kosár összegző',
-      path:'kosarOsszegzo',
-      component:KosarOsszegzoComponent  
-    }]
+      title:'Jegyvásárlás előzmények',
+      path:'jegyVasarlasElozmenyek',
+      component:JegyVasarlasElozmenyekComponent
+    },]
   }];
 
   const adminRoutes = [{
@@ -81,7 +86,7 @@ const regisztraltUserRoutes = [{
   }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(generalRoutes),RouterModule.forChild(regisztraltUserRoutes)],
+  imports: [RouterModule.forRoot(generalRoutes),RouterModule.forChild(vendegUserRoutes),RouterModule.forChild(bejelentkezettUserRoutes),RouterModule.forChild(adminRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

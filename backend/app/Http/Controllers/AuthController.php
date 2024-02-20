@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
-    public function authCheck() {
-        $user = Auth::user();
+    public function roleCheck(Request $request)
+    {
+        $user = $request->user();
         Log::info($user);
+        return response()->json($user->hasRole($request['role']));
     }
 
     public function register(Request $request)
@@ -39,7 +41,8 @@ class AuthController extends Controller
             'üzenet' => 'Sikeres regisztráció',
             'token' => $user->createToken('Booxa-bro')->plainTextToken,
             'felhasznalonev' => $user->username,
-            'userId' => $user->id
+            'userId' => $user->id,
+            'roles' => $user->getRoleNames()
         ];
         return response()->json($data, 200);
     }
@@ -56,15 +59,17 @@ class AuthController extends Controller
         $credentials = ['username'=>$request['felhasznalonev'],'password'=>$request['jelszo']];
 
         if (Auth::attempt($credentials)) {
-            $user = Auth::user();
 
+            /** @var \App\Models\User */
+            $user = Auth::user();
             $token = $user->createToken('Booxa-bro')->plainTextToken;
 
             return response()->json([
                 'üzenet' => 'Sikeres bejelentkezés',
                 'felhasznalonev' => $user->username,
                 'token' => $token,
-                'userId' => $user->id
+                'userId' => $user->id,
+                'roles' => $user->getRoleNames()
             ], 200);
         }
         else{

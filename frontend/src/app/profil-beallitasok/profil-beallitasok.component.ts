@@ -156,7 +156,9 @@ export class ProfilBeallitasokComponent {
   
   regisztraltFelhasznalokEmailek(){
     this.userService.userFelhasznalonevek().subscribe((valasz)=>{
-      this.regisztraltFelhasznalonevek = valasz.felhasznalonev;
+      console.log(valasz);
+      
+      this.regisztraltFelhasznalonevek = valasz.username;
       this.regisztraltEmailek = valasz.email;
       this.belepesAdatForm.get('felhasznalonev')
       ?.addValidators(this.felhasznalonevFoglaltValidator.bind(this));
@@ -174,7 +176,7 @@ export class ProfilBeallitasokComponent {
     this.userService
       .userAdatok(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken())
       .subscribe((valasz)=>{
-        this.userService.bejelentkezettUser.felhasznalonev = valasz.felhasznalonev
+        this.userService.bejelentkezettUser.felhasznalonev = valasz.username
         this.userService.bejelentkezettUser.email = valasz.email
         this.userService.bejelentkezettUser.keresztnev = valasz.keresztnev
         this.userService.bejelentkezettUser.vezeteknev = valasz.vezeteknev
