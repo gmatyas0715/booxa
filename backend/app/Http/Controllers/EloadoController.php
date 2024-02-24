@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class EloadoController extends Controller
 {
 
     public function index()
     {
-        $eloadok = Eloado::all();
+        $eloadok = Eloado::select('id','nev','leiras','arkategoria','kep_eleres',)->with(['mufaj'=>function ($query){
+            $query->select('mufaj.id','mufaj.nev');
+        }])->get();
         return response()->json($eloadok);
     }
 
@@ -24,12 +27,34 @@ class EloadoController extends Controller
 
     public function store(StoreEloadoRequest $request)
     {
+        $eloadoNev =  $request->input('nev');
+        $eloadoLeiras =  $request->input('leiras');
+        $eloadoArKategoria =  $request->input('arkategoria');
+
+        if ($eloadoNev==null || $eloadoLeiras==null || $eloadoArKategoria==null){
+            return response()->json('Hiányzó előadóadatok!',400);
+        }
+
         $ujEloado = new Eloado();
-        $ujEloado->nev = $request->input('nev');
-        $ujEloado->leiras = $request->input('leiras');
-        $ujEloado->arkategoria = $request->input('arkategoria');
-        $ujEloado->kep_eleres = $request->input('kep_eleres');
+        $ujEloado->nev = $eloadoNev;
+        $ujEloado->leiras = $eloadoLeiras;
+        $ujEloado->arkategoria = $eloadoArKategoria;
+
+        if ($request->hasFile('file')){
+            $file = $request->file('file');
+            $kepEleres = $file->getClientOriginalName();
+            $ujEloado->kep_eleres = $kepEleres;
+            $file->move(public_path('egyuttes_kepek'),$kepEleres);
+        }
+        
+        else {
+            $ujEloado->kep_eleres = 'default.jpg';
+        }
+
         $ujEloado->save();
+        $ujEloadoId = Eloado::where('nev',$ujEloado->nev)->first()->id;
+
+        EloadoMufajController::kapcsolatBeszuras($ujEloadoId,$request->input('mufajok'));
 
         return response()->json(['üzenet' => $ujEloado->nev.' nevű előadó sikeresen létrehozva!']);
     }
@@ -41,11 +66,31 @@ class EloadoController extends Controller
 
     public function update(UpdateEloadoRequest $request, Eloado $eloado)
     {
-        $tablaMezok = Schema::getColumnListing($eloado->getTable());
+        $eloadoNev =  $request->input('nev');
+        $eloadoLeiras =  $request->input('leiras');
+        $eloadoArKategoria =  $request->input('arkategoria');
 
-        $updateAdat = $request->only($tablaMezok);
+        if ($eloadoNev == null || $eloadoLeiras==null || $eloadoArKategoria==null){
+            return response()->json('Hiányzó előadóadatok!',400);
+        }
 
-        $eloado->update($updateAdat);     
+        $eloado->nev = $eloadoNev;
+        $eloado->leiras = $eloadoLeiras;
+        $eloado->arkategoria = $eloadoArKategoria;
+
+        if ($request->hasFile('file')){
+            $file = $request->file('file');
+            $kepEleres = $file->getClientOriginalName();
+            File::delete(public_path('egyuttes_kepek'),$eloado->kep_eleres);
+            $file->move(public_path('egyuttes_kepek'),$kepEleres);
+            $eloado->kep_eleres = $kepEleres;
+        }
+
+        $mufajok = $request->input('mufajok');
+        EloadoMufajController::kapcsolatEltavolitas($eloado->id);
+        EloadoMufajController::kapcsolatBeszuras($eloado->id,$mufajok);
+
+        $eloado->save();
 
         return response()->json($eloado);
     }

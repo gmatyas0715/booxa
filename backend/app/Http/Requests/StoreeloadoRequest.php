@@ -27,7 +27,7 @@ class StoreEloadoRequest extends FormRequest
         return [
             'nev'=>'required|string',
             'leiras'=>'required|string|max:400',
-            'kep_eleres'=>'required|string'
+            'arkategoria'=>'required'
         ];
     }
 

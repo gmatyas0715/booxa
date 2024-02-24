@@ -5,9 +5,15 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/mufajok-table','MufajController@mufajTable');
+    Route::post('/eloadok', 'EloadoController@store');
+    Route::patch('/eloadok/{eloado}', 'EloadoController@update');
+    Route::delete('/eloadok/{eloado}', 'EloadoController@destroy');
 
     Route::get('/rendelesekEsemennyel/{esemeny}', 'JegyAdatController@szektorFoglaltsag');
 
+    Route::post('/mufajok', 'MufajController@store');
+    Route::patch('/mufajok/{mufaj}', 'MufajController@update');
+    Route::delete('/mufajok/{mufaj}', 'MufajController@destroy');
 
     // PUBLIKUS ROUTE-OK
     // Autentikációs route-ok
@@ -66,14 +72,9 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::group(['middleware'=>['auth:sanctum','role:admin|szerkeszto']],function(){
 
         // Előadó route-ok
-        Route::post('/eloadok', 'EloadoController@store');
-        Route::patch('/eloadok/{eloado}', 'EloadoController@update');
-        Route::delete('/eloadok/{eloado}', 'EloadoController@destroy');
 
         // Műfaj route-ok
-        Route::post('/mufajok', 'MufajController@store');
-        Route::patch('/mufajok/{mufaj}', 'MufajController@update');
-        Route::delete('/mufajok/{mufaj}', 'MufajController@destroy');
+
 
         // Előadó-műfaj kapcsolat route-ok
         Route::post('/eloado-mufaj-kapcsolatok', 'EloadoMufajController@store');

@@ -20,6 +20,8 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
+import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
+import { EloadoDataComponent } from './eloado-data/eloado-data.component';
 
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -42,10 +44,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,7 @@ import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
     ProfilBeallitasokComponent,
     JegyVasarlasElozmenyekComponent,
     MufajDataComponent,
+    EloadoDataComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +98,9 @@ import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
     MatBadgeModule,
     MatRadioModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatChipsModule,
+    MatSortModule
   ],
   providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { MufajService } from '../_szervizek/mufaj.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -7,6 +7,9 @@ import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
 import { UserService } from '../_szervizek/user.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -16,43 +19,67 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class MufajDataComponent {
   displayedColumns: string[] = ['id','nev','leiras','modositas','torles']
-  dataSource: any[] = [];
+  dataSource = new MatTableDataSource()
   userService: any;
 
   constructor(private mufajService:MufajService,
               private dialog:MatDialog) {
     this.mufajBetoltes();
   }
+  @ViewChild('paginator') paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter(event: Event){
+    const filter = (event.target as HTMLInputElement).value;
+    this.dataSource.filter =filter.trim().toLowerCase();
+  }
 
   mufajBetoltes(){
     this.mufajService.osszesMufajLekerdezese().subscribe((valasz)=>{
-        this.dataSource = valasz
+        this.dataSource.data = valasz
         console.log(this.dataSource);
       }
     )
   }
 
   letrehozasAblak(enterAnimationDuration:string,exitAnimationDuration:string): void {
-    this.dialog.open(MufajLetrehozas,{
+    const dialogref = this.dialog.open(MufajLetrehozas,{
       width:'400px',
       enterAnimationDuration,
       exitAnimationDuration});
+          
+      dialogref.afterClosed().subscribe(()=>{
+        this.mufajBetoltes()
+      })
   }
 
   modositasAblak(enterAnimationDuration:string,exitAnimationDuration:string,mufaj:any): void {
-    this.dialog.open(MufajModositas,{
-      data: { mufaj },
+    const dialogref = this.dialog.open(MufajModositas,{
+      data: mufaj ,
       width:'400px',
       enterAnimationDuration,
       exitAnimationDuration});
+    
+      dialogref.afterClosed().subscribe(()=>{
+        this.mufajBetoltes()
+      })
   }
 
-  torlesAblak(enterAnimationDuration:string,exitAnimationDuration:string,mufaj:any): void {
-    this.dialog.open(MufajTorles,{
-      data: { mufaj },
+  torlesAblak(enterAnimationDuration:string,exitAnimationDuration:string,mufajId:any): void {
+    const dialogref = this.dialog.open(MufajTorles,{
+      data: mufajId,
       width:'250px',
       enterAnimationDuration,
       exitAnimationDuration});
+          
+      dialogref.afterClosed().subscribe(()=>{
+        this.mufajBetoltes()
+      })
   }
 
 }
@@ -86,8 +113,7 @@ export class MufajLetrehozas {
               public userService: UserService,
               public userAzonositasService:UserAzonositasService,
               public mufajService:MufajService,
-              private _snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public data: {mufaj: any})
+              private _snackBar: MatSnackBar)
               {}
 
   mufajLetrehozas(){
@@ -130,14 +156,14 @@ export class MufajLetrehozas {
   template: `<div class="d-block justify-content-center text-center">
                 <div class="justify-content-center align-items-center mb-2">
                   <h1 mat-dialog-title >Műfaj módosítása</h1>
-                  <h2>ID:{{data.mufaj.id}}</h2>
+                  <h2>ID:{{mufaj.id}}</h2>
                   <mat-form-field class="ml-auto mr-auto w-75">
                     <mat-label>Név:</mat-label>
-                    <input matInput [(ngModel)]="nev" type='text' [placeholder]='data.mufaj.nev'>
+                    <input matInput [(ngModel)]="nev" type='text' [placeholder]='mufaj.nev'>
                   </mat-form-field>
                   <mat-form-field class="ml-auto mr-auto w-75">
                     <mat-label>Leírás:</mat-label>
-                    <textarea style="height:200px" matInput [(ngModel)]="leiras" [placeholder]='data.mufaj.leiras'></textarea>
+                    <textarea style="height:200px" matInput [(ngModel)]="leiras" [placeholder]='mufaj.leiras'></textarea>
                   </mat-form-field>
                   <div mat-dialog-actions>
                   <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
@@ -149,7 +175,6 @@ export class MufajLetrehozas {
 })
 export class MufajModositas {
 
-  id = ""
   nev = ""
   leiras = ""
 
@@ -158,14 +183,14 @@ export class MufajModositas {
               public userAzonositasService:UserAzonositasService,
               public mufajService:MufajService,
               private _snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public data: {mufaj: any})
+              @Inject(MAT_DIALOG_DATA) public mufaj: any)
               {}
 
   mufajModositas(){
        const mufajAdatok = {
-          id:this.id==''?this.data.mufaj.id:this.id,
-          nev:this.nev==''?this.data.mufaj.nev:this.nev,
-          leiras:this.leiras==''?this.data.mufaj.leiras:this.leiras
+          id:this.mufaj.id,
+          nev:this.nev==''?this.mufaj.nev:this.nev,
+          leiras:this.leiras==''?this.mufaj.leiras:this.leiras
         }
       this.mufajService.mufajModositas(
       mufajAdatok.id,
@@ -194,7 +219,6 @@ export class MufajModositas {
   }
 
   mufajAlapertek(){
-    this.id = ""
     this.nev = ""
     this.leiras = ""
   }
@@ -218,11 +242,11 @@ export class MufajTorles {
               public userAzonositasService:UserAzonositasService,
               public mufajService:MufajService,
               private _snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public data: {mufaj: any})
+              @Inject(MAT_DIALOG_DATA) public mufajId: any)
               {}
 
   mufajTorles(){
-    this.mufajService.mufajTorles(this.data.mufaj.id,this.userAzonositasService.getAuthToken()).subscribe({
+    this.mufajService.mufajTorles(this.mufajId,this.userAzonositasService.getAuthToken()).subscribe({
       next:(response) => {
         this.dialogRef.close();
         this.openSnackbar(response.msg)

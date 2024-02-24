@@ -6,6 +6,8 @@ use App\Models\EloadoMufaj;
 use App\Http\Requests\StoreEloadoMufajRequest;
 use App\Http\Requests\UpdateEloadoMufajRequest;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\Expr\Cast\Array_;
+use Ramsey\Uuid\Type\Integer;
 
 class EloadoMufajController extends Controller
 {
@@ -46,5 +48,20 @@ class EloadoMufajController extends Controller
     {
         $eloadoMufaj->delete();
         return response()->json(['üzenet'=>$eloadoMufaj->id.' azonosítójú előadó-műfaj kapcsolat sikeresen törölve!']);
+    }
+
+    public static function kapcsolatBeszuras(int $eloadoId, String $mufajIdLista) {
+        $mufajIdLista = explode(',',$mufajIdLista);
+
+        foreach ($mufajIdLista as $mufajId) {
+           EloadoMufaj::create([
+            'eloado_id'=>$eloadoId,
+            'mufaj_id'=>$mufajId
+           ]);
+        }
+    }
+
+    public static function kapcsolatEltavolitas(int $eloadoId){
+        EloadoMufaj::where('eloado_id',$eloadoId)->delete();
     }
 }

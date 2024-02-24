@@ -11,6 +11,7 @@ import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallita
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 import { adminGuard, bejelentkezettUserGuard, vendegUserGuard } from './auth/auth.guard';
 import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
+import { EloadoDataComponent } from './eloado-data/eloado-data.component';
 
 const generalRoutes: Routes = [
     {
@@ -36,6 +37,16 @@ const generalRoutes: Routes = [
       title:'Kosár összegző',
       path:'kosarOsszegzo',
       component:KosarOsszegzoComponent  
+    },
+    {
+      title:'Műfaj adatok',
+      path:'mufajdata',
+      component:MufajDataComponent
+    },
+    {
+      title:'Előadó adatok',
+      path:'eloadodata',
+      component:EloadoDataComponent
     }
   ];
 
@@ -79,11 +90,7 @@ const bejelentkezettUserRoutes = [{
     canActivate: [adminGuard],
     path:'',
     children: [
-      {
-        title:'Műfaj adatok',
-        path:'mufajdata',
-        component:MufajDataComponent
-      }]
+]
   }];
 
 @NgModule({
