@@ -27,6 +27,26 @@ export class UserService {
     return this.http.post<any>(this.apiUrl+'register',body,{headers})
   }
 
+  userLetrehozas(userToken:string,userAdatok:any):Observable<any>{
+
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': `Bearer ${userToken}`
+    })
+
+    return this.http.post<any>(this.apiUrl+'user-letrehozas',userAdatok,{headers})
+  }
+
+  userModositas(userId:string,userToken:string,userAdatok:any):Observable<any>{
+
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': `Bearer ${userToken}`
+    })
+
+    return this.http.patch<any>(this.apiUrl+'user-modositas/'+userId,userAdatok,{headers})
+  }
+
   userAdatok(userId:string,userToken:string):Observable<any>{
 
        const headers = new HttpHeaders({
@@ -35,6 +55,14 @@ export class UserService {
       })
 
     return this.http.get<any>(this.apiUrl+'userek/'+userId,{headers})
+  }
+
+  userOsszes(userToken:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${userToken}`
+    })
+
+    return this.http.get<any>(this.apiUrl+'userek',{headers})
   }
 
   userFelhasznalonevek(){

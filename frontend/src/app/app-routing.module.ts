@@ -10,8 +10,9 @@ import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-u
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
 import { adminGuard, bejelentkezettUserGuard, vendegUserGuard } from './auth/auth.guard';
-import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
-import { EloadoDataComponent } from './eloado-data/eloado-data.component';
+import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
+import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
+import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
 
 const generalRoutes: Routes = [
     {
@@ -47,6 +48,11 @@ const generalRoutes: Routes = [
       title:'Előadó adatok',
       path:'eloadodata',
       component:EloadoDataComponent
+    },
+    {
+      title:'User adatok',
+      path:'userdata',
+      component:UserDataComponent
     }
   ];
 

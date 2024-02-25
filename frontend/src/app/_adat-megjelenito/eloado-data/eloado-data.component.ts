@@ -1,15 +1,15 @@
 import { Component, Inject, ViewChild } from '@angular/core';
-import { MufajService } from '../_szervizek/mufaj.service';
+import { MufajService } from '../../_szervizek/mufaj.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
-import { UserService } from '../_szervizek/user.service';
+import { UserAzonositasService } from '../../_szervizek/user-azonositas.service';
+import { UserService } from '../../_szervizek/user.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { EloadoService } from '../_szervizek/eloado.service';
+import { EloadoService } from '../../_szervizek/eloado.service';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
@@ -207,12 +207,12 @@ export class EloadoLetrehozas {
       this.userAzonositasService.getAuthToken(),
       eloadoAdatok
       ).subscribe({
-      next:(response) => {
+      next:() => {
         this.dialogRef.close()
-        this.openSnackbar(response.msg)
+        this.openSnackbar('Sikeres előadólétrehozás!')
       },
-      error:(error) => {
-        console.error('Hiba a műfaj létrehozás során', error);
+      error:() => {
+        this.openSnackbar('Sikertelen előadólétrehozás!')
       }    
     });
   }
@@ -287,9 +287,6 @@ export class EloadoModositas {
   nev = ""
   leiras = ""
   arkategoria = ""
-  nevTouched = false
-  leirasTouched = false
-  arkategoriaTouched = false
   eloadoMufajok = new Map<number,string>()
   osszMufaj = new Map<number,string>()
   file: File | null = null;
@@ -360,12 +357,12 @@ export class EloadoModositas {
         this.userAzonositasService.getAuthToken(),
         eloadoAdatok
       ).subscribe({
-      next:(response) => {
+      next:() => {
         this.dialogRef.close()
-        this.openSnackbar(response.msg)
+        this.openSnackbar('Sikeres előadómódosítás!')
       },
-      error:(error) => {
-        console.error('Hiba a műfaj létrehozás során', error);
+      error:() => {
+        this.openSnackbar('Sikertelen előadómódosítás!')
       }    
     });
   }
@@ -417,14 +414,14 @@ export class EloadoTorles {
 
   eloadoTorles(){
     this.eloadoService.eloadoTorles(this.eloadoId,this.userAzonositasService.getAuthToken()).subscribe({
-      next:(response) => {
-        this.dialogRef.close();
-        this.openSnackbar(response.msg)
+      next:() => {
+        this.dialogRef.close()
+        this.openSnackbar('Sikeres előadótörlés!')
       },
-      error:(error) => {
-        console.error('Hiba a törlés során', error);
-      }    
-    });
+      error:() => {
+        this.openSnackbar('Sikertelen előadótörlés!')
+      }
+    });  
   }
 
   megseClick(){

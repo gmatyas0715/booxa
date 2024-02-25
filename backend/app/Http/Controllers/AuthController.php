@@ -9,14 +9,73 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
 {
+    public function userLetrehozas(Request $request) {
+
+        $validator = Validator::make($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'username'), [
+            'vezeteknev'=>'required|string|max:50',
+            'keresztnev'=>'required|string|max:50',
+            'email'=>'required|email|unique:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            'nem'=>'required|string|in:f,n',
+            'username'=>'required|unique:users,username|string',
+        ]);
+
+        if ($validator->fails()) return response()->json($validator->errors(), 400);
+
+        $ujUser = new User();
+        $ujUser->password = Hash::make('Booxa-bro-123');
+        $ujUser->vezeteknev = $request->vezeteknev;
+        $ujUser->keresztnev = $request->keresztnev;
+        $ujUser->email = $request->email;
+        $ujUser->nem = $request->nem;
+        $ujUser->szuletesi_datum = $request->szuletesi_datum;
+        $ujUser->username = $request->username;
+
+        $ujUser->save();
+        $ujUser->assignRole($request->szerep);
+
+        return response()->json($ujUser,200);
+    }
+
+    public function userModositas(Request $request, User $user) {
+
+        $validator = Validator::make($request->only('vezeteknev', 'keresztnev', 'email',  'nem', 'username'), [
+            'vezeteknev'=>'required|string|max:50',
+            'keresztnev'=>'required|string|max:50',
+            'email'=>'email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            'nem'=>'required|string|in:f,n',
+            'username'=>'required|string',
+        ]);
+
+        if ($validator->fails()) return response()->json($validator->errors(), 400);
+
+        $user->vezeteknev = $request->vezeteknev;
+        $user->keresztnev = $request->keresztnev;
+        $user->email = $request->email;
+        $user->nem = $request->nem;
+        $user->szuletesi_datum = $request->szuletesi_datum;
+        $user->username = $request->username;
+
+        $user->save();
+        $user->syncRoles([]);
+        $user->assignRole($request->szerep);
+
+        return response()->json($user,200);
+    }
+
     public function roleCheck(Request $request)
     {
         $user = $request->user();
         Log::info($user);
         return response()->json($user->hasRole($request['role']));
+    }
+
+    public function roles() {
+        $roles = Role::select('name')->get();
+        return response()->json($roles);
     }
 
     public function register(Request $request)

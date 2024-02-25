@@ -6,8 +6,19 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/mufajok-table','MufajController@mufajTable');
     Route::post('/eloadok', 'EloadoController@store');
+    Route::post('/user-letrehozas', 'AuthController@userLetrehozas');
+    Route::patch('/user-modositas/{user}', 'AuthController@userModositas');
+
     Route::patch('/eloadok/{eloado}', 'EloadoController@update');
     Route::delete('/eloadok/{eloado}', 'EloadoController@destroy');
+    Route::get('/userek','UserController@index');
+    Route::delete('/userek/{user}', 'UserController@destroy');
+
+
+    Route::post('/user-letrehozas', 'AuthController@userLetrehozas');
+
+
+    Route::get('/szerep-osszes','AuthController@roles');
 
     Route::get('/rendelesekEsemennyel/{esemeny}', 'JegyAdatController@szektorFoglaltsag');
 
@@ -29,10 +40,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/mufajok','MufajController@index');
     Route::get('/mufaj-nevek', 'MufajController@mufajNevek');
     Route::get('/mufajok/{mufaj}','MufajController@show');
-
-    // Előadó-műfaj kapcsolat route-ok
-    Route::get('/eloado-mufaj-kapcsolatok','EloadoMufajController@index');
-    Route::get('/eloado-mufaj-kapcsolatok/{eloado-mufaj-kapcsolat}','EloadoMufajController@show');
 
     // Cím route-ok
     Route::get('/helyszin-cimek','CimController@helyszinCimek');
@@ -75,12 +82,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
         // Műfaj route-ok
 
-
-        // Előadó-műfaj kapcsolat route-ok
-        Route::post('/eloado-mufaj-kapcsolatok', 'EloadoMufajController@store');
-        Route::patch('/eloado-mufaj-kapcsolatok/{eloado-mufaj-kapcsolat}', 'EloadoMufajController@update');
-        Route::delete('/eloado-mufaj-kapcsolatok/{eloado-mufaj-kapcsolat}', 'EloadoMufajController@destroy');
-
         // Helyszín route-ok
         Route::post('/helyszinek', 'HelyszinController@store');
         Route::patch('/helyszinek/{helyszin}', 'HelyszinController@update');
@@ -116,7 +117,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::delete('/rendelesek/{rendeles}', 'RendelesController@destroy');
 
         // User route-ok
-        Route::get('/userek','UserController@index');
     });
 
     Route::get('/user-felhasznalonevek','UserController@userFelhasznalonevek');
@@ -126,7 +126,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
         // User route-ok
         Route::patch('/userek/{user}', 'UserController@update');
-        Route::delete('/userek/{user}', 'UserController@destroy');
         Route::get('/userek/{user}','UserController@show');
     });
 

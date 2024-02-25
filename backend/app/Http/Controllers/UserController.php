@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Http\Requests\UpdateuserRequest;
 use DateTime;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -14,7 +13,11 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = User::all();
+        $user = User::select('id','vezeteknev','keresztnev','email','nem','szuletesi_datum','username')->get();
+
+        foreach($user as $eachUser){
+            $eachUser->setAttribute('szerep',$eachUser->getRoleNames()[0]);
+        }
         return response()->json($user);
     }
 

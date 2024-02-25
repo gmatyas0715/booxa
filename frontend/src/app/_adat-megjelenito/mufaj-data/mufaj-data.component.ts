@@ -1,10 +1,10 @@
 import { Component, Inject, ViewChild } from '@angular/core';
-import { MufajService } from '../_szervizek/mufaj.service';
+import { MufajService } from '../../_szervizek/mufaj.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
-import { UserService } from '../_szervizek/user.service';
+import { UserAzonositasService } from '../../_szervizek/user-azonositas.service';
+import { UserService } from '../../_szervizek/user.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource } from '@angular/material/table';
@@ -125,13 +125,13 @@ export class MufajLetrehozas {
       this.userAzonositasService.getAuthToken(),
       mufajAdatok
       ).subscribe({
-      next:(response) => {
+      next:() => {
         this.dialogRef.close()
-        this.openSnackbar(response.msg)
+        this.openSnackbar('Sikeres műfajlétrehozás!')
         this.mufajAlapertek();
       },
-      error:(error) => {
-        console.error('Hiba a műfaj létrehozás során', error);
+      error:() => {
+        this.openSnackbar('Sikertelen műfajlétrehozás!')
         this.mufajAlapertek();
       }    
     });
@@ -197,13 +197,13 @@ export class MufajModositas {
       this.userAzonositasService.getAuthToken(),
       mufajAdatok
       ).subscribe({
-      next:(response) => {
+      next:() => {
         this.dialogRef.close()
-        this.openSnackbar(response.msg)
+        this.openSnackbar('Sikeres műfajmódosítás!')
         this.mufajAlapertek();
       },
-      error:(error) => {
-        console.error('Hiba a törlés során', error);
+      error:() => {
+        this.openSnackbar('Sikertelen műfajmódosítás!')
         this.mufajAlapertek();
       }    
     });
@@ -247,12 +247,12 @@ export class MufajTorles {
 
   mufajTorles(){
     this.mufajService.mufajTorles(this.mufajId,this.userAzonositasService.getAuthToken()).subscribe({
-      next:(response) => {
+      next:() => {
         this.dialogRef.close();
-        this.openSnackbar(response.msg)
+        this.openSnackbar('Sikeres műfajtörlés!')
       },
-      error:(error) => {
-        console.error('Hiba a törlés során', error);
+      error:() => {
+        this.openSnackbar('Sikertelen műfajtörlés!')
       }    
     });
   }

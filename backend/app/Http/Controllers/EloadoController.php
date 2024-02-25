@@ -52,7 +52,7 @@ class EloadoController extends Controller
         }
 
         $ujEloado->save();
-        $ujEloadoId = Eloado::where('nev',$ujEloado->nev)->first()->id;
+        $ujEloadoId = $ujEloado->id;
 
         EloadoMufajController::kapcsolatBeszuras($ujEloadoId,$request->input('mufajok'));
 

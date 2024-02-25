@@ -1,0 +1,69 @@
+<div class="justify-content-center text-center" style="margin: 20px 40px;">
+    <div class="mb-4 d-flex ml-auto mr-auto justify-content-center">
+        <input class="form-control w-50 mr-4" (keyup)="applyFilter($event)" placeholder="Írj ide a kereséshez!" #input>
+        <button  mat-raised-button color="primary" (click)="letrehozasAblak('100ms','100ms')">Új user hozzáadása</button>
+    </div>
+    <mat-paginator class="w-100" #paginator style="border: 2px solid rgb(226, 223, 223);border-top-left-radius: 10px;border-top-right-radius: 10px;" [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page">
+    </mat-paginator>   
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}}  </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="szerep">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Szerep </th>
+            <td mat-cell *matCellDef="let element"> {{element.szerep}}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vezeteknev">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Vezetéknév </th>
+            <td mat-cell *matCellDef="let element"> {{element.vezeteknev}}  </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="keresztnev">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Keresztnév </th>
+            <td mat-cell *matCellDef="let element"> {{element.keresztnev}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}}  </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="nem">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nem </th>
+            <td mat-cell *matCellDef="let element"> {{element.nem}}  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="szuletesi_datum">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Születési dátum </th>
+            <td mat-cell *matCellDef="let element"><span>{{element.szuletesi_datum}}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Felhasználónév </th>
+            <td mat-cell *matCellDef="let element"><span>{{element.username}}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="modositas">
+            <th mat-header-cell *matHeaderCellDef> Módosítás </th>
+            <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="modositasAblak('100ms','100ms',element)">Módosítás</button></td>
+        </ng-container> 
+
+        <ng-container matColumnDef="torles">
+            <th mat-header-cell *matHeaderCellDef> Törlés</th>
+            <td mat-cell *matCellDef="let element"><button mat-raised-button color="warn" (click)="torlesAblak('100ms','100ms',element.id)">Törlés</button></td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #c8c8d6;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="10">Nincs találat a(z) "{{input.value}}" kifejezésre!</td>
+        </tr>
+    </table> 
+</div>

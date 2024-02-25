@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserAzonositasService {
 
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = 'http://localhost:8000/api/';
   private readonly USER_TOKEN_COOKIE:string = "userToken";
   private readonly USERNAME_COOKIE:string = "username";
   private readonly USER_ID_COOKIE:string = "userId";
@@ -52,6 +52,13 @@ export class UserAzonositasService {
   }
 
   
+  szerepOsszes(userToken:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${userToken}`
+    })
+
+    return this.http.get<any>(this.apiUrl+'szerep-osszes',{headers});
+  }
 
   authorizacioCheck(role:string):Observable<boolean>{
     const headers = new HttpHeaders({
@@ -59,7 +66,7 @@ export class UserAzonositasService {
     })
     const body = {'role':role}
 
-    return this.http.post<boolean>(this.apiUrl+'/role-check',body,{headers});
+    return this.http.post<boolean>(this.apiUrl+'role-check',body,{headers});
   }
 
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {
@@ -71,7 +78,7 @@ export class UserAzonositasService {
     // Create the HTTP request with the data in the body
     const body = JSON.stringify(userBejelentkezesAdatok);
 
-    return this.http.post<any>(this.apiUrl+'/login', body,{ headers });
+    return this.http.post<any>(this.apiUrl+'login', body,{ headers });
   }
 
   logout(){

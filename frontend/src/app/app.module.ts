@@ -20,8 +20,9 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
-import { MufajDataComponent } from './mufaj-data/mufaj-data.component';
-import { EloadoDataComponent } from './eloado-data/eloado-data.component';
+import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
+import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
+import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
 
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -66,7 +67,8 @@ import { MatSortModule } from '@angular/material/sort';
     ProfilBeallitasokComponent,
     JegyVasarlasElozmenyekComponent,
     MufajDataComponent,
-    EloadoDataComponent
+    EloadoDataComponent,
+    UserDataComponent
   ],
   imports: [
     BrowserModule,
