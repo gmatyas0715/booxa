@@ -1,0 +1,25 @@
+<div class="container h-100">
+    <div class="row h-75 w-100">
+        <div class="col align-items-center justify-content-center d-flex" style="flex-direction: column;">
+            <div class="d-flex align-items-center justify-content-center w-75">
+                <h1>Sikertelen fizetés!</h1>
+                <img id="success-icon" class="mb-3" src="../../../assets/kepek/unsuccesful_payment.png" alt="">
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-75">
+                <h1>Fizetés azonosító: {{session_id}}</h1>
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-75">
+                <h3>Rendelés azonosító: {{rendeles_id}}</h3>
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-75">
+                <h3>Vásárló azonosító: {{user}}</h3>
+            </div>
+        </div>
+        <div *ngIf="hiba" class="col align-items-center justify-content-center d-flex">
+            <div class="d-flex align-items-center justify-content-center w-100" style="flex-direction: column;">
+                <h1>Az általad keresett oldal nem található!</h1>
+                <img style="height: 300px;" src="../../../assets/kepek/404.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>

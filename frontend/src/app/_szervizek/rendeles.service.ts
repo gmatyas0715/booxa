@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { RendelesModell } from '../_modellek/rendeles-modell';
 import { KosarService } from './kosar.service';
 import { UserAzonositasService } from './user-azonositas.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -54,5 +55,9 @@ export class RendelesService {
       });
     })
     return JSON.stringify(reszadatLista);
-}
+  }
+
+  sessionData(sessionId:string):Observable<any>{
+    return this.http.get('http://localhost:8000/api/session-data?sessionId='+sessionId);
+  }
 }

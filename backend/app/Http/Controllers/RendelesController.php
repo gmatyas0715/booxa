@@ -11,6 +11,7 @@ use App\Models\Esemeny;
 use App\Models\Fizetes;
 use App\Models\JegyAdat;
 use App\Models\Szektor;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Log;
@@ -38,7 +39,7 @@ class RendelesController extends Controller
         $rendeles->status = 'nem kifizetett';
         $rendeles->save();
 
-        $rendelesOsszeg = 0;
+        $rendelesOsszeg = 390;
         $jegyAdatok = json_decode($request->input('jegyAdatok'));
         $szamlazasAdatok = $request->input('szamlazasAdatok');
 
@@ -79,22 +80,64 @@ class RendelesController extends Controller
           'payment_method_types' => ['card'],
           'line_items' => $lineItems,
           'mode' => 'payment',
-          'success_url' => 'http://localhost:4200/success.html',
-          'cancel_url' => 'http://localhost:4200/cancel.html',
+          'success_url' => 'http://localhost:4200/rendeles/sikeres-fizetes?session_id={CHECKOUT_SESSION_ID}',
+          'cancel_url' => 'http://localhost:4200/rendeles/sikertelen-fizetes?session_id={CHECKOUT_SESSION_ID}',
         ]);
 
         $rendeles->session_id = $session->id;
         $rendeles->rendeles_osszeg = $rendelesOsszeg;
+        $rendeles->save();
 
         return response()->json(['redirect_url'=>$session->url]);
     }
 
     public function success() {
+
         
     }
 
     public function cancel() {
         
+    }
+
+    public function sessionData(Request $request) {
+        
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+
+        $sessionId = $request->query('sessionId');
+
+        Log::info($sessionId);
+
+        //try {
+            Log::info('dmakpw');
+            $stripeSession = \Stripe\Checkout\Session::retrieve($sessionId);
+            Log::info('dmakpw');
+
+            $rendeles = Rendeles::where('session_id', $sessionId)->first();
+
+            Log::info($rendeles->id.'dmakpw');
+            Log::info($rendeles->status.'dapowjf');
+
+            if($stripeSession){
+                Log::info('stripe session');
+                Log::info('stripe session'.$stripeSession->customer);
+            }
+
+            if (!$stripeSession || $rendeles->status=='fizetett'){
+                Log::info('fahjwiodjawp');
+                throw new Exception();
+            }
+
+            $rendeles->status='fizetett';
+            $rendeles->save();
+
+            $customer = \Stripe\Customer::retrieve($stripeSession->customer);
+
+            return response()->json(['user' => $customer,'rendeles_id'=>$rendeles->id]);
+
+       // } catch (Exception $e) {
+       //     return response()->json(['error'=> 'not_found_exception'],400);
+       // }
     }
 
     public function store(StoreRendelesRequest $request)

@@ -13,6 +13,8 @@ import { adminGuard, bejelentkezettUserGuard, vendegUserGuard } from './auth/aut
 import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
 import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
 import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
+import { SikeresFizetesComponent as SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
+import { SikertelenFizetesComponent as SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 
 const generalRoutes: Routes = [
     {
@@ -53,6 +55,16 @@ const generalRoutes: Routes = [
       title:'User adatok',
       path:'userdata',
       component:UserDataComponent
+    },
+    {
+      title:'Sikeres fizetés',
+      path:'rendeles/sikeres-fizetes',
+      component:SikeresFizetesComponent
+    },
+    {
+      title:'Sikertelen fizetés',
+      path:'rendeles/sikertelen-fizetes',
+      component:SikertelenFizetesComponent
     }
   ];
 

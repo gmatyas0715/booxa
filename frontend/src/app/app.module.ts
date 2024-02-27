@@ -50,6 +50,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { MatSortModule } from '@angular/material/sort';
+import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
+import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { MatSortModule } from '@angular/material/sort';
     JegyVasarlasElozmenyekComponent,
     MufajDataComponent,
     EloadoDataComponent,
-    UserDataComponent
+    UserDataComponent,
+    SikeresFizetesComponent,
+    SikertelenFizetesComponent
   ],
   imports: [
     BrowserModule,

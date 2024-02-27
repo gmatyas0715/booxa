@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
 
+    Route::get('/session-data','RendelesController@sessionData');
+
     Route::get('/mufajok-table','MufajController@mufajTable');
     Route::post('/eloadok', 'EloadoController@store');
     Route::post('/user-letrehozas', 'AuthController@userLetrehozas');
