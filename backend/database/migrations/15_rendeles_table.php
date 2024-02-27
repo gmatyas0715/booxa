@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('vezeteknev');
             $table->string('keresztnev');
             $table->string('email',100);
-            $table->foreignId('fizetes_id')->unique();
+            $table->foreignId('fizetes_id')->unique()->nullable();
+            $table->string('status');
+            $table->string('session_id')->nullable();
+            $table->integer('rendeles_osszeg')->nullable();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

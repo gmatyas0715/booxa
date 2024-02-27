@@ -16,7 +16,6 @@ export class SzamlazasiAdatokComponent {
   public maxEvDatum:string = this.jelenEv-12+"-01-01"
   public minEvDatum:string = this.jelenEv-130+"-01-01"
   szamlazasiAdatForm: FormGroup;
-  bankkartyaAdatForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,24 +31,19 @@ export class SzamlazasiAdatokComponent {
         telepules: ['',[Validators.required]],
         kozterulet: ['',[Validators.required]],
         hazszam: ['',[Validators.required]],
-        fizetesmod: ['',[Validators.required]],
-      });
-      this.bankkartyaAdatForm = this.formBuilder.group({
-        bankkartyaSzam: ['',[Validators.required,Validators.pattern('^[0-9]*$'),Validators.maxLength(16),Validators.minLength(16)]],
-        kartyaTulajdonos: ['',[Validators.required]],
-        bankkartyaLejarat: ['',[Validators.required,Validators.pattern('^[0-9]*$'),Validators.maxLength(4),Validators.minLength(4)]],
-        cvvKod: ['',[Validators.required,Validators.pattern('^[0-9]*$'),Validators.maxLength(3),Validators.minLength(3)]],
       });
     }
 
   megrendelesElkuldes():void{
     console.warn('Rendelés elküldve!');
     console.log(typeof(this.szamlazasiAdatForm.value));
-    this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value,this.bankkartyaAdatForm.value)).subscribe({
-      next:()=>{
-        /*this.kosarSzerviz.jegyAdatLista = [];
-        this.router.navigate(['/kezdooldal']);
-        this.szamlazasiAdatForm.reset();*/
+    this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value)).subscribe({
+      next:(valasz:any)=>{
+        if (valasz.redirect_url) {
+          window.location.href = valasz.redirect_url;
+        } else {
+          
+        }
       },
       error:()=>{
 
@@ -58,7 +52,7 @@ export class SzamlazasiAdatokComponent {
   }
 
   validFormEllenorzes():boolean{
-    return this.szamlazasiAdatForm.invalid || this.bankkartyaAdatForm.invalid;
+    return this.szamlazasiAdatForm.invalid;
   }
 
   // SzamlazasiAdatForm formcontrol accessor-ok
@@ -87,29 +81,7 @@ export class SzamlazasiAdatokComponent {
     return this.szamlazasiAdatForm.get('kozterulet');
   }
 
-  get fizetesmod(){
-    return this.szamlazasiAdatForm.get('fizetesmod');
-  }
-
   get hazszam(){
     return this.szamlazasiAdatForm.get('hazszam');
-  }
-
-  // BankkartyaAdatForm formcontrol accessor-ok
-
-  get bankkartyaSzam(){
-    return this.bankkartyaAdatForm.get('bankkartyaSzam');
-  }
-
-  get kartyaTulajdonos(){
-    return this.bankkartyaAdatForm.get('kartyaTulajdonos');
-  }
-
-  get bankkartyaLejarat(){
-    return this.bankkartyaAdatForm.get('bankkartyaLejarat');
-  }
-
-  get cvvKod(){
-    return this.bankkartyaAdatForm.get('cvvKod');
   }
 }

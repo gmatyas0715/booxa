@@ -22,17 +22,16 @@ export class RendelesService {
       'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
     }) 
 
-    return this.http.post('http://localhost:8000/api/rendeles',body,{headers});
+    return this.http.post('http://localhost:8000/api/rendelesElkuldes',body,{headers});
   }
 
   
-  rendelesAdatOsszeallitas(szamlazasAdat:object,bankkartyaAdat:object):RendelesModell{
+  rendelesAdatOsszeallitas(szamlazasAdat:object):RendelesModell{
 
     let jegyAdatok = this.rendelesJegyReszadatExtrakcio()
 
     let rendelesBackendnek: RendelesModell = new RendelesModell(
                           this.userAzonositasSzerviz.getAuthToken(),
-                          bankkartyaAdat,
                           szamlazasAdat,
                           jegyAdatok);
               
@@ -40,18 +39,20 @@ export class RendelesService {
     return rendelesBackendnek;
   }
 
-  rendelesJegyReszadatExtrakcio():any[]{
+  rendelesJegyReszadatExtrakcio():string{
     var reszadatLista:any[] = []
     this.kosarSzerviz.jegyAdatLista.forEach((jegyAdat)=>{
+      jegyAdat.ulohely.forEach(ulo_hely => {
         let jegyAdatElem = {
           esemeny_id: jegyAdat.esemeny.id,
           jegy_darabszam: jegyAdat.jegyDarabszam,
           szektor_id: jegyAdat.szektor.id,
           szektor_alegyseg_id: jegyAdat.szektorAlegyseg.id,
-          ulo_helyek: jegyAdat.ulohely
+          ulo_hely: ulo_hely,
         }
         reszadatLista.push(jegyAdatElem);
+      });
     })
-    return reszadatLista;
+    return JSON.stringify(reszadatLista);
 }
 }

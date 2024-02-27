@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class JegyAdat extends Model
 {
     protected $table = 'jegy_adat';
+    protected $fillable = ['esemeny_id'];
     use HasFactory;
 
     public function rendeles():BelongsTo

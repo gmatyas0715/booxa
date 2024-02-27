@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "spatie/laravel-permission": "^6.1",
+        "stripe/stripe-php": "^13.12",
         "symfony/http-client": "^6.4",
         "symfony/mailgun-mailer": "^6.4"
     },

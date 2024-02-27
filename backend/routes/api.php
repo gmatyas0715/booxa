@@ -14,6 +14,18 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/userek','UserController@index');
     Route::delete('/userek/{user}', 'UserController@destroy');
 
+    Route::post('/rendeles', 'RendelesController@store');
+
+    Route::group(['middleware'=>['auth:sanctum']],function(){
+        Route::post('/rendelesElkuldes', 'RendelesController@checkout');
+    });
+    
+    Route::post('/success', 'RendelesController@success');
+    Route::post('/cancel', 'RendelesController@cancel');
+
+
+
+
 
     Route::post('/user-letrehozas', 'AuthController@userLetrehozas');
 
@@ -147,7 +159,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
         // User route-ok
         Route::post('/userek', 'UserController@store');
     });
-    Route::post('/rendeles', 'RendelesController@store');
     // REGISZTRÁLT USER JOGOSULTSÁG ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:regisztralt_user']],function(){
 
