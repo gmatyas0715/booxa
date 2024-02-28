@@ -1,14 +1,12 @@
-import { JegyAdatModell } from "./jegy-adat-modell";
-
 export class RendelesModell {
     public rendelesIdopont:Date = new Date();
     public userToken:string;
-    public szamlazasAdat:object;
+    public szamlazasAdatok:object;
     public jegyAdatok:string
 
-    constructor(userToken:string,szamlazasAdat:object,jegyAdatok:string){
+    constructor(userToken:string,szamlazasAdatok:object,jegyAdatok:string){
         this.userToken = userToken;
-        this.szamlazasAdat = szamlazasAdat;
+        this.szamlazasAdatok = szamlazasAdatok;
         this.jegyAdatok = jegyAdatok;
     }
 }

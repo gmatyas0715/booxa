@@ -14,22 +14,23 @@ return new class extends Migration
         Schema::create('rendeles', function (Blueprint $table) {
             $table->id();
             $table->timestamp('rendeles_idopont');
+            $table->integer('rendeles_osszeg')->nullable();
+            $table->timestamp('fizetes_idopont')->nullable();
             $table->foreignId('user_id');
             $table->string('vezeteknev');
             $table->string('keresztnev');
             $table->string('email',100);
-            $table->foreignId('fizetes_id')->unique()->nullable();
+            $table->foreignId('szamlazasi_cim_id');
             $table->string('status');
             $table->string('session_id')->nullable();
-            $table->integer('rendeles_osszeg')->nullable();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('fizetes_id')
+            $table->foreign('szamlazasi_cim_id')
                 ->references('id')
-                ->on('fizetes')
+                ->on('cim')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();

@@ -7,8 +7,6 @@ use App\Models\Esemeny;
 use App\Models\Helyszin;
 use App\Models\Eloado;
 use Carbon\Carbon;
-use App\database\factories\EsemenyFactory;
-use Illuminate\Support\Facades\Log;
 
 
 class EsemenySeeder extends Seeder

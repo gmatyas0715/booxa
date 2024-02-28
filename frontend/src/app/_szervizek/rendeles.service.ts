@@ -27,13 +27,13 @@ export class RendelesService {
   }
 
   
-  rendelesAdatOsszeallitas(szamlazasAdat:object):RendelesModell{
+  rendelesAdatOsszeallitas(szamlazasAdatok:object):RendelesModell{
 
     let jegyAdatok = this.rendelesJegyReszadatExtrakcio()
 
     let rendelesBackendnek: RendelesModell = new RendelesModell(
                           this.userAzonositasSzerviz.getAuthToken(),
-                          szamlazasAdat,
+                          szamlazasAdatok,
                           jegyAdatok);
               
     console.log(rendelesBackendnek)

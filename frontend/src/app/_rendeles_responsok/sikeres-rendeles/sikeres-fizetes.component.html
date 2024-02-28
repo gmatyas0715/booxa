@@ -1,24 +1,29 @@
 <div class="container h-100">
     <div class="row h-75 w-100">
-        <div *ngIf="!notFound" class="col align-items-center justify-content-center d-flex" style="flex-direction: column;">
+        <div *ngIf="!notFound && !betoltes" class="col align-items-center justify-content-center d-flex" style="flex-direction: column;">
             <div class="d-flex align-items-center justify-content-center w-75">
                 <h1>Sikeres fizetés!</h1>
                 <img id="success-icon" class="mb-3" src="../../../assets/kepek/success-green-check-mark-icon.svg" alt="">
             </div>
             <div class="d-flex align-items-center justify-content-center w-75">
-                <h3>Fizetés azonosító: {{session_id}}</h3>
+                <h3><span class="font-weight-bold">Fizetés azonosító:</span> {{session_id}}</h3>
             </div>
             <div class="d-flex align-items-center justify-content-center w-75">
-                <h3>Rendelés azonosító: {{rendeles_id}}</h3>
+                <h3><span class="font-weight-bold">Rendelés azonosító:</span> {{rendeles_id}}</h3>
             </div>
             <div class="d-flex align-items-center justify-content-center w-75">
-                <h3>Vásárló azonosító: {{user}}</h3>
+                <h3><span class="font-weight-bold">Vásárló azonosító:</span> {{userId}}</h3>
             </div>
         </div>
-        <div *ngIf="notFound" class="col align-items-center justify-content-center d-flex">
+        <div *ngIf="notFound && !betoltes" class="col align-items-center justify-content-center d-flex">
             <div class="d-flex align-items-center justify-content-center w-100" style="flex-direction: column;">
                 <h1>Az általad keresett oldal nem található!</h1>
                 <img style="height: 300px;" src="../../../assets/kepek/404.png" alt="">
+            </div>
+        </div>
+        <div *ngIf="betoltes" class="col align-items-center justify-content-center d-flex">
+            <div class="d-flex align-items-center justify-content-center w-100" style="flex-direction: column;">
+                <mat-spinner diameter="100"  mode="indeterminate"></mat-spinner>
             </div>
         </div>
     </div>

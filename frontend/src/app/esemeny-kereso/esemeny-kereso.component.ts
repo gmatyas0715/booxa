@@ -7,7 +7,7 @@ import { MufajService } from '../_szervizek/mufaj.service';
 import { CimService } from '../_szervizek/cim.service';
 import { KosarService } from '../_szervizek/kosar.service';
 import { DatePipe } from '@angular/common';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
 import { omitBy } from 'lodash';
 import { isEmpty } from 'lodash';
@@ -23,8 +23,8 @@ export class EsemenyKeresoComponent implements OnInit{
 
   maiDatum: Date = new Date();
   public esemenyDatum:string = ""; 
-  public minJegyar:number = 0;
-  public maxJegyar:number = 30000;
+  public minJegyar:number;
+  public maxJegyar:number;
   public mufajLista: string[] = [];
   public telepulesLista: string[] = [];
   public eloadoJavaslatok: string[] = [];
@@ -38,10 +38,13 @@ export class EsemenyKeresoComponent implements OnInit{
   public keresettTelepulesek: string[] = [];
   public talalatRendezesOpcio:string = "datum_n";
   public cols:number = 2;
-  public esemenyekDbOldalon = 5;
+  public esemenyekDbOldalon = 10;
   public oldalSzam = 0;
   public szuroMenu = false;
   public konkretKereses = true;
+  private MIN_JEGYAR: number = 0;
+  private MAX_JEGYAR: number = 30000;
+
 
   customBreakpoints = {
     xs: '(min-width: 0px)',
@@ -62,6 +65,8 @@ export class EsemenyKeresoComponent implements OnInit{
               private breakpointObserver: BreakpointObserver,
               private route:ActivatedRoute,
               private router: Router) {
+    this.minJegyar = this.MIN_JEGYAR;
+    this.maxJegyar = this.MAX_JEGYAR;
     this.breakpointObserver.observe([
       this.customBreakpoints.xs,
       this.customBreakpoints.sm,
@@ -113,19 +118,19 @@ export class EsemenyKeresoComponent implements OnInit{
         let queryMinJegyar:number = parseInt(params['ar_kozott'].split('-')[0])
         let queryMaxJegyar:number = parseInt(params['ar_kozott'].split('-')[1])
   
-        if (queryMinJegyar<=30000 && queryMinJegyar>=0){
+        if (queryMinJegyar<=this.MAX_JEGYAR && queryMinJegyar>=this.MIN_JEGYAR){
           this.minJegyar = queryMinJegyar
         }
         else{
-          this.minJegyar=0
-          if (queryMaxJegyar<0 || queryMaxJegyar>30000){
-            this.maxJegyar=30000
+          this.minJegyar=this.MIN_JEGYAR
+          if (queryMaxJegyar<this.MIN_JEGYAR || queryMaxJegyar>this.MAX_JEGYAR){
+            this.maxJegyar=this.MAX_JEGYAR
           }
           this.parameterAktualizalas()
         }
   
-        if (queryMaxJegyar<this.minJegyar|| queryMaxJegyar>30000){
-          this.maxJegyar=30000
+        if (queryMaxJegyar<this.minJegyar|| queryMaxJegyar>this.MAX_JEGYAR){
+          this.maxJegyar=this.MAX_JEGYAR
           this.parameterAktualizalas()
         }
         else {
@@ -349,8 +354,8 @@ export class EsemenyKeresoComponent implements OnInit{
   }
 
   jegyArAlaphelyzet(){
-    this.minJegyar = 0
-    this.maxJegyar = 30000
+    this.minJegyar = this.MIN_JEGYAR
+    this.maxJegyar = this.MAX_JEGYAR
     this.esemenyKereses()
   }
 
