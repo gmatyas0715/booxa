@@ -1925,11 +1925,13 @@
     <g
        id="l08_b_also_1"
        style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
-       transform="translate(0.43134125)"><path
+       transform="translate(0.43134125)">
+       <path
    d="m 124.5,79.919446 h 3.50005 V 62.486918 H 124.5 Z"
    style="opacity:1;fill:#aaffcc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.117789;paint-order:stroke markers fill"
+   class="l08_b_also_1_b"
    id="path21" />
-&#10;&#10;&#10;&quot;l08_b_also_1_b&quot; /&gt;&#10;      <path
+<path
    d="M 124.00018,79.987366 V 62.554838 h -4.00027 v 17.432528 z"
    style="opacity:1;fill:#aaffcc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.117789;paint-order:stroke markers fill"
    class="l08_b_also_1_a"

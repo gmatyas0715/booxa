@@ -28,24 +28,27 @@ export class EsemenyReszletekComponent{
     xl: '(min-width: 1200px)'
   };
 
-  jegyFoglalhatoDarabok:number[] = [1,2,3,4,5];
-  kivalasztottEsemeny:any;
-  kivalasztottHelyszin:any;
-  kivalasztottEloado:any;
-  kivalasztottHelyszinNev:string = "";
-  kivalasztottEloadoNev:string = "";
-  kivalasztottEsemenyDatum:string = "";
-  kivalasztottSzektorok:SzektorModell[] = [];
+  MAX_JEGYEK = 5;
+  maradekJegyek:number[] = [1,2,3,4,5];
+  esemeny:any;
+  helyszin:any;
+  eloado:any;
+  helyszinNev:string = "";
+  eloadoNev:string = "";
+  esemenyDatum:string = "";
+  osszesSzektorAlegyseg:SzektorAlegysegModell[] = [];
   kivalasztottSzektorAlegysegek:SzektorAlegysegModell[] = [];
   osszesSzektor:SzektorModell[] = [];
+  kivalasztottSzektorok:SzektorModell[] = [];
   kivalasztottSzektor:any;
   kivalasztottSzektorAlegyseg:any;
   kivalasztottUlohelyek:number[] = [];
-  szektorFoglaltsagok:Map<string,[boolean,number]> = new Map<string,[boolean,number]>;
+  szektorFoglaltsagok:Map<string,[boolean,number]> = new Map<string,[boolean,number]>();
   jegyFoglaltDarab:number = 0
   helyszinSvg: string ='';
   jegyKivalasztas_e:boolean = true;
   esemenyId:string;
+  svgSzektorToltes:boolean = true;
 
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
@@ -58,23 +61,30 @@ export class EsemenyReszletekComponent{
               private datePipe:DatePipe,
               private breakpointObserver: BreakpointObserver,) {
                 this.esemenyId = this.route.snapshot.paramMap.get('id') as string;
+                this.szektorFoglaltsag(this.esemenyId);
                 this.esemenySzerviz.esemenyAdatok(this.esemenyId).subscribe((valasz)=>{
-                  this.kivalasztottEsemeny=valasz;
-                  this.kivalasztottEsemenyDatum = this.datumFormazas(this.kivalasztottEsemeny.idopont);
-                  this.kivalasztottHelyszin = this.kivalasztottEsemeny.helyszin;
-                  this.kivalasztottEloado = this.kivalasztottEsemeny.eloado;
-                  this.kivalasztottHelyszinNev = this.kivalasztottHelyszin.nev;
-                  this.kivalasztottEloadoNev = this.kivalasztottEloado.nev;
-                  this.szektorFoglaltsag(this.esemenyId);
+                  this.esemeny=valasz;
+                  this.esemenyDatum = this.datumFormazas(this.esemeny.idopont);
+                  this.helyszin = this.esemeny.helyszin;
+                  this.eloado = this.esemeny.eloado;
+                  this.helyszinNev = this.helyszin.nev;
+                  this.eloadoNev = this.eloado.nev;
                   this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
-                    console.log(valasz)
-                    this.kivalasztottSzektorok = [...valasz]
-                    this.osszesSzektor = [...valasz]
-                    this.helyszinSvgBetoltes();
+                    this.helyszinSvgBetoltes(valasz);
                   });
                 });
               }
 
+  jegyFoglalhatoDarabok(jegyMaradek:number){
+    const maxJegyek = jegyMaradek<this.MAX_JEGYEK?jegyMaradek:this.MAX_JEGYEK
+    const jegyDarab = [];
+
+    for (let i = 1; i <= maxJegyek; i++) {
+      jegyDarab.push(i)
+    }
+    this.maradekJegyek = jegyDarab
+  }
+  
   setSvgSize(size:string) {
     const svg = document.querySelector("svg");
     svg?.setAttribute('width',size);
@@ -104,7 +114,7 @@ export class EsemenyReszletekComponent{
       }
       
     });
-    this.kivalasztottSzektorok = []
+    this.kivalasztottSzektorAlegysegek = []
   }
   
   osszesSzektorKijeloles(){
@@ -117,91 +127,142 @@ export class EsemenyReszletekComponent{
         this.renderer.setStyle(child, 'opacity',1);
       }
     });
-    this.kivalasztottSzektorok = [...this.osszesSzektor]
-    this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
+    this.kivalasztottSzektorAlegysegek = [...this.osszesSzektorAlegyseg]
+    this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.id.localeCompare(b.id));
   }
 
   clickEvent(group:string){
-    let szektorListaban:boolean = false;
+
+    let szektorListaban:boolean = false;   
+    
     for (let szektor of this.kivalasztottSzektorok){
       if (szektor.id==group){
-        szektorListaban = true;
-        this.kivalasztottSzektorok.splice(this.kivalasztottSzektorok.indexOf(szektor),1);
-        this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
         this.szektorSzinezes(group,0.3);
-        break;
+        szektorListaban = true;
+        this.kivalasztottSzektorAlegysegek.forEach((kivalasztottSzektorAlegyseg)=>{
+          if (kivalasztottSzektorAlegyseg.szektor_id==group){
+            this.kivalasztottSzektorAlegysegek.splice(this.kivalasztottSzektorAlegysegek.indexOf(kivalasztottSzektorAlegyseg),1)
+          }
+        })
+        this.kivalasztottSzektorok.splice(this.kivalasztottSzektorok.indexOf(szektor),1)
+        this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.id.localeCompare(b.id));
+        break
       }
     }
       
     if (!szektorListaban){
       for (let szektor of this.osszesSzektor){
         if (szektor.id==group){
-          this.kivalasztottSzektorok.push(szektor);
-          this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
-          this.szektorSzinezes(group,1);
+        this.szektorSzinezes(group,1);
+          szektor.szektor_alegyseg.forEach((kivalasztottSzektorAlegyseg)=>{
+            this.kivalasztottSzektorAlegysegek.push(kivalasztottSzektorAlegyseg)
+          })
+        this.kivalasztottSzektorok.push(szektor)
+        this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
+        break
         }
       }
-    }
+    }    
   }
 
-  helyszinSvgBetoltes(){    
-    this.helyszinSzerviz.helyszinSvgKepUrl(this.kivalasztottHelyszin.svg_kep_eleres).subscribe((valasz)=>{
-        this.helyszinSvg =  valasz;
-        this.renderer.setProperty(this.svgContainer.nativeElement, 'innerHTML', this.helyszinSvg);
-        this.breakpointObserver.observe([
-          this.customBreakpoints.xs,
-          this.customBreakpoints.sm,
-          this.customBreakpoints.md,
-          this.customBreakpoints.lg,
-          this.customBreakpoints.xl,
-        ]).subscribe(result => {
-          if (result.breakpoints[this.customBreakpoints.xl]) {
-            this.setSvgSize('140mm');
-          } else if (result.breakpoints[this.customBreakpoints.lg]) {
-            this.setSvgSize('140mm');
-          } else if (result.breakpoints[this.customBreakpoints.md]) {
-            this.setSvgSize('140mm');
-          } else if (result.breakpoints[this.customBreakpoints.sm]) {
-            this.setSvgSize('100mm');
-          } else if (result.breakpoints[this.customBreakpoints.xs]) {
-            this.setSvgSize('70mm');
-          }
-        });
-        this.kivalasztottSzektorok.forEach(szektor => {
-          this.kivalasztottSzektorAlegysegek.push(...szektor.szektor_alegyseg)
-          console.log(this.kivalasztottSzektorAlegysegek)
-          const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
-          szektor.szin = g.style.fill
-          this.renderer.listen(g, 'click', () => {
-            this.clickEvent(g.id);
-        });
+  helyszinSvgBetoltes(szektorAdatok:any){    
+    this.helyszinSzerviz.helyszinSvgKepUrl(this.helyszin.svg_kep_eleres).subscribe((valasz)=>{
+      this.helyszinSvg =  valasz;
+      this.renderer.setProperty(this.svgContainer.nativeElement, 'innerHTML', this.helyszinSvg);
+      this.breakpointObserver.observe([
+        this.customBreakpoints.xs,
+        this.customBreakpoints.sm,
+        this.customBreakpoints.md,
+        this.customBreakpoints.lg,
+        this.customBreakpoints.xl,
+      ]).subscribe(result => {
+        if (result.breakpoints[this.customBreakpoints.xl]) {
+          this.setSvgSize('140mm');
+        } else if (result.breakpoints[this.customBreakpoints.lg]) {
+          this.setSvgSize('140mm');
+        } else if (result.breakpoints[this.customBreakpoints.md]) {
+          this.setSvgSize('140mm');
+        } else if (result.breakpoints[this.customBreakpoints.sm]) {
+          this.setSvgSize('100mm');
+        } else if (result.breakpoints[this.customBreakpoints.xs]) {
+          this.setSvgSize('70mm');
+        }
       });
+      this.szektorListaBetoltes(szektorAdatok)
+      this.svgSzektorToltes = false
     }
   )}
 
+  szektorListaBetoltes(szektorAdatok:any){
+    const szektorFoglaltsagNevek = Array.from(this.szektorFoglaltsagok.keys());
+    szektorAdatok.forEach((szektor:any) => {
+      const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
+      this.renderer.listen(g, 'click', () => {
+        this.clickEvent(g.id);
+      });
+      this.osszesSzektor.push(szektor)
+      Array.prototype.forEach.call(szektor.szektor_alegyseg,(szektorAlegyseg:any) => {        
+        if (szektorFoglaltsagNevek.includes(szektorAlegyseg.id)){
+          if (this.szektorFoglaltsagok.get(szektorAlegyseg.id)![1]==0){
+            
+            const alegyseg:HTMLElement = this.svgContainer.nativeElement.querySelector('.'+szektorAlegyseg.id);
+            alegyseg.style.fill = 'rgb(220, 220, 220)'
+          }
+
+          else{
+            szektorAlegyseg.szin = g.style.fill
+            szektorAlegyseg.jegy_maradek = this.szektorFoglaltsagok.get(szektorAlegyseg.id)?.[1]!
+            szektorAlegyseg.szektor_nev = szektor.szektor_nev
+            this.osszesSzektorAlegyseg.push(szektorAlegyseg)
+          }
+        }else{
+          szektorAlegyseg.szin = g.style.fill
+          szektorAlegyseg.szektor_nev = szektor.szektor_nev
+          this.osszesSzektorAlegyseg.push(szektorAlegyseg)
+        }
+      });
+    })
+
+    this.kivalasztottSzektorok = [...this.osszesSzektor]
+    this.kivalasztottSzektorAlegysegek = [...this.osszesSzektorAlegyseg]
+
+  }
+
   jegyRendezesAr(sorrend:boolean){
     if (sorrend){
-      this.kivalasztottSzektorok.sort((a,b)=>a.szektor_nev.localeCompare(b.szektor_nev))
+      this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_alegyseg_jegyar - b.szektor_alegyseg_jegyar)
     }
 
     else{
-      this.kivalasztottSzektorok.sort((a,b)=>b.szektor_nev.localeCompare(a.szektor_nev))
+      this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_alegyseg_jegyar - a.szektor_alegyseg_jegyar)
     }
   }
 
-  jegyRendezesNev(){
+  jegyRendezesNev(sorrend:boolean){
+    if (sorrend){
+      this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_nev.localeCompare(b.szektor_nev))
+    }
 
+    else{
+      this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_nev.localeCompare(a.szektor_nev))
+    }
   }
 
-  jegyKivalasztas(szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell){
+  jegyKivalasztas(szektorAlegyseg:SzektorAlegysegModell){
     this.kivalasztottSzektorAlegyseg = szektorAlegyseg;
-    this.kivalasztottSzektor = szektor;
     this.jegyKivalasztas_e = false;
+    if (szektorAlegyseg.jegy_maradek){
+
+    }
+
+    else {
+      this.jegyFoglalhatoDarabok(5);
+    }
   }
 
   jegyKosarbaHelyezes(){
     this.kosarService.kosarbaHelyezes(new JegyAdatModell(
-      this.kivalasztottEsemeny,
+      this.esemeny,
       this.kivalasztottSzektor,
       this.kivalasztottSzektorAlegyseg,
       this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab),
@@ -217,9 +278,10 @@ export class EsemenyReszletekComponent{
   }
 
   szektorFoglaltsag(esemenyId:string){
-    this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz)=>{
-      this.szektorFoglaltsagok = valasz;
-      console.log(this.szektorFoglaltsagok);
+    this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz:Map<string,[boolean,number]>)=>{
+      Object.entries(valasz).forEach(([k, [b, n]]) => {
+        this.szektorFoglaltsagok.set(k,[b, n])
+      })
     });
   }
 

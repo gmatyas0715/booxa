@@ -294,6 +294,7 @@ export class EsemenyKeresoComponent implements OnInit{
             )
           })
         }
+        this.talalatRendezes()
         this.elsoOldal()
         console.log(this.esemenyLista)
         },
@@ -347,9 +348,8 @@ export class EsemenyKeresoComponent implements OnInit{
     }
   }
 
-  eloadoHelyszinKeresesAlaphelyzet(){
-    this.keresettEloado = ""
-    this.keresettHelyszin = ""
+  konkretKeresesAlaphelyzet(opcio:string){
+    opcio=='eloado'?this.keresettEloado = "":this.keresettHelyszin = ""
     this.esemenyKereses()
   }
 

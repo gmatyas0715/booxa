@@ -37,6 +37,7 @@
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     border-radius: 10px;
     margin: 10px;
+    position: relative;
 }
 
 thead{
@@ -111,4 +112,12 @@ thead{
 
   .container{
     align-items: center;
+  }
+
+  .jegy-reszletek-gombok{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: stretch;
+    margin: 0px 10px;
   }

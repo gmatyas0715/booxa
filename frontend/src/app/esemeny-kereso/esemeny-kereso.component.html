@@ -105,9 +105,12 @@
             <mat-card class="pt-3 pb-3 mb-4 container" (ngSubmit)="esemenyKereses()" (keydown.enter)="esemenyKereses()">
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-md-5 d-flex justify-content-center">
-                        <mat-form-field class="w-75">
+                        <mat-form-field class="w-100">
                             <mat-label>Előadó</mat-label>
-                            <input matInput [(ngModel)]="keresettEloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
+                            <div class="d-flex">
+                                <input matInput [(ngModel)]="keresettEloado" type="text" placeholder="bármilyen előadó" [matAutocomplete]="auto1">
+                                <button mat-icon-button (click)="konkretKeresesAlaphelyzet('eloado')" [disabled]="keresettEloado==''"><mat-icon>close</mat-icon></button>
+                            </div>
                             <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="esemenyKereses()">
                                 <mat-option *ngFor="let javaslat of eloadoFilterezett" [value]="javaslat">
                                     {{ javaslat }}
@@ -116,19 +119,19 @@
                         </mat-form-field>
                     </div>
                     <div class="col-sm-12 col-md-5 d-flex justify-content-center">
-                        <mat-form-field class="w-75">
+                        <mat-form-field class="w-100">
                             <mat-label>Helyszín</mat-label>
-                            <input matInput [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2">
+                            <div class="d-flex">
+                                <input matInput [(ngModel)]="keresettHelyszin" type="text" placeholder="bárhol" [matAutocomplete]="auto2">
+                                <button mat-icon-button (click)="konkretKeresesAlaphelyzet('helyszin')" [disabled]="keresettHelyszin==''"><mat-icon>close</mat-icon></button>
+                            </div>
                             <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="esemenyKereses()">
                                 <mat-option *ngFor="let javaslat of helyszinFilterezett" [value]="javaslat">
                                     {{ javaslat }}
                                 </mat-option>
                             </mat-autocomplete>
                         </mat-form-field>
-                    </div>
-                    <div class="col-sm-12 col-md-2 d-flex justify-content-center mb-3">
-                        <button mat-raised-button class="mt-2 ml-3" (click)="eloadoHelyszinKeresesAlaphelyzet()" [disabled]="keresettHelyszin==''&&keresettEloado==''"><mat-icon class="ml-1">close</mat-icon></button>
-                    </div>         
+                    </div>       
                 </div>
                 <div *ngIf="megjelenitettEsemenyekTomb.length>0" class="row d-flex align-items-center">
                     <div class="col-md-12 col-lg-7 mt-3">
@@ -177,7 +180,7 @@
                         </div>
                     </div>
                     <mat-grid-list class="esemeny-megjelenito" [cols]="cols" rowHeight="250px">
-                        <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb; trackBy: trackByFn">
+                        <mat-grid-tile *ngFor="let esemeny of megjelenitettEsemenyekTomb; trackBy: trackByFn" style="overflow: visible;">
                             <mat-card class="container esemeny-container p-0">
                                 <mat-card-content class="h-100 w-100">
                                     <div class="row p-0 h-100 w-100">
@@ -193,7 +196,7 @@
                                             <b>Időpont:</b>
                                             <span class="d-block mb-2">{{datumFormazas(esemeny.idopont)}}</span>
                                             <span class="d-block font-weight-bold text-danger">Jegyárak {{esemeny.jegy_alapar}} Ft-tól!</span>
-                                            <button mat-raised-button class="megnez-button" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
+                                            <button mat-raised-button class="megnez-button shadow-button" [routerLink]="['/esemenyReszletek',esemeny.id]">Megnézem</button>
                                         </div>
                                     </div>
                                 </mat-card-content>

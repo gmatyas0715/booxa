@@ -12,11 +12,6 @@ class Rendeles extends Model
     protected $table = 'rendeles';
     use HasFactory;
 
-    public function fizetes():BelongsTo
-    {
-        return $this->belongsTo(Fizetes::class);
-    }
-
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class);

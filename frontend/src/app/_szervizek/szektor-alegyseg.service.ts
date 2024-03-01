@@ -15,8 +15,8 @@ export class SzektorAlegysegService {
     return this.http.get<number[]>(this.apiUrl+'szektor-alegyseg-szabad-helyek');
   }
 
-  szektorAlegysegFoglaltsag(esemenyId:string):Observable<Map<string,[boolean,number]>>{
-    return this.http.get<Map<string,[boolean,number]>>(this.apiUrl+'szektor-alegyseg-foglaltsag-check/'+esemenyId);
+  szektorAlegysegFoglaltsag(esemenyId:string):Observable<any>{
+    return this.http.get<any>(this.apiUrl+'szektor-alegyseg-foglaltsag-check/'+esemenyId);
   }
 
 }

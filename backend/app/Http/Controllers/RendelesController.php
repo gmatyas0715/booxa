@@ -12,12 +12,11 @@ use App\Models\Szektor;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Log;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Checkout\Session;
-use Carbon\Carbon;
-
+use App\Mail\RendelesElkuldese;
+use Illuminate\Support\Facades\Mail;
 
 class RendelesController extends Controller
 {
@@ -129,6 +128,7 @@ class RendelesController extends Controller
                 return response()->json(['error'=> 'not_found']);
             }
 
+            Mail::to('teszttamas@gmail.com')->send(new RendelesElkuldese());
             $rendeles->status='fizetett';
             $rendeles->fizetes_idopont = now();
             $rendeles->save();

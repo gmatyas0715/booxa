@@ -6,5 +6,4 @@ export interface SzektorModell {
     szektor_tipus:string;
     helyszin_id:number;
     szektor_alegyseg:SzektorAlegysegModell[];
-    szin:string;
 }
