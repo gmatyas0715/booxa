@@ -58,7 +58,7 @@
                     </ng-container>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let szektor_alegyseg of kivalasztottSzektorAlegysegek">
+                    <tr (mouseover)="hoverEvent(szektor_alegyseg.szektor_id)" (mouseleave)="mouseLeaveEvent(szektor_alegyseg.szektor_id)" *ngFor="let szektor_alegyseg of kivalasztottSzektorAlegysegek">
                         <td class="border col-1" [style.background-color]="szektor_alegyseg.szin"></td>
                         <td class="border">{{szektor_alegyseg.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
                         <td class="border">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
@@ -85,7 +85,7 @@
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabszám:</th>
-                    <td><button  *ngFor="let jegyFoglalhatoDarab of maradekJegyek" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyFoglalhatoDarab)">{{jegyFoglalhatoDarab}}</button><!--<input class="d-inline-block" type="number" [(ngModel)]="jegyFoglaltDarab" min="0" max="1000" placeholder="Jegyek száma">--></td>
+                    <td><button  *ngFor="let jegyFoglalhatoDarab of maradekJegyek" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyFoglalhatoDarab)">{{jegyFoglalhatoDarab}}</button></td>
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy összár:</th>

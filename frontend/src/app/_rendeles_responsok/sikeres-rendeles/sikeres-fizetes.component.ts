@@ -29,7 +29,6 @@ export class SikeresFizetesComponent implements OnInit{
             this.notFound = true
             this.betoltes = false
             console.log("if not found");
-            
           }
   
           else {

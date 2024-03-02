@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
@@ -76,6 +76,17 @@ export class EsemenyReszletekComponent{
                   });
                 });
               }
+
+
+  hoverEvent(id: string) {
+    const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+id);
+    g.setAttribute('filter', 'drop-shadow(0 0 5px crimson');
+  }
+
+  mouseLeaveEvent(id: string){
+    const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+id);    
+    g.removeAttribute('filter');
+  }
 
   jegyFoglalhatoDarabok(jegyMaradek:number){
     const maxJegyek = jegyMaradek<this.MAX_JEGYEK?jegyMaradek:this.MAX_JEGYEK
@@ -210,6 +221,8 @@ export class EsemenyReszletekComponent{
       szektor.szektor_alegyseg = szektor.szektor_alegyseg.filter((szektorAlegyseg:any)=>{
         if (szektorFoglaltsagNevek.includes(szektorAlegyseg.id)){
           szektorAlegyseg.maradek_helyszam = this.szektorFoglaltsagok.get(szektorAlegyseg.id)![1]
+          console.log(szektorAlegyseg.maradek_helyszam);
+          
           if (szektorAlegyseg.maradek_helyszam==0){
             const alegyseg:HTMLElement = this.svgContainer.nativeElement.querySelector('.'+szektorAlegyseg.id);
             alegyseg.style.fill = 'rgb(220, 220, 220)'
@@ -268,8 +281,14 @@ export class EsemenyReszletekComponent{
   jegyKivalasztas(szektorAlegyseg:SzektorAlegysegModell){
     this.kivalasztottSzektorAlegyseg = szektorAlegyseg;
     this.jegyKivalasztas_e = false;
+    for (const szektor of this.kivalasztottSzektorok) {
+      if (szektor.id = szektorAlegyseg.szektor_id){
+        this.kivalasztottSzektor = szektor
+        break
+      }
+    }
     if (szektorAlegyseg.jegy_maradek){
-
+      this.jegyFoglalhatoDarabok(szektorAlegyseg.jegy_maradek);
     }
 
     else {
@@ -313,10 +332,5 @@ export class EsemenyReszletekComponent{
 
   foglaltDarabBeallitas(jegyFoglalhatoDarab:number){
     this.jegyFoglaltDarab = jegyFoglalhatoDarab;
-  }
-
-  getSvgSzin(szektorAlegyseg:string):string{
-    const szin = this.svgContainer.nativeElement.querySelector(szektorAlegyseg).style.fill;
-    return szin ||'white';
   }
 }

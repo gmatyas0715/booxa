@@ -268,27 +268,26 @@ export class EsemenyKeresoComponent implements OnInit{
     this.esemenySzerviz.esemenyKereses(this.keresettEloado,this.keresettHelyszin,this.esemenyDatum,this.keresettTelepulesek.toString(),this.keresettMufajok.toString(),this.minJegyar,this.maxJegyar)
       .subscribe({
         next: (valasz) => {
-          console.log(valasz)
           if(this.esemenyLista.length==0){
           valasz.forEach((esemeny)=>{
             this.esemenyLista.push(
               new EsemenyModell(
-                    esemeny.id,
-                    esemeny.idopont,
-                    esemeny.jegy_alapar,
-                    new HelyszinModell(
-                            0,
-                            esemeny.helyszin_nev,
-                            0,
-                            esemeny.helyszin_kep_eleres,
-                            "",
-                            []
+                  esemeny.id,
+                  esemeny.idopont,
+                  esemeny.jegy_alapar,
+                  new HelyszinModell(
+                    0,
+                    esemeny.helyszin_nev,
+                    0,
+                    esemeny.helyszin_kep_eleres,
+                    "",
+                    []
                 ),
-                    new EloadoModell(
-                            0,
-                            esemeny.eloado_nev,
-                            "",
-                            esemeny.kep_eleres
+                  new EloadoModell(
+                    0,
+                    esemeny.eloado_nev,
+                    "",
+                    esemeny.kep_eleres
                 )
               )
             )
@@ -296,7 +295,6 @@ export class EsemenyKeresoComponent implements OnInit{
         }
         this.talalatRendezes()
         this.elsoOldal()
-        console.log(this.esemenyLista)
         },
         error: (error) =>{console.error('Hiba az eseménylekérdezésben!', error)}
       });

@@ -128,7 +128,7 @@ class RendelesController extends Controller
                 return response()->json(['error'=> 'not_found']);
             }
 
-            Mail::to('teszttamas@gmail.com')->send(new RendelesElkuldese());
+            //Mail::to('teszttamas@gmail.com')->send(new RendelesElkuldese());
             $rendeles->status='fizetett';
             $rendeles->fizetes_idopont = now();
             $rendeles->save();

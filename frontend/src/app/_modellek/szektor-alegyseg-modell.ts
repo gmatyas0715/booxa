@@ -8,5 +8,4 @@ export interface SzektorAlegysegModell {
     szektor_nev:string;
     jegy_maradek:number
     szin:string;
-
 }
