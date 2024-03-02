@@ -31,7 +31,7 @@ class SzektorController extends Controller
 
         $szektorok->load([
             'szektor_alegyseg' => function($query){
-                $query->select('id','arszorzo','max_kapacitas','sorjelzes','szektor_id');
+                $query->select('id','arszorzo','max_kapacitas as maradek_helyszam','sorjelzes','szektor_id');
             }
         ]);
         

@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   style="cursor:pointer"
    width="158.75mm"
    height="158.75mm"
    viewBox="0 0 158.75 158.75"
@@ -1296,7 +1297,7 @@
     </g>
     <g
        id="l08_c_center"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          style="opacity:1;fill:#e9afaf;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;paint-order:stroke markers fill"
@@ -1307,7 +1308,7 @@
     </g>
     <g
        id="l08_d_center"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          style="opacity:1;fill:#80e5ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;paint-order:stroke markers fill"
@@ -1318,7 +1319,7 @@
     </g>
     <g
        id="l08_d_also_1"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 24.441349,34.990906 h 3.999756 V 17.558895 h -3.999756 z"
@@ -1347,7 +1348,7 @@
     </g>
     <g
        id="l08_d_also_2"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 24.441349,57.48669 h 3.999756 V 37.554057 h -3.999756 z"
@@ -1376,7 +1377,7 @@
     </g>
     <g
        id="l08_d_felso_1"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,17.534816 H 9.6721335 v 12.520166 h 3.7930505 z"
@@ -1395,7 +1396,7 @@
     </g>
     <g
        id="l08_d_felso_2"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,32.554054 H 9.6721335 v 12.519133 h 3.7930505 z"
@@ -1414,7 +1415,7 @@
     </g>
     <g
        id="l08_d_felso_3"
-       style="stroke:none;fill:#80e5ff;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#80e5ff;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,47.555722 H 9.7031395 v 9.975102 h 3.7620445 z"
@@ -1433,7 +1434,7 @@
     </g>
     <g
        id="l08_b_center"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          style="opacity:1;fill:#aaffcc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;paint-order:stroke markers fill"
@@ -1808,7 +1809,7 @@
          id="tspan44">E</tspan></text>
     <g
        id="l08_a_also_1"
-       style="stroke:none;fill:#ffccaa;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#ffccaa;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 133.05889,34.990906 h 3.91398 V 17.558895 h -3.91398 z"
@@ -1837,7 +1838,7 @@
     </g>
     <g
        id="l08_a_also_2"
-       style="stroke:none;fill:#ffccaa;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#ffccaa;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 124.5,57.427795 h 3.50005 V 37.495162 H 124.5 Z"
@@ -1866,7 +1867,7 @@
     </g>
     <g
        id="l08_a_felso_1"
-       style="stroke:none;fill:#ffccaa;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#ffccaa;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 143.0588,17.530473 h -3.79357 v 12.519649 h 3.79357 z"
@@ -1886,7 +1887,7 @@
     </g>
     <g
        id="l08_a_felso_2"
-       style="stroke:none;fill:#ffccaa;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#ffccaa;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 143.0588,32.549711 h -3.80752 v 12.519133 h 3.80752 z"
@@ -1905,7 +1906,7 @@
     </g>
     <g
        id="l08_a_felso_3"
-       style="stroke:none;fill:#ffccaa;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#ffccaa;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 143.0588,47.580835 h -3.81165 v 9.975102 h 3.81165 z"
@@ -1924,7 +1925,7 @@
     </g>
     <g
        id="l08_b_also_1"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
        <path
    d="m 124.5,79.919446 h 3.50005 V 62.486918 H 124.5 Z"
@@ -1953,7 +1954,7 @@
 </g>
     <g
        id="l08_b_also_2"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 124.00018,100.08743 V 82.558785 h -3.79305 v 15.000118 z"
@@ -1982,7 +1983,7 @@
     </g>
     <g
        id="l08_b_also_3"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 82.707096,125.26559 v 4.778 l 50.000054,-17.50022 -4.25763,-2.83807 z"
@@ -2011,7 +2012,7 @@
     </g>
     <g
        id="l08_b_felso_1"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.2;paint-order:stroke markers fill"
@@ -2030,7 +2031,7 @@
     </g>
     <g
        id="l08_b_felso_2"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 143.0588,77.569185 h -3.80752 v 12.518616 h 3.80752 z"
@@ -2049,7 +2050,7 @@
     </g>
     <g
        id="l08_b_felso_3"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 143.0588,92.600309 h -3.81165 v 14.949471 h 3.81165 z"
@@ -2068,7 +2069,7 @@
     </g>
     <g
        id="l08_b_felso_4"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 122.38064,123.52434 1.34411,3.69279 11.76517,-4.28191 -1.31775,-3.61993 z"
@@ -2088,7 +2089,7 @@
     </g>
     <g
        id="l08_b_felso_5"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 108.23629,128.57261 1.37614,3.78116 11.76362,-4.28191 -1.34927,-3.70778 z"
@@ -2107,7 +2108,7 @@
     </g>
     <g
        id="l08_b_felso_6"
-       style="stroke:none;fill:#aaffcc;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#aaffcc;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 84.207263,137.14883 v 4.26227 l 23.044587,-8.19795 -1.38183,-3.79615 z"
@@ -2126,7 +2127,7 @@
     </g>
     <g
        id="l08_c_also_1"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 24.441349,79.978341 h 3.999756 V 62.545813 h -3.999756 z"
@@ -2155,7 +2156,7 @@
     </g>
     <g
        id="l08_c_also_2"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 23.941105,105.02125 V 82.54976 h -3.79305 v 25.00002 z"
@@ -2184,7 +2185,7 @@
     </g>
     <g
        id="l08_c_also_3"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 74.20684,125.26042 -45.680933,-15.59647 -4.319116,2.87942 50.000049,17.50022 z"
@@ -2213,7 +2214,7 @@
     </g>
     <g
        id="l08_c_felso_1"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,62.55429 H 9.6721335 v 12.519649 h 3.7930505 z"
@@ -2232,7 +2233,7 @@
     </g>
     <g
        id="l08_c_felso_2"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,77.573528 H 9.6721335 v 12.518616 h 3.7930505 z"
@@ -2251,7 +2252,7 @@
     </g>
     <g
        id="l08_c_felso_3"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="M 13.465184,92.604652 H 9.6726505 v 14.949468 h 3.7925335 z"
@@ -2270,7 +2271,7 @@
     </g>
     <g
        id="l08_c_felso_4"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 23.98975,115.01934 -1.291911,3.54965 11.813233,4.1491 1.243335,-3.41684 z"
@@ -2289,7 +2290,7 @@
     </g>
     <g
        id="l08_c_felso_5"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 36.869584,123.54595 11.812199,4.14858 1.190108,-3.27008 -11.763623,-4.2814 z"
@@ -2308,7 +2309,7 @@
     </g>
     <g
        id="l08_c_felso_6"
-       style="stroke:none;fill:#e9afaf;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#e9afaf;fill-opacity:1;"
        transform="translate(0.43134125)">
       <path
          d="m 51.052181,128.52704 21.655009,7.60522 v -4.08916 l -20.473169,-6.76341 z"

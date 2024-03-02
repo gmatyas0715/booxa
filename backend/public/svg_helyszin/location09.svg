@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   style="cursor:pointer"
    width="158.75mm"
    height="158.75mm"
    viewBox="0 0 158.75 158.75"
@@ -256,7 +257,7 @@
        sodipodi:nodetypes="ccccc" />
     <g
        id="l09_vip"
-       style="stroke:none;fill:#f6df5c;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#f6df5c;fill-opacity:1;"
        transform="matrix(0.97014925,0,0,0.98684931,2.3138997,0.49315093)">
       <path
          style="opacity:1;fill:#f6df5c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill"
@@ -267,7 +268,7 @@
     </g>
     <g
        id="l09_jobb_szarny_2"
-       style="stroke:none;fill:#b43f24;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#b43f24;fill-opacity:1;"
        transform="matrix(0.98882517,0,0,0.977464,3.6439433,0.85152716)">
       <path
          style="opacity:1;fill:#b43f24;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.147157;paint-order:stroke markers fill"
@@ -278,7 +279,7 @@
     </g>
     <g
        id="l09_center_1"
-       style="stroke:none;fill:#69d0d6;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#69d0d6;fill-opacity:1;"
        transform="translate(2.0153922)">
       <path
          d="M 102.98834,32.920899 91.706609,42.870329 75.011094,47.024312 57.168583,43.056626 45.549506,32.921895 24.116943,36.940948 44.5,60.248983 44.400591,85.528758 H 69.73391 v -5.846152 h 10.717945 v 5.846152 l 12.90226,-0.0038 c 0.557139,-0.496493 1.038687,-0.933063 1.639456,-1.464226 2.900861,-2.564745 6.285059,-5.512745 9.911169,-8.645326 3.62609,-3.132583 7.49344,-6.449769 11.36129,-9.752046 1.07569,-0.918409 2.08954,-1.775903 3.16004,-2.687768 V 37.786729 Z"
@@ -289,7 +290,7 @@
     </g>
     <g
        id="l09_center_2"
-       style="stroke:none;fill:#bc6f1c;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#bc6f1c;fill-opacity:1;"
        transform="translate(2.0153922)">
       <path
          style="opacity:1;fill:#bc6f1c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.326275;paint-order:stroke markers fill"
@@ -300,7 +301,7 @@
     </g>
     <g
        id="l09_jobb_szarny_1"
-       style="stroke:none;fill:#3a961e;fill-opacity:1;cursor:pointer"
+       style="stroke:none;fill:#3a961e;fill-opacity:1;"
        transform="translate(2.0153922)">
       <path
          style="opacity:1;fill:#3a961e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.134462;paint-order:stroke markers fill"

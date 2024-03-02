@@ -36,7 +36,6 @@ export class EsemenyReszletekComponent{
   helyszinNev:string = "";
   eloadoNev:string = "";
   esemenyDatum:string = "";
-  osszesSzektorAlegyseg:SzektorAlegysegModell[] = [];
   kivalasztottSzektorAlegysegek:SzektorAlegysegModell[] = [];
   osszesSzektor:SzektorModell[] = [];
   kivalasztottSzektorok:SzektorModell[] = [];
@@ -49,6 +48,8 @@ export class EsemenyReszletekComponent{
   jegyKivalasztas_e:boolean = true;
   esemenyId:string;
   svgSzektorToltes:boolean = true;
+  aktivRendezes = 'nev'
+  rendezesSorrend = true
 
   constructor(private route: ActivatedRoute,
               public esemenySzerviz:EsemenyService,
@@ -70,6 +71,7 @@ export class EsemenyReszletekComponent{
                   this.helyszinNev = this.helyszin.nev;
                   this.eloadoNev = this.eloado.nev;
                   this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
+                    
                     this.helyszinSvgBetoltes(valasz);
                   });
                 });
@@ -114,7 +116,8 @@ export class EsemenyReszletekComponent{
       }
       
     });
-    this.kivalasztottSzektorAlegysegek = []
+    this.kivalasztottSzektorok = []
+    this.szektorAlegysegekFrissites()
   }
   
   osszesSzektorKijeloles(){
@@ -127,8 +130,8 @@ export class EsemenyReszletekComponent{
         this.renderer.setStyle(child, 'opacity',1);
       }
     });
-    this.kivalasztottSzektorAlegysegek = [...this.osszesSzektorAlegyseg]
-    this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.id.localeCompare(b.id));
+    this.kivalasztottSzektorok = [...this.osszesSzektor]
+    this.szektorAlegysegekFrissites()
   }
 
   clickEvent(group:string){
@@ -139,13 +142,8 @@ export class EsemenyReszletekComponent{
       if (szektor.id==group){
         this.szektorSzinezes(group,0.3);
         szektorListaban = true;
-        this.kivalasztottSzektorAlegysegek.forEach((kivalasztottSzektorAlegyseg)=>{
-          if (kivalasztottSzektorAlegyseg.szektor_id==group){
-            this.kivalasztottSzektorAlegysegek.splice(this.kivalasztottSzektorAlegysegek.indexOf(kivalasztottSzektorAlegyseg),1)
-          }
-        })
         this.kivalasztottSzektorok.splice(this.kivalasztottSzektorok.indexOf(szektor),1)
-        this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.id.localeCompare(b.id));
+        this.szektorAlegysegekFrissites()
         break
       }
     }
@@ -154,11 +152,8 @@ export class EsemenyReszletekComponent{
       for (let szektor of this.osszesSzektor){
         if (szektor.id==group){
         this.szektorSzinezes(group,1);
-          szektor.szektor_alegyseg.forEach((kivalasztottSzektorAlegyseg)=>{
-            this.kivalasztottSzektorAlegysegek.push(kivalasztottSzektorAlegyseg)
-          })
         this.kivalasztottSzektorok.push(szektor)
-        this.kivalasztottSzektorok.sort((a,b)=>a.id.localeCompare(b.id));
+        this.szektorAlegysegekFrissites()
         break
         }
       }
@@ -188,63 +183,85 @@ export class EsemenyReszletekComponent{
           this.setSvgSize('70mm');
         }
       });
-      this.szektorListaBetoltes(szektorAdatok)
+      this.szektorListaBetoltes(szektorAdatok)  
       this.svgSzektorToltes = false
     }
   )}
 
+  szektorAlegysegekFrissites(){
+    this.kivalasztottSzektorAlegysegek = []
+    this.kivalasztottSzektorok.forEach((szektor)=>this.kivalasztottSzektorAlegysegek.push(...szektor.szektor_alegyseg))
+    this.jegyAdatRendezes(this.rendezesSorrend,this.aktivRendezes)
+  }
+
   szektorListaBetoltes(szektorAdatok:any){
+    
+    this.osszesSzektor = [...szektorAdatok]
     const szektorFoglaltsagNevek = Array.from(this.szektorFoglaltsagok.keys());
-    szektorAdatok.forEach((szektor:any) => {
+
+
+    this.osszesSzektor.forEach((szektor:any) => {
+
       const g:HTMLElement = this.svgContainer.nativeElement.querySelector('#'+szektor.id);
       this.renderer.listen(g, 'click', () => {
         this.clickEvent(g.id);
       });
-      this.osszesSzektor.push(szektor)
-      Array.prototype.forEach.call(szektor.szektor_alegyseg,(szektorAlegyseg:any) => {        
+
+      szektor.szektor_alegyseg = szektor.szektor_alegyseg.filter((szektorAlegyseg:any)=>{
         if (szektorFoglaltsagNevek.includes(szektorAlegyseg.id)){
-          if (this.szektorFoglaltsagok.get(szektorAlegyseg.id)![1]==0){
-            
+          szektorAlegyseg.maradek_helyszam = this.szektorFoglaltsagok.get(szektorAlegyseg.id)![1]
+          if (szektorAlegyseg.maradek_helyszam==0){
             const alegyseg:HTMLElement = this.svgContainer.nativeElement.querySelector('.'+szektorAlegyseg.id);
             alegyseg.style.fill = 'rgb(220, 220, 220)'
+            return false
           }
 
           else{
             szektorAlegyseg.szin = g.style.fill
             szektorAlegyseg.jegy_maradek = this.szektorFoglaltsagok.get(szektorAlegyseg.id)?.[1]!
             szektorAlegyseg.szektor_nev = szektor.szektor_nev
-            this.osszesSzektorAlegyseg.push(szektorAlegyseg)
+            return true
           }
-        }else{
+        }
+        else{
           szektorAlegyseg.szin = g.style.fill
           szektorAlegyseg.szektor_nev = szektor.szektor_nev
-          this.osszesSzektorAlegyseg.push(szektorAlegyseg)
+          return true
         }
-      });
+      })
     })
-
-    this.kivalasztottSzektorok = [...this.osszesSzektor]
-    this.kivalasztottSzektorAlegysegek = [...this.osszesSzektorAlegyseg]
-
+    
+    this.kivalasztottSzektorok = [...this.osszesSzektor]    
+    this.szektorAlegysegekFrissites()
   }
 
-  jegyRendezesAr(sorrend:boolean){
-    if (sorrend){
-      this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_alegyseg_jegyar - b.szektor_alegyseg_jegyar)
-    }
+  jegyAdatRendezes(sorrend:boolean,opcio:string){
+    switch (opcio) {
+      case 'ar':
+        this.aktivRendezes = opcio;
+        this.rendezesSorrend = sorrend;
 
-    else{
-      this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_alegyseg_jegyar - a.szektor_alegyseg_jegyar)
-    }
-  }
+        if (sorrend){
+          this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_alegyseg_jegyar - b.szektor_alegyseg_jegyar)
+        }
+    
+        else{
+          this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_alegyseg_jegyar - a.szektor_alegyseg_jegyar)
+        }
+        break;
+    
+      case 'nev':
+        this.aktivRendezes = opcio;
+        this.rendezesSorrend = sorrend;
 
-  jegyRendezesNev(sorrend:boolean){
-    if (sorrend){
-      this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_nev.localeCompare(b.szektor_nev))
-    }
-
-    else{
-      this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_nev.localeCompare(a.szektor_nev))
+        if (sorrend){
+          this.kivalasztottSzektorAlegysegek.sort((a,b)=>a.szektor_nev.localeCompare(b.szektor_nev))
+        }
+    
+        else{
+          this.kivalasztottSzektorAlegysegek.sort((a,b)=>b.szektor_nev.localeCompare(a.szektor_nev))
+        }
+        break;
     }
   }
 

@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   style="cursor:pointer"
    width="158.75mm"
    height="158.75mm"
    viewBox="0 0 158.75 158.75"
@@ -844,7 +845,7 @@
          id="tspan76">K</tspan></text>
     <g
        id="l05_b"
-       style="cursor:pointer;fill:#bcd9d4;fill-opacity:1">
+       style=";fill:#bcd9d4;fill-opacity:1">
       <path
          d="m 110.17364,64.916968 2.04845,2.969328 19.77554,-19.268075 -2.29547,-2.419491 z"
          style="fill:#bcd9d4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.225077;paint-order:stroke markers fill"
@@ -882,7 +883,7 @@
     </g>
     <g
        id="l05_a"
-       style="cursor:pointer;fill:#ffd995;fill-opacity:1">
+       style=";fill:#ffd995;fill-opacity:1">
       <path
          d="M 53.132157,66.955086 50.9757,70.388468 h 25.779305 v -3.414261 z"
          style="fill:#ffd995;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.219951;paint-order:stroke markers fill"
@@ -920,7 +921,7 @@
     </g>
     <g
        id="l05_d"
-       style="cursor:pointer;fill:#80ffb3;fill-opacity:1">
+       style=";fill:#80ffb3;fill-opacity:1">
       <path
          d="m 141.41772,58.371606 -15.54117,15.797486 1.38958,2.192631 14.87145,-14.871961 z"
          style="fill:#80ffb3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.225077;paint-order:stroke markers fill"
@@ -1008,7 +1009,7 @@
     </g>
     <g
        id="l05_c"
-       style="cursor:pointer;fill:#deaa87;fill-opacity:1">
+       style=";fill:#deaa87;fill-opacity:1">
       <path
          d="M 76.866109,77.500179 H 63.232316 l -0.348299,3.021521 13.982092,0.01757 z"
          style="fill:#deaa87;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0327586;paint-order:stroke markers fill"
@@ -1096,7 +1097,7 @@
     </g>
     <g
        id="l05_e"
-       style="cursor:pointer;fill:#87aade;fill-opacity:1">
+       style=";fill:#87aade;fill-opacity:1">
       <path
          d="m 59.597913,113.20776 -0.489376,4.24108 17.870227,0.10232 -0.02842,-4.3434 z"
          style="fill:#87aade;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.225077;paint-order:stroke markers fill"
@@ -1184,7 +1185,7 @@
     </g>
     <g
        id="l05_f"
-       style="cursor:pointer;fill:#cdde87;fill-opacity:1">
+       style=";fill:#cdde87;fill-opacity:1">
       <path
          d="m 82.407373,113.20776 -0.02842,4.3434 17.870227,-0.10232 -0.489376,-4.24108 z"
          style="fill:#cdde87;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.225077;paint-order:stroke markers fill"
