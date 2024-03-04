@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
+import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
 
 @Injectable({
   providedIn: 'root'
@@ -50,14 +51,21 @@ export class KosarService {
     this.ulohelyHozzaadas(index);
   }
 
-  ulohelySzamGeneralas(jegyFoglaltDarab:number):number[]{
+  ulohelySzamGeneralas(jegyFoglaltDarab:number,szektorAlegyseg:SzektorAlegysegModell):number[]{
     let ulohelyek:number[] = [];
-    let hely = 1;
-    while(ulohelyek.length!=jegyFoglaltDarab){
-      
-      ulohelyek.push(hely);
-      hely++;
+    let helySzam = 1;
+    while (ulohelyek.length != jegyFoglaltDarab) {
+      if (szektorAlegyseg.jegy_maradek){
+        if (!szektorAlegyseg.jegy_maradek.includes(helySzam)){
+          ulohelyek.push(helySzam);
+        }
+      }else{
+        ulohelyek.push(helySzam)  
+      }    
+
+      helySzam++      
     }
+
     return ulohelyek;
   }
 

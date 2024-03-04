@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
                 SzektorAlegysegSeeder::class,
                 EsemenySeeder::class,
                 SzektorAlegysegArSeeder::class,
-                FizetesSeeder::class,
                 JegyAdatSeeder::class,
                 RendelesSeeder::class,
             ]

@@ -106,15 +106,6 @@ class RendelesController extends Controller
         return response()->json(['redirect_url'=>$session->url]);
     }
 
-    public function success() {
-
-        
-    }
-
-    public function cancel() {
-        
-    }
-
     public function sessionData(Request $request) {
         
         Stripe::setApiKey(env('STRIPE_SECRET_KEY'));

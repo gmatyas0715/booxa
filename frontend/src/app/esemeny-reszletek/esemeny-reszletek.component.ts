@@ -29,7 +29,7 @@ export class EsemenyReszletekComponent{
   };
 
   MAX_JEGYEK = 5;
-  maradekJegyek:number[] = [1,2,3,4,5];
+  jegyDarabOpciok:number[] = []
   esemeny:any;
   helyszin:any;
   eloado:any;
@@ -95,7 +95,7 @@ export class EsemenyReszletekComponent{
     for (let i = 1; i <= maxJegyek; i++) {
       jegyDarab.push(i)
     }
-    this.maradekJegyek = jegyDarab
+    this.jegyDarabOpciok = jegyDarab
   }
   
   setSvgSize(size:string) {
@@ -220,10 +220,7 @@ export class EsemenyReszletekComponent{
 
       szektor.szektor_alegyseg = szektor.szektor_alegyseg.filter((szektorAlegyseg:any)=>{
         if (szektorFoglaltsagNevek.includes(szektorAlegyseg.id)){
-          szektorAlegyseg.maradek_helyszam = this.szektorFoglaltsagok.get(szektorAlegyseg.id)![1]
-          console.log(szektorAlegyseg.maradek_helyszam);
-          
-          if (szektorAlegyseg.maradek_helyszam==0){
+          if (!this.szektorFoglaltsagok.get(szektorAlegyseg.id)![0]){
             const alegyseg:HTMLElement = this.svgContainer.nativeElement.querySelector('.'+szektorAlegyseg.id);
             alegyseg.style.fill = 'rgb(220, 220, 220)'
             return false
@@ -288,7 +285,7 @@ export class EsemenyReszletekComponent{
       }
     }
     if (szektorAlegyseg.jegy_maradek){
-      this.jegyFoglalhatoDarabok(szektorAlegyseg.jegy_maradek);
+      this.jegyFoglalhatoDarabok(szektorAlegyseg.jegy_maradek.length);
     }
 
     else {
@@ -301,9 +298,10 @@ export class EsemenyReszletekComponent{
       this.esemeny,
       this.kivalasztottSzektor,
       this.kivalasztottSzektorAlegyseg,
-      this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab),
+      this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab,this.kivalasztottSzektorAlegyseg),
       this.jegyFoglaltDarab
     ));
+    
     this.jegyInfoVisszaallitas();
     this.openSnackbar()
   }
@@ -315,6 +313,8 @@ export class EsemenyReszletekComponent{
 
   szektorFoglaltsag(esemenyId:string){
     this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz:Map<string,[boolean,number]>)=>{
+      console.log(valasz);
+      
       Object.entries(valasz).forEach(([k, [b, n]]) => {
         this.szektorFoglaltsagok.set(k,[b, n])
       })

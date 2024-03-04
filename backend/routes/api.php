@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
 
+    Route::post('/pdf-jegy-generalas/{rendeles}', 'JegyAdatController@pdfJegyGeneralas');
+
     Route::get('/session-data','RendelesController@sessionData');
 
     Route::get('/mufajok-table','MufajController@mufajTable');
@@ -21,11 +23,6 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::group(['middleware'=>['auth:sanctum']],function(){
         Route::post('/rendelesElkuldes', 'RendelesController@checkout');
     });
-    
-    Route::post('/success', 'RendelesController@success');
-    Route::post('/cancel', 'RendelesController@cancel');
-
-
 
 
 

@@ -6,6 +6,6 @@ export interface SzektorAlegysegModell {
     szektor_alegyseg_jegyar:number;
     szektor_id:string;
     szektor_nev:string;
-    jegy_maradek:number
+    jegy_maradek:number[]
     szin:string;
 }
