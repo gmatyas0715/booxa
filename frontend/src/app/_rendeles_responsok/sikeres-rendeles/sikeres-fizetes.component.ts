@@ -18,6 +18,8 @@ export class SikeresFizetesComponent implements OnInit{
   userId = "";
   notFound = true;
   betoltes = true;
+  jegyekBetoltes = false;
+  szamlaBetoltes = false;
 
   constructor(private route: ActivatedRoute,
               private rendelesService:RendelesService,
@@ -58,6 +60,7 @@ export class SikeresFizetesComponent implements OnInit{
   }
 
   jegyPdfGeneralas(): any {
+    this.jegyekBetoltes = true;
     var mediaType = 'application/pdf';
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
@@ -67,6 +70,7 @@ export class SikeresFizetesComponent implements OnInit{
       next:(pdfData:any) => {
         var blob = new Blob([pdfData], { type: mediaType });
         saveAs(blob, 'JEGY_'+this.rendeles_id+'_'+now()+'.pdf');
+        this.jegyekBetoltes = false;
       },
       error:(error:any) => {
         console.log(error);
@@ -75,6 +79,7 @@ export class SikeresFizetesComponent implements OnInit{
   }
 
   szamlaPdfGeneralas(): any {
+    this.szamlaBetoltes = true;
     var mediaType = 'application/pdf';
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
@@ -84,6 +89,7 @@ export class SikeresFizetesComponent implements OnInit{
       next:(pdfData:any) => {
         var blob = new Blob([pdfData], { type: mediaType });
         saveAs(blob, 'SZAMLA_'+this.rendeles_id+'_'+now()+'.pdf');
+        this.szamlaBetoltes = false;
       },
       error:(error:any) => {
         console.log(error);
