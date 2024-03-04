@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RendelesService } from 'src/app/_szervizek/rendeles.service';
 import { UserAzonositasService } from 'src/app/_szervizek/user-azonositas.service';
 import { saveAs } from 'file-saver';
+import { now } from 'lodash';
 
 @Component({
   selector: 'app-sikeres-fizetes',
@@ -65,7 +66,24 @@ export class SikeresFizetesComponent implements OnInit{
     this.http.post('http://localhost:8000/api/pdf-jegy-generalas/'+this.rendeles_id, {location: "report.pdf"}, { responseType: 'blob',headers}).subscribe({
       next:(pdfData:any) => {
         var blob = new Blob([pdfData], { type: mediaType });
-        saveAs(blob, 'jegy.pdf');
+        saveAs(blob, 'JEGY_'+this.rendeles_id+'_'+now()+'.pdf');
+      },
+      error:(error:any) => {
+        console.log(error);
+      }
+    })
+  }
+
+  szamlaPdfGeneralas(): any {
+    var mediaType = 'application/pdf';
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
+    }) 
+
+    this.http.post('http://localhost:8000/api/pdf-szamla-generalas/'+this.rendeles_id, {location: "report.pdf"}, { responseType: 'blob',headers}).subscribe({
+      next:(pdfData:any) => {
+        var blob = new Blob([pdfData], { type: mediaType });
+        saveAs(blob, 'SZAMLA_'+this.rendeles_id+'_'+now()+'.pdf');
       },
       error:(error:any) => {
         console.log(error);

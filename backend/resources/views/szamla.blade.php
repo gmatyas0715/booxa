@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"  content="text/html; charset=utf-8">
-    <title>JEGYEK_{{ $rendeles_id }}_{{now()}}</title>
+    <title>SZAMLA_{{ $rendeles_id }}_{{now()}}</title>
     <style>
         body {
             font-family: DejaVu Sans !important;
@@ -20,10 +20,14 @@
             text-align: center;
             margin-bottom: 15px;
         }
+        .info{
+            text-align: right;
+        }
         .info span {
             font-weight: bold;
         }
         .footer {
+            margin-top: 5cm;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -31,30 +35,25 @@
     </style>
 </head>
 <body>
-    @foreach ($jegyek as $jegy)
     <div class="ticket">
         <div class="header">
-            <h2>Jegy Információk</h2>
+            <h2>Számla adatok</h2>
         </div>
         <div class="info">
-            <p><span>Időpont:</span> {{ $jegy['idopont'] }}</p>
-            <p><span>Előadó:</span> {{ $jegy['eloado'] }}</p>
-            <p><span>Helyszín:</span> {{ $jegy['helyszin'] }}</p>
-            <p><span>Helyszín cím:</span> {{ $jegy['helyszin_cim'] }}</p>
-            <p><span>Szektor:</span> {{ $jegy['szektor'] }}</p>
-            <p><span>Sor:</span> {{ $jegy['sor'] }} sor </p>
-            <p><span>Ülőhely:</span> {{ $jegy['ulohely'] }}</p>
-            <p><span>Jegyár:</span> {{ $jegy['jegyar'] }} Ft</p>
+            <ul>
+            @foreach ($jegyek as $jegy)
+                <p><span>- {{ $jegy['idopont'] }} - {{ $jegy['eloado'] }} - {{ $jegy['helyszin'] }} -  {{ $jegy['jegyar'] }} Ft</span> </p></li>
+            @endforeach
+                <p><span>- Szervízköltség: 390 Ft</span></p>
+                <hr>
+                <p><span>Összesen: {{ $rendeles_osszeg }} Ft</span></p>
+            </ul>
         </div>
         <div class="footer">
             <h3>Köszönjük, hogy a Booxát választotta!</h3>
-            <h3>Jó szórakozást kívánunk!</h3>
-            <a href="http://localhost:4200" target="_blank"><img style="width: 8cm" src="booxa.jpg" alt=""></a>
-            <br>
-            <img style="width: 4cm;" src="qr_kod.png" alt="">
+            <a href="http://localhost:4200" target="_blank"><img style="width: 10cm;margin-top:0cm" src="booxa.jpg" alt=""></a>
             <p><span>Booxa</span>©</p>
         </div>
     </div>
-    @endforeach
 </body>
 </html>

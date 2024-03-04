@@ -14,7 +14,10 @@
             <div class="d-flex align-items-center justify-content-center w-75">
                 <h3><span class="font-weight-bold">Vásárló azonosító:</span> {{userId}}</h3>
             </div>
-            <button mat-raised-button color="primary" (click)="jegyPdfGeneralas()">Jegyek letöltése</button>
+            <div class="d-flex">
+                <button mat-raised-button class="mr-2" color="primary" (click)="jegyPdfGeneralas()">Jegyek letöltése</button>
+                <button mat-raised-button class="ml-2" color="primary" (click)="szamlaPdfGeneralas()">Számla letöltése</button>
+            </div>
         </div>
         <div *ngIf="false" class="col align-items-center justify-content-center d-flex m-3"><!--notFound && !betoltes-->
             <div class="d-flex align-items-center justify-content-center w-100" style="flex-direction: column;">

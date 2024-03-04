@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::post('/pdf-jegy-generalas/{rendeles}', 'JegyAdatController@pdfJegyGeneralas');
+    Route::post('/pdf-szamla-generalas/{rendeles}', 'JegyAdatController@pdfSzamlaGeneralas');
 
     Route::get('/session-data','RendelesController@sessionData');
 

@@ -151,14 +151,14 @@ class JegyAdatController extends Controller
 
     public function pdfJegyGeneralas(Rendeles $rendeles) {
 
-        Log::info('dfnaiof');
         $jegyAdatok = $rendeles->jegyAdat;
-        Log::info($jegyAdatok->toArray());
         $jegyek = [];
+        $rendeles_id = $rendeles->id;
 
         foreach ($jegyAdatok as $jegy) {
             $esemeny = Esemeny::find($jegy->esemeny_id);
-            $cim = $esemeny->helyszin->cim->first();
+            $cim = $esemeny->helyszin->cim->first();            
+
             $jegyPrint = [
                 'idopont' => $esemeny->idopont,
                 'eloado' => $esemeny->eloado->nev,
@@ -172,8 +172,32 @@ class JegyAdatController extends Controller
             $jegyek[] = $jegyPrint;
         }
 
-        $pdf = PDF::loadView('jegy',['jegyek' => $jegyek]);
+        $pdf = PDF::loadView('jegy',['jegyek' => $jegyek,'rendeles_id' => $rendeles_id]);
 
         return $pdf->stream('jegy.pdf');
+    }
+
+    public function pdfSzamlaGeneralas(Rendeles $rendeles) {
+
+        $jegyAdatok = $rendeles->jegyAdat;
+        $jegyek = [];
+        $rendeles_id = $rendeles->id;
+        $rendeles_osszeg = $rendeles->rendeles_osszeg;
+
+        foreach ($jegyAdatok as $jegy) {
+            $esemeny = Esemeny::find($jegy->esemeny_id);
+
+            $jegyView = [
+                'idopont' => $esemeny->idopont,
+                'eloado' => $esemeny->eloado->nev,
+                'helyszin' => $esemeny->helyszin->nev,
+                'jegyar' => SzektorAlegysegAr::where('esemeny_id',$jegy->esemeny_id)->where('szektor_alegyseg_id',$jegy->szektor_alegyseg_id)->first()->szektor_alegyseg_ar
+            ];
+            $jegyek[] = $jegyView;
+        }
+
+        $pdf = PDF::loadView('szamla',['jegyek' => $jegyek,'rendeles_osszeg' => $rendeles_osszeg,'rendeles_id' => $rendeles_id]);
+
+        return $pdf->stream('szamla.pdf');
     }
 }
