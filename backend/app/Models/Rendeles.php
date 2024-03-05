@@ -17,6 +17,11 @@ class Rendeles extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function szamlazasi_cim():BelongsTo
+    {
+        return $this->belongsTo(Cim::class);
+    }
+
     public function jegyAdat():HasMany
     {
         return $this->hasMany(JegyAdat::class);

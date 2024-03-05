@@ -23,6 +23,9 @@
         .info span {
             font-weight: bold;
         }
+        .info{
+            margin-bottom: 3cm
+        }
         .footer {
             text-align: center;
             display: flex;
@@ -51,7 +54,7 @@
             <h3>Jó szórakozást kívánunk!</h3>
             <a href="http://localhost:4200" target="_blank"><img style="width: 8cm" src="booxa.jpg" alt=""></a>
             <br>
-            <img style="width: 4cm;" src="qr_kod.png" alt="">
+            <img style="width: 4cm;margin-top:2cm" src="qr_kod.png" alt="">
             <p><span>Booxa</span>©</p>
         </div>
     </div>

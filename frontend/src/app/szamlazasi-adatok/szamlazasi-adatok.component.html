@@ -92,6 +92,6 @@
     </form>
     <div class="field-container d-flex justify-content-center mt-2" >
         <button mat-raised-button class="p-2 mr-5" routerLink="/kosarOsszegzo" type="button">Vissza a kosárhoz</button>
-        <button mat-raised-button class="p-2" (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes()" id="rendeles">Rendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</button>
+        <button mat-raised-button class="p-2" (click)="megrendelesElkuldes()" [disabled]="validFormEllenorzes() || rendelesFeldolgozas" id="rendeles"><span *ngIf="!rendelesFeldolgozas">Rendelés elküldése: {{kosarSzerviz.getKosarOsszar()}} Ft</span><span><mat-spinner *ngIf="rendelesFeldolgozas" class="ml-2" diameter="20" mode="indeterminate"></mat-spinner></span></button>
     </div>
 </mat-card>

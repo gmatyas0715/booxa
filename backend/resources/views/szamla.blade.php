@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"  content="text/html; charset=utf-8">
-    <title>SZAMLA_{{ $rendeles_id }}_{{now()}}</title>
+    <title>SZAMLA_{{ $rendeles->id }}_{{now()}}</title>
     <style>
         body {
             font-family: DejaVu Sans !important;
@@ -20,11 +20,15 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        .info{
+        .ar-info{
             text-align: right;
         }
-        .info span {
+        .ar-info span {
             font-weight: bold;
+        }
+        .megrendelo-info{
+            text-align: center;
+            font-weight: bold
         }
         .footer {
             margin-top: 5cm;
@@ -39,15 +43,21 @@
         <div class="header">
             <h2>Számla adatok</h2>
         </div>
-        <div class="info">
+        <div class="ar-info">
             <ul>
             @foreach ($jegyek as $jegy)
                 <p><span>- {{ $jegy['idopont'] }} - {{ $jegy['eloado'] }} - {{ $jegy['helyszin'] }} -  {{ $jegy['jegyar'] }} Ft</span> </p></li>
             @endforeach
                 <p><span>- Szervízköltség: 390 Ft</span></p>
                 <hr>
-                <p><span>Összesen: {{ $rendeles_osszeg }} Ft</span></p>
+                <p><span>Összesen: {{ $rendeles->rendeles_osszeg }} Ft</span></p>
             </ul>
+        </div>
+        <div class="megrendelo-info">
+            <h2>Megrendelő adatai</h2>
+            <p><span>Név: {{ $rendeles->vezeteknev }} {{ $rendeles->keresztnev }}</span></p>
+            <p><span>Email: {{ $rendeles->email }}</span></p>
+            <p><span>Cím: {{ $teljes_cim }}</span></p>
         </div>
         <div class="footer">
             <h3>Köszönjük, hogy a Booxát választotta!</h3>

@@ -10,7 +10,6 @@ use App\Models\Rendeles;
 use App\Models\Szektor;
 use App\Models\SzektorAlegyseg;
 use App\Models\SzektorAlegysegAr;
-use Dompdf\Dompdf;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -149,7 +148,7 @@ class JegyAdatController extends Controller
         return $foglaltsagMap;
     }
 
-    public function pdfJegyGeneralas(Rendeles $rendeles) {
+    public static function pdfJegyGeneralas(Rendeles $rendeles) {
 
         $jegyAdatok = $rendeles->jegyAdat;
         $jegyek = [];
@@ -174,15 +173,15 @@ class JegyAdatController extends Controller
 
         $pdf = PDF::loadView('jegy',['jegyek' => $jegyek,'rendeles_id' => $rendeles_id]);
 
-        return $pdf->stream('jegy.pdf');
+        return $pdf;
     }
 
-    public function pdfSzamlaGeneralas(Rendeles $rendeles) {
+    public static function pdfSzamlaGeneralas(Rendeles $rendeles) {
 
         $jegyAdatok = $rendeles->jegyAdat;
         $jegyek = [];
-        $rendeles_id = $rendeles->id;
-        $rendeles_osszeg = $rendeles->rendeles_osszeg;
+        $cim = $rendeles->szamlazasi_cim;  
+        $teljesCim = $cim->iranyitoszam.', '.$cim->telepules.' '.$cim->kozterulet.' '.$cim->hazszam;
 
         foreach ($jegyAdatok as $jegy) {
             $esemeny = Esemeny::find($jegy->esemeny_id);
@@ -196,8 +195,18 @@ class JegyAdatController extends Controller
             $jegyek[] = $jegyView;
         }
 
-        $pdf = PDF::loadView('szamla',['jegyek' => $jegyek,'rendeles_osszeg' => $rendeles_osszeg,'rendeles_id' => $rendeles_id]);
+        $pdf = PDF::loadView('szamla',['jegyek' => $jegyek,'rendeles' => $rendeles,'teljes_cim'=>$teljesCim]);
 
+        return $pdf;
+    }
+
+    public function pdfJegyLetoltes(Rendeles $rendeles) {
+        $pdf = $this->pdfJegyGeneralas($rendeles);
+        return $pdf->stream('jegy.pdf');
+    }
+
+    public function pdfSzamlaLetoltes(Rendeles $rendeles) {
+        $pdf = $this->pdfSzamlaGeneralas($rendeles);
         return $pdf->stream('szamla.pdf');
     }
 }

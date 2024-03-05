@@ -90,6 +90,18 @@ class RendelesController extends Controller
             ];
         }
 
+        $lineItems[] =  [
+            'price_data' => [
+                'currency' => 'huf',
+                'product_data' => [
+                    'name' => 'Szervízköltség',
+                    'description' => 'Booxa használati díja'
+                ],
+                'unit_amount' => 390*100,                
+              ],
+            'quantity' => 1,
+            ];
+
         $session = Session::create([
           'payment_method_types' => ['card'],
           'line_items' => $lineItems,
@@ -112,14 +124,15 @@ class RendelesController extends Controller
         $sessionId = $request->query('sessionId');
 
         try {
-            $stripeSession = Session::retrieve($sessionId);
+            $stripeSession = Session::retrieve($sessionId); 
             $rendeles = Rendeles::where('session_id', $sessionId)->first();
 
             if (!$stripeSession || $rendeles->status=='fizetett'){
                 return response()->json(['error'=> 'not_found']);
             }
 
-            //Mail::to('teszttamas@gmail.com')->send(new RendelesElkuldese());
+
+            Mail::to($rendeles->email)->send(new RendelesElkuldese($rendeles));
             $rendeles->status='fizetett';
             $rendeles->fizetes_idopont = now();
             $rendeles->save();

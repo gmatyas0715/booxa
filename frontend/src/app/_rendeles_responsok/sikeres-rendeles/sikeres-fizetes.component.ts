@@ -14,7 +14,7 @@ import { now } from 'lodash';
 export class SikeresFizetesComponent implements OnInit{
     
   session_id: string | null = "";
-  rendeles_id = "1";
+  rendeles_id = "";
   userId = "";
   notFound = true;
   betoltes = true;
@@ -29,7 +29,6 @@ export class SikeresFizetesComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log('dhaoidh');
     this.session_id = this.route.snapshot.queryParamMap.get('session_id');
     if (this.session_id){
       this.rendelesService.sessionData(this.session_id).subscribe({

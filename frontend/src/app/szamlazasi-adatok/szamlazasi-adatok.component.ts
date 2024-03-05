@@ -15,6 +15,7 @@ export class SzamlazasiAdatokComponent {
   public jelenEv:number = new Date().getFullYear();
   public maxEvDatum:string = this.jelenEv-12+"-01-01"
   public minEvDatum:string = this.jelenEv-130+"-01-01"
+  public rendelesFeldolgozas = false;
   szamlazasiAdatForm: FormGroup;
 
   constructor(
@@ -35,12 +36,14 @@ export class SzamlazasiAdatokComponent {
     }
 
   megrendelesElkuldes():void{
+    this.rendelesFeldolgozas = true
     console.warn('Rendelés elküldve!');
     console.log(typeof(this.szamlazasiAdatForm.value));
     this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value)).subscribe({
       next:(valasz:any)=>{
         if (valasz.redirect_url) {
           window.location.href = valasz.redirect_url;
+          this.rendelesFeldolgozas = false
         } else {
           
         }
