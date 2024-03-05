@@ -6,6 +6,12 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::post('/pdf-jegy-generalas/{rendeles}', 'JegyAdatController@pdfJegyLetoltes');
     Route::post('/pdf-szamla-generalas/{rendeles}', 'JegyAdatController@pdfSzamlaLetoltes');
+    Route::get('/cimek', 'CimController@index');
+
+    Route::post('/cimek', 'CimController@store');
+    Route::patch('/cimek/{cim}', 'CimController@update');
+    Route::delete('/cimek/{cim}', 'CimController@destroy');
+
 
     Route::get('/session-data','RendelesController@sessionData');
 
@@ -105,9 +111,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::delete('/szektorok/{szektor}', 'SzektorController@destroy');
 
         // Cím route-ok
-        Route::post('/cimek', 'CimController@store');
-        Route::patch('/cimek/{cim}', 'CimController@update');
-        Route::delete('/cimek/{cim}', 'CimController@destroy');
+
 
         // Esemény route-ok
         Route::post('/esemenyek', 'EsemenyController@store');

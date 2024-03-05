@@ -19,7 +19,7 @@ export class EloadoService {
     return this.http.post(this.apiUrl+'/eloadok',eloadoAdatok,{headers})
   }
 
-  eloadoModositas(eloadoId:string,userToken:string,eloadoAdatok: FormData):Observable<any>{
+  cimModositas(eloadoId:string,userToken:string,eloadoAdatok: FormData):Observable<any>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })

@@ -154,8 +154,8 @@ export class EloadoDataComponent {
                     </mat-chip-option>
                   </mat-chip-listbox>
                   <div mat-dialog-actions>
-                  <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                  <button class='justify-self-end' mat-button color='primary' (click)="eloadoLetrehozas()" cdkFocusInitial>Mentés</button>
+                  <button class='justify-self-start border' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                  <button class='justify-self-end border' mat-raised-button color='primary' (click)="eloadoLetrehozas()" cdkFocusInitial>Mentés</button>
               </div>
             </div>`,
   standalone: true,
@@ -274,8 +274,8 @@ export class EloadoLetrehozas {
                   </mat-chip-option>
                 </mat-chip-listbox>
                 <div mat-dialog-actions>
-                <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                <button class='justify-self-end' mat-button color='primary' (click)="eloadoModositas()" cdkFocusInitial>Mentés</button>
+                <button class='justify-self-start border' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                <button class='justify-self-end border' mat-raised-button color='primary' (click)="eloadoModositas()" cdkFocusInitial>Mentés</button>
             </div>
             </div>`,
   standalone: true,
@@ -352,7 +352,7 @@ export class EloadoModositas {
         eloadoAdatok.append('file',this.file,this.file.name);
       }
 
-      this.eloadoService.eloadoModositas(
+      this.eloadoService.cimModositas(
         this.id,
         this.userAzonositasService.getAuthToken(),
         eloadoAdatok
@@ -395,8 +395,8 @@ export class EloadoModositas {
   template: `<div class="d-block justify-content-center">
                 <span class="d-flex justify-content-center" mat-dialog-title >Műfaj törlése</span>
                 <div mat-dialog-actions>
-                  <button mat-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button mat-button color="warn" (click)="eloadoTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
+                  <button class="border" mat-raised-button color="warn" (click)="eloadoTorles()" cdkFocusInitial>Törölni szeretném</button>
                 </div>
               </div>`,
   standalone: true,

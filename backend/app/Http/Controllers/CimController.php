@@ -12,7 +12,7 @@ class CimController extends Controller
 
     public function index()
     {
-        $cimek = Cim::all();
+        $cimek = Cim::select(['id','iranyitoszam','telepules','kozterulet','hazszam'])->get();
         return response()->json($cimek);
     }
 
@@ -41,11 +41,11 @@ class CimController extends Controller
 
     public function update(UpdateCimRequest $request, Cim $cim)
     {
-        $tablaMezok = Schema::getColumnListing($cim->getTable());
-
-        $updateAdat = $request->only($tablaMezok);
-
-        $cim->update($updateAdat);     
+        $cim->iranyitoszam = $request->iranyitoszam;
+        $cim->telepules = $request->telepules;
+        $cim->kozterulet = $request->kozterulet;
+        $cim->hazszam = $request->hazszam;
+        $cim->save();
 
         return response()->json($cim);
     }

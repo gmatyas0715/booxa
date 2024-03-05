@@ -97,8 +97,8 @@ export class MufajDataComponent {
                     <textarea style="height:200px" matInput [(ngModel)]="leiras" placeholder='Írjon be műfaj leírást!'></textarea>
                   </mat-form-field>
                   <div mat-dialog-actions>
-                  <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                  <button class='justify-self-end' mat-button color='primary' (click)="mufajLetrehozas()" cdkFocusInitial>Mentés</button>
+                  <button class='justify-self-start border"' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                  <button class='justify-self-end border"' mat-raised-button color='primary' (click)="mufajLetrehozas()" cdkFocusInitial>Mentés</button>
               </div>
             </div>`,
   standalone: true,
@@ -166,8 +166,8 @@ export class MufajLetrehozas {
                     <textarea style="height:200px" matInput [(ngModel)]="leiras" [placeholder]='mufaj.leiras'></textarea>
                   </mat-form-field>
                   <div mat-dialog-actions>
-                  <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                  <button class='justify-self-end' mat-button color='primary' (click)="mufajModositas()" cdkFocusInitial>Mentés</button>
+                  <button class='justify-self-start border' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                  <button class='justify-self-end border' mat-raised-button color='primary' (click)="mufajModositas()" cdkFocusInitial>Mentés</button>
               </div>
             </div>`,
   standalone: true,
@@ -228,8 +228,8 @@ export class MufajModositas {
   template: `<div class="d-block justify-content-center">
                 <span class="d-flex justify-content-center" mat-dialog-title >Műfaj törlése</span>
                 <div mat-dialog-actions>
-                  <button mat-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button mat-button color="warn" (click)="mufajTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
+                  <button class="border" mat-raised-button color="warn" (click)="mufajTorles()" cdkFocusInitial>Törölni szeretném</button>
                 </div>
               </div>`,
   standalone: true,

@@ -52,6 +52,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { MatSortModule } from '@angular/material/sort';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
+import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-ren
     MufajDataComponent,
     EloadoDataComponent,
     UserDataComponent,
+    CimDataComponent,
     SikeresFizetesComponent,
     SikertelenFizetesComponent
   ],

@@ -145,8 +145,8 @@ export class UserDataComponent {
                     </mat-select> 
                   </mat-form-field>
                   <div mat-dialog-actions>
-                  <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                  <button class='justify-self-end' mat-button color='primary' (click)="userLetrehozas()" cdkFocusInitial>Mentés</button>
+                  <button class='justify-self-start border' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                  <button class='justify-self-end border' mat-raised-button color='primary' (click)="userLetrehozas()" cdkFocusInitial>Mentés</button>
               </div>
             </div>`,
   standalone: true,
@@ -247,8 +247,8 @@ export class UserLetrehozas {
                   </mat-select> 
                 </mat-form-field>
                 <div mat-dialog-actions>
-                <button class='justify-self-start' mat-button color='warn' (click)="megseClick()">Mégse</button>
-                <button class='justify-self-end' mat-button color='primary' (click)="userModositas()" cdkFocusInitial>Mentés</button>
+                <button class='justify-self-start border' mat-raised-button color='warn' (click)="megseClick()">Mégse</button>
+                <button class='justify-self-end border' mat-raised-button color='primary' (click)="userModositas()" cdkFocusInitial>Mentés</button>
               </div>
             </div>`,
   standalone: true,
@@ -328,8 +328,8 @@ export class UserModositas {
   template: `<div class="d-block justify-content-center">
                 <span class="d-flex justify-content-center" mat-dialog-title >User törlése</span>
                 <div mat-dialog-actions>
-                  <button mat-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button mat-button color="warn" (click)="userTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
+                  <button class="border" mat-raised-button color="warn" (click)="userTorles()" cdkFocusInitial>Törölni szeretném</button>
                 </div>
               </div>`,
   standalone: true,
