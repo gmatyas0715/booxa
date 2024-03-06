@@ -53,6 +53,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
+import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.componen
     EloadoDataComponent,
     UserDataComponent,
     CimDataComponent,
+    HelyszinDataComponent,
     SikeresFizetesComponent,
     SikertelenFizetesComponent
   ],

@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EloadoService {
+  helyszinOsszes() {
+    throw new Error('Method not implemented.');
+  }
 
   public apiUrl:string = 'http://localhost:8000/api'
   
@@ -19,7 +22,7 @@ export class EloadoService {
     return this.http.post(this.apiUrl+'/eloadok',eloadoAdatok,{headers})
   }
 
-  cimModositas(eloadoId:string,userToken:string,eloadoAdatok: FormData):Observable<any>{
+  eloadModositas(eloadoId:string,userToken:string,eloadoAdatok: FormData):Observable<any>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })

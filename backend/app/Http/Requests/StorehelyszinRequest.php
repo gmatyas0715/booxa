@@ -25,13 +25,10 @@ class StoreHelyszinRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id'=>'required|string|max:5',
             'nev'=>'required|string|max:50',
             'cim_id'=>'required|integer',
             'kapacitas'=>'required|integer',
-            'kontakt_informacio'=>'required|string|max:50',
-            'szabadteri'=>'required|numeric|integer|max:1|min:0',
-            'helyszin_kep_eleres'=>'required|string|max:100'
+            'arkategoria'=>'required'
         ];
     }
 

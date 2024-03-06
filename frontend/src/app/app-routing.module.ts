@@ -16,6 +16,7 @@ import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.compo
 import { SikeresFizetesComponent as SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { SikertelenFizetesComponent as SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
+import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 
 const generalRoutes: Routes = [
     {
@@ -44,23 +45,28 @@ const generalRoutes: Routes = [
     },
     {
       title:'Műfaj adatok',
-      path:'mufajdata',
+      path:'data/mufaj',
       component:MufajDataComponent
     },
     {
       title:'Előadó adatok',
-      path:'eloadodata',
+      path:'data/eloado',
       component:EloadoDataComponent
     },
     {
       title:'User adatok',
-      path:'userdata',
+      path:'data/user',
       component:UserDataComponent
     },
     {
       title:'Cím adatok',
-      path:'cimdata',
+      path:'data/cim',
       component:CimDataComponent
+    },
+    {
+      title:'Helyszín adatok',
+      path:'data/helyszin',
+      component:HelyszinDataComponent
     },
     {
       title:'Sikeres fizetés',

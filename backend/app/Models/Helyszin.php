@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Helyszin extends Model
 {
     protected $table = 'helyszin';
+    protected $fillable = ['nev','cim_id','kapacitas','arkategoria'];
     use HasFactory;
 
     public function esemeny() : HasMany

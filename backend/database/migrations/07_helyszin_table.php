@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('cim_id')->unique();
             $table->integer('kapacitas');
             $table->decimal('arkategoria',2,1);
-            $table->string('helyszin_kep_eleres',100);
+            $table->string('helyszin_kep_eleres',100)->nullable();
             $table->string('svg_kep_eleres',100);
             $table->foreign('cim_id')
                 ->references('id')

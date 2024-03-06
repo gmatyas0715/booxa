@@ -36,6 +36,7 @@ Route::get('/svg-helyszin-kep/{kepNev}', function ($kepNev) {
 
         $response = Response::make(file_get_contents($path),200);
         $response->header('Access-Control-Allow-Origin', '*');
+        $response->header('Content-Type', 'image/svg+xml');
 
         return $response;
     }

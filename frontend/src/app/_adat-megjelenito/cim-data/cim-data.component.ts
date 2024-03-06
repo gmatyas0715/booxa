@@ -252,7 +252,7 @@ export class CimModositas {
                 <span class="d-flex justify-content-center" mat-dialog-title >Cím törlése</span>
                 <div mat-dialog-actions>
                   <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button class="border" mat-raised-button color="warn" (click)="cimTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color="warn" (click)="cimTorles()" cdkFocusInitial>Törlés</button>
                 </div>
               </div>`,
   standalone: true,

@@ -329,7 +329,7 @@ export class UserModositas {
                 <span class="d-flex justify-content-center" mat-dialog-title >User törlése</span>
                 <div mat-dialog-actions>
                   <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button class="border" mat-raised-button color="warn" (click)="userTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color="warn" (click)="userTorles()" cdkFocusInitial>Törlés</button>
                 </div>
               </div>`,
   standalone: true,

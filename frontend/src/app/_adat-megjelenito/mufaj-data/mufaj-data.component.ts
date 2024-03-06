@@ -229,7 +229,7 @@ export class MufajModositas {
                 <span class="d-flex justify-content-center" mat-dialog-title >Műfaj törlése</span>
                 <div mat-dialog-actions>
                   <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button class="border" mat-raised-button color="warn" (click)="mufajTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color="warn" (click)="mufajTorles()" cdkFocusInitial>Törlés</button>
                 </div>
               </div>`,
   standalone: true,

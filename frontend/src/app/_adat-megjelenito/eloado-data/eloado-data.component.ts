@@ -352,7 +352,7 @@ export class EloadoModositas {
         eloadoAdatok.append('file',this.file,this.file.name);
       }
 
-      this.eloadoService.cimModositas(
+      this.eloadoService.eloadModositas(
         this.id,
         this.userAzonositasService.getAuthToken(),
         eloadoAdatok
@@ -396,7 +396,7 @@ export class EloadoModositas {
                 <span class="d-flex justify-content-center" mat-dialog-title >Műfaj törlése</span>
                 <div mat-dialog-actions>
                   <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
-                  <button class="border" mat-raised-button color="warn" (click)="eloadoTorles()" cdkFocusInitial>Törölni szeretném</button>
+                  <button class="border" mat-raised-button color="warn" (click)="eloadoTorles()" cdkFocusInitial>Törlés</button>
                 </div>
               </div>`,
   standalone: true,

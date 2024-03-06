@@ -12,6 +12,14 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::patch('/cimek/{cim}', 'CimController@update');
     Route::delete('/cimek/{cim}', 'CimController@destroy');
 
+    Route::get('/helyszinek','HelyszinController@index');
+    Route::get('/helyszin-nevek','HelyszinController@helyszinek');
+    Route::get('/helyszinek/{helyszin}','HelyszinController@show');
+
+    Route::post('/helyszinek', 'HelyszinController@store');
+    Route::patch('/helyszinek/{helyszin}', 'HelyszinController@update');
+    Route::delete('/helyszinek/{helyszin}', 'HelyszinController@destroy');
+
 
     Route::get('/session-data','RendelesController@sessionData');
 
@@ -63,9 +71,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/helyszin-cimek','CimController@helyszinCimek');
 
     // Helyszín route-ok
-    Route::get('/helyszinek','HelyszinController@index');
-    Route::get('/helyszin-nevek','HelyszinController@helyszinek');
-    Route::get('/helyszinek/{helyszin}','HelyszinController@show');
+
 
     // Szektor alegység route-ok
     Route::get('/szektor-alegyseg-foglaltsag-check/{esemeny}','JegyAdatController@foglaltsagLekerdezes');
@@ -101,9 +107,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         // Műfaj route-ok
 
         // Helyszín route-ok
-        Route::post('/helyszinek', 'HelyszinController@store');
-        Route::patch('/helyszinek/{helyszin}', 'HelyszinController@update');
-        Route::delete('/helyszinek/{helyszin}', 'HelyszinController@destroy');
+
 
         // Szektor route-ok
         Route::post('/szektorok', 'SzektorController@store');

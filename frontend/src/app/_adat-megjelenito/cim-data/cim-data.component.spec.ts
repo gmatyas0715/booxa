@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EloadoDataComponent as EloadoDataComponent } from './eloado-data.component';
+import { CimDataComponent as CimDataComponent } from './cim-data.component';
 
-describe('EloadoDataComponent', () => {
-  let component: EloadoDataComponent;
-  let fixture: ComponentFixture<EloadoDataComponent>;
+describe('CimDataComponent', () => {
+  let component: CimDataComponent;
+  let fixture: ComponentFixture<CimDataComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EloadoDataComponent]
+      declarations: [CimDataComponent]
     });
-    fixture = TestBed.createComponent(EloadoDataComponent);
+    fixture = TestBed.createComponent(CimDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

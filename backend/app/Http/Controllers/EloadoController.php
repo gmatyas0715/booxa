@@ -6,7 +6,6 @@ use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Log;
 
 class EloadoController extends Controller
 {
@@ -48,7 +47,7 @@ class EloadoController extends Controller
         }
         
         else {
-            $ujEloado->kep_eleres = 'default.jpg';
+            $ujEloado->kep_eleres = '_default.jpg';
         }
 
         $ujEloado->save();
@@ -81,7 +80,7 @@ class EloadoController extends Controller
         if ($request->hasFile('file')){
             $file = $request->file('file');
             $kepEleres = $file->getClientOriginalName();
-            File::delete(public_path('egyuttes_kepek'),$eloado->kep_eleres);
+            File::delete(public_path('egyuttes_kepek/'.$eloado->kep_eleres));
             $file->move(public_path('egyuttes_kepek'),$kepEleres);
             $eloado->kep_eleres = $kepEleres;
         }

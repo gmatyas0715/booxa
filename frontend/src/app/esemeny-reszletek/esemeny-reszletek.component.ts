@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
