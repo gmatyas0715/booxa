@@ -6,7 +6,7 @@ import { UserAzonositasService } from '../../_szervizek/user-azonositas.service'
 import { UserService } from '../../_szervizek/user.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { HelyszinService } from '../../_szervizek/helyszin.service';
+import { EsemenyService } from '../../_szervizek/esemeny.service';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { EsemenyService } from 'src/app/_szervizek/esemeny.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @Component({
@@ -91,7 +90,7 @@ export class EsemenyDataComponent {
         eloadok :this.eloadok,
         helyszinek :this.helyszinek,
       },
-      width:'400px',
+      width:'500px',
       enterAnimationDuration,
       exitAnimationDuration});
           
@@ -107,7 +106,7 @@ export class EsemenyDataComponent {
         eloadok :this.eloadok,
         helyszinek :this.helyszinek,
       },
-      width:'400px',
+      width:'500px',
       enterAnimationDuration,
       exitAnimationDuration});
           
@@ -134,20 +133,30 @@ export class EsemenyDataComponent {
   template: `<div class="d-block justify-content-center text-center p-3">
                 <div class="justify-content-center align-items-center mb-2">
                   <h1 mat-dialog-title >Esemény létrehozása</h1>
-                  <mat-form-field appearance="fill" style="min-width: 200px;">
-                    <mat-label>Esemény dátum:</mat-label>
-                    <input matInput [matDatepicker]="picker" class="felhasznalo-input datum" [(ngModel)]="idopont">
-                    <mat-hint></mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  <div class="d-flex align-items-center">
+                    <mat-form-field class="mr-2" appearance="fill">
+                      <mat-label>Esemény dátum:</mat-label>
+                      <input matInput [matDatepicker]="picker" class="felhasznalo-input datum" [(ngModel)]="datum" (dateChange)="setOraPerc()">
+                      <mat-hint></mat-hint>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="w-25">
+                      <mat-label>Óra:</mat-label>
+                      <input matInput  [(ngModel)]="idopont_ora" type='number' class="w-100 mr-4" min=0 max=23 (change)="setOraPerc()">
+                    </mat-form-field>
+                    <mat-form-field class="w-25 ml-3">
+                      <mat-label>Perc:</mat-label>
+                      <input matInput [(ngModel)]="idopont_perc" type='number' class="w-100" min=0 max=59 (change)="setOraPerc()">
+                    </mat-form-field>
+                  </div>
                   <mat-form-field>
                     <mat-label>Előadó</mat-label>
                     <mat-select [(ngModel)]="eloado_id">
                       <mat-option *ngFor="let eloado of data.eloadok | keyvalue;" [value]="eloado.key">{{eloado.value}}</mat-option>
                     </mat-select> 
                   </mat-form-field>
-                  <mat-form-field>
+                  <mat-form-field class="ml-3">
                     <mat-label>Helyszín</mat-label>
                     <mat-select [(ngModel)]="helyszin_id">
                       <mat-option *ngFor="let helyszin of data.helyszinek | keyvalue;" [value]="helyszin.key">{{helyszin.value}}</mat-option>
@@ -162,14 +171,16 @@ export class EsemenyDataComponent {
   imports: [MatButtonModule,MatDialogModule,FormsModule, MatInputModule, MatChipsModule, MatIconModule, MatSelectModule, MatOptionModule, CommonModule, MatIconModule, MatDatepickerModule],
 })
 export class EsemenyLetrehozas {
-  idopont = ""
+  datum = new Date()
   eloado_id = ""
   helyszin_id = ""
+  idopont_ora = 0
+  idopont_perc = 0
 
   constructor(public dialogRef: MatDialogRef<EsemenyModositas>,
               public userService: UserService,
               public userAzonositasService:UserAzonositasService,
-              public helyszinService:HelyszinService,
+              public esemenyService:EsemenyService,
               private _snackBar: MatSnackBar,
               @Inject(MAT_DIALOG_DATA) public data: any)
               {}
@@ -178,8 +189,8 @@ export class EsemenyLetrehozas {
 
       let esemenyAdatok: FormData = new FormData();
       
-      if(this.idopont!="" && this.eloado_id!="" && this.helyszin_id!=""){
-        esemenyAdatok.append('idopont',this.idopont);
+      if(this.datum!=null && this.eloado_id!="" && this.helyszin_id!=""){
+        esemenyAdatok.append('idopont',this.datum.toDateString());
         esemenyAdatok.append('eloado_id',this.eloado_id);
         esemenyAdatok.append('helyszin_id',this.helyszin_id);
       }
@@ -189,7 +200,7 @@ export class EsemenyLetrehozas {
         return;
       }
 
-      this.helyszinService.helyszinLetrehozas(
+      this.esemenyService.esemenyLetrehozas(
       this.userAzonositasService.getAuthToken(),
       esemenyAdatok
       ).subscribe({
@@ -201,6 +212,12 @@ export class EsemenyLetrehozas {
         this.openSnackbar('Sikertelen eseménylétrehozás!')
       }    
     });
+  }
+
+  setOraPerc(){
+    this.datum.setHours(this.idopont_ora)
+    this.datum.setMinutes(this.idopont_perc)
+    console.log(this.datum);
   }
 
   megseClick(){
@@ -216,20 +233,30 @@ export class EsemenyLetrehozas {
   template: `<div class="d-block justify-content-center text-center p-3">
               <div class="justify-content-center align-items-center mb-2">
               <h1 mat-dialog-title >Esemény módosítása</h1>
-              <mat-form-field appearance="fill" style="min-width: 200px;">
-                <mat-label>Esemény dátum:</mat-label>
-                <input matInput [matDatepicker]="picker" class="felhasznalo-input datum" [(ngModel)]="idopont">
-                <mat-hint></mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+              <div class="d-flex align-items-center">
+                <mat-form-field class="mr-2" appearance="fill" style="min-width: 150px;">
+                  <mat-label>Esemény dátum:</mat-label>
+                  <input matInput [matDatepicker]="picker" class="felhasznalo-input datum" [(ngModel)]="datum" (dateChange)="setOraPerc()">
+                  <mat-hint></mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="w-25">
+                  <mat-label>Óra:</mat-label>
+                  <input matInput  [(ngModel)]="idopont_ora" type='number' class="w-100 mr-4" min=0 max=23 (change)="setOraPerc()">
+                </mat-form-field>
+                <mat-form-field class="w-25 ml-3">
+                  <mat-label>Perc:</mat-label>
+                  <input matInput [(ngModel)]="idopont_perc" type='number' class="w-100" min=0 max=59 (change)="setOraPerc()">
+                </mat-form-field>
+              </div>
               <mat-form-field>
                 <mat-label>Előadó</mat-label>
                 <mat-select [(ngModel)]="eloado_id">
                   <mat-option *ngFor="let eloado of data.eloadok | keyvalue;" [value]="eloado.key">{{eloado.value}}</mat-option>
                 </mat-select> 
               </mat-form-field>
-              <mat-form-field>
+              <mat-form-field class="ml-3">
                 <mat-label>Helyszín</mat-label>
                 <mat-select [(ngModel)]="helyszin_id">
                   <mat-option *ngFor="let helyszin of data.helyszinek | keyvalue;" [value]="helyszin.key">{{helyszin.value}}</mat-option>
@@ -246,24 +273,34 @@ export class EsemenyLetrehozas {
 export class EsemenyModositas {
 
   id = ""
-  idopont = ""
+  datum = new Date()
   eloado_id = ""
   helyszin_id = ""
+  idopont_ora = 0
+  idopont_perc = 0
 
   constructor(public dialogRef: MatDialogRef<EsemenyModositas>,
               public userService: UserService,
               public userAzonositasService:UserAzonositasService,
-              public helyszinService:HelyszinService,
+              public esemenyService:EsemenyService,
               private _snackBar: MatSnackBar,
               @Inject(MAT_DIALOG_DATA) public data: any)
               {
                 this.esemenyInputInit()
               }
 
-  esemenyInputInit(){
-    
+  esemenyInputInit(){    
+    let esemenyIdopontOraval = new Date(this.data.esemeny.idopont)
+    const year = esemenyIdopontOraval.getFullYear();
+    const month = esemenyIdopontOraval.getMonth(); // Months are zero-based, so add 1 to get the correct month
+    const day = esemenyIdopontOraval.getDate();
+
+    // Format the date as a string
+    const esemenyIdopont = new Date(year, month, day);
     this.id = this.data.esemeny.id
-    this.idopont = this.data.esemeny.idopont
+    this.datum = esemenyIdopont
+    this.idopont_ora = esemenyIdopontOraval.getHours()
+    this.idopont_perc = esemenyIdopontOraval.getMinutes()
     this.eloado_id = this.data.esemeny.eloado_id
     this.helyszin_id = this.data.esemeny.helyszin_id
 
@@ -271,12 +308,18 @@ export class EsemenyModositas {
     console.log(this.data.esemeny.eloado_id+' '+this.data.esemeny.helyszin_id+' '+this.data.esemeny.idopont);
   }
 
+  setOraPerc(){
+    this.datum.setHours(this.idopont_ora)
+    this.datum.setMinutes(this.idopont_perc)
+    console.log(this.datum);
+  }
+
   esemenyModositas(){
     
       let esemenyAdatok: FormData = new FormData();
 
-      if(this.idopont!="" && this.eloado_id!="" && this.helyszin_id!=""){
-        esemenyAdatok.append('idopont',this.idopont);
+      if(this.datum!=null && this.eloado_id!="" && this.helyszin_id!=""){
+        esemenyAdatok.append('idopont',this.datum.toDateString());
         esemenyAdatok.append('eloado_id',this.eloado_id);
         esemenyAdatok.append('helyszin_id',this.helyszin_id);
       }
@@ -286,7 +329,7 @@ export class EsemenyModositas {
         return;
       }
       
-      this.helyszinService.helyszinModositas(
+      this.esemenyService.esemenyModositas(
         this.id,
         this.userAzonositasService.getAuthToken(),
         esemenyAdatok
@@ -312,7 +355,7 @@ export class EsemenyModositas {
 
 @Component({
   template: `<div class="d-block justify-content-center">
-                <span class="d-flex justify-content-center" mat-dialog-title >Műfaj törlése</span>
+                <span class="d-flex justify-content-center" mat-dialog-title >Esemény törlése</span>
                 <div mat-dialog-actions>
                   <button class="border" mat-raised-button color='primary' (click)="megseClick()">Mégse</button>
                   <button class="border" mat-raised-button color="warn" (click)="esemenyTorles()" cdkFocusInitial>Törlés</button>
@@ -326,13 +369,13 @@ export class EsemenyTorles {
   constructor(public dialogRef: MatDialogRef<EsemenyTorles>,
               public userService: UserService,
               public userAzonositasService:UserAzonositasService,
-              public helyszinService:HelyszinService,
+              public esemenyService:EsemenyService,
               private _snackBar: MatSnackBar,
-              @Inject(MAT_DIALOG_DATA) public helyszinId: number)
+              @Inject(MAT_DIALOG_DATA) public esemenyId: number)
               {}
 
   esemenyTorles(){
-    this.helyszinService.helyszinTorles(this.helyszinId,this.userAzonositasService.getAuthToken()).subscribe({
+    this.esemenyService.esemenyTorles(this.esemenyId,this.userAzonositasService.getAuthToken()).subscribe({
       next:() => {
         this.dialogRef.close()
         this.openSnackbar('Sikeres eseménytörlés!')

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EsemenyModell } from '../_modellek/esemeny-modell';
 import { map } from 'rxjs/operators';
@@ -55,6 +55,31 @@ export class EsemenyService {
         return response;
       })
     );
+  }
+
+  esemenyLetrehozas(userToken:string,esemenyAdatok: FormData):Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    
+    return this.http.post(this.apiUrl+'esemenyek',esemenyAdatok,{headers})
+  }
+
+  esemenyModositas(esemenyId:string,userToken:string,esemenyAdatok: FormData):Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+
+    return this.http.post(this.apiUrl+'esemenyek/'+esemenyId,esemenyAdatok,{headers});
+  }
+  
+  esemenyTorles(esemenyId:number,userToken:string):Observable<any>{
+    
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.delete<any>(this.apiUrl+'esemenyek/'+esemenyId,{headers});
   }
 
   esemenyOsszes():Observable<any[]>{

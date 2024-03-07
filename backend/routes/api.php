@@ -22,6 +22,10 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::patch('/helyszinek/{helyszin}', 'HelyszinController@update');
     Route::delete('/helyszinek/{helyszin}', 'HelyszinController@destroy');
 
+    Route::post('/esemenyek', 'EsemenyController@store');
+    Route::patch('/esemenyek/{esemeny}', 'EsemenyController@update');
+    Route::delete('/esemenyek/{esemeny}', 'EsemenyController@destroy');
+
 
     Route::get('/session-data','RendelesController@sessionData');
 
@@ -120,9 +124,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
 
         // Esemény route-ok
-        Route::post('/esemenyek', 'EsemenyController@store');
-        Route::patch('/esemenyek/{esemeny}', 'EsemenyController@update');
-        Route::delete('/esemenyek/{esemeny}', 'EsemenyController@destroy');
+
     });
 
     // ADMIN & USER-SUPPORT JOGOSULTSÁG ROUTE-OK
