@@ -9,11 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class EsemenyService {
 
-  constructor(
-    private http: HttpClient,
-  ) { 
+  constructor(private http: HttpClient) { 
   
   }
+
+  apiUrl: string = 'http://localhost:8000/api/';
+
 
   kivalasztottEsemeny: any;
 
@@ -43,16 +44,24 @@ export class EsemenyService {
 
     console.log(params)
 
-      return this.http.get<any[]>('http://localhost:8000/api/esemenyKereso',{params})
+      return this.http.get<any[]>(this.apiUrl+'esemenyKereso',{params})
   }
 
   esemenyAdatok(esemenyId:string):Observable<EsemenyModell>{
-    return this.http.get<EsemenyModell>('http://localhost:8000/api/esemenyek/'+esemenyId)
+    return this.http.get<EsemenyModell>(this.apiUrl+'esemenyek/'+esemenyId)
     .pipe(
       map((response: EsemenyModell) => {
         response.idopont = new Date(response.idopont);
         return response;
       })
     );
+  }
+
+  esemenyOsszes():Observable<any[]>{
+    return this.http.get<any[]>(this.apiUrl+'esemenyek')
+  }
+
+  helyszinEloadoNevId():Observable<any>{
+    return this.http.get<any>(this.apiUrl+'helyszin-eloado-nev-id')
   }
 }

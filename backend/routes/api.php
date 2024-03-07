@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
 
+    Route::get('/helyszin-eloado-nev-id','EsemenyController@helyszinEloadoNevId'); 
+
     Route::post('/pdf-jegy-generalas/{rendeles}', 'JegyAdatController@pdfJegyLetoltes');
     Route::post('/pdf-szamla-generalas/{rendeles}', 'JegyAdatController@pdfSzamlaLetoltes');
     Route::get('/cimek', 'CimController@index');

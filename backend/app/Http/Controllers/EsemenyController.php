@@ -2,22 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Eloado;
 use App\Models\Esemeny;
 use App\Http\Requests\StoreEsemenyRequest;
 use App\Http\Requests\UpdateEsemenyRequest;
 use App\Models\Cim;
+use App\Models\Helyszin;
 use App\Models\Mufaj;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
 class EsemenyController extends Controller
-{
+{    
+    public function helyszinEloadoNevId(){
+        $helyszinek = Helyszin::select(['id','nev'])->get();
+        $eloadok = Eloado::select(['id','nev'])->get();
+
+        return response()->json(['helyszinek'=>$helyszinek,'eloadok'=>$eloadok]);
+    }
 
     public function index()
     {
-        $esemenyek = Esemeny::all();
+        $esemenyek = Esemeny::select(['id','idopont','jegy_alapar','helyszin_id','eloado_id'])->get();
         return response()->json($esemenyek);
     }
 

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\File;
 
 class HelyszinController extends Controller
 {
-
     public function index()
     {
         $helyszinek = Helyszin::select(['id','nev','cim_id','kapacitas','arkategoria','helyszin_kep_eleres','svg_kep_eleres'])->get();

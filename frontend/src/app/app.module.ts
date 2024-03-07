@@ -54,6 +54,7 @@ import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/
 import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
+import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszi
     UserDataComponent,
     CimDataComponent,
     HelyszinDataComponent,
+    EsemenyDataComponent,
     SikeresFizetesComponent,
     SikertelenFizetesComponent
   ],
@@ -110,7 +112,7 @@ import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszi
     MatProgressSpinnerModule,
     MatTableModule,
     MatChipsModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [CookieService,DatePipe,provideNgxMask()],
   bootstrap: [AppComponent]

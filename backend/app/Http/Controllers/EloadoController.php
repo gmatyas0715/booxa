@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\File;
 
 class EloadoController extends Controller
 {
-
     public function index()
     {
         $eloadok = Eloado::select('id','nev','leiras','arkategoria','kep_eleres',)->with(['mufaj'=>function ($query){

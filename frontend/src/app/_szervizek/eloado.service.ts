@@ -6,11 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EloadoService {
-  helyszinOsszes() {
-    throw new Error('Method not implemented.');
-  }
 
-  public apiUrl:string = 'http://localhost:8000/api'
+  public apiUrl:string = 'http://localhost:8000/api/'
   
   constructor(private http:HttpClient){ }
 
@@ -19,7 +16,7 @@ export class EloadoService {
       'Authorization':`Bearer ${userToken}`
     })
 
-    return this.http.post(this.apiUrl+'/eloadok',eloadoAdatok,{headers})
+    return this.http.post(this.apiUrl+'eloadok',eloadoAdatok,{headers})
   }
 
   eloadModositas(eloadoId:string,userToken:string,eloadoAdatok: FormData):Observable<any>{
@@ -27,7 +24,7 @@ export class EloadoService {
       'Authorization':`Bearer ${userToken}`
     })
 
-    return this.http.post(this.apiUrl+'/eloadok/'+eloadoId,eloadoAdatok,{headers});
+    return this.http.post(this.apiUrl+'eloadok/'+eloadoId,eloadoAdatok,{headers});
   }
   
   eloadoTorles(eloadoId:number,userToken:string):Observable<any>{
@@ -36,11 +33,11 @@ export class EloadoService {
       'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
     })
-    return this.http.delete<any>(this.apiUrl+'/eloadok/'+eloadoId,{headers});
+    return this.http.delete<any>(this.apiUrl+'eloadok/'+eloadoId,{headers});
   }
 
   eloadokNevekLekerdezese():Observable<string[]> {
-    return this.http.get<string[]>('http://localhost:8000/api/eloado-nevek');
+    return this.http.get<string[]>(this.apiUrl+'eloado-nevek');
   } 
   
   eloadoKepUrl(kepNev: string): string{
@@ -48,6 +45,6 @@ export class EloadoService {
   }
 
   eloadoOsszes():Observable<any[]>{
-    return this.http.get<any[]>('http://localhost:8000/api/eloadok')
+    return this.http.get<any[]>(this.apiUrl+'eloadok')
   }
 }
