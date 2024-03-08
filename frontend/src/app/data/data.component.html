@@ -1,0 +1,8 @@
+<div class="data-opcio-container">
+    <mat-card class="chip-card">
+        <mat-chip-listbox class="p-3">
+            <mat-chip-option *ngFor="let link of routerLinkMap | keyvalue;" [selected]="link.value" [routerLink]=link.key[0]>{{link.key[1]}}</mat-chip-option>
+        </mat-chip-listbox>
+    </mat-card>
+</div>
+<router-outlet></router-outlet>

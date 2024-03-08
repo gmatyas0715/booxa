@@ -1,4 +1,10 @@
 <div id="bejelentkezett-user-container">
+    <div class="mr-2" *ngIf=userAzonositas.getAuthToken()>
+        <a id="admin-felulet-gomb" matTooltip="ADMIN felület" class="nav-link d-flex align-items-center bg-white" routerLink="/data/user">
+            <mat-icon class="menu-ikon">stars</mat-icon>
+            <span class="d-none d-lg-block">ADMIN felület</span>
+        </a>
+    </div>
     <div class="d-none d-sm-block">
         <div id="profil-adat-container">
             <div id="profilkep-container">

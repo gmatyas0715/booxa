@@ -18,6 +18,7 @@ import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-ren
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
+import { DataComponent } from './data/data.component';
 
 const generalRoutes: Routes = [
     {
@@ -45,35 +46,41 @@ const generalRoutes: Routes = [
       component:KosarOsszegzoComponent  
     },
     {
-      title:'Műfaj adatok',
-      path:'data/mufaj',
-      component:MufajDataComponent
-    },
-    {
-      title:'Előadó adatok',
-      path:'data/eloado',
-      component:EloadoDataComponent
-    },
-    {
-      title:'User adatok',
-      path:'data/user',
-      component:UserDataComponent
-    },
-    {
-      title:'Cím adatok',
-      path:'data/cim',
-      component:CimDataComponent
-    },
-    {
       title:'Helyszín adatok',
-      path:'data/helyszin',
-      component:HelyszinDataComponent
-    },
-    {
-      title:'Esemény adatok',
-      path:'data/esemeny',
-      component:EsemenyDataComponent
-    },
+      path:'data',
+      component:DataComponent,
+      children: [
+        {
+          title:'Műfaj adatok',
+          path:'mufaj',
+          component:MufajDataComponent
+        },
+        {
+          title:'Előadó adatok',
+          path:'eloado',
+          component:EloadoDataComponent
+        },
+        {
+          title:'User adatok',
+          path:'user',
+          component:UserDataComponent
+        },
+        {
+          title:'Cím adatok',
+          path:'cim',
+          component:CimDataComponent
+        },
+        {
+          title:'Helyszín adatok',
+          path:'helyszin',
+          component:HelyszinDataComponent
+        },
+        {
+          title:'Esemény adatok',
+          path:'esemeny',
+          component:EsemenyDataComponent
+        },
+      ]},
     {
       title:'Sikeres fizetés',
       path:'rendeles/sikeres-fizetes',

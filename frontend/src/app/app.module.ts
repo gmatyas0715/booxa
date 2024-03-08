@@ -55,6 +55,7 @@ import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-ren
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-d
     HelyszinDataComponent,
     EsemenyDataComponent,
     SikeresFizetesComponent,
-    SikertelenFizetesComponent
+    SikertelenFizetesComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
