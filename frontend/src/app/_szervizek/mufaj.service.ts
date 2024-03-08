@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 export class MufajService {
 
   public apiUrl:string = 'http://localhost:8000/api'
+  public mufajLista:string[] = []
 
   constructor(private http:HttpClient) { }
 
-  mufajokLekerdezese():Observable<string[]>{
+  mufajokLekerdezese():Observable<any>{
     return this.http.get<string[]>(this.apiUrl+'/mufaj-nevek')
   }
 

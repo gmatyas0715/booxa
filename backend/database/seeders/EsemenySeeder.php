@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\EsemenyController;
 use Illuminate\Database\Seeder;
 use App\Models\Esemeny;
 use App\Models\Helyszin;
@@ -22,7 +23,6 @@ class EsemenySeeder extends Seeder
         $ESEMENY_KEZDESI_IDOPONT = '15:00';
         $ESEMENY_INTERVALLUM_PERCBEN = 90;
         $ESEMENY_DARAB_EGYMAS_UTAN_PER_NAP = 6;
-        $EGYSEG_JEGYAR = 4000;
 
         // Generált esmények változtatható paraméterei (vége)
 
@@ -49,9 +49,7 @@ class EsemenySeeder extends Seeder
                     }
 
                     // Jegyár generátor
-                    $eloadoArszorzo = Eloado::where('id',$eloado_id)->first()->arkategoria;
-                    $helyszinArszorzo = Helyszin::where('id',$helyszin_id)->first()->arkategoria;
-                    $jegyAlapar = round($eloadoArszorzo*$helyszinArszorzo*$EGYSEG_JEGYAR/100)*100-1;
+                    $jegyAlapar = EsemenyController::getEsemenyJegyar($eloado_id,$helyszin_id);
 
                     $esemenyAdatok = [
                         'idopont' => $idopont,

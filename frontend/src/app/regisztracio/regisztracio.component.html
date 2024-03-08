@@ -79,18 +79,18 @@
             </div>
             <div class="row mt-5">
                 <mat-form-field class="col-sm-12 col-md-9 col-lg-6">
-                    <mat-label matTooltip="Kötelező megadni! Legalább egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó:</mat-label>
+                    <mat-label matTooltip="Kötelező megadni! Legalább 8 karaktert, egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó:</mat-label>
                     <input matInput class="felhasznalo-input" id="jelszo" type="password" formControlName="jelszo" placeholder="Jelszó">
                 </mat-form-field>
                 <mat-form-field class="col-sm-12 col-md-9 col-lg-6">
-                    <mat-label matTooltip="Kötelező megadni! Legalább egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó újra:</mat-label>
+                    <mat-label matTooltip="Kötelező megadni! Legalább 8 karaktert, egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!" matTooltipPosition="above">Jelszó újra:</mat-label>
                     <input matInput class="felhasznalo-input"  id="jelszo_megerosites" type="password" formControlName="jelszo_megerosites" placeholder="Jelszó újra">
                 </mat-form-field>
             </div>
             <div class="row error-container">
                 <div class="col">
                     <span *ngIf="regisztracioForm.get('jelszo')?.hasError('required') && regisztracioForm.get('jelszo')?.touched" class="hibauzenet">Az jelszó mező nem maradhat üresen!</span>
-                    <span *ngIf="regisztracioForm.get('jelszo')?.hasError('nemMegfeleloJelszo')" class="hibauzenet">A megadott jelszó nem megfelelő!</span>
+                    <span *ngIf="regisztracioForm.get('jelszo')?.hasError('nemMegfeleloJelszo')" class="hibauzenet">A jelszónak legalább 8 karaktert, egy nagybetűt, kisbetűt, speciális karaktert és számot tartalmaznia kell!!</span>
                 </div>
             </div>
             <div class="row mt-2 error-container">
@@ -100,7 +100,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col">
-                    <mat-checkbox matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above" class="mr-2" id="adatvedelmi" color="primary" formControlName="adatvedelmi" required>Elolvastam és elfogadom az adatvédelmi nyilatkozatot.</mat-checkbox>
+                    <mat-checkbox matTooltip="A regisztrációhoz az adatvédelmi tájékoztató elfogadása szükséges!" matTooltipPosition="above" class="mr-2" id="adatvedelmi" color="primary" formControlName="adatvedelmi" required>Elolvastam és elfogadom az adatvédelmi nyilatkozatot.*</mat-checkbox>
                 </div>
             </div>
             <div class="row error-container">

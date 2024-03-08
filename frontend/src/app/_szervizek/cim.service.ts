@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CimService {
 
   public apiUrl:string = 'http://localhost:8000/api'
+  public telepulesLista:string[] = []
 
   constructor(private http:HttpClient) { }
 
@@ -42,7 +43,7 @@ export class CimService {
     return this.http.get<any[]>(this.apiUrl+'/cimek');
   } 
 
-  helyszinCimekLekerdezese():Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl+'/helyszin-cimek');
+  helyszinCimekLekerdezese():Observable<any[]>{
+    return this.http.get<string[]>(this.apiUrl+'/helyszin-cimek')
   } 
 }

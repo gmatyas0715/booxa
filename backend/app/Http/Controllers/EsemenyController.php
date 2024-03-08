@@ -91,7 +91,7 @@ class EsemenyController extends Controller
     {
         $ujEsemeny = new Esemeny();
         $ujEsemeny->idopont = $request->input('idopont');
-        $ujEsemeny->jegy_alapar = $request->input('jegy_alapar');
+        $ujEsemeny->jegy_alapar = $this->getEsemenyJegyar($request->input('eloado_id'),$request->input('helyszin_id'));
         $ujEsemeny->eloado_id = $request->input('eloado_id');
         $ujEsemeny->helyszin_id = $request->input('helyszin_id');
         $ujEsemeny->save();
@@ -114,18 +114,26 @@ class EsemenyController extends Controller
 
     function update(UpdateEsemenyRequest $request, Esemeny $esemeny)
     {
-        $tablaMezok = Schema::getColumnListing($esemeny->getTable());
-
-        $updateAdat = $request->only($tablaMezok);
-
-        $esemeny->update($updateAdat);     
-
-        return response()->json($esemeny);
+        $esemeny->idopont = $request->input('idopont');
+        $esemeny->jegy_alapar = $this->getEsemenyJegyar($request->input('eloado_id'),$request->input('helyszin_id'));
+        $esemeny->eloado_id = $request->input('eloado_id');
+        $esemeny->helyszin_id = $request->input('helyszin_id');
+        $esemeny->save();
+        return response()->json(['üzenet'=>$esemeny->id.' azonosítóval új esemény lett sikeresen létrehozva!']);
     }
 
     public function destroy(Esemeny $esemeny)
     {
         $esemeny->delete();
         return response()->json(['üzenet'=>$esemeny->id.' azonosítójú esemény sikeresen törölve!']);
+    }
+
+    public static function getEsemenyJegyar(int $eloadoId,int $helyszinId):int{
+        $EGYSEG_JEGYAR = 4000;
+        $eloadoArszorzo = Eloado::find($eloadoId)->arkategoria;
+        $helyszinArszorzo = Helyszin::find($helyszinId)->arkategoria;
+        $jegyAlapar = round($eloadoArszorzo*$helyszinArszorzo*$EGYSEG_JEGYAR/100)*100-1;
+
+        return $jegyAlapar;
     }
 }

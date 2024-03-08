@@ -201,15 +201,33 @@ export class EsemenyKeresoComponent implements OnInit{
   }
 
   helyszinCimBetoltes(){
-    this.cimSzerviz.helyszinCimekLekerdezese().subscribe((valasz)=>{
-      this.telepulesLista = valasz; 
-    });
+    console.log(this.cimSzerviz.telepulesLista.length);
+
+    if (this.cimSzerviz.telepulesLista.length==0){
+      this.cimSzerviz.helyszinCimekLekerdezese().subscribe((valasz:string[])=>{
+        this.cimSzerviz.telepulesLista = valasz.sort((a,b)=>a.localeCompare(b)); 
+        this.telepulesLista = this.cimSzerviz.telepulesLista
+      });
+    }
+
+    else{
+      this.telepulesLista = this.cimSzerviz.telepulesLista
+    }
   }
 
   mufajBetoltes(){
-    this.mufajSzerviz.mufajokLekerdezese().subscribe((valasz)=>{
-      this.mufajLista = valasz.sort((a,b)=>a.localeCompare(b)); 
-    });
+    console.log(this.mufajSzerviz.mufajLista.length);
+    
+    if (this.mufajSzerviz.mufajLista.length==0){
+      this.mufajSzerviz.mufajokLekerdezese().subscribe((valasz:string[])=>{
+        this.mufajSzerviz.mufajLista = valasz.sort((a,b)=>a.localeCompare(b)); 
+        this.mufajLista = this.mufajSzerviz.mufajLista
+      });
+    }
+
+    else{
+      this.mufajLista = this.mufajSzerviz.mufajLista
+    }
   }
 
   eloadoJavaslatBetoltes(){

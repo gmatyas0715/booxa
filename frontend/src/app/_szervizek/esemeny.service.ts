@@ -57,20 +57,23 @@ export class EsemenyService {
     );
   }
 
-  esemenyLetrehozas(userToken:string,esemenyAdatok: FormData):Observable<any> {
+  esemenyLetrehozas(userToken:string,esemenyAdatok: object):Observable<any> {
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })
+
+    console.log(esemenyAdatok);
+    
     
     return this.http.post(this.apiUrl+'esemenyek',esemenyAdatok,{headers})
   }
 
-  esemenyModositas(esemenyId:string,userToken:string,esemenyAdatok: FormData):Observable<any>{
+  esemenyModositas(esemenyId:string,userToken:string,esemenyAdatok: object):Observable<any>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })
 
-    return this.http.post(this.apiUrl+'esemenyek/'+esemenyId,esemenyAdatok,{headers});
+    return this.http.patch(this.apiUrl+'esemenyek/'+esemenyId,esemenyAdatok,{headers});
   }
   
   esemenyTorles(esemenyId:number,userToken:string):Observable<any>{

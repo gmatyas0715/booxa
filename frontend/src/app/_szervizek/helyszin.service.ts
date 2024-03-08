@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class HelyszinService {
   apiUrl: string = 'http://localhost:8000/api/';
 
+
   constructor(private http:HttpClient){ }
 
   helyszinNevekLekerdezese():Observable<string[]> {
