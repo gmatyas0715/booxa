@@ -60,13 +60,20 @@ export class UserAzonositasService {
     return this.http.get<any>(this.apiUrl+'szerep-osszes',{headers});
   }
 
-  authorizacioCheck(role:string):Observable<boolean>{
+  authorizacioCheck(roles:string[]):Observable<boolean>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${this.getAuthToken()}`
     })
-    const body = {'role':role}
+    const body = {'roles':roles}
 
     return this.http.post<boolean>(this.apiUrl+'role-check',body,{headers});
+  }
+
+  getSzerep():Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.getAuthToken()}`
+    })
+    return this.http.get<any>(this.apiUrl+'user-szerep',{headers});
   }
 
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {

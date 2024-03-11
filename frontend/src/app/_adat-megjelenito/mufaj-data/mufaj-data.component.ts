@@ -3,7 +3,7 @@ import { MufajService } from '../../_szervizek/mufaj.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserAzonositasService } from '../../_szervizek/user-azonositas.service';
+import { UserAzonositasService } from '../../auth/user-azonositas.service';
 import { UserService } from '../../_szervizek/user.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';

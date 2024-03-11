@@ -42,6 +42,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::post('/rendeles', 'RendelesController@store');
 
     Route::group(['middleware'=>['auth:sanctum']],function(){
+        Route::get('/user-szerep','AuthController@getSzerepNev'); 
         Route::post('/rendelesElkuldes', 'RendelesController@checkout');
     });
 

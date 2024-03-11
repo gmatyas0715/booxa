@@ -161,7 +161,7 @@ export class EsemenyKeresoComponent implements OnInit{
     urlParams.forEach((value,key)=>{
       queryParamObj[key] = value;
     });
-    this.router.navigate(['/esemenyKereso'],{queryParams: queryParamObj})
+    this.router.navigate(['/esemeny-kereso'],{queryParams: queryParamObj})
   }
 
   

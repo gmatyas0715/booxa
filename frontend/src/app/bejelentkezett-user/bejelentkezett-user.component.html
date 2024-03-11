@@ -1,17 +1,24 @@
 <div id="bejelentkezett-user-container">
-    <div class="mr-2" *ngIf=userAzonositas.getAuthToken()>
+    <div *ngIf="szerep=='admin'" class="mr-2">
         <a id="admin-felulet-gomb" matTooltip="ADMIN felület" class="nav-link d-flex align-items-center bg-white" routerLink="/data/user">
             <mat-icon class="menu-ikon">stars</mat-icon>
             <span class="d-none d-lg-block">ADMIN felület</span>
         </a>
     </div>
+    <div *ngIf="szerep=='esemenyszerkeszto'" class="mr-2">
+        <a id="admin-felulet-gomb" matTooltip="ADMIN felület" class="nav-link d-flex align-items-center bg-white" routerLink="/data/esemeny">
+            <mat-icon class="menu-ikon">event</mat-icon>
+            <span class="d-none d-lg-block">Eseményszerkesztő</span>
+        </a>
+    </div>
     <div class="d-none d-sm-block">
         <div id="profil-adat-container">
+            <span *ngIf="szerep=='admin'">ADMIN</span>
             <div id="profilkep-container">
-                <mat-icon id="profilkep">person</mat-icon>
+                <mat-icon *ngIf="true" id="profilkep">person</mat-icon>
             </div>
             <div>
-                <span>{{userAzonositas.getUsername()}}</span>
+                <span *ngIf="true">{{userAzonositas.getUsername()}}</span>
             </div>
         </div>
     </div>
@@ -19,7 +26,7 @@
         <a matTooltip="Profilbeállítások" routerLink="/profilAdatok">
             <mat-icon class="logout-panel-icon">settings</mat-icon>
         </a>
-        <a matTooltip="Kijelentkezés" (click)="LogoutGomb()" routerLink="/kezdooldal">
+        <a matTooltip="Kijelentkezés" (click)="this.userAzonositas.logout()" routerLink="/kezdooldal">
             <mat-icon class="logout-panel-icon">exit_to_app</mat-icon>
         </a>
     </div>

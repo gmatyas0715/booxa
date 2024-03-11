@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RendelesService } from 'src/app/_szervizek/rendeles.service';
-import { UserAzonositasService } from 'src/app/_szervizek/user-azonositas.service';
+import { UserAzonositasService } from 'src/app/auth/user-azonositas.service';
 import { saveAs } from 'file-saver';
 import { now } from 'lodash';
 

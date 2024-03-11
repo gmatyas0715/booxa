@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ValidationErrors, Validators, AbstractControl } from '@angular/forms';
 import { UserModell } from '../_modellek/user-modell';
 import { UserService } from '../_szervizek/user.service';
-import { UserAzonositasService } from '../_szervizek/user-azonositas.service';
+import { UserAzonositasService } from '../auth/user-azonositas.service';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';

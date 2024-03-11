@@ -16,13 +16,13 @@
                                     </a>
                                 </li>
                                 <li class="mr-2 nav-item">
-                                    <a matTooltip="Események" class="nav-link d-flex align-items-center" routerLink="/esemenyKereso">
+                                    <a matTooltip="Események" class="nav-link d-flex align-items-center" routerLink="/esemeny-kereso">
                                         <mat-icon class="menu-ikon">event</mat-icon>
                                         <span class="d-block d-md-none d-lg-block">Események</span>
                                     </a>
                                 </li>
                                 <li class="mr-2 nav-item" *ngIf=userAzonositas.getAuthToken()>
-                                    <a matTooltip="Jegyvásárlásaim" class="nav-link d-flex align-items-center" routerLink="/jegyVasarlasElozmenyek">
+                                    <a matTooltip="Jegyvásárlásaim" class="nav-link d-flex align-items-center" routerLink="/jegyvasarlas-elozmenyek">
                                         <img class="menu-ikon" src="../../assets/kepek/jegyeim-ikon.svg" alt="">
                                         <span class="d-block d-md-none d-lg-block">Jegyvásárlásaim</span>
                                     </a>
@@ -42,8 +42,8 @@
                             </button>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" routerLink="/kezdooldal">Kezdőoldal</a></li>
-                              <li><a class="dropdown-item" routerLink="/esemenyKereso">Események</a></li>
-                              <li *ngIf=userAzonositas.getAuthToken()><a class="dropdown-item" routerLink="/jegyVasarlasElozmenyek">Jegyvásárlásaim</a></li>
+                              <li><a class="dropdown-item" routerLink="/esemeny-kereso">Események</a></li>
+                              <li *ngIf=userAzonositas.getAuthToken()><a class="dropdown-item" routerLink="/jegyvasarlas-elozmenyek">Jegyvásárlásaim</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
             </nav>
         </div>                            
         <div id="kosar-adatok mr-2">
-            <a [ngClass]="{'kosar-disabled':kosarSzerviz.getKosarOsszar()==0,'nav-link':kosarSzerviz.getKosarOsszar()!=0}" class="kosar-button d-flex align-items-center" routerLink="/kosarOsszegzo">
+            <a [ngClass]="{'kosar-disabled':kosarSzerviz.getKosarOsszar()==0,'nav-link':kosarSzerviz.getKosarOsszar()!=0}" class="kosar-button d-flex align-items-center" routerLink="/kosar-osszegzo">
                 <mat-icon aria-hidden="false" matBadge="{{kosarSzerviz.jegyAdatLista.length}}" [matBadgeHidden]="!matBadgeMegjelenites||kosarSzerviz.jegyAdatLista.length==0" matBadgeColor="primary" [ngClass]="{'menu-ikon':kosarSzerviz.getKosarOsszar()!=0}">shopping_cart</mat-icon>
                 <span class="d-none d-md-block">Kosarad: {{kosarSzerviz.getKosarOsszar()==0?'üres':kosarSzerviz.getKosarOsszar() + ' Ft'}}</span>
             </a>

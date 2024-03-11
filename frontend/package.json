@@ -23,6 +23,7 @@
     "@angular/router": "^16.2.0",
     "@stripe/stripe-js": "^3.0.5",
     "file-saver": "^2.0.5",
+    "filesaver": "^0.0.13",
     "ionicons": "^7.2.2",
     "lodash": "^4.17.21",
     "ngx-cookie-service": "^16.0.0",

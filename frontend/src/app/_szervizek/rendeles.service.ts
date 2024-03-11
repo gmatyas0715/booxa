@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RendelesModell } from '../_modellek/rendeles-modell';
 import { KosarService } from './kosar.service';
-import { UserAzonositasService } from './user-azonositas.service';
+import { UserAzonositasService } from '../auth/user-azonositas.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

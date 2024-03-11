@@ -14,8 +14,7 @@ class SzerepSeeder extends Seeder
     public function run(): void
     {
         Szerep::create(['name' => 'admin','guard_name'=>'web']);
-        Szerep::create(['name' => 'szerkeszto','guard_name'=>'web']);
-        Szerep::create(['name' => 'user_support','guard_name'=>'web']);
+        Szerep::create(['name' => 'esemenyszerkeszto','guard_name'=>'web']);
         Szerep::create(['name' => 'regisztralt_user','guard_name'=>'web']);
     }
 }

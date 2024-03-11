@@ -70,7 +70,21 @@ class AuthController extends Controller
     {
         $user = $request->user();
         Log::info($user);
-        return response()->json($user->hasRole($request['role']));
+        $roles = $request['roles'];
+        foreach ($roles as $role) {
+            if ($user->hasRole($role)){
+                return response()->json(true);
+            }
+        }
+        return response()->json(false);
+    }
+
+    public function getSzerepNev(Request $request){
+        $user = $request->user();
+        $userSzerep = $user->getRoleNames()[0];
+        Log::info($userSzerep);
+        Log::info($userSzerep);
+        return response()->json(['szerep'=>$userSzerep]);
     }
 
     public function roles() {

@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;
+        $i = 0;
 
         foreach ($fileContents as $line) {
             if (!$headerSkipped) {
@@ -29,7 +30,7 @@ class UserSeeder extends Seeder
 
             $data = str_getcsv($line,';');
 
-            User::create([
+            $user = User::create([
                 'vezeteknev'=>$data[0],
                 'keresztnev'=>$data[1],
                 'email'=>$data[2],
@@ -37,7 +38,22 @@ class UserSeeder extends Seeder
                 'szuletesi_datum'=>$data[4],
                 'username'=>$data[5],
                 'password'=>Hash::make($data[6])
-            ])->assignRole(Arr::random($szerepek));
+            ]);
+            
+            switch (true) {
+                case ($i<2):
+                    $user->assignRole($szerepek[0]);
+                    break;
+                
+                case ($i>1 && $i<4):
+                    $user->assignRole($szerepek[1]);
+                    break;
+                
+                default:
+                    $user->assignRole($szerepek[2]);
+                    break;   
+            }
+            $i++;
         }
     }
 }
