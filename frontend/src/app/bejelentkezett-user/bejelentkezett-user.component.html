@@ -1,19 +1,20 @@
 <div id="bejelentkezett-user-container">
-    <div *ngIf="szerep=='admin'" class="mr-2">
-        <a id="admin-felulet-gomb" matTooltip="ADMIN felület" class="nav-link d-flex align-items-center bg-white" routerLink="/data/user">
-            <mat-icon class="menu-ikon">stars</mat-icon>
-            <span class="d-none d-lg-block">ADMIN felület</span>
-        </a>
-    </div>
-    <div *ngIf="szerep=='esemenyszerkeszto'" class="mr-2">
-        <a id="admin-felulet-gomb" matTooltip="ADMIN felület" class="nav-link d-flex align-items-center bg-white" routerLink="/data/esemeny">
-            <mat-icon class="menu-ikon">event</mat-icon>
-            <span class="d-none d-lg-block">Eseményszerkesztő</span>
-        </a>
+    <div  class="mr-2">
+        <button *ngIf="szerep=='admin' || szerep=='esemenyszerkeszto'" id="admin-felulet-gomb" (click)="navigacioEsemenyekhez()"  [disabled]="this.userAzonositas.toltes">
+            <mat-spinner *ngIf="this.userAzonositas.toltes" diameter="20"></mat-spinner>
+            <div *ngIf="szerep=='admin' && !this.userAzonositas.toltes" matTooltip="ADMIN felület"  class="d-flex">
+                <mat-icon class="menu-ikon mr-1">stars</mat-icon>
+                <span class="d-none d-lg-block pt-1">ADMIN felület</span>
+            </div>
+            <div *ngIf="szerep=='esemenyszerkeszto' && !this.userAzonositas.toltes" class="d-flex" matTooltip="Eseményszerkesztő felület">
+                <mat-icon class="menu-ikon mr-1">event</mat-icon>
+                <span class="d-none d-lg-block pt-1">Eseményszerkesztő</span>
+            </div>
+        </button>
     </div>
     <div class="d-none d-sm-block">
         <div id="profil-adat-container">
-            <span *ngIf="szerep=='admin'">ADMIN</span>
+            <span *ngIf="szerep=='admin'" class="text-danger">ADMIN</span>
             <div id="profilkep-container">
                 <mat-icon *ngIf="true" id="profilkep">person</mat-icon>
             </div>
@@ -23,10 +24,10 @@
         </div>
     </div>
     <div class="logout-panel-icon-container">
-        <a matTooltip="Profilbeállítások" routerLink="/profilAdatok">
+        <a matTooltip="Profilbeállítások" routerLink="/profil-adatok">
             <mat-icon class="logout-panel-icon">settings</mat-icon>
         </a>
-        <a matTooltip="Kijelentkezés" (click)="this.userAzonositas.logout()" routerLink="/kezdooldal">
+        <a matTooltip="Kijelentkezés" (click)="this.userAzonositas.logout()">
             <mat-icon class="logout-panel-icon">exit_to_app</mat-icon>
         </a>
     </div>

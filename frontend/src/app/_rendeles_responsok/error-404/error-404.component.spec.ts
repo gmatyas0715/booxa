@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SikertelenFizetesComponent } from './sikertelen-fizetes.component';
+import { Error404Component } from './error-404.component';
 
 describe('SikertelenRendelesComponent', () => {
-  let component: SikertelenFizetesComponent;
-  let fixture: ComponentFixture<SikertelenFizetesComponent>;
+  let component: Error404Component;
+  let fixture: ComponentFixture<Error404Component>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SikertelenFizetesComponent]
+      declarations: [Error404Component]
     });
-    fixture = TestBed.createComponent(SikertelenFizetesComponent);
+    fixture = TestBed.createComponent(Error404Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -19,4 +19,11 @@ export class BejelentkezettUserComponent {
       this.szerep = valasz.szerep
     })
   }
+
+  navigacioEsemenyekhez(){
+    if (!this.router.url.startsWith('/data/')){
+      this.router.navigate(['data/esemeny'])
+      this.userAzonositas.toltes = true
+    }
+  }
 }

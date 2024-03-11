@@ -32,7 +32,8 @@ export class EloadoDataComponent {
   constructor(private eloadoService:EloadoService,
               private mufajService: MufajService,
               private dialog:MatDialog,
-              public eloadoSzerviz:EloadoService) {
+              public eloadoSzerviz:EloadoService,
+              public userAzonositas:UserAzonositasService) {
     this.eloadoBetoltes();
     this.mufajBetoltes();
   }

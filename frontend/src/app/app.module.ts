@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// Alap
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// @Angular
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Saját komponensek
 import { FejlecComponent } from './fejlec/fejlec.component';
 import { LablecComponent } from './lablec/lablec.component';
 import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemeny-kereso.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
 import { BejelentkezettUserComponent } from './bejelentkezett-user/bejelentkezett-user.component';
@@ -20,11 +23,17 @@ import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek
 import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
+import { DataComponent } from './_adat-megjelenito/data/data.component';
 import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
 import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
 import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
+import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
+import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
+import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
+import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
+import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
 
-
+// Angular Material
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -46,16 +55,13 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSortModule } from '@angular/material/sort';
 
+// Ngx
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { MatSortModule } from '@angular/material/sort';
-import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
-import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
-import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
-import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
-import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
-import { DataComponent } from './data/data.component';
+
+
 
 @NgModule({
   declarations: [
@@ -79,7 +85,7 @@ import { DataComponent } from './data/data.component';
     HelyszinDataComponent,
     EsemenyDataComponent,
     SikeresFizetesComponent,
-    SikertelenFizetesComponent,
+    Error404Component,
     DataComponent
   ],
   imports: [

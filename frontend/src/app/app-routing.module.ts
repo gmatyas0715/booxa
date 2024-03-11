@@ -9,16 +9,16 @@ import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
-import { adminGuard, bejelentkezettUserGuard, esemenyszerkesztoGuard, esemenyszerkesztoVagyAdminGuard, vendegUserGuard } from './auth/auth.guard';
+import { adminGuard, bejelentkezettUserGuard, bejelentkezettUserGuard404, esemenyszerkesztoVagyAdminGuard, vendegUserGuard } from './auth/auth.guard';
 import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
 import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
 import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
-import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
+import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
-import { DataComponent } from './data/data.component';
+import { DataComponent } from './_adat-megjelenito/data/data.component';
 
 const generalRoutes: Routes = [
     {
@@ -27,7 +27,7 @@ const generalRoutes: Routes = [
     },
     {
       title:'Esemény részletek',
-      path:'esemenyReszletek/:id',
+      path:'esemeny-reszletek/:id',
       component:EsemenyReszletekComponent
     },
     {
@@ -44,6 +44,11 @@ const generalRoutes: Routes = [
       title:'Kosár összegző',
       path:'kosar-osszegzo',
       component:KosarOsszegzoComponent  
+    },
+    {
+      title:'Error 404',
+      path:'404',
+      component:Error404Component
     }
   ];
 
@@ -78,68 +83,61 @@ const bejelentkezettUserRoutes = [{
     },
     {
       title:'Jegyvásárlás előzmények',
-      path:'jegyVasarlas-elozmenyek',
+      path:'jegyvasarlas-elozmenyek',
       component:JegyVasarlasElozmenyekComponent
     },
     {
       title:'Sikeres fizetés',
       path:'rendeles/sikeres-fizetes',
       component:SikeresFizetesComponent
-    },
-    {
-      title:'Sikertelen fizetés',
-      path:'rendeles/sikertelen-fizetes',
-      component:SikertelenFizetesComponent
     }]
   }];
 
-  const adminEsemenyszerkesztoRoutes = [{
-      canActivate: [esemenyszerkesztoVagyAdminGuard],
-      title:'Helyszín adatok',
+  const adminEsemenyszerkesztoRoutes = [
+    {
+    canActivate: [bejelentkezettUserGuard404,esemenyszerkesztoVagyAdminGuard],
+      title:'Esemény adatok',
+      path:'data/esemeny',
+      component:EsemenyDataComponent
+    }
+  ]
+
+  const adminRoutes = [{
+      canActivate: [bejelentkezettUserGuard404,adminGuard],
+      title:'',
       path:'data',
       component:DataComponent,
       children: [
         {
-          canActivate: [adminGuard],
           title:'Műfaj adatok',
           path:'mufaj',
           component:MufajDataComponent
         },
         {          
-          canActivate: [adminGuard],
           title:'Előadó adatok',
           path:'eloado',
           component:EloadoDataComponent
         },
         {
-          canActivate: [adminGuard],
           title:'User adatok',
           path:'user',
           component:UserDataComponent
         },
         {
-          canActivate: [adminGuard],
           title:'Cím adatok',
           path:'cim',
           component:CimDataComponent
         },
         {
-          canActivate: [adminGuard],
           title:'Helyszín adatok',
           path:'helyszin',
           component:HelyszinDataComponent
-        },
-        {
-          canActivate: [esemenyszerkesztoVagyAdminGuard],
-          title:'Esemény adatok',
-          path:'esemeny',
-          component:EsemenyDataComponent
-        },
+        }
       ]},
     ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(generalRoutes),RouterModule.forChild(vendegUserRoutes),RouterModule.forChild(bejelentkezettUserRoutes),RouterModule.forChild(adminEsemenyszerkesztoRoutes)],
+  imports: [RouterModule.forRoot(generalRoutes),RouterModule.forChild(adminRoutes),RouterModule.forChild(vendegUserRoutes),RouterModule.forChild(bejelentkezettUserRoutes),RouterModule.forRoot(adminEsemenyszerkesztoRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

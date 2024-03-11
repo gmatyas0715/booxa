@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 
@@ -9,11 +10,12 @@ import { Observable } from 'rxjs';
 export class UserAzonositasService {
 
   private apiUrl = 'http://localhost:8000/api/';
+  public toltes = false
   private readonly USER_TOKEN_COOKIE:string = "userToken";
   private readonly USERNAME_COOKIE:string = "username";
   private readonly USER_ID_COOKIE:string = "userId";
 
-  constructor(private http:HttpClient,private cookieService:CookieService) {}
+  constructor(private http:HttpClient,private cookieService:CookieService,private router:Router) {}
 
   setAuthToken(token:string){
     this.cookieService.set(this.USER_TOKEN_COOKIE,token);
@@ -92,5 +94,6 @@ export class UserAzonositasService {
     this.deleteAuthToken();
     this.deleteUserId();
     this.deleteUsername();
+    this.router.navigate(['kezdooldal']);
   }
 }

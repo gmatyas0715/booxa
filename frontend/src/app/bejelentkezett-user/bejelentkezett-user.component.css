@@ -48,10 +48,15 @@
 }
 
 #admin-felulet-gomb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: linear-gradient(to bottom right, rgb(173, 168, 168), rgb(255, 255, 255),rgb(173, 168, 168));
     color: #2e2f70;
     box-shadow: 1px 1px 1px 1px  #2e2f70;
     text-decoration: none;
     font-weight: bold;
     border-radius: 10px;
+    height: 35px;
 }

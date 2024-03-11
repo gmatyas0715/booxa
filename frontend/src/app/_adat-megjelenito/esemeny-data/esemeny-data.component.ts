@@ -30,7 +30,8 @@ export class EsemenyDataComponent {
   userService: any;
 
   constructor(private dialog:MatDialog,
-              public esemenySzerviz:EsemenyService) {
+              public esemenySzerviz:EsemenyService,
+              public userAzonositas:UserAzonositasService) {
     this.adatBetoltes()
   }
   
@@ -81,6 +82,7 @@ export class EsemenyDataComponent {
           eloado_id: valasz.eloado_id,
         };
       });
+      this.userAzonositas.toltes = false
     });
   }
 

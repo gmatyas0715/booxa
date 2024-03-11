@@ -3,11 +3,11 @@
         <h2 class="">Bejelentkezés</h2>
         <mat-form-field>
             <mat-label>Felhasználónév:</mat-label>
-            <input matInput class="adat-input" [(ngModel)]="felhasznalonev" id="felhasznalonev" type="text">
+            <input matInput class="adat-input w-100" [(ngModel)]="felhasznalonev" id="felhasznalonev" type="text">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Jelszó:</mat-label>
-            <input matInput class="adat-input" [(ngModel)]="jelszo" id="jelszo" type="password">
+            <input matInput class="adat-input w-100" [(ngModel)]="jelszo" id="jelszo" type="password">
         </mat-form-field>
         <div class="error-container">
             <span *ngIf="errorMessage" class="error"><mat-icon class="mr-2">error_outline</mat-icon> Hibás felhasználónév vagy jelszó!</span>

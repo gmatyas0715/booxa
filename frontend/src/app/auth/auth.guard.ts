@@ -1,15 +1,9 @@
 import { inject } from "@angular/core";
 import { UserAzonositasService } from "./user-azonositas.service";
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from "@angular/router";
-import { CanActivateFn } from '@angular/router';
+import { Router } from "@angular/router";
 import { map } from 'rxjs/operators';
 
-export const authGuard: CanActivateFn = (
-  route: ActivatedRouteSnapshot, 
-  state: RouterStateSnapshot
-  ) => {
-  return true;
-};
+
 
 export const vendegUserGuard  = () => {
   const userAzonositasService = inject(UserAzonositasService)
@@ -33,6 +27,17 @@ export const bejelentkezettUserGuard  = () => {
   return router.parseUrl('/bejelentkezes');
 };
 
+export const bejelentkezettUserGuard404  = () => {
+  const userAzonositasService = inject(UserAzonositasService)
+  const router = inject(Router);
+
+  if (userAzonositasService.getAuthToken()){
+    return true
+  }
+
+  return router.parseUrl('/404');
+};
+
 export const adminGuard = () => {
   const userAzonositasService = inject(UserAzonositasService)
   const router = inject(Router);
@@ -40,7 +45,7 @@ export const adminGuard = () => {
   return userAzonositasService.authorizacioCheck(['admin']).pipe(
     map(authorizacio => {
       if (authorizacio) return true;
-      else  return router.parseUrl('/kezdooldal'); 
+      else  return router.parseUrl('/404'); 
     })
   )
 }
@@ -52,7 +57,7 @@ export const esemenyszerkesztoGuard = () => {
   return userAzonositasService.authorizacioCheck(['esemenyszerkeszto']).pipe(
     map(authorizacio => {
       if (authorizacio) return true;
-      else  return router.parseUrl('/kezdooldal'); 
+      else  return router.parseUrl('/404'); 
     })
   )
 }
@@ -64,7 +69,7 @@ export const esemenyszerkesztoVagyAdminGuard = () => {
   return userAzonositasService.authorizacioCheck(['esemenyszerkeszto','admin']).pipe(
     map(authorizacio => {
       if (authorizacio) return true;
-      else  return router.parseUrl('/kezdooldal'); 
+      else return router.parseUrl('/404'); 
     })
   )
 }

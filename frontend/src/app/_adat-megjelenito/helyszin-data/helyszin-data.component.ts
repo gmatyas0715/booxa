@@ -31,8 +31,8 @@ export class HelyszinDataComponent {
 
   constructor(private dialog:MatDialog,
               public helyszinSzerviz:HelyszinService,
-              public cimSzerviz:CimService) {
-
+              public cimSzerviz:CimService,
+              public userAzonositas:UserAzonositasService) {
     this.cimBetoltes();
   }
   
