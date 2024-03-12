@@ -71,7 +71,6 @@ export class EsemenyReszletekComponent{
                   this.helyszinNev = this.helyszin.nev;
                   this.eloadoNev = this.eloado.nev;
                   this.szektorSzerviz.szektorok(this.esemenyId).subscribe((valasz)=>{
-                    
                     this.helyszinSvgBetoltes(valasz);
                   });
                 });

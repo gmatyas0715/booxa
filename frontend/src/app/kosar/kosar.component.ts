@@ -4,11 +4,11 @@ import { HelyszinService } from '../_szervizek/helyszin.service';
 import { EloadoService } from '../_szervizek/eloado.service';
 
 @Component({
-  selector: 'app-kosar-osszegzo',
-  templateUrl: './kosar-osszegzo.component.html',
-  styleUrls: ['./kosar-osszegzo.component.css'],
+  selector: 'app-kosar',
+  templateUrl: './kosar.component.html',
+  styleUrls: ['./kosar.component.css'],
 })
-export class KosarOsszegzoComponent {
+export class KosarComponent {
 
   constructor(public kosarSzerviz:KosarService,
               public helyszinService:HelyszinService,

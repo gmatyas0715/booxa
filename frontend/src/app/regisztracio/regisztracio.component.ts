@@ -15,9 +15,12 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 export class RegisztracioComponent {
 
   public regisztraloUser:UserModell = new UserModell();
-  public jelenEv:number = new Date().getFullYear();
-  public maxEvDatum:string = this.jelenEv-18+"-01-01"
-  public minEvDatum:string = this.jelenEv-130+"-01-01"
+  public jelenDatum = new Date()
+  public jelenEv = this.jelenDatum.getFullYear()
+  public jelenHonap = this.jelenDatum.getMonth()
+  public jelenNap = this.jelenDatum.getDate()
+  public maxEvDatum:Date = new Date(this.jelenEv-18,this.jelenHonap,this.jelenNap)
+  public minEvDatum:Date = new Date(this.jelenEv-130,this.jelenHonap,this.jelenNap)
   public regisztraltFelhasznalonevek:any[] = [];
   public regisztraltEmailek:any[] = [];
   regisztracioForm: FormGroup;

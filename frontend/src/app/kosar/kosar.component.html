@@ -26,12 +26,7 @@
                                 </div>
                                 <div class="col col-sm-12 col-md-4 d-inline-block">
                                     <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar}} Ft</span>
-                                    <span class="d-block mb-2"><b>Jegy darabszám:</b></span>
-                                    <div class="">
-                                        <button mat-mini-fab color="primary" class="jegy-darab" (click)="kosarSzerviz.jegyDarabCsokkentes(i)"><h2>-</h2></button>
-                                        <span class="ml-2 mr-2 pt-2 font-weight-bold">{{kosarElem.jegyDarabszam}}</span>
-                                        <button mat-mini-fab color="primary" class="jegy-darab" (click)="kosarSzerviz.jegyDarabNoveles(i)"><h2>+</h2></button>
-                                    </div>
+                                    <span class="d-block mb-2"><b>Jegy darabszám: </b>{{kosarElem.jegyDarabszam}}</span>
                                 </div>
                             </div>
                         </div>

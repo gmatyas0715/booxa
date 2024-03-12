@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
-import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.component';
+import { KosarComponent as KosarComponent } from './kosar/kosar.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemeny-kereso.component';
 import { EsemenyReszletekComponent } from './esemeny-reszletek/esemeny-reszletek.component';
@@ -14,7 +14,6 @@ import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.co
 import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
 import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
-import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
@@ -36,20 +35,20 @@ const generalRoutes: Routes = [
       component:KezdooldalComponent  
     },
     {
-      title:'Esemény kereső',
+      title:'Eseménykereső',
       path:'esemeny-kereso',
       component:EsemenyKeresoComponent 
     },
     {
-      title:'Kosár összegző',
-      path:'kosar-osszegzo',
-      component:KosarOsszegzoComponent  
+      title:'Kosár',
+      path:'kosar',
+      component:KosarComponent  
     },
-    {
-      title:'Error 404',
-      path:'404',
-      component:Error404Component
-    }
+    //{
+      //title:'Error 404',
+      //path:'**',
+      //component:Error404Component
+    //}
   ];
 
 const vendegUserRoutes = [{

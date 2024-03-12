@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Saját komponensek
 import { FejlecComponent } from './fejlec/fejlec.component';
 import { LablecComponent } from './lablec/lablec.component';
-import { KosarOsszegzoComponent } from './kosar-osszegzo/kosar-osszegzo.component';
+import { KosarComponent } from './kosar/kosar.component';
 import { KezdooldalComponent } from './kezdooldal/kezdooldal.component';
 import { EsemenyKeresoComponent } from './esemeny-kereso/esemeny-kereso.component';
 import { RegisztracioComponent } from './regisztracio/regisztracio.component';
@@ -68,7 +68,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     AppComponent,
     FejlecComponent,
     LablecComponent,
-    KosarOsszegzoComponent,
+    KosarComponent,
     KezdooldalComponent,
     EsemenyKeresoComponent,
     RegisztracioComponent,
