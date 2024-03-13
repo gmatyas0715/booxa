@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Http\Controllers\JegyAdatController;
+use App\Http\Controllers\RendelesController;
 use App\Models\Esemeny;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -25,8 +25,8 @@ class RendelesElkuldese extends Mailable
     {
         $this->rendeles = $rendeles;
         $this->rendelesId = $rendeles->id;
-        $this->jegyekPdf = JegyAdatController::pdfJegyGeneralas($rendeles);
-        $this->szamlaPdf = JegyAdatController::pdfSzamlaGeneralas($rendeles);
+        $this->jegyekPdf = RendelesController::pdfJegyGeneralas($rendeles);
+        $this->szamlaPdf = RendelesController::pdfSzamlaGeneralas($rendeles);
     }
     /**
     *

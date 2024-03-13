@@ -20,10 +20,10 @@ import { MatPaginator } from '@angular/material/paginator';
 export class MufajDataComponent {
   displayedColumns: string[] = ['id','nev','leiras','modositas','torles']
   dataSource = new MatTableDataSource()
-  userService: any;
 
   constructor(private mufajService:MufajService,
-              private dialog:MatDialog) {
+              private dialog:MatDialog,
+              private userAzonositas:UserAzonositasService) {
     this.mufajBetoltes();
   }
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -40,7 +40,7 @@ export class MufajDataComponent {
   }
 
   mufajBetoltes(){
-    this.mufajService.osszesMufajLekerdezese().subscribe((valasz)=>{
+    this.mufajService.mufajOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz)=>{
         this.dataSource.data = valasz
         console.log(this.dataSource);
       }

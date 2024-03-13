@@ -44,7 +44,11 @@ export class EloadoService {
     return 'http://localhost:8000/eloado-kep/'+kepNev;
   }
 
-  eloadoOsszes():Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl+'eloadok')
+  eloadoOsszes(userToken:string):Observable<any[]>{   
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any[]>(this.apiUrl+'eloadok',{headers})
   }
 }

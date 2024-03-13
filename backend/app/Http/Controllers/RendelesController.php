@@ -16,7 +16,10 @@ use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Checkout\Session;
 use App\Mail\RendelesElkuldese;
+use App\Models\SzektorAlegyseg;
 use Illuminate\Support\Facades\Mail;
+use Barryvdh\DomPDF\Facade\PDF;
+
 
 class RendelesController extends Controller
 {
@@ -166,5 +169,67 @@ class RendelesController extends Controller
     {
         $rendeles->delete();
         return response()->json(['üzenet'=>$rendeles->id.' azonosítójú rendelés sikeresen törölve!']);
+    }
+    
+    public static function pdfJegyGeneralas(Rendeles $rendeles) {
+
+        $jegyAdatok = $rendeles->jegyAdat;
+        $jegyek = [];
+        $rendeles_id = $rendeles->id;
+
+        foreach ($jegyAdatok as $jegy) {
+            $esemeny = Esemeny::find($jegy->esemeny_id);
+            $cim = $esemeny->helyszin->cim->first();            
+
+            $jegyPrint = [
+                'idopont' => $esemeny->idopont,
+                'eloado' => $esemeny->eloado->nev,
+                'helyszin' => $esemeny->helyszin->nev,
+                'helyszin_cim' => $cim->iranyitoszam.', '.$cim->telepules.' '.$cim->kozterulet.' '.$cim->hazszam,
+                'szektor' => Szektor::find($jegy->szektor_id)->szektor_nev,
+                'sor' => SzektorAlegyseg::find($jegy->szektor_alegyseg_id)->sorjelzes,
+                'ulohely' => $jegy->ulohely,
+                'jegyar' => SzektorAlegysegAr::where('esemeny_id',$jegy->esemeny_id)->where('szektor_alegyseg_id',$jegy->szektor_alegyseg_id)->first()->szektor_alegyseg_ar
+            ];
+            $jegyek[] = $jegyPrint;
+        }
+
+        $pdf = PDF::loadView('jegy',['jegyek' => $jegyek,'rendeles_id' => $rendeles_id]);
+
+        return $pdf;
+    }
+
+    public static function pdfSzamlaGeneralas(Rendeles $rendeles) {
+
+        $jegyAdatok = $rendeles->jegyAdat;
+        $jegyek = [];
+        $cim = $rendeles->szamlazasi_cim;  
+        $teljesCim = $cim->iranyitoszam.', '.$cim->telepules.' '.$cim->kozterulet.' '.$cim->hazszam;
+
+        foreach ($jegyAdatok as $jegy) {
+            $esemeny = Esemeny::find($jegy->esemeny_id);
+
+            $jegyView = [
+                'idopont' => $esemeny->idopont,
+                'eloado' => $esemeny->eloado->nev,
+                'helyszin' => $esemeny->helyszin->nev,
+                'jegyar' => SzektorAlegysegAr::where('esemeny_id',$jegy->esemeny_id)->where('szektor_alegyseg_id',$jegy->szektor_alegyseg_id)->first()->szektor_alegyseg_ar
+            ];
+            $jegyek[] = $jegyView;
+        }
+
+        $pdf = PDF::loadView('szamla',['jegyek' => $jegyek,'rendeles' => $rendeles,'teljes_cim'=>$teljesCim]);
+
+        return $pdf;
+    }
+
+    public function pdfJegyLetoltes(Rendeles $rendeles) {
+        $pdf = $this->pdfJegyGeneralas($rendeles);
+        return $pdf->stream('jegy.pdf');
+    }
+
+    public function pdfSzamlaLetoltes(Rendeles $rendeles) {
+        $pdf = $this->pdfSzamlaGeneralas($rendeles);
+        return $pdf->stream('szamla.pdf');
     }
 }

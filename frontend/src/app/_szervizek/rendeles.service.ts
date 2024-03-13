@@ -23,7 +23,7 @@ export class RendelesService {
       'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
     }) 
 
-    return this.http.post('http://localhost:8000/api/rendelesElkuldes',body,{headers});
+    return this.http.post('http://localhost:8000/api/rendeles-elkuldes',body,{headers});
   }
 
   

@@ -52,7 +52,7 @@ export class EloadoDataComponent {
   }
 
   mufajBetoltes(){
-    this.mufajService.osszesMufajLekerdezese().subscribe((valasz)=>{
+    this.mufajService.mufajOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz)=>{
       let osszMufajMap = new Map<number,string>();
       valasz.forEach((mufaj)=>{
         osszMufajMap.set(mufaj.id,mufaj.nev);
@@ -62,7 +62,7 @@ export class EloadoDataComponent {
   }
 
   eloadoBetoltes() {
-    this.eloadoService.eloadoOsszes().subscribe((valasz) => {
+    this.eloadoService.eloadoOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz) => {
       this.dataSource.data = valasz.map((eloado: any) => {
         let mufajMap = new Map<number,string>()
         eloado.mufaj.forEach((mufaj: any) => {

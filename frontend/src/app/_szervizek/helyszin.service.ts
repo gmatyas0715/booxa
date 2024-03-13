@@ -35,24 +35,25 @@ export class HelyszinService {
     return this.http.post(this.apiUrl+'helyszinek',helyszinAdatok,{headers})
   }
 
-  helyszinModositas(eloadoId:string,userToken:string,helyszinAdatok: FormData):Observable<any>{
+  helyszinModositas(helyszinId:string,userToken:string,helyszinAdatok: FormData):Observable<any>{
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })
 
-    return this.http.post(this.apiUrl+'helyszinek/'+eloadoId,helyszinAdatok,{headers});
+    return this.http.post(this.apiUrl+'helyszinek/'+helyszinId,helyszinAdatok,{headers});
   }
   
-  helyszinTorles(eloadoId:number,userToken:string):Observable<any>{
-    
+  helyszinTorles(helyszinId:number,userToken:string):Observable<any>{
     const headers = new HttpHeaders({
-      'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
     })
-    return this.http.delete<any>(this.apiUrl+'helyszinek/'+eloadoId,{headers});
+    return this.http.delete<any>(this.apiUrl+'helyszinek/'+helyszinId,{headers});
   }
   
-  helyszinOsszes():Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl+'helyszinek')
+  helyszinOsszes(userToken:string):Observable<any[]>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any[]>(this.apiUrl+'helyszinek',{headers})
   }
 }

@@ -26,7 +26,7 @@ export class UserAzonositasService {
   }
 
   deleteAuthToken(){
-    this.cookieService.delete(this.USER_TOKEN_COOKIE,'http://localhost')
+    this.cookieService.delete(this.USER_TOKEN_COOKIE,'localhost')
   }
 
   setUsername(username:string){
@@ -38,7 +38,7 @@ export class UserAzonositasService {
   }
 
   deleteUsername(){
-    this.cookieService.delete(this.USERNAME_COOKIE,'http://localhost')
+    this.cookieService.delete(this.USERNAME_COOKIE,'localhost')
   }
 
   setUserId(userId:string){
@@ -50,7 +50,7 @@ export class UserAzonositasService {
   }
 
   deleteUserId(){
-    this.cookieService.delete(this.USER_ID_COOKIE,'http://localhost');
+    this.cookieService.delete(this.USER_ID_COOKIE,'localhost');
   }
 
   
@@ -81,17 +81,21 @@ export class UserAzonositasService {
   login(userBejelentkezesAdatok: { felhasznalonev: string; jelszo: string }): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      // Add any other headers as needed
     });
 
-    // Create the HTTP request with the data in the body
     const body = JSON.stringify(userBejelentkezesAdatok);
 
     return this.http.post<any>(this.apiUrl+'login', body,{ headers });
   }
 
   logout(){
-    this.deleteAuthToken()
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.getAuthToken()}`
+    })
+
+    this.cookieService.deleteAll()
     this.router.navigate(['kezdooldal']);
+
+    return this.http.post(this.apiUrl+'logout',{},{headers})
   }
 }

@@ -84,7 +84,6 @@ export class UserService {
 
   profilTorles(userId:string,userToken:string):Observable<any>{
     const headers = new HttpHeaders({
-      'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
     })
     return this.http.delete<any>(this.apiUrl+'userek/'+userId,{headers});

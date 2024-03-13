@@ -20,22 +20,6 @@ import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-d
 import { DataComponent } from './_adat-megjelenito/data/data.component';
 import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
 
-const vendegUserRoutes = [{
-  canActivate: [vendegUserGuard],
-  path:'',
-  children: [
-    {
-      title:'Bejelentkezés',
-      path:'bejelentkezes',
-      component:BejelentkezesUserComponent  
-    },
-    {
-      title:'Regisztráció',
-      path:'regisztracio',
-      component:RegisztracioComponent  
-    },
-  ]
-}];
 
 const generalRoutes: Routes = [
   {
@@ -68,6 +52,27 @@ const generalRoutes: Routes = [
     component:Error404Component
   }
 ];
+
+const vendegUserRoutes = [{
+  canActivate: [vendegUserGuard],
+  path:'',
+  children: [
+    {
+      title:'Bejelentkezés',
+      path:'bejelentkezes',
+      component:BejelentkezesUserComponent  
+    },
+    {
+      title:'Regisztráció',
+      path:'regisztracio',
+      component:RegisztracioComponent  
+    },  
+    {
+      path:'',
+      component:KezdooldalComponent
+    }
+  ]
+}];
 
 const bejelentkezettUserRoutes = [{
   canActivate: [bejelentkezettUserGuard],

@@ -50,7 +50,7 @@ export class HelyszinDataComponent {
   }
 
   cimBetoltes(){
-    this.cimSzerviz.cimOsszes().subscribe((valasz)=>{
+    this.cimSzerviz.cimOsszes(this.userService.getAuthToken()).subscribe((valasz)=>{
       let osszCimMap = new Map<number,string>();
       valasz.forEach((cim)=>{
         osszCimMap.set(cim.id,cim.iranyitoszam+', '+cim.telepules+' '+cim.kozterulet+', '+cim.hazszam);
@@ -61,7 +61,7 @@ export class HelyszinDataComponent {
   }
 
   helyszinBetoltes() {
-    this.helyszinSzerviz.helyszinOsszes().subscribe((valasz) => {
+    this.helyszinSzerviz.helyszinOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz) => {
       this.dataSource.data = valasz.map((valasz: any) => {
 
         return {

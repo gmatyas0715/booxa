@@ -73,7 +73,7 @@ export class KosarService {
 
     let hely = 1;
     while(this.jegyAdatLista[index].ulohely.length!=this.jegyAdatLista[index].jegyDarabszam){
-      if (!this.jegyAdatLista[index].ulohely.includes(hely)){ // idejönne majd a check hogy melyik hely nincs foglalva if (hely!="foglalt")
+      if (!this.jegyAdatLista[index].ulohely.includes(hely)){
         this.jegyAdatLista[index].ulohely.push(hely);
       }
       hely++;

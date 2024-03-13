@@ -25,7 +25,8 @@ export class CimDataComponent {
   dataSource = new MatTableDataSource()
 
   constructor(private cimService:CimService,
-              private dialog:MatDialog) {
+              private dialog:MatDialog,
+              private userService:UserAzonositasService) {
     this.cimBetoltes();
   }
 
@@ -44,7 +45,7 @@ export class CimDataComponent {
   }
 
   cimBetoltes(){
-    this.cimService.cimOsszes().subscribe((valasz)=>{
+    this.cimService.cimOsszes(this.userService.getAuthToken()).subscribe((valasz)=>{
       this.dataSource.data = valasz 
     })
   }

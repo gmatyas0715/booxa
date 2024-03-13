@@ -44,7 +44,7 @@ export class EsemenyService {
 
     console.log(params)
 
-      return this.http.get<any[]>(this.apiUrl+'esemenyKereso',{params})
+      return this.http.get<any[]>(this.apiUrl+'esemeny-kereso',{params})
   }
 
   esemenyAdatok(esemenyId:string):Observable<EsemenyModell>{
@@ -85,11 +85,17 @@ export class EsemenyService {
     return this.http.delete<any>(this.apiUrl+'esemenyek/'+esemenyId,{headers});
   }
 
-  esemenyOsszes():Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl+'esemenyek')
+  esemenyOsszes(userToken:string):Observable<any[]>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any[]>(this.apiUrl+'esemenyek',{headers})
   }
 
-  helyszinEloadoNevId():Observable<any>{
-    return this.http.get<any>(this.apiUrl+'helyszin-eloado-nev-id')
+  helyszinEloadoNevId(userToken:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any>(this.apiUrl+'helyszin-eloado-nev-id',{headers})
   }
 }

@@ -39,8 +39,11 @@ export class CimService {
     return this.http.delete<any>(this.apiUrl+'/cimek/'+cimId,{headers});
   }
 
-  cimOsszes():Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl+'/cimek');
+  cimOsszes(userToken:string):Observable<any[]> {  
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any[]>(this.apiUrl+'/cimek',{headers});
   } 
 
   helyszinCimekLekerdezese():Observable<any[]>{

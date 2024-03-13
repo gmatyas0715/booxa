@@ -10,7 +10,6 @@ use App\Models\Cim;
 use App\Models\Helyszin;
 use App\Models\Mufaj;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
 class EsemenyController extends Controller

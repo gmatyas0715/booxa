@@ -49,7 +49,7 @@ export class EsemenyDataComponent {
   }
 
   adatBetoltes(){
-    this.esemenySzerviz.helyszinEloadoNevId().subscribe({
+    this.esemenySzerviz.helyszinEloadoNevId(this.userAzonositas.getAuthToken()).subscribe({
       next:(valasz)=>{
         
         valasz.eloadok.forEach((eloado:any)=>{
@@ -69,7 +69,7 @@ export class EsemenyDataComponent {
   }
 
   esemenyBetoltes() {
-    this.esemenySzerviz.esemenyOsszes().subscribe((valasz) => {
+    this.esemenySzerviz.esemenyOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz) => {
       this.dataSource.data = valasz.map((valasz: any) => {
 
         return {

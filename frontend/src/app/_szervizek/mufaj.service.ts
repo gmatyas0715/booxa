@@ -16,8 +16,11 @@ export class MufajService {
     return this.http.get<string[]>(this.apiUrl+'/mufaj-nevek')
   }
 
-  osszesMufajLekerdezese():Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl+'/mufajok')
+  mufajOsszes(userToken:string):Observable<any[]>{
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${userToken}`
+    })
+    return this.http.get<any[]>(this.apiUrl+'/mufajok',{headers})
   }
 
   mufajLetrehozas(userToken:string,mufajAdatok: any):Observable<any>{
@@ -32,11 +35,6 @@ export class MufajService {
   }
 
   mufajModositas(mufajId:string,userToken:string,mufajAdatok: any):Observable<any>{
-
-    console.log(mufajId);
-    console.log(userToken);
-    console.log(mufajAdatok);
-    
     const headers = new HttpHeaders({
       'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
@@ -48,7 +46,6 @@ export class MufajService {
 
   mufajTorles(mufajId:string,userToken:string):Observable<any>{
     const headers = new HttpHeaders({
-      'Content-Type':'application/json',
       'Authorization':`Bearer ${userToken}`
     })
     return this.http.delete<any>(this.apiUrl+'/mufajok/'+mufajId,{headers});

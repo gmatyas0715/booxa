@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserAzonositasService } from '../auth/user-azonositas.service';
 import { UserService } from '../_szervizek/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-bejelentkezett-user',
@@ -14,7 +15,8 @@ export class BejelentkezettUserComponent {
 
   constructor(public userAzonositas:UserAzonositasService,
               public userService:UserService,
-              public router:Router) {
+              public router:Router,
+              private _snackbar:MatSnackBar) {
     this.userAzonositas.getSzerep().subscribe((valasz)=>{
       this.szerep = valasz.szerep
     })
@@ -25,5 +27,11 @@ export class BejelentkezettUserComponent {
       this.router.navigate([szerep=='admin'?'data/user':'data/esemeny'])
       this.userAzonositas.toltes = true
     }
+  }
+
+  logout(){
+    this.userAzonositas.logout().subscribe((valasz:any)=>{
+      this._snackbar.open(valasz.msg,'',{duration:1500})
+    })  
   }
 }
