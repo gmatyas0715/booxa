@@ -20,9 +20,9 @@ export class BejelentkezettUserComponent {
     })
   }
 
-  navigacioEsemenyekhez(){
+  navigacio(szerep:string){
     if (!this.router.url.startsWith('/data/')){
-      this.router.navigate(['data/esemeny'])
+      this.router.navigate([szerep=='admin'?'data/user':'data/esemeny'])
       this.userAzonositas.toltes = true
     }
   }

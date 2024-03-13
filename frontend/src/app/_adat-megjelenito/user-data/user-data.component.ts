@@ -32,6 +32,7 @@ export class UserDataComponent {
               private userAzonositasService:UserAzonositasService) {
     this.userBetoltes();
     this.szerepOsszes();
+    this.userAzonositasService.toltes = false
   }
   
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -159,11 +160,11 @@ export class UserLetrehozas {
   email = ""
   nem = ""
   username = ""
-  szuletesi_datum = new Date()
   szerep = ""
   jelenEv:number = new Date().getFullYear();
   maxEvDatum:string = this.jelenEv-18+"-01-01"
   minEvDatum:string = this.jelenEv-130+"-01-01"
+  szuletesi_datum = new Date(this.minEvDatum)
 
   constructor(public dialogRef: MatDialogRef<UserModositas>,
               public userService: UserService,

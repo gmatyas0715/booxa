@@ -26,7 +26,7 @@ export class UserAzonositasService {
   }
 
   deleteAuthToken(){
-    this.cookieService.delete(this.USER_TOKEN_COOKIE)
+    this.cookieService.delete(this.USER_TOKEN_COOKIE,'http://localhost')
   }
 
   setUsername(username:string){
@@ -38,7 +38,7 @@ export class UserAzonositasService {
   }
 
   deleteUsername(){
-    this.cookieService.delete(this.USERNAME_COOKIE)
+    this.cookieService.delete(this.USERNAME_COOKIE,'http://localhost')
   }
 
   setUserId(userId:string){
@@ -50,7 +50,7 @@ export class UserAzonositasService {
   }
 
   deleteUserId(){
-    this.cookieService.delete(this.USER_ID_COOKIE);
+    this.cookieService.delete(this.USER_ID_COOKIE,'http://localhost');
   }
 
   
@@ -91,9 +91,7 @@ export class UserAzonositasService {
   }
 
   logout(){
-    this.deleteAuthToken();
-    this.deleteUserId();
-    this.deleteUsername();
+    this.deleteAuthToken()
     this.router.navigate(['kezdooldal']);
   }
 }

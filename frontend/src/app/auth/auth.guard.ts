@@ -2,6 +2,7 @@ import { inject } from "@angular/core";
 import { UserAzonositasService } from "./user-azonositas.service";
 import { Router } from "@angular/router";
 import { map } from 'rxjs/operators';
+import { KosarService } from "../_szervizek/kosar.service";
 
 
 
@@ -48,6 +49,13 @@ export const adminGuard = () => {
       else  return router.parseUrl('/404'); 
     })
   )
+}
+
+export const kosarCheck = () => {
+  const kosarService = inject(KosarService)
+  const router = inject(Router);
+
+  return kosarService.jegyAdatLista.length != 0 ? true : router.parseUrl('/404');
 }
 
 export const esemenyszerkesztoGuard = () => {

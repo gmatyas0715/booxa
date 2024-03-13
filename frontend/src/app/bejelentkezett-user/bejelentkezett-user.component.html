@@ -1,6 +1,6 @@
 <div id="bejelentkezett-user-container">
     <div  class="mr-2">
-        <button *ngIf="szerep=='admin' || szerep=='esemenyszerkeszto'" id="admin-felulet-gomb" (click)="navigacioEsemenyekhez()"  [disabled]="this.userAzonositas.toltes">
+        <button *ngIf="szerep=='admin' || szerep=='esemenyszerkeszto'" id="admin-felulet-gomb" (click)="navigacio(szerep)"  [disabled]="this.userAzonositas.toltes">
             <mat-spinner *ngIf="this.userAzonositas.toltes" diameter="20"></mat-spinner>
             <div *ngIf="szerep=='admin' && !this.userAzonositas.toltes" matTooltip="ADMIN felület"  class="d-flex">
                 <mat-icon class="menu-ikon mr-1">stars</mat-icon>

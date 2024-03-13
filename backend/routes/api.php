@@ -107,7 +107,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
         
     // ADMIN & ESEMÉNY-SZERKESZTŐ JOGOSULTSÁG ROUTE-OK
-    Route::group(['middleware'=>['auth:sanctum','role:admin|szerkeszto']],function(){
+    Route::group(['middleware'=>['auth:sanctum','role:admin|esemenyszerkeszto']],function(){
 
         // Előadó route-ok
 
@@ -147,7 +147,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/user-felhasznalonevek','UserController@userFelhasznalonevek');
     
     // ADMIN & USER-SUPPORT & REGISZTRÁLT USER ROUTE-OK JOGOSULTSÁG ROUTE-OK
-    Route::group(['middleware'=>['auth:sanctum','role:admin|user_support|regisztralt_user|szerkeszto']],function(){
+    Route::group(['middleware'=>['auth:sanctum','role:admin|regisztralt_user|esemenyszerkeszto']],function(){
 
         // User route-ok
         Route::patch('/userek/{user}', 'UserController@update');

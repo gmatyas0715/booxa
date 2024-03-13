@@ -8,7 +8,7 @@ import { UserAzonositasService } from 'src/app/auth/user-azonositas.service';
 })
 export class DataComponent {
 
-  public routerLinkMap:Map<[string,string],boolean> = new Map<[string,string],boolean>([[["/data/esemeny","Események"],true]])
+  public routerLinkMap:Map<[string,string],boolean> = new Map<[string,string],boolean>()
   public szerep: string = ""
 
   constructor(private userAzonositas:UserAzonositasService) {
@@ -20,11 +20,15 @@ export class DataComponent {
 
   routerLinkMapFeltoltes(){
     if (this.szerep=='admin'){
+      this.routerLinkMap.set(["/data/esemeny","Események"],false)
       this.routerLinkMap.set(["/data/mufaj","Műfajok"],false)
       this.routerLinkMap.set(["/data/eloado","Előadók"],false)
       this.routerLinkMap.set(["/data/cim","Címek"],false)
       this.routerLinkMap.set(["/data/helyszin","Helyszínek"],false)
-      this.routerLinkMap.set(["/data/user","Userek"],false)
+      this.routerLinkMap.set(["/data/user","Userek"],true)
+    }
+    else{
+      this.routerLinkMap.set(["/data/esemeny","Események"],true)
     }
   }
 }
