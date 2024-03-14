@@ -58,6 +58,9 @@ export class RendelesService {
   }
 
   sessionData(sessionId:string):Observable<any>{
-    return this.http.get('http://localhost:8000/api/session-data?sessionId='+sessionId);
+    const headers = new HttpHeaders({
+      'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
+    }) 
+    return this.http.get('http://localhost:8000/api/session-data?sessionId='+sessionId,{headers});
   }
 }

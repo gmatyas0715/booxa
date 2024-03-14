@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
 
-class RendelesElkuldese extends Mailable
+class SikeresRendeles extends Mailable
 {
     use Queueable, SerializesModels;
 
