@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserAzonositasService } from '../auth/user-azonositas.service';
+import { UserAzonositasService } from '../_auth/user-azonositas.service';
 import { UserService } from '../_szervizek/user.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';

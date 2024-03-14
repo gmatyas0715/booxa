@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserAzonositasService } from 'src/app/auth/user-azonositas.service';
+import { UserAzonositasService } from 'src/app/_auth/user-azonositas.service';
 
 @Component({
   selector: 'app-data',

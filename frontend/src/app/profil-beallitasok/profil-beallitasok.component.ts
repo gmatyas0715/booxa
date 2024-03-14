@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../_szervizek/user.service';
-import { UserAzonositasService } from '../auth/user-azonositas.service';
+import { UserAzonositasService } from '../_auth/user-azonositas.service';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { CookieService } from 'ngx-cookie-service';

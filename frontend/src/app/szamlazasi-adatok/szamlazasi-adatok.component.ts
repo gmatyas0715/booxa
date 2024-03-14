@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { KosarService } from '../_szervizek/kosar.service';
 import { RendelesService } from '../_szervizek/rendeles.service';
-import { UserAzonositasService } from '../auth/user-azonositas.service';
+import { UserAzonositasService } from '../_auth/user-azonositas.service';
 import { Router } from '@angular/router';
 
 @Component({

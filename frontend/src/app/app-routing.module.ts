@@ -9,7 +9,7 @@ import { SzamlazasiAdatokComponent } from './szamlazasi-adatok/szamlazasi-adatok
 import { BejelentkezesUserComponent } from './bejelentkezes-user/bejelentkezes-user.component';
 import { ProfilBeallitasokComponent } from './profil-beallitasok/profil-beallitasok.component';
 import { JegyVasarlasElozmenyekComponent } from './jegy-vasarlas-elozmenyek/jegy-vasarlas-elozmenyek.component';
-import { adminGuard, bejelentkezettUserGuard, bejelentkezettUserGuard404, esemenyszerkesztoVagyAdminGuard, vendegUserGuard, kosarCheck } from './auth/auth.guard';
+import { adminGuard, bejelentkezettUserGuard, bejelentkezettUserGuard404, esemenyszerkesztoVagyAdminGuard, vendegUserGuard, kosarCheck } from './_auth/auth.guard';
 import { MufajDataComponent } from './_adat-megjelenito/mufaj-data/mufaj-data.component';
 import { EloadoDataComponent } from './_adat-megjelenito/eloado-data/eloado-data.component';
 import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.component';

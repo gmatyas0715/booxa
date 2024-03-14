@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { UserService } from '../_szervizek/user.service';
 import { KosarService } from '../_szervizek/kosar.service';
-import { UserAzonositasService } from '../auth/user-azonositas.service';
+import { UserAzonositasService } from '../_auth/user-azonositas.service';
 
 @Component({
   selector: 'app-fejlec',
