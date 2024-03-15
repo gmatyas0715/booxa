@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Schema;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Checkout\Session;
-use App\Mail\RendelesElkuldese;
+use App\Mail\SikeresRendeles;
 use App\Models\SzektorAlegyseg;
 use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\Facade\PDF;
@@ -135,7 +135,7 @@ class RendelesController extends Controller
             }
 
 
-            Mail::to($rendeles->email)->send(new RendelesElkuldese($rendeles));
+            Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
             $rendeles->status='fizetett';
             $rendeles->fizetes_idopont = now();
             $rendeles->save();
