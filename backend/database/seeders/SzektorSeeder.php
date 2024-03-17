@@ -12,7 +12,7 @@ class SzektorSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../db/sql scriptek/szektor.csv');
+        $csvFilePath = storage_path('../../db/csv_fajlok/szektor.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;

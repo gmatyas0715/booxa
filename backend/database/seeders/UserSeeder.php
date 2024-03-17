@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $szerepek = Szerep::pluck('name')->toArray();
-        $csvFilePath = storage_path('../../db/sql scriptek/user.csv');
+        $csvFilePath = storage_path('../../db/csv_fajlok/user.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;

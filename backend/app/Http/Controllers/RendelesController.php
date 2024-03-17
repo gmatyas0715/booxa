@@ -126,7 +126,7 @@ class RendelesController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
         $sessionId = $request->query('sessionId');
 
-        try {
+        //try {
             $stripeSession = Session::retrieve($sessionId); 
             $rendeles = Rendeles::where('session_id', $sessionId)->first();
 
@@ -144,9 +144,9 @@ class RendelesController extends Controller
 
             return response()->json(['user' => $customer,'rendeles_id'=>$rendeles->id]);
 
-       } catch (Exception $e) {
-           return response()->json(['error'=> 'not_found']);
-       }
+       //} catch (Exception $e) {
+       //    return response()->json(['error'=> 'not_found']);
+       //}
     }
 
     public function show(Rendeles $rendeles)

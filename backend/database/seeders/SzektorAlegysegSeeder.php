@@ -12,7 +12,7 @@ class SzektorAlegysegSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFilePath = storage_path('../../db/sql scriptek/szektor_alegyseg.csv');
+        $csvFilePath = storage_path('../../db/csv_fajlok/szektor_alegyseg.csv');
         $fileContents = file($csvFilePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         $headerSkipped = false;
