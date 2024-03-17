@@ -12,14 +12,14 @@
             </div>
         </button>
     </div>
-    <div class="d-none d-sm-block">
+    <div>
         <div id="profil-adat-container">
             <span *ngIf="szerep=='admin'" class="text-danger">ADMIN</span>
             <div id="profilkep-container">
-                <mat-icon *ngIf="true" id="profilkep">person</mat-icon>
+                <mat-icon id="profilkep">person</mat-icon>
             </div>
             <div>
-                <span *ngIf="true">{{userAzonositas.getUsername()}}</span>
+                <span>{{userAzonositas.getUsername()}}</span>
             </div>
         </div>
     </div>
