@@ -30,7 +30,7 @@ import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.compo
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
-import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
+import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-fizetes/sikeres-fizetes.component';
 import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
 
 // Angular Material

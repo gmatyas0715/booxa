@@ -27,11 +27,11 @@ class UserController extends Controller
         return response()->json($userInfo);
     }
 
-    public function userFelhasznalonevek(){
+    public function userEmailekFelhasznalonevek(){
         $felhasznalonevek = User::select('username','email')->get();
 
         foreach ($felhasznalonevek as $item) {
-            $organizedResult['username'][] = $item->username;
+            $organizedResult['felhasznalonev'][] = $item->username;
             $organizedResult['email'][] = $item->email;
         }
 

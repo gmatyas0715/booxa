@@ -59,10 +59,10 @@
                 </thead>
                 <tbody>
                     <tr (mouseover)="hoverEvent(szektor_alegyseg.szektor_id)" (mouseleave)="mouseLeaveEvent(szektor_alegyseg.szektor_id)" *ngFor="let szektor_alegyseg of kivalasztottSzektorAlegysegek">
-                        <td class="border col-1" style="cursor: pointer;" [style.background-color]="szektor_alegyseg.szin"></td>
-                        <td class="border" style="cursor: pointer;">{{szektor_alegyseg.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
-                        <td class="border">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                        <td class="border m-auto kivalasztas-gomb text-center"><button mat-raised-button (click)="jegyKivalasztas(szektor_alegyseg)">Kiválaszt</button></td>
+                        <td class="border col-1 p-2" style="cursor: pointer;" [style.background-color]="szektor_alegyseg.szin"></td>
+                        <td class="border p-2" style="cursor: pointer;">{{szektor_alegyseg.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
+                        <td class="border p-2">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
+                        <td class="border m-auto kivalasztas-gomb text-center p-2"><button mat-raised-button (click)="jegyKivalasztas(szektor_alegyseg)">Kiválaszt</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -81,7 +81,7 @@
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabár:</th>
-                    <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar}}</td>
+                    <td>{{kivalasztottSzektorAlegyseg.szektor_alegyseg_jegyar}} Ft</td>
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabszám:</th>
@@ -108,7 +108,7 @@
     </div>
     <div class="row mb-4 d-flex justify-content-center">
         <button mat-raised-button class="d-inline ml-2 mr-auto" routerLink="/esemeny-kereso"><mat-icon>keyboard_arrow_left</mat-icon>Események</button>
-        <button mat-raised-button class="d-inline mr-2 ml-auto" routerLink="/kosar">Kosár<mat-icon class="ml-2" iconPositionEnd>keyboard_arrow_right</mat-icon></button>
+        <button mat-raised-button color="primary" class="d-inline mr-2 ml-auto" routerLink="/kosar">Kosár<mat-icon class="ml-2" iconPositionEnd>keyboard_arrow_right</mat-icon></button>
     </div>
 </div>
 

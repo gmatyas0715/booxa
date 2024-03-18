@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Error;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
@@ -146,12 +147,11 @@ class AuthController extends Controller
             ], 200);
         }
         else{
-
+            return new Error('Sikertelen bejelentkezés');
         }
     }
 
     public function logout(Request $request) {
         $request->user()->currentAccessToken()->delete();
-        return response()->json(['msg' => 'Sikeresen kijelentkeztél!']);
     }
 }

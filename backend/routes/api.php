@@ -33,7 +33,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/kivalasztott-szektorok/{esemeny}','SzektorController@kivalasztottSzektorok');
 
     // User
-    Route::get('/user-felhasznalonevek','UserController@userFelhasznalonevek');
+    Route::get('/user-emailek-felhasznalonevek','UserController@userEmailekFelhasznalonevek');
 
     // BEJELENTKEZETT USER ROUTE-OK
     

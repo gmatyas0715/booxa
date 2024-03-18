@@ -66,7 +66,7 @@ export class UserService {
   }
 
   userFelhasznalonevek(){
-    return this.http.get<any>(this.apiUrl+'user-felhasznalonevek')
+    return this.http.get<any>(this.apiUrl+'user-emailek-felhasznalonevek')
   }
 
   profilSzerkesztes(userId:string,userToken:string,userAdatok: any,formTipusString:string):Observable<any>{

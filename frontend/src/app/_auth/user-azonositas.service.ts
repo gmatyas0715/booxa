@@ -93,9 +93,8 @@ export class UserAzonositasService {
       'Authorization':`Bearer ${this.getAuthToken()}`
     })
 
-    this.cookieService.deleteAll()
+    this.cookieService.deleteAll('/','localhost')
     this.router.navigate(['kezdooldal']);
-
-    return this.http.post(this.apiUrl+'logout',{},{headers})
+    this.http.post(this.apiUrl+'logout',{},{headers})
   }
 }

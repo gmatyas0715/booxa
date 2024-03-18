@@ -60,14 +60,14 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <mat-form-field class="ccol-xs-12 col-lg-6 col-xl-5">
+                <mat-form-field class="col-xs-12 col-lg-6 col-xl-5">
                     <mat-label matTooltip="Kötelező megadni!" matTooltipPosition="above">Felhasználónév:</mat-label>
                     <input matInput class="felhasznalo-input" id="felhasznalonev" type="text" formControlName="felhasznalonev" placeholder="Felhasználónév">
                 </mat-form-field>
             </div>
             <div class="row error-container">
                 <div class="col">
-                    <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('required') && regisztracioForm.get('felhasznalonev')?.touched" class="hibauzenet">Az felhasználónév mező nem maradhat üresen!</span>
+                    <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('required') && regisztracioForm.get('felhasznalonev')?.touched" class="hibauzenet">A felhasználónév mező nem maradhat üresen!</span>
                     <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('minlength')" class="hibauzenet">A megadott felhasználónév nem elég hosszú!</span>
                     <span *ngIf="regisztracioForm.get('felhasznalonev')?.hasError('foglaltFelhasznalonev')" class="hibauzenet">Az felhasználónév foglalt!</span>
                 </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <button class="reg-button" [disabled]="validFormEllenorzes() || toltes" mat-raised-button type="submit"><span *ngIf="!toltes">Regisztrálok</span><mat-spinner *ngIf="toltes" diameter="20" mode="indeterminate"></mat-spinner></button>
+                    <button class="reg-button" [disabled]="validFormEllenorzes() || toltes" mat-raised-button color="primary" type="submit"><span *ngIf="!toltes">Regisztrálok</span><mat-spinner *ngIf="toltes" diameter="20" mode="indeterminate"></mat-spinner></button>
                 </div>
             </div>
         </form>

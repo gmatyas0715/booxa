@@ -1,6 +1,7 @@
 .container{
     max-width: 45%;
     min-width: 280px;
+    color: #2e2f70;
 }
 
 .profil-adat-container{
@@ -21,6 +22,7 @@
 
 .cim{
     margin-top: 20px;
+    text-align: center;
 }
 
 .profil-adat-blokk{

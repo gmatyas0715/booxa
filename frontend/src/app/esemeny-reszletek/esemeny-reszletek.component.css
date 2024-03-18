@@ -3,6 +3,7 @@
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     color: #2e2f70;
     width: 90%;
+    background-color: white;
 }
 
 .esemeny-fo-reszletek-cim{
@@ -19,6 +20,7 @@
     box-shadow: 1px 1px 4px 1px #c8c8d6;
     border-radius: 10px;
     margin: 10px 10px 20px 10px;
+    background-color: white;
 }
 
 .tbody{
@@ -38,6 +40,7 @@
     border-radius: 10px;
     margin: 10px;
     position: relative;
+    background-color: white;
 }
 
 thead{

@@ -30,8 +30,7 @@ export class BejelentkezettUserComponent {
   }
 
   logout(){
-    this.userAzonositas.logout().subscribe((valasz:any)=>{
-      this._snackbar.open(valasz.msg,'',{duration:1500})
-    })  
+    this._snackbar.open('Sikeresen kijelentkeztél!','',{duration:1500})
+    this.userAzonositas.logout()
   }
 }
