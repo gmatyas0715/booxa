@@ -1,0 +1,16 @@
+.container{
+    width: 350px;
+    box-shadow: 1px 1px 1px 1px grey;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(246, 223, 92));
+    border-radius: 10px;
+    color: #2e2f70;
+}
+
+.cim{
+    font-size: 20px;
+}
+
+.fantasy{
+    font-family: fantasy;
+    letter-spacing: 1px;
+}

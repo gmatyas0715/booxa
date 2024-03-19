@@ -158,7 +158,7 @@ export class ProfilBeallitasokComponent {
     this.userService.userFelhasznalonevek().subscribe((valasz)=>{
       console.log(valasz);
       
-      this.regisztraltFelhasznalonevek = valasz.username;
+      this.regisztraltFelhasznalonevek = valasz.felhasznalonev;
       this.regisztraltEmailek = valasz.email;
       this.belepesAdatForm.get('felhasznalonev')
       ?.addValidators(this.felhasznalonevFoglaltValidator.bind(this));

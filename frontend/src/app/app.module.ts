@@ -60,6 +60,7 @@ import { MatSortModule } from '@angular/material/sort';
 // Ngx
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 
 
 
@@ -86,7 +87,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     EsemenyDataComponent,
     SikeresFizetesComponent,
     Error404Component,
-    DataComponent
+    DataComponent,
+    KapcsolatComponent
   ],
   imports: [
     BrowserModule,

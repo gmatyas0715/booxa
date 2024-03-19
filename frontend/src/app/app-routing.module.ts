@@ -19,6 +19,7 @@ import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszi
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
 import { DataComponent } from './_adat-megjelenito/data/data.component';
 import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
+import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 
 
 const generalRoutes: Routes = [
@@ -45,6 +46,11 @@ const generalRoutes: Routes = [
     title:'Kosár',
     path:'kosar',
     component:KosarComponent  
+  },
+  {
+    title:'Kapcsolat',
+    path:'kapcsolat',
+    component:KapcsolatComponent  
   },
   {
     title:'Error 404',
