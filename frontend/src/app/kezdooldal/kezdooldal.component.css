@@ -1,7 +1,25 @@
 .kezdooldal-container{
-    width: 50%;
+    width: 60%;
+    min-width: 350px;
+    color: #2e2f70;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-image{
-    width: 200px;
+    height: 120px;
+}
+
+.cim-card{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2e2f70;
+    color: rgb(246, 223, 92);
+}
+
+mat-icon{
+    color: #2e2f70;
 }

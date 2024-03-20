@@ -65,6 +65,7 @@ export class EsemenyKeresoComponent implements OnInit{
               private breakpointObserver: BreakpointObserver,
               private route:ActivatedRoute,
               private router: Router) {
+                this.paramLekerdezes()
     this.minJegyar = this.MIN_JEGYAR;
     this.maxJegyar = this.MAX_JEGYAR;
     this.breakpointObserver.observe([
@@ -94,7 +95,7 @@ export class EsemenyKeresoComponent implements OnInit{
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();
     this.helyszinCimBetoltes();
-    this.esemenyKereses()
+    this.esemenyKereses();
   }
 
   szuroMuvelet(){
@@ -102,6 +103,10 @@ export class EsemenyKeresoComponent implements OnInit{
   }
 
   ngOnInit(): void {
+   
+  }
+
+  paramLekerdezes(){
     this.route.queryParams.subscribe(params=>{
       this.keresettEloado = params['eloado'] || ''
       this.keresettHelyszin = params['helyszin'] || ''

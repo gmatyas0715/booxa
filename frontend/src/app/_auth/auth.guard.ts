@@ -4,8 +4,6 @@ import { Router } from "@angular/router";
 import { map } from 'rxjs/operators';
 import { KosarService } from "../_szervizek/kosar.service";
 
-
-
 export const vendegUserGuard  = () => {
   const userAzonositasService = inject(UserAzonositasService)
   const router = inject(Router);
@@ -24,7 +22,6 @@ export const bejelentkezettUserGuard  = () => {
   if (userAzonositasService.getAuthToken()){
     return true
   }
-
   return router.parseUrl('/bejelentkezes');
 };
 

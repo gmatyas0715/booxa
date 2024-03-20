@@ -48,7 +48,7 @@
             @foreach ($jegyek as $jegy)
                 <p><span>- {{ $jegy['idopont'] }} - {{ $jegy['eloado'] }} - {{ $jegy['helyszin'] }} -  {{ $jegy['jegyar'] }} Ft</span> </p></li>
             @endforeach
-                <p><span>- Szervízköltség: 390 Ft</span></p>
+                <p><span>- Szervizköltség: 390 Ft</span></p>
                 <hr>
                 <p><span>Összesen: {{ $rendeles->rendeles_osszeg }} Ft</span></p>
             </ul>

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class EloadoService {
 
   public apiUrl:string = 'http://localhost:8000/api/'
+  public tizesLista:any[] = []
   
   constructor(private http:HttpClient){ }
 

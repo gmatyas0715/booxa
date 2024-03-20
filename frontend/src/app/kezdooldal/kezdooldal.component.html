@@ -1,35 +1,37 @@
 <div class="d-flex justify-content-center">
     <div class="kezdooldal-container mt-3 mb-5">
-        <mat-card class="w-100 text-center mb-2 p-2">
+        <mat-card class="cim-card">
             <mat-card-title>Üdvözlünk a Booxán!</mat-card-title>
         </mat-card>
         <mat-card class="w-100 p-2 mb-5">
             <mat-card-header>
-                <mat-card-title>Rólunk</mat-card-title>
+                <mat-card-title class="mb-4">Rólunk</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <p class="text-justify">Koncerteket keresel, de nem tud pontosan, hogy mit? Legjobb helyen jársz!</p> 
-                <p>A Booxa eseménykeresője számos keresési segítséget kínál, így könnyen megtalálhatod a számodra ideális koncerteket.</p>
+                <p><b>Koncerteket keresel? Legjobb helyen jársz!</b> A Booxa eseménykeresőjével beállíthatsz műfajokat, helyszíneket, előadókat stb., így könnyen megtalálhatod a számodra ideális koncerteket. Töltsd meg a kosarad és vásárold meg gyorsan és egyszerűen kedvenc előadóid eseményeire a jegyeket.</p>
             </mat-card-content>
             <mat-card-actions class="justify-content-end">
-                <button mat-raised-button color="primary" routerLink="/esemeny-kereso">Tovább az eseménykeresőhöz!</button>
+                <button mat-stroked-button color="primary" routerLink="/esemeny-kereso">Tovább az eseménykeresőhöz</button>
             </mat-card-actions>
         </mat-card>
-        <mat-card class="w-100 text-center mb-2 p-2">
+        <mat-card class="cim-card">
             <mat-card-title>Ízelítő előadókínálatunkból!</mat-card-title>
         </mat-card>
         <mat-card *ngFor="let eloado of eloadok" class="mb-3">
             <mat-card-header>
               <mat-card-title-group>
-                <mat-card-title>{{eloado.nev}}</mat-card-title>
-                <mat-card-subtitle>Műfajok: <span *ngFor="let mufaj of eloado.mufaj">{{mufaj.nev}}, </span></mat-card-subtitle>
-                <img class="card-image rounded" [src]="this.eloadoSzerviz.eloadoKepUrl(eloado.kep_eleres)">
+                <mat-card-title class="d-flex align-items-center">{{eloado.nev}}
+                    <a class="d-flex align-items-center ml-1" routerLink="/esemeny-kereso" [queryParams]="{ eloado: eloado.nev }"><mat-icon>search</mat-icon><mat-icon>arrow_right</mat-icon></a>
+                </mat-card-title>
+                <mat-card-subtitle class="mb-2">Műfajok: <span *ngFor="let mufaj of eloado.mufaj">{{mufaj.nev}}, </span></mat-card-subtitle>
+                <img class="card-image rounded ml-2 mb-2" [src]="this.eloadoSzerviz.eloadoKepUrl(eloado.kep_eleres)">
               </mat-card-title-group>
             </mat-card-header>
             <mat-card-content>
                 {{eloado.leiras}}
             </mat-card-content>
-          </mat-card>
+        </mat-card>
+        <button mat-raised-button color="primary" (click)="tizesListaBetoltes()">Ajánlj más előadókat!</button>
     </div>
 </div>
     
