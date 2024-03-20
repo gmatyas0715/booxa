@@ -1,63 +1,35 @@
 <div class="d-flex justify-content-center">
     <div class="kezdooldal-container mt-3 mb-5">
-        <div class="kezdooldal-content">
-            <mat-grid-list cols="15" rows="15" rowHeight="1:1">
-                <!--Első sor-->
-                <mat-grid-tile colspan="2" rowspan="5">
-                </mat-grid-tile>
-                <mat-grid-tile colspan="7" rowspan="5">
-                    <mat-card class="img-container p-3">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p> 
-                        <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile colspan="5" rowspan="5">
-                    <div class="img-container d-none d-xl-block">
-                       <img class="kezdooldal-img" src="../../assets/kepek/stock2.webp" alt="">
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile rowspan="5">
-                </mat-grid-tile>
-                <!--Második sor-->
-                <mat-grid-tile colspan="5" rowspan="5">
-                    <div class="img-container d-none d-xl-block">
-                        <img class="kezdooldal-img" src="../../assets/kepek/stock8.jpg" alt="">
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile colspan="5" rowspan="5">
-                    <mat-card class="img-container p-3">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p> 
-                    </mat-card>
-                </mat-grid-tile>
-                <!--<mat-grid-tile [colspan]="colspan" [rowspan]="rowspan">
-                    <button mat-button id="button-tile-content" routerLink="/esemeny-kereso">
-                        <mat-icon class="menu-ikon d-block d-xl-none">event</mat-icon>
-                        <span>TOVÁBB AZ ESEMÉNYEKHEZ!</span>
-                    </button>
-                </mat-grid-tile>-->
-                <mat-grid-tile colspan="5" rowspan="5">
-                    <div class="img-container d-none d-xl-block">
-                        <img class="kezdooldal-img" src="../../assets/kepek/_stock3.jpg" alt="">
-                    </div>
-                </mat-grid-tile>
-                <!--Harmadik sor-->
-                <mat-grid-tile rowspan="5">
-                </mat-grid-tile>
-                <mat-grid-tile colspan="6" rowspan="5">
-                    <mat-card class="img-container p-3 d-none d-xl-block">
-                        <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>    
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile colspan="6" rowspan="5">
-                    <div class="img-container d-none d-xl-block">
-                        <img class="kezdooldal-img" src="../../assets/kepek/stock1.jpg" alt=""> 
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile colspan="2" rowspan="5">
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
+        <mat-card class="w-100 text-center mb-2 p-2">
+            <mat-card-title>Üdvözlünk a Booxán!</mat-card-title>
+        </mat-card>
+        <mat-card class="w-100 p-2 mb-5">
+            <mat-card-header>
+                <mat-card-title>Rólunk</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p class="text-justify">Koncerteket keresel, de nem tud pontosan, hogy mit? Legjobb helyen jársz!</p> 
+                <p>A Booxa eseménykeresője számos keresési segítséget kínál, így könnyen megtalálhatod a számodra ideális koncerteket.</p>
+            </mat-card-content>
+            <mat-card-actions class="justify-content-end">
+                <button mat-raised-button color="primary" routerLink="/esemeny-kereso">Tovább az eseménykeresőhöz!</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="w-100 text-center mb-2 p-2">
+            <mat-card-title>Ízelítő előadókínálatunkból!</mat-card-title>
+        </mat-card>
+        <mat-card *ngFor="let eloado of eloadok" class="mb-3">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{eloado.nev}}</mat-card-title>
+                <mat-card-subtitle>Műfajok: <span *ngFor="let mufaj of eloado.mufaj">{{mufaj.nev}}, </span></mat-card-subtitle>
+                <img class="card-image rounded" [src]="this.eloadoSzerviz.eloadoKepUrl(eloado.kep_eleres)">
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                {{eloado.leiras}}
+            </mat-card-content>
+          </mat-card>
     </div>
 </div>
     

@@ -1,61 +1,7 @@
-mat-grid-tile{
-    height: 25px;
-    width: 25px;
-    display: flex;
-    align-items: center;
-    justify-content:  center;
-}
-
 .kezdooldal-container{
     width: 50%;
 }
 
-.kezdooldal-content{
-    overflow: hidden;
-}
-
-.kezdooldal-img{
-    height: 100%;
-    filter: grayscale(100%);
-    transition: 0.5s;
-}
-
-.kezdooldal-img:hover{
-    filter:grayscale(0%);
-    scale: 1.1;
-}
-
-#button-tile-content{
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(246, 223, 92);
-    background-color: #2e2f70;
-    transition: 0.5s;
-}
-
-#button-tile-content:hover{
-    background-color: rgb(246, 223, 92);
-    color: #2e2f70;
-}
-
-.img-container{
-    height: calc(100% - 5px);
-    width: calc(100% - 5px);
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 1% 1% 4% 1% rgb(179, 179, 179);
-    display: flex;
-    align-items: center;
-    justify-content:  center;
-}
-
-@media (max-width: 576px) {
-    .kezdooldal-container {
-        width: 70%;
-    }
+.card-image{
+    width: 200px;
 }

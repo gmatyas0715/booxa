@@ -15,6 +15,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Előadó
     Route::get('/eloado-nevek','EloadoController@eloadoNevek');
+    Route::get('/random-10-eloado','EloadoController@random10Eloado');
 
     // Esemény
     Route::get('/esemeny-kereso','EsemenyController@esemenyKereso');

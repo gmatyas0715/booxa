@@ -6,6 +6,7 @@ use App\Models\Eloado;
 use App\Http\Requests\StoreEloadoRequest;
 use App\Http\Requests\UpdateEloadoRequest;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class EloadoController extends Controller
 {
@@ -97,5 +98,11 @@ class EloadoController extends Controller
     {
         $eloado->delete();
         return response()->json(['üzenet'=>$eloado->nev.' nevű előadó sikeresen törölve!']);
+    }
+
+    public function random10Eloado(){
+        $eloadok = Eloado::with('mufaj')->inRandomOrder()->limit(10)->get();
+        Log::info($eloadok);
+        return response()->json($eloadok);
     }
 }

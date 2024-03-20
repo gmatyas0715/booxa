@@ -51,4 +51,8 @@ export class EloadoService {
     })
     return this.http.get<any[]>(this.apiUrl+'eloadok',{headers})
   }
+
+  random10Eloado(){
+    return this.http.get<any[]>(this.apiUrl+'random-10-eloado')
+  }
 }
