@@ -51,10 +51,6 @@ a{
     cursor: pointer;
 }
 
-#kosar-adatok{
-    margin: 0 20px;
-}
-
 .kosar-disabled{
     color: grey;
     margin-left: 16px;
