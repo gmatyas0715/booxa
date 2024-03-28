@@ -47,8 +47,8 @@ export class RendelesService {
         let jegyAdatElem = {
           esemeny_id: jegyAdat.esemeny.id,
           jegy_darabszam: jegyAdat.jegyDarabszam,
-          szektor_id: jegyAdat.szektor.id,
-          szektor_alegyseg_id: jegyAdat.szektorAlegyseg.id,
+          szektor_id: jegyAdat.szektor!.id,
+          szektor_alegyseg_id: jegyAdat.szektorAlegyseg!.id,
           ulo_hely: ulo_hely,
         }
         reszadatLista.push(jegyAdatElem);

@@ -28,7 +28,6 @@ export class RegisztracioComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    public szerviz:UserService,
     private userService:UserService,
     private userAzonositasService:UserAzonositasService,
     private router: Router,

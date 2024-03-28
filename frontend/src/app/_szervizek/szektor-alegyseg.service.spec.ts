@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
 import { SzektorAlegysegService } from './szektor-alegyseg.service';
+import { HttpClientModule } from '@angular/common/http';
 
-describe('SzektorService', () => {
+describe('SzektorAlegysegService', () => {
   let service: SzektorAlegysegService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports:[HttpClientModule]
+    });
     service = TestBed.inject(SzektorAlegysegService);
   });
 

@@ -4,12 +4,12 @@ import { SzektorAlegysegModell } from "./szektor-alegyseg-modell";
 
 export class JegyAdatModell {
     public esemeny:EsemenyModell;
-    public szektor:SzektorModell;
-    public szektorAlegyseg:SzektorAlegysegModell;
+    public szektor:SzektorModell|null;
+    public szektorAlegyseg:SzektorAlegysegModell|null;
     public ulohely:number[];
     public jegyDarabszam:number;
 
-    constructor(esemeny:EsemenyModell,szektor:SzektorModell,szektorAlegyseg:SzektorAlegysegModell,ulohely:number[]=[],jegyDarabszam:number) {
+    constructor(esemeny:EsemenyModell,szektor:SzektorModell|null,szektorAlegyseg:SzektorAlegysegModell|null,ulohely:number[]=[],jegyDarabszam:number) {
         this.esemeny=esemeny;
         this.szektor = szektor;
         this.szektorAlegyseg = szektorAlegyseg;

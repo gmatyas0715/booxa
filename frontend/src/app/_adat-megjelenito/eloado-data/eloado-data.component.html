@@ -41,7 +41,7 @@
 
         <ng-container matColumnDef="kep">
             <th mat-header-cell *matHeaderCellDef> Kép </th>
-            <td mat-cell *matCellDef="let element"><img class="esemeny-kep m-2" style="max-height: 100px;" [src]="this.eloadoSzerviz.eloadoKepUrl(element.kep_eleres)" alt=""> </td>
+            <td mat-cell *matCellDef="let element"><img class="esemeny-kep m-2" style="max-height: 100px;" [src]="this.eloadoService.eloadoKepUrl(element.kep_eleres)" alt=""> </td>
         </ng-container>
 
         <ng-container matColumnDef="modositas">
