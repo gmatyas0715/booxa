@@ -29,7 +29,7 @@ export class EloadoDataComponent {
   mufajok:Map<number,string> = new Map<number,string>();
   userService: any;
 
-  constructor(private eloadoService:EloadoService,
+  constructor(public eloadoService:EloadoService,
               private mufajService: MufajService,
               private dialog:MatDialog,
               public userAzonositas:UserAzonositasService) {

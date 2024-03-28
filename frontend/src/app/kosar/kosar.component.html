@@ -19,13 +19,13 @@
                                 <div class="col-sm-12 col-md-8 mb-3">
                                     <span class="d-block mb-1"><b>Előadó:</b> {{kosarElem.esemeny.eloado.nev}}</span>
                                     <span class="d-block mb-1"><b>Helyszín:</b> {{kosarElem.esemeny.helyszin.nev}}</span>
-                                    <span class="d-block mb-1"><b>Szektor:</b> {{kosarElem.szektor.szektor_nev}}</span>
-                                    <span class="d-block mb-1"><b>Szektor típus:</b> {{kosarElem.szektor.szektor_tipus==='ulo'?'ülő':'álló'}}</span>
-                                    <span *ngIf="kosarElem.szektor.szektor_tipus==='ulo'" class="d-block mb-1"><b>Sorjelzés:</b> {{kosarElem.szektorAlegyseg.sorjelzes}}</span>
-                                    <span *ngIf="kosarElem.szektor.szektor_tipus==='ulo'" class="d-block mb-1"><b>Ülőhelyek:</b> {{kosarElem.ulohely}}</span>
+                                    <span class="d-block mb-1"><b>Szektor:</b> {{kosarElem.szektor!.szektor_nev}}</span>
+                                    <span class="d-block mb-1"><b>Szektor típus:</b> {{kosarElem.szektor!.szektor_tipus==='ulo'?'ülő':'álló'}}</span>
+                                    <span *ngIf="kosarElem.szektor!.szektor_tipus==='ulo'" class="d-block mb-1"><b>Sorjelzés:</b> {{kosarElem.szektorAlegyseg!.sorjelzes}}</span>
+                                    <span *ngIf="kosarElem.szektor!.szektor_tipus==='ulo'" class="d-block mb-1"><b>Ülőhelyek:</b> {{kosarElem.ulohely}}</span>
                                 </div>
                                 <div class="col col-sm-12 col-md-4 d-inline-block">
-                                    <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegyseg.szektor_alegyseg_jegyar}} Ft</span>
+                                    <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar}} Ft</span>
                                     <span class="d-block mb-2"><b>Jegy darabszám: </b>{{kosarElem.jegyDarabszam}}</span>
                                 </div>
                             </div>
