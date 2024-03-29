@@ -42,3 +42,8 @@ Route::get('/svg-helyszin-kep/{kepNev}', function ($kepNev) {
     }
     abort(404);
 })->where('filename', '.*\.svg');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
