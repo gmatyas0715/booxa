@@ -9,7 +9,6 @@ use App\Http\Requests\UpdateRendelesRequest;
 use App\Models\Esemeny;
 use App\Models\JegyAdat;
 use App\Models\Szektor;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Stripe\Stripe;

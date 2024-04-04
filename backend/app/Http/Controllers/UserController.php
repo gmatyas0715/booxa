@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\UpdateuserRequest;
 use DateTime;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -67,10 +68,12 @@ class UserController extends Controller
         return response()->json(['msg'=>'Sikeres profilmódosítás!','user_adatok'=>$data],200);
     }
 
-    public function destroy(User $user)
+    public function destroy(Request $request,User $user)
     {
+        $request->user()->currentAccessToken()->delete();
+        $felhasznalonev = $user->felhasznalonev;
         $user->delete();
-        return response()->json(['msg'=>$user->felhasznalonev.', sikeresen törölted a fiókodat!']);
+        return response()->json(['msg'=>$felhasznalonev.', sikeresen törölted a fiókodat!']);
     }
 
     public function belepesAdatCheck(UpdateUserRequest $request, User $user) {

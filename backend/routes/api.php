@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('App\Http\Controllers')->group(function () {
 
     // ÁLTALÁNOS ROUTE-OK
-
     // Autentikáció
     Route::post('/register', 'AuthController@register');
     Route::post('/login', 'AuthController@login');
@@ -36,8 +35,9 @@ Route::namespace('App\Http\Controllers')->group(function () {
     // User
     Route::get('/user-emailek-felhasznalonevek','UserController@userEmailekFelhasznalonevek');
 
+
+
     // BEJELENTKEZETT USER ROUTE-OK
-    
     Route::group(['middleware'=>['auth:sanctum']],function(){
 
         // Autentikáció
@@ -60,6 +60,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::delete('/userek/{user}', 'UserController@destroy');
     });
 
+
+
     // ESEMÉNYSZERKESZTŐ && ADMIN USER ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:admin|esemenyszerkeszto']],function(){
 
@@ -70,8 +72,9 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::delete('/esemenyek/{esemeny}', 'EsemenyController@destroy');
     });
 
-    // ADMIN USER ROUTE-OK
 
+    
+    // ADMIN USER ROUTE-OK
     Route::group(['middleware'=>['auth:sanctum','role:admin']],function(){
 
         // Autentikáció
