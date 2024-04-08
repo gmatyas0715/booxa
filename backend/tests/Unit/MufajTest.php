@@ -17,3 +17,4 @@ class MufajTest extends TestCase
         $this->assertEquals('Teszt leírás', $mufaj->leiras);
     }
 }
+

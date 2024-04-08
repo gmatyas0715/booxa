@@ -29,6 +29,15 @@ class EsemenySeeder extends Seeder
         $helyszinek = Helyszin::all();
         $startDate = Carbon::now()->addWeek();
 
+        // Teszt esemény
+
+        Esemeny::factory()->create([
+            'idopont' => '2024-12-12',
+            'jegy_alapar' => 10000, 
+            'eloado_id' => 1,
+            'helyszin_id' => 1,
+        ]);
+
         foreach ($helyszinek as $helyszin) {
             $helyszin_id = $helyszin->id;
             for ($napSzama=0; $napSzama < $ESEMENY_NAPSZAM; $napSzama+=rand(1,3)) { 

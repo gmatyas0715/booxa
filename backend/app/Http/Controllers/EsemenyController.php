@@ -118,7 +118,7 @@ class EsemenyController extends Controller
         $esemeny->eloado_id = $request->input('eloado_id');
         $esemeny->helyszin_id = $request->input('helyszin_id');
         $esemeny->save();
-        return response()->json(['üzenet'=>$esemeny->id.' azonosítóval új esemény lett sikeresen létrehozva!']);
+        return response()->json(['üzenet'=>$esemeny->id.' azonosítójú esemény sikeresen módosítva!']);
     }
 
     public function destroy(Esemeny $esemeny)

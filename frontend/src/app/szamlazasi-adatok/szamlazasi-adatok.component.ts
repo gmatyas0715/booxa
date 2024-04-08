@@ -37,7 +37,7 @@ export class SzamlazasiAdatokComponent {
 
   megrendelesElkuldes():void{
     this.rendelesFeldolgozas = true
-    this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value)).subscribe({
+     this.rendelesSzerviz.rendelesElkuldes(this.rendelesSzerviz.rendelesAdatOsszeallitas(this.szamlazasiAdatForm.value)).subscribe({
       next:(valasz:any)=>{
         if (valasz.redirect_url) {
           window.location.href = valasz.redirect_url;
