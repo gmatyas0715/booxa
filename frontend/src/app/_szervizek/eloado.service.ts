@@ -54,6 +54,9 @@ export class EloadoService {
   }
 
   random10Eloado(){
-    return this.http.get<any[]>(this.apiUrl+'random-10-eloado')
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+    })
+    return this.http.get<any[]>(this.apiUrl+'random-10-eloado',{headers})
   }
 }
