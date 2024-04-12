@@ -2,7 +2,6 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { EsemenyService } from '../_szervizek/esemeny.service';
 import { HelyszinService } from '../_szervizek/helyszin.service';
 import { ActivatedRoute } from '@angular/router';
-import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 import { SzektorService } from '../_szervizek/szektor.service';
 import { SzektorModell } from '../_modellek/szektor-modell';
 import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
@@ -294,16 +293,17 @@ export class EsemenyReszletekComponent{
 
   jegyKosarbaHelyezes(){
     var ulohelyek = this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab,this.kivalasztottSzektorAlegyseg)
-    var jegyAdatok:JegyAdatModell[]
+    const jegyAdatok:any[] = []
     ulohelyek.forEach((ulohely)=>{
-      jegyAdatok.push(new JegyAdatModell(
-        this.esemeny,
-        this.kivalasztottSzektor,
-        this.kivalasztottSzektorAlegyseg,
+      jegyAdatok.push({
+        esemeny_id: this.esemeny.id,
+        helyszin_id: this.esemeny.helyszin.id,
+        szektor_id: this.kivalasztottSzektor.id,
+        szektor_alegyseg_id: this.kivalasztottSzektorAlegyseg.id,
         ulohely
-      ))
-      this.kosarService.kosarbaHelyezes(jegyAdatok)
+      })
     })
+    this.kosarService.kosarbaHelyezes(jegyAdatok)
 
     this.jegyInfoVisszaallitas();
     this.openSnackbar()
@@ -330,7 +330,7 @@ export class EsemenyReszletekComponent{
   }
 
   openSnackbar(){
-    this._snackBar.open("Jegy kosárba helyezve!",'Mégse',{duration:2500}).onAction().subscribe(()=>{this.kosarService.jegyAdatLista.pop();});
+    this._snackBar.open("Jegy kosárba helyezve!",'Mégse',{duration:1500}).onAction().subscribe(()=>{this.kosarService.jegyAdatLista.pop();});
   }
 
   foglaltDarabBeallitas(jegyDarabOpcio:number){

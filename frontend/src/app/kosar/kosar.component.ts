@@ -15,5 +15,7 @@ export class KosarComponent {
               public eloadoService:EloadoService) {
   }
 
-  
+  trackById(index: number, kosarElem: any): number {
+    return kosarElem.id;
+  }
 }

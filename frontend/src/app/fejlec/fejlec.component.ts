@@ -15,6 +15,7 @@ export class FejlecComponent {
               public userAzonositas:UserAzonositasService,
               public kosarSzerviz:KosarService,
               public userSzerviz:UserService) {
+                kosarSzerviz.jegyAdatListaBetoltes()
               }
 
   

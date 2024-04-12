@@ -85,7 +85,7 @@
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabszám:</th>
-                    <td><button  *ngFor="let jegyDarabOpcio of jegyDarabOpciok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyDarabOpcio)">{{jegyFoglalhatoDarab}}</button></td>
+                    <td><button  *ngFor="let jegyDarabOpcio of jegyDarabOpciok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyDarabOpcio)">{{jegyDarabOpcio}}</button></td>
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy összár:</th>
@@ -97,8 +97,7 @@
                     <button mat-raised-button (click)="jegyInfoVisszaallitas()">Vissza a szektorokhoz</button>
                 </div>
                 <div class="d-inline-block ml-2 mr-auto">
-                    <span *ngIf="jegyFoglaltDarab==0">Válassz jegydarabszámot!</span>
-                    <button *ngIf="jegyFoglaltDarab>0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
+                    <button [disabled]="jegyFoglaltDarab==0" mat-raised-button (click)="jegyKosarbaHelyezes()">Kosárba tesz</button>
                 </div>
             </div>
             <div *ngIf="svgSzektorToltes" class="d-flex align-items-center justify-content-center w-100 mt-5" style="flex-direction: column;">

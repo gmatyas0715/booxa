@@ -7,26 +7,27 @@
     </div>
     <div class="row">
         <div class="col">
-            <mat-card *ngFor="let kosarElem of kosarSzerviz.jegyAdatLista; let i = index" class="pt-2 pb-2 mb-5 kosar-item">
+            <mat-card *ngFor="let kosarElem of kosarSzerviz.jegyAdatLista; let i = index; trackBy: trackById" class="pt-2 pb-2 mb-5 kosar-item">
                 <div class="container">
                     <div class="row">
                         <div class="col col-lg-6 d-none d-lg-block">
-                            <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.esemeny.eloado.kep_eleres)" alt="">
-                            <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.esemeny.helyszin.helyszin_kep_eleres)" alt="">
+                            <img class="esemeny-kep" [src]="this.eloadoService.eloadoKepUrl(kosarElem.kepEleres)" alt="">
+                            <img class="esemeny-kep" [src]="this.helyszinService.helyszinKepUrl(kosarElem.helyszinKepEleres)" alt="">
                         </div>
                         <div class="col col-md-12 col-lg-6">
                             <div class="row">
                                 <div class="col-sm-12 col-md-8 mb-3">
-                                    <span class="d-block mb-1"><b>Előadó:</b> {{kosarElem.esemeny.eloado.nev}}</span>
-                                    <span class="d-block mb-1"><b>Helyszín:</b> {{kosarElem.esemeny.helyszin.nev}}</span>
-                                    <span class="d-block mb-1"><b>Szektor:</b> {{kosarElem.szektor!.szektor_nev}}</span>
-                                    <span class="d-block mb-1"><b>Szektor típus:</b> {{kosarElem.szektor!.szektor_tipus==='ulo'?'ülő':'álló'}}</span>
-                                    <span *ngIf="kosarElem.szektor!.szektor_tipus==='ulo'" class="d-block mb-1"><b>Sorjelzés:</b> {{kosarElem.szektorAlegyseg!.sorjelzes}}</span>
-                                    <span *ngIf="kosarElem.szektor!.szektor_tipus==='ulo'" class="d-block mb-1"><b>Ülőhelyek:</b> {{kosarElem.ulohely}}</span>
+                                    <span class="d-block mb-1"><b>Előadó:</b> {{kosarElem.eloadoNev}}</span>
+                                    <span class="d-block mb-1"><b>Helyszín:</b> {{kosarElem.helyszinNev}}</span>
+                                    <span class="d-block mb-1"><b>Szektor:</b> {{kosarElem.szektorNev}}</span>
+                                    <span class="d-block mb-1"><b>Szektor típus:</b> {{kosarElem.szektorTipus==='ulo'?'ülő':'álló'}}</span>
+                                    <div  *ngIf="kosarElem.szektorTipus==='ulo'">
+                                        <span class="d-block mb-1"><b>Sorjelzés:</b> {{kosarElem.sorjelzes}}</span>
+                                        <span class="d-block mb-1"><b>Ülőhely:</b> {{kosarElem.ulohely}}</span>
+                                    </div>
                                 </div>
                                 <div class="col col-sm-12 col-md-4 d-inline-block">
-                                    <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar}} Ft</span>
-                                    <span class="d-block mb-2"><b>Jegy darabszám: </b>{{kosarElem.jegyDarabszam}}</span>
+                                    <span class="d-block mb-1"><b>Jegyár:</b> {{kosarElem.szektorAlegysegJegyar}} Ft</span>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +35,7 @@
                     <hr>
                     <div class="row font-weight-bold align-items-center mb-1">
                         <div class="col col-5">
-                            <button mat-raised-button color="warn" class="szuro-torlo-button" (click)="kosarSzerviz.tetelTorles(i)">
+                            <button mat-raised-button color="warn" class="szuro-torlo-button" (click)="kosarSzerviz.tetelTorles(kosarElem.id)">
                                 <mat-icon>delete</mat-icon> <span class="ml-3">Törlés</span>
                             </button>
                         </div>

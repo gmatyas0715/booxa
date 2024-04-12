@@ -29,32 +29,12 @@ export class RendelesService {
   
   rendelesAdatOsszeallitas(szamlazasAdatok:object):RendelesModell{
 
-    let jegyAdatok = this.rendelesJegyReszadatExtrakcio()
-
     let rendelesBackendnek: RendelesModell = new RendelesModell(
                           this.userAzonositasSzerviz.getAuthToken(),
-                          szamlazasAdatok,
-                          jegyAdatok);
+                          szamlazasAdatok);
               
     console.log(rendelesBackendnek)
     return rendelesBackendnek;
-  }
-
-  rendelesJegyReszadatExtrakcio():string{
-    var reszadatLista:any[] = []
-    this.kosarSzerviz.jegyAdatLista.forEach((jegyAdat)=>{
-      jegyAdat.ulohely.forEach(ulo_hely => {
-        let jegyAdatElem = {
-          esemeny_id: jegyAdat.esemeny.id,
-          jegy_darabszam: jegyAdat.jegyDarabszam,
-          szektor_id: jegyAdat.szektor!.id,
-          szektor_alegyseg_id: jegyAdat.szektorAlegyseg!.id,
-          ulo_hely: ulo_hely,
-        }
-        reszadatLista.push(jegyAdatElem);
-      });
-    })
-    return JSON.stringify(reszadatLista);
   }
 
   sessionData(sessionId:string):Observable<any>{

@@ -16,8 +16,10 @@ export class KosarService {
   private readonly RENDELES_COOKIE:string = 'rendelesCookie'
 
   jegyAdatListaBetoltes(){
-    this.http.get<JegyAdatModell[]>('http://localhost:8000/api/jegy-adat-lista/'+this.cookieService.get(this.RENDELES_COOKIE)).subscribe((jegyLista:JegyAdatModell[])=>{
-      this.jegyAdatLista = jegyLista
+    if (!this.cookieService.check(this.RENDELES_COOKIE))return
+    this.http.get<JegyAdatModell[]>('http://localhost:8000/api/jegy-adat-lista/'+this.cookieService.get(this.RENDELES_COOKIE)).subscribe((jegyAdatLista:JegyAdatModell[])=>{
+      this.jegyAdatLista = jegyAdatLista
+      if (this.jegyAdatLista.length==0) this.cookieService.delete(this.RENDELES_COOKIE)
     })
   }
 
@@ -31,6 +33,7 @@ export class KosarService {
   }
 
   kosarbaHelyezes(jegyAdatok:JegyAdatModell[]){
+    console.log(jegyAdatok);
     const body = jegyAdatok
     if (this.cookieService.get(this.RENDELES_COOKIE)){
       this.http.post('http://localhost:8000/api/jegyek-kosarba-helyezese/'+this.cookieService.get(this.RENDELES_COOKIE),body).subscribe(()=>{
@@ -46,19 +49,19 @@ export class KosarService {
   }
 
   tetelTorles(jegy_id:number){
+    console.log(jegy_id);
     this.http.delete('http://localhost:8000/api/tetel-torles/'+jegy_id).subscribe(()=>{
       this.jegyAdatListaBetoltes()
-      if (this.jegyAdatLista.length==0) this.cookieService.delete(this.RENDELES_COOKIE)
     })
   }
 
   getTetelOsszarByItem(kosarElem:JegyAdatModell):number{
-    return kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
+    return kosarElem.szektorAlegysegJegyar
   }
   
   getTetelOsszarByIndex(index:number):number{
     const kosarElem:JegyAdatModell = this.jegyAdatLista[index];
-    return kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
+    return kosarElem.szektorAlegysegJegyar
   }
 
   ulohelySzamGeneralas(jegyFoglaltDarab:number,szektorAlegyseg:SzektorAlegysegModell):number[]{

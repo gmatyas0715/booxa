@@ -3,106 +3,77 @@
 namespace App\Http\Controllers;
 
 use App\Models\JegyAdat;
-use App\Http\Requests\StoreJegyAdatRequest;
-use App\Http\Requests\UpdateJegyAdatRequest;
 use App\Models\Esemeny;
 use App\Models\Rendeles;
 use App\Models\SzektorAlegyseg;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Schema;
 class JegyAdatController extends Controller
 {
-
-    public function index()
-    {
-        $jegyAdatok = JegyAdat::all();
-        return response()->json($jegyAdatok);
-    }
-
     public function jegyAdatLista(int $rendeles_id) {
-        $jegyAdatLista = Rendeles::find($rendeles_id)->jegyAdat;
+        Log::info($rendeles_id);
+        $jegyAdatLista = DB::table('jegy_adat')->select('jegy_adat.id as id','eloado.nev as eloadoNev','helyszin.nev as helyszinNev','szektor_nev as szektorNev','szektor_tipus as szektorTipus','sorjelzes','ulohely','szektor_alegyseg_ar as szektorAlegysegJegyar','kep_eleres as kepEleres','helyszin_kep_eleres as helyszinKepEleres')
+        ->join('esemeny','esemeny.id','=','jegy_adat.esemeny_id')
+        ->join('eloado','eloado.id','=','esemeny.eloado_id')
+        ->join('rendeles','rendeles.id','=','jegy_adat.rendeles_id')
+        ->join('helyszin','helyszin.id','=','jegy_adat.helyszin_id')
+        ->join('szektor','szektor.id','=','jegy_adat.szektor_id')
+        ->join('szektor_alegyseg','szektor_alegyseg.id','=','jegy_adat.szektor_alegyseg_id')
+        ->join('szektor_alegyseg_jegyar', function ($join) {
+            $join->on('szektor_alegyseg_jegyar.esemeny_id', '=', 'esemeny.id')
+                 ->whereRaw('szektor_alegyseg_jegyar.id IN (SELECT MIN(id) FROM szektor_alegyseg_jegyar GROUP BY esemeny_id)');
+        })
+        ->where('jegy_adat.rendeles_id',$rendeles_id)
+        ->distinct()
+        ->get();
+        Log::info($jegyAdatLista);
         return response()->json($jegyAdatLista);
     }
 
-    public function jegyKosarbaHelyezes(Request $request, int $rendeles_id) {
+    public function jegyKosarbaHelyezes(Request $request, string $rendeles_id) {
 
-        $jegyAdat = new JegyAdat();
-        $jegyAdat-> esemeny_id = $request->input('esemeny_id');
-        $jegyAdat-> helyszin_id = $request->input('helyszin_id');
-        $jegyAdat-> szektor_id = $request->input('szektor_id');
-        $jegyAdat-> szektor_alegyseg_id = $request->input('szektor_alegyseg_id');
-        $jegyAdat-> ulohely = $request->input('ulohely');
-
+        $jegyAdatok = $request->all();
         if ($rendeles_id!=0){
-            $jegyAdat->rendeles_id = $request->input('rendeles_id');
-            $jegyAdat->save();
+            foreach ($jegyAdatok as $jegyAdat) {
+                $ujJegyAdat = new JegyAdat();
+                $ujJegyAdat-> rendeles_id = $rendeles_id;
+                $ujJegyAdat-> esemeny_id = $jegyAdat['esemeny_id'];
+                $ujJegyAdat-> helyszin_id = $jegyAdat['helyszin_id'];
+                $ujJegyAdat-> szektor_id = $jegyAdat['szektor_id'];
+                $ujJegyAdat-> szektor_alegyseg_id = $jegyAdat['szektor_alegyseg_id'];
+                $ujJegyAdat-> ulohely = $jegyAdat['ulohely'];
+                $ujJegyAdat->save();
+            }
         }
 
         else{
             $rendeles = new Rendeles();
             $rendeles->save();
+            foreach ($jegyAdatok as $jegyAdat) {
+                $ujJegyAdat = new JegyAdat();
+                $ujJegyAdat-> rendeles_id = $rendeles->id;
+                $ujJegyAdat-> esemeny_id = $jegyAdat['esemeny_id'];
+                $ujJegyAdat-> helyszin_id = $jegyAdat['helyszin_id'];
+                $ujJegyAdat-> szektor_id = $jegyAdat['szektor_id'];
+                $ujJegyAdat-> szektor_alegyseg_id = $jegyAdat['szektor_alegyseg_id'];
+                $ujJegyAdat-> ulohely = $jegyAdat['ulohely'];
+                $ujJegyAdat -> save();
+            }
+            return response()->json(['rendeles_id'=>$rendeles->id]);
         }
     }
 
-    public function tetelTorles(int $jegy_id) {
-        
-    }
-
-    public function store(StoreJegyAdatRequest $request)
+    public function destroy(int $jegyId)
     {
-        $ujJegyAdat = new JegyAdat();
-        $ujJegyAdat->esemeny_id = $request->input('esemeny_id');
-        $ujJegyAdat->helyszin_id = $request->input('helyszin_id');
-        $ujJegyAdat->rendeles_id = $request->input('rendeles_id');
-        $ujJegyAdat->szektor = $request->input('szektor');
-        $ujJegyAdat->sorjelzes = $request->input('sorjelzes');
-        $ujJegyAdat->ulohely = $request->input('ulohely');
-        $ujJegyAdat->save();
-
-        return response()->json(['üzenet' => $ujJegyAdat->id.' azonosítójú jegyadat sikeresen létrehozva!']);
-    }
-
-    public function show(JegyAdat $jegy_adat)
-    {
-        return response()->json($jegy_adat);
-    }
-
-    public function update(UpdateJegyAdatRequest $request, JegyAdat $jegy_adat)
-    {
-        $tablaMezok = Schema::getColumnListing($jegy_adat->getTable());
-
-        $updateAdat = $request->only($tablaMezok);
-
-        $jegy_adat->update($updateAdat);     
-
-        return response()->json($jegy_adat);
-    }
-
-    public function destroy(JegyAdat $jegy_adat)
-    {
+        $jegy_adat = JegyAdat::find($jegyId);
+        $rendeles = $jegy_adat->rendeles;
         $jegy_adat->delete();
-        return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);
-    }
-        
-    public function szektorFoglaltsag(Esemeny $esemeny)
-    {
-        $jegyMap = new Collection(); 
-        $jegyAdatok = JegyAdat::whereHas('esemeny',function ($query) use ($esemeny){
-            $query->where('esemeny_id',$esemeny);
-        })->get();
-
-        foreach($jegyAdatok as $jegyadat)
-        {
-            if (!$jegyMap.hasKey($jegyadat->szektor_alegyseg->max_kapacitas)){
-                $jegyMap->put($jegyadat->szektor_alegyseg->max_kapacitas,1);
-            }
-            else{
-                $jegyMap->put($jegyadat->szektor_alegyseg->max_kapacitas,$jegyMap->get($jegyadat->szektor_alegyseg->max_kapacitas) + 1);
-            }
+        if(!$rendeles->jegyAdat()->exists()){
+            $rendeles->delete();
         }
-        return response()->json([$jegyAdatok]);
+        return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);
     }
     
     public function szabadHelySzam(Request $request){
