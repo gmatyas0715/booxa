@@ -52,6 +52,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { MatSortModule } from '@angular/material/sort';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
+import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-ren
     EloadoDataComponent,
     UserDataComponent,
     SikeresFizetesComponent,
-    SikertelenFizetesComponent
+    SikertelenFizetesComponent,
+    ScrollButtonComponent
   ],
   imports: [
     BrowserModule,
