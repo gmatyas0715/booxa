@@ -53,6 +53,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { SikertelenFizetesComponent } from './_rendeles_responsok/sikertelen-rendeles/sikertelen-fizetes.component';
 import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
+import { ScrollProgressBarComponent } from './scroll-progress-bar/scroll-progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
     UserDataComponent,
     SikeresFizetesComponent,
     SikertelenFizetesComponent,
-    ScrollButtonComponent
+    ScrollButtonComponent,
+    ScrollProgressBarComponent
   ],
   imports: [
     BrowserModule,
