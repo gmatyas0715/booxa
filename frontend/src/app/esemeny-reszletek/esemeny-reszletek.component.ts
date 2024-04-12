@@ -274,7 +274,7 @@ export class EsemenyReszletekComponent{
     }
   }
 
-  jegyKivalasztas(szektorAlegyseg:SzektorAlegysegModell){
+  szektorAlegysegKivalasztas(szektorAlegyseg:SzektorAlegysegModell){
     this.kivalasztottSzektorAlegyseg = szektorAlegyseg;
     this.jegyKivalasztas_e = false;
     for (const szektor of this.kivalasztottSzektorok) {
@@ -293,14 +293,18 @@ export class EsemenyReszletekComponent{
   }
 
   jegyKosarbaHelyezes(){
-    this.kosarService.kosarbaHelyezes(new JegyAdatModell(
-      this.esemeny,
-      this.kivalasztottSzektor,
-      this.kivalasztottSzektorAlegyseg,
-      this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab,this.kivalasztottSzektorAlegyseg),
-      this.jegyFoglaltDarab
-    ));
-    
+    var ulohelyek = this.kosarService.ulohelySzamGeneralas(this.jegyFoglaltDarab,this.kivalasztottSzektorAlegyseg)
+    var jegyAdatok:JegyAdatModell[]
+    ulohelyek.forEach((ulohely)=>{
+      jegyAdatok.push(new JegyAdatModell(
+        this.esemeny,
+        this.kivalasztottSzektor,
+        this.kivalasztottSzektorAlegyseg,
+        ulohely
+      ))
+      this.kosarService.kosarbaHelyezes(jegyAdatok)
+    })
+
     this.jegyInfoVisszaallitas();
     this.openSnackbar()
   }
@@ -329,7 +333,7 @@ export class EsemenyReszletekComponent{
     this._snackBar.open("Jegy kosárba helyezve!",'Mégse',{duration:2500}).onAction().subscribe(()=>{this.kosarService.jegyAdatLista.pop();});
   }
 
-  foglaltDarabBeallitas(jegyFoglalhatoDarab:number){
-    this.jegyFoglaltDarab = jegyFoglalhatoDarab;
+  foglaltDarabBeallitas(jegyDarabOpcio:number){
+    this.jegyFoglaltDarab = jegyDarabOpcio;
   }
 }

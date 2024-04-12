@@ -62,7 +62,7 @@
                         <td class="border col-1 p-2" style="cursor: pointer;" [style.background-color]="szektor_alegyseg.szin"></td>
                         <td class="border p-2" style="cursor: pointer;">{{szektor_alegyseg.szektor_nev}} {{szektor_alegyseg.sorjelzes!='null'?szektor_alegyseg.sorjelzes+" sor":""}}</td>
                         <td class="border p-2">{{szektor_alegyseg.szektor_alegyseg_jegyar}} Ft</td>
-                        <td class="border m-auto kivalasztas-gomb text-center p-2"><button mat-raised-button (click)="jegyKivalasztas(szektor_alegyseg)">Kiválaszt</button></td>
+                        <td class="border m-auto kivalasztas-gomb text-center p-2"><button mat-raised-button (click)="szektorAlegysegKivalasztas(szektor_alegyseg)">Kiválaszt</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -85,7 +85,7 @@
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy darabszám:</th>
-                    <td><button  *ngFor="let jegyFoglalhatoDarab of jegyDarabOpciok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyFoglalhatoDarab)">{{jegyFoglalhatoDarab}}</button></td>
+                    <td><button  *ngFor="let jegyDarabOpcio of jegyDarabOpciok" class="darab-button mr-2" (click)="foglaltDarabBeallitas(jegyDarabOpcio)">{{jegyFoglalhatoDarab}}</button></td>
                 </tr>
                 <tr>
                     <th class="jegyadat-cella">Jegy összár:</th>

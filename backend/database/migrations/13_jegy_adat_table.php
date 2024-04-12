@@ -29,6 +29,11 @@ return new class extends Migration
                 ->on('helyszin')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->foreign('rendeles_id')
+                ->references('id')
+                ->on('rendeles')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('szektor_id')
                 ->references('id')
                 ->on('szektor')

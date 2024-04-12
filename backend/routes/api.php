@@ -22,6 +22,9 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     // Jegyadat
     Route::get('/szektor-alegyseg-foglaltsag-check/{esemeny}','JegyAdatController@foglaltsagLekerdezes');
+    Route::get('/jegy-adat-lista/{rendeles_id}','JegyAdatController@jegyAdatLista');
+    Route::post('/jegyek-kosarba-helyezese/{rendeles_id}','JegyAdatController@jegyKosarbaHelyezes');
+    Route::delete('/tetel-torles/{jegy_id}','JegyAdatController@tetelTorles');
     
     // Helyszín
     Route::get('/helyszin-nevek','HelyszinController@helyszinek');

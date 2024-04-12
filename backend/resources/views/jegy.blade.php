@@ -45,8 +45,10 @@
             <p><span>Helyszín:</span> {{ $jegy['helyszin'] }}</p>
             <p><span>Helyszín cím:</span> {{ $jegy['helyszin_cim'] }}</p>
             <p><span>Szektor:</span> {{ $jegy['szektor'] }}</p>
+            @if ($jegy['ulohely']!=null)
             <p><span>Sor:</span> {{ $jegy['sor'] }} sor </p>
             <p><span>Ülőhely:</span> {{ $jegy['ulohely'] }}</p>
+            @endif
             <p><span>Jegyár:</span> {{ $jegy['jegyar'] }} Ft</p>
         </div>
         <div class="footer">

@@ -1,13 +1,25 @@
 import { Injectable } from '@angular/core';
 import { JegyAdatModell } from '../_modellek/jegy-adat-modell';
 import { SzektorAlegysegModell } from '../_modellek/szektor-alegyseg-modell';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KosarService {
 
+  constructor(private cookieService:CookieService,
+              private http:HttpClient) {}
+
   jegyAdatLista: JegyAdatModell[] = [];
+  private readonly RENDELES_COOKIE:string = 'rendelesCookie'
+
+  jegyAdatListaBetoltes(){
+    this.http.get<JegyAdatModell[]>('http://localhost:8000/api/jegy-adat-lista/'+this.cookieService.get(this.RENDELES_COOKIE)).subscribe((jegyLista:JegyAdatModell[])=>{
+      this.jegyAdatLista = jegyLista
+    })
+  }
 
   getKosarOsszar(szervizAr:number=390):number{
     if (this.jegyAdatLista.length==0)szervizAr=0;
@@ -18,33 +30,35 @@ export class KosarService {
     return kosarOsszar+szervizAr;
   }
 
-  kosarbaHelyezes(jegyAdat:JegyAdatModell){
-    this.jegyAdatLista.push(jegyAdat);
+  kosarbaHelyezes(jegyAdatok:JegyAdatModell[]){
+    const body = jegyAdatok
+    if (this.cookieService.get(this.RENDELES_COOKIE)){
+      this.http.post('http://localhost:8000/api/jegyek-kosarba-helyezese/'+this.cookieService.get(this.RENDELES_COOKIE),body).subscribe(()=>{
+        this.jegyAdatListaBetoltes()
+      })
+    }
+    else{
+      this.http.post('http://localhost:8000/api/jegyek-kosarba-helyezese/'+0,body).subscribe((valasz:any)=>{
+        this.cookieService.set(this.RENDELES_COOKIE,valasz.rendeles_id)
+        this.jegyAdatListaBetoltes()
+      });
+    }
   }
 
-  tetelTorles(index:number){
-    this.jegyAdatLista.splice(index,1);
+  tetelTorles(jegy_id:number){
+    this.http.delete('http://localhost:8000/api/tetel-torles/'+jegy_id).subscribe(()=>{
+      this.jegyAdatListaBetoltes()
+      if (this.jegyAdatLista.length==0) this.cookieService.delete(this.RENDELES_COOKIE)
+    })
   }
 
   getTetelOsszarByItem(kosarElem:JegyAdatModell):number{
-    return kosarElem.jegyDarabszam*kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
+    return kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
   }
   
   getTetelOsszarByIndex(index:number):number{
     const kosarElem:JegyAdatModell = this.jegyAdatLista[index];
-    return kosarElem.jegyDarabszam*kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
-  }
-
-  jegyDarabCsokkentes(index:number){
-    let foglaltUlohelyek:JegyAdatModell = this.jegyAdatLista[index];
-    if (foglaltUlohelyek.jegyDarabszam==1) return;
-    foglaltUlohelyek.jegyDarabszam!--;
-    foglaltUlohelyek.ulohely.pop();
-  }
-
-  jegyDarabNoveles(index:number){
-    this.jegyAdatLista[index].jegyDarabszam!++;
-    this.ulohelyHozzaadas(index);
+    return kosarElem.szektorAlegyseg!.szektor_alegyseg_jegyar;
   }
 
   ulohelySzamGeneralas(jegyFoglaltDarab:number,szektorAlegyseg:SzektorAlegysegModell):number[]{
@@ -58,21 +72,8 @@ export class KosarService {
       }else{
         ulohelyek.push(helySzam)  
       }    
-
       helySzam++      
     }
-
     return ulohelyek;
-  }
-
-  ulohelyHozzaadas(index:number){
-
-    let hely = 1;
-    while(this.jegyAdatLista[index].ulohely.length!=this.jegyAdatLista[index].jegyDarabszam){
-      if (!this.jegyAdatLista[index].ulohely.includes(hely)){
-        this.jegyAdatLista[index].ulohely.push(hely);
-      }
-      hely++;
-    }
   }
 }

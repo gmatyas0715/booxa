@@ -6,6 +6,7 @@ use App\Models\JegyAdat;
 use App\Http\Requests\StoreJegyAdatRequest;
 use App\Http\Requests\UpdateJegyAdatRequest;
 use App\Models\Esemeny;
+use App\Models\Rendeles;
 use App\Models\SzektorAlegyseg;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -18,6 +19,35 @@ class JegyAdatController extends Controller
     {
         $jegyAdatok = JegyAdat::all();
         return response()->json($jegyAdatok);
+    }
+
+    public function jegyAdatLista(int $rendeles_id) {
+        $jegyAdatLista = Rendeles::find($rendeles_id)->jegyAdat;
+        return response()->json($jegyAdatLista);
+    }
+
+    public function jegyKosarbaHelyezes(Request $request, int $rendeles_id) {
+
+        $jegyAdat = new JegyAdat();
+        $jegyAdat-> esemeny_id = $request->input('esemeny_id');
+        $jegyAdat-> helyszin_id = $request->input('helyszin_id');
+        $jegyAdat-> szektor_id = $request->input('szektor_id');
+        $jegyAdat-> szektor_alegyseg_id = $request->input('szektor_alegyseg_id');
+        $jegyAdat-> ulohely = $request->input('ulohely');
+
+        if ($rendeles_id!=0){
+            $jegyAdat->rendeles_id = $request->input('rendeles_id');
+            $jegyAdat->save();
+        }
+
+        else{
+            $rendeles = new Rendeles();
+            $rendeles->save();
+        }
+    }
+
+    public function tetelTorles(int $jegy_id) {
+        
     }
 
     public function store(StoreJegyAdatRequest $request)

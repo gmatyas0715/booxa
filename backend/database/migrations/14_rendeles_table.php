@@ -16,12 +16,12 @@ return new class extends Migration
             $table->timestamp('rendeles_idopont');
             $table->integer('rendeles_osszeg')->nullable();
             $table->timestamp('fizetes_idopont')->nullable();
-            $table->foreignId('user_id');
-            $table->string('vezeteknev');
-            $table->string('keresztnev');
-            $table->string('email',100);
-            $table->foreignId('szamlazasi_cim_id');
-            $table->string('status');
+            $table->foreignId('user_id')->nullable();
+            $table->string('vezeteknev')->nullable();
+            $table->string('keresztnev')->nullable();
+            $table->string('email',100)->nullable();
+            $table->foreignId('szamlazasi_cim_id')->nullable();
+            $table->string('status')->nullable();
             $table->string('session_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')
