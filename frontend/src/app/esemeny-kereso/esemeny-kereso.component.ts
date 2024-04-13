@@ -95,7 +95,6 @@ export class EsemenyKeresoComponent implements OnInit{
     this.eloadoJavaslatBetoltes();
     this.helyszinJavaslatBetoltes();
     this.helyszinCimBetoltes();
-    this.esemenyKereses();
   }
 
   szuroMuvelet(){
