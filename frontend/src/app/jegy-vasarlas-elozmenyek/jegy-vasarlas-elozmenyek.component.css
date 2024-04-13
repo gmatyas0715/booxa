@@ -1,0 +1,42 @@
+div{
+    color:rgb(1 12 128);
+}
+
+li{
+    list-style-type: none;
+}
+
+.esemeny-kep{
+    margin: 5px;
+    height: 140px;
+    box-shadow: 1px 1px 4px 1px  #c8c8d6;
+    border-radius: 10px;
+}
+
+.jegy-adat-container{
+    box-shadow: 1px 1px 4px 1px  #c8c8d6;
+    border-radius: 10px;
+    font-size: 110%;
+}
+
+.jegy-darab{
+    background-color: rgb(1 12 128);
+    padding-top: 3px;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+}
+
+#kosar-ikon{
+    margin-left: 10px;
+    height: 25px;
+}
+
+.szuro-torlo-button{
+    height: 40px;
+    width: 110px;
+    text-align: center;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+}

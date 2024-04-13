@@ -56,6 +56,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::post('/pdf-jegy-generalas/{rendeles}', 'RendelesController@pdfJegyLetoltes');
         Route::post('/pdf-szamla-generalas/{rendeles}', 'RendelesController@pdfSzamlaLetoltes');
         Route::get('/session-data','RendelesController@sessionData');
+        Route::get('/korabbi-vasarlasok', 'RendelesController@korabbiVasarlasok');
 
         // User
         Route::get('/userek/{user}','UserController@show');

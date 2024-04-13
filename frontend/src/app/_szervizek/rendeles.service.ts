@@ -14,6 +14,16 @@ export class RendelesService {
               public userAzonositasSzerviz:UserAzonositasService,
               public kosarSzerviz:KosarService) { }
 
+  korabbiVasarlasokLekerdezese():Observable<any>{
+
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
+    }) 
+
+    return this.http.get<any>('http://localhost:8000/api/korabbi-vasarlasok',{headers})
+  }
+
   rendelesElkuldes(rendelesAdatok:RendelesModell){
 
     const body = JSON.stringify(rendelesAdatok);

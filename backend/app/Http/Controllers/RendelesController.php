@@ -10,6 +10,7 @@ use App\Models\Esemeny;
 use App\Models\JegyAdat;
 use App\Models\Szektor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Stripe\Stripe;
 use Stripe\Customer;
@@ -220,5 +221,28 @@ class RendelesController extends Controller
     public function pdfSzamlaLetoltes(Rendeles $rendeles) {
         $pdf = $this->pdfSzamlaGeneralas($rendeles);
         return $pdf->stream('szamla.pdf');
+    }
+
+    public function korabbiVasarlasok(Request $request) {
+        $korabbiVasarlasok = 
+        /*DB::table('rendeles')->select('rendeles.id as rendeles_id','rendeles.rendeles_idopont as rendeles_idopont','jegy_adat.id as jegy_adat_id','esemeny.idopont as esemeny_idopont','eloado.nev as eloado_nev','helyszin.nev as helyszin_nev','szektor_nev')
+            ->join('jegy_adat','jegy_adat.rendeles_id','=','rendeles.id')
+            ->join('esemeny','esemeny.id','=','jegy_adat.esemeny_id')
+            ->join('eloado','eloado.id','=','esemeny.eloado_id')
+            ->join('helyszin','helyszin.id','=','jegy_adat.helyszin_id')
+            ->join('szektor','szektor.id','=','jegy_adat.szektor_id')
+            ->where('user_id',$request->user()->id)
+            ->where('rendeles.status','fizetett')
+            ->distinct()
+            ->groupBy('rendeles.id')
+            ->get();*/
+        Rendeles::select(['id','rendeles_idopont'])
+        ->with(['jegyAdat'=>function($query){
+            $query->select(['id','rendeles_id','esemeny_id','szektor_id'])->with(['esemeny:id,idopont,eloado_id,helyszin_id','esemeny.eloado:id,nev','esemeny.helyszin:id,nev','szektor:id,szektor_nev']);
+        }])
+        ->where('user_id',$request->user()->id)
+        ->where('rendeles.status','fizetett')
+        ->get();
+        return response()->json([$korabbiVasarlasok]);
     }
 }
