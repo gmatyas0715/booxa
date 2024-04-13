@@ -72,8 +72,9 @@ class JegyAdatController extends Controller
         $jegy_adat->delete();
         if(!$rendeles->jegyAdat()->exists()){
             $rendeles->delete();
+            return response()->json(['rendeles_torles'=>true]);
         }
-        return response()->json(['üzenet'=>$jegy_adat->id.' azonosítójú jegy adat sikeresen törölve!']);
+        return response()->json(['rendeles_torles'=>false]);
     }
     
     public function szabadHelySzam(Request $request){

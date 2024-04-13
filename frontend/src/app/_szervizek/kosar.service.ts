@@ -15,6 +15,18 @@ export class KosarService {
   jegyAdatLista: JegyAdatModell[] = [];
   private readonly RENDELES_COOKIE:string = 'rendelesCookie'
 
+  public get rendelesCookie(){
+    return this.cookieService.get(this.RENDELES_COOKIE)
+  }
+
+  public get rendelesCookieCheck(){
+    return this.cookieService.check(this.RENDELES_COOKIE)
+  }
+
+  rendelesCookieDelete(){
+    this.cookieService.delete(this.RENDELES_COOKIE)
+  }
+
   jegyAdatListaBetoltes(){
     if (!this.cookieService.check(this.RENDELES_COOKIE))return
     this.http.get<JegyAdatModell[]>('http://localhost:8000/api/jegy-adat-lista/'+this.cookieService.get(this.RENDELES_COOKIE)).subscribe((jegyAdatLista:JegyAdatModell[])=>{
@@ -48,10 +60,20 @@ export class KosarService {
     }
   }
 
+  kosarKiurites(){
+    this.jegyAdatLista = []
+  }
+
   tetelTorles(jegy_id:number){
     console.log(jegy_id);
-    this.http.delete('http://localhost:8000/api/tetel-torles/'+jegy_id).subscribe(()=>{
-      this.jegyAdatListaBetoltes()
+    this.http.delete('http://localhost:8000/api/tetel-torles/'+jegy_id).subscribe((valasz:any)=>{
+      if (valasz.rendeles_torles=='true'){
+        this.kosarKiurites()
+        this.rendelesCookieDelete()
+      }
+      else{
+        this.jegyAdatListaBetoltes()
+      }
     })
   }
 

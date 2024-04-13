@@ -29,7 +29,7 @@ class RendelesController extends Controller
         return response()->json($rendelesek);
     }
 
-    public function checkout(Request $request){
+    public function checkout(Request $request,Rendeles $rendeles){
 
         $szamlazasAdatok = $request->input('szamlazasAdatok');
         Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
@@ -43,7 +43,6 @@ class RendelesController extends Controller
 
         $user = $request->user();
 
-        $rendeles = new Rendeles();
         $rendeles->user_id = $user->id;
         $rendeles->vezeteknev = $szamlazasAdatok['vezeteknev'];
         $rendeles->keresztnev = $szamlazasAdatok['keresztnev'];
@@ -53,7 +52,7 @@ class RendelesController extends Controller
         $rendeles->save();
 
         $rendelesOsszeg = 390;
-        $jegyAdatok = json_decode($request->input('jegyAdatok'));
+        $jegyAdatok = $rendeles->jegyAdat;
 
         $customer = Customer::create([
             'email' => $szamlazasAdatok['email']
@@ -66,16 +65,6 @@ class RendelesController extends Controller
             $szektor = Szektor::find($jegyAdat->szektor_id);
 
             $szektorAr = SzektorAlegysegAr::where('esemeny_id',$jegyAdat->esemeny_id)->where('szektor_alegyseg_id',$jegyAdat->szektor_alegyseg_id)->value('szektor_alegyseg_ar');
-
-            $ujJegyAdat = new JegyAdat();
-            $ujJegyAdat->esemeny_id = $jegyAdat->esemeny_id;
-            $ujJegyAdat->helyszin_id = $esemeny->helyszin_id;
-            $ujJegyAdat->rendeles_id = $rendeles->id;
-            $ujJegyAdat->szektor_id = $jegyAdat->szektor_id;
-            $ujJegyAdat->szektor_alegyseg_id = $jegyAdat->szektor_alegyseg_id;
-            $ujJegyAdat->ulohely = $jegyAdat->ulo_hely; 
-
-            $ujJegyAdat ->save();
 
             $rendelesOsszeg+=$szektorAr;
 
@@ -105,7 +94,7 @@ class RendelesController extends Controller
             ];
 
         $session = Session::create([
-          'payment_method_types' => ['card'],
+          'payment_method_types' => ['card'], 
           'line_items' => $lineItems,
           'mode' => 'payment',
           'customer' => $customer->id,
@@ -134,7 +123,7 @@ class RendelesController extends Controller
             }
 
 
-            Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
+            //Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
             $rendeles->status='fizetett';
             $rendeles->fizetes_idopont = now();
             $rendeles->save();
@@ -181,6 +170,7 @@ class RendelesController extends Controller
             $cim = $esemeny->helyszin->cim->first();            
 
             $jegyPrint = [
+                'jegy_id'=>$jegy->id,
                 'idopont' => $esemeny->idopont,
                 'eloado' => $esemeny->eloado->nev,
                 'helyszin' => $esemeny->helyszin->nev,

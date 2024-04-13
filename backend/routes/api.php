@@ -52,7 +52,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
         Route::get('/helyszin-eloado-nev-id','EsemenyController@helyszinEloadoNevId');
 
         // Rendelés
-        Route::post('/rendeles-elkuldes', 'RendelesController@checkout');
+        Route::post('/rendeles-elkuldes/{rendeles}', 'RendelesController@checkout');
         Route::post('/pdf-jegy-generalas/{rendeles}', 'RendelesController@pdfJegyLetoltes');
         Route::post('/pdf-szamla-generalas/{rendeles}', 'RendelesController@pdfSzamlaLetoltes');
         Route::get('/session-data','RendelesController@sessionData');

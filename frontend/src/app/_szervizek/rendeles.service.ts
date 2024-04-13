@@ -23,7 +23,7 @@ export class RendelesService {
       'Authorization':`Bearer ${this.userAzonositasSzerviz.getAuthToken()}`
     }) 
 
-    return this.http.post('http://localhost:8000/api/rendeles-elkuldes',body,{headers});
+    return this.http.post('http://localhost:8000/api/rendeles-elkuldes/'+this.kosarSzerviz.rendelesCookie,body,{headers});
   }
 
   
@@ -33,7 +33,6 @@ export class RendelesService {
                           this.userAzonositasSzerviz.getAuthToken(),
                           szamlazasAdatok);
               
-    console.log(rendelesBackendnek)
     return rendelesBackendnek;
   }
 

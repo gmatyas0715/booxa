@@ -48,11 +48,11 @@ export const adminGuard = () => {
   )
 }
 
-export const kosarCheck = () => {
+export const kosarCheckGuard = () => {
   const kosarService = inject(KosarService)
   const router = inject(Router);
 
-  return kosarService.jegyAdatLista.length != 0 ? true : router.parseUrl('/404');
+  return kosarService.rendelesCookieCheck ? true : router.parseUrl('/404');
 }
 
 export const esemenyszerkesztoGuard = () => {

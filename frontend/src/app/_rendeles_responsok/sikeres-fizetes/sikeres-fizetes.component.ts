@@ -5,6 +5,7 @@ import { RendelesService } from 'src/app/_szervizek/rendeles.service';
 import { UserAzonositasService } from 'src/app/_auth/user-azonositas.service';
 import { saveAs } from 'file-saver';
 import { now } from 'lodash';
+import { KosarService } from 'src/app/_szervizek/kosar.service';
 
 @Component({
   selector: 'app-sikeres-fizetes',
@@ -24,7 +25,8 @@ export class SikeresFizetesComponent implements OnInit{
   constructor(private route: ActivatedRoute,
               private rendelesService:RendelesService,
               private http:HttpClient,
-              private userAzonositasSzerviz:UserAzonositasService) {
+              private userAzonositasSzerviz:UserAzonositasService,
+              private kosarSzerviz:KosarService) {
     
   }
 
@@ -36,7 +38,6 @@ export class SikeresFizetesComponent implements OnInit{
           if (valasz.error=='not_found'){
             this.notFound = true
             this.betoltes = false
-            console.log("if not found");
           }
   
           else {
@@ -44,15 +45,15 @@ export class SikeresFizetesComponent implements OnInit{
             this.userId = valasz.user.id
             this.rendeles_id = valasz.rendeles_id
             this.betoltes = false
-            console.log("else not found");
-
           }
+          this.kosarSzerviz.rendelesCookieDelete()
+          this.kosarSzerviz.kosarKiurites()
         },
         error:()=>{
           this.notFound = true
           this.betoltes = false
-          console.log("error not found");
-
+          this.kosarSzerviz.rendelesCookieDelete()
+          this.kosarSzerviz.kosarKiurites()
         }
       })
     }

@@ -45,7 +45,7 @@
             <p><span>Helyszín:</span> {{ $jegy['helyszin'] }}</p>
             <p><span>Helyszín cím:</span> {{ $jegy['helyszin_cim'] }}</p>
             <p><span>Szektor:</span> {{ $jegy['szektor'] }}</p>
-            @if ($jegy['ulohely']!=null)
+            @if ($jegy['sor']!='null')
             <p><span>Sor:</span> {{ $jegy['sor'] }} sor </p>
             <p><span>Ülőhely:</span> {{ $jegy['ulohely'] }}</p>
             @endif
@@ -56,7 +56,10 @@
             <h3>Jó szórakozást kívánunk!</h3>
             <a href="http://localhost:4200" target="_blank"><img style="width: 8cm" src="booxa.jpg" alt=""></a>
             <br>
-            <img style="width: 4cm;margin-top:2cm" src="qr_kod.png" alt="">
+            <div style="display: inline-flex">
+                <p>Jegyazonosító: {{$jegy['jegy_id']}}</p>
+                <img style="width: 4cm" src="qr_kod.png" alt="">
+            </div>
             <p><span>Booxa</span>©</p>
         </div>
     </div>
