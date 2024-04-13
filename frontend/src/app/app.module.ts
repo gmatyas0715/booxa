@@ -61,8 +61,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
-
-
+import { MatSortModule } from '@angular/material/sort';
+import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
+import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
+import { ScrollProgressBarComponent } from './scroll-progress-bar/scroll-progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
     Error404Component,
     DataComponent,
     KapcsolatComponent
+    ScrollButtonComponent,
+    ScrollProgressBarComponent
   ],
   imports: [
     BrowserModule,
