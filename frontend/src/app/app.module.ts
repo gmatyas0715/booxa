@@ -30,8 +30,8 @@ import { UserDataComponent } from './_adat-megjelenito/user-data/user-data.compo
 import { CimDataComponent } from './_adat-megjelenito/cim-data/cim-data.component';
 import { HelyszinDataComponent } from './_adat-megjelenito/helyszin-data/helyszin-data.component';
 import { EsemenyDataComponent } from './_adat-megjelenito/esemeny-data/esemeny-data.component';
-import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-fizetes/sikeres-fizetes.component';
 import { Error404Component } from './_rendeles_responsok/error-404/error-404.component';
+import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-fizetes/sikeres-fizetes.component';
 
 // Angular Material
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -61,8 +61,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
-import { MatSortModule } from '@angular/material/sort';
-import { SikeresFizetesComponent } from './_rendeles_responsok/sikeres-rendeles/sikeres-fizetes.component';
 import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
 import { ScrollProgressBarComponent } from './scroll-progress-bar/scroll-progress-bar.component';
 
@@ -90,7 +88,7 @@ import { ScrollProgressBarComponent } from './scroll-progress-bar/scroll-progres
     SikeresFizetesComponent,
     Error404Component,
     DataComponent,
-    KapcsolatComponent
+    KapcsolatComponent,
     ScrollButtonComponent,
     ScrollProgressBarComponent
   ],

@@ -3,9 +3,11 @@ button {
     bottom: 20px;
     right: 20px;  
     padding: 10px;
-    background-color:blue;
-    color: azure;
+    background-color:#2e2f70;
+    color: rgb(246, 223, 92);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}  
+    font-weight: bold;
+    letter-spacing: 2px;
+}

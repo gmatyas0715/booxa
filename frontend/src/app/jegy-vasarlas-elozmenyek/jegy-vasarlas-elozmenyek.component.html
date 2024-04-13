@@ -5,7 +5,11 @@
                      <hr>
               </div>
        </div>
-       <div class="row"></div>
+       <div *ngIf="korabbiVasarlasok.length==0" class="row">
+              <div class="col">
+                     <h3>Még nem vásároltál a Booxán... :(</h3>
+              </div>
+       </div>
        <details *ngFor="let vasarlas of korabbiVasarlasok" class="mb-5 col">
               <summary class="font-weight-bold mb-3" style="font-size: 17px;">
                      Rendelésazonosító: {{vasarlas.id}} - Rendelés időpont: {{vasarlas.rendeles_idopont}}
