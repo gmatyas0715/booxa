@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Mufaj;
 use App\Http\Requests\StoreMufajRequest;
 use App\Http\Requests\UpdateMufajRequest;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Schema;
 
 class MufajController extends Controller
 {
@@ -54,7 +52,6 @@ class MufajController extends Controller
 
     public function destroy(Mufaj $mufaj)
     {
-        Log::info($mufaj);
         $mufaj->delete();
         return response()->json(['üzenet'=>$mufaj->nev.' nevű műfaj sikeresen törölve!']);
     }

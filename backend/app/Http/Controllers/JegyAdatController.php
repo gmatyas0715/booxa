@@ -6,14 +6,11 @@ use App\Models\JegyAdat;
 use App\Models\Esemeny;
 use App\Models\Rendeles;
 use App\Models\SzektorAlegyseg;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 class JegyAdatController extends Controller
 {
     public function jegyAdatLista(int $rendeles_id) {
-        Log::info($rendeles_id);
         $jegyAdatLista = DB::table('jegy_adat')->select('jegy_adat.id as id','eloado.nev as eloadoNev','helyszin.nev as helyszinNev','szektor_nev as szektorNev','szektor_tipus as szektorTipus','sorjelzes','ulohely','szektor_alegyseg_ar as szektorAlegysegJegyar','kep_eleres as kepEleres','helyszin_kep_eleres as helyszinKepEleres')
         ->join('esemeny','esemeny.id','=','jegy_adat.esemeny_id')
         ->join('eloado','eloado.id','=','esemeny.eloado_id')
@@ -28,7 +25,6 @@ class JegyAdatController extends Controller
         ->where('jegy_adat.rendeles_id',$rendeles_id)
         ->distinct()
         ->get();
-        Log::info($jegyAdatLista);
         return response()->json($jegyAdatLista);
     }
 
@@ -133,7 +129,6 @@ class JegyAdatController extends Controller
         }
 
         foreach ($szektorAlegysegMap as $szektorAlegyseg => $szektorAlegysegUlohelyek) {
-            Log::info($szektorAlegyseg);
             $kapacitas = SzektorAlegyseg::find($szektorAlegyseg)->max_kapacitas;
             if (is_int($szektorAlegysegUlohelyek)){
                 $foglaltsagMap[$szektorAlegyseg] = [$kapacitas-$szektorAlegysegUlohelyek>0,$szektorAlegysegUlohelyek];

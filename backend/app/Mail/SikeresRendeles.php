@@ -7,7 +7,6 @@ use App\Models\Esemeny;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Log;
 
 class SikeresRendeles extends Mailable
 {
@@ -38,7 +37,6 @@ class SikeresRendeles extends Mailable
         $jegyek = [];
         foreach ($jegyAdatok as $jegy) {
             $esemeny = Esemeny::find($jegy->esemeny_id);
-            Log::info("". $esemeny);
             $jegyView = [
                 'idopont' => $esemeny->idopont,
                 'eloado' => $esemeny->eloado->nev,

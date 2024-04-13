@@ -9,7 +9,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
@@ -70,7 +69,6 @@ class AuthController extends Controller
     public function roleCheck(Request $request)
     {
         $user = $request->user();
-        Log::info($user);
         $roles = $request['roles'];
         foreach ($roles as $role) {
             if ($user->hasRole($role)){
@@ -83,8 +81,6 @@ class AuthController extends Controller
     public function getSzerepNev(Request $request){
         $user = $request->user();
         $userSzerep = $user->getRoleNames()[0];
-        Log::info($userSzerep);
-        Log::info($userSzerep);
         return response()->json(['szerep'=>$userSzerep]);
     }
 

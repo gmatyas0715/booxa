@@ -69,7 +69,6 @@ export class ProfilBeallitasokComponent {
 
   emailSzerkesztesClick(){
     this.emailForm.get('email')?.enable();
-    console.log(this.emailForm.get('email'))
     this.emailSzerkesztheto=true
     this.emailForm.get('email')?.addValidators([this.emailValidator]);
     this.emailForm.addValidators(this.emailEgyezesValidator);
@@ -156,8 +155,6 @@ export class ProfilBeallitasokComponent {
   
   regisztraltFelhasznalokEmailek(){
     this.userService.userFelhasznalonevek().subscribe((valasz)=>{
-      console.log(valasz);
-      
       this.regisztraltFelhasznalonevek = valasz.felhasznalonev;
       this.regisztraltEmailek = valasz.email;
       this.belepesAdatForm.get('felhasznalonev')
@@ -168,7 +165,6 @@ export class ProfilBeallitasokComponent {
   }
 
   torlesAblak(enterAnimationDuration:string,exitAnimationDuration:string): void {
-    console.log(this.userService.bejelentkezettUser.szuletesi_datum)
     this.dialog.open(ProfilTorles,{width:'250px',enterAnimationDuration,exitAnimationDuration});
   }
 
@@ -181,17 +177,13 @@ export class ProfilBeallitasokComponent {
         this.userService.bejelentkezettUser.keresztnev = valasz.keresztnev
         this.userService.bejelentkezettUser.vezeteknev = valasz.vezeteknev
         this.userService.bejelentkezettUser.szuletesi_datum = valasz.szuletesi_datum
-
-        console.log(this.userService.bejelentkezettUser)
     })
   }
 
   profilMentes(formTipus:FormGroup,formTipusString:string,formSzerkesztheto:string){
     if (formSzerkesztheto=='szemelyesAdatSzerkesztheto')this.szemelyesAdatForm.get('szuletesi_datum')?.setValue(this.datePipe.transform(this.szemelyesAdatForm.get('szuletesi_datum')?.value, 'yyyy-MM-dd'))
-    console.log(this.szemelyesAdatForm.get('szuletesi_datum')?.value)
     this.userService.profilSzerkesztes(this.userAzonositas.getUserId(),this.userAzonositas.getAuthToken(),formTipus.value,formTipusString).subscribe((valasz)=>{
       this.userService.bejelentkezettUser = valasz.user_adatok
-      console.log(this.userService.bejelentkezettUser);
       formTipus.reset();
       
       switch (formSzerkesztheto) {

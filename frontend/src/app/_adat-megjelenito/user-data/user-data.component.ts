@@ -49,9 +49,7 @@ export class UserDataComponent {
   }
 
   userBetoltes() {
-    this.userService.userOsszes(this.userAzonositasService.getAuthToken()).subscribe((valasz) => {
-      console.log(valasz);
-      
+    this.userService.userOsszes(this.userAzonositasService.getAuthToken()).subscribe((valasz) => {  
       this.dataSource.data = valasz;
     });
   }
@@ -59,8 +57,6 @@ export class UserDataComponent {
   szerepOsszes(){
     this.userAzonositasService.szerepOsszes(this.userAzonositasService.getAuthToken()).subscribe((valasz)=>{
       this.szerepek = valasz;
-      console.log(valasz);
-      
     })
   }
 
@@ -285,8 +281,6 @@ export class UserModositas {
     this.nem = this.data.user.nem
     this.username = this.data.user.username
     this.szuletesi_datum = new Date(this.data.user.szuletesi_datum)
-    console.log(this.szuletesi_datum);
-    
     this.szerep = this.data.user.roles[0].name
   }
 

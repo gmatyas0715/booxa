@@ -42,7 +42,6 @@ export class MufajDataComponent {
   mufajBetoltes(){
     this.mufajService.mufajOsszes(this.userAzonositas.getAuthToken()).subscribe((valasz)=>{
         this.dataSource.data = valasz
-        console.log(this.dataSource);
       }
     )
   }

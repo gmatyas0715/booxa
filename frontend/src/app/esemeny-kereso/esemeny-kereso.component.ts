@@ -207,8 +207,6 @@ export class EsemenyKeresoComponent implements OnInit{
   }
 
   helyszinCimBetoltes(){
-    console.log(this.cimSzerviz.telepulesLista.length);
-
     if (this.cimSzerviz.telepulesLista.length==0){
       this.cimSzerviz.helyszinCimekLekerdezese().subscribe((valasz:string[])=>{
         this.cimSzerviz.telepulesLista = valasz.sort((a,b)=>a.localeCompare(b)); 
@@ -222,8 +220,6 @@ export class EsemenyKeresoComponent implements OnInit{
   }
 
   mufajBetoltes(){
-    console.log(this.mufajSzerviz.mufajLista.length);
-    
     if (this.mufajSzerviz.mufajLista.length==0){
       this.mufajSzerviz.mufajokLekerdezese().subscribe((valasz:string[])=>{
         this.mufajSzerviz.mufajLista = valasz.sort((a,b)=>a.localeCompare(b)); 

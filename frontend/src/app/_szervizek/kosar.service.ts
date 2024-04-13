@@ -45,7 +45,6 @@ export class KosarService {
   }
 
   kosarbaHelyezes(jegyAdatok:JegyAdatModell[]){
-    console.log(jegyAdatok);
     const body = jegyAdatok
     if (this.cookieService.get(this.RENDELES_COOKIE)){
       this.http.post('http://localhost:8000/api/jegyek-kosarba-helyezese/'+this.cookieService.get(this.RENDELES_COOKIE),body).subscribe(()=>{
@@ -65,7 +64,6 @@ export class KosarService {
   }
 
   tetelTorles(jegy_id:number){
-    console.log(jegy_id);
     this.http.delete('http://localhost:8000/api/tetel-torles/'+jegy_id).subscribe((valasz:any)=>{
       if (valasz.rendeles_torles=='true'){
         this.kosarKiurites()

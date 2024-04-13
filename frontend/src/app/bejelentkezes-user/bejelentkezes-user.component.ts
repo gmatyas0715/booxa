@@ -20,15 +20,12 @@ export class BejelentkezesUserComponent {
   userLogin(){
     this.toltes = true
     let userBejelentkezesAdatok = {felhasznalonev: this.felhasznalonev, jelszo:this.jelszo};
-    console.log(userBejelentkezesAdatok)
     this.userAzonositas.login(userBejelentkezesAdatok).subscribe({
       next:(valasz)=>{
         this.toltes = false
-        console.log('Sikeres bejelentkezés',valasz);
         this.userAzonositas.setAuthToken(valasz.token);
         this.userAzonositas.setUserId(valasz.userId);
         this.userAzonositas.setUsername(valasz.felhasznalonev);
-        console.log(this.userService.bejelentkezettUser)
         this.router.navigate(['/kezdooldal']);
       },
       error:(error) => {

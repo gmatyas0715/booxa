@@ -295,8 +295,6 @@ export class HelyszinModositas {
   }
 
   helyszinModositas(){
-    console.log(this.cim_id);
-    
       let eloadoAdatok: FormData = new FormData();
 
       if(this.nev!="" && this.cim_id!="" && this.kapacitas!="" && this.arkategoria!=""){

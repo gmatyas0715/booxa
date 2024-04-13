@@ -73,7 +73,6 @@ export class SikeresFizetesComponent implements OnInit{
         this.jegyekBetoltes = false;
       },
       error:(error:any) => {
-        console.log(error);
       }
     })
   }
@@ -90,9 +89,6 @@ export class SikeresFizetesComponent implements OnInit{
         var blob = new Blob([pdfData], { type: mediaType });
         saveAs(blob, 'SZAMLA_'+this.rendeles_id+'_'+now()+'.pdf');
         this.szamlaBetoltes = false;
-      },
-      error:(error:any) => {
-        console.log(error);
       }
     })
   }

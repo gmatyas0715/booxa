@@ -77,7 +77,6 @@ export class UserService {
 
     userAdatok.form_tipus = formTipusString
     const body = JSON.stringify(userAdatok);
-    console.log(body)
 
     return this.http.patch<any>(this.apiUrl+'userek/'+userId,body,{headers});
   }

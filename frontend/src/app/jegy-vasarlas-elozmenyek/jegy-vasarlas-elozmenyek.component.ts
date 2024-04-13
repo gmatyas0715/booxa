@@ -18,9 +18,7 @@ export class JegyVasarlasElozmenyekComponent {
   }
 
   korabbiRendelesekLekerdezese(){
-    this.rendelesService.korabbiVasarlasokLekerdezese().subscribe((korabbiVasarlasok)=>{
-      console.log(korabbiVasarlasok);
-      
+    this.rendelesService.korabbiVasarlasokLekerdezese().subscribe((korabbiVasarlasok)=>{   
       this.korabbiVasarlasok = korabbiVasarlasok[0]
     })
   }

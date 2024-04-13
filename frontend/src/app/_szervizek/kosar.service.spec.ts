@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { KosarService } from './kosar.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 describe('KosarService', () => {

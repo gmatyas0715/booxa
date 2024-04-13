@@ -115,27 +115,22 @@ class RendelesController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
         $sessionId = $request->query('sessionId');
 
-        //try {
-            $stripeSession = Session::retrieve($sessionId); 
-            $rendeles = Rendeles::where('session_id', $sessionId)->first();
+        $stripeSession = Session::retrieve($sessionId); 
+        $rendeles = Rendeles::where('session_id', $sessionId)->first();
 
-            if (!$stripeSession || $rendeles->status=='fizetett'){
-                return response()->json(['error'=> 'not_found']);
-            }
+        if (!$stripeSession || $rendeles->status=='fizetett'){
+            return response()->json(['error'=> 'not_found']);
+        }
 
 
-            //Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
-            $rendeles->status='fizetett';
-            $rendeles->fizetes_idopont = now();
-            $rendeles->save();
+        Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
+        $rendeles->status='fizetett';
+        $rendeles->fizetes_idopont = now();
+        $rendeles->save();
 
-            $customer = Customer::retrieve($stripeSession->customer);
+        $customer = Customer::retrieve($stripeSession->customer);
 
-            return response()->json(['user' => $customer,'rendeles_id'=>$rendeles->id]);
-
-       //} catch (Exception $e) {
-       //    return response()->json(['error'=> 'not_found']);
-       //}
+        return response()->json(['user' => $customer,'rendeles_id'=>$rendeles->id]);
     }
 
     public function show(Rendeles $rendeles)

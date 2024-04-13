@@ -316,8 +316,6 @@ export class EsemenyReszletekComponent{
 
   szektorFoglaltsag(esemenyId:string){
     this.szektorAlegysegSzerviz.szektorAlegysegFoglaltsag(esemenyId).subscribe((valasz:Map<string,[boolean,number]>)=>{
-      console.log(valasz);
-      
       Object.entries(valasz).forEach(([k, [b, n]]) => {
         this.szektorFoglaltsagok.set(k,[b, n])
       })

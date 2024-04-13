@@ -30,7 +30,6 @@ export class EsemenyService {
                  minJegyar:number,
                  maxJegyar:number):Observable<any[]>{
 
-    console.log(eloado+" "+helyszin+" "+datum+" "+keresettTelepulesek+" "+keresettMufajok+" "+minJegyar+" "+maxJegyar+" ")
     let params = new HttpParams();
 
     if (eloado!="") params = params.set('eloado',eloado)
@@ -41,8 +40,6 @@ export class EsemenyService {
 
     params = params.set('min-jegyar',minJegyar)
     params = params.set('max-jegyar',maxJegyar)
-
-    console.log(params)
 
       return this.http.get<any[]>(this.apiUrl+'esemeny-kereso',{params})
   }
@@ -61,10 +58,6 @@ export class EsemenyService {
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${userToken}`
     })
-
-    console.log(esemenyAdatok);
-    
-    
     return this.http.post(this.apiUrl+'esemenyek',esemenyAdatok,{headers})
   }
 
