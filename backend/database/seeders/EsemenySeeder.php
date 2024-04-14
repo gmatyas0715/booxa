@@ -27,10 +27,10 @@ class EsemenySeeder extends Seeder
         // Generált esmények változtatható paraméterei (vége)
 
         $helyszinek = Helyszin::all();
-        $startDate = Carbon::now()->addWeek();
+        $startDate = Carbon::now()->addMonths(3);
 
         // Teszt esemény
-
+        
         Esemeny::factory()->create([
             'idopont' => '2024-12-12',
             'jegy_alapar' => 10000, 
