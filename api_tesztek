@@ -1,0 +1,933 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Booxa API tesztek",
+    "dateExported": "2024-04-14T20:28:29.931Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Általános route-ok",
+            "containerId": "a0b2904f-d201-4a24-b9b0-a30d120db33d",
+            "created": "2024-04-02T11:31:14.784Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "Bejelentkezett route-ok",
+            "containerId": "a0b2904f-d201-4a24-b9b0-a30d120db33d",
+            "created": "2024-04-02T12:23:41.258Z",
+            "sortNum": 7500
+        },
+        {
+            "_id": "5024ab3a-5378-4cf9-b7c0-9050fae47975",
+            "name": "Admin & Eseményszerkesztő route-ok",
+            "containerId": "a0b2904f-d201-4a24-b9b0-a30d120db33d",
+            "created": "2024-04-03T12:49:24.671Z",
+            "sortNum": 8750
+        },
+        {
+            "_id": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Admin route-ok",
+            "containerId": "a0b2904f-d201-4a24-b9b0-a30d120db33d",
+            "created": "2024-04-03T12:49:36.814Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "a0b2904f-d201-4a24-b9b0-a30d120db33d",
+            "name": "API route-ok",
+            "containerId": "",
+            "created": "2024-04-05T08:41:11.014Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "3aa2ecbe-ee69-4e7e-ad65-9392a7db8716",
+            "name": "WEB route-ok",
+            "containerId": "",
+            "created": "2024-04-04T08:01:53.275Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "54c7cc7e-6c3f-4862-83f9-52e39802b8fb",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Műfaj létrehozás",
+            "url": "{{API_URI}}/mufajok",
+            "method": "POST",
+            "sortNum": 1250,
+            "created": "2024-04-03T12:53:31.642Z",
+            "modified": "2024-04-06T15:11:40.604Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nev\":\"indiai\",\n  \"leiras\":\"Vallási zene, mely lehet hindu, iszlám, szikh vagy keresztény egyházi zene. Az indiai zene modális zenei rendszer.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "10f4962c-beed-421f-83f1-8dc8624574b5",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "5024ab3a-5378-4cf9-b7c0-9050fae47975",
+            "name": "Esemény létrehozás",
+            "url": "{{API_URI}}/esemenyek",
+            "method": "POST",
+            "sortNum": 2500,
+            "created": "2024-04-03T12:50:17.549Z",
+            "modified": "2024-04-06T15:11:28.982Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idopont\":\"2024-10-10\",\n  \"eloado_id\":1,\n  \"helyszin_id\":1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "492f8be2-363c-4772-ab96-dbf387f7065a",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Műfajok lekérdezése",
+            "url": "{{API_URI}}/mufajok",
+            "method": "GET",
+            "sortNum": 2500,
+            "created": "2024-04-03T12:53:27.689Z",
+            "modified": "2024-04-06T15:11:43.155Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ac3dc679-c684-43c0-ad00-c9b15c70d3de",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "5024ab3a-5378-4cf9-b7c0-9050fae47975",
+            "name": "Események lekérdezése",
+            "url": "{{API_URI}}/esemenyek",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2024-04-03T12:50:08.532Z",
+            "modified": "2024-04-06T15:11:32.533Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7ec26c16-0c52-4aef-8d5d-76a972750b71",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Műfaj módosítás",
+            "url": "{{API_URI}}/mufajok/2",
+            "method": "PATCH",
+            "sortNum": 5000,
+            "created": "2024-04-03T12:53:22.563Z",
+            "modified": "2024-04-06T15:11:46.028Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"mufajAdatok\":{\n    \"nev\":\"indiai\",\n    \"leiras\":\"Vallási zene, mely lehet hindu, iszlám, szikh vagy keresztény egyházi zene.\"\n  }\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9022fb77-7a03-497a-8155-866b4fc0d362",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "5024ab3a-5378-4cf9-b7c0-9050fae47975",
+            "name": "Esemény módosítás",
+            "url": "{{API_URI}}/esemenyek/1",
+            "method": "PATCH",
+            "sortNum": 7500,
+            "created": "2024-04-03T12:50:03.100Z",
+            "modified": "2024-04-06T15:17:00.131Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idopont\":\"2024-10-10\",\n  \"eloado_id\":2,\n  \"helyszin_id\":1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "43|o7GkceqDo0QFti6eqSMgwd4U8QMtOGvR4HdoJhHN7f10e93c"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e9ea94eb-f7e8-4bd3-a7cd-a09f4f2cfda3",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "User regisztrálás",
+            "url": "{{API_URI}}/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-02T08:46:40.946Z",
+            "modified": "2024-04-06T15:08:18.012Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"vezeteknev\":\"Teszt\",\n  \"keresztnev\":\"Tamás\",\n  \"email\":\"ttamas1@gmail.com\",\n  \"nem\":\"f\",\n  \"szuletesi_datum\":\"1991-01-01\",\n  \"jelszo\":\"Tesztjelszo123\",\n  \"felhasznalonev\":\"ttamas1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ae9f90c4-111e-4bc2-820d-d57eb813d5d1",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "Logout",
+            "url": "{{API_URI}}/logout",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-02T12:23:41.258Z",
+            "modified": "2024-04-06T15:09:18.004Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "41|RD9WB0nFJcpNk3Tn4A4UgTZJEP37bfNEpN5xl4Xq88b7320b"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d63e23fe-6441-4220-800e-7a2c87b9f8e9",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "5024ab3a-5378-4cf9-b7c0-9050fae47975",
+            "name": "Esemény törlés",
+            "url": "{{API_URI}}/esemenyek/2000",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-04-03T12:49:57.581Z",
+            "modified": "2024-04-06T15:21:24.469Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "43|o7GkceqDo0QFti6eqSMgwd4U8QMtOGvR4HdoJhHN7f10e93c"
+            },
+            "tests": []
+        },
+        {
+            "_id": "51b7d3f7-3bb7-4f41-b662-43303b23d752",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Műfaj törlés",
+            "url": "{{API_URI}}/mufajok/30",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-04-03T12:53:15.646Z",
+            "modified": "2024-04-06T15:11:49.388Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "979daae4-9775-41a3-bc56-6e628ef2f0f8",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "3aa2ecbe-ee69-4e7e-ad65-9392a7db8716",
+            "name": "Előadó kép lekérdezése",
+            "url": "{{WEB_URI}}/eloado-kep/30y.jpg",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-04T08:03:18.005Z",
+            "modified": "2024-04-06T15:12:44.737Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "855272a3-4c37-43ca-bcb5-210ecde53d6b",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Helyszín létrehozás",
+            "url": "{{API_URI}}/helyszinek",
+            "method": "POST",
+            "sortNum": 12500,
+            "created": "2024-04-04T06:55:55.168Z",
+            "modified": "2024-04-06T15:11:51.933Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "173168d3-3f5d-4abf-8d47-834539baf8a4",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Helyszínek lekérdezése",
+            "url": "{{API_URI}}/helyszinek",
+            "method": "GET",
+            "sortNum": 13750,
+            "created": "2024-04-04T06:55:49.183Z",
+            "modified": "2024-04-06T15:11:54.709Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fb66ba97-5653-469e-a5b0-1bc44c817b70",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Helyszín módosítás",
+            "url": "{{API_URI}}/helyszinek/1",
+            "method": "PATCH",
+            "sortNum": 14375,
+            "created": "2024-04-04T06:55:43.104Z",
+            "modified": "2024-04-06T15:11:57.324Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "605d34ad-3ee0-4b36-bee3-e4661f6560b8",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Helyszín törlés",
+            "url": "{{API_URI}}/helyszinek/1",
+            "method": "DELETE",
+            "sortNum": 15000,
+            "created": "2024-04-04T06:55:38.692Z",
+            "modified": "2024-04-06T15:12:00.174Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "37|4KpS92x9ie1cIGrd1Jw59nTtcxqCEHRAnqClG0kd7e43f90d"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9a8b56e0-93c1-4049-ba62-2abba7d37df6",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Cím létrehozás",
+            "url": "{{API_URI}}/cimek",
+            "method": "POST",
+            "sortNum": 16250,
+            "created": "2024-04-04T06:55:58.816Z",
+            "modified": "2024-04-06T15:12:03.365Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "13404c98-cc97-4157-b1b7-2c12644ac5b9",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "User login",
+            "url": "{{API_URI}}/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-02T11:19:09.492Z",
+            "modified": "2024-04-06T15:08:27.309Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"felhasznalonev\":\"ttamas1\",\n  \"jelszo\":\"Tesztjelszo123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7f0816a4-c908-4d1b-94a2-335d245ffbc5",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "Role ellenőrzés",
+            "url": "{{API_URI}}/role-check",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-02T12:23:41.259Z",
+            "modified": "2024-04-06T15:09:20.918Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"roles\":[\"admin\"]\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1611527c-0f97-4012-a999-070e5a99cdcd",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "3aa2ecbe-ee69-4e7e-ad65-9392a7db8716",
+            "name": "Helyszín kép lekérdezése",
+            "url": "{{WEB_URI}}/helyszin-kep/location01.jpg",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-04T08:05:04.121Z",
+            "modified": "2024-04-06T15:12:50.573Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "24447857-2011-4df6-9c5b-df9f57f3a911",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Címek lekérdezése",
+            "url": "{{API_URI}}/cimek",
+            "method": "GET",
+            "sortNum": 20625,
+            "created": "2024-04-04T06:55:52.760Z",
+            "modified": "2024-04-06T15:12:08.046Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "121d18c6-ea8d-443b-bd9d-4ec03c3f675a",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Cím módosítás",
+            "url": "{{API_URI}}/cimek/1",
+            "method": "PATCH",
+            "sortNum": 21562.5,
+            "created": "2024-04-04T06:55:47.055Z",
+            "modified": "2024-04-06T15:12:11.161Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e4909aa7-f329-4dbd-9704-ebe5653ad0ee",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Cím törlés",
+            "url": "{{API_URI}}/cimek/1",
+            "method": "DELETE",
+            "sortNum": 22031.3,
+            "created": "2024-04-04T06:55:41.583Z",
+            "modified": "2024-04-06T15:12:13.828Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "37|4KpS92x9ie1cIGrd1Jw59nTtcxqCEHRAnqClG0kd7e43f90d"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0497128a-d055-46ff-a96b-9afeb3837add",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Előadó létrehozás",
+            "url": "{{API_URI}}/eloadok",
+            "method": "POST",
+            "sortNum": 22265.7,
+            "created": "2024-04-04T06:55:57.120Z",
+            "modified": "2024-04-06T15:12:16.541Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "53e6320b-216b-4f66-b3a6-fe39426d673d",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Előadók lekérdezése",
+            "url": "{{API_URI}}/eloadok",
+            "method": "GET",
+            "sortNum": 22324.3,
+            "created": "2024-04-04T06:55:51.136Z",
+            "modified": "2024-04-06T15:12:19.508Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0c112c5d-2418-4e23-816b-f6704c386b74",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Előadó módosítás",
+            "url": "{{API_URI}}/eloadok/1",
+            "method": "PATCH",
+            "sortNum": 22382.8,
+            "created": "2024-04-04T06:55:45.639Z",
+            "modified": "2024-04-06T15:12:22.030Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e63d34f1-2dd5-4a8d-af0d-3cbfb86e188b",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Előadó törlés",
+            "url": "{{API_URI}}/eloadok/1",
+            "method": "DELETE",
+            "sortNum": 22441.4,
+            "created": "2024-04-04T06:55:40.224Z",
+            "modified": "2024-04-06T15:12:24.907Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "37|4KpS92x9ie1cIGrd1Jw59nTtcxqCEHRAnqClG0kd7e43f90d"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d919b1e-c693-4f6a-a0dc-c5d67e02e30e",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "User létrehozás",
+            "url": "{{API_URI}}/user-letrehozas",
+            "method": "POST",
+            "sortNum": 22470.7,
+            "created": "2024-04-04T06:59:46.024Z",
+            "modified": "2024-04-06T15:12:27.813Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d5a5f44a-94f5-4667-bfb2-04c0adb2f6a5",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Userek lekérdezése",
+            "url": "{{API_URI}}/userek",
+            "method": "GET",
+            "sortNum": 22485.3,
+            "created": "2024-04-04T06:59:49.608Z",
+            "modified": "2024-04-06T15:12:30.332Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "37e931b9-1fd9-4d4f-946d-0cbc85d1014b",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "User módosítás",
+            "url": "{{API_URI}}/user-modositas/1",
+            "method": "PATCH",
+            "sortNum": 22500,
+            "created": "2024-04-04T06:59:52.948Z",
+            "modified": "2024-04-06T15:12:32.981Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4848d6a0-a80f-41e9-a5b4-6b8af22a8243",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Helyszínek címei",
+            "url": "{{API_URI}}/helyszin-cimek",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-02T11:30:11.177Z",
+            "modified": "2024-04-06T15:08:30.416Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "497790e0-f556-4162-a880-dd3338d1372e",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "User szerep lekérdezés",
+            "url": "{{API_URI}}/user-szerep",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-02T12:23:41.261Z",
+            "modified": "2024-04-06T15:09:24.854Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "82827d7e-94ec-4766-9f08-04b5746cca86",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "3aa2ecbe-ee69-4e7e-ad65-9392a7db8716",
+            "name": "Helyszín svg kép lekérdezése",
+            "url": "{{WEB_URI}}/svg-helyszin-kep/location01.svg",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-04T08:05:06.197Z",
+            "modified": "2024-04-06T14:56:27.054Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f02f5190-e2b1-4c34-a45c-9166468ee762",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "751be961-5dbe-4c7d-8d96-db56d342744c",
+            "name": "Összes szerep lekérdezése",
+            "url": "{{API_URI}}/szerep-osszes",
+            "method": "GET",
+            "sortNum": 36562.5,
+            "created": "2024-04-04T06:59:59.496Z",
+            "modified": "2024-04-06T15:12:35.822Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "682d1d35-4de2-4ebc-aaf3-14fcccabcac2",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Előadók nevei",
+            "url": "{{API_URI}}/eloado-nevek",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-02T11:30:26.813Z",
+            "modified": "2024-04-06T15:08:33.511Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "47b12e59-3d2f-4323-a4be-55f35f95d97d",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "Helyszín, előadó nevek, id-k",
+            "url": "{{API_URI}}/helyszin-eloado-nev-id",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-02T12:23:41.262Z",
+            "modified": "2024-04-06T15:11:09.381Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f0bbcc3-4941-4227-9dbc-47a67c5adf70",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "PDF jegygenerálás",
+            "url": "{{API_URI}}/pdf-jegy-generalas/1",
+            "method": "POST",
+            "sortNum": 47500,
+            "created": "2024-04-02T12:24:31.474Z",
+            "modified": "2024-04-06T15:11:12.093Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "42|o8wgkWSyeiZTEraXYfEHyJQfJGZOIE3Pj5tjPAKz49afc5c7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8c741520-2b00-4ac8-be48-06bd697d5bed",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "PDF számla generálás",
+            "url": "{{API_URI}}/pdf-szamla-generalas/1",
+            "method": "POST",
+            "sortNum": 48750,
+            "created": "2024-04-02T12:24:25.425Z",
+            "modified": "2024-04-06T15:11:14.740Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d120783f-418d-431e-9dbd-dff14b9b5205",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Random 10 előadó adatai",
+            "url": "{{API_URI}}/random-10-eloado",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-02T11:30:28.305Z",
+            "modified": "2024-04-06T15:08:36.679Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3512b52c-5895-42d4-800d-48bff1bd5c64",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "Session adat lekérdezés",
+            "url": "{{API_URI}}/session-data?sessionId=cs_test_b1ywdxHmVA7gagZDNnZc6KhNsptRKc6pAJ67tR6Ij2bWsvDPW5aT6VkmTT",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-02T12:23:41.263Z",
+            "modified": "2024-04-06T15:11:17.284Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "sessionId",
+                    "value": "cs_test_b1ywdxHmVA7gagZDNnZc6KhNsptRKc6pAJ67tR6Ij2bWsvDPW5aT6VkmTT",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "38|cqq68H6oehwPqpkcP8EtJKPrIYCasrPrK5xm9dqM4b741c86"
+            },
+            "tests": []
+        },
+        {
+            "_id": "40f112cd-0fa6-43ad-988d-6efbe944d6aa",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Események keresése feltételekkel",
+            "url": "{{API_URI}}/esemeny-kereso?eloado=30y",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-02T11:30:29.833Z",
+            "modified": "2024-04-06T15:08:40.007Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "eloado",
+                    "value": "30y",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "27e2b5bf-0e8f-4a85-b213-c30365cf89f7",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "User saját adatok",
+            "url": "{{API_URI}}/userek/1",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-02T12:23:41.264Z",
+            "modified": "2024-04-06T15:11:20.006Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "36|Ntj810T4X0LlFReedalbF7XNCCzf5RGYTCpsjhbwdab76fa7"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c802eb1b-015f-4a97-a1ef-8e184b37f0af",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Egy esemény részleteinek lekérdezése",
+            "url": "{{API_URI}}/esemenyek/10",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-04-02T11:30:30.961Z",
+            "modified": "2024-04-06T15:08:42.812Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1e8717a2-390d-4e72-bb5b-2596678bc619",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Helyszín szektoralegységek foglaltságai",
+            "url": "{{API_URI}}/szektor-alegyseg-foglaltsag-check/1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-04-02T11:30:32.673Z",
+            "modified": "2024-04-06T15:08:46.036Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4b3fd815-9c6d-4443-9964-93de70698f5f",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "User saját adatok módosítás",
+            "url": "{{API_URI}}/userek/1",
+            "method": "PATCH",
+            "sortNum": 80000,
+            "created": "2024-04-02T12:23:41.266Z",
+            "modified": "2024-04-06T15:11:22.612Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "35|gyul94sAXxxSDueuTcxTgUGC3VjBbXqNpZsUq37we4141962"
+            },
+            "tests": []
+        },
+        {
+            "_id": "94616a96-b7b9-4806-ab60-e7e38fad1bd8",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Helyszínek nevei",
+            "url": "{{API_URI}}/helyszin-nevek",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-04-02T11:30:33.969Z",
+            "modified": "2024-04-06T15:08:48.756Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7a31c34d-5cf0-46fe-8e84-5d5df321fdfa",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "98f8d5d8-c0c9-4e76-a58d-7b418097cc1f",
+            "name": "User törlés",
+            "url": "{{API_URI}}/userek/3",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-04-02T12:23:41.267Z",
+            "modified": "2024-04-06T15:11:25.037Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "37|4KpS92x9ie1cIGrd1Jw59nTtcxqCEHRAnqClG0kd7e43f90d"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0676bc5d-2e9d-4cb0-8404-f14dcf4fe651",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Műfajok nevei",
+            "url": "{{API_URI}}/mufaj-nevek",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-04-02T11:30:35.521Z",
+            "modified": "2024-04-06T15:08:51.467Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cabb79df-5a48-495a-aef9-663209f0a33f",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Helyszín szektorai szektoralegységekkel",
+            "url": "{{API_URI}}/kivalasztott-szektorok/1",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-02T11:30:38.161Z",
+            "modified": "2024-04-06T15:08:54.371Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ac000544-7d30-45f9-9003-77af29f9eb61",
+            "colId": "97af910e-04b9-43f4-9e80-c408d624709e",
+            "containerId": "c3b18c26-4225-4c3d-aa93-ee2df3445671",
+            "name": "Userek emailei, felhasználónevei",
+            "url": "{{API_URI}}/user-emailek-felhasznalonevek",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-04-02T11:30:39.513Z",
+            "modified": "2024-04-06T15:08:58.338Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
