@@ -123,7 +123,7 @@ class RendelesController extends Controller
         }
 
 
-        Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
+        //Mail::to($rendeles->email)->send(new SikeresRendeles($rendeles));
         $rendeles->status='fizetett';
         $rendeles->fizetes_idopont = now();
         $rendeles->save();
